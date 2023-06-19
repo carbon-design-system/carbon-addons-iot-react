@@ -81,6 +81,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -126,6 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="menu-item-global-action-1"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -239,6 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
                 disabled={false}
+                id="menu-item-global-action-2"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -348,6 +351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="app-switcher"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -487,6 +491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-user-global"
           disabled={false}
+          id="menu-item-global-action-0"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -619,6 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
                 disabled={false}
+                id="menu-item-global-action-0"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -818,6 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
                 disabled={false}
+                id="menu-item-global-action-0"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1039,6 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
                 disabled={false}
+                id="menu-item-global-action-0"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1232,6 +1240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn isReallyHidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-HiddenByClass-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1270,6 +1279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Announcements-global"
             disabled={false}
+            id="menu-item-global-action-1"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1308,6 +1318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 1-global"
             disabled={false}
+            id="menu-item-global-action-2"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1346,6 +1357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 2-global"
             disabled={false}
+            id="menu-item-global-action-3"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1384,6 +1396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 3-global"
             disabled={false}
+            id="menu-item-global-action-4"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1420,6 +1433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Header action with href-global"
             href="https://www.ibm.com"
+            id="menu-item-global-action-5"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1457,6 +1471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
+            id="menu-item-global-action-6"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1502,6 +1517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="menu-item-global-action-7"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -1615,6 +1631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
                 disabled={false}
+                id="menu-item-global-action-8"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}

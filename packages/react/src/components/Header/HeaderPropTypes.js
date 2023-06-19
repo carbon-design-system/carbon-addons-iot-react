@@ -40,6 +40,8 @@ export const HeaderActionPropTypes = {
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
   /** unique index for the menu item */
   index: PropTypes.number.isRequired,
+  /** unique id for the menu item */
+  id: PropTypes.number.isRequired,
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,

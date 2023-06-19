@@ -85,6 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -6133,6 +6134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

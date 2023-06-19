@@ -53,6 +53,7 @@ const HeaderActionPanel = ({
   i18n,
   inOverflow,
   showCloseIconWhenPanelExpanded,
+  id,
 }) => {
   const panelRef = useRef();
 
@@ -103,6 +104,7 @@ const HeaderActionPanel = ({
         aria-expanded={isExpanded}
         onClick={() => onToggleExpansion()}
         ref={focusRef}
+        id={id}
       >
         {renderLabel ? (
           item.label

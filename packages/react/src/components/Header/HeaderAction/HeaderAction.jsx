@@ -51,6 +51,8 @@ const HeaderAction = ({
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
 
+  const actionId = item.id || `menu-item-global-action-${index}`;
+
   const mergedI18n = useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -124,6 +126,7 @@ const HeaderAction = ({
             i18n={mergedI18n}
             inOverflow={inOverflow}
             showCloseIconWhenPanelExpanded={showCloseIconWhenPanelExpanded}
+            id={actionId}
           />
         ) : (
           // otherwise render a submenu type dropdown
@@ -146,6 +149,7 @@ const HeaderAction = ({
             data-testid={testID || testId}
             title={item.label}
             childContent={item.childContent}
+            id={actionId}
           />
         )}
       </div>
@@ -166,6 +170,7 @@ const HeaderAction = ({
       href={item.href}
       rel={item.rel}
       target={item.target}
+      id={actionId}
     >
       {renderLabel ? item.label : item.btnContent}
     </HeaderGlobalAction>

@@ -72,6 +72,7 @@ exports[`Header should render 1`] = `
             aria-haspopup="menu"
             aria-label="help"
             class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            id="menu-item-global-action-0"
             tabindex="0"
             type="button"
           >
@@ -163,6 +164,7 @@ exports[`Header should render 1`] = `
               aria-label="user"
               class="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
+              id="menu-item-global-action-1"
               role="menuitem"
               tabindex="0"
               type="button"
