@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.25...v2.153.0-next.26) (2023-06-19)
+
+
+### Bug Fixes
+
+* **table:** select all checkbox state on initial render ([#3801](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3801)) ([da58f3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/da58f3b4fc501b0cacc6acab310ea97348bbbe3e))
+* **tablecellrenderer:** add min width for truncation ([#3799](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3799)) ([c9c3c14](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c9c3c14aee1af0938b6ea3826fbb8aa962a62125))
+
+
+### Features
+
+* **SuiteHeader:** add support for on click callback for application name ([#3795](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3795)) ([a6ddae2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a6ddae219c604f773aa56049cd77e0b4ead32042))
+* **SuiteHeader:** add unique id to action items ([#3796](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3796)) ([48ffc2c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48ffc2cf42fbac8b2155e7efd3b0f6891b89bb38))
+
+
+
+
+
 # [2.153.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.24...v2.153.0-next.25) (2023-06-19)
 
 
