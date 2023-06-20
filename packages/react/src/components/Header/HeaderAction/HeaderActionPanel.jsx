@@ -15,6 +15,8 @@ const { prefix: carbonPrefix } = settings;
 
 const propTypes = {
   ...HeaderActionPropTypes,
+  /** unique id for the action panel */
+  id: PropTypes.string.isRequired,
   /** Ref object to be attached to the parent that should receive focus when a menu is closed */
   focusRef: PropTypes.oneOfType([
     // Either a function
