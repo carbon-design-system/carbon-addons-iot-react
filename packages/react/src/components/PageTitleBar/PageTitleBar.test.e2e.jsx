@@ -95,7 +95,7 @@ describe('PageTitleBar', () => {
       .should(
         'have.attr',
         'style',
-        '--header-offset:48px; --negative-header-offset:-48px; --scroll-transition-progress:0;'
+        '--header-offset: 48px; --negative-header-offset: -48px; --scroll-transition-progress: 0;'
       );
 
     cy.scrollTo(0, 118);
@@ -164,7 +164,7 @@ describe('PageTitleBar', () => {
       .should(
         'have.attr',
         'style',
-        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:0;'
+        '--header-offset: 40px; --negative-header-offset: -40px; --scroll-transition-progress: 0;'
       );
 
     cy.scrollTo(0, 100);
@@ -226,7 +226,7 @@ describe('PageTitleBar', () => {
       .should(
         'have.attr',
         'style',
-        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:1;'
+        '--header-offset: 40px; --negative-header-offset: -40px; --scroll-transition-progress: 1;'
       );
 
     breadcrumbsAndTabsAreStickyAndInTheCorrectPosition();
@@ -270,7 +270,7 @@ describe('PageTitleBar', () => {
       .should(
         'have.attr',
         'style',
-        '--header-offset:0px; --negative-header-offset:0px; --scroll-transition-progress:0;'
+        '--header-offset: 0px; --negative-header-offset: 0px; --scroll-transition-progress: 0;'
       );
 
     cy.scrollTo(0, 250);
