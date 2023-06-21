@@ -264,7 +264,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -466,7 +465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -1167,7 +1165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -1351,7 +1348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -1628,7 +1624,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -2276,7 +2271,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -2478,7 +2472,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -3116,7 +3109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -3318,7 +3310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -3880,7 +3871,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -4082,7 +4072,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -5158,7 +5147,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -5360,7 +5348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -5881,7 +5868,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -6019,7 +6005,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -6504,7 +6489,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -6706,7 +6690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -7239,7 +7222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >
@@ -7441,7 +7423,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              role="menuitem"
               tabIndex={0}
               type="button"
             >

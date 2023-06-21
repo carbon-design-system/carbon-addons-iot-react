@@ -165,7 +165,6 @@ exports[`Header should render 1`] = `
               class="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
               id="menu-item-global-action-1"
-              role="menuitem"
               tabindex="0"
               type="button"
             >

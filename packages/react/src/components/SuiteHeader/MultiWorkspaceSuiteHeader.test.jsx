@@ -709,13 +709,13 @@ describe('SuiteHeader', () => {
     const originalHref = window.location.href;
     const onRouteChange = jest.fn().mockImplementation(() => false);
     render(<SuiteHeader {...adminPageCommonProps} onRouteChange={onRouteChange} />);
-    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', adminPageCommonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
-    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', adminPageCommonProps.routes.profile);
     expect(window.location.href).toBe(adminPageCommonProps.routes.profile);
@@ -936,7 +936,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -975,7 +977,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -1013,7 +1017,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -1052,7 +1058,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -1094,7 +1102,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -1204,7 +1214,7 @@ describe('SuiteHeader', () => {
         'noopener noreferrer'
       );
       expect(window.open).toHaveBeenCalledTimes(1);
-      userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+      userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
       await userEvent.click(screen.getByTestId('suite-header-profile--profile'), {
         ctrlKey: true,
       });
@@ -1215,7 +1225,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(2);
 
-      userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
+      userEvent.click(screen.getByRole('button', { name: 'Help', label: 'Help' }));
       await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         workspaceBasedPageCommonProps.routes.about,

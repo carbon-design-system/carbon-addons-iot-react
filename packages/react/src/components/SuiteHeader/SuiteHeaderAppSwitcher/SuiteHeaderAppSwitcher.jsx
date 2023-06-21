@@ -142,7 +142,7 @@ const SuiteHeaderAppSwitcher = ({
         );
       })}
       {mergedApplications?.length === 0 ? (
-        <div className={`${baseClassName}--no-app`}>
+        <div className={`${baseClassName}--no-app`} role="listitem">
           <div className="bee-icon-container">
             <Bee32 />
             <div className="bee-shadow" />
