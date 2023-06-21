@@ -211,7 +211,7 @@ describe(
         cy.findByLabelText('Announcements').should('not.exist');
         cy.findByRole('button', { name: 'help' }).should('not.exist');
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'Announcements', label: 'Announcements' })
+        cy.findByRole('menuitem', { name: 'Announcements' })
           .should('be.visible')
           .click()
           .should(() => {
@@ -251,9 +251,7 @@ describe(
         cy.findByRole('button', { name: 'open and close list of options' }).click(5, 5, {
           force: true,
         });
-        cy.findByRole('button', { name: 'Announcements', label: 'Announcements' }).should(
-          'be.visible'
-        );
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
       });
 
       it('should hide header action actions in a small viewport in RTL', () => {
@@ -281,7 +279,7 @@ describe(
         cy.findByLabelText('Announcements').should('not.exist');
         cy.findByRole('button', { name: 'help' }).should('not.exist');
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'Announcements', label: 'Announcements' })
+        cy.findByRole('menuitem', { name: 'Announcements' })
           .should('be.visible')
           .click()
           .should(() => {
@@ -306,9 +304,7 @@ describe(
         mount(<Header {...commonProps} isActionItemVisible={isActionItemVisible} />);
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'Announcements', label: 'Announcements' }).should(
-          'be.visible'
-        );
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
         cy.findByRole('button', { name: 'Custom icon 1', label: 'Custom icon 1' }).should(
           'not.exist'
         );
@@ -329,9 +325,7 @@ describe(
         mount(<Header {...commonProps} />);
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'Announcements', label: 'Announcements' }).should(
-          'be.visible'
-        );
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
         // I don't know if this is actually necessary in cypress, but just to be safe.
         cy.window().then((win) => {
           Object.defineProperty(win, 'innerWidth', {
