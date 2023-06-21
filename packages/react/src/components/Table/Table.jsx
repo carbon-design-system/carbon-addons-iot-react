@@ -15,6 +15,7 @@ import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
 import deprecate from '../../internal/deprecate';
+import SimplePagination from '../SimplePagination/SimplePagination';
 
 import {
   TableColumnsPropTypes,
@@ -894,6 +895,12 @@ const Table = (props) => {
     return arrayifiedSort;
   }, [view.table.multiSortModal, view.table.sort]);
 
+  const paginationTotalItemsRaw = data.length;
+  const paginationTotalItems =
+    paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
+      ? paginationProps.totalItems
+      : Math.ceil(maxPages * paginationProps.pageSize);
+
   return (
     <TableContainer
       style={style}
@@ -1274,27 +1281,42 @@ const Table = (props) => {
         </CarbonTable>
       </div>
       {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
-        <Pagination
-          pageSize={paginationProps.pageSize}
-          pageSizes={paginationProps.pageSizes}
-          page={paginationProps.page}
-          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
-          totalItems={
-            paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
-              ? paginationProps.totalItems
-              : Math.ceil(maxPages * paginationProps.pageSize)
-          }
-          onChange={actions.pagination.onChangePage}
-          backwardText={i18n.pageBackwardAria}
-          forwardText={i18n.pageForwardAria}
-          pageNumberText={i18n.pageNumberAria}
-          itemsPerPageText={i18n.itemsPerPage}
-          itemRangeText={i18n.itemsRangeWithTotal}
-          pageRangeText={i18n.pageRange}
-          preventInteraction={rowEditMode || singleRowEditMode}
-          testId={`${id || testId}-table-pagination`}
-          size={paginationProps.size}
-        />
+        !Number.isNaN(paginationTotalItemsRaw) && paginationTotalItemsRaw > paginationTotalItems ? (
+          <SimplePagination
+            prevPageText={i18n.pageBackwardAria}
+            nextPageText={i18n.pageForwardAria}
+            totalItems={paginationTotalItemsRaw}
+            page={paginationProps.page}
+            maxPage={Math.ceil(paginationTotalItemsRaw / paginationProps.pageSize)}
+            onPage={(page) =>
+              actions.pagination.onChangePage({ page, pageSize: paginationProps.pageSize })
+            }
+            testId={`${id || testId}-table-pagination`}
+            size={size}
+          />
+        ) : (
+          <Pagination
+            pageSize={paginationProps.pageSize}
+            pageSizes={paginationProps.pageSizes}
+            page={paginationProps.page}
+            isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+            totalItems={
+              paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
+                ? paginationProps.totalItems
+                : Math.ceil(maxPages * paginationProps.pageSize)
+            }
+            onChange={actions.pagination.onChangePage}
+            backwardText={i18n.pageBackwardAria}
+            forwardText={i18n.pageForwardAria}
+            pageNumberText={i18n.pageNumberAria}
+            itemsPerPageText={i18n.itemsPerPage}
+            itemRangeText={i18n.itemsRangeWithTotal}
+            pageRangeText={i18n.pageRange}
+            preventInteraction={rowEditMode || singleRowEditMode}
+            testId={`${id || testId}-table-pagination`}
+            size={paginationProps.size}
+          />
+        )
       ) : null}
       {options.hasMultiSort && (
         <TableMultiSortModal
