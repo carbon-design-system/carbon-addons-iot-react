@@ -222,7 +222,7 @@ describe(
           .invoke('attr', 'description')
           .should('eq', 'Open menu');
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'help', label: 'help' }).should('be.visible').click();
+        cy.findByRole('menuitem', { name: 'help' }).should('be.visible').click();
         cy.findByRole('button', { name: 'help' })
           .find('svg')
           .invoke('attr', 'description')
