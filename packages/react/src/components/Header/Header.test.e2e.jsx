@@ -237,7 +237,7 @@ describe(
           .should('not.exist');
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('menuitem', { name: 'user' }).click();
+        cy.findByTestId('menuitem', { name: 'user', label: 'user' }).click();
         cy.findByText('JohnDoe@ibm.com').should('be.visible');
         cy.findByRole('menuitem', { name: 'user' })
           .find('svg')
