@@ -237,13 +237,13 @@ describe(
           .should('not.exist');
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();
-        cy.findByRole('button', { name: 'user' }).click();
+        cy.findByRole('menuitem', { name: 'user' }).click();
         cy.findByText('JohnDoe@ibm.com').should('be.visible');
-        cy.findByRole('button', { name: 'user' })
+        cy.findByRole('menuitem', { name: 'user' })
           .find('svg')
           .invoke('attr', 'description')
           .should('eq', 'Close menu');
-        cy.findByRole('button', { name: 'user' }).click();
+        cy.findByRole('menuitem', { name: 'user' }).click();
         cy.findByRole('button', { name: 'open and close list of options' }).should('be.visible');
 
         // click the left side specifically to _not_ click the svg element right in the center
