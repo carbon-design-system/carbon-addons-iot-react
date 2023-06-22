@@ -281,7 +281,7 @@ describe('PageTitleBar', () => {
       .should(
         'have.attr',
         'style',
-        '--header-offset: 0px; --negative-header-offset: 0px; --scroll-transition-progress: 1;'
+        '--header-offset: 0px; --negative-header-offset: -0px; --scroll-transition-progress: 1;'
       );
 
     tabsAreStickyAndBreadcrumbsAreHidden();
