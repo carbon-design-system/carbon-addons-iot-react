@@ -223,8 +223,7 @@ describe('Table', () => {
   });
 
   it('limits the number of pagination select options', () => {
-    // 100 records should have 10 pages. With max pages option we expect 5.
-    const wrapper = mount(
+    render(
       <Table
         columns={tableColumns}
         data={largeTableData}
@@ -232,9 +231,32 @@ describe('Table', () => {
         actions={mockActions}
         options={{ hasPagination: true }}
         view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+        testId="table"
       />
     );
-    expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
+    // If number of elements exceeds pagination, then we display simple pagination without dropdowns
+    expect(screen.getByTestId('table-table-pagination')).toBeVisible();
+    expect(screen.getByText(`${largeTableData.length} Items`)).toBeVisible();
+  });
+
+  it('Should invoke pagination onChange callback', async () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true }}
+        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+        testId="table"
+      />
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(mockActions.pagination.onChangePage).toHaveBeenCalledTimes(1);
+    expect(mockActions.pagination.onChangePage).toHaveBeenCalledWith({
+      page: 2,
+      pageSize: 10,
+    });
   });
 
   it('Should not render batch actions if hasBatchActionToolbar option is false', () => {
@@ -2896,9 +2918,9 @@ describe('Table', () => {
       />
     );
 
-    expect(screen.getByText('1 of 2 pages')).toBeVisible();
-    // 5 * 1.5 = 7.5, rounded is 8 items.
-    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
+    // Rounded number of pages
+    expect(screen.getByText('Page 1 of 2')).toBeVisible();
+    expect(screen.getByText('10 Items')).toBeVisible();
 
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
