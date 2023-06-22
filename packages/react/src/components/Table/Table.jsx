@@ -895,12 +895,6 @@ const Table = (props) => {
     return arrayifiedSort;
   }, [view.table.multiSortModal, view.table.sort]);
 
-  const paginationTotalItemsRaw = data.length;
-  const paginationTotalItems =
-    paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
-      ? paginationProps.totalItems
-      : Math.ceil(maxPages * paginationProps.pageSize);
-
   return (
     <TableContainer
       style={style}
@@ -1281,13 +1275,14 @@ const Table = (props) => {
         </CarbonTable>
       </div>
       {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
-        !Number.isNaN(paginationTotalItemsRaw) && paginationTotalItemsRaw > paginationTotalItems ? (
+        !Number.isNaN(data.length) &&
+        data.length > Math.ceil(maxPages * paginationProps.pageSize) ? (
           <SimplePagination
             prevPageText={i18n.pageBackwardAria}
             nextPageText={i18n.pageForwardAria}
-            totalItems={paginationTotalItemsRaw}
+            totalItems={data.length}
             page={paginationProps.page}
-            maxPage={Math.ceil(paginationTotalItemsRaw / paginationProps.pageSize)}
+            maxPage={Math.ceil(data.length / paginationProps.pageSize)}
             onPage={(page) =>
               actions.pagination.onChangePage({ page, pageSize: paginationProps.pageSize })
             }
