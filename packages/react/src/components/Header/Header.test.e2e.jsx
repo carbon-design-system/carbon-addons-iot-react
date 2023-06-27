@@ -186,7 +186,7 @@ describe(
         cy.findByLabelText('Announcements').should('be.visible');
         cy.findByRole('button', { name: 'help' }).should('be.visible');
         cy.findByRole('button', { name: 'open and close list of options' }).should('not.exist');
-        cy.findByRole('menuitem', { name: 'user' }).should('be.visible');
+        cy.findByRole('button', { name: 'user', label: 'user' }).should('be.visible');
       });
 
       it('should hide header action actions in a small viewport', () => {
@@ -239,11 +239,11 @@ describe(
         cy.findByRole('button', { name: 'open and close list of options' }).click();
         cy.findByRole('menuitem', { name: 'user' }).click();
         cy.findByText('JohnDoe@ibm.com').should('be.visible');
-        cy.findByRole('menuitem', { name: 'user' })
+        cy.findByTestId('menuitem', { name: 'user' })
           .find('svg')
           .invoke('attr', 'description')
           .should('eq', 'Close menu');
-        cy.findByRole('menuitem', { name: 'user' }).click();
+        cy.findByTestId('menuitem', { name: 'user' }).click();
         cy.findByRole('button', { name: 'open and close list of options' }).should('be.visible');
 
         // click the left side specifically to _not_ click the svg element right in the center
@@ -305,7 +305,9 @@ describe(
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();
         cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
-        cy.findByRole('menuitem', { name: 'Custom icon 1' }).should('not.exist');
+        cy.findByRole('button', { name: 'Custom icon 1', label: 'Custom icon 1' }).should(
+          'not.exist'
+        );
       });
 
       it('should get width from documentElement when innerWidth fails', () => {
