@@ -1275,14 +1275,13 @@ const Table = (props) => {
         </CarbonTable>
       </div>
       {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
-        !Number.isNaN(data.length) &&
-        data.length > Math.ceil(maxPages * paginationProps.pageSize) ? (
+        paginationProps.totalItems > Math.ceil(maxPages * paginationProps.pageSize) ? (
           <SimplePagination
             prevPageText={i18n.pageBackwardAria}
             nextPageText={i18n.pageForwardAria}
-            totalItems={data.length}
+            totalItems={paginationProps.totalItems}
             page={paginationProps.page}
-            maxPage={Math.ceil(data.length / paginationProps.pageSize)}
+            maxPage={Math.ceil(paginationProps.totalItems / paginationProps.pageSize)}
             onPage={(page) =>
               actions.pagination.onChangePage({ page, pageSize: paginationProps.pageSize })
             }
