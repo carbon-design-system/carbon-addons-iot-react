@@ -223,6 +223,8 @@ describe('Table', () => {
   });
 
   it('limits the number of pagination select options', () => {
+    const totalItems = 101; // Simulate total items props to be larger then table data
+
     render(
       <Table
         columns={tableColumns}
@@ -230,13 +232,13 @@ describe('Table', () => {
         expandedData={expandedData}
         actions={mockActions}
         options={{ hasPagination: true }}
-        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+        view={{ ...view, pagination: { ...view.pagination, totalItems, maxPages: 5 } }}
         testId="table"
       />
     );
     // If number of elements exceeds pagination, then we display simple pagination without dropdowns
     expect(screen.getByTestId('table-table-pagination')).toBeVisible();
-    expect(screen.getByText(`${largeTableData.length} Items`)).toBeVisible();
+    expect(screen.getByText(`${totalItems} Items`)).toBeVisible();
   });
 
   it('Should invoke pagination onChange callback', async () => {
@@ -247,7 +249,7 @@ describe('Table', () => {
         expandedData={expandedData}
         actions={mockActions}
         options={{ hasPagination: true }}
-        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+        view={{ ...view, pagination: { ...view.pagination, totalItems: 101, maxPages: 5 } }}
         testId="table"
       />
     );
