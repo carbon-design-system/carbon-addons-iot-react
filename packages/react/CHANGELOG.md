@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.28...v2.153.0-next.29) (2023-06-30)
+
+
+### Bug Fixes
+
+* **table:** connect pagination to totalItems prop ([dfca12b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dfca12b496366ed265e2aeb0d6f58d0d135b6474))
+
+
+
+
+
 # [2.153.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.27...v2.153.0-next.28) (2023-06-27)
 
 
