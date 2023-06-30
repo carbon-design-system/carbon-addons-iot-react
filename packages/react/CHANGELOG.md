@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.27...v2.153.0-next.28) (2023-06-27)
+
+
+### Bug Fixes
+
+* **SuiteHeader:** header action panel proptypes  ([#3803](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3803)) ([495345f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/495345ffef68ae2798ba32d72c7d2fcba941b4e6))
+
+
+
+
+
 # [2.153.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.26...v2.153.0-next.27) (2023-06-22)
 
 **Note:** Version bump only for package carbon-addons-iot-react
