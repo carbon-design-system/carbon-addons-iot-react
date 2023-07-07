@@ -331,7 +331,7 @@
     "storybook-addon-rtl": "^0.2.2",
     "storybook-addon-turbo-build": "^1.0.1",
     "style-loader": "^0.23.1",
-    "stylelint": "^10.1.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.10.0",
     "weak-napi": "^2.0.1",
