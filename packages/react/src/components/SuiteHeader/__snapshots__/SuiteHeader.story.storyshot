@@ -663,6 +663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -1881,6 +1882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -2670,6 +2672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -3508,6 +3511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -4270,6 +4274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -5546,6 +5551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -6888,6 +6894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -7621,6 +7628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
