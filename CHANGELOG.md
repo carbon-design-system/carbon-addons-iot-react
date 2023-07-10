@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.29...v2.153.0-next.30) (2023-07-10)
+
+
+### Bug Fixes
+
+* **appswitcher:** firefox disable focus ([f34df05](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f34df057426c8dfbdc09a53e8a5329ac2544da70))
+* **appswitcher:** update snapshots ([bb0689b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb0689b8bad4eda3f971353e0bb234e028bb1a0e))
+* **headeractionpanel:** remove unnecessary aria-label ([0d09134](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0d0913455beb759ca93a2d6adf4acec636f5365f))
+* **headeractionpanel:** update e2e tests ([c44f300](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c44f300c7439512c0cf06d1a5ecf833a8c22c097))
+* **headeractionpanel:** update tests ([2a12820](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a128209f4a96d249e3923abb14ecb0505c65bb2))
+* **table:** change filter tag close button title ([1fa02eb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1fa02ebca8173db0dc01788184f8550133adf675))
+
+
+
+
+
 # [2.153.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.28...v2.153.0-next.29) (2023-06-30)
 
 
