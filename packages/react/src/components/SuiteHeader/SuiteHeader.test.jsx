@@ -1234,7 +1234,7 @@ describe('SuiteHeader', () => {
 
     it('should close action panel if other action clicked (safari)', () => {
       render(<SuiteHeader {...commonProps} />);
-      const headerPanel = screen.getByLabelText('Header Panel');
+      const headerPanel = screen.getByTestId('action-btn__panel');
       const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
 
       userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
@@ -1248,7 +1248,7 @@ describe('SuiteHeader', () => {
 
     it('should close action panel if clicked outside of panel (safari)', () => {
       render(<SuiteHeader {...commonProps} />);
-      const headerPanel = screen.getByLabelText('Header Panel');
+      const headerPanel = screen.getByTestId('action-btn__panel');
 
       userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
@@ -1259,7 +1259,7 @@ describe('SuiteHeader', () => {
 
     it('should close action dropdown if panel opened (safari)', () => {
       render(<SuiteHeader {...commonProps} />);
-      const headerPanel = screen.getByLabelText('Header Panel');
+      const headerPanel = screen.getByTestId('action-btn__panel');
       const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
 
       userEvent.click(profileActionButton);
@@ -1273,7 +1273,7 @@ describe('SuiteHeader', () => {
 
     it('should NOT close panel if clicked inside panel', () => {
       render(<SuiteHeader {...commonProps} />);
-      const headerPanel = screen.getByLabelText('Header Panel');
+      const headerPanel = screen.getByTestId('action-btn__panel');
 
       userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
@@ -1284,7 +1284,7 @@ describe('SuiteHeader', () => {
 
     it('should close action menu if clicked outside (safari)', () => {
       render(<SuiteHeader {...commonProps} />);
-      const headerPanel = screen.getByLabelText('Header Panel');
+      const headerPanel = screen.getByTestId('action-btn__panel');
       const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
 
       expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
