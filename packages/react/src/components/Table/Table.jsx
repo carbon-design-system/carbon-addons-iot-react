@@ -1030,7 +1030,7 @@ const Table = (props) => {
                   <Tag
                     key={advancedFilter.filterId}
                     filter
-                    title={advancedFilter.filterTitleText}
+                    title={i18n.clearFilterAria}
                     onClose={(e) => {
                       if (typeof actions?.toolbar?.onRemoveAdvancedFilter === 'function') {
                         actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
