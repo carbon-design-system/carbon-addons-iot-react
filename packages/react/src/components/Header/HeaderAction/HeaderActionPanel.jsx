@@ -121,7 +121,6 @@ const HeaderActionPanel = ({
         ref={panelRef}
         tabIndex="-1"
         key={`panel-${index}`}
-        aria-label="Header Panel"
         className={
           item.label !== APP_SWITCHER
             ? classnames('action-btn__headerpanel', {
