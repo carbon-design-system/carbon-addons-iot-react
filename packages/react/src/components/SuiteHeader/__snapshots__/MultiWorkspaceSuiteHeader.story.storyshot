@@ -639,6 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Select a workspace
@@ -1444,6 +1445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -2285,6 +2287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -3155,6 +3158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -4524,6 +4528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -5491,6 +5496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -6481,6 +6487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -7390,6 +7397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -8780,6 +8788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -10268,6 +10277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -11148,6 +11158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Select a workspace
@@ -11953,6 +11964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -12794,6 +12806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <p>
                       Workspace
@@ -13674,6 +13687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   <ul
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
+                    tabIndex={-1}
                   >
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"

@@ -97,7 +97,7 @@ const SuiteHeaderAppSwitcher = ({
   const tabIndex = isExpanded ? 0 : -1;
 
   return (
-    <ul data-testid={testId} className={baseClassName}>
+    <ul data-testid={testId} className={baseClassName} tabIndex={tabIndex}>
       <li className={`${baseClassName}--nav-link`}>
         {allApplicationsLink ? (
           <>
