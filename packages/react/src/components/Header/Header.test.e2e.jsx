@@ -125,13 +125,13 @@ describe(
           .find('svg')
           .invoke('attr', 'description')
           .should('eq', 'Help icon');
-        cy.findByLabelText('Header Panel')
+        cy.findByTestId('action-btn__panel')
           .should('be.visible')
           .findByText('JohnDoe@ibm.com')
           .should('be.visible');
         cy.findByRole('button', { name: 'help' })
           .click()
-          .findByLabelText('Header Panel')
+          .findByTestId('action-btn__panel')
           .should('not.exist');
       });
 
@@ -149,13 +149,13 @@ describe(
           .find('svg')
           .invoke('attr', 'description')
           .should('eq', 'Help icon');
-        cy.findByLabelText('Header Panel')
+        cy.findByTestId('action-btn__panel')
           .should('be.visible')
           .findByText('JohnDoe@ibm.com')
           .should('be.visible');
         cy.findByRole('button', { name: 'help' })
           .click()
-          .findByLabelText('Header Panel')
+          .findByTestId('action-btn__panel')
           .should('not.exist');
 
         cy.window().then((win) => {
@@ -227,13 +227,13 @@ describe(
           .find('svg')
           .invoke('attr', 'description')
           .should('eq', 'Close menu');
-        cy.findByLabelText('Header Panel')
+        cy.findByTestId('action-btn__panel')
           .should('be.visible')
           .findByText('JohnDoe@ibm.com')
           .should('be.visible');
         cy.findByRole('button', { name: 'help' })
           .click()
-          .findByLabelText('Header Panel')
+          .findByTestId('action-btn__panel')
           .should('not.exist');
 
         cy.findByRole('button', { name: 'open and close list of options' }).click();

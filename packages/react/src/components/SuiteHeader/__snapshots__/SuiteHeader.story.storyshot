@@ -645,7 +645,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -1064,7 +1063,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </span>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -1863,7 +1861,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -2652,7 +2649,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -3490,7 +3486,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -4252,7 +4247,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -5528,7 +5522,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -6174,7 +6167,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -6870,7 +6862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
@@ -7603,7 +7594,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-app-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"

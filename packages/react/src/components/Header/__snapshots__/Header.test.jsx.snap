@@ -107,7 +107,6 @@ exports[`Header should render 1`] = `
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             class="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
             data-testid="action-btn__panel"
             tabindex="-1"
