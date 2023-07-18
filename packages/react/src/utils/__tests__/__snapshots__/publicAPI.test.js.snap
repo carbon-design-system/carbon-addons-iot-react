@@ -11882,6 +11882,7 @@ Map {
       "globalApplications": Array [],
       "handleHeaderNameClick": null,
       "hasSideNav": false,
+      "hideMenuButton": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -12158,6 +12159,9 @@ Map {
         "type": "oneOfType",
       },
       "hasSideNav": Object {
+        "type": "bool",
+      },
+      "hideMenuButton": Object {
         "type": "bool",
       },
       "i18n": Object {
