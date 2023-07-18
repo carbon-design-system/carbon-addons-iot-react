@@ -435,6 +435,9 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     right: 0;
     filter: drop-shadow(-1px 0 0 $active-ui);
 
+    min-width: rem(56px);
+    width: rem(56px); // Needed for fixed/resizable columns that don't respect min-width
+
     [dir='rtl'] & {
       right: unset;
       left: 0;
