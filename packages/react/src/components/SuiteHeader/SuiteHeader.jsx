@@ -64,6 +64,7 @@ const defaultProps = {
   testId: 'suite-header',
   isActionItemVisible: () => true,
   handleHeaderNameClick: null,
+  hideMenuButton: false,
 };
 
 const propTypes = {
@@ -124,6 +125,9 @@ const propTypes = {
   /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
   // eslint-disable-next-line react/forbid-foreign-prop-types
   isActionItemVisible: Header.propTypes.isActionItemVisible,
+
+  /** Force menu button to hide regardless of side nav props */
+  hideMenuButton: PropTypes.bool,
 };
 
 const SuiteHeader = ({
@@ -154,6 +158,7 @@ const SuiteHeader = ({
   walkmeLang,
   testId,
   handleHeaderNameClick: handleHeaderNameClickProps,
+  hideMenuButton,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -354,7 +359,7 @@ const SuiteHeader = ({
               className={classnames(`${settings.iotPrefix}--suite-header`, className)}
               url={navigatorRoute}
               handleHeaderNameClick={handleHeaderNameClick}
-              hasSideNav={hasSideNav || sideNavProps !== null}
+              hasSideNav={hideMenuButton ? false : hasSideNav || sideNavProps !== null}
               onClickSideNavExpand={(evt) => {
                 onSideNavToggled(evt);
                 onClickSideNavExpand(evt);
