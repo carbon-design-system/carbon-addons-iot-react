@@ -1315,4 +1315,30 @@ describe('SuiteHeader', () => {
       expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
     });
   });
+
+  it('hides menu button', () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        hideMenuButton
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(screen.queryByRole('button', { name: 'Open Menu' })).toBeNull();
+  });
 });
