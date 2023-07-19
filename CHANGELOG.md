@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.30...v2.153.0-next.31) (2023-07-19)
+
+
+### Bug Fixes
+
+* **table:** add min width for pinned last column ([#3816](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3816)) ([e9acf60](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e9acf60469186b201896ade201b9266dd5872dbc))
+
+
+### Features
+
+* **SuiteHeader:** add option to hide menu ([#3815](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3815)) ([343e03f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/343e03f43e75623f1cedeb0c9314d0e05fcb539a))
+
+
+
+
+
 # [2.153.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.29...v2.153.0-next.30) (2023-07-10)
 
 
