@@ -1105,10 +1105,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     }
                   }
                   tabIndex={0}
-                  title="--"
+                  title="1,045"
                   type="button"
                 >
-                  --
+                  1,045
                 </button>
               </div>
               <span
@@ -1166,10 +1166,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     }
                   }
                   tabIndex={0}
-                  title="--"
+                  title="100,644"
                   type="button"
                 >
-                  --
+                  100,644
                 </button>
               </div>
               <span
