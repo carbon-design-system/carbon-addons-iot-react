@@ -1,7 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { gray60 } from '@carbon/colors';
 
 import { CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -169,7 +168,7 @@ describe('ValueCard', () => {
     expect(onAttributeClick).toHaveBeenCalledWith({ dataSourceId: 'v', value: 10000 });
   });
 
-  it('should show PREVIEW_DATA as secondary value when editable', () => {
+  it('should show PREVIEW_DATA as primary value when editable and no data', () => {
     render(
       <ValueCard
         id="myIdTest"
@@ -189,13 +188,11 @@ describe('ValueCard', () => {
           ],
         }}
         size={CARD_SIZES.SMALL}
-        values={{ v: 10000 }}
         isEditable
       />
     );
     const previewData = screen.getAllByText(PREVIEW_DATA);
-    expect(previewData).toHaveLength(2);
-    expect(previewData[1]).toHaveClass(`${iotPrefix}--value-card__attribute-secondary-value`);
-    expect(previewData[1]).toHaveStyle(`--secondary-value-color:${gray60}`);
+    expect(previewData).toHaveLength(1);
+    expect(previewData[0]).toHaveClass(`${iotPrefix}--value-card__value-renderer--value`);
   });
 });
