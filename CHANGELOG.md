@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.31...v2.153.0-next.32) (2023-07-28)
+
+
+### Features
+
+* **ValueCard:** disable preview in edit mode ([#3818](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3818)) ([5e97cd1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e97cd117368183e1b6672aa087b2c0d4fc71ad3))
+
+
+
+
+
 # [2.153.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.30...v2.153.0-next.31) (2023-07-19)
 
 
