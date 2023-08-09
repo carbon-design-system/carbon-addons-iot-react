@@ -596,7 +596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         onDrop={[Function]}
         style={
           Object {
-            "height": "3024px",
+            "height": "3664px",
           }
         }
       >
@@ -846,13 +846,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "304px",
-              "MozTransform": "translate(972px,0px)",
-              "OTransform": "translate(972px,0px)",
-              "WebkitTransform": "translate(972px,0px)",
+              "MozTransform": "translate(0px,160px)",
+              "OTransform": "translate(0px,160px)",
+              "WebkitTransform": "translate(0px,160px)",
               "height": "304px",
-              "msTransform": "translate(972px,0px)",
+              "msTransform": "translate(0px,160px)",
               "position": "absolute",
-              "transform": "translate(972px,0px)",
+              "transform": "translate(0px,160px)",
               "width": "308px",
             }
           }
@@ -1019,13 +1019,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "304px",
-              "MozTransform": "translate(0px,160px)",
-              "OTransform": "translate(0px,160px)",
-              "WebkitTransform": "translate(0px,160px)",
+              "MozTransform": "translate(324px,160px)",
+              "OTransform": "translate(324px,160px)",
+              "WebkitTransform": "translate(324px,160px)",
               "height": "304px",
-              "msTransform": "translate(0px,160px)",
+              "msTransform": "translate(324px,160px)",
               "position": "absolute",
-              "transform": "translate(0px,160px)",
+              "transform": "translate(324px,160px)",
               "width": "632px",
             }
           }
@@ -1100,13 +1100,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "624px",
-              "MozTransform": "translate(0px,480px)",
-              "OTransform": "translate(0px,480px)",
-              "WebkitTransform": "translate(0px,480px)",
+              "MozTransform": "translate(0px,1120px)",
+              "OTransform": "translate(0px,1120px)",
+              "WebkitTransform": "translate(0px,1120px)",
               "height": "624px",
-              "msTransform": "translate(0px,480px)",
+              "msTransform": "translate(0px,1120px)",
               "position": "absolute",
-              "transform": "translate(0px,480px)",
+              "transform": "translate(0px,1120px)",
               "width": "1280px",
             }
           }
@@ -2091,13 +2091,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "624px",
-              "MozTransform": "translate(0px,1120px)",
-              "OTransform": "translate(0px,1120px)",
-              "WebkitTransform": "translate(0px,1120px)",
+              "MozTransform": "translate(324px,1760px)",
+              "OTransform": "translate(324px,1760px)",
+              "WebkitTransform": "translate(324px,1760px)",
               "height": "624px",
-              "msTransform": "translate(0px,1120px)",
+              "msTransform": "translate(324px,1760px)",
               "position": "absolute",
-              "transform": "translate(0px,1120px)",
+              "transform": "translate(324px,1760px)",
               "width": "632px",
             }
           }
@@ -3459,13 +3459,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "624px",
-              "MozTransform": "translate(648px,1120px)",
-              "OTransform": "translate(648px,1120px)",
-              "WebkitTransform": "translate(648px,1120px)",
+              "MozTransform": "translate(648px,480px)",
+              "OTransform": "translate(648px,480px)",
+              "WebkitTransform": "translate(648px,480px)",
               "height": "624px",
-              "msTransform": "translate(648px,1120px)",
+              "msTransform": "translate(648px,480px)",
               "position": "absolute",
-              "transform": "translate(648px,1120px)",
+              "transform": "translate(648px,480px)",
               "width": "632px",
             }
           }
@@ -3792,13 +3792,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "624px",
-              "MozTransform": "translate(324px,1760px)",
-              "OTransform": "translate(324px,1760px)",
-              "WebkitTransform": "translate(324px,1760px)",
+              "MozTransform": "translate(324px,2400px)",
+              "OTransform": "translate(324px,2400px)",
+              "WebkitTransform": "translate(324px,2400px)",
               "height": "624px",
-              "msTransform": "translate(324px,1760px)",
+              "msTransform": "translate(324px,2400px)",
               "position": "absolute",
-              "transform": "translate(324px,1760px)",
+              "transform": "translate(324px,2400px)",
               "width": "308px",
             }
           }
@@ -4052,13 +4052,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           style={
             Object {
               "--card-default-height": "624px",
-              "MozTransform": "translate(0px,2400px)",
-              "OTransform": "translate(0px,2400px)",
-              "WebkitTransform": "translate(0px,2400px)",
+              "MozTransform": "translate(0px,3040px)",
+              "OTransform": "translate(0px,3040px)",
+              "WebkitTransform": "translate(0px,3040px)",
               "height": "624px",
-              "msTransform": "translate(0px,2400px)",
+              "msTransform": "translate(0px,3040px)",
               "position": "absolute",
-              "transform": "translate(0px,2400px)",
+              "transform": "translate(0px,3040px)",
               "width": "1280px",
             }
           }
