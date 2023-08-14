@@ -78,6 +78,7 @@
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
     "react": "16.14.0",
-    "webpack": "4"
+    "webpack": "4",
+    "semver": "7.5.2"
   }
 }
