@@ -1,4 +1,3 @@
-
 # Related component guide
 
 When [migrating to v11](https://carbondesignsystem.com/migrating/guide/overview/) we recommend transitioning your components to their related components in core [Carbon](https://github.com/carbon-design-system/carbon) and [Carbon for IBM Products](https://github.com/carbon-design-system/ibm-products). Please be aware that in certain cases, there may not be an exact 1:1 match in functionality. If necessary, please open an enhancement request or issue in the respective repository.
