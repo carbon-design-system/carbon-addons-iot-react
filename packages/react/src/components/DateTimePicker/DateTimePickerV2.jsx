@@ -21,6 +21,7 @@ const DateTimePicker = ({
   renderPresetTooltipText,
   onCancel,
   onApply,
+  onClear,
   i18n,
   light,
   locale,
@@ -33,6 +34,8 @@ const DateTimePicker = ({
   style,
   ...others
 }) => {
+  // make sure locale is 2 letters
+  const newLocale = locale?.length === 2 ? locale : locale.slice(0, 2);
   return useNewTimeSpinner ? (
     <DateTimePickerNew
       testId={testId}
@@ -50,9 +53,10 @@ const DateTimePicker = ({
       renderPresetTooltipText={renderPresetTooltipText}
       onCancel={onCancel}
       onApply={onApply}
+      onClear={onClear}
       i18n={i18n}
       light={light}
-      locale={locale}
+      locale={newLocale}
       id={id}
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
@@ -81,7 +85,7 @@ const DateTimePicker = ({
       onApply={onApply}
       i18n={i18n}
       light={light}
-      locale={locale}
+      locale={newLocale}
       id={id}
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}

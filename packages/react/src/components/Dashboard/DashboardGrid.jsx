@@ -221,7 +221,11 @@ const DashboardGrid = ({
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
   const handleLayoutChange = useCallback(
-    (layout, allLayouts) => onLayoutChange && onLayoutChange(layout, allLayouts),
+    (layout, allLayouts) => {
+      if (onLayoutChange) {
+        onLayoutChange(layout, allLayouts);
+      }
+    },
     [onLayoutChange]
   );
 

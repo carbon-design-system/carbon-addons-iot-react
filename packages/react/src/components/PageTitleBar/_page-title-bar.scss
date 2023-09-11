@@ -198,6 +198,11 @@
       transition: opacity $duration--fast-01 linear, transform $duration--fast-01 linear;
       margin-left: 0;
 
+      // Add 1px of padding to prevent tooltip outline from getting cropped
+      .#{$prefix}--tooltip__label {
+        padding-right: 1px;
+      }
+
       // hide the `/` after the breadcrumb for the current item
       &::after {
         display: none;

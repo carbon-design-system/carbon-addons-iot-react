@@ -659,6 +659,10 @@ export const Editable = () => {
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
         onAttributeClick={action('onAttributeClick')}
+        values={{
+          monthlySummary: number('Monthly summary value (values.monthlySummary)', 1045),
+          yearlySummary: number('Yearly summary value (values.yearlySummary)', 100644),
+        }}
       />
     </div>
   );

@@ -4,6 +4,8 @@ import { SvgPropType } from '../../constants/SharedPropTypes';
 import deprecate from '../../internal/deprecate';
 import { bundledIconNames } from '../../utils/bundledIcons';
 
+import { PIN_COLUMN } from './tableUtilities';
+
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
@@ -87,6 +89,8 @@ export const TableRowPropTypes = PropTypes.shape({
   isSelectable: PropTypes.bool,
   /** boolean to define load more row */
   hasLoadMore: PropTypes.bool,
+  /** If this row can be dragged. The table must be set to use `hasDragAndDrop`. */
+  isDraggable: PropTypes.bool,
 });
 
 export const TableRowsPropTypes = PropTypes.arrayOf(TableRowPropTypes);
@@ -229,6 +233,8 @@ export const I18NPropTypes = PropTypes.shape({
   batchActionsOverflowMenuText: PropTypes.string,
   /** overflow menu text callback for truncated filter tags */
   filterTagsOverflowMenuText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  /** I18N label for search icon in toolbar */
+  toolbarSearchIconDescription: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -398,3 +404,5 @@ export const TableToolbarActionsPropType = PropTypes.oneOfType([
     })
   ),
 ]);
+
+export const PinColumnPropTypes = PropTypes.oneOf(Object.values(PIN_COLUMN));

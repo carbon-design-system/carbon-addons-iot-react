@@ -162,6 +162,55 @@ describe('Card', () => {
     cy.findByTestId('Card-tooltip').should('not.exist');
   });
 
+  it('should expand overflow menu to max width', () => {
+    const overflowMenuCallback = cy.stub();
+    const longOverflowItemText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    mount(
+      <Card
+        style={{ width: '600px', height: '360px' }}
+        title="My Title"
+        id="my card"
+        size={CARD_SIZES.MEDIUM}
+        availableActions={{
+          range: false,
+          expand: false,
+          edit: false,
+          clone: false,
+          delete: false,
+          extra: true,
+        }}
+        testId="card_test"
+        extraActions={{
+          id: 'extramultiaction',
+          iconDescription: 'Settings',
+          children: [
+            {
+              id: 'firstItem',
+              itemText: longOverflowItemText,
+              callback: overflowMenuCallback,
+            },
+            {
+              id: 'secondItem',
+              itemText: 'Item2',
+              callback: () => {},
+            },
+          ],
+        }}
+      />
+    );
+
+    cy.findByRole('button', { name: 'open and close list of options' }).click();
+    cy.findByRole('menu').then(($el) => {
+      const menu = $el[0].getBoundingClientRect();
+      expect(menu.width).to.be.greaterThan(160);
+    });
+    cy.findByRole('menuitem', { name: longOverflowItemText })
+      .click()
+      .then(() => {
+        expect(overflowMenuCallback).to.be.calledOnce;
+      });
+  });
+
   describe('Card title tooltips', () => {
     const title =
       'Title Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate lectus id nulla euismod hendrerit. Integer enim arcu, volutpat non erat vitae, ullamcorper tincidunt enim. Sed porttitor fringilla sapien sit amet finibus.';

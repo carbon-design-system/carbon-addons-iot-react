@@ -102,6 +102,7 @@ Map {
       "aria-label": null,
       "children": null,
       "className": null,
+      "disableTruncation": "none",
       "hasOverflow": false,
       "noTrailingSlash": false,
       "testId": "breadcrumb",
@@ -115,6 +116,16 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "disableTruncation": Object {
+        "args": Array [
+          Array [
+            "first",
+            "last",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "hasOverflow": Object {
         "type": "bool",
@@ -648,7 +659,7 @@ Map {
       "i18n": Object {
         "actionFailedText": "Action failed",
         "batchActionsOverflowMenuText": "",
-        "batchCancel": "Cancel",
+        "batchCancel": "Clear selections",
         "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
@@ -709,6 +720,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarSearchIconDescription": "Search",
         "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
@@ -720,6 +732,7 @@ Map {
         "hasBatchActionToolbar": true,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
+        "hasDragAndDrop": false,
         "hasFastSearch": true,
         "hasFilter": false,
         "hasFilterRowIcon": false,
@@ -734,6 +747,8 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "pinColumn": "none",
+        "pinHeaderAndFooter": false,
         "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
         "shouldExpandOnRowClick": false,
@@ -794,6 +809,7 @@ Map {
           "search": Object {},
         },
       },
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actions": Object {
@@ -840,6 +856,12 @@ Map {
                     "type": "func",
                   },
                   "onColumnSelectionConfig": Object {
+                    "type": "func",
+                  },
+                  "onDrag": Object {
+                    "type": "func",
+                  },
+                  "onDrop": Object {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
@@ -1128,6 +1150,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -1481,6 +1506,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarSearchIconDescription": Object {
+              "type": "string",
+            },
             "toolbarTooltipLabel": Object {
               "type": "string",
             },
@@ -1509,6 +1537,9 @@ Map {
               "type": "bool",
             },
             "hasColumnSelectionConfig": Object {
+              "type": "bool",
+            },
+            "hasDragAndDrop": Object {
               "type": "bool",
             },
             "hasFastSearch": Object {
@@ -1614,6 +1645,19 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "pinColumn": Object {
+              "args": Array [
+                Array [
+                  "none",
+                  "first",
+                  "last",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveCellWhiteSpace": Object {
@@ -2349,6 +2393,9 @@ Map {
         ],
         "type": "shape",
       },
+      "zIndex": Object {
+        "type": "number",
+      },
     },
   },
   "TableHead" => Object {
@@ -2866,6 +2913,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarSearchIconDescription": Object {
+              "type": "string",
+            },
             "toolbarTooltipLabel": Object {
               "type": "string",
             },
@@ -2882,6 +2932,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasDragAndDrop": Object {
+              "type": "bool",
+            },
             "hasFilterRowIcon": Object {
               "type": "bool",
             },
@@ -2928,6 +2981,19 @@ Map {
               "type": "oneOf",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "pinColumn": Object {
+              "args": Array [
+                Array [
+                  "none",
+                  "first",
+                  "last",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
@@ -3138,10 +3204,12 @@ Map {
       "dismissText": "Dismiss",
       "expandedIds": Array [],
       "expandedRows": Array [],
+      "hasDragAndDrop": false,
       "hasRowActions": false,
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "hideDragHandles": false,
       "inProgressText": "In progress",
       "langDir": "ltr",
       "learnMoreText": "Learn more",
@@ -3149,6 +3217,7 @@ Map {
       "loadingMoreIds": Array [],
       "locale": null,
       "overflowMenuAria": "More actions",
+      "pinColumn": "none",
       "preserveCellWhiteSpace": false,
       "rowActionsState": Array [],
       "rowEditMode": false,
@@ -3163,6 +3232,7 @@ Map {
       "testId": "",
       "totalColumns": 0,
       "useRadioButtonSingleSelect": false,
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3172,6 +3242,12 @@ Map {
         "args": Array [
           Object {
             "onApplyRowActions": Object {
+              "type": "func",
+            },
+            "onDrag": Object {
+              "type": "func",
+            },
+            "onDrop": Object {
               "type": "func",
             },
             "onRowClicked": Object {
@@ -3369,6 +3445,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasDragAndDrop": Object {
+        "type": "bool",
+      },
       "hasRowActions": Object {
         "type": "bool",
       },
@@ -3404,6 +3483,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hideDragHandles": Object {
+        "type": "bool",
       },
       "inProgressText": Object {
         "type": "string",
@@ -3456,6 +3538,16 @@ Map {
       },
       "overflowMenuAria": Object {
         "type": "string",
+      },
+      "pinColumn": Object {
+        "args": Array [
+          Array [
+            "none",
+            "first",
+            "last",
+          ],
+        ],
+        "type": "oneOf",
       },
       "preserveCellWhiteSpace": Object {
         "type": "bool",
@@ -3521,6 +3613,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -3710,6 +3805,9 @@ Map {
         ],
         "isRequired": true,
         "type": "oneOf",
+      },
+      "zIndex": Object {
+        "type": "number",
       },
     },
   },
@@ -4461,6 +4559,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "isDraggable": Object {
+                  "type": "bool",
+                },
                 "isSelectable": Object {
                   "type": "bool",
                 },
@@ -4657,6 +4758,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarSearchIconDescription": Object {
               "type": "string",
             },
             "toolbarTooltipLabel": Object {
@@ -9616,12 +9720,14 @@ Map {
         "customRangeLabel": "Custom range",
         "customRangeLinkLabel": "Custom Range",
         "decrement": "Decrement",
+        "endAriaLabel": "Date time end",
         "endTimeLabel": "End time",
         "hours": "hours",
         "increment": "Increment",
         "intervalLabels": Array [],
+        "invalidDateText": "Date is required",
         "invalidNumberLabel": "Number is not valid",
-        "invalidText": "The date time entered is invalid",
+        "invalidText": "Time is required",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
@@ -9631,6 +9737,7 @@ Map {
         "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
         "resetBtnLabel": "Clear",
+        "startAriaLabel": "Date time start",
         "startTimeLabel": "Start time",
         "timePickerInvalidText": undefined,
         "toLabel": "to",
@@ -9669,6 +9776,7 @@ Map {
       "menuOffset": undefined,
       "onApply": null,
       "onCancel": null,
+      "onClear": null,
       "presets": Array [
         Object {
           "id": "item-01",
@@ -10099,6 +10207,9 @@ Map {
         "type": "func",
       },
       "onCancel": Object {
+        "type": "func",
+      },
+      "onClear": Object {
         "type": "func",
       },
       "presets": Object {
@@ -11163,8 +11274,9 @@ Map {
   },
   "Header" => Object {
     "defaultProps": Object {
-      "appSwitcherLabel": "AppSwitcher",
+      "appSwitcherLabel": "App Switcher",
       "className": "main-header",
+      "handleHeaderNameClick": [Function],
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
@@ -11250,6 +11362,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "handleHeaderNameClick": Object {
+        "type": "func",
       },
       "hasSideNav": Object {
         "type": "bool",
@@ -11765,7 +11880,9 @@ Map {
       "customProfileLinks": Array [],
       "extraContent": null,
       "globalApplications": Array [],
+      "handleHeaderNameClick": null,
       "hasSideNav": false,
+      "hideMenuButton": false,
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -12028,7 +12145,23 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "handleHeaderNameClick": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "any",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "hasSideNav": Object {
+        "type": "bool",
+      },
+      "hideMenuButton": Object {
         "type": "bool",
       },
       "i18n": Object {
@@ -15580,7 +15713,7 @@ Map {
           },
           "sm": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "xl": Object {
             "h": 2,

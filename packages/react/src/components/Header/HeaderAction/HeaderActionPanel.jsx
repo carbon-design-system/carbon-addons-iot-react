@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
@@ -9,11 +9,14 @@ import { white } from '@carbon/colors';
 import { APP_SWITCHER } from '../headerConstants';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 import { HeaderActionPropTypes } from '../HeaderPropTypes';
+import { isSafari } from '../../SuiteHeader/suiteHeaderUtils';
 
 const { prefix: carbonPrefix } = settings;
 
 const propTypes = {
   ...HeaderActionPropTypes,
+  /** unique id for the action panel */
+  id: PropTypes.string.isRequired,
   /** Ref object to be attached to the parent that should receive focus when a menu is closed */
   focusRef: PropTypes.oneOfType([
     // Either a function
@@ -52,7 +55,10 @@ const HeaderActionPanel = ({
   i18n,
   inOverflow,
   showCloseIconWhenPanelExpanded,
+  id,
 }) => {
+  const panelRef = useRef();
+
   const mergedI18n = useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -60,17 +66,47 @@ const HeaderActionPanel = ({
     }),
     [i18n]
   );
+
+  /**
+   * This workaround is needed because blur event is not triggered
+   * on button in Safari. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#clicking_and_focus
+   */
+  useEffect(() => {
+    if (!isSafari()) {
+      return;
+    }
+
+    const handleOutsidePanelClick = (event) => {
+      if (
+        (panelRef.current && panelRef.current.contains(event.target)) ||
+        (focusRef.current && focusRef.current.contains(event.target))
+      ) {
+        return;
+      }
+
+      if (isExpanded) {
+        onToggleExpansion();
+      }
+    };
+
+    document.addEventListener('click', handleOutsidePanelClick, { capture: true });
+
+    // eslint-disable-next-line consistent-return
+    return () => document.removeEventListener('click', handleOutsidePanelClick, { capture: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded, onToggleExpansion]);
+
   return (
     <>
       <HeaderGlobalAction
         className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
         key={`menu-item-${item.label}-global`}
-        title={item.label}
         aria-label={item.label}
         aria-haspopup="menu"
         aria-expanded={isExpanded}
         onClick={() => onToggleExpansion()}
         ref={focusRef}
+        id={id}
       >
         {renderLabel ? (
           item.label
@@ -82,9 +118,9 @@ const HeaderActionPanel = ({
       </HeaderGlobalAction>
       <HeaderPanel
         data-testid="action-btn__panel"
+        ref={panelRef}
         tabIndex="-1"
         key={`panel-${index}`}
-        aria-label="Header Panel"
         className={
           item.label !== APP_SWITCHER
             ? classnames('action-btn__headerpanel', {

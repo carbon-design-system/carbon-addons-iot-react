@@ -40,6 +40,9 @@ class ColumnHeaderRow extends Component {
     testId: PropTypes.string,
     /** shows an additional column that can expand/shrink as the table is resized  */
     showExpanderColumn: PropTypes.bool.isRequired,
+    /** Set to true if the table support drag and drop. Inserts a cell in the "darg handle" column
+     * for spacing. */
+    hasDragAndDrop: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -47,6 +50,7 @@ class ColumnHeaderRow extends Component {
     columnSelectionConfigText: defaultI18NPropTypes.columnSelectionConfig,
     isDisabled: false,
     testId: '',
+    hasDragAndDrop: false,
   };
 
   reorderColumn = (srcIndex, destIndex) => {
@@ -78,6 +82,7 @@ class ColumnHeaderRow extends Component {
       isDisabled,
       testId,
       showExpanderColumn,
+      hasDragAndDrop,
     } = this.props;
 
     const visibleColumns = columns.filter(
@@ -86,6 +91,9 @@ class ColumnHeaderRow extends Component {
     return (
       <DragAndDrop>
         <TableRow data-testid={testId} className={`${iotPrefix}--column-header-row--table-row`}>
+          {hasDragAndDrop ? (
+            <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
+          ) : null}
           {hasRowSelection === 'multi' ? (
             <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
           ) : null}

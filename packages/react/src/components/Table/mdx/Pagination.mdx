@@ -51,8 +51,9 @@ must also set the `totalItems` prop explicitly.
 Normally the number of pages are automatically calculated by the total items divided by the page size but
 for very large data sets the number of options available in the current page dropdown might grow too large.
 If the `totalItems` is dynamically set but risks being very large the `view.pagination.maxPages` prop,
-which must be a positive integer, can be used to explicitly limit the number of pages and prevent the
-current page dropdown from becoming sluggish.
+which must be a positive integer, can be used to explicitly limit the number of pages. If number of pages
+exceed the limit set by this prop, then `<SimplePagination />` component will be rendered which does not 
+have current page dropdown.
 
 ```jsx
 ...

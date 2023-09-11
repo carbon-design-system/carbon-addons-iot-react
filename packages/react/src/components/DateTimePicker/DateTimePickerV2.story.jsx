@@ -187,11 +187,13 @@ export const SingleSelect = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        onClear={action('onClear')}
         datePickerType="single"
         showRelativeOption={boolean('show relative option', false)}
         invalid={boolean('invalid', false)}
         disabled={boolean('disabled', false)}
         i18n={object('i18n', {
+          startTimeLabel: 'Time',
           timePickerInvalidText: 'A valid value is required',
           invalidText: 'The date time entered is invalid',
           amString: '上午',

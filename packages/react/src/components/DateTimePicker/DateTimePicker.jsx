@@ -323,10 +323,13 @@ const DateTimePicker = ({
     ...defaultProps.i18n,
     ...i18n,
   };
+
+  // make sure locale is 2 letters
+  const newLocale = locale?.length === 2 ? locale : locale.slice(0, 2);
   // initialize the dayjs locale
   useEffect(() => {
-    dayjs.locale(locale);
-  }, [locale]);
+    dayjs.locale(newLocale);
+  }, [newLocale]);
 
   // State
   const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
@@ -954,7 +957,7 @@ const DateTimePicker = ({
                         value={
                           absoluteValue ? [absoluteValue.startDate, absoluteValue.endDate] : ''
                         }
-                        locale={locale}
+                        locale={newLocale}
                       >
                         <DatePickerInput
                           labelText=""

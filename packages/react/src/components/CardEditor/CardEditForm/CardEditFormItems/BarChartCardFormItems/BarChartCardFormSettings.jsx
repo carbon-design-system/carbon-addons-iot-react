@@ -33,6 +33,7 @@ const propTypes = {
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
       showLegend: PropTypes.bool,
+      maximumDataPoints: PropTypes.number,
     }),
     interval: PropTypes.string,
   }),
@@ -50,6 +51,7 @@ const propTypes = {
     autoLabel: PropTypes.string,
     horizontal: PropTypes.string,
     vertical: PropTypes.string,
+    maximumDataPoints: PropTypes.string,
   }),
 };
 
@@ -67,6 +69,7 @@ const defaultProps = {
     autoLabel: 'Auto',
     horizontal: 'Horizontal',
     vertical: 'Vertical',
+    maximumDataPoints: 'Maximum data points',
   },
 };
 
@@ -151,6 +154,23 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             })
           }
           value={content?.precision}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_maximum_data_points`}
+          labelText={mergedI18n.maximumDataPoints}
+          light
+          type="number"
+          onChange={(evt) => {
+            const maximumDataPointsString = evt.target.value;
+            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, maximumDataPoints },
+            });
+          }}
+          value={content?.maximumDataPoints}
         />
       </div>
     </>

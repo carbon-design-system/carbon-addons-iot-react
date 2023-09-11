@@ -15,6 +15,7 @@ import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
 import deprecate from '../../internal/deprecate';
+import SimplePagination from '../SimplePagination/SimplePagination';
 
 import {
   TableColumnsPropTypes,
@@ -30,6 +31,7 @@ import {
   TableFiltersPropType,
   TableToolbarActionsPropType,
   TableRowsPropTypes,
+  PinColumnPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -41,6 +43,7 @@ import TableFoot from './TableFoot/TableFoot';
 import TableMultiSortModal from './TableMultiSortModal/TableMultiSortModal';
 import { useShowExpanderColumn } from './expanderColumnHook';
 import ErrorTable from './ErrorTable/ErrorTable';
+import { PIN_COLUMN } from './tableUtilities';
 
 const { iotPrefix } = settings;
 
@@ -65,7 +68,13 @@ const propTypes = {
   data: TableRowsPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
-
+  /**
+   * Optional base z-index for the table. Used with drag and drop to ensure the drag image is "over"
+   * other elements on the page. This is generally only needed if the table is in a modal dialog
+   * with z-index of its own. In that case, set this z-index to be higher than the modal to be sure
+   * any drags are seen above the modal.
+   */
+  zIndex: PropTypes.number,
   /** Experimental: Turns on the carbon sticky-header feature. */
   stickyHeader: experimental('stickyHeader'),
   /** Optional properties to customize how the table should be rendered */
@@ -146,6 +155,17 @@ const propTypes = {
     preserveCellWhiteSpace: PropTypes.bool,
     /** display icon button in filter row */
     hasFilterRowIcon: PropTypes.bool,
+    /** column to pin in the table */
+    pinColumn: PinColumnPropTypes,
+    /**
+     * If rows can be dragged and dropped on top of each other. When this is true there will always
+     * be space reserved for a drag handle at the start of the row. Each rows data must indicate if
+     * that row can be dragged by setting `isDraggable: true` on their row data. The table also needs
+     * `actions.table.onDrag` and `actions.table.onDrop` callback props.
+     */
+    hasDragAndDrop: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -361,6 +381,22 @@ const propTypes = {
       onRowLoadMore: PropTypes.func,
       /** call back function for when icon button in filter row is clicked  (evt) => {} */
       onFilterRowIconClick: PropTypes.func,
+      /**
+       * Required callback to support drag and drop. This gets the rows values being dragged. It
+       * must return an object of the row IDs that can be dropped on, and a node use as the preview
+       * of what's being dragged (typically the name of the row, possibly with an icon).
+       *
+       * @type {(rows: object[]) => {dropIds: string[], preview: React.Node}}
+       */
+      onDrag: PropTypes.func,
+      /**
+       * Required callback to support drag and drop. This is called after a successful drop and is
+       * passed the ID of the row that was dragged and the ID of the row that was dropped on. It's
+       * up to the caller to decide what to do with that--the table does not update itself.
+       *
+       * @type {(dragRowIds: string[], dropRowId) => void}
+       */
+      onDrop: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -383,6 +419,7 @@ export const defaultProps = (baseProps) => ({
   title: null,
   tooltip: null,
   secondaryTitle: null,
+  zIndex: 0,
   options: {
     hasAggregations: false,
     hasPagination: false,
@@ -409,6 +446,9 @@ export const defaultProps = (baseProps) => ({
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
     hasFilterRowIcon: false,
+    pinColumn: PIN_COLUMN.NONE,
+    hasDragAndDrop: false,
+    pinHeaderAndFooter: false,
   },
   size: undefined,
   view: {
@@ -519,7 +559,7 @@ export const defaultProps = (baseProps) => ({
     openMenuAria: 'Open menu',
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
-    batchCancel: 'Cancel',
+    batchCancel: 'Clear selections',
     itemsSelected: (selectedCount) => `${selectedCount} items selected`,
     itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
@@ -563,6 +603,7 @@ export const defaultProps = (baseProps) => ({
     filterRowIconDescription: 'Edit filters',
     batchActionsOverflowMenuText: '',
     filterTagsOverflowMenuText: '+{n}',
+    toolbarSearchIconDescription: 'Search',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -592,6 +633,7 @@ const Table = (props) => {
     error,
     testId,
     size,
+    zIndex,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -777,12 +819,29 @@ const Table = (props) => {
     columns,
   });
 
+  // Checks if any selected rows are not draggable. If not, disables drag and drop, which hides all
+  // the drag handles. This is so we don't try to drag a selection that include an undraggable row.
+  const hideDragHandles = useMemo(() => {
+    if (!options.hasDragAndDrop) return true;
+
+    if (view.table.selectedIds.length === 0) return false;
+
+    const selectedSet = new Set(view.table.selectedIds);
+
+    const areAnySelectedUndraggable = data.some(
+      (row) => selectedSet.has(row.id) && !row.isDraggable
+    );
+
+    return areAnySelectedUndraggable;
+  }, [options.hasDragAndDrop, view.table.selectedIds, data]);
+
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
     (options.hasRowExpansion || options.hasRowNesting ? 1 : 0) +
     (options.hasRowActions ? 1 : 0) +
-    (showExpanderColumn ? 1 : 0);
+    (showExpanderColumn ? 1 : 0) +
+    (options.hasDragAndDrop ? 1 : 0);
 
   const isFiltered =
     view.filters.length > 0 ||
@@ -840,7 +899,9 @@ const Table = (props) => {
     <TableContainer
       style={style}
       data-testid={`${id || testId}-table-container`}
-      className={classnames(className, `${iotPrefix}--table-container`)}
+      className={classnames(className, `${iotPrefix}--table-container`, {
+        [`${iotPrefix}--table-container--pin-header-and-footer`]: options.pinHeaderAndFooter,
+      })}
     >
       {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
@@ -879,6 +940,7 @@ const Table = (props) => {
               toolbarLabelAria: i18n.toolbarLabelAria,
               toolbarTooltipLabel: i18n.toolbarTooltipLabel,
               batchActionsOverflowMenuText: i18n.batchActionsOverflowMenuText,
+              toolbarSearchIconDescription: i18n.toolbarSearchIconDescription,
             }}
             actions={{
               ...pick(
@@ -968,7 +1030,7 @@ const Table = (props) => {
                   <Tag
                     key={advancedFilter.filterId}
                     filter
-                    title={advancedFilter.filterTitleText}
+                    title={i18n.clearFilterAria}
                     onClose={(e) => {
                       if (typeof actions?.toolbar?.onRemoveAdvancedFilter === 'function') {
                         actions.toolbar.onRemoveAdvancedFilter(e, advancedFilter.filterId);
@@ -1031,7 +1093,10 @@ const Table = (props) => {
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths',
-                  'hasFilterRowIcon'
+                  'hasFilterRowIcon',
+                  'pinColumn',
+                  'hasDragAndDrop',
+                  'pinHeaderAndFooter'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
@@ -1084,6 +1149,7 @@ const Table = (props) => {
                 {...pick(options, 'hasRowSelection', 'hasRowActions')}
                 hasRowExpansion={!!options.hasRowExpansion}
                 hasRowNesting={!!options.hasRowNesting}
+                hasDragAndDrop={!!options.hasDragAndDrop}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
@@ -1113,6 +1179,7 @@ const Table = (props) => {
                 expandedIds={view.table.expandedIds}
                 selectedIds={view.table.selectedIds}
                 loadingMoreIds={view.table.loadingMoreIds}
+                zIndex={zIndex}
                 {...pick(
                   i18n,
                   'overflowMenuAria',
@@ -1134,8 +1201,10 @@ const Table = (props) => {
                   'shouldExpandOnRowClick',
                   'shouldLazyRender',
                   'preserveCellWhiteSpace',
-                  'useRadioButtonSingleSelect'
+                  'useRadioButtonSingleSelect',
+                  'hasDragAndDrop'
                 )}
+                hideDragHandles={hideDragHandles}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
                 truncateCellText={useCellTextTruncate}
@@ -1148,12 +1217,15 @@ const Table = (props) => {
                   'onClearRowError',
                   'onRowExpanded',
                   'onRowClicked',
-                  'onRowLoadMore'
+                  'onRowLoadMore',
+                  'onDrag',
+                  'onDrop'
                 )}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
                 size={size}
+                pinColumn={options.pinColumn}
               />
             ) : (
               <EmptyTable
@@ -1203,27 +1275,42 @@ const Table = (props) => {
         </CarbonTable>
       </div>
       {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
-        <Pagination
-          pageSize={paginationProps.pageSize}
-          pageSizes={paginationProps.pageSizes}
-          page={paginationProps.page}
-          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
-          totalItems={
-            paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
-              ? paginationProps.totalItems
-              : Math.ceil(maxPages * paginationProps.pageSize)
-          }
-          onChange={actions.pagination.onChangePage}
-          backwardText={i18n.pageBackwardAria}
-          forwardText={i18n.pageForwardAria}
-          pageNumberText={i18n.pageNumberAria}
-          itemsPerPageText={i18n.itemsPerPage}
-          itemRangeText={i18n.itemsRangeWithTotal}
-          pageRangeText={i18n.pageRange}
-          preventInteraction={rowEditMode || singleRowEditMode}
-          testId={`${id || testId}-table-pagination`}
-          size={paginationProps.size}
-        />
+        paginationProps.totalItems > Math.ceil(maxPages * paginationProps.pageSize) ? (
+          <SimplePagination
+            prevPageText={i18n.pageBackwardAria}
+            nextPageText={i18n.pageForwardAria}
+            totalItems={paginationProps.totalItems}
+            page={paginationProps.page}
+            maxPage={Math.ceil(paginationProps.totalItems / paginationProps.pageSize)}
+            onPage={(page) =>
+              actions.pagination.onChangePage({ page, pageSize: paginationProps.pageSize })
+            }
+            testId={`${id || testId}-table-pagination`}
+            size={size}
+          />
+        ) : (
+          <Pagination
+            pageSize={paginationProps.pageSize}
+            pageSizes={paginationProps.pageSizes}
+            page={paginationProps.page}
+            isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+            totalItems={
+              paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
+                ? paginationProps.totalItems
+                : Math.ceil(maxPages * paginationProps.pageSize)
+            }
+            onChange={actions.pagination.onChangePage}
+            backwardText={i18n.pageBackwardAria}
+            forwardText={i18n.pageForwardAria}
+            pageNumberText={i18n.pageNumberAria}
+            itemsPerPageText={i18n.itemsPerPage}
+            itemRangeText={i18n.itemsRangeWithTotal}
+            pageRangeText={i18n.pageRange}
+            preventInteraction={rowEditMode || singleRowEditMode}
+            testId={`${id || testId}-table-pagination`}
+            size={paginationProps.size}
+          />
+        )
       ) : null}
       {options.hasMultiSort && (
         <TableMultiSortModal

@@ -22,6 +22,7 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  PinColumnPropTypes,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -31,6 +32,7 @@ import { OverflowMenu } from '../../OverflowMenu';
 import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
+import { pinColumnClassNames } from '../tableUtilities';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -80,6 +82,11 @@ const propTypes = {
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
     hasFilterRowIcon: PropTypes.bool,
+    hasDragAndDrop: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
+    /** column to pin in the table */
+    pinColumn: PinColumnPropTypes,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -205,6 +212,9 @@ const TableHead = ({
     useAutoTableLayoutForResize,
     preserveColumnWidths,
     useRadioButtonSingleSelect,
+    hasDragAndDrop,
+    pinHeaderAndFooter,
+    pinColumn,
   },
   columns,
   columnGroups,
@@ -430,10 +440,13 @@ const TableHead = ({
 
   return (
     <CarbonTableHead
-      className={classnames({
-        lightweight,
-        [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
-      })}
+      className={classnames(
+        {
+          lightweight,
+          [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
+        },
+        pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+      )}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
       // TODO: remove deprecated 'testID' in v3
@@ -445,6 +458,12 @@ const TableHead = ({
           [`${iotPrefix}--table-header__column-row--prevent-small-sizes`]: showColumnGroups,
         })}
       >
+        {hasDragAndDrop && (
+          <TableHeader width="2rem" initialWidth="2rem">
+            {/* This just takes up space, but is unlabeled. */}
+          </TableHeader>
+        )}
+
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             id={`${tableId}-expand`}
@@ -689,6 +708,8 @@ const TableHead = ({
           filterRowIcon={filterRowIcon}
           filterRowIconDescription={filterRowIconDescription}
           onFilterRowIconClick={onFilterRowIconClick}
+          pinHeaderAndFooter={pinHeaderAndFooter}
+          hasDragAndDrop={hasDragAndDrop}
         />
       )}
       {activeBar === 'column' && (
@@ -708,6 +729,7 @@ const TableHead = ({
           columnSelectionConfigText={i18n.columnSelectionConfig}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          hasDragAndDrop={hasDragAndDrop}
         />
       )}
     </CarbonTableHead>
