@@ -31,6 +31,10 @@ class IdleTimer {
   }
 
   startIdleUserDetectionInterval() {
+    if (this.TIMEOUT === 0) {
+      // No reason to do any of this if they have not defined a timeout
+      return;
+    }
     // Push the cookie forward by this.TIMEOUT
     this.updateUserInactivityTimeoutCookie();
     // Reset the countdown
