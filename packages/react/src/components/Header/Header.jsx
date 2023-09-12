@@ -142,6 +142,7 @@ const Header = ({
           data-testid={`${testId}-menu-button`}
           aria-label={isSideNavExpanded ? mergedI18n.closeMenu : mergedI18n.openMenu}
           onClick={onClickSideNavExpand}
+          isActive={isSideNavExpanded}
         />
       )}
       <HeaderName
