@@ -39,6 +39,15 @@ describe('IdleTimer', () => {
     expect(clearInterval).not.toHaveBeenCalled();
     expect(setInterval).toHaveBeenCalledTimes(1);
   });
+  it('does not start the timer when timeout is zero', () => {
+    timer.cleanUp();
+    // The creation and cleanup of the first timer should have triggered setInterval and clearInterval once
+    expect(clearInterval).toHaveBeenCalled();
+    expect(setInterval).toHaveBeenCalledTimes(1);
+    // After the creation of the other timer with timeout set to 0, no new call to setInterval should happen
+    timer = new IdleTimer({ timeout: 0 });
+    expect(setInterval).toHaveBeenCalledTimes(1);
+  });
   it('does nothing on an interval cycle if timeout has not been reached yet', () => {
     // Simulate a timestamp cookie that is slightly in the future
     Object.defineProperty(window.document, 'cookie', {
