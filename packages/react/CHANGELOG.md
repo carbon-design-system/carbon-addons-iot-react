@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.33...v2.153.0-next.34) (2023-09-12)
+
+
+### Bug Fixes
+
+* **IdleTimer:** Preventing the IdleTimer logic to start its timer if timeout is 0. ([#3825](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3825)) ([9da0f52](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9da0f52d1aa25ed79ea2141df3d18a3595a4645e))
+
+
+
+
+
 # [2.153.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.32...v2.153.0-next.33) (2023-08-10)
 
 
