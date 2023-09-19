@@ -7,6 +7,7 @@ import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
 import classnames from 'classnames';
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
+import { get, set, cloneDeep } from 'lodash-es';
 
 import SideNav, { SideNavPropTypes } from '../SideNav/SideNav';
 import { ToastNotification } from '../Notification';
@@ -65,6 +66,7 @@ const defaultProps = {
   isActionItemVisible: () => true,
   handleHeaderNameClick: null,
   hideMenuButton: false,
+  closeSideNavOnNavigation: false,
 };
 
 const propTypes = {
@@ -121,13 +123,13 @@ const propTypes = {
   testId: PropTypes.string,
   /** Optional callback when user clicks on header name */
   handleHeaderNameClick: PropTypes.oneOfType([PropTypes.func, PropTypes.any]),
-
   /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
   // eslint-disable-next-line react/forbid-foreign-prop-types
   isActionItemVisible: Header.propTypes.isActionItemVisible,
-
   /** Force menu button to hide regardless of side nav props */
   hideMenuButton: PropTypes.bool,
+  /** Force side nav to close upon item click */
+  closeSideNavOnNavigation: PropTypes.bool,
 };
 
 const SuiteHeader = ({
@@ -159,6 +161,7 @@ const SuiteHeader = ({
   testId,
   handleHeaderNameClick: handleHeaderNameClickProps,
   hideMenuButton,
+  closeSideNavOnNavigation,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -177,6 +180,46 @@ const SuiteHeader = ({
       setShowToast(true);
     }
   }, [surveyData]);
+
+  // Function to include close side nav functionality to items when they are clicked
+  const setOnClickDecorators = useCallback((sNavProps, onClickSideNavExpand) => {
+    const clickableItems = [];
+    const recursivelyGetClickableItems = (propValue, parentProp) => {
+      if (!parentProp) {
+        // Get links and recentLinks
+        Object.entries(propValue).forEach(([k, v]) => {
+          if (k === 'links' || k === 'recentLinks') {
+            recursivelyGetClickableItems(v, k);
+          }
+        });
+      } else if (Array.isArray(propValue)) {
+        // If the propValue is an array, check its items
+        propValue.forEach((i, idx) => recursivelyGetClickableItems(i, `${parentProp}[${idx}]`));
+      } else if ((propValue?.childContent ?? []).length > 0) {
+        // If the propValue contains childContent, check each one of them
+        recursivelyGetClickableItems(propValue.childContent, `${parentProp}.childContent`);
+      } else if (propValue?.metaData?.onClick) {
+        // If propValue doesn't contain children and it has metaData with onClick, add it to the clickableItems array
+        clickableItems.push(`${parentProp}.metaData`);
+      }
+    };
+    recursivelyGetClickableItems(sNavProps);
+
+    // Clone side nav props object
+    const cloned = cloneDeep(sNavProps);
+    clickableItems.forEach((i) => {
+      const item = get(cloned, i);
+      // Change onClick function to add onClickSideNavExpand call
+      set(cloned, i, {
+        ...item,
+        onClick: (...args) => {
+          item.onClick(...args);
+          onClickSideNavExpand(...args);
+        },
+      });
+    });
+    return cloned;
+  }, []);
 
   const isMultiWorkspace = workspaces?.length > 0;
   const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
@@ -595,11 +638,14 @@ const SuiteHeader = ({
                 },
               ].filter((i) => i)}
               showCloseIconWhenPanelExpanded
+              isSideNavExpanded={isSideNavExpanded}
               {...otherHeaderProps}
             />
             {sideNavProps ? (
               <SideNav
-                {...sideNavProps}
+                {...(closeSideNavOnNavigation
+                  ? setOnClickDecorators(sideNavProps, onClickSideNavExpand)
+                  : sideNavProps)}
                 isSideNavExpanded={isSideNavExpanded}
                 testId={`${testId}-side-nav`}
               />
