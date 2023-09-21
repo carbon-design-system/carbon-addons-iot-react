@@ -172,6 +172,7 @@ export const SideNavPropTypes = {
   }),
 
   testId: PropTypes.string,
+  forceCloseState: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -190,6 +191,7 @@ const defaultProps = {
   },
   testId: 'side-nav',
   recentLinks: [],
+  forceCloseState: false,
 };
 
 /**
@@ -223,6 +225,7 @@ const SideNav = ({
   i18n,
   testId,
   recentLinks,
+  forceCloseState,
   ...props
 }) => {
   /**
@@ -382,6 +385,7 @@ const SideNav = ({
       className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
+        [`${iotPrefix}--side-nav--force-close`]: forceCloseState,
       })}
       expanded={isSideNavExpanded}
       // TODO: Will be added back in when footer is added for rails.

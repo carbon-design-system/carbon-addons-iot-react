@@ -167,6 +167,7 @@ const SuiteHeader = ({
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
+  const [isHoveringOverSideNav, setHoveringOverSideNav] = useState(false);
   const translate = useCallback(
     (string, substitutions) =>
       substitutions.reduce((acc, [key, val]) => acc.replace(key, val), string),
@@ -182,7 +183,7 @@ const SuiteHeader = ({
   }, [surveyData]);
 
   // Function to include close side nav functionality to items when they are clicked
-  const setOnClickDecorators = useCallback((sNavProps, onClickSideNavExpand) => {
+  const setOnClickDecorators = useCallback((sNavProps, isExpanded, onClickSideNavExpand) => {
     const clickableItems = [];
     const recursivelyGetClickableItems = (propValue, parentProp) => {
       if (!parentProp) {
@@ -198,7 +199,7 @@ const SuiteHeader = ({
       } else if ((propValue?.childContent ?? []).length > 0) {
         // If the propValue contains childContent, check each one of them
         recursivelyGetClickableItems(propValue.childContent, `${parentProp}.childContent`);
-      } else if (propValue?.metaData?.onClick) {
+      } else if (propValue?.metaData) {
         // If propValue doesn't contain children and it has metaData with onClick, add it to the clickableItems array
         clickableItems.push(`${parentProp}.metaData`);
       }
@@ -213,8 +214,13 @@ const SuiteHeader = ({
       set(cloned, i, {
         ...item,
         onClick: (...args) => {
-          item.onClick(...args);
-          onClickSideNavExpand(...args);
+          if (item.onClick) {
+            item.onClick(...args);
+          }
+          if (isExpanded) {
+            // Only allow toggling off the side nav expanded state
+            onClickSideNavExpand(...args);
+          }
         },
       });
     });
@@ -644,10 +650,12 @@ const SuiteHeader = ({
             {sideNavProps ? (
               <SideNav
                 {...(closeSideNavOnNavigation
-                  ? setOnClickDecorators(sideNavProps, onClickSideNavExpand)
+                  ? setOnClickDecorators(sideNavProps, isSideNavExpanded, onClickSideNavExpand)
                   : sideNavProps)}
+                forceCloseState={!isSideNavExpanded && isHoveringOverSideNav} // If isSideNavExpanded has been set to false (by clicking one of the nav items) and the cursor is still hovering over the nav, force the close state.
                 isSideNavExpanded={isSideNavExpanded}
                 testId={`${testId}-side-nav`}
+                onToggle={(e, v) => setHoveringOverSideNav(v)}
               />
             ) : null}
           </>
