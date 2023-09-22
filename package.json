@@ -1,8 +1,5 @@
 {
   "name": "ibm-ai-applications",
-  "engines": {
-    "node": "12.x || 14.x  || 16.x"
-  },
   "workspaces": {
     "packages": [
       "packages/*"
