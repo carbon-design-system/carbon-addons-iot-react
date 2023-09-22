@@ -9,10 +9,12 @@ describe('Walkme', () => {
     render(<Walkme path="/some/path" />);
     // Make sure the scripts in Walkme component were executed
     await waitFor(() => expect(window._walkmeConfig).toEqual({ smartLoad: true }));
+    await waitFor(() => expect(window.walkme_get_language()).toEqual(''));
   });
   it('renders walkme with specified language', async () => {
     render(<Walkme path="/some/path" lang="pt-BR" />);
     // Make sure the scripts in Walkme component were executed
     await waitFor(() => expect(window._walkmeConfig).toEqual({ smartLoad: true }));
+    await waitFor(() => expect(window.walkme_get_language()).toEqual('pt-BR'));
   });
 });

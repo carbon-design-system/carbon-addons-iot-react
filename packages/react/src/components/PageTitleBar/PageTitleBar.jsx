@@ -272,7 +272,7 @@ const PageTitleBar = ({
   const titleActions = useMemo(
     () => (
       <>
-        {description && (collapsed || titleBarContent) ? (
+        {description && (collapsed || condensed) ? (
           <Tooltip
             tabIndex={0}
             triggerText=""
@@ -306,12 +306,12 @@ const PageTitleBar = ({
     [
       description,
       collapsed,
-      titleBarContent,
+      condensed,
       tooltipIconDescription,
+      testId,
       editable,
       editIconDescription,
       onEdit,
-      testId,
     ]
   );
 
@@ -378,7 +378,22 @@ const PageTitleBar = ({
                       isCurrentPage
                       title={title}
                     >
-                      {title}
+                      <>
+                        {title}
+                        {description ? (
+                          <Tooltip
+                            tabIndex={0}
+                            triggerText=""
+                            triggerId="tooltip"
+                            tooltipId="tooltip"
+                            renderIcon={Information16}
+                            iconDescription={tooltipIconDescription}
+                            data-testid={`${testId}-tooltip`}
+                          >
+                            {typeof description === 'string' ? <p>{description}</p> : description}
+                          </Tooltip>
+                        ) : null}
+                      </>
                     </BreadcrumbItem>
                   ) : null}
                 </Breadcrumb>
@@ -393,7 +408,7 @@ const PageTitleBar = ({
                 {titleActions}
               </div>
             </div>
-            {description && !collapsed && !titleBarContent ? (
+            {description && !collapsed && !condensed ? (
               <p className="page-title-bar-description">{description}</p>
             ) : null}
             <div className="page-title-bar-header-right">{extraContent || rightContent}</div>

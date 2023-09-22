@@ -192,7 +192,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace;
 
   return (
-    <ul data-testid={testId} className={baseClassName}>
+    <ul data-testid={testId} className={baseClassName} tabIndex={tabIndex}>
       {!isWorkspacesView ? (
         <>
           {workspaces?.length > 1 ? (

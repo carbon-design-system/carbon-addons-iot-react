@@ -607,16 +607,18 @@ describe('DateTimePickerV2', () => {
         }}
       />
     );
-    // default value is YYYY-MM-DD hh:mm A
-    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    // default value is YYYY-MM-DD hh:mm XM
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
   });
 
   it('should clear date and time fields when click clear button in single select', () => {
+    const mockOnClear = jest.fn();
     render(
       <DateTimePicker
         {...dateTimePickerProps}
         useNewTimeSpinner
         onApply={jest.fn()}
+        onClear={mockOnClear}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
         hasTimeInput
@@ -639,17 +641,30 @@ describe('DateTimePickerV2', () => {
 
     userEvent.click(screen.getByText(/clear/i));
 
-    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
     expect(screen.queryByRole('dialog')).toBeNull();
+    expect(mockOnClear).toHaveBeenCalledWith({
+      timeRangeKind: 'SINGLE',
+      timeRangeValue: null,
+      timeSingleValue: {
+        ISOStart: null,
+        start: null,
+        startDate: null,
+        startTime: null,
+        humanValue: 'YYYY-MM-DD hh:mm A',
+        tooltipValue: 'YYYY-MM-DD hh:mm A',
+      },
+    });
   });
 
-  it('should disable button when clear time picker input in single select', () => {
+  it('should not disable apply button when clear time picker input in single select', () => {
     const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
         useNewTimeSpinner
         onApply={jest.fn()}
+        onClear={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
         hasTimeInput
@@ -669,10 +684,12 @@ describe('DateTimePickerV2', () => {
 
     // first open the menu
     userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+    userEvent.click(screen.getByText(i18n.resetBtnLabel));
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
 
-    userEvent.clear(screen.getByTestId('date-time-picker-input'));
-
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    // open the calendar again
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should go back to presets when cancel button is picked on absolute screen', () => {
@@ -1830,7 +1847,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
   });
 
-  it('should enable apply button when absolute DatePicker input has start and end date in different dates (with new time spinner)', async () => {
+  it('should disable apply button when absolute DatePicker input has start and end date in different dates (with new time spinner)', async () => {
     const { i18n } = DateTimePicker.defaultProps;
 
     render(
@@ -2078,7 +2095,7 @@ describe('DateTimePickerV2', () => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
-  it('when flyout offscreen top right render direction to LeftStart', () => {
+  it('when flyout offscreen top right render direction to bottomEnd', () => {
     const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
     const mockGetBoundingClientRect = jest.fn(
       generateBoundingClientRect({
@@ -2123,7 +2140,7 @@ describe('DateTimePickerV2', () => {
     const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
 
     expect(
-      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftStart}`)
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
     ).toBe(true);
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
@@ -2323,7 +2340,7 @@ describe('DateTimePickerV2', () => {
     const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
 
     expect(
-      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftEnd}`)
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
     ).toBe(true);
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
@@ -2828,5 +2845,55 @@ describe('DateTimePickerV2', () => {
       />
     );
     expect(screen.getByText(PRESET_VALUES[0].label)).toBeVisible();
+  });
+
+  it('should render with locale that is 2 letters', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        locale="en"
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+  });
+
+  it('should render with locale that is not 2 letters', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        locale="en-us"
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
   });
 });

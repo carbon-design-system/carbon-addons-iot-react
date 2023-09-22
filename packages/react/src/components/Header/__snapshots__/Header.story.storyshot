@@ -51,6 +51,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -81,6 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -126,13 +128,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="menu-item-global-action-1"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="help"
               type="button"
             >
               <div
@@ -167,7 +169,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               </svg>
             </button>
             <div
-              aria-label="Header Panel"
               className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
               data-testid="action-btn__panel"
               tabIndex="-1"
@@ -231,18 +232,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <div
               className="bx--header__submenu bx--header-action-btn"
             >
-              <a
+              <button
+                aria-describedby={null}
                 aria-expanded={false}
                 aria-haspopup="menu"
                 aria-label="user"
-                className="bx--header__menu-item bx--header__menu-title"
+                aria-pressed={null}
+                className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
-                href="#"
+                disabled={false}
+                id="menu-item-global-action-2"
+                onBlur={[Function]}
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  user
+                </div>
                 <svg
                   aria-hidden={true}
                   description="Icon"
@@ -261,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     d="M8,3C6.6,3,5.5,4.1,5.5,5.5S6.6,8,8,8s2.5-1.1,2.5-2.5S9.4,3,8,3z M8,7C7.2,7,6.5,6.3,6.5,5.5S7.2,4,8,4s1.5,0.7,1.5,1.5	S8.8,7,8,7z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 aria-label="user"
                 className="bx--header__menu"
@@ -337,13 +350,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="app-switcher"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="AppSwitcher"
               type="button"
             >
               <div
@@ -369,8 +382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               </svg>
             </button>
             <div
-              aria-label="Header Panel"
-              className="bx--header-panel bx--app-switcher bx--app-switcher header-panel"
+              className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
               data-testid="action-btn__panel"
               tabIndex="-1"
             >
@@ -447,6 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="header-name"
       href="http://localhost:8989"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -477,6 +490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-user-global"
           disabled={false}
+          id="menu-item-global-action-0"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -568,6 +582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -600,18 +615,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <div
               className="bx--header__submenu bx--header-action-btn"
             >
-              <a
+              <button
+                aria-describedby={null}
                 aria-expanded={false}
                 aria-haspopup="menu"
                 aria-label="user"
-                className="bx--header__menu-item bx--header__menu-title"
+                aria-pressed={null}
+                className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
-                href="#"
+                disabled={false}
+                id="menu-item-global-action-0"
+                onBlur={[Function]}
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  user
+                </div>
                 <svg
                   aria-hidden={true}
                   description="Icon"
@@ -630,7 +657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     d="M8,3C6.6,3,5.5,4.1,5.5,5.5S6.6,8,8,8s2.5-1.1,2.5-2.5S9.4,3,8,3z M8,7C7.2,7,6.5,6.3,6.5,5.5S7.2,4,8,4s1.5,0.7,1.5,1.5	S8.8,7,8,7z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 aria-label="user"
                 className="bx--header__menu"
@@ -750,6 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -787,18 +815,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <div
               className="bx--header__submenu bx--header-action-btn"
             >
-              <a
+              <button
+                aria-describedby={null}
                 aria-expanded={false}
                 aria-haspopup="menu"
                 aria-label="user"
-                className="bx--header__menu-item bx--header__menu-title"
+                aria-pressed={null}
+                className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
-                href="#"
+                disabled={false}
+                id="menu-item-global-action-0"
+                onBlur={[Function]}
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  user
+                </div>
                 <svg
                   aria-hidden={true}
                   description="Icon"
@@ -817,7 +857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     d="M8,3C6.6,3,5.5,4.1,5.5,5.5S6.6,8,8,8s2.5-1.1,2.5-2.5S9.4,3,8,3z M8,7C7.2,7,6.5,6.3,6.5,5.5S7.2,4,8,4s1.5,0.7,1.5,1.5	S8.8,7,8,7z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 aria-label="user"
                 className="bx--header__menu"
@@ -937,6 +977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -996,18 +1037,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <div
               className="bx--header__submenu bx--header-action-btn"
             >
-              <a
+              <button
+                aria-describedby={null}
                 aria-expanded={false}
                 aria-haspopup="menu"
                 aria-label="user"
-                className="bx--header__menu-item bx--header__menu-title"
+                aria-pressed={null}
+                className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
-                href="#"
+                disabled={false}
+                id="menu-item-global-action-0"
+                onBlur={[Function]}
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  user
+                </div>
                 <svg
                   aria-hidden={true}
                   description="Icon"
@@ -1026,7 +1079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     d="M8,3C6.6,3,5.5,4.1,5.5,5.5S6.6,8,8,8s2.5-1.1,2.5-2.5S9.4,3,8,3z M8,7C7.2,7,6.5,6.3,6.5,5.5S7.2,4,8,4s1.5,0.7,1.5,1.5	S8.8,7,8,7z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 aria-label="user"
                 className="bx--header__menu"
@@ -1151,6 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -1186,6 +1240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn isReallyHidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-HiddenByClass-global"
             disabled={false}
+            id="menu-item-global-action-0"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1224,6 +1279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Announcements-global"
             disabled={false}
+            id="menu-item-global-action-1"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1262,6 +1318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 1-global"
             disabled={false}
+            id="menu-item-global-action-2"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1300,6 +1357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 2-global"
             disabled={false}
+            id="menu-item-global-action-3"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1338,6 +1396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 3-global"
             disabled={false}
+            id="menu-item-global-action-4"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1374,6 +1433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Header action with href-global"
             href="https://www.ibm.com"
+            id="menu-item-global-action-5"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1411,6 +1471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
+            id="menu-item-global-action-6"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1456,13 +1517,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               aria-pressed={null}
               className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               disabled={false}
+              id="menu-item-global-action-7"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="help"
               type="button"
             >
               <div
@@ -1497,7 +1558,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               </svg>
             </button>
             <div
-              aria-label="Header Panel"
               className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
               data-testid="action-btn__panel"
               tabIndex="-1"
@@ -1561,18 +1621,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <div
               className="bx--header__submenu bx--header-action-btn"
             >
-              <a
+              <button
+                aria-describedby={null}
                 aria-expanded={false}
                 aria-haspopup="menu"
                 aria-label="user"
-                className="bx--header__menu-item bx--header__menu-title"
+                aria-pressed={null}
+                className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                 data-testid="menuitem"
-                href="#"
+                disabled={false}
+                id="menu-item-global-action-8"
+                onBlur={[Function]}
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  user
+                </div>
                 <svg
                   aria-hidden={true}
                   description="Icon"
@@ -1591,7 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     d="M8,3C6.6,3,5.5,4.1,5.5,5.5S6.6,8,8,8s2.5-1.1,2.5-2.5S9.4,3,8,3z M8,7C7.2,7,6.5,6.3,6.5,5.5S7.2,4,8,4s1.5,0.7,1.5,1.5	S8.8,7,8,7z"
                   />
                 </svg>
-              </a>
+              </button>
               <ul
                 aria-label="user"
                 className="bx--header__menu"

@@ -15,6 +15,8 @@ import EmptyState from '../EmptyState';
 import Dropdown from '../Dropdown/Dropdown';
 import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
+import { PIN_COLUMN } from './tableUtilities';
+
 const STATUS = {
   RUNNING: 'RUNNING',
   NOT_RUNNING: 'NOT_RUNNING',
@@ -344,6 +346,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     node: <Add20 />,
     object: { id: getString(idx, 5) },
   },
+  isDraggable: true,
   rowActions: withActions
     ? [
         {
@@ -1014,6 +1017,7 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'Main view states' : undefined;
+  const DND_GROUP = useGroups ? 'Drag & drop' : undefined;
 
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
@@ -1043,6 +1047,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
           getDefaultValue('hasUserViewManagement'),
+          TABLE_GROUP
+        )
+      : null,
+    pinHeaderAndFooter: shouldCreate('pinHeaderAndFooter')
+      ? boolean(
+          'Pin header and footer (options.pinHeaderAndFooter)',
+          getDefaultValue('pinHeaderAndFooter'),
           TABLE_GROUP
         )
       : null,
@@ -1340,6 +1351,14 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           COLUMN_GROUP
         )
       : null,
+    pinColumn: shouldCreate('pinColumn')
+      ? select(
+          'Column position to pin (options.pinColumn)',
+          Object.values(PIN_COLUMN),
+          getDefaultValue('pinColumn') ? PIN_COLUMN.FIRST : PIN_COLUMN.NONE,
+          COLUMN_GROUP
+        )
+      : null,
 
     // SELECTIONS_ACTIONS_GROUP
     hasRowSelection: shouldCreate('hasRowSelection')
@@ -1549,6 +1568,11 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           STATES_GROUP
         )
       : null,
+
+    // DND_GROUP
+    hasDragAndDrop: shouldCreate('hasDragAndDrop')
+      ? boolean('Drag and drop (hasDragAndDrop)', getDefaultValue('hasDragAndDrop'), DND_GROUP)
+      : null,
   };
 };
 
@@ -1581,7 +1605,7 @@ export const getI18nKnobs = (useGroup = true) => {
     openMenuAria: text('i18n.openMenuAria', 'Open menu', I18N_GROUP),
     closeMenuAria: text('i18n.closeMenuAria', 'Close menu', I18N_GROUP),
     clearSelectionAria: text('i18n.clearSelectionAria', 'Clear selection', I18N_GROUP),
-    batchCancel: text('i18n.batchCancel', 'Cancel', I18N_GROUP),
+    batchCancel: text('i18n.batchCancel', 'Clear selections', I18N_GROUP),
     applyButtonText: text('i18n.applyButtonText', 'Apply filters', I18N_GROUP),
     cancelButtonText: text('i18n.cancelButtonText', 'Cancel', I18N_GROUP),
     advancedFilterLabelText: text(

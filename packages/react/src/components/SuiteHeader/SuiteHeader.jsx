@@ -63,6 +63,8 @@ const defaultProps = {
   walkmeLang: 'en',
   testId: 'suite-header',
   isActionItemVisible: () => true,
+  handleHeaderNameClick: null,
+  hideMenuButton: false,
 };
 
 const propTypes = {
@@ -117,10 +119,15 @@ const propTypes = {
   /** Walkme language code */
   walkmeLang: PropTypes.string,
   testId: PropTypes.string,
+  /** Optional callback when user clicks on header name */
+  handleHeaderNameClick: PropTypes.oneOfType([PropTypes.func, PropTypes.any]),
 
   /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
   // eslint-disable-next-line react/forbid-foreign-prop-types
   isActionItemVisible: Header.propTypes.isActionItemVisible,
+
+  /** Force menu button to hide regardless of side nav props */
+  hideMenuButton: PropTypes.bool,
 };
 
 const SuiteHeader = ({
@@ -150,6 +157,8 @@ const SuiteHeader = ({
   walkmePath,
   walkmeLang,
   testId,
+  handleHeaderNameClick: handleHeaderNameClickProps,
+  hideMenuButton,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -200,7 +209,10 @@ const SuiteHeader = ({
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
-      url.searchParams.append('originHref', window.location.href);
+      url.searchParams.append(
+        'originHref',
+        [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+      );
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);
@@ -244,10 +256,19 @@ const SuiteHeader = ({
     }
   };
 
+  const handleHeaderNameClick = useCallback(
+    (evt) => {
+      if (handleHeaderNameClickProps) {
+        handleHeaderNameClickProps(evt, navigatorRoute);
+      }
+    },
+    [handleHeaderNameClickProps, navigatorRoute]
+  );
+
   return (
     <>
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
-      {showToast ? (
+      {showToast && surveyData ? (
         <ToastNotification
           data-testid={`${testId}-notification`}
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
@@ -337,7 +358,8 @@ const SuiteHeader = ({
               testId={testId}
               className={classnames(`${settings.iotPrefix}--suite-header`, className)}
               url={navigatorRoute}
-              hasSideNav={hasSideNav || sideNavProps !== null}
+              handleHeaderNameClick={handleHeaderNameClick}
+              hasSideNav={hideMenuButton ? false : hasSideNav || sideNavProps !== null}
               onClickSideNavExpand={(evt) => {
                 onSideNavToggled(evt);
                 onClickSideNavExpand(evt);

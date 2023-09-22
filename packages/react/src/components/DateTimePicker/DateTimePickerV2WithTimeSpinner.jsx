@@ -13,7 +13,7 @@ import {
   OrderedList,
   ListItem,
 } from 'carbon-components-react';
-import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
+import { Calendar16, WarningFilled16, ErrorFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
@@ -146,6 +146,8 @@ export const propTypes = {
   onCancel: PropTypes.func,
   /** triggered on apply with returning object with similar signature to defaultValue */
   onApply: PropTypes.func,
+  /** call back function for clear values in single select */
+  onClear: PropTypes.func,
   /** All the labels that need translation */
   i18n: PropTypes.shape({
     toLabel: PropTypes.string,
@@ -251,6 +253,7 @@ export const defaultProps = {
   renderPresetTooltipText: null,
   onCancel: null,
   onApply: null,
+  onClear: null,
   i18n: {
     toLabel: 'to',
     toNowLabel: 'to Now',
@@ -266,6 +269,8 @@ export const defaultProps = {
     relativeToLabel: 'Relative to',
     absoluteLabel: 'Absolute',
     startTimeLabel: 'Start time',
+    startAriaLabel: 'Date time start',
+    endAriaLabel: 'Date time end',
     endTimeLabel: 'End time',
     applyBtnLabel: 'Apply',
     cancelBtnLabel: 'Cancel',
@@ -277,7 +282,8 @@ export const defaultProps = {
     minutes: 'minutes',
     number: 'number',
     timePickerInvalidText: undefined,
-    invalidText: 'The date time entered is invalid',
+    invalidText: 'Time is required',
+    invalidDateText: 'Date is required',
     amString: 'AM',
     pmString: 'PM',
   },
@@ -308,6 +314,7 @@ const DateTimePicker = ({
   renderPresetTooltipText,
   onCancel,
   onApply,
+  onClear,
   i18n,
   light,
   locale,
@@ -359,7 +366,7 @@ const DateTimePicker = ({
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
-  const [defaultSingleDateValue, SetDefaultSingleDateValue] = useState(false);
+  const [defaultTimeValueUpdate, setDefaultTimeValueUpdate] = useState(false);
   const [invalidState, setInvalidState] = useState(invalid);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
@@ -403,6 +410,7 @@ const DateTimePicker = ({
     onFieldInteraction,
     onNavigateRadioButton,
     onNavigatePresets,
+    onFieldClick,
   } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
   const [isTooltipOpen, toggleTooltip, setIsTooltipOpen] = useDateTimePickerTooltip({ isExpanded });
 
@@ -412,6 +420,7 @@ const DateTimePicker = ({
   const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
+  const [invalidRangeStartDate, setInvalidRangeStartDate] = useState(false);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -505,7 +514,7 @@ const DateTimePicker = ({
       value.kind = PICKER_KINDS.PRESET;
     }
     setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
+    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel, hasTimeInput);
     setHumanValue(getLocalizedTimeValue(parsedValue.readableValue));
 
     return {
@@ -601,6 +610,7 @@ const DateTimePicker = ({
     newSingleDate.startDate = dayjs(newSingleDate.start).format('MM/DD/YYYY');
 
     setSingleDateValue(newSingleDate);
+    setInvalidRangeStartDate(!newSingleDate.startDate);
   };
 
   const onPresetClick = (preset) => {
@@ -720,11 +730,6 @@ const DateTimePicker = ({
     ? humanValue
     : dateTimeMask;
 
-  const disableRelativeApply =
-    isCustomRange &&
-    customRangeKind === PICKER_KINDS.RELATIVE &&
-    (relativeLastNumberInvalid || relativeToTimeInvalid);
-
   const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
@@ -733,19 +738,16 @@ const DateTimePicker = ({
       (absoluteValue?.startDate === '' && absoluteValue?.endDate === '') ||
       (hasTimeInput ? !rangeStartTimeValue || !rangeEndTimeValue : false));
 
-  const disableSingleApply =
+  const disableRelativeApply =
     isCustomRange &&
-    customRangeKind === PICKER_KINDS.SINGLE &&
-    (invalidRangeStartTime ||
-      (!singleDateValue.start && !singleDateValue.startDate) ||
-      (hasTimeInput ? !singleTimeValue : false));
+    customRangeKind === PICKER_KINDS.RELATIVE &&
+    (relativeLastNumberInvalid || relativeToTimeInvalid);
 
-  const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   useEffect(() => setInvalidState(invalid), [invalid]);
 
   const onApplyClick = () => {
-    setIsExpanded(false);
     const value = renderValue();
     setLastAppliedValue(value);
     const returnValue = {
@@ -754,6 +756,7 @@ const DateTimePicker = ({
       timeSingleValue: null,
     };
 
+    let isValid = true;
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         value.absolute.startTime = getLocalizedTimeValue(value.absolute.startTime);
@@ -762,11 +765,19 @@ const DateTimePicker = ({
           ...value.absolute,
           humanValue,
           tooltipValue,
-          ISOStart: new Date(value.absolute.start).toISOString(),
-          ISOEnd: new Date(value.absolute.end).toISOString(),
+          ISOStart: value.absolute.start?.toISOString(),
+          ISOEnd: value.absolute.end?.toISOString(),
         };
         break;
       case PICKER_KINDS.SINGLE:
+        isValid =
+          value.single.startDate &&
+          !invalidRangeStartDate &&
+          (hasTimeInput ? !invalidRangeStartTime && value.single.startTime : true);
+
+        setInvalidRangeStartTime(hasTimeInput ? !value.single.startTime : false);
+        setInvalidRangeStartDate(!value.single.startDate);
+
         value.single.startTime = getLocalizedTimeValue(value.single.startTime);
         returnValue.timeSingleValue = {
           ...value.single,
@@ -774,7 +785,9 @@ const DateTimePicker = ({
           tooltipValue,
           ISOStart: new Date(value.single.start).toISOString(),
         };
+        setDefaultTimeValueUpdate(!defaultTimeValueUpdate);
         break;
+
       case PICKER_KINDS.RELATIVE:
         returnValue.timeRangeValue = {
           ...value.relative,
@@ -790,7 +803,8 @@ const DateTimePicker = ({
         break;
     }
 
-    if (onApply) {
+    if (onApply && isValid) {
+      setIsExpanded(false);
       onApply(returnValue);
     }
   };
@@ -808,8 +822,25 @@ const DateTimePicker = ({
   const onClearClick = () => {
     setSingleDateValue({ start: null, startDate: null });
     setSingleTimeValue(null);
-    SetDefaultSingleDateValue(true);
+    setDefaultTimeValueUpdate(!defaultTimeValueUpdate);
+    setInvalidRangeStartDate(false);
     setIsExpanded(false);
+    const returnValue = {
+      timeRangeKind: PICKER_KINDS.SINGLE,
+      timeRangeValue: null,
+      timeSingleValue: null,
+    };
+
+    returnValue.timeSingleValue = {
+      ISOStart: null,
+      humanValue: dateTimeMask,
+      start: null,
+      startDate: null,
+      startTime: null,
+      tooltipValue: dateTimeMask,
+    };
+
+    onClear(returnValue);
   };
 
   // Close tooltip if dropdown was closed by click outside
@@ -884,7 +915,7 @@ const DateTimePicker = ({
           onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
           onMouseDown={(e) => e.preventDefault()}
           size="field"
-          disabled={disableApply}
+          disabled={customRangeKind === PICKER_KINDS.SINGLE ? false : disableApply}
         >
           {mergedI18n.applyBtnLabel}
         </Button>
@@ -931,7 +962,17 @@ const DateTimePicker = ({
 
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
-  const [offTop, , inputTop, inputBottom, customHeight, maxHeight] = useCustomHeight({
+  const [
+    offTop,
+    ,
+    inputTop,
+    inputBottom,
+    customHeight,
+    maxHeight,
+    invalidDateWarningHeight,
+    invalidTimeWarningHeight,
+    timeInputHeight,
+  ] = useCustomHeight({
     containerRef,
     isSingleSelect,
     isCustomRange,
@@ -957,7 +998,7 @@ const DateTimePicker = ({
         })}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
-        onClick={onFieldInteraction}
+        onClick={onFieldClick}
         onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], (event) => {
           // the onApplyClick event gets blocked when called via the keyboard from the flyout menu's
           // custom footer. This is a catch to ensure the onApplyCLick is called correctly for preset
@@ -995,7 +1036,9 @@ const DateTimePicker = ({
                 <span
                   className={classnames({
                     [`${iotPrefix}--date-time-picker__disabled`]:
-                      disabled || (isSingleSelect && !singleDateValue.startDate),
+                      disabled ||
+                      (isSingleSelect &&
+                        (!singleDateValue.startDate || (hasTimeInput ? !singleTimeValue : false))),
                   })}
                   title={humanValue}
                 >
@@ -1042,7 +1085,7 @@ const DateTimePicker = ({
             hideTooltip
             iconDescription={mergedI18n.calendarLabel}
             passive={false}
-            triggerId="test-trigger-id-2"
+            triggerId={`test-trigger-${id}`}
             light={light}
             menuOffset={{
               top: menuOffsetTop,
@@ -1068,9 +1111,13 @@ const DateTimePicker = ({
               style={{
                 '--wrapper-width': '20rem',
                 height: customHeight,
-                maxHeight,
+                maxHeight:
+                  maxHeight +
+                  (invalidRangeStartTime || invalidRangeEndTime ? invalidTimeWarningHeight : 0) +
+                  (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
+                  (!hasTimeInput ? timeInputHeight : 0),
               }}
-              role="listbox"
+              role="presentation"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               tabIndex="-1"
@@ -1270,6 +1317,7 @@ const DateTimePicker = ({
                         >
                           <DatePickerInput
                             labelText=""
+                            aria-label={mergedI18n.startAriaLabel}
                             id={`${id}-date-picker-input-start`}
                             hideLabel
                           />
@@ -1277,17 +1325,34 @@ const DateTimePicker = ({
                           {datePickerType === 'range' ? (
                             <DatePickerInput
                               labelText=""
+                              aria-label={mergedI18n.endAriaLabel}
                               id={`${id}-date-picker-input-end`}
                               hideLabel
                             />
                           ) : null}
                         </DatePicker>
+                        {invalidRangeStartDate ? (
+                          <div
+                            className={classnames(
+                              `${iotPrefix}--date-time-picker__datepicker--invalid`
+                            )}
+                          >
+                            <ErrorFilled16 />
+                            <p
+                              className={classnames(
+                                `${iotPrefix}--date-time-picker__helper-text--invalid`
+                              )}
+                            >
+                              {mergedI18n.invalidDateText}
+                            </p>
+                          </div>
+                        ) : null}
                       </div>
                       {hasTimeInput ? (
                         <TimePickerDropdown
                           className={`${iotPrefix}--time-picker-dropdown`}
                           id={id}
-                          key={defaultSingleDateValue}
+                          key={defaultTimeValueUpdate}
                           value={
                             isSingleSelect
                               ? getLocalizedTimeValue(singleTimeValue)

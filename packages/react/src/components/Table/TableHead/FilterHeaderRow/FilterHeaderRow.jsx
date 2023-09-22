@@ -130,6 +130,11 @@ class FilterHeaderRow extends Component {
     filterRowIconDescription: PropTypes.string,
     /** call back function for when icon button in filter row is clicked  (evt) => {} */
     onFilterRowIconClick: PropTypes.func.isRequired,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
+    /** Set to true if the table support drag and drop. Inserts a cell in the "drag handle" column
+     * for spacing. */
+    hasDragAndDrop: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -151,6 +156,8 @@ class FilterHeaderRow extends Component {
     showColumnGroups: false,
     filterRowIcon: null,
     filterRowIconDescription: 'Edit filters',
+    pinHeaderAndFooter: false,
+    hasDragAndDrop: false,
   };
 
   state = {
@@ -233,16 +240,24 @@ class FilterHeaderRow extends Component {
 
     /* istanbul ignore next */
     if (this.filterCellRef.current) {
-      const siblingTopOffset = this.filterCellRef.current
-        .querySelector('input')
-        .getBoundingClientRect().top;
+      const siblingTopOffset = this.filterCellRef.current.getBoundingClientRect().top;
       const tableTopOffset = this.filterCellRef.current
         .closest(`.${iotPrefix}--table-container`)
         .getBoundingClientRect().top;
-      this.setState((prevState) => ({
-        ...prevState,
-        filterIconTopOffset: siblingTopOffset - tableTopOffset,
-      }));
+      this.setState((prevState) => {
+        if (this.props.pinHeaderAndFooter) {
+          // Subtract 48px of toolbar height
+          return {
+            ...prevState,
+            filterIconTopOffset: siblingTopOffset - tableTopOffset - 48,
+          };
+        }
+
+        return {
+          ...prevState,
+          filterIconTopOffset: siblingTopOffset - tableTopOffset,
+        };
+      });
     }
   };
 
@@ -326,6 +341,7 @@ class FilterHeaderRow extends Component {
       filterRowIcon,
       filterRowIconDescription,
       onFilterRowIconClick,
+      hasDragAndDrop,
     } = this.props;
     const { dropdownMaxHeight, filterValues, filterIconTopOffset } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
@@ -336,6 +352,7 @@ class FilterHeaderRow extends Component {
           '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
+        {hasDragAndDrop && <TableHeader className={`${iotPrefix}--filter-header-row--header`} />}
         {hasRowSelection === 'multi' ||
         (hasRowSelection === 'single' && useRadioButtonSingleSelect) ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />

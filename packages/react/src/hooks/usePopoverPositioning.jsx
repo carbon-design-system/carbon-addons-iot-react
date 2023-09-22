@@ -252,6 +252,9 @@ export const usePopoverPositioning = ({
           break;
         case 'right':
         case 'top-right':
+          if (direction === 'bottom-end') {
+            break;
+          }
           if (flyoutAlignment) {
             // fixes an edge case where if the flyout is right-end,
             // and causes an overflow to the top-right, then we need to
@@ -317,6 +320,9 @@ export const usePopoverPositioning = ({
           }
           break;
         case 'top-bottom':
+          if (direction === 'bottom-end') {
+            break;
+          }
           if (flyoutAlignment) {
             setAdjustedDirection(`bottom-${flyoutAlignment}`);
             tooltipElement.setAttribute('data-floating-menu-direction', 'bottom');
@@ -340,7 +346,7 @@ export const usePopoverPositioning = ({
         left: newOffset.left + adjustedOffset.left,
       };
     },
-    [adjustedDirection, flyoutAlignment, getAdjustedOffset, getOffset, isOverflowMenu]
+    [adjustedDirection, direction, flyoutAlignment, getAdjustedOffset, getOffset, isOverflowMenu]
   );
 
   /**

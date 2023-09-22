@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import '@testing-library/jest-dom/extend-expect';
@@ -75,6 +75,7 @@ describe('PageTitleBar', () => {
         title={commonPageTitleBarProps.title}
         description={commonPageTitleBarProps.description}
         breadcrumb={pageTitleBarBreadcrumb}
+        collapsed
         content={
           <div>
             <h3>Some content for the page</h3>
@@ -227,7 +228,7 @@ describe('PageTitleBar', () => {
         />
       </div>
     );
-    userEvent.click(screen.getByLabelText('More information'));
+    userEvent.click(screen.getAllByLabelText('More information')[1]); // Click the tooltip from the collapsed description instead of the one from the breadcrumb item
     expect(screen.getByTestId('test-description')).toBeVisible();
     expect(screen.getByTestId('upper-action-delete')).toBeVisible();
   });
@@ -245,5 +246,35 @@ describe('PageTitleBar', () => {
     expect(screen.getByLabelText('Breadcrumb').querySelector('li')).toHaveClass(
       `page-title-bar-breadcrumb-current`
     );
+  });
+
+  it('checks if description tooltip is rendered next to current breadcrumb item when PageTitleBar is collapsed', async () => {
+    render(
+      <PageTitleBar
+        breadcrumb={[
+          <a href="/">BreadcrumbItem1</a>,
+          <a href="/">BreadcrumbItem2</a>,
+          <span>BreadcrumbItem3</span>,
+        ]}
+        description="Generic page title bar description"
+        title="Page title"
+        headerMode="CONDENSED"
+        testId="breadcrumb-description-test"
+      />
+    );
+    // Get current breadcrumb item and check its text content
+    const currentBreadcrumbItem = within(screen.getByLabelText('Breadcrumb')).getAllByRole(
+      'listitem'
+    )[3];
+    expect(currentBreadcrumbItem).toHaveTextContent('Page title');
+
+    // Check if tooltip exists
+    const descriptionTooltip = within(currentBreadcrumbItem).getAllByRole('button')[0];
+    expect(descriptionTooltip).toHaveClass('bx--tooltip__trigger');
+
+    // Click tooltip and check if description is displayed
+    userEvent.click(within(currentBreadcrumbItem).getAllByRole('button')[0]);
+    expect(screen.getByTestId('breadcrumb-description-test-tooltip')).toBeInTheDocument();
+    expect(screen.getByText('Generic page title bar description')).toBeInTheDocument();
   });
 });
