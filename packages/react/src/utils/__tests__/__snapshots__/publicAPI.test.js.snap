@@ -11443,6 +11443,7 @@ Map {
   "SideNav" => Object {
     "defaultProps": Object {
       "defaultExpanded": false,
+      "forceCloseState": false,
       "hasSearch": false,
       "i18n": Object {
         "closeText": "Close",
@@ -11460,6 +11461,9 @@ Map {
     },
     "propTypes": Object {
       "defaultExpanded": Object {
+        "type": "bool",
+      },
+      "forceCloseState": Object {
         "type": "bool",
       },
       "hasSearch": Object {
@@ -12381,6 +12385,9 @@ Map {
         "args": Array [
           Object {
             "defaultExpanded": Object {
+              "type": "bool",
+            },
+            "forceCloseState": Object {
               "type": "bool",
             },
             "hasSearch": Object {
