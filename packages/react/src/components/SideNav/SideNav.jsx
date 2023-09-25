@@ -385,7 +385,6 @@ const SideNav = ({
       className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
-        [`${iotPrefix}--side-nav--force-close`]: forceCloseState,
       })}
       expanded={isSideNavExpanded}
       // TODO: Will be added back in when footer is added for rails.

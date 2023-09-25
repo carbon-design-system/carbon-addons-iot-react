@@ -1341,4 +1341,110 @@ describe('SuiteHeader', () => {
 
     expect(screen.queryByRole('button', { name: 'Open Menu' })).toBeNull();
   });
+
+  it('checks if close icon appears when menu is open', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+      />
+    );
+    const menuButton = screen.getByRole('button', { name: 'Open menu' });
+    // Check if menu button is rendered
+    expect(menuButton).toBeInTheDocument();
+    // Click menu button
+    await userEvent.click(menuButton);
+    // Check if menu button was removed and close button appeared
+    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Close menu' })).toBeInTheDocument();
+  });
+
+  it('checks if side nav closes when clicking an item', async () => {
+    render(
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName="Admin User"
+        username="adminuser"
+        routes={{
+          profile: 'https://www.ibm.com',
+          navigator: 'https://www.ibm.com',
+          admin: 'https://www.ibm.com',
+          logout: 'https://www.ibm.com',
+          logoutInactivity: 'https://www.ibm.com',
+          whatsNew: 'https://www.ibm.com',
+          gettingStarted: 'https://www.ibm.com',
+          documentation: 'https://www.ibm.com',
+          requestEnhancement: 'https://www.ibm.com',
+          support: 'https://www.ibm.com',
+          about: 'https://www.ibm.com',
+          workspaceId: 'workspace1',
+          domain: '',
+        }}
+        applications={[
+          {
+            id: 'monitor',
+            name: 'Monitor',
+            href: 'https://www.ibm.com',
+          },
+          {
+            id: 'health',
+            name: 'Health',
+            href: 'https://google.com',
+            isExternal: true,
+          },
+        ]}
+        closeSideNavOnNavigation
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              isActive: true,
+              icon: Chip,
+              metaData: {
+                label: 'Mobile',
+              },
+              linkContent: 'Mobile',
+            },
+          ],
+        }}
+      />
+    );
+    const menuButton = screen.getByRole('button', { name: 'Open menu' });
+    // Check if menu button is rendered
+    expect(menuButton).toBeInTheDocument();
+    // Click menu button
+    userEvent.click(menuButton);
+    // Check if menu button was removed and close button appeared
+    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Close menu' })).toBeInTheDocument();
+    // Check if nav bar is open
+    const sideNav = screen.getByTestId('suite-header-side-nav');
+    expect(sideNav).toHaveClass('bx--side-nav--expanded');
+
+    // Get first nav item and click it
+    const item = within(sideNav).getByTestId('suite-header-side-nav-link-0');
+    fireEvent.click(item);
+    // Take focus away from item
+    fireEvent.blur(item);
+    // Check if side nav closed
+    expect(sideNav).not.toHaveClass('bx--side-nav--expanded');
+    // Check if close menu button disappeared and open menu (hamburger) button is in the document
+    expect(screen.queryByRole('button', { name: 'Close menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Open menu' })).toBeInTheDocument();
+  });
 });

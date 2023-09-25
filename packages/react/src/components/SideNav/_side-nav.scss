@@ -150,9 +150,6 @@ $hoverBgColor: #2c2c2c;
     // stylelint-disable-next-line declaration-property-unit-blacklist
     transition: width $duration--fast-01 motion(entrance, productive) 300ms;
   }
-  &.#{$prefix}--side-nav.#{$prefix}--side-nav--expanded.#{$iot-prefix}--side-nav--force-close {
-    width: $spacing-09;
-  }
 }
 
 html[dir='rtl'] {
