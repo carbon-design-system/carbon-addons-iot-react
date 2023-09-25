@@ -11874,6 +11874,7 @@ Map {
       "appName": null,
       "applications": null,
       "className": null,
+      "closeSideNavOnNavigation": false,
       "customActionItems": Array [],
       "customApplications": Array [],
       "customHelpLinks": Array [],
@@ -11974,6 +11975,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "closeSideNavOnNavigation": Object {
+        "type": "bool",
       },
       "customActionItems": Object {
         "args": Array [

@@ -1,7 +1,7 @@
 {
   "name": "carbon-addons-iot-react",
   "engines": {
-    "node": "12.x || 14.x || 16.x || 18.x"
+    "node": "12.x || 14.x || 16.x || 18.x || 20.x"
   },
   "browser": "es/index.js",
   "main": "lib/index.js",
@@ -340,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.153.0-next.34",
+  "version": "2.153.0-next.35",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
