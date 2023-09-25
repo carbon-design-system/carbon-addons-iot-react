@@ -199,7 +199,7 @@ const SuiteHeader = ({
         // If the propValue contains childContent, check each one of them
         recursivelyGetClickableItems(propValue.childContent, `${parentProp}.childContent`);
       } else if (propValue?.metaData) {
-        // If propValue doesn't contain children and it has metaData with onClick, add it to the clickableItems array
+        // If propValue doesn't contain children and it has metaData, add it to the clickableItems array
         clickableItems.push(`${parentProp}.metaData`);
       }
     };
