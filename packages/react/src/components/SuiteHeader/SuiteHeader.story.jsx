@@ -535,6 +535,7 @@ export const HeaderWithSideNav = () => {
         appName="Application Name"
         userDisplayName="Admin User"
         username="adminuser"
+        closeSideNavOnNavigation={boolean('Close side nav on navigation', false)}
         routes={routes}
         applications={applications}
         sideNavProps={{

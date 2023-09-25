@@ -1,7 +1,7 @@
 {
   "name": "carbon-addons-iot-react",
   "engines": {
-    "node": "12.x || 14.x || 16.x || 18.x"
+    "node": "12.x || 14.x || 16.x || 18.x || 20.x"
   },
   "browser": "es/index.js",
   "main": "lib/index.js",
