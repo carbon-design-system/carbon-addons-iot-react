@@ -172,7 +172,6 @@ export const SideNavPropTypes = {
   }),
 
   testId: PropTypes.string,
-  forceCloseState: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -191,7 +190,6 @@ const defaultProps = {
   },
   testId: 'side-nav',
   recentLinks: [],
-  forceCloseState: false,
 };
 
 /**
@@ -225,7 +223,6 @@ const SideNav = ({
   i18n,
   testId,
   recentLinks,
-  forceCloseState,
   ...props
 }) => {
   /**
