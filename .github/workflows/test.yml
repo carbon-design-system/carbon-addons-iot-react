@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -88,7 +88,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -161,7 +161,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
@@ -217,7 +217,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.angular == 'true'
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
