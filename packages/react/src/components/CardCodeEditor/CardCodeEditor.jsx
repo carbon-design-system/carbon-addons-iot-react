@@ -176,7 +176,7 @@ const CardCodeEditor = ({
           value={initialValue}
           line={2}
           language={language}
-          editorDidMount={handleEditorDidMount}
+          onMount={handleEditorDidMount}
           options={{
             minimap: {
               enabled: false,
