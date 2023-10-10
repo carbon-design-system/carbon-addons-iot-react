@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 import { settings } from '../../constants/Settings';
 
 import CodeEditor from './CodeEditor';
-// import { isValidCallback } from './CardCodeEditor.story';
 
 const { iotPrefix } = settings;
 
