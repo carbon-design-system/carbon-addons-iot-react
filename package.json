@@ -34,7 +34,8 @@
     "publish-npm": "bash ./scripts/release.sh",
     "version": "yarn format",
     "storybook": "node ./scripts/storybook.js",
-    "sync-styles": "bash ./scripts/sync-styles.sh"
+    "sync-styles": "bash ./scripts/sync-styles.sh",
+    "format:react": "cd packages/react && yarn format"
   },
   "husky": {
     "hooks": {
@@ -52,7 +53,7 @@
         "cd packages/react && yarn lint:stylelint"
       ],
       "packages/react/*.{scss,css,js,md,jsx,json}": [
-        "cd packages/react && yarn format",
+        "yarn format:react",
         "git add"
       ]
     }
