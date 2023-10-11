@@ -103,10 +103,18 @@ const HeaderActionGroup = ({
   }, [actionItems, langDir, overflowItems.length]);
 
   useLayoutEffect(() => {
-    checkForOverflow();
-    window.addEventListener('resize', checkForOverflow);
+    // Check for SSR
+    if (typeof window !== 'undefined') {
+      checkForOverflow();
+      window.addEventListener('resize', checkForOverflow);
+    }
 
-    return () => window.removeEventListener('resize', checkForOverflow);
+    return () => {
+      // Check for SSR
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', checkForOverflow);
+      }
+    };
   }, [checkForOverflow]);
 
   return (

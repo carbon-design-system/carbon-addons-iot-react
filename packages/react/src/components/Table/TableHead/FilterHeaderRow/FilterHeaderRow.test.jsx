@@ -1033,5 +1033,21 @@ describe('FilterHeaderRow', () => {
       expect(screen.getAllByRole('button')).toHaveLength(1);
       expect(screen.getByTestId('filter-row-icon')).toBeVisible();
     });
+
+    it('should display icon button even if last column input not exists', () => {
+      render(
+        <FilterHeaderRow
+          {...commonFilterProps}
+          ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+          columns={[{ id: 'col1' }, { id: 'col2', isFilterable: false }]}
+          tableOptions={{
+            hasFilterRowIcon: true,
+          }}
+        />
+      );
+
+      expect(screen.getAllByRole('button')).toHaveLength(1);
+      expect(screen.getByTestId('filter-row-icon')).toBeVisible();
+    });
   });
 });

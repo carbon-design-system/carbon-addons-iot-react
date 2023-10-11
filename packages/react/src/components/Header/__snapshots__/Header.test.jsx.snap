@@ -72,8 +72,8 @@ exports[`Header should render 1`] = `
             aria-haspopup="menu"
             aria-label="help"
             class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            id="menu-item-global-action-0"
             tabindex="0"
-            title="help"
             type="button"
           >
             <div
@@ -107,7 +107,6 @@ exports[`Header should render 1`] = `
             </svg>
           </button>
           <div
-            aria-label="Header Panel"
             class="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
             data-testid="action-btn__panel"
             tabindex="-1"
@@ -158,16 +157,21 @@ exports[`Header should render 1`] = `
           <div
             class="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
               aria-expanded="false"
               aria-haspopup="menu"
               aria-label="user"
-              class="bx--header__menu-item bx--header__menu-title"
+              class="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
-              role="menuitem"
+              id="menu-item-global-action-1"
               tabindex="0"
+              type="button"
             >
+              <div
+                class="bx--assistive-text"
+              >
+                user
+              </div>
               <svg
                 aria-hidden="true"
                 description="Icon"
@@ -183,7 +187,7 @@ exports[`Header should render 1`] = `
                   d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7A7 7 0 0016 2zM26 30H24V25a5 5 0 00-5-5H13a5 5 0 00-5 5v5H6V25a7 7 0 017-7h6a7 7 0 017 7z"
                 />
               </svg>
-            </a>
+            </button>
             <ul
               aria-label="user"
               class="bx--header__menu"

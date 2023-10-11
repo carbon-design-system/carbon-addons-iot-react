@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
 import { layout05, spacing05 } from '@carbon/layout';
 
@@ -142,3 +142,22 @@ HasOverflow.parameters = {
     `,
   },
 };
+
+export const WithTruncation = () => {
+  return (
+    <Breadcrumb
+      noTrailingSlash
+      disableTruncation={select('Disable truncation', ['first', 'last', 'none'], 'first')}
+    >
+      <BreadcrumbItem href="#">{text('Breadcrumb 1 text', 'Breadcrumb 1')}</BreadcrumbItem>
+      <BreadcrumbItem href="#">
+        {text(
+          'Breadcrumb 2 text',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim.'
+        )}
+      </BreadcrumbItem>
+    </Breadcrumb>
+  );
+};
+
+WithTruncation.storyName = 'with truncation';

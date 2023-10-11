@@ -1,0 +1,23 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Pinned column
+
+One column in the table body and table head can be pinned, so that it will keep its position regardless of horizontal scrollbar. There are 3 options to pin column in a table - `none` default, `first` and `last`. The selected column will be freezed and border of `1px` will be displayed to the direction of a content. In case there are additional actions on a row, such as selection, nesting or both, then columns with action icon will be pinned as well. For example, if option `hasRowSelection: 'multi'` is configured with `pinColumn: 'first'` then column with checkboxes will be freezed along with first content column. The same applies to the table head, if table has `hasFilter: true` and `pinColumn: 'first'` then filtering input will be pinned with first column automatically.
+
+```jsx
+
+...
+
+return (
+  <Table
+    columns={columns}
+    data={data}
+    options={{
+      pinColumn: 'first',
+      hasFilter: true,
+      hasRowSelection: 'multi',
+    }}
+    view={{}}
+  />
+);
+```

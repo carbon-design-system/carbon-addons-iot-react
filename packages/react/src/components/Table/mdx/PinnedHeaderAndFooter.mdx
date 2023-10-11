@@ -1,0 +1,23 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+### Pinned header and footer
+
+Header and footer of the table can be pinned in the layout. Table toolbar, column headings and pagination will be frozen regardless of the vertical scrollbar position. In order to enable it, set `pinHeaderAndFooter: true`. **Important note:** table should have external wrapper with limited height.
+
+```jsx
+...
+return (
+  <div
+    style={{ height: '500px' }}
+  >
+    <Table
+      columns={columns}
+      data={data}
+      options={{
+        pinHeaderAndFooter: true,
+      }}
+      view={{}}
+    />
+  </div>
+);
+```

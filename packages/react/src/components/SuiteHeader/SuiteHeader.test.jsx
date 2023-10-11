@@ -6,6 +6,7 @@ import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 
 import { settings } from '../../constants/Settings';
+import { APP_SWITCHER } from '../Header/headerConstants';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
@@ -67,7 +68,7 @@ const idleTimeoutDataProp = {
 };
 
 describe('SuiteHeader', () => {
-  const originHref = 'https://ibm.com';
+  const originHref = 'https://ibm.com/';
   const expectedAppPageLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}`;
@@ -87,7 +88,12 @@ describe('SuiteHeader', () => {
     originalWindowLocation = { ...window.location };
     originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
-    window.location = { href: originHref };
+    window.location = {
+      href: 'https://ibm.com/',
+      protocol: 'https:',
+      host: 'ibm.com',
+      pathname: '/',
+    };
     window.open = jest.fn();
   });
 
@@ -612,13 +618,13 @@ describe('SuiteHeader', () => {
     const originalHref = window.location.href;
     const onRouteChange = jest.fn().mockImplementation(() => false);
     render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
-    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
-    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toBe(commonProps.routes.profile);
@@ -660,7 +666,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -707,7 +713,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -753,7 +759,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -800,7 +806,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -839,7 +845,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -878,7 +886,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -916,7 +926,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -955,7 +967,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -997,7 +1011,9 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip', label: 'chip' }), '{enter}', {
+      skipClick: true,
+    });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
@@ -1047,7 +1063,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -1099,7 +1115,7 @@ describe('SuiteHeader', () => {
         'noopener noreferrer'
       );
       expect(window.open).toHaveBeenCalledTimes(1);
-      userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+      userEvent.click(screen.getByRole('button', { name: 'user', label: 'user' }));
       await userEvent.click(screen.getByTestId('suite-header-profile--profile'), {
         ctrlKey: true,
       });
@@ -1110,7 +1126,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(2);
 
-      userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
+      userEvent.click(screen.getByRole('button', { name: 'Help', label: 'Help' }));
       await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.routes.about,
@@ -1119,7 +1135,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(3);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.routes.navigator,
@@ -1128,7 +1144,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(4);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.applications[0].href,
@@ -1137,7 +1153,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(5);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.applications[1].href,
@@ -1165,7 +1181,7 @@ describe('SuiteHeader', () => {
       '-1'
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
     expect(screen.getByTestId('action-btn__panel')).toHaveClass(
       `${prefix}--header-panel--expanded`
     );
@@ -1186,8 +1202,249 @@ describe('SuiteHeader', () => {
 
   it('shows loading state', async () => {
     render(<SuiteHeader suiteName="Application Suite" />);
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
     // Expect skeletons
     expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
+  });
+
+  it('should invoke application name click callback', async () => {
+    const headerNameClickCallback = jest.fn();
+    render(<SuiteHeader {...commonProps} handleHeaderNameClick={headerNameClickCallback} />);
+    await userEvent.click(screen.getByTestId('suite-header-name'));
+    expect(headerNameClickCallback).toHaveBeenCalledTimes(1);
+    expect(headerNameClickCallback).toHaveBeenCalledWith(
+      expect.any(Object),
+      commonProps.routes.navigator
+    );
+  });
+
+  describe('header action and panel (safari)', () => {
+    beforeAll(() => {
+      const userAgentGetter = jest.spyOn(window, 'navigator', 'get');
+      userAgentGetter.mockReturnValue({
+        userAgent:
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 00_00_0) AppleWebKit/000.0.00 (KHTML, like Gecko) Version/00.0 Safari/000.0.00',
+      });
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+      jest.restoreAllMocks();
+    });
+
+    it('should close action panel if other action clicked (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByTestId('action-btn__panel');
+      const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
+
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+
+      userEvent.click(profileActionButton);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    it('should close action panel if clicked outside of panel (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByTestId('action-btn__panel');
+
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+
+      userEvent.click(document.body);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+    });
+
+    it('should close action dropdown if panel opened (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByTestId('action-btn__panel');
+      const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
+
+      userEvent.click(profileActionButton);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should NOT close panel if clicked inside panel', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByTestId('action-btn__panel');
+
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+
+      userEvent.click(screen.getByText('My applications'));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+    });
+
+    it('should close action menu if clicked outside (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByTestId('action-btn__panel');
+      const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
+
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+
+      userEvent.click(profileActionButton);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should close action menu if clicked on other action (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const profileActionButton = screen.getByRole('button', { name: 'user', label: 'user' });
+      // screen.getByTestId('menuitem', { 'aria-label': 'user' });
+      const helpActionButton = screen.getByRole('button', { name: 'Help', label: 'Help' });
+      // screen.getByTestId('menuitem', { 'aria-label': 'Help' });
+
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
+      userEvent.click(helpActionButton);
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+      userEvent.click(profileActionButton);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+  });
+
+  it('hides menu button', () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        hideMenuButton
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(screen.queryByRole('button', { name: 'Open Menu' })).toBeNull();
+  });
+
+  it('checks if close icon appears when menu is open', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+      />
+    );
+    const menuButton = screen.getByRole('button', { name: 'Open menu' });
+    // Check if menu button is rendered
+    expect(menuButton).toBeInTheDocument();
+    // Click menu button
+    await userEvent.click(menuButton);
+    // Check if menu button was removed and close button appeared
+    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Close menu' })).toBeInTheDocument();
+  });
+
+  it('checks if side nav closes when clicking an item', async () => {
+    render(
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName="Admin User"
+        username="adminuser"
+        routes={{
+          profile: 'https://www.ibm.com',
+          navigator: 'https://www.ibm.com',
+          admin: 'https://www.ibm.com',
+          logout: 'https://www.ibm.com',
+          logoutInactivity: 'https://www.ibm.com',
+          whatsNew: 'https://www.ibm.com',
+          gettingStarted: 'https://www.ibm.com',
+          documentation: 'https://www.ibm.com',
+          requestEnhancement: 'https://www.ibm.com',
+          support: 'https://www.ibm.com',
+          about: 'https://www.ibm.com',
+          workspaceId: 'workspace1',
+          domain: '',
+        }}
+        applications={[
+          {
+            id: 'monitor',
+            name: 'Monitor',
+            href: 'https://www.ibm.com',
+          },
+          {
+            id: 'health',
+            name: 'Health',
+            href: 'https://google.com',
+            isExternal: true,
+          },
+        ]}
+        closeSideNavOnNavigation
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              isActive: true,
+              icon: Chip,
+              metaData: {
+                label: 'Mobile',
+              },
+              linkContent: 'Mobile',
+            },
+          ],
+        }}
+      />
+    );
+    const menuButton = screen.getByRole('button', { name: 'Open menu' });
+    // Check if menu button is rendered
+    expect(menuButton).toBeInTheDocument();
+    // Click menu button
+    userEvent.click(menuButton);
+    // Check if menu button was removed and close button appeared
+    expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Close menu' })).toBeInTheDocument();
+    // Check if nav bar is open
+    const sideNav = screen.getByTestId('suite-header-side-nav');
+    expect(sideNav).toHaveClass('bx--side-nav--expanded');
+
+    // Get first nav item and click it
+    const item = within(sideNav).getByTestId('suite-header-side-nav-link-0');
+    fireEvent.click(item);
+    // Take focus away from item
+    fireEvent.blur(item);
+    // Check if side nav closed
+    expect(sideNav).not.toHaveClass('bx--side-nav--expanded');
+    // Check if close menu button disappeared and open menu (hamburger) button is in the document
+    expect(screen.queryByRole('button', { name: 'Close menu' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Open menu' })).toBeInTheDocument();
   });
 });

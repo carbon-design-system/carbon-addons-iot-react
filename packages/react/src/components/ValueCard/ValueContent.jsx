@@ -7,7 +7,7 @@ import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { ValueContentPropTypes } from '../../constants/CardPropTypes';
 import DataStateRenderer from '../Card/DataStateRenderer';
 
-import { BASE_CLASS_NAME, PREVIEW_DATA, DEFAULT_FONT_SIZE, determineValue } from './valueCardUtils';
+import { BASE_CLASS_NAME, DEFAULT_FONT_SIZE, determineValue } from './valueCardUtils';
 import Attribute from './Attribute';
 
 const propTypes = {
@@ -71,19 +71,11 @@ const ValueContent = ({
             isEditable={isEditable}
             title={title}
             renderIconByName={others.renderIconByName}
-            value={
-              // When the card is in the editable state, we will show a preview
-              isEditable
-                ? PREVIEW_DATA
-                : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
-            }
+            value={determineValue(attribute.dataSourceId, values, attribute.dataFilter)}
             secondaryValue={
               attribute.secondaryValue && {
                 ...attribute.secondaryValue,
-                // When the card is in the editable state, we will show a preview
-                value: isEditable
-                  ? PREVIEW_DATA
-                  : determineValue(attribute.secondaryValue.dataSourceId, values),
+                value: determineValue(attribute.secondaryValue.dataSourceId, values),
               }
             }
             customFormatter={customFormatter}

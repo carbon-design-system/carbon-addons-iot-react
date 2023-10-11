@@ -110,7 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -219,7 +219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 aria-expanded={false}
                 aria-label="Calendar"
                 className="bx--tooltip__label"
-                id="test-trigger-id-2"
+                id="test-trigger-datetimepicker"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -349,7 +349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -462,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker25"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -575,7 +575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -700,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-expanded={false}
                   aria-label="Calendar"
                   className="bx--tooltip__label"
-                  id="test-trigger-id-2"
+                  id="test-trigger-datetimepicker"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onContextMenu={[Function]}
@@ -838,7 +838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -951,7 +951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -1075,7 +1075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 aria-expanded={false}
                 aria-label="Calendar"
                 className="bx--tooltip__label"
-                id="test-trigger-id-2"
+                id="test-trigger-datetimepicker"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -1212,7 +1212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}
@@ -1341,7 +1341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
-              id="test-trigger-id-2"
+              id="test-trigger-datetimepicker"
               onBlur={[Function]}
               onClick={[Function]}
               onContextMenu={[Function]}

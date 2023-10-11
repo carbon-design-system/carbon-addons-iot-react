@@ -46,7 +46,7 @@ $hoverBgColor: #2c2c2c;
     }
   }
 
-  &__menu-title[role='menuitem'][aria-expanded='true'] + &__menu {
+  &__menu-title[data-testid='menuitem'][aria-expanded='true'] + &__menu {
     left: auto;
     right: 0;
     [dir='rtl'] & {
@@ -166,7 +166,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   .#{$prefix}--header__menu-item {
-    &[role='menuitem'] {
+    &[data-testid='menuitem'] {
       height: 100%;
       justify-content: center;
       padding: 0;
@@ -182,7 +182,7 @@ $hoverBgColor: #2c2c2c;
   }
 }
 
-.#{$prefix}--header__menu .#{$prefix}--header__menu-item[role='menuitem'] {
+.#{$prefix}--header__menu .#{$prefix}--header__menu-item[data-testid='menuitem'] {
   display: flex;
   align-items: center;
   color: $active-ui;
@@ -246,5 +246,19 @@ button.#{$prefix}--header__menu-item {
     border-color: $inverse-focus-ui;
     color: $ui-02;
     outline: none;
+  }
+}
+
+.#{$prefix}--header__menu-title.#{$iot-prefix}--btn.#{$prefix}--btn--primary {
+  color: $ui-01;
+
+  &:focus {
+    border-color: $ui-01;
+    box-shadow: none;
+    border-width: 1px;
+  }
+
+  &:hover {
+    background-color: unset;
   }
 }

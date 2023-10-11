@@ -5,16 +5,20 @@ exports[`HeaderActionMenu should render 1`] = `
   <div
     class="bx--header__submenu custom-class"
   >
-    <a
+    <button
       aria-expanded="false"
       aria-haspopup="menu"
       aria-label="Accessibility label"
-      class="bx--header__menu-item bx--header__menu-title"
+      class="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
       data-testid="menuitem"
-      href="#"
-      role="menuitem"
       tabindex="0"
+      type="button"
     >
+      <div
+        class="bx--assistive-text"
+      >
+        Accessibility label
+      </div>
       Accessibility label
       <svg
         aria-hidden="true"
@@ -31,7 +35,7 @@ exports[`HeaderActionMenu should render 1`] = `
           d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
         />
       </svg>
-    </a>
+    </button>
     <ul
       aria-label="Accessibility label"
       class="bx--header__menu"

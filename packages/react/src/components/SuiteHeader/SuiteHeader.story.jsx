@@ -312,6 +312,7 @@ HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => {
   const demoMostRecentLinks = boolean('Demo most recent links', true);
+  const hideMenuButton = boolean('Hide menu button', false);
   const [linksState, setLinksState] = useState([]);
   const [recentLinksState, setRecentLinksState] = useState([]);
 
@@ -534,12 +535,14 @@ export const HeaderWithSideNav = () => {
         appName="Application Name"
         userDisplayName="Admin User"
         username="adminuser"
+        closeSideNavOnNavigation={boolean('Close side nav on navigation', false)}
         routes={routes}
         applications={applications}
         sideNavProps={{
           links: linksState,
           recentLinks: demoMostRecentLinks ? recentLinksState : [],
         }}
+        hideMenuButton={hideMenuButton}
       />
     </>
   );

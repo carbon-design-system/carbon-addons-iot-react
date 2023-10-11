@@ -97,7 +97,7 @@ const SuiteHeaderAppSwitcher = ({
   const tabIndex = isExpanded ? 0 : -1;
 
   return (
-    <ul data-testid={testId} className={baseClassName}>
+    <ul data-testid={testId} className={baseClassName} tabIndex={tabIndex}>
       <li className={`${baseClassName}--nav-link`}>
         {allApplicationsLink ? (
           <>
@@ -142,7 +142,7 @@ const SuiteHeaderAppSwitcher = ({
         );
       })}
       {mergedApplications?.length === 0 ? (
-        <div className={`${baseClassName}--no-app`}>
+        <div className={`${baseClassName}--no-app`} role="listitem">
           <div className="bee-icon-container">
             <Bee32 />
             <div className="bee-shadow" />

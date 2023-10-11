@@ -44,6 +44,30 @@ describe('SidePanel Component Test', () => {
     </Button>
   );
 
+  const Content = () => (
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim
+        et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit
+        amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu
+        pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum.
+        Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies.
+        Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor
+        nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor
+        posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis
+        sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget
+        finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus
+        lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed
+        ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum
+        porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan
+        at.
+      </p>
+      <Button data-testid="content-button" kind="ghost" className="myclass">
+        Inline Button
+      </Button>
+    </div>
+  );
+
   it('should be selectable by testId', () => {
     render(
       <SidePanel
@@ -184,5 +208,24 @@ describe('SidePanel Component Test', () => {
     );
     expect(screen.getByTestId('side-panel-action-bar')).toBeDefined();
     expect(screen.getByTestId('Button')).toBeDefined();
+  });
+
+  it('should render content slide-over panel', () => {
+    render(
+      <SidePanel {...commonProps} type="over">
+        <Content />
+      </SidePanel>
+    );
+    expect(screen.getByTestId('side-panel')).toHaveClass(`${iotPrefix}--sidepanel--slide-over`);
+  });
+
+  it('should render content inline panel', () => {
+    render(
+      <SidePanel {...commonProps} type="inline" onToggle={mockOnToggle}>
+        <Content />
+      </SidePanel>
+    );
+    expect(screen.getByTestId('side-panel')).toHaveClass(`${iotPrefix}--sidepanel--inline`);
+    expect(screen.getByTestId('side-panel-toggle-button')).toBeTruthy();
   });
 });

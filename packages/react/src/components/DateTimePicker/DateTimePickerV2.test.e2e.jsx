@@ -509,22 +509,18 @@ describe('DateTimePickerV2', () => {
     );
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
-
     cy.findByLabelText(i18n.startTimeLabel).type(
       '{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
     );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
-
     cy.findByLabelText(i18n.startTimeLabel).type(
       '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
     );
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
-
     cy.findByLabelText(i18n.endTimeLabel).type(
       '{backspace}{backspace}{backspace}{backspace}{backspace}11:61'
     );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
-
     // set time to 11:00
     cy.findByLabelText(i18n.endTimeLabel).type('{backspace}{backspace}00');
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
@@ -564,6 +560,43 @@ describe('DateTimePickerV2', () => {
 
     cy.get('#picker-test-2').type('{backspace}{backspace}{backspace}{backspace}{backspace}11:61');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+  });
+
+  it('should not disable apply button for single select', () => {
+    const onApply = cy.stub();
+    const onClear = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onClear={onClear}
+        id="picker-test"
+        hasTimeInput
+        useNewTimeSpinner
+        datePickerType="single"
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34',
+          },
+        }}
+      />
+    );
+
+    // open calendar
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByRole('button', { name: 'Clear' }).click();
+    expect(onClear).to.be.callCount(0);
+
+    // open calender again
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByRole('button', { name: 'Apply' }).click();
+    expect(onApply).to.be.callCount(0);
+
+    // errpr messages should show up after click on apply button
+    cy.findByText('Date is required').should('exist');
+    cy.findByText('The time entered is invalid').should('exist');
   });
 
   it('should open the flyout when hitting enter', () => {
@@ -1450,6 +1483,7 @@ describe('DateTimePickerV2', () => {
       <DateTimePicker
         onApply={cy.stub()}
         onCancel={cy.stub()}
+        onClear={cy.stub()}
         id="picker-test"
         hasTimeInput
         useNewTimeSpinner

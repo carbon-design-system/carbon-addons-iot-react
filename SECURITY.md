@@ -9,8 +9,8 @@
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, please open an issue or email rdconner@us.ibm.com and
-taylorjones@us.ibm.com
+Please report a vulnerability through GitHub's security advisory feature at
+https://github.com/carbon-design-system/carbon-addons-iot-react/security/advisories/new
 
 As this is a UI library, it's highly uncommon to see a security vulnerability
 directly within this codebase, but it is possible.

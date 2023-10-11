@@ -55,8 +55,12 @@ const propTypes = {
   isSideNavExpanded: PropTypes.bool,
   /** Make sure the Close icon is always displayed in the HeaderActionPanel action item when the panel is expanded */
   showCloseIconWhenPanelExpanded: PropTypes.bool,
+
+  /** Optional callback when user clicks on header name */
+  handleHeaderNameClick: PropTypes.func,
 };
 
+// istanbul ignore next
 const defaultProps = {
   onClickSideNavExpand: null,
   hasSideNav: true,
@@ -76,6 +80,7 @@ const defaultProps = {
   isActionItemVisible: () => true,
   isSideNavExpanded: false,
   showCloseIconWhenPanelExpanded: false,
+  handleHeaderNameClick: () => null,
 };
 
 /**
@@ -99,6 +104,7 @@ const Header = ({
   isActionItemVisible,
   isSideNavExpanded,
   showCloseIconWhenPanelExpanded,
+  handleHeaderNameClick,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const theShortAppName = shortAppName || appName;
@@ -136,9 +142,15 @@ const Header = ({
           data-testid={`${testId}-menu-button`}
           aria-label={isSideNavExpanded ? mergedI18n.closeMenu : mergedI18n.openMenu}
           onClick={onClickSideNavExpand}
+          isActive={isSideNavExpanded}
         />
       )}
-      <HeaderName data-testid={`${testId}-name`} href={url} prefix={prefix}>
+      <HeaderName
+        data-testid={`${testId}-name`}
+        href={url}
+        onClick={handleHeaderNameClick}
+        prefix={prefix}
+      >
         <span>{appName}</span>
         {theShortAppName ? (
           <span className={`${iotPrefix}--header__short-name`}>{theShortAppName}</span>

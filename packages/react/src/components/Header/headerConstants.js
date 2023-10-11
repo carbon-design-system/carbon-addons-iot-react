@@ -1,1 +1,1 @@
-export const APP_SWITCHER = 'AppSwitcher';
+export const APP_SWITCHER = 'App Switcher';
