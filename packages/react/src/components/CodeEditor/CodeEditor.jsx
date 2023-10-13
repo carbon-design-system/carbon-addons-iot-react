@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import { CodeSnippetSkeleton, CopyButton, Button } from 'carbon-components-react';
 import PropTypes from 'prop-types';
@@ -8,6 +8,16 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 
 const { prefix: carbonPrefix, iotPrefix } = settings;
+
+const updateEditorAttribute = (disabled, editorValue) => {
+  const textarea = document.getElementsByClassName('inputarea monaco-mouse-cursor-text')[0];
+
+  if (disabled && !!editorValue.current) {
+    textarea.setAttribute('disabled', '');
+  } else if (textarea?.hasAttribute('disabled')) {
+    textarea.removeAttribute('disabled');
+  }
+};
 
 const propTypes = {
   /** Initial value for the editor */
@@ -26,6 +36,8 @@ const propTypes = {
   onUploadError: PropTypes.func,
   /** Callback on code editor change */
   onCodeEditorChange: PropTypes.func,
+  /** Boolean to disabled code editor */
+  disabled: PropTypes.bool,
   /** All the labels that need translation */
   i18n: PropTypes.shape({
     copyBtnDescription: PropTypes.string,
@@ -44,6 +56,7 @@ const defaultProps = {
   hasUpload: false,
   onUploadError: null,
   onCodeEditorChange: null,
+  disabled: false,
   i18n: {
     copyBtnDescription: 'Copy content',
     copyBtnFeedBack: 'Copied',
@@ -60,6 +73,7 @@ const CodeEditor = ({
   onUploadError,
   onCodeEditorChange,
   light,
+  disabled,
   i18n,
   testId,
 }) => {
@@ -70,6 +84,18 @@ const CodeEditor = ({
 
   const [codeEditorValue, setCodeEditorValue] = useState(initialValue);
 
+  useEffect(() => {
+    updateEditorAttribute(disabled, editorValue);
+
+    const button = document.getElementsByClassName('iot--code-editor-copy')[0];
+
+    if (disabled) {
+      button.setAttribute('disabled', '');
+    } else if (button?.hasAttribute('disabled')) {
+      button.removeAttribute('disabled');
+    }
+  }, [disabled]);
+
   /**
    *
    * @param {func} _editorValue - a method that returns the current value of the editor
@@ -77,6 +103,7 @@ const CodeEditor = ({
    */
   const handleEditorDidMount = (_editorValue, val) => {
     editorValue.current = val;
+    updateEditorAttribute(disabled, editorValue);
   };
 
   /**
@@ -124,6 +151,7 @@ const CodeEditor = ({
           <Button
             className={classnames(`${iotPrefix}--code-editor-upload`, {
               [`${iotPrefix}--code-editor-upload--light`]: light,
+              [`${iotPrefix}--code-editor-upload--disabled`]: disabled,
             })}
             hasIconOnly
             iconDescription={mergedI18n.uploadBtnDescription}
@@ -137,18 +165,19 @@ const CodeEditor = ({
             kind="ghost"
             size="field"
             data-testid={`${testId}-upload-button`}
+            disabled={disabled}
           />
           <input
             className={`${carbonPrefix}--visually-hidden`}
             ref={inputNode}
             id="upload"
-            disabled={false}
             type="file"
             tabIndex={-1}
             multiple={false}
             accept={accept}
             name="upload"
             onChange={handleOnChange}
+            disabled={disabled}
           />
         </>
       ) : null}
@@ -156,6 +185,7 @@ const CodeEditor = ({
         <CopyButton
           className={classnames(`${iotPrefix}--code-editor-copy`, {
             [`${iotPrefix}--code-editor-copy--light`]: light,
+            [`${iotPrefix}--code-editor-copy--disabled`]: disabled,
           })}
           onClick={handleOnCopy}
           iconDescription={mergedI18n.copyBtnDescription}
@@ -166,13 +196,15 @@ const CodeEditor = ({
       <Editor
         className={classnames(`${iotPrefix}--code-editor-container`, {
           [`${iotPrefix}--code-editor-container--light`]: light,
+          [`${iotPrefix}--code-editor-container--disabled`]: disabled,
         })}
         wrapperClassName={`${iotPrefix}--code-editor-wrapper`}
         loading={<CodeSnippetSkeleton />}
         value={codeEditorValue}
         line={2}
         language={language}
-        editorDidMount={handleEditorDidMount}
+        onMount={handleEditorDidMount}
+        beforeMount={handleEditorDidMount}
         onChange={handleEditorChange}
         options={{
           minimap: {

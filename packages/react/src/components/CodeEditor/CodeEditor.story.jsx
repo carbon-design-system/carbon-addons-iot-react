@@ -23,6 +23,7 @@ export const Default = () => (
     hasUpload={boolean('Has upload button (hasUpload)', true)}
     accept={array('Accepted file types (accept)', ['.scss', '.css'], ',')}
     onCodeEditorChange={action('onCodeEditorChange')}
+    disabled={boolean('Disabled state (disabled)', false)}
   />
 );
 
