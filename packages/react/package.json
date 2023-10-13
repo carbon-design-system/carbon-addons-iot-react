@@ -1,8 +1,5 @@
 {
   "name": "carbon-addons-iot-react",
-  "engines": {
-    "node": "12.x || 14.x || 16.x || 18.x || 20.x"
-  },
   "browser": "es/index.js",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -27,7 +24,7 @@
     "build": "yarn svg-convert && cross-env BABEL_ENV='production' NODE_ENV='production' yarn build:pre && rollup -c && yarn build:post",
     "build:pre": "yarn test:engines && rimraf lib es umd css scss tmp storybook-static",
     "build:post": "rimraf tmp",
-    "build:storybook": "yarn test:engines && NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
+    "build:storybook": " yarn test:engines && cross-env NODE_OPTIONS=\"--max-old-space-size=16384\"  build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:check": "prettier --check \"**/*.{scss,css,js,jsx,md,ts}\" --loglevel warn",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
@@ -334,7 +331,6 @@
     "stylelint": "^10.1.0",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.10.0",
-    "weak-napi": "^2.0.1",
     "webpack": "^4.41.5",
     "webpack-dev-server": "^3.11.2",
     "whatwg-fetch": "^3.0.0"
