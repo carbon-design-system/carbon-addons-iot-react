@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.1...v2.154.0-next.2) (2023-10-13)
+
+
+### Bug Fixes
+
+* **cypress:** fix in cypress job ([7717cb9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7717cb91ae0afa632efcdcb570653706bc434f5f))
+* **node:** github action set node version to 20 ([977704b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/977704b975125dab444be8986e0214de2ab64873))
+
+
+
+
+
 # [2.154.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.35...v2.154.0-next.1) (2023-10-11)
 
 **Note:** Version bump only for package carbon-addons-iot-react
