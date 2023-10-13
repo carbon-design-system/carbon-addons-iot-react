@@ -9,7 +9,7 @@ import { settings } from '../../constants/Settings';
 
 const { prefix: carbonPrefix, iotPrefix } = settings;
 
-const updateEditorAttribute = (disabled, editorValue) => {
+export const updateEditorAttribute = (disabled, editorValue) => {
   const textarea = document.getElementsByClassName('inputarea monaco-mouse-cursor-text')[0];
 
   if (disabled && !!editorValue.current) {
