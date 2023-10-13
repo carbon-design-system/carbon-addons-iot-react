@@ -34,7 +34,7 @@ options: --privileged
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '20.x'
+          node-version: '16.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2

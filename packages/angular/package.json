@@ -12,7 +12,7 @@
     "test": "ng test --no-watch",
     "test:watch": "ng test --watch",
     "test:ci": "yarn test",
-    "build:storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -s .storybook/public -o dist/docs/storybook",
+    "build:storybook": "build-storybook -c .storybook -s .storybook/public -o dist/docs/storybook",
     "ng": "ng",
     "ng:build": "ngcc && ngcc -s ../../node_modules && ng build",
     "clean": "rm -rf dist",
