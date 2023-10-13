@@ -79,6 +79,44 @@ describe('CardEditor', () => {
     expect(uploadInputAfter.files[0].name).toBe('test.scss');
     expect(uploadInputAfter.files.length).toBe(1);
   });
+  it('should upload when upload icon is clicked - not call change editor ', async () => {
+    const file = new File(['.classNew'], 'test.scss', { type: 'css' });
+    const handleOnCopy = jest.fn();
+    const handleCodeEditorChange = jest.fn();
+    const { container } = render(
+      <CodeEditor
+        onCopy={handleOnCopy}
+        initialValue="/* write your code here */"
+        onClose={() => {}}
+        hasUpload
+        i18n={{
+          copyBtnDescription: 'Copy content',
+          copyBtnFeedBack: 'Copied',
+          uploadBtnDescription: 'Upload your file',
+        }}
+      />
+    );
+
+    const upload = screen.getByTestId('code-editor-upload-button');
+    userEvent.click(upload);
+
+    const uploadInput = container.querySelector(`input[name="upload"]`);
+
+    // simulate upload event and wait until finish
+    await waitFor(() =>
+      fireEvent.change(uploadInput, {
+        target: { files: [file] },
+      })
+    );
+
+    // get the same uploader from the dom
+    const uploadInputAfter = container.querySelector(`input[name="upload"]`);
+
+    // check if the file is there
+    expect(uploadInputAfter.files[0].name).toBe('test.scss');
+    expect(uploadInputAfter.files.length).toBe(1);
+    expect(handleCodeEditorChange).not.toHaveBeenCalled();
+  });
   it('should copy editor value when copy icon is clicked', async () => {
     const handleOnCopy = jest.fn();
     const { container } = render(
@@ -116,6 +154,31 @@ describe('CardEditor', () => {
 
     expect(handleCodeEditorChange).toHaveBeenCalledWith('new value');
     expect(handleCodeEditorChange).toHaveBeenCalledTimes(1);
+    expect(screen.getByDisplayValue('new value')).toBeInTheDocument();
+  });
+  it('should update code editor content - not call on change function', async () => {
+    const handleOnCopy = jest.fn();
+    const handleCodeEditorChange = jest.fn();
+
+    const { container } = render(
+      <CodeEditor
+        language="css"
+        onCopy={handleOnCopy}
+        initialValue="write your code here"
+        accept={['.scss', '.css']}
+      />
+    );
+
+    expect(screen.getByDisplayValue('write your code here')).toBeInTheDocument();
+
+    const editor = container.querySelector(`.inputarea.monaco-mouse-cursor-text`);
+
+    fireEvent.change(editor, {
+      target: { value: 'new value' },
+    });
+
+    expect(handleCodeEditorChange).not.toHaveBeenCalled();
+    expect(handleCodeEditorChange).toHaveBeenCalledTimes(0);
     expect(screen.getByDisplayValue('new value')).toBeInTheDocument();
   });
   it('should render disabled state', async () => {
