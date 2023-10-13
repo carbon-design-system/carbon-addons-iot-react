@@ -10,6 +10,7 @@ const { iotPrefix } = settings;
 
 jest.mock('@monaco-editor/react', () => {
   const FakeEditor = jest.fn((props) => {
+    props.onMount('mock-editor', props.value);
     return (
       <textarea
         className="inputarea monaco-mouse-cursor-text"
@@ -78,7 +79,6 @@ describe('CardEditor', () => {
     expect(uploadInputAfter.files[0].name).toBe('test.scss');
     expect(uploadInputAfter.files.length).toBe(1);
   });
-
   it('should copy editor value when copy icon is clicked', async () => {
     const handleOnCopy = jest.fn();
     const { container } = render(

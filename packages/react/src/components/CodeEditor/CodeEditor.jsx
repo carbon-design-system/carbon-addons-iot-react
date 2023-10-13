@@ -32,8 +32,6 @@ const propTypes = {
   light: PropTypes.bool,
   /** Boolean to define if upload button should be render or not */
   hasUpload: PropTypes.bool,
-  /** Callback for file load errors */
-  onUploadError: PropTypes.func,
   /** Callback on code editor change */
   onCodeEditorChange: PropTypes.func,
   /** Boolean to disabled code editor */
@@ -54,7 +52,6 @@ const defaultProps = {
   accept: ['.css'],
   light: false,
   hasUpload: false,
-  onUploadError: null,
   onCodeEditorChange: null,
   disabled: false,
   i18n: {
@@ -70,7 +67,6 @@ const CodeEditor = ({
   onCopy,
   accept,
   hasUpload,
-  onUploadError,
   onCodeEditorChange,
   light,
   disabled,
@@ -135,7 +131,6 @@ const CodeEditor = ({
         onCodeEditorChange(event.target.result);
       }
     };
-    fileReader.onerror = (event) => onUploadError(event);
     fileReader.readAsText(files[0]);
   };
 
@@ -204,7 +199,6 @@ const CodeEditor = ({
         line={2}
         language={language}
         onMount={handleEditorDidMount}
-        beforeMount={handleEditorDidMount}
         onChange={handleEditorChange}
         options={{
           minimap: {
