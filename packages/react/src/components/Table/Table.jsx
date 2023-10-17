@@ -609,12 +609,14 @@ export const defaultProps = (baseProps) => ({
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
   // previously used as testId.
   testId: null,
+  enablePercentageColumnWidth: false,
 });
 
 const Table = (props) => {
   const {
     id,
     columns,
+    enablePercentageColumnWidth,
     columnGroups,
     data,
     expandedData,
@@ -1103,6 +1105,7 @@ const Table = (props) => {
                 truncateCellText: useCellTextTruncate,
               }}
               columns={columns}
+              enablePercentageColumnWidth={enablePercentageColumnWidth}
               columnGroups={columnGroups}
               filters={view.filters}
               actions={{

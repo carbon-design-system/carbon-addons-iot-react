@@ -90,6 +90,7 @@ const propTypes = {
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
+  enablePercentageColumnWidth: PropTypes.bool,
   /** Specify the properties of each column group in the table. Defaults to empty column. */
   columnGroups: TableColumnGroupPropType,
   /** internationalized labels */
@@ -181,6 +182,7 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   hasFastFilter: true,
+  enablePercentageColumnWidth: false,
   testId: '',
   showExpanderColumn: false,
   size: undefined,
@@ -247,6 +249,7 @@ const TableHead = ({
   hasFastFilter,
   showExpanderColumn,
   size,
+  enablePercentageColumnWidth,
   filterRowIcon,
   filterRowIconDescription,
 }) => {
@@ -255,6 +258,7 @@ const TableHead = ({
   const columnRef = generateOrderedColumnRefs(ordering);
   const columnResizeRefs = generateOrderedColumnRefs(ordering);
   const [currentColumnWidths, setCurrentColumnWidths] = useState({});
+  const [percentageMode, setPercentageMode] = useState(enablePercentageColumnWidth);
 
   if (isEmpty(currentColumnWidths)) {
     columns.forEach((col) => {
@@ -297,8 +301,32 @@ const TableHead = ({
   };
 
   const onManualColumnResize = (modifiedColumnWidths) => {
-    const newColumnWidths = createNewWidthsMap(ordering, currentColumnWidths, modifiedColumnWidths);
-    updateColumnWidths(newColumnWidths);
+    if (percentageMode) {
+      const modifiedColumns = [...columns];
+      Object.keys(modifiedColumns).forEach((key) => {
+        if (modifiedColumns[key].hasOwnProperty('width')) {
+          delete modifiedColumns[key].width;
+        }
+      });
+
+      // while Resizing setting all column width to default DEFAULT_COLUMN_WIDTH 150px
+      const columnPropInlcudingWidths = addMissingColumnWidths({
+        ordering,
+        columns: modifiedColumns,
+        currentColumnWidths: {},
+      });
+
+      const newColumnWidths = createNewWidthsMap(ordering, columnPropInlcudingWidths);
+      setCurrentColumnWidths(newColumnWidths);
+      setPercentageMode(false);
+    } else {
+      const newColumnWidths = createNewWidthsMap(
+        ordering,
+        currentColumnWidths,
+        modifiedColumnWidths
+      );
+      updateColumnWidths(newColumnWidths);
+    }
   };
 
   const onColumnToggle = (columnId, newOrdering) => {
@@ -378,7 +406,20 @@ const TableHead = ({
       // if the widths of the column prop are externally updated or if columns are added/removed.
       const externallyModified =
         !isEqual(columns, previousColumns) || !isEqual(ordering, previousOrdering);
-      if (hasResize && columns.length && !isEmpty(currentColumnWidths) && externallyModified) {
+      if (
+        hasResize &&
+        columns.length &&
+        !isEmpty(currentColumnWidths) &&
+        externallyModified &&
+        !percentageMode
+      ) {
+        /* eslint-disable no-param-reassign */
+        Object.keys(columns).forEach((key) => {
+          if (columns[key].width && columns[key].width.includes('%')) {
+            delete columns[key].width;
+          }
+        });
+
         checkColumnWidthFormat(columns);
 
         // PRESERVE WIDTHS
@@ -428,8 +469,30 @@ const TableHead = ({
     // since it would be directly overridden by the column props. This effect can be removed
     // with issue https://github.com/IBM/carbon-addons-iot-react/issues/1224
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasResize, columns, ordering, previousColumns]
+    [hasResize, columns, ordering, previousColumns, percentageMode]
   );
+
+  useEffect(() => {
+    if (enablePercentageColumnWidth && columns.length && percentageMode) {
+      const width = `${parseInt(100 / columns.length, 10)}`;
+
+      const updatedColumns = columns.map((col) => {
+        const updatedCol = { ...col };
+        updatedCol.width = `${width}%`;
+        return updatedCol;
+      });
+
+      const columnPropIncludingWidths = addMissingColumnWidths({
+        ordering,
+        columns: updatedColumns,
+        currentColumnWidths,
+      });
+      const newColumnWidths = createNewWidthsMap(ordering, columnPropIncludingWidths);
+      if (!isEqual(currentColumnWidths, newColumnWidths)) {
+        setCurrentColumnWidths(newColumnWidths);
+      }
+    }
+  }, [columns, ordering, currentColumnWidths, enablePercentageColumnWidth, percentageMode]);
 
   const visibleColumns = ordering.filter((col) => !col.isHidden);
   const lastVisibleColumn = visibleColumns.slice(-1)[0];
