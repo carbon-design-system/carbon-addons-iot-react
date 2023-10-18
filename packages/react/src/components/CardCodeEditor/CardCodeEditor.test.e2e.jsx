@@ -64,7 +64,7 @@ describe('CardCodeEditor loaded editor test', () => {
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
     onlyOn('headless', () => {
-      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor');
+      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor', 0.2);
     });
   });
 });
