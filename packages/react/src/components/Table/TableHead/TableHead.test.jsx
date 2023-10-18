@@ -188,6 +188,35 @@ describe('TableHead', () => {
     expect(tableHeaders).toHaveLength(0);
   });
 
+  it('check columns % width by enablePercentageColumnWidth props', () => {
+    const myProps = {
+      ...commonTableHeadProps,
+      enablePercentageColumnWidth: true,
+      options: { ...commonTableHeadProps.options, hasResize: true },
+    };
+    const wrapper = mount(<TableHead {...myProps} />, {
+      attachTo: document.createElement('table'),
+    });
+
+    const tableHeader1 = wrapper.find('th[data-testid="-column-col1"]');
+    expect(tableHeader1.prop('style')).toHaveProperty('width', '33%');
+    const tableHeader2 = wrapper.find('th[data-testid="-column-col2"]');
+    expect(tableHeader2.prop('style')).toHaveProperty('width', '33%');
+    const tableHeader3 = wrapper.find('th[data-testid="-column-col3"]');
+    expect(tableHeader3.prop('style')).toHaveProperty('width', '33%');
+
+    const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+    tableHeaderResizeHandles.first().simulate('mouseDown');
+    tableHeaderResizeHandles.first().simulate('mouseMove');
+    tableHeaderResizeHandles.first().simulate('mouseUp');
+    const tableResizedHeader1 = wrapper.find('th[data-testid="-column-col1"]');
+    expect(tableResizedHeader1.prop('style')).toHaveProperty('width', 150);
+    const tableResizedHeader2 = wrapper.find('th[data-testid="-column-col2"]');
+    expect(tableResizedHeader2.prop('style')).toHaveProperty('width', 150);
+    const tableResizedHeader3 = wrapper.find('th[data-testid="-column-col3"]');
+    expect(tableResizedHeader3.prop('style')).toHaveProperty('width', 150);
+  });
+
   it('check hidden item is not shown ', () => {
     const myProps = {
       ...commonTableHeadProps,

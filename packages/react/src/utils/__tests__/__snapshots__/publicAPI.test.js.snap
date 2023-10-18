@@ -655,6 +655,7 @@ Map {
         },
       },
       "columnGroups": Array [],
+      "enablePercentageColumnWidth": false,
       "error": null,
       "i18n": Object {
         "actionFailedText": "Action failed",
@@ -2404,6 +2405,7 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "columnGroups": Array [],
+      "enablePercentageColumnWidth": false,
       "filterRowIcon": Object {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
@@ -2683,6 +2685,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "enablePercentageColumnWidth": Object {
+        "type": "bool",
       },
       "filterRowIcon": Object {
         "args": Array [
