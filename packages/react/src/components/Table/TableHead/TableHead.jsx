@@ -473,12 +473,49 @@ const TableHead = ({
   );
 
   useEffect(() => {
-    if (enablePercentageColumnWidth && columns.length && percentageMode) {
-      const width = `${parseInt(100 / columns.length, 10)}`;
+    let tableWidth;
+    let columnWidth;
+    const filteredColumns = columns.filter((colOrder) => {
+      const hiddenCol = ordering.find((col) => col.columnId === colOrder.id);
+      return !hiddenCol || !hiddenCol.isHidden;
+    });
 
-      const updatedColumns = columns.map((col) => {
+    const hasOverflowMenu = filteredColumns.some(
+      (column) => column.overflowMenuItems && column.overflowMenuItems.length > 0
+    );
+    const totalColumns = filteredColumns.length;
+    if (
+      enablePercentageColumnWidth &&
+      filteredColumns.length &&
+      percentageMode &&
+      !hasOverflowMenu
+    ) {
+      if (hasRowSelection === 'multi' && !(hasRowExpansion || hasRowNesting)) {
+        tableWidth = `calc(100% - 54px)`;
+        columnWidth = `calc(${tableWidth} / ${totalColumns})`;
+      } else if (
+        (hasRowExpansion || hasRowNesting) &&
+        !(
+          hasRowSelection === 'multi' ||
+          (useRadioButtonSingleSelect && hasRowSelection === 'single')
+        )
+      ) {
+        tableWidth = `calc(100% - 40px)`;
+        columnWidth = `calc(${tableWidth} / ${totalColumns})`;
+      } else if (
+        (hasRowExpansion || hasRowNesting) &&
+        (hasRowSelection === 'multi' ||
+          (useRadioButtonSingleSelect && hasRowSelection === 'single'))
+      ) {
+        tableWidth = `calc(100% - 94px)`;
+        columnWidth = `calc(${tableWidth} / ${totalColumns})`;
+      } else {
+        columnWidth = `${parseInt(100 / filteredColumns.length, 10)}%`;
+      }
+
+      const updatedColumns = filteredColumns.map((col) => {
         const updatedCol = { ...col };
-        updatedCol.width = `${width}%`;
+        updatedCol.width = columnWidth;
         return updatedCol;
       });
 
@@ -492,7 +529,17 @@ const TableHead = ({
         setCurrentColumnWidths(newColumnWidths);
       }
     }
-  }, [columns, ordering, currentColumnWidths, enablePercentageColumnWidth, percentageMode]);
+  }, [
+    columns,
+    ordering,
+    hasRowExpansion,
+    hasRowNesting,
+    hasRowSelection,
+    useRadioButtonSingleSelect,
+    currentColumnWidths,
+    enablePercentageColumnWidth,
+    percentageMode,
+  ]);
 
   const visibleColumns = ordering.filter((col) => !col.isHidden);
   const lastVisibleColumn = visibleColumns.slice(-1)[0];

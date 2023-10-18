@@ -27,12 +27,11 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
       ? columnWidths.find((col) => col.id === orderedColumn.columnId)
       : columnWidths[orderedColumn.columnId];
     newColumnWidths[orderedColumn.columnId] = {
-      width:
-        current && current.width !== undefined
-          ? current.width.toString().includes('%')
-            ? current.width
-            : parseInt(current.width, 10)
-          : undefined,
+      width: current?.width
+        ? current.width.toString().includes('%')
+          ? current.width
+          : parseInt(current.width, 10)
+        : undefined,
       id: orderedColumn.columnId,
     };
   });
