@@ -19,7 +19,7 @@ describe('CardCodeEditor loaded editor test', () => {
     );
     cy.get('head')
       .find(
-        '[src="https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/editor/editor.main.js"]'
+        '[src="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.js"]'
       )
       .should('exist');
   });
