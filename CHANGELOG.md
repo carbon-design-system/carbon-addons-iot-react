@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.2...v2.154.0-next.3) (2023-10-18)
+
+
+### Features
+
+* **table:** enable percentage-based column width for the table header ([#3831](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3831)) ([6dd5d97](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6dd5d97af83286a7d42a8f60d3ded51727c7c89e))
+
+
+
+
+
 # [2.154.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.1...v2.154.0-next.2) (2023-10-13)
 
 
