@@ -91,11 +91,12 @@ const CardCodeEditor = ({
 
   /**
    *
-   * @param {func} _editorValue - a method that returns the current value of the editor
-   * @param {object} val - instance of the monaco editor
+   * @param {object} editor - instance of the editor
+   * @param {object} _monaco - instance of monaco
    */
-  const handleEditorDidMount = (_editorValue, val) => {
-    editorValue.current = val;
+  // eslint-disable-next-line no-unused-vars
+  const handleEditorDidMount = (editor, _monaco) => {
+    editorValue.current = editor;
   };
 
   const handleOnSubmit = () => {
@@ -176,7 +177,7 @@ const CardCodeEditor = ({
           value={initialValue}
           line={2}
           language={language}
-          editorDidMount={handleEditorDidMount}
+          onMount={handleEditorDidMount}
           options={{
             minimap: {
               enabled: false,

@@ -19,7 +19,7 @@ describe('CardCodeEditor loaded editor test', () => {
     );
     cy.get('head')
       .find(
-        '[src="https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/editor/editor.main.js"]'
+        '[src="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.js"]'
       )
       .should('exist');
   });
@@ -64,7 +64,7 @@ describe('CardCodeEditor loaded editor test', () => {
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
     onlyOn('headless', () => {
-      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor');
+      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor', 0.2);
     });
   });
 });

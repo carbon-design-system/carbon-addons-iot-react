@@ -175,7 +175,7 @@
     "@carbon/pictograms-react": "11.25.0",
     "@carbon/telemetry": "^0.1.0",
     "@carbon/themes": "10.54.0",
-    "@monaco-editor/react": "^3.6.2",
+    "@monaco-editor/react": "4.4.5",
     "carbon-components": "10.56.0",
     "carbon-components-react": "7.56.0",
     "carbon-icons": "^7.0.7",

@@ -1,0 +1,73 @@
+.#{$iot-prefix}--code-editor {
+  &-container {
+    background-color: $ui-01;
+    height: 100%;
+    overflow: hidden;
+    min-height: 3.5rem;
+    padding-top: $spacing-05;
+  }
+  &-container--light {
+    background-color: $ui-background;
+  }
+  &-container--disabled {
+    background-color: $disabled-02;
+    .view-lines.monaco-mouse-cursor-text {
+      background-color: $disabled-02;
+      > div > span > * {
+        color: $disabled-03;
+      }
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    height: 100%;
+    .monaco-editor {
+      background-color: transparent;
+      height: 100%;
+    }
+    .monaco-editor .margin,
+    .monaco-editor-background,
+    .monaco-editor .inputarea.ime-input {
+      background-color: transparent;
+    }
+  }
+  &-copy {
+    background-color: $ui-01;
+    position: absolute;
+    inset-inline-start: calc(100% - 2.5rem);
+    top: 0;
+    z-index: 1;
+  }
+  &-copy--light {
+    background-color: $ui-background;
+  }
+
+  &-copy--disabled {
+    cursor: not-allowed;
+    background-color: $disabled-02;
+    &:hover {
+      background-color: $disabled-02;
+    }
+    > svg {
+      fill: $disabled-03;
+    }
+  }
+
+  &-upload.bx--btn.bx--btn--icon-only {
+    background-color: $ui-01;
+    position: absolute;
+    inset-inline-start: calc(100% - 5.03rem);
+    top: 0;
+    z-index: 1;
+  }
+  &-upload--light.bx--btn.bx--btn--icon-only {
+    background-color: $ui-background;
+    &:hover {
+      background-color: $hover-ui;
+    }
+  }
+  &-upload--disabled.bx--btn.bx--btn--icon-only {
+    background-color: $disabled-02;
+  }
+}

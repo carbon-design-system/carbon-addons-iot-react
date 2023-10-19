@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/CodeEditor default 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--code-editor-wrapper"
+    data-testid="code-editor"
+  >
+    <button
+      aria-describedby={null}
+      className="iot--code-editor-upload bx--btn bx--btn--md bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      data-testid="code-editor-upload-button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        className="bx--assistive-text"
+        onMouseEnter={[Function]}
+      >
+        Upload your file
+      </div>
+      <svg
+        aria-hidden="true"
+        aria-label="Upload your file"
+        className="bx--btn__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        viewBox="0 0 16 16"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 9L3.7 9.7 7.5 5.9 7.5 15 8.5 15 8.5 5.9 12.3 9.7 13 9 8 4zM3 4V2h10v2h1V2c0-.6-.4-1-1-1H3C2.4 1 2 1.4 2 2v2H3z"
+        />
+      </svg>
+    </button>
+    <input
+      accept={
+        Array [
+          ".scss",
+          ".css",
+        ]
+      }
+      className="bx--visually-hidden"
+      disabled={false}
+      id="upload"
+      multiple={false}
+      name="upload"
+      onChange={[Function]}
+      tabIndex={-1}
+      type="file"
+    />
+    <button
+      aria-label={null}
+      aria-live="polite"
+      className="iot--code-editor-copy bx--copy-btn bx--copy"
+      data-testid="code-editor-copy-button"
+      onAnimationEnd={[Function]}
+      onClick={[Function]}
+      title="Copy content"
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--snippet__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"
+        />
+        <path
+          d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"
+        />
+      </svg>
+      Copy content
+      <span
+        aria-hidden="true"
+        className="bx--assistive-text bx--copy-btn__feedback"
+      >
+        Copied
+      </span>
+    </button>
+    <section
+      style={
+        Object {
+          "display": "flex",
+          "height": "100%",
+          "position": "relative",
+          "textAlign": "initial",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="bx--snippet bx--skeleton bx--snippet--single"
+        >
+          <div
+            className="bx--snippet-container"
+          >
+            <span />
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--code-editor-container"
+        style={
+          Object {
+            "display": "none",
+            "width": "100%",
+          }
+        }
+      />
+    </section>
+  </div>
+</div>
+`;
