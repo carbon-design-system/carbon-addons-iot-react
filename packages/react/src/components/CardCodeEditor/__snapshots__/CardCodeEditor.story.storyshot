@@ -155,7 +155,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </span>
           </button>
           <section
-            className="iot--editor-wrapper"
             style={
               Object {
                 "display": "flex",
@@ -402,7 +401,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </span>
           </button>
           <section
-            className="iot--editor-wrapper"
             style={
               Object {
                 "display": "flex",
