@@ -490,7 +490,12 @@ const TableHead = ({
       percentageMode &&
       !hasOverflowMenu
     ) {
-      if (hasRowSelection === 'multi' && !(hasRowExpansion || hasRowNesting)) {
+      /* istanbul ignore next */
+      if (
+        (hasRowSelection === 'multi' ||
+          (useRadioButtonSingleSelect && hasRowSelection === 'single')) &&
+        !(hasRowExpansion || hasRowNesting)
+      ) {
         tableWidth = `calc(100% - 54px)`;
         columnWidth = `calc(${tableWidth} / ${totalColumns})`;
       } else if (

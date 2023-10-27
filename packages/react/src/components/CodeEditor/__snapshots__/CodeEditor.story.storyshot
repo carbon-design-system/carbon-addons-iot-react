@@ -98,6 +98,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </span>
     </button>
     <section
+      className="iot--code-editor-wrapper"
       style={
         Object {
           "display": "flex",
