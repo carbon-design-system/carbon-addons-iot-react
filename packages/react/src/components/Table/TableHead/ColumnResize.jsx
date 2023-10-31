@@ -9,7 +9,7 @@ import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
 const propTypes = {
   currentColumnWidths: PropTypes.objectOf(
     PropTypes.shape({
-      width: PropTypes.number,
+      width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       id: PropTypes.string,
     })
   ).isRequired,
