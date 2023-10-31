@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.4...v2.154.0-next.5) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** fixed table proptypes and single select radio button issue ([#3832](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3832)) ([01a685d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/01a685d534a9997a9c075d12b880ed5915128049))
+
+
+
+
+
 # [2.154.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.3...v2.154.0-next.4) (2023-10-19)
 
 
