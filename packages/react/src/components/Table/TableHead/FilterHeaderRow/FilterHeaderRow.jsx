@@ -60,6 +60,7 @@ class FilterHeaderRow extends Component {
         ),
         /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
         isMultiselect: PropTypes.bool,
+        customInput: PropTypes.elementType,
       })
     ).isRequired,
     /** internationalized string */
@@ -373,11 +374,47 @@ class FilterHeaderRow extends Component {
           const isLastColumn = visibleColumns.length - 1 === i;
           const lastVisibleColumn = visibleColumns.slice(-1)[0];
           const isLastVisibleColumn = column.id === lastVisibleColumn.columnId;
+          const CustomInput = column.customInput;
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
           const headerContent =
             column.isFilterable !== undefined && !column.isFilterable ? (
               <div />
+            ) : column.customInput !== undefined ? (
+              <CustomInput
+                ref={this.setFirstFilterableRef}
+                onChange={(event) => {
+                  event.persist();
+                  this.setState(
+                    (state) => ({
+                      filterValues: {
+                        ...state.filterValues,
+                        [column.id]: event.target.value,
+                      },
+                    }),
+                    hasFastFilter ? debounce(this.handleApplyFilter, 150) : null
+                  );
+                }}
+                onClick={(event) => {
+                  event.persist();
+                  this.setState(
+                    (state) => ({
+                      filterValues: {
+                        ...state.filterValues,
+                        [column.id]: Number(event?.imaginaryTarget?.value), // in number input of PAL event.target.value is undefined
+                      },
+                    }),
+                    this.handleApplyFilter
+                  );
+                }}
+                onKeyDown={
+                  !hasFastFilter
+                    ? (event) => handleEnterKeyDown(event, this.handleApplyFilter)
+                    : null
+                }
+                onBlur={!hasFastFilter ? this.handleApplyFilter : null}
+                value={filterValues[column.id]}
+              />
             ) : column.options ? (
               column.isMultiselect ? (
                 <FilterableMultiSelect

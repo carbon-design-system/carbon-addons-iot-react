@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { TextInput } from 'carbon-components-react';
 
 import * as utils from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
@@ -788,6 +789,53 @@ describe('FilterHeaderRow', () => {
     userEvent.click(screen.getByText('empty string'));
     expect(commonFilterProps.onApplyFilter).toHaveBeenCalledTimes(1);
     expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('empty string');
+  });
+
+  it('should display custom input when not undefined', () => {
+    render(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[{ id: 'col1', customInput: () => <div>customInput</div> }, { id: 'col2' }]}
+      />
+    );
+
+    expect(screen.getAllByText('customInput')[0]).toBeInTheDocument();
+  });
+
+  it('should display custom input and filter data in the table', () => {
+    const Text = () => {
+      const [value, setValue] = React.useState('initial value');
+      return (
+        <TextInput
+          placeholder="Filter col1"
+          value={value}
+          onChange={(evt) => setValue(evt.target.value)}
+        />
+      );
+    };
+    render(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          {
+            id: 'col1',
+            customInput: ({ onChange, onKeyDown }) => (
+              <Text onChange={onChange} onKeyDown={onKeyDown} />
+            ),
+          },
+          { id: 'col2' },
+        ]}
+      />
+    );
+
+    // Get the custom input field by its placeholder text
+    const filterInput = screen.getByPlaceholderText('Filter col1');
+    expect(filterInput).toHaveValue('initial value');
+    // Simulate typing in the filter input
+    fireEvent.change(filterInput, { target: { value: 'Value A' } });
+    expect(filterInput).toHaveValue('Value A');
   });
 
   it('should pass empty string filter value to handler', () => {

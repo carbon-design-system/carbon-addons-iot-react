@@ -8,6 +8,7 @@ import { Add20, TrashCan16, BeeBat16, Activity16, ViewOff16, Error16 } from '@ca
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
+import { DatePickerInput, NumberInput } from 'carbon-components-react';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
@@ -286,6 +287,93 @@ export const getTableColumns = () => [
       filterFunction: (columnValue, filterValue) => {
         return columnValue.id.includes(filterValue);
       },
+    },
+  },
+];
+
+export const getTableCustomColumns = () => [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: {
+      customInput: ({ onChange, value }) => (
+        <DatePickerInput placeholder="enter a data" value={value} onChange={onChange} />
+      ),
+    },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    filter: {
+      customInput: ({ onChange, onBlur, onKeyDown, value }) => (
+        <TextInput
+          placeholder="Filter col"
+          onBlur={onBlur}
+          onKeyDown={onKeyDown}
+          value={value}
+          onChange={onChange}
+        />
+      ),
+    },
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: {
+      customInput: ({ value, onClick, onChange }) => (
+        <NumberInput
+          placeholder="enter a number"
+          step={1}
+          allowEmpty
+          onChange={onChange}
+          value={value}
+          onClick={onClick}
+        />
+      ),
+    },
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      return value?.id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // clone inputData because sort mutates the array
+      const sortedData = data.map((i) => i);
+      sortedData.sort((a, b) => {
+        const aId = a.values[columnId].id;
+        const bId = b.values[columnId].id;
+        const compare = aId.localeCompare(bId);
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
     },
   },
 ];
