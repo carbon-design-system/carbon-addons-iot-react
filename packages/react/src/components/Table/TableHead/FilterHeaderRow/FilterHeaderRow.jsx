@@ -374,6 +374,7 @@ class FilterHeaderRow extends Component {
           const isLastColumn = visibleColumns.length - 1 === i;
           const lastVisibleColumn = visibleColumns.slice(-1)[0];
           const isLastVisibleColumn = column.id === lastVisibleColumn.columnId;
+          /* istanbul ignore next */
           const CustomInput = column.customInput;
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
