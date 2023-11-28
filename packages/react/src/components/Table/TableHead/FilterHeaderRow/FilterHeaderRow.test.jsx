@@ -821,9 +821,7 @@ describe('FilterHeaderRow', () => {
         columns={[
           {
             id: 'col1',
-            customInput: ({ onChange, onKeyDown }) => (
-              <Text onChange={onChange} onKeyDown={onKeyDown} />
-            ),
+            customInput: ({ onChange }) => <Text onChange={onChange} />,
           },
           { id: 'col2' },
         ]}

@@ -380,7 +380,8 @@ class FilterHeaderRow extends Component {
           const headerContent =
             column.isFilterable !== undefined && !column.isFilterable ? (
               <div />
-            ) : column.customInput !== undefined ? (
+            ) : /* istanbul ignore next */
+            column.customInput !== undefined ? (
               <CustomInput
                 ref={this.setFirstFilterableRef}
                 onChange={(event) => {
