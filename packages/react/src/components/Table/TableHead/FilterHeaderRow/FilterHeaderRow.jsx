@@ -384,35 +384,23 @@ class FilterHeaderRow extends Component {
               <CustomInput
                 ref={this.setFirstFilterableRef}
                 onChange={(event) => {
-                  event.persist();
+                  if (event.persist) {
+                    event.persist();
+                  }
                   this.setState(
                     (state) => ({
                       filterValues: {
                         ...state.filterValues,
-                        [column.id]: event.target.value,
+                        [column.id]: event.selectedItem
+                          ? getFilterValue(event.selectedItem)
+                          : event.selectedItems
+                          ? event.selectedItems.map(getMultiselectFilterValue)
+                          : event.target.value,
                       },
                     }),
-                    hasFastFilter ? debounce(this.handleApplyFilter, 150) : null
+                    debounce(this.handleApplyFilter, 1000)
                   );
                 }}
-                onClick={(event) => {
-                  event.persist();
-                  this.setState(
-                    (state) => ({
-                      filterValues: {
-                        ...state.filterValues,
-                        [column.id]: Number(event?.imaginaryTarget?.value), // in number input of PAL event.target.value is undefined
-                      },
-                    }),
-                    this.handleApplyFilter
-                  );
-                }}
-                onKeyDown={
-                  !hasFastFilter
-                    ? (event) => handleEnterKeyDown(event, this.handleApplyFilter)
-                    : null
-                }
-                onBlur={!hasFastFilter ? this.handleApplyFilter : null}
                 value={filterValues[column.id]}
               />
             ) : column.options ? (

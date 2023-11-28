@@ -8,7 +8,7 @@ import { Add20, TrashCan16, BeeBat16, Activity16, ViewOff16, Error16 } from '@ca
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
-import { DatePickerInput, NumberInput } from 'carbon-components-react';
+import { ComboBox, DatePickerInput, NumberInput } from 'carbon-components-react';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
@@ -98,6 +98,8 @@ export const getSelectDataOptions = () => [
     text: 'option-F',
   },
 ];
+
+const itemToString = (item) => (item ? item.text : '');
 
 const getSelectDataOptionsWithEmptyOption = () => {
   const selectOptions = getSelectDataOptions();
@@ -310,19 +312,24 @@ export const getTableCustomColumns = () => [
   {
     id: 'select',
     name: 'Select',
+    filter: {
+      customInput: ({ value, onChange }) => (
+        <ComboBox
+          placeholder="Filter col"
+          value={value}
+          itemToString={itemToString}
+          items={getSelectDataOptions()}
+          onChange={onChange}
+        />
+      ),
+    },
   },
   {
     id: 'secretField',
     name: 'Secret Information',
     filter: {
-      customInput: ({ onChange, onBlur, onKeyDown, value }) => (
-        <TextInput
-          placeholder="Filter col"
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
-          value={value}
-          onChange={onChange}
-        />
+      customInput: ({ value, onChange }) => (
+        <TextInput placeholder="Filter col" value={value} onChange={onChange} />
       ),
     },
   },
@@ -336,14 +343,13 @@ export const getTableCustomColumns = () => [
     id: 'number',
     name: 'Number',
     filter: {
-      customInput: ({ value, onClick, onChange }) => (
+      customInput: ({ value, onChange }) => (
         <NumberInput
           placeholder="enter a number"
           step={1}
           allowEmpty
           onChange={onChange}
           value={value}
-          onClick={onClick}
         />
       ),
     },

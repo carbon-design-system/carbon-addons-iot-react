@@ -1137,8 +1137,6 @@ WithFiltering.parameters = {
 export const WithCustomInputFiltering = () => {
   const {
     selectedTableType,
-    hasFilter,
-    hasAdvancedFilter,
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
     hasMultiSelectFilter,
@@ -1146,18 +1144,12 @@ export const WithCustomInputFiltering = () => {
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
-      'hasFilter',
-      'hasAdvancedFilter',
       'hideClearAllFiltersButton',
       'hasEmptyFilterOption',
       'hasMultiSelectFilter',
       'hasFilterRowIcon',
     ],
     getDefaultValue: (knobName) => {
-      if (knobName === 'hasAdvancedFilter') {
-        return false;
-      }
-
       if (knobName === 'hideClearAllFiltersButton') {
         return false;
       }
@@ -1197,137 +1189,39 @@ export const WithCustomInputFiltering = () => {
       : col
   );
 
-  // Normal filter settings
-  let activeFilters;
-  let activeBar;
-  if (!hasAdvancedFilter) {
-    activeFilters = object('Active filters (view.filters)', [
-      {
-        columnId: 'string',
-        value: 'whiteboard',
-      },
-    ]);
-    activeBar = select(
-      'Show filter toolbar (view.toolbar.activeBar)',
-      ['filter', undefined],
-      'filter'
-    );
-  }
-
-  // Advanced filter settings
-  let displayOverflowFilterTags;
-  const [showBuilder, setShowBuilder] = useStoryState(false);
-  const [advancedFilters, setAdvancedFilters] = useStoryState(
-    hasAdvancedFilter ? getAdvancedFilters() : undefined
+  const activeFilters = object('Active filters (view.filters)', [
+    {
+      columnId: 'string',
+      value: 'whiteboard',
+    },
+  ]);
+  const activeBar = select(
+    'Show filter toolbar (view.toolbar.activeBar)',
+    ['filter', undefined],
+    'filter'
   );
-  const selectedAdvancedFilterIds = hasAdvancedFilter
-    ? object(
-        'Active advanced filters (view.selectedAdvancedFilterIds) ☢️',
-        displayOverflowFilterTags
-          ? ['story-filter']
-          : ['story-filter', 'story-filter1', 'story-filter2']
-      )
-    : undefined;
-  const advancedFilterFlyoutOpen = hasAdvancedFilter
-    ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
-    : undefined;
-  const actions = merge(getTableActions(), {
-    toolbar: { onCreateAdvancedFilter: () => setShowBuilder(true) },
-  });
-  const storyNotice = hasAdvancedFilter ? (
-    <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
-  ) : null;
 
-  if (hasAdvancedFilter) {
-    displayOverflowFilterTags = boolean(
-      'Enable overflow menu in filter tags for advanced filters  ☢️',
-      false
-    );
-  }
-
-  const operands = {
-    CONTAINS: (a, b) => a.includes(b),
-    NEQ: (a, b) => a !== b,
-    LT: (a, b) => a < b,
-    LTOET: (a, b) => a <= b,
-    EQ: (a, b) => a === b,
-    GTOET: (a, b) => a >= b,
-    GT: (a, b) => a > b,
-  };
-  const filteredData =
-    selectedTableType === 'Table' && hasAdvancedFilter
-      ? data.filter(({ values }) => {
-          // return false if a value doesn't match a valid filter
-          return advancedFilters[0].filterRules.rules.reduce(
-            (acc, { columnId, operand, value: filterValue }) => {
-              const columnValue = values[columnId].toString();
-              const comparitor = operands[operand];
-              if (advancedFilters[0].filterRules.groupLogic === 'ALL') {
-                return acc && comparitor(columnValue, filterValue);
-              }
-
-              return comparitor(columnValue, filterValue);
-            },
-            true
-          );
-        })
-      : data;
-
-  if (displayOverflowFilterTags) {
-    setAdvancedFilters((prevFilters) => [...prevFilters, ...getMoreAdvancedFilters()]);
-  }
+  const filteredData = data;
 
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (
     <>
-      {storyNotice}
       <MyTable
         key={knobRegeneratedKey}
-        actions={actions}
         columns={columns}
         data={filteredData}
         options={{
-          hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
-          hasAdvancedFilter,
+          hasFilter: true,
           hasFilterRowIcon,
         }}
         view={{
-          advancedFilters,
-          selectedAdvancedFilterIds,
           filters: activeFilters,
           toolbar: {
             activeBar,
-            advancedFilterFlyoutOpen,
             hideClearAllFiltersButton,
           },
         }}
       />
-      {showBuilder && (
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 10,
-          }}
-        >
-          <RuleBuilder
-            onSave={(newFilter) => {
-              setAdvancedFilters((prev) => [
-                ...prev,
-                {
-                  filterId: uniqueId('filter-id'),
-                  ...newFilter,
-                },
-              ]);
-              setShowBuilder(false);
-            }}
-            onCancel={() => setShowBuilder(false)}
-            filter={{
-              filterColumns: columns.map(({ id, name }) => ({ id, name })),
-            }}
-          />
-        </div>
-      )}
     </>
   );
 };
