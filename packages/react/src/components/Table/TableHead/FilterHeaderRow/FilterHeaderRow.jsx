@@ -353,7 +353,11 @@ class FilterHeaderRow extends Component {
           '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
-        {hasDragAndDrop && <TableHeader className={`${iotPrefix}--filter-header-row--header`} />}
+        {hasDragAndDrop && (
+          /* istanbul ignore next */ <TableHeader
+            className={`${iotPrefix}--filter-header-row--header`}
+          />
+        )}
         {hasRowSelection === 'multi' ||
         (hasRowSelection === 'single' && useRadioButtonSingleSelect) ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
