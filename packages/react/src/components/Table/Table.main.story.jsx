@@ -1201,15 +1201,13 @@ export const WithCustomInputFiltering = () => {
     'filter'
   );
 
-  const filteredData = data;
-
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (
     <>
       <MyTable
         key={knobRegeneratedKey}
         columns={columns}
-        data={filteredData}
+        data={data}
         options={{
           hasFilter: true,
           hasFilterRowIcon,

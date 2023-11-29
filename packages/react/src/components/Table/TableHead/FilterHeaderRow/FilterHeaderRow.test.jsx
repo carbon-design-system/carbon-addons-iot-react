@@ -821,7 +821,7 @@ describe('FilterHeaderRow', () => {
         columns={[
           {
             id: 'col1',
-            customInput: ({ onChange }) => <Text onChange={onChange} />,
+            customInput: () => <Text />,
           },
           { id: 'col2' },
         ]}
