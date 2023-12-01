@@ -125,6 +125,10 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
       placeholderText: PropTypes.string,
       /** if isMultiselect is true, the table is filtered based on a multiselect */
       isMultiselect: PropTypes.bool,
+      /**
+       * customInput should be a React component that will accept the following props. value, onChange, id, column, columns etc.
+       * The expectation is that the input component will use value as the default value and onChange will be called when the value changes.  The FilterTableRow will debounce the values so the component does not need to do this
+       */
       customInput: PropTypes.elementType,
       options: PropTypes.arrayOf(
         PropTypes.shape({

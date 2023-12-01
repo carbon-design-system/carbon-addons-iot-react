@@ -328,8 +328,8 @@ export const getTableCustomColumns = () => [
     id: 'secretField',
     name: 'Secret Information',
     filter: {
-      customInput: ({ value, onChange }) => (
-        <TextInput placeholder="Filter col" value={value} onChange={onChange} />
+      customInput: ({ value, onChange, id }) => (
+        <TextInput placeholder="Filter col" value={value} id={id} onChange={onChange} />
       ),
     },
   },

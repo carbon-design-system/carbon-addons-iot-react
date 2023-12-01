@@ -803,17 +803,8 @@ describe('FilterHeaderRow', () => {
     expect(screen.getAllByText('customInput')[0]).toBeInTheDocument();
   });
 
-  it('should display custom input and filter data in the table', () => {
-    const Text = () => {
-      const [value, setValue] = React.useState('initial value');
-      return (
-        <TextInput
-          placeholder="Filter col1"
-          value={value}
-          onChange={(evt) => setValue(evt.target.value)}
-        />
-      );
-    };
+  it('should display custom input and filter data in the table', async () => {
+    const initialValue = 'initial value';
     render(
       <FilterHeaderRow
         {...commonFilterProps}
@@ -821,7 +812,14 @@ describe('FilterHeaderRow', () => {
         columns={[
           {
             id: 'col1',
-            customInput: () => <Text />,
+            customInput: ({ onChange, id }) => (
+              <TextInput
+                placeholder="Filter col1"
+                value={initialValue}
+                id={id}
+                onChange={onChange}
+              />
+            ),
           },
           { id: 'col2' },
         ]}
@@ -832,8 +830,8 @@ describe('FilterHeaderRow', () => {
     const filterInput = screen.getByPlaceholderText('Filter col1');
     expect(filterInput).toHaveValue('initial value');
     // Simulate typing in the filter input
-    fireEvent.change(filterInput, { target: { value: 'Value A' } });
-    expect(filterInput).toHaveValue('Value A');
+    fireEvent.change(filterInput, { target: { value: 'Value A' }, persist: jest.fn() });
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledTimes(1);
   });
 
   it('should pass empty string filter value to handler', () => {

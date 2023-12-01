@@ -60,6 +60,10 @@ class FilterHeaderRow extends Component {
         ),
         /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
         isMultiselect: PropTypes.bool,
+        /**
+         * customInput should be a React component that will accept the following props. value, onChange, id, column, columns etc.
+         * The expectation is that the input component will use value as the default value and onChange will be called when the value changes.  The FilterTableRow will debounce the values so the component does not need to do this
+         */
         customInput: PropTypes.elementType,
       })
     ).isRequired,
@@ -389,6 +393,7 @@ class FilterHeaderRow extends Component {
             column.customInput !== undefined ? (
               <CustomInput
                 ref={this.setFirstFilterableRef}
+                id={`column-${i}`}
                 onChange={(event) => {
                   if (event.persist) {
                     event.persist();
@@ -407,6 +412,8 @@ class FilterHeaderRow extends Component {
                     debounce(this.handleApplyFilter, 1000)
                   );
                 }}
+                column={column}
+                columns={columns}
                 value={filterValues[column.id]}
               />
             ) : column.options ? (
