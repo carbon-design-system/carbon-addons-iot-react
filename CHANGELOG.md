@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.5...v2.154.0-next.6) (2023-12-01)
+
+
+### Features
+
+* **table:** table column filter custom input render ([#3833](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3833)) ([b668143](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b668143e68d3e4373c589bb419cde5fb7204663a))
+
+
+
+
+
 # [2.154.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.4...v2.154.0-next.5) (2023-10-31)
 
 
