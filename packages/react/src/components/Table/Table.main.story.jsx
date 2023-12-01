@@ -37,6 +37,7 @@ import {
   addColumnGroupIds,
   getTableActions,
   getTableColumns,
+  getTableCustomColumns,
   getTableData,
   getTableDataWithEmptySelectFilter,
   getTableToolbarActions,
@@ -1127,6 +1128,104 @@ export const WithFiltering = () => {
 
 WithFiltering.storyName = 'With filtering';
 WithFiltering.parameters = {
+  component: Table,
+  docs: {
+    page: FilteringREADME,
+  },
+};
+
+export const WithCustomInputFiltering = () => {
+  const {
+    selectedTableType,
+    hideClearAllFiltersButton,
+    hasEmptyFilterOption,
+    hasMultiSelectFilter,
+    hasFilterRowIcon,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hideClearAllFiltersButton',
+      'hasEmptyFilterOption',
+      'hasMultiSelectFilter',
+      'hasFilterRowIcon',
+    ],
+    getDefaultValue: (knobName) => {
+      if (knobName === 'hideClearAllFiltersButton') {
+        return false;
+      }
+
+      if (knobName === 'hasEmptyFilterOption') {
+        return false;
+      }
+
+      if (knobName === 'hasMultiSelectFilter') {
+        return false;
+      }
+
+      if (knobName === 'hasFilterRowIcon') {
+        return false;
+      }
+
+      return true;
+    },
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = hasEmptyFilterOption
+    ? getTableDataWithEmptySelectFilter().slice(0, 30)
+    : getTableData().slice(0, 30);
+
+  const columns = decorateTableColumns(
+    getTableCustomColumns(),
+    hasEmptyFilterOption,
+    hasMultiSelectFilter
+  ).map((col) =>
+    col.id === 'object'
+      ? {
+          ...col,
+          tooltip: `This column has objects as values and needs a custom filter function that
+      filters based on an object property.`,
+        }
+      : col
+  );
+
+  const activeFilters = object('Active filters (view.filters)', [
+    {
+      columnId: 'string',
+      value: 'whiteboard',
+    },
+  ]);
+  const activeBar = select(
+    'Show filter toolbar (view.toolbar.activeBar)',
+    ['filter', undefined],
+    'filter'
+  );
+
+  const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
+  return (
+    <>
+      <MyTable
+        key={knobRegeneratedKey}
+        columns={columns}
+        data={data}
+        options={{
+          hasFilter: true,
+          hasFilterRowIcon,
+        }}
+        view={{
+          filters: activeFilters,
+          toolbar: {
+            activeBar,
+            hideClearAllFiltersButton,
+          },
+        }}
+      />
+    </>
+  );
+};
+
+WithCustomInputFiltering.storyName = 'With custom input filtering';
+WithCustomInputFiltering.parameters = {
   component: Table,
   docs: {
     page: FilteringREADME,

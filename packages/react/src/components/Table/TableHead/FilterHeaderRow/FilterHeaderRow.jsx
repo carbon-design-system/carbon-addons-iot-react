@@ -60,6 +60,11 @@ class FilterHeaderRow extends Component {
         ),
         /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
         isMultiselect: PropTypes.bool,
+        /**
+         * customInput should be a React component that will accept the following props. value, onChange, id, column, columns etc.
+         * The expectation is that the input component will use value as the default value and onChange will be called when the value changes.  The FilterTableRow will debounce the values so the component does not need to do this
+         */
+        customInput: PropTypes.elementType,
       })
     ).isRequired,
     /** internationalized string */
@@ -352,7 +357,11 @@ class FilterHeaderRow extends Component {
           '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
-        {hasDragAndDrop && <TableHeader className={`${iotPrefix}--filter-header-row--header`} />}
+        {hasDragAndDrop ? (
+          /* istanbul ignore next */ <TableHeader
+            className={`${iotPrefix}--filter-header-row--header`}
+          />
+        ) : null}
         {hasRowSelection === 'multi' ||
         (hasRowSelection === 'single' && useRadioButtonSingleSelect) ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
@@ -373,11 +382,40 @@ class FilterHeaderRow extends Component {
           const isLastColumn = visibleColumns.length - 1 === i;
           const lastVisibleColumn = visibleColumns.slice(-1)[0];
           const isLastVisibleColumn = column.id === lastVisibleColumn.columnId;
+          /* istanbul ignore next */
+          const CustomInput = column.customInput;
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
           const headerContent =
             column.isFilterable !== undefined && !column.isFilterable ? (
               <div />
+            ) : /* istanbul ignore next */
+            column.customInput !== undefined ? (
+              <CustomInput
+                ref={this.setFirstFilterableRef}
+                id={`column-${i}`}
+                onChange={(event) => {
+                  if (event.persist) {
+                    event.persist();
+                  }
+                  this.setState(
+                    (state) => ({
+                      filterValues: {
+                        ...state.filterValues,
+                        [column.id]: event.selectedItem
+                          ? getFilterValue(event.selectedItem)
+                          : event.selectedItems?.length > 0
+                          ? event.selectedItems.map(getMultiselectFilterValue)
+                          : event.target.value,
+                      },
+                    }),
+                    debounce(this.handleApplyFilter, 1000)
+                  );
+                }}
+                column={column}
+                columns={columns}
+                value={filterValues[column.id]}
+              />
             ) : column.options ? (
               column.isMultiselect ? (
                 <FilterableMultiSelect

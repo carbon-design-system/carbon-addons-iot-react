@@ -1004,6 +1004,9 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "customInput": Object {
+                        "type": "elementType",
+                      },
                       "dateOptions": Object {
                         "args": Array [
                           Object {
@@ -2560,6 +2563,9 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "customInput": Object {
+                        "type": "elementType",
+                      },
                       "dateOptions": Object {
                         "args": Array [
                           Object {
@@ -3296,6 +3302,9 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "customInput": Object {
+                        "type": "elementType",
+                      },
                       "dateOptions": Object {
                         "args": Array [
                           Object {
@@ -5116,6 +5125,9 @@ Map {
                       "filter": Object {
                         "args": Array [
                           Object {
+                            "customInput": Object {
+                              "type": "elementType",
+                            },
                             "dateOptions": Object {
                               "args": Array [
                                 Object {
