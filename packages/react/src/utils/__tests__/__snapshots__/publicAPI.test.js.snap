@@ -491,6 +491,76 @@ Map {
       },
     },
   },
+  "CodeEditor" => Object {
+    "defaultProps": Object {
+      "accept": Array [
+        ".css",
+      ],
+      "disabled": false,
+      "hasUpload": false,
+      "i18n": Object {
+        "copyBtnDescription": "Copy content",
+        "copyBtnFeedBack": "Copied",
+        "uploadBtnDescription": "Upload your file",
+      },
+      "initialValue": null,
+      "language": "css",
+      "light": false,
+      "onCodeEditorChange": null,
+      "onCopy": null,
+      "testId": "code-editor",
+    },
+    "propTypes": Object {
+      "accept": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "hasUpload": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "copyBtnDescription": Object {
+              "type": "string",
+            },
+            "copyBtnFeedBack": Object {
+              "type": "string",
+            },
+            "uploadBtnDescription": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialValue": Object {
+        "type": "string",
+      },
+      "language": Object {
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onCodeEditorChange": Object {
+        "type": "func",
+      },
+      "onCopy": Object {
+        "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+    },
+  },
   "EmptyTable" => Object {
     "defaultProps": Object {
       "id": "EmptyTable",
