@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.7...v2.154.0-next.8) (2024-01-04)
+
+
+### Features
+
+* **datetimepickerv2:** datetimepickerV2 hide back button props ([#3835](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3835)) ([3e9a2d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e9a2d3d22da2db258f2f5a1beab9d2fcf2626bc))
+
+
+
+
+
 # [2.154.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.6...v2.154.0-next.7) (2023-12-15)
 
 
