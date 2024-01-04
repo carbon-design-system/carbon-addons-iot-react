@@ -223,6 +223,9 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
+      showCustomRangeLink={boolean('show custom range link', true)}
+      hideBackButton={boolean('hide back button', false)}
+      showRelativeOption={boolean('show the relative option', true)}
       style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',

@@ -127,6 +127,8 @@ export const propTypes = {
   ),
   /** show the picker in the expanded state */
   expanded: PropTypes.bool,
+  /** hide the back button and display cancel button while only using absolute range selector */
+  hideBackButton: PropTypes.bool,
   /** disable the input */
   disabled: PropTypes.bool,
   /** specify the input in invalid state */
@@ -248,6 +250,7 @@ export const defaultProps = {
   disabled: false,
   invalid: false,
   showRelativeOption: true,
+  hideBackButton: false,
   showCustomRangeLink: true,
   hasTimeInput: true,
   renderPresetTooltipText: null,
@@ -312,6 +315,7 @@ const DateTimePicker = ({
   showCustomRangeLink,
   hasTimeInput,
   renderPresetTooltipText,
+  hideBackButton,
   onCancel,
   onApply,
   onClear,
@@ -749,7 +753,6 @@ const DateTimePicker = ({
 
   const onApplyClick = () => {
     const value = renderValue();
-    setLastAppliedValue(value);
     const returnValue = {
       timeRangeKind: value.kind,
       timeRangeValue: null,
@@ -802,6 +805,7 @@ const DateTimePicker = ({
         };
         break;
     }
+    setLastAppliedValue(returnValue);
 
     if (onApply && isValid) {
       setIsExpanded(false);
@@ -872,7 +876,7 @@ const DateTimePicker = ({
   const CustomFooter = () => {
     return (
       <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
-        {isCustomRange && !isSingleSelect ? (
+        {isCustomRange && !isSingleSelect && !hideBackButton ? (
           <Button
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}

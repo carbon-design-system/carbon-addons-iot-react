@@ -18,6 +18,7 @@ const DateTimePicker = ({
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
+  hideBackButton,
   renderPresetTooltipText,
   onCancel,
   onApply,
@@ -47,6 +48,7 @@ const DateTimePicker = ({
       expanded={expanded}
       disabled={disabled}
       invalid={invalid}
+      hideBackButton={hideBackButton}
       showRelativeOption={showRelativeOption}
       showCustomRangeLink={showCustomRangeLink}
       hasTimeInput={hasTimeInput}
