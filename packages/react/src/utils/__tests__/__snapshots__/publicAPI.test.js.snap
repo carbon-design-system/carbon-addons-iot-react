@@ -9797,6 +9797,7 @@ Map {
       "expanded": false,
       "hasIconOnly": false,
       "hasTimeInput": true,
+      "hideBackButton": false,
       "i18n": Object {
         "absoluteLabel": "Absolute",
         "amString": "AM",
@@ -10133,6 +10134,9 @@ Map {
         "type": "bool",
       },
       "hasTimeInput": Object {
+        "type": "bool",
+      },
+      "hideBackButton": Object {
         "type": "bool",
       },
       "i18n": Object {
