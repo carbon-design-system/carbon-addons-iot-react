@@ -1,7 +1,7 @@
 /* Used dependencies */
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, number, text } from '@storybook/addon-knobs';
 import { Button, Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 import { InformationFilled20 } from '@carbon/icons-react';
 
@@ -352,7 +352,7 @@ export const StatefulExampleWValidationInPageTitleBar = () => (
         <Link to="www.ibm.com">Something</Link>,
         <Link to="www.ibm.com">Something Else</Link>,
       ]}
-      content={<StepValidationWizard />}
+      content={<StepValidationWizard stepWidth={number('stepWidth', 6)} />}
     />
   </div>
 );
@@ -457,6 +457,7 @@ export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
           isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
           isClickable
           spaceEqually={boolean('spaceEqually', false)}
+          stepWidth={number('stepWidth', 6)}
         />
       }
     />
