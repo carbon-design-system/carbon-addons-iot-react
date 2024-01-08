@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.8...v2.154.0-next.9) (2024-01-08)
+
+
+### Bug Fixes
+
+* **PageWizard:** add stepWidth prop support ([#3837](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3837)) ([cd64eec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd64eeccb345f8bb5d36110acac6f9103f93c84d))
+
+
+
+
+
 # [2.154.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.7...v2.154.0-next.8) (2024-01-04)
 
 
