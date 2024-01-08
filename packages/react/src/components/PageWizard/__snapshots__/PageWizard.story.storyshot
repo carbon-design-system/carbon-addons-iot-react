@@ -706,6 +706,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
               >
                 <li
                   className="iot--progress-step iot--progress-step--current"
+                  style={
+                    Object {
+                      "minWidth": "6rem",
+                      "width": "6rem",
+                    }
+                  }
                 >
                   <button
                     aria-disabled={false}
@@ -773,6 +779,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="iot--progress-step iot--progress-step--incomplete"
+                  style={
+                    Object {
+                      "minWidth": "6rem",
+                      "width": "6rem",
+                    }
+                  }
                 >
                   <button
                     aria-disabled={false}
@@ -2300,6 +2312,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
               >
                 <li
                   className="iot--progress-step iot--progress-step--current"
+                  style={
+                    Object {
+                      "height": "6rem",
+                      "minHeight": "6rem",
+                    }
+                  }
                 >
                   <button
                     aria-disabled={false}
@@ -2367,6 +2385,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="iot--progress-step iot--progress-step--incomplete"
+                  style={
+                    Object {
+                      "height": "6rem",
+                      "minHeight": "6rem",
+                    }
+                  }
                 >
                   <button
                     aria-disabled={false}

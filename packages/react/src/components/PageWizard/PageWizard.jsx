@@ -60,6 +60,7 @@ export const PageWizardPropTypes = {
   testId: PropTypes.string,
   /** Specify whether the progress steps should be split equally in size in the div */
   spaceEqually: PropTypes.bool,
+  stepWidth: PropTypes.number,
 };
 
 export const defaultProps = {
@@ -85,6 +86,7 @@ export const defaultProps = {
   isClickable: false,
   testId: 'page-wizard',
   spaceEqually: false,
+  stepWidth: null,
 };
 
 const PageWizard = ({
@@ -108,6 +110,7 @@ const PageWizard = ({
   isClickable,
   testId,
   spaceEqually,
+  stepWidth,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, (step) => step.props);
@@ -195,6 +198,7 @@ const PageWizard = ({
             isVerticalMode={isProgressIndicatorVertical}
             isClickable={isClickable}
             spaceEqually={spaceEqually}
+            stepWidth={stepWidth}
             // TODO: pass down the testId in v3 instead of falling back to the
             // default.
             // testId={`${testId}-progress-indicator`}

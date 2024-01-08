@@ -29510,6 +29510,7 @@ Map {
       "sendingData": false,
       "setStep": null,
       "spaceEqually": false,
+      "stepWidth": null,
       "testId": "page-wizard",
     },
     "propTypes": Object {
@@ -29603,6 +29604,9 @@ Map {
       },
       "spaceEqually": Object {
         "type": "bool",
+      },
+      "stepWidth": Object {
+        "type": "number",
       },
       "testId": Object {
         "type": "string",
