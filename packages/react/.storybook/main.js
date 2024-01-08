@@ -17,6 +17,7 @@ module.exports = {
     // this avoids an error where plugins from different locations have
     // different loose modes
     options.plugins.forEach((plugin) => {
+      console.log('*** PLUGIN', plugin);
       if (Array.isArray(plugin) && plugin[1].loose) {
         plugin[1].loose = false;
       }
