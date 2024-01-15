@@ -123,7 +123,7 @@ export const DefaultBottom = () => (
         <a href="/" className={`${prefix}--link`}>
           Learn More
         </a>
-        <Button size="small">Create</Button>
+        <Button size="sm">Create</Button>
       </div>
     </Tooltip>
   </div>
@@ -152,7 +152,7 @@ export const NoIcon = () => (
         <a href="/" className={`${prefix}--link`}>
           Learn More
         </a>
-        <Button size="small">Create</Button>
+        <Button size="sm">Create</Button>
       </div>
     </Tooltip>
   </div>
@@ -181,7 +181,7 @@ export const RenderCustomIcon = () => (
         <a href="/" className={`${prefix}--link`}>
           Learn More
         </a>
-        <Button size="small">Create</Button>
+        <Button size="sm">Create</Button>
       </div>
     </Tooltip>
   </div>
@@ -210,7 +210,7 @@ export const OnlyCustomIcon = () => (
         <a href="/" className={`${prefix}--link`}>
           Learn More
         </a>
-        <Button size="small">Create</Button>
+        <Button size="sm">Create</Button>
       </div>
     </Tooltip>
   </div>

@@ -53,7 +53,7 @@ export const BasicWKnobs = () => {
             renderIcon={Edit}
             hasIconOnly
             kind="ghost"
-            size="small"
+            size="sm"
             onClick={() => action('row action clicked')}
             iconDescription="Edit"
           />,
@@ -247,7 +247,7 @@ export const WithSingleRowAction = () => (
           renderIcon={Edit}
           hasIconOnly
           kind="ghost"
-          size="small"
+          size="sm"
           onClick={() => action('row action clicked')}
           iconDescription="Edit"
         />,
@@ -276,7 +276,7 @@ export const WithDisabled = () => (
           hasIconOnly
           disabled={boolean('action disabled', true)}
           kind="ghost"
-          size="small"
+          size="sm"
           onClick={() => action('row action clicked')}
           iconDescription="Edit"
         />,

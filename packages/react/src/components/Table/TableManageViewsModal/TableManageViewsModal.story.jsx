@@ -144,7 +144,7 @@ export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
       kind="ghost"
       onClick={() => onClick(id)}
       renderIcon={icon}
-      size="small"
+      size="sm"
       tooltipAlignment="center"
       tooltipPosition="left"
     />

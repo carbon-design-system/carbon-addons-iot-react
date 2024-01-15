@@ -14,7 +14,7 @@ const addButton = (
   <Button
     renderIcon={Add}
     hasIconOnly
-    size="small"
+    size="sm"
     iconDescription="Add"
     key="hierarchy-list-button-add"
     onClick={() => action('header button onClick')}

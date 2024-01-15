@@ -109,7 +109,7 @@ const headerButton = (
   <Button
     renderIcon={Add}
     hasIconOnly
-    size="small"
+    size="sm"
     iconDescription="Add"
     key="expandable-list-button-add"
     onClick={() => action('header button clicked')}
@@ -382,7 +382,7 @@ export const WithRowActionsSingle = () => (
                 renderIcon={Edit}
                 hasIconOnly
                 kind="ghost"
-                size="small"
+                size="sm"
                 onClick={() => action('row action clicked')}
                 iconDescription="Edit"
                 tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
@@ -448,7 +448,7 @@ export const WithHierarchy = () => (
                   renderIcon={Edit}
                   hasIconOnly
                   kind="ghost"
-                  size="small"
+                  size="sm"
                   onClick={() => action('row action clicked')}
                   iconDescription="Edit"
                   tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}

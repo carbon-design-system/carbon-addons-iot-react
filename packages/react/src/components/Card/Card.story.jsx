@@ -208,7 +208,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="field" kind="ghost">
+          <Button size="md" kind="ghost">
             Footer Content
           </Button>
         )}
@@ -259,7 +259,7 @@ export const BasicWithRenderProp = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="field" kind="ghost">
+          <Button size="md" kind="ghost">
             Footer Content
           </Button>
         )}
@@ -905,7 +905,7 @@ export const BasicWithCustomAction = () => {
             'default'
           )}
           footerContent={() => (
-            <Button size="field" kind="ghost">
+            <Button size="md" kind="ghost">
               Footer Content
             </Button>
           )}

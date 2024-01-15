@@ -118,7 +118,7 @@ const DynamicHotspotSourcePicker = ({
           [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
         })}
         kind="ghost"
-        size="small"
+        size="sm"
         renderIcon={props => <Erase size={32} {...props} />}
         iconDescription={clearIconDescription}
         tooltipPosition="top"

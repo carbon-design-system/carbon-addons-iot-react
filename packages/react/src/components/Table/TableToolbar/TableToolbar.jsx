@@ -347,7 +347,7 @@ const TableToolbar = ({
               onClick={(e) => e.stopPropagation()}
               renderIcon={props => <OverflowMenuVertical size={20} {...props} />}
               tabIndex={shouldShowBatchActions ? 0 : -1}
-              size="lg"
+              size="md"
               menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
               withCarbonTooltip
               tooltipPosition="bottom"

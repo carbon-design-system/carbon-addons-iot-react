@@ -37,7 +37,7 @@ const ColumnHeaderSelect = ({
       role="button"
       data-ishidden={isHidden}
       renderIcon={Draggable}
-      size="small"
+      size="sm"
       ref={(instance) => {
         if (!isDisabled) {
           connectDragSource(instance);

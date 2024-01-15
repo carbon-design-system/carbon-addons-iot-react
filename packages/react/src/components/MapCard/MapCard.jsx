@@ -173,7 +173,7 @@ const MapCard = ({
             <Button
               className={`${BASE_CLASS_NAME}-settings-close-btn`}
               kind="ghost"
-              size="small"
+              size="sm"
               hasIconOnly
               renderIcon={Close}
               iconDescription={mergedI18n.closeSettingsIconText}

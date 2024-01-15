@@ -419,7 +419,7 @@ const DataSeriesFormItem = ({
                 renderIcon={Edit}
                 hasIconOnly
                 kind="ghost"
-                size="small"
+                size="sm"
                 onClick={() => handleEditButton(dataItem, i)}
                 iconDescription={mergedI18n.edit}
                 tooltipPosition="left"
@@ -430,7 +430,7 @@ const DataSeriesFormItem = ({
                 renderIcon={Subtract}
                 hasIconOnly
                 kind="ghost"
-                size="small"
+                size="sm"
                 onClick={() => handleRemoveButton(dataItem)}
                 iconDescription={mergedI18n.remove}
                 tooltipPosition="left"

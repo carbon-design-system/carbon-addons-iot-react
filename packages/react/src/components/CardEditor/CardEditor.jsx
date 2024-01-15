@@ -411,7 +411,7 @@ const CardEditor = ({
             <Button
               testId={`${testId}-open-editor-button`}
               kind="ghost"
-              size="small"
+              size="sm"
               renderIcon={Code}
               onClick={() => {
                 const cardConfigForModal = onCardJsonPreview
@@ -427,7 +427,7 @@ const CardEditor = ({
           <div className={`${baseClassName}--footer`}>
             <Button
               kind="ghost"
-              size="small"
+              size="sm"
               renderIcon={Apps}
               onClick={onShowGallery}
               testId={`${testId}-add-card-button`}
@@ -442,7 +442,7 @@ const CardEditor = ({
           <Button
             key="edit-data-item"
             kind="ghost"
-            size="small"
+            size="sm"
             renderIcon={Data116}
             onClick={onEditDataItems}
             iconDescription={mergedI18n.editDataItems}

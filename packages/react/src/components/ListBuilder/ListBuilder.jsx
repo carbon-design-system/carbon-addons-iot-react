@@ -283,7 +283,7 @@ const ListBuilder = ({
                   renderIcon={ArrowRight}
                   hasIconOnly
                   kind="ghost"
-                  size="small"
+                  size="sm"
                   onClick={handleAdd(item.id)}
                   iconDescription={mergedI18n.addLabel}
                 />,
@@ -338,7 +338,7 @@ const ListBuilder = ({
                 renderIcon={removeIcon}
                 hasIconOnly
                 kind="ghost"
-                size="small"
+                size="sm"
                 onClick={handleRemove(item.id)}
                 iconDescription={mergedI18n.removeIconDescription}
               />,
@@ -472,7 +472,7 @@ const ListBuilder = ({
                     testId={`${testId}__selected__reset-button`}
                     renderIcon={Reset}
                     kind="ghost"
-                    size="small"
+                    size="sm"
                     iconDescription={resetLabel}
                     key="hierarchy-list-button-add"
                     onClick={onReset}

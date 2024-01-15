@@ -125,7 +125,7 @@ class ColumnHeaderRow extends Component {
                 disabled={isDisabled}
                 className="column-header__btn"
                 kind="ghost"
-                size="small"
+                size="sm"
                 renderIcon={Settings}
                 onClick={() => onColumnSelectionConfig()}
               >

@@ -235,7 +235,7 @@ const HotspotEditorDataSourceTab = ({
                 renderIcon={Edit}
                 hasIconOnly
                 kind="ghost"
-                size="small"
+                size="sm"
                 onClick={() => handleEditButton(dataItem)}
                 iconDescription={mergedI18n.editText}
               />,

@@ -269,7 +269,7 @@ const RuleBuilder = ({
             className={`${baseClass}--header-actions-save`}
             testId="rule-builder-save"
             onClick={() => onSave(currentFilter)}
-            size="small"
+            size="sm"
           >
             {mergedI18n.saveLabel}
           </Button>

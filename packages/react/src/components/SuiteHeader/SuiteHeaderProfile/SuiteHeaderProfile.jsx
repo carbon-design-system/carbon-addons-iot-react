@@ -72,7 +72,7 @@ const SuiteHeaderProfile = ({
           >
             <Button
               kind="secondary"
-              size="small"
+              size="sm"
               testId={`${testId}--profile`}
               onClick={onProfileClick}
               onKeyDown={handleSpecificKeyDown(['Enter', ' '], onProfileClick)}

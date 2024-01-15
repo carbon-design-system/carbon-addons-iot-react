@@ -70,7 +70,7 @@ const Legend = ({
         testId={`${testId}-collapse-toggle`}
         className={`${iotPrefix}--map-legend__collapse-btn`}
         kind="ghost"
-        size="small"
+        size="sm"
         renderIcon={
           (document.dir === 'ltr' && isCollapsed) || (document.dir === 'rtl' && !isCollapsed)
             ? ChevronRight

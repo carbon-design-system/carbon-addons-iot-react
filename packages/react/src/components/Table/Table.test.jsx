@@ -2661,7 +2661,7 @@ describe('Table', () => {
   it('should show a deprecation warning for old size props', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
-      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="compact" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="xs" />
     );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
@@ -2674,7 +2674,7 @@ describe('Table', () => {
       )
     );
     rerender(
-      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="short" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="sm" />
     );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
@@ -2687,7 +2687,7 @@ describe('Table', () => {
       )
     );
     rerender(
-      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="normal" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />
     );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
@@ -2699,7 +2699,7 @@ describe('Table', () => {
         'The value `normal` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="tall" />);
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="xl" />);
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `tall` has been deprecated for the `size` prop on the Table component.'
@@ -2719,7 +2719,7 @@ describe('Table', () => {
       )
     );
     jest.clearAllMocks();
-    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />);
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="xl" />);
     expect(console.error).not.toHaveBeenCalled();
   });
 

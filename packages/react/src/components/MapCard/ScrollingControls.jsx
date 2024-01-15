@@ -63,7 +63,7 @@ const ScrollingControls = ({
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollUpDisabled}
         kind="ghost"
-        size="field"
+        size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
         renderIcon={props => <ChevronUp size={32} {...props} />}
@@ -86,7 +86,7 @@ const ScrollingControls = ({
               className={`${BASE_CLASS_NAME}__btn`}
               key={`${control.iconDescription}-${i}`}
               kind="ghost"
-              size="field"
+              size="md"
               hasIconOnly
               tooltipPosition={tooltipPosition}
               renderIcon={control.icon}
@@ -109,7 +109,7 @@ const ScrollingControls = ({
         className={classnames(`${BASE_CLASS_NAME}__btn`, `${BASE_CLASS_NAME}__scroll-btn`)}
         disabled={scrollDownDisabled}
         kind="ghost"
-        size="field"
+        size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
         renderIcon={props => <ChevronDown size={32} {...props} />}

@@ -289,7 +289,7 @@ const PageTitleBar = ({
           <Button
             className="page-title-bar-title--edit"
             kind="ghost"
-            size="field"
+            size="md"
             hasIconOnly
             renderIcon={Edit}
             title={editIconDescription}

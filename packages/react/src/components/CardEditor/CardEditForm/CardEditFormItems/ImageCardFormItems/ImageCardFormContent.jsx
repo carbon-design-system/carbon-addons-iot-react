@@ -166,7 +166,7 @@ const ImageCardFormItems = ({
           <Button
             kind="ghost"
             renderIcon={Close}
-            size="field"
+            size="md"
             iconDescription={mergedI18n.close}
             className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
             onClick={() =>
@@ -181,7 +181,7 @@ const ImageCardFormItems = ({
       {cardConfig.content?.id ? (
         <Button
           className={`${baseClassName}--form-section-image-btn`}
-          size="small"
+          size="sm"
           renderIcon={props => <Scale size={32} {...props} />}
           onClick={handleShowHotspotEditor}
         >

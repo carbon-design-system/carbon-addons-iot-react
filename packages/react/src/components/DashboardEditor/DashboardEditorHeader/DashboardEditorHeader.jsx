@@ -191,7 +191,7 @@ const DashboardEditorHeader = ({
             >
               <FileUploaderButton
                 buttonKind="ghost"
-                size="field"
+                size="md"
                 labelText={<DocumentImport fill="#161616" />}
                 onChange={onImport}
                 disableLabelChanges
@@ -205,7 +205,7 @@ const DashboardEditorHeader = ({
         {onExport && (
           <Button
             kind="ghost"
-            size="field"
+            size="md"
             iconDescription={mergedI18n.headerExportButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
@@ -219,7 +219,7 @@ const DashboardEditorHeader = ({
         {onDelete && (
           <Button
             kind="ghost"
-            size="field"
+            size="md"
             iconDescription={mergedI18n.headerDeleteButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
@@ -233,7 +233,7 @@ const DashboardEditorHeader = ({
         {onCancel && (
           <Button
             kind="secondary"
-            size="field"
+            size="md"
             onClick={onCancel}
             // TODO: pass testId in v3 to override defaults
             // testId={`${testId}-cancel-button`}
@@ -243,7 +243,7 @@ const DashboardEditorHeader = ({
         )}
         {onSubmit && (
           <Button
-            size="field"
+            size="md"
             disabled={isSubmitDisabled}
             onClick={() => onSubmit(dashboardJson)}
             loading={isSubmitLoading}
@@ -281,7 +281,7 @@ const DashboardEditorHeader = ({
         />
         <Button
           kind="ghost"
-          size="field"
+          size="md"
           title={mergedI18n.headerCancelButton}
           onClick={() => {
             setIsTitleEditMode(false);
@@ -293,7 +293,7 @@ const DashboardEditorHeader = ({
           {mergedI18n.headerCancelButton}
         </Button>
         <Button
-          size="field"
+          size="md"
           onClick={() => {
             onEditTitle(updatedTitle);
             setIsTitleEditMode(false);

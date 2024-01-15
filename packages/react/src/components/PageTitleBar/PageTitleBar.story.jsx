@@ -29,7 +29,7 @@ export const commonPageTitleBarProps = {
       </span>
       <Button
         className="some-right-content"
-        size="field"
+        size="md"
         renderIcon={props => <Add size={24} {...props} />}
         onClick={action('click')}
       >
@@ -197,7 +197,7 @@ export const WithSelect = () => (
           <Button
             renderIcon={props => <SettingsAdjust size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -212,7 +212,7 @@ export const WithSelect = () => (
           <Button
             renderIcon={props => <Add size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -222,14 +222,14 @@ export const WithSelect = () => (
           <Button
             renderIcon={props => <TrashCan size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Remove"
             kind="ghost"
             tooltipPosition="bottom"
             tooltipAlignment="center"
           />
-          <Button onClick={action('click')} size="field">
+          <Button onClick={action('click')} size="md">
             Take an action
           </Button>
         </div>
@@ -259,7 +259,7 @@ export const WithEverything = () => (
           <Button
             renderIcon={props => <SettingsAdjust size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -270,13 +270,13 @@ export const WithEverything = () => (
             id="search-1"
             placeholder="Search"
             onChange={action('search')}
-            size="lg"
+            size="md"
             labelText="Search"
           />
           <Button
             renderIcon={props => <Add size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -286,14 +286,14 @@ export const WithEverything = () => (
           <Button
             renderIcon={props => <TrashCan size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Remove"
             kind="ghost"
             tooltipPosition="bottom"
             tooltipAlignment="center"
           />
-          <Button onClick={action('click')} size="field">
+          <Button onClick={action('click')} size="md">
             Take an action
           </Button>
         </div>
@@ -333,10 +333,10 @@ export const WithCondensedHeader = () => (
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'CONDENSED')}
       extraContent={
         <div style={{ display: 'flex' }}>
-          <Button size="field" kind="secondary">
+          <Button size="md" kind="secondary">
             Secondary button
           </Button>
-          <Button size="field" kind="primary">
+          <Button size="md" kind="primary">
             Primary button
           </Button>
         </div>
@@ -398,7 +398,7 @@ export const WithDynamicScrolling = () => (
           <Button
             renderIcon={props => <Add size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -408,14 +408,14 @@ export const WithDynamicScrolling = () => (
           <Button
             renderIcon={props => <TrashCan size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Remove"
             kind="ghost"
             tooltipPosition="bottom"
             tooltipAlignment="center"
           />
-          <Button onClick={action('click')} size="field">
+          <Button onClick={action('click')} size="md">
             Take an action
           </Button>
         </div>
@@ -461,7 +461,7 @@ export const WithDynamicScrollingAndTabs = () => (
           <Button
             renderIcon={props => <Add size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Add"
             kind="ghost"
@@ -471,14 +471,14 @@ export const WithDynamicScrollingAndTabs = () => (
           <Button
             renderIcon={props => <TrashCan size={24} {...props} />}
             onClick={action('click')}
-            size="field"
+            size="md"
             hasIconOnly
             iconDescription="Remove"
             kind="ghost"
             tooltipPosition="bottom"
             tooltipAlignment="center"
           />
-          <Button onClick={action('click')} size="field">
+          <Button onClick={action('click')} size="md">
             Take an action
           </Button>
         </div>

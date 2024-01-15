@@ -221,7 +221,7 @@ export const Playground = () => {
         This is shallow demo implementation of the row edit functionality. Data modifications are
         not saved.
       </div>
-      <Button key="cancel" size="small" kind="tertiary" onClick={() => setShowRowEditBar(false)}>
+      <Button key="cancel" size="sm" kind="tertiary" onClick={() => setShowRowEditBar(false)}>
         Cancel demo
       </Button>
     </div>
@@ -230,7 +230,7 @@ export const Playground = () => {
   const singleRowEditButtons = (
     <Button
       key="cancel"
-      size="small"
+      size="sm"
       kind="tertiary"
       onClick={() => {
         setRowActionsState([...getRowActionStates()]);
@@ -1849,10 +1849,10 @@ export const WithDataEditing = () => {
 
   const saveCancelButtons = (
     <div style={{ display: 'flex', gap: '0.5rem' }}>
-      <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+      <Button key="cancel" size="sm" kind="tertiary" onClick={onCancelRowEdit}>
         Cancel
       </Button>
-      <Button key="save" size="small" onClick={onSaveRowEdit} disabled={isPristine}>
+      <Button key="save" size="sm" onClick={onSaveRowEdit} disabled={isPristine}>
         Save
       </Button>
     </div>
@@ -1893,7 +1893,7 @@ export const WithDataEditing = () => {
             style={{ color: 'white', marginLeft: '12px' }}
             kind="ghost"
             onClick={onUndoRowEdit}
-            size="small"
+            size="sm"
             type="button"
           >
             Undo edits

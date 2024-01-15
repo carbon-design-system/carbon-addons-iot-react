@@ -1014,7 +1014,7 @@ const DateTimePicker = ({
               <Button
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
-                size="field"
+                size="md"
                 {...others}
                 onClick={toggleIsCustomRange}
                 /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
@@ -1026,7 +1026,7 @@ const DateTimePicker = ({
               <Button
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
-                size="field"
+                size="md"
                 {...others}
                 onClick={onCancelClick}
                 /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
@@ -1042,7 +1042,7 @@ const DateTimePicker = ({
               onClick={onApplyClick}
               /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
               onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
-              size="field"
+              size="md"
               disabled={disableApply}
             >
               {mergedI18n.applyBtnLabel}

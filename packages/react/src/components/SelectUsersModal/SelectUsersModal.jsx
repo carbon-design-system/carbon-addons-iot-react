@@ -204,7 +204,7 @@ const SelectUsersModal = ({
             renderIcon={ArrowRight}
             hasIconOnly
             kind="ghost"
-            size="small"
+            size="sm"
             onClick={() => handleAdd(user)}
             iconDescription={mergedI18n.addUser}
             // TODO: pass testId in v3
@@ -230,7 +230,7 @@ const SelectUsersModal = ({
               renderIcon={Subtract}
               hasIconOnly
               kind="ghost"
-              size="small"
+              size="sm"
               onClick={() => handleRemove(user)}
               iconDescription={mergedI18n.removeUser}
               // TODO: pass testId in v3

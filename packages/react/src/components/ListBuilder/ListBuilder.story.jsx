@@ -286,7 +286,7 @@ export const ComplexNestedExample = () => {
             renderIcon={ArrowRight}
             hasIconOnly
             kind="ghost"
-            size="small"
+            size="sm"
             onClick={() => handleAdd(user)}
             iconDescription="Add user"
           />,
@@ -310,7 +310,7 @@ export const ComplexNestedExample = () => {
               renderIcon={Subtract}
               hasIconOnly
               kind="ghost"
-              size="small"
+              size="sm"
               onClick={() => handleRemove(user)}
               iconDescription="Remove user"
             />,

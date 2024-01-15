@@ -269,7 +269,7 @@ const ThresholdsFormItem = ({
     })}
     <Button
       kind="ghost"
-      size="small"
+      size="sm"
       renderIcon={Add}
       onClick={() => {
         let newThreshold = {

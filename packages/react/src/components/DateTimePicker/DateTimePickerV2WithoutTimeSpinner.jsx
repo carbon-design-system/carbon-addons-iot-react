@@ -684,7 +684,7 @@ const DateTimePicker = ({
           <Button
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
-            size="field"
+            size="md"
             {...others}
             onClick={toggleIsCustomRange}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
@@ -696,7 +696,7 @@ const DateTimePicker = ({
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
             onClick={onCancelClick}
-            size="field"
+            size="md"
             {...others}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
           >
@@ -709,7 +709,7 @@ const DateTimePicker = ({
           {...others}
           onClick={onApplyClick}
           onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
-          size="field"
+          size="md"
           disabled={disableApply}
         >
           {mergedI18n.applyBtnLabel}

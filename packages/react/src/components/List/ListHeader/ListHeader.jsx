@@ -67,7 +67,7 @@ const ListHeader = ({ title, buttons, search, i18n, testId }) => {
             onBlur={hasFastSearch ? undefined : handleSearch}
             onKeyDown={handleSpecificKeyDown(['Enter'], handleSearch)}
             onClear={() => handleSearch({ target: { value: '' } })}
-            size="lg"
+            size="md"
             value={search.value}
             labelText={i18n.searchPlaceHolderText}
             data-testid={`${testId}-search-input`}

@@ -25,7 +25,7 @@ const renderButton = (id, onClick, icon, key, iconText) => (
       onClick(id);
     }}
     renderIcon={icon}
-    size="small"
+    size="sm"
     tooltipAlignment="center"
     tooltipPosition="left"
   />

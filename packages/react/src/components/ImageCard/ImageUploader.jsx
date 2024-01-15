@@ -188,7 +188,7 @@ const ImageUploader = ({
       ) : (
         <>
           <FileUploaderDropContainer
-            size="field"
+            size="md"
             labelText=""
             onAddFiles={handleOnChange}
             data-testid={`${testId}-file-drop-container`}

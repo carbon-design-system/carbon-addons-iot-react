@@ -342,7 +342,7 @@ const SideNav = ({
           placeholder={i18n.searchPlaceholder}
           labelText={i18n.searchLabelText}
           onChange={handleSearchChange}
-          size="lg"
+          size="md"
         />,
       ]
     : [];

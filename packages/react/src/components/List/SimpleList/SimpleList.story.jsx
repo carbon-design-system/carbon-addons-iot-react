@@ -30,7 +30,7 @@ const getRowActions = (dir) => () => [
     renderIcon={Edit}
     hasIconOnly
     kind="ghost"
-    size="small"
+    size="sm"
     onClick={() => action('edit')()}
     iconDescription="Edit"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
@@ -40,7 +40,7 @@ const getRowActions = (dir) => () => [
     renderIcon={Add}
     hasIconOnly
     kind="ghost"
-    size="small"
+    size="sm"
     onClick={() => action('add')()}
     iconDescription="Add"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
@@ -50,7 +50,7 @@ const getRowActions = (dir) => () => [
     renderIcon={Close}
     hasIconOnly
     kind="ghost"
-    size="small"
+    size="sm"
     onClick={() => action('close')()}
     iconDescription="Close"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
@@ -130,7 +130,7 @@ const buttonsToRender = (dir) => [
     renderIcon={Edit}
     hasIconOnly
     kind="ghost"
-    size="small"
+    size="sm"
     onClick={() => {}}
     iconDescription="Edit"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
@@ -140,7 +140,7 @@ const buttonsToRender = (dir) => [
     renderIcon={Close}
     hasIconOnly
     kind="secondary"
-    size="small"
+    size="sm"
     onClick={() => {}}
     iconDescription="Close"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
@@ -149,7 +149,7 @@ const buttonsToRender = (dir) => [
     key="simple-list-header-add"
     renderIcon={Add}
     hasIconOnly
-    size="small"
+    size="sm"
     iconDescription="Add"
     tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,

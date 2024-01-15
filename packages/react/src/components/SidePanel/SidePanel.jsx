@@ -141,7 +141,7 @@ const SidePanel = ({
             kind="ghost"
             renderIcon={e.buttonIcon}
             onClick={e.buttonCallback}
-            size="small"
+            size="sm"
             tabIndex={isOpen ? 0 : -1}
           />
         ))) ||

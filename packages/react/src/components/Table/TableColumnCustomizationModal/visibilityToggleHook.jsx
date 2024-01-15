@@ -49,7 +49,7 @@ export const useVisibilityToggle = ({
         renderIcon={isHidden ? ViewOff : View}
         hasIconOnly
         kind="ghost"
-        size="small"
+        size="sm"
         onClick={() => toggleVisibility(id, isHidden)}
         iconDescription={isHidden ? showIconDescription : hideIconDescription}
         title={isHidden ? showIconDescription : hideIconDescription}
@@ -63,7 +63,7 @@ export const useVisibilityToggle = ({
         renderIcon={CloseOutline}
         hasIconOnly
         kind="ghost"
-        size="small"
+        size="sm"
         onClick={() => handleRemove(null, id)}
         iconDescription={removeIconDescription}
         title={removeIconDescription}

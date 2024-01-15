@@ -60,7 +60,7 @@ describe('Table visual regression tests', () => {
             hasSingleRowEdit: true,
             wrapCellText: 'always',
           }}
-          size="xl"
+          size="2xl"
           view={{
             aggregations: {
               label: 'Total:',
@@ -119,13 +119,13 @@ describe('Table visual regression tests', () => {
                   <Button
                     key="cancel"
                     style={{ marginRight: '0.5rem' }}
-                    size="small"
+                    size="sm"
                     kind="tertiary"
                     onClick={() => {}}
                   >
                     Cancel
                   </Button>
-                  <Button key="save" size="small" onClick={() => {}}>
+                  <Button key="save" size="sm" onClick={() => {}}>
                     Save
                   </Button>
                 </React.Fragment>

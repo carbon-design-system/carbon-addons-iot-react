@@ -350,7 +350,7 @@ const TableCardFormContent = ({
               renderIcon={Edit}
               hasIconOnly
               kind="ghost"
-              size="small"
+              size="sm"
               onClick={() => handleEditButton(dataItem)}
               iconDescription={mergedI18n.edit}
               tooltipPosition="left"
@@ -361,7 +361,7 @@ const TableCardFormContent = ({
               renderIcon={Subtract}
               hasIconOnly
               kind="ghost"
-              size="small"
+              size="sm"
               onClick={() => handleRemoveButton(dataItem)}
               iconDescription={mergedI18n.remove}
               tooltipPosition="left"

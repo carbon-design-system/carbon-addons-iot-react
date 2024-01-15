@@ -39,7 +39,7 @@ describe('SidePanel Component Test', () => {
     },
   ];
   const actionItemSlot = (
-    <Button size="field" kind="primary">
+    <Button size="md" kind="primary">
       Action button
     </Button>
   );

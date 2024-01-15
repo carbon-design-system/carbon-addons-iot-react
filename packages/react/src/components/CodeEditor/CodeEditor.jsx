@@ -151,7 +151,7 @@ const CodeEditor = ({
             }}
             renderIcon={Upload}
             kind="ghost"
-            size="field"
+            size="md"
             data-testid={`${testId}-upload-button`}
             disabled={disabled}
           />
