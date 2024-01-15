@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import { OverflowMenu as CarbonOverflowMenu } from 'carbon-components-react';
+import { OverflowMenu as CarbonOverflowMenu } from "@carbon/react";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { getMenuOffset } from 'carbon-components-react/es/components/OverflowMenu/OverflowMenu';
@@ -14,7 +14,7 @@ import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
 } from 'carbon-components-react/es/internal/FloatingMenu';
-import { OverflowMenuVertical20 } from '@carbon/icons-react';
+import { OverflowMenuVertical } from '@carbon/icons-react';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 import { settings } from '../../constants/Settings';
@@ -207,7 +207,7 @@ class IotOverflowMenu extends Component {
     menuOffsetFlip: getMenuOffset,
     menuOptionsClass: '',
     light: false,
-    renderIcon: OverflowMenuVertical20,
+    renderIcon: OverflowMenuVertical,
     selectorPrimaryFocus: '[data-overflow-menu-primary-focus]',
     tooltipAlignment: 'center',
     tooltipPosition: 'top',

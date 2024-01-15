@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TableHeader, TableRow, Button } from 'carbon-components-react';
-import { Settings16 } from '@carbon/icons-react';
+import { TableHeader, TableRow, Button } from "@carbon/react";
+import { Settings } from '@carbon/icons-react';
 
 import { settings } from '../../../../constants/Settings';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
@@ -126,7 +126,7 @@ class ColumnHeaderRow extends Component {
                 className="column-header__btn"
                 kind="ghost"
                 size="small"
-                renderIcon={Settings16}
+                renderIcon={Settings}
                 onClick={() => onColumnSelectionConfig()}
               >
                 {columnSelectionConfigText}

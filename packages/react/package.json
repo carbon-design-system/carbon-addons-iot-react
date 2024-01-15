@@ -169,10 +169,6 @@
     "@babel/runtime": "^7.10.2",
     "@carbon/charts": "0.55.1",
     "@carbon/charts-react": "0.55.1",
-    "@carbon/colors": "10.37.0",
-    "@carbon/icons-react": "10.49.0",
-    "@carbon/layout": "10.37.0",
-    "@carbon/motion": "10.29.0",
     "@carbon/pictograms-react": "11.25.0",
     "@carbon/themes": "10.54.0",
     "@ibm/telemetry-js": "^1.5.0",
@@ -180,7 +176,9 @@
     "carbon-components": "10.56.0",
     "carbon-components-react": "7.56.0",
     "carbon-icons": "^7.0.7",
-    "classnames": "^2.5.1",
+    "@carbon/react": "^1.47.0",
+    "@carbon/telemetry": "^0.1.0",
+    "classnames": "^2.2.5",
     "core-js": "3.26.1",
     "dayjs": "^1.10.4",
     "immutability-helper": "^3.1.1",
@@ -324,7 +322,7 @@
     "rollup-plugin-filesize": "^9.1.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-uglify": "^6.0.4",
-    "sass": "^1.43.4",
+    "sass": "^1.69.7",
     "storybook-addon-rtl": "^0.2.2",
     "storybook-addon-turbo-build": "^1.0.1",
     "style-loader": "^0.23.1",
@@ -336,10 +334,5 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.154.0-next.25",
-  "resolutions": {
-    "chokidar": "3.3.1",
-    "react-grid-layout": "1.2.2",
-    "got": "11.8.5"
-  }
+  "version": "2.154.0-next.25"
 }

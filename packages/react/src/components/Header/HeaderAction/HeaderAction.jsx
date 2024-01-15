@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import classnames from 'classnames';
-import { Close16 } from '@carbon/icons-react';
+import { Close } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
 import { keyboardKeys } from '../../../constants/KeyCodeConstants';
@@ -136,7 +136,7 @@ const HeaderAction = ({
             aria-label={item.label}
             renderMenuContent={() => {
               return isExpanded && inOverflow ? (
-                <Close16 fill={white} description={mergedI18n.closeMenu} />
+                <Close fill={white} description={mergedI18n.closeMenu} />
               ) : (
                 item.btnContent
               );

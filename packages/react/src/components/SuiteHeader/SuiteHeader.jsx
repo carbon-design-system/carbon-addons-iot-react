@@ -3,19 +3,19 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
-import { ButtonSkeleton } from 'carbon-components-react';
+import { UserAvatar, Settings, Help } from '@carbon/icons-react';
+import { ButtonSkeleton } from "@carbon/react";
 import classnames from 'classnames';
-import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
+import { HeaderContainer } from '@carbon/react';
 import { get, set, cloneDeep } from 'lodash-es';
 
 import SideNav, { SideNavPropTypes } from '../SideNav/SideNav';
-import { ToastNotification } from '../Notification';
-import { Link } from '../Link';
+import { ToastNotification } from '@carbon/react';
+import { Link } from '@carbon/react';
 import Header from '../Header/Header';
 import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/HeaderPropTypes';
 import { settings } from '../../constants/Settings';
-import { SkeletonText } from '../SkeletonText';
+import { SkeletonText } from '@carbon/react';
 import Walkme from '../Walkme/Walkme';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
@@ -313,356 +313,352 @@ const SuiteHeader = ({
     [handleHeaderNameClickProps, navigatorRoute]
   );
 
-  return (
-    <>
-      {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
-      {showToast && surveyData ? (
-        <ToastNotification
-          data-testid={`${testId}-notification`}
-          className={`${settings.iotPrefix}--suite-header-survey-toast`}
-          kind="info"
-          title={
-            typeof mergedI18N.surveyTitle === 'function'
-              ? mergedI18N.surveyTitle(appName || suiteName)
-              : translate(mergedI18N.surveyTitle, [['{solutionName}', appName || suiteName]])
-          }
-          subtitle={
-            <>
+  return <>
+    {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
+    {showToast && surveyData ? (
+      <ToastNotification
+        data-testid={`${testId}-notification`}
+        className={`${settings.iotPrefix}--suite-header-survey-toast`}
+        kind="info"
+        title={
+          typeof mergedI18N.surveyTitle === 'function'
+            ? mergedI18N.surveyTitle(appName || suiteName)
+            : translate(mergedI18N.surveyTitle, [['{solutionName}', appName || suiteName]])
+        }
+        subtitle={
+          <>
+            <Link
+              href={surveyData.surveyLink}
+              rel="noopener noreferrer"
+              onClick={handleOnClick(
+                SUITE_HEADER_ROUTE_TYPES.SURVEY,
+                surveyData.surveyLink,
+                true
+              )}
+            >
+              {mergedI18N.surveyText}
+            </Link>
+            <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
               <Link
-                href={surveyData.surveyLink}
+                href={surveyData.privacyLink}
                 rel="noopener noreferrer"
                 onClick={handleOnClick(
                   SUITE_HEADER_ROUTE_TYPES.SURVEY,
-                  surveyData.surveyLink,
+                  surveyData.privacyLink,
                   true
                 )}
               >
-                {mergedI18N.surveyText}
+                {mergedI18N.surveyPrivacyPolicy}
               </Link>
-              <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
-                <Link
-                  href={surveyData.privacyLink}
-                  rel="noopener noreferrer"
-                  onClick={handleOnClick(
-                    SUITE_HEADER_ROUTE_TYPES.SURVEY,
-                    surveyData.privacyLink,
-                    true
-                  )}
-                >
-                  {mergedI18N.surveyPrivacyPolicy}
-                </Link>
-              </div>
-            </>
-          }
-          lowContrast
-          caption=""
-          onCloseButtonClick={() => setShowToast(false)}
-        />
-      ) : null}
-      {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
-        <IdleLogoutConfirmationModal
-          isAdminView={isAdminView}
-          appId={appId}
-          workspaceId={currentWorkspace?.id}
-          idleTimeoutData={idleTimeoutData}
-          routes={routes}
-          onRouteChange={onRouteChange}
-          onStayLoggedIn={onStayLoggedIn}
-          i18n={i18n}
-        />
-      ) : null}
-      <SuiteHeaderLogoutModal
-        isOpen={showLogoutModal}
-        onClose={() => setShowLogoutModal(false)}
-        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute)}
-        i18n={{
-          heading: mergedI18N.profileLogoutModalHeading,
-          primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
-          secondaryButton: mergedI18N.profileLogoutModalSecondaryButton,
-          body:
-            typeof mergedI18N.profileLogoutModalBody === 'function'
-              ? mergedI18N.profileLogoutModalBody(appName || suiteName, userDisplayName)
-              : translate(mergedI18N.profileLogoutModalBody, [
-                  ['{solutionName}', appName || suiteName],
-                  ['{userName}', userDisplayName],
-                ]),
-        }}
-        testId={`${testId}-logout-modal`}
+            </div>
+          </>
+        }
+        lowContrast
+        caption=""
+        onCloseButtonClick={() => setShowToast(false)}
       />
-      {routes && (
-        <>
-          <span className={`${settings.iotPrefix}--suite-header-data`} data-type="workspaceId">
-            {routes.workspaceId}
-          </span>
-          <span className={`${settings.iotPrefix}--suite-header-data`} data-type="domain">
-            {routes.domain}
-          </span>
-        </>
-      )}
-      <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand }) => {
-          sideNavExpandedRef.current = isSideNavExpanded;
-          return (
-            <>
-              <Header
-                testId={testId}
-                className={classnames(`${settings.iotPrefix}--suite-header`, className)}
-                url={navigatorRoute}
-                handleHeaderNameClick={handleHeaderNameClick}
-                hasSideNav={hideMenuButton ? false : hasSideNav || sideNavProps !== null}
-                onClickSideNavExpand={(evt) => {
-                  onSideNavToggled(evt);
-                  onClickSideNavExpand(evt);
-                }}
-                headerPanel={{
-                  className: `${settings.iotPrefix}--suite-header-app-switcher${
-                    workspaces ? '-multiworkspace' : ''
-                  }`,
-                  // eslint-disable-next-line react/prop-types
-                  content: React.forwardRef(({ isExpanded }, ref) =>
-                    workspaces ? (
-                      <MultiWorkspaceSuiteHeaderAppSwitcher
-                        ref={ref}
-                        isAdminView={isAdminView}
-                        workspaces={workspaces}
-                        globalApplications={globalApplications}
-                        customApplications={customApplications}
-                        adminLink={routes?.admin}
-                        noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
-                        onRouteChange={onRouteChange}
-                        i18n={{
-                          workspace: mergedI18N.switcherWorkspace,
-                          workspaces: mergedI18N.switcherWorkspaces,
-                          workspaceAdmin: mergedI18N.switcherWorkspaceAdmin,
-                          backToAppSwitcher: mergedI18N.switcherBackToAppSwitcher,
-                          selectWorkspace: mergedI18N.switcherSelectWorkspace,
-                          availableWorkspaces: mergedI18N.switcherAvailableWorkspaces,
-                          suiteAdmin: mergedI18N.switcherSuiteAdmin,
-                          global: mergedI18N.switcherGlobal,
-                          myApplications: mergedI18N.switcherMyApplications,
-                          allApplicationsLink: mergedI18N.switcherNavigatorLink,
-                          requestAccess: mergedI18N.switcherRequestAccess,
-                          learnMoreLink: mergedI18N.switcherLearnMoreLink,
-                        }}
-                        testId={`${testId}-app-switcher`}
-                        isExpanded={isExpanded}
-                      />
-                    ) : applications ? (
-                      <SuiteHeaderAppSwitcher
-                        ref={ref}
-                        applications={applications}
-                        customApplications={customApplications}
-                        allApplicationsLink={routes?.navigator}
-                        noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
-                        onRouteChange={onRouteChange}
-                        i18n={{
-                          myApplications: mergedI18N.switcherMyApplications,
-                          allApplicationsLink: mergedI18N.switcherNavigatorLink,
-                          requestAccess: mergedI18N.switcherRequestAccess,
-                          learnMoreLink: mergedI18N.switcherLearnMoreLink,
-                        }}
-                        testId={`${testId}-app-switcher`}
-                        isExpanded={isExpanded}
-                      />
-                    ) : (
-                      <SuiteHeaderAppSwitcherLoading ref={ref} testId={`${testId}-app-switcher`} />
-                    )
-                  ),
-                }}
-                appName={suiteName}
-                subtitle={
-                  appNameComponent || currentWorkspaceComponent || extraContentComponent ? (
-                    <div>
-                      {currentWorkspaceComponent}
-                      {appNameComponent}
-                      {extraContentComponent}
-                    </div>
-                  ) : null
-                }
-                actionItems={[
-                  ...customActionItems,
-                  {
-                    id: 'admin',
-                    label: mergedI18N.administrationIcon,
-                    className: [
-                      'admin-icon',
-                      !routes?.admin ? 'admin-icon__hidden' : null,
-                      isAdminView ? 'admin-icon__selected' : null,
+    ) : null}
+    {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
+      <IdleLogoutConfirmationModal
+        isAdminView={isAdminView}
+        appId={appId}
+        workspaceId={currentWorkspace?.id}
+        idleTimeoutData={idleTimeoutData}
+        routes={routes}
+        onRouteChange={onRouteChange}
+        onStayLoggedIn={onStayLoggedIn}
+        i18n={i18n}
+      />
+    ) : null}
+    <SuiteHeaderLogoutModal
+      isOpen={showLogoutModal}
+      onClose={() => setShowLogoutModal(false)}
+      onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute)}
+      i18n={{
+        heading: mergedI18N.profileLogoutModalHeading,
+        primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
+        secondaryButton: mergedI18N.profileLogoutModalSecondaryButton,
+        body:
+          typeof mergedI18N.profileLogoutModalBody === 'function'
+            ? mergedI18N.profileLogoutModalBody(appName || suiteName, userDisplayName)
+            : translate(mergedI18N.profileLogoutModalBody, [
+                ['{solutionName}', appName || suiteName],
+                ['{userName}', userDisplayName],
+              ]),
+      }}
+      testId={`${testId}-logout-modal`}
+    />
+    {routes && (
+      <>
+        <span className={`${settings.iotPrefix}--suite-header-data`} data-type="workspaceId">
+          {routes.workspaceId}
+        </span>
+        <span className={`${settings.iotPrefix}--suite-header-data`} data-type="domain">
+          {routes.domain}
+        </span>
+      </>
+    )}
+    <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => {
+        sideNavExpandedRef.current = isSideNavExpanded;
+        return <>
+          <Header
+            testId={testId}
+            className={classnames(`${settings.iotPrefix}--suite-header`, className)}
+            url={navigatorRoute}
+            handleHeaderNameClick={handleHeaderNameClick}
+            hasSideNav={hideMenuButton ? false : hasSideNav || sideNavProps !== null}
+            onClickSideNavExpand={(evt) => {
+              onSideNavToggled(evt);
+              onClickSideNavExpand(evt);
+            }}
+            headerPanel={{
+              className: `${settings.iotPrefix}--suite-header-app-switcher${
+                workspaces ? '-multiworkspace' : ''
+              }`,
+              // eslint-disable-next-line react/prop-types
+              content: React.forwardRef(({ isExpanded }, ref) =>
+                workspaces ? (
+                  <MultiWorkspaceSuiteHeaderAppSwitcher
+                    ref={ref}
+                    isAdminView={isAdminView}
+                    workspaces={workspaces}
+                    globalApplications={globalApplications}
+                    customApplications={customApplications}
+                    adminLink={routes?.admin}
+                    noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                    onRouteChange={onRouteChange}
+                    i18n={{
+                      workspace: mergedI18N.switcherWorkspace,
+                      workspaces: mergedI18N.switcherWorkspaces,
+                      workspaceAdmin: mergedI18N.switcherWorkspaceAdmin,
+                      backToAppSwitcher: mergedI18N.switcherBackToAppSwitcher,
+                      selectWorkspace: mergedI18N.switcherSelectWorkspace,
+                      availableWorkspaces: mergedI18N.switcherAvailableWorkspaces,
+                      suiteAdmin: mergedI18N.switcherSuiteAdmin,
+                      global: mergedI18N.switcherGlobal,
+                      myApplications: mergedI18N.switcherMyApplications,
+                      allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                      requestAccess: mergedI18N.switcherRequestAccess,
+                      learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                    }}
+                    testId={`${testId}-app-switcher`}
+                    isExpanded={isExpanded}
+                  />
+                ) : applications ? (
+                  <SuiteHeaderAppSwitcher
+                    ref={ref}
+                    applications={applications}
+                    customApplications={customApplications}
+                    allApplicationsLink={routes?.navigator}
+                    noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                    onRouteChange={onRouteChange}
+                    i18n={{
+                      myApplications: mergedI18N.switcherMyApplications,
+                      allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                      requestAccess: mergedI18N.switcherRequestAccess,
+                      learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                    }}
+                    testId={`${testId}-app-switcher`}
+                    isExpanded={isExpanded}
+                  />
+                ) : (
+                  <SuiteHeaderAppSwitcherLoading ref={ref} testId={`${testId}-app-switcher`} />
+                )
+              ),
+            }}
+            appName={suiteName}
+            subtitle={
+              appNameComponent || currentWorkspaceComponent || extraContentComponent ? (
+                <div>
+                  {currentWorkspaceComponent}
+                  {appNameComponent}
+                  {extraContentComponent}
+                </div>
+              ) : null
+            }
+            actionItems={[
+              ...customActionItems,
+              {
+                id: 'admin',
+                label: mergedI18N.administrationIcon,
+                className: [
+                  'admin-icon',
+                  !routes?.admin ? 'admin-icon__hidden' : null,
+                  isAdminView ? 'admin-icon__selected' : null,
+                ]
+                  .filter((i) => i)
+                  .join(' '),
+                btnContent: (
+                  <span id="suite-header-action-item-admin">
+                    <Settings
+                      size={20}
+                      fill="white"
+                      data-testid="admin-icon"
+                      description={mergedI18N.settingsIcon} />
+                  </span>
+                ),
+                onClick: async (e) => {
+                  e.preventDefault();
+                  let href = adminRoute;
+                  let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
+                  if (isAdminView) {
+                    href = navigatorRoute;
+                    routeType = SUITE_HEADER_ROUTE_TYPES.NAVIGATOR;
+                  }
+                  handleOnClick(routeType, href)(e);
+                },
+                href: isAdminView ? navigatorRoute : adminRoute,
+              },
+              {
+                id: 'help',
+                label: mergedI18N.help,
+                onClick: () => {},
+                btnContent: (
+                  <span id="suite-header-action-item-help">
+                    <Help size={20} fill="white" description={mergedI18N.help} />
+                  </span>
+                ),
+                childContent: routes
+                  ? [
+                      ...mergedCustomHelpLinks,
+                      ...[
+                        'whatsNew',
+                        'gettingStarted',
+                        'documentation',
+                        'requestEnhancement',
+                        'support',
+                      ].map((item) => ({
+                        metaData: {
+                          element: 'a',
+                          'data-testid': `suite-header-help--${item}`,
+                          href: routes[item],
+                          rel: 'noopener noreferrer',
+                          title: mergedI18N[item],
+                          onClick: handleOnClick(
+                            SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
+                            routes[item],
+                            true
+                          ),
+                        },
+                        content: (
+                          <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>
+                        ),
+                      })),
+                      {
+                        metaData: {
+                          element: 'a',
+                          'data-testid': 'suite-header-help--about',
+                          href: routes.about,
+                          rel: 'noopener noreferrer',
+                          title: mergedI18N.about,
+                          onClick: handleOnClick(SUITE_HEADER_ROUTE_TYPES.ABOUT, routes.about),
+                        },
+                        content: (
+                          <span id="suite-header-help-menu-about">{mergedI18N.about}</span>
+                        ),
+                      },
                     ]
-                      .filter((i) => i)
-                      .join(' '),
-                    btnContent: (
-                      <span id="suite-header-action-item-admin">
-                        <Settings20
-                          fill="white"
-                          data-testid="admin-icon"
-                          description={mergedI18N.settingsIcon}
-                        />
-                      </span>
-                    ),
-                    onClick: async (e) => {
-                      e.preventDefault();
-                      let href = adminRoute;
-                      let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
-                      if (isAdminView) {
-                        href = navigatorRoute;
-                        routeType = SUITE_HEADER_ROUTE_TYPES.NAVIGATOR;
-                      }
-                      handleOnClick(routeType, href)(e);
-                    },
-                    href: isAdminView ? navigatorRoute : adminRoute,
-                  },
-                  {
-                    id: 'help',
-                    label: mergedI18N.help,
-                    onClick: () => {},
-                    btnContent: (
-                      <span id="suite-header-action-item-help">
-                        <Help20 fill="white" description={mergedI18N.help} />
-                      </span>
-                    ),
-                    childContent: routes
-                      ? [
-                          ...mergedCustomHelpLinks,
-                          ...[
-                            'whatsNew',
-                            'gettingStarted',
-                            'documentation',
-                            'requestEnhancement',
-                            'support',
-                          ].map((item) => ({
-                            metaData: {
-                              element: 'a',
-                              'data-testid': `suite-header-help--${item}`,
-                              href: routes[item],
-                              rel: 'noopener noreferrer',
-                              title: mergedI18N[item],
-                              onClick: handleOnClick(
-                                SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
-                                routes[item],
-                                true
-                              ),
-                            },
-                            content: (
-                              <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>
-                            ),
-                          })),
-                          {
-                            metaData: {
-                              element: 'a',
-                              'data-testid': 'suite-header-help--about',
-                              href: routes.about,
-                              rel: 'noopener noreferrer',
-                              title: mergedI18N.about,
-                              onClick: handleOnClick(SUITE_HEADER_ROUTE_TYPES.ABOUT, routes.about),
-                            },
-                            content: (
-                              <span id="suite-header-help-menu-about">{mergedI18N.about}</span>
-                            ),
-                          },
-                        ]
-                      : [
-                          {
-                            metaData: {
-                              element: 'div',
-                            },
-                            content: (
-                              <div
-                                className={`${settings.iotPrefix}--suite-header-help--loading`}
-                                data-testid="suite-header-help--loading"
-                              >
-                                <SkeletonText paragraph lineCount={6} />
-                              </div>
-                            ),
-                          },
-                        ],
-                  },
-                  {
-                    id: 'user',
-                    label: 'user',
-                    btnContent: (
-                      <span id="suite-header-action-item-profile">
-                        <UserAvatar20
-                          data-testid="user-icon"
-                          fill="white"
-                          description={mergedI18N.userIcon}
-                        />
-                      </span>
-                    ),
-                    childContent: [
+                  : [
                       {
                         metaData: {
                           element: 'div',
                         },
                         content: (
-                          <span id="suite-header-profile-menu-profile" style={{ width: '100%' }}>
-                            <SuiteHeaderProfile
-                              displayName={userDisplayName}
-                              username={username}
-                              profileLink={routes?.profile}
-                              onProfileClick={handleOnClick(
-                                SUITE_HEADER_ROUTE_TYPES.PROFILE,
-                                routes?.profile
-                              )}
-                              i18n={{
-                                profileTitle: mergedI18N.profileTitle,
-                                profileButton: mergedI18N.profileManageButton,
-                              }}
-                              testId={`${testId}-profile`}
-                            />
-                          </span>
+                          <div
+                            className={`${settings.iotPrefix}--suite-header-help--loading`}
+                            data-testid="suite-header-help--loading"
+                          >
+                            <SkeletonText paragraph lineCount={6} />
+                          </div>
                         ),
                       },
-                      ...customProfileLinks,
-                      username
-                        ? {
-                            metaData: {
-                              className: `${settings.iotPrefix}--suite-header--logout`,
-                              element: 'a',
-                              'data-testid': 'suite-header-profile--logout',
-                              href: 'javascript:void(0)',
-                              title: mergedI18N.logout,
-                              onClick: () => setShowLogoutModal(true),
-                            },
-                            content: (
-                              <span id="suite-header-profile-menu-logout">{mergedI18N.logout}</span>
-                            ),
-                          }
-                        : {
-                            metaData: {
-                              element: 'div',
-                            },
-                            content: (
-                              <div
-                                className={`${settings.iotPrefix}--suite-header--logout--loading`}
-                                data-testid="suite-header--logout--loading"
-                              >
-                                <ButtonSkeleton />
-                              </div>
-                            ),
-                          },
                     ],
+              },
+              {
+                id: 'user',
+                label: 'user',
+                btnContent: (
+                  <span id="suite-header-action-item-profile">
+                    <UserAvatar
+                      size={20}
+                      data-testid="user-icon"
+                      fill="white"
+                      description={mergedI18N.userIcon} />
+                  </span>
+                ),
+                childContent: [
+                  {
+                    metaData: {
+                      element: 'div',
+                    },
+                    content: (
+                      <span id="suite-header-profile-menu-profile" style={{ width: '100%' }}>
+                        <SuiteHeaderProfile
+                          displayName={userDisplayName}
+                          username={username}
+                          profileLink={routes?.profile}
+                          onProfileClick={handleOnClick(
+                            SUITE_HEADER_ROUTE_TYPES.PROFILE,
+                            routes?.profile
+                          )}
+                          i18n={{
+                            profileTitle: mergedI18N.profileTitle,
+                            profileButton: mergedI18N.profileManageButton,
+                          }}
+                          testId={`${testId}-profile`}
+                        />
+                      </span>
+                    ),
                   },
-                ].filter((i) => i)}
-                showCloseIconWhenPanelExpanded
-                isSideNavExpanded={isSideNavExpanded}
-                {...otherHeaderProps}
-              />
-              {sideNavProps ? (
-                <SideNav
-                  {...(closeSideNavOnNavigation
-                    ? setOnClickDecorators(sideNavProps, onClickSideNavExpand)
-                    : sideNavProps)}
-                  isSideNavExpanded={isSideNavExpanded}
-                  testId={`${testId}-side-nav`}
-                />
-              ) : null}
-            </>
-          );
-        }}
-      />
-    </>
-  );
+                  ...customProfileLinks,
+                  username
+                    ? {
+                        metaData: {
+                          className: `${settings.iotPrefix}--suite-header--logout`,
+                          element: 'a',
+                          'data-testid': 'suite-header-profile--logout',
+                          href: 'javascript:void(0)',
+                          title: mergedI18N.logout,
+                          onClick: () => setShowLogoutModal(true),
+                        },
+                        content: (
+                          <span id="suite-header-profile-menu-logout">{mergedI18N.logout}</span>
+                        ),
+                      }
+                    : {
+                        metaData: {
+                          element: 'div',
+                        },
+                        content: (
+                          <div
+                            className={`${settings.iotPrefix}--suite-header--logout--loading`}
+                            data-testid="suite-header--logout--loading"
+                          >
+                            <ButtonSkeleton />
+                          </div>
+                        ),
+                      },
+                ],
+              },
+            ].filter((i) => i)}
+            showCloseIconWhenPanelExpanded
+            isSideNavExpanded={isSideNavExpanded}
+            {...otherHeaderProps}
+          />
+          {sideNavProps ? (
+            <SideNav
+              {...(closeSideNavOnNavigation
+                ? setOnClickDecorators(sideNavProps, onClickSideNavExpand)
+                : sideNavProps)}
+              isSideNavExpanded={isSideNavExpanded}
+              testId={`${testId}-side-nav`}
+            />
+          ) : null}
+        </>;
+      }}
+    />
+  </>;
 };
 
 SuiteHeader.defaultProps = defaultProps;

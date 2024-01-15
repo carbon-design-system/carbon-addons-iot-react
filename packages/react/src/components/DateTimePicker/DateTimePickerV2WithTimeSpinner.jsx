@@ -12,8 +12,8 @@ import {
   TooltipDefinition,
   OrderedList,
   ListItem,
-} from 'carbon-components-react';
-import { Calendar16, WarningFilled16, ErrorFilled16 } from '@carbon/icons-react';
+} from "@carbon/react";
+import { Calendar, WarningFilled, ErrorFilled } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
@@ -1076,7 +1076,7 @@ const DateTimePicker = ({
           <FlyoutMenu
             isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
-            renderIcon={invalidState ? WarningFilled16 : Calendar16}
+            renderIcon={invalidState ? WarningFilled : Calendar}
             disabled={disabled}
             buttonProps={{
               tooltipPosition: 'top',
@@ -1341,7 +1341,7 @@ const DateTimePicker = ({
                               `${iotPrefix}--date-time-picker__datepicker--invalid`
                             )}
                           >
-                            <ErrorFilled16 />
+                            <ErrorFilled />
                             <p
                               className={classnames(
                                 `${iotPrefix}--date-time-picker__helper-text--invalid`

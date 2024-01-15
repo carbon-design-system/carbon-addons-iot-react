@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/es/notification/16';
 import HeaderHelp from '@carbon/icons-react/es/help/16';
 import Avatar from '@carbon/icons-react/es/user--avatar/16';
-import { Bullhorn16, Checkbox16 } from '@carbon/icons-react';
+import { Bullhorn, Checkbox } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -217,38 +217,38 @@ export const SmallBreakpoint = () => (
         {
           label: 'A Hidden Icon',
           onClick: action('click fired'),
-          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+          btnContent: <Bullhorn fill="white" description="A Hidden Icon" />,
         },
         {
           label: 'HiddenByClass',
           onClick: action('click fired'),
-          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+          btnContent: <Bullhorn fill="white" description="A Hidden Icon" />,
           className: 'isReallyHidden',
         },
         {
           label: 'Announcements',
           onClick: action('click fired'),
-          btnContent: <Bullhorn16 fill="white" description="Announcements" />,
+          btnContent: <Bullhorn fill="white" description="Announcements" />,
         },
         {
           label: 'Custom icon 1',
           onClick: action('click fired'),
-          btnContent: <Checkbox16 fill="white" description="icon" />,
+          btnContent: <Checkbox fill="white" description="icon" />,
         },
         {
           label: 'Custom icon 2',
           onClick: action('click fired'),
-          btnContent: <Checkbox16 fill="white" description="icon" />,
+          btnContent: <Checkbox fill="white" description="icon" />,
         },
         {
           label: 'Custom icon 3',
           onClick: action('click fired'),
-          btnContent: <Checkbox16 fill="white" description="icon" />,
+          btnContent: <Checkbox fill="white" description="icon" />,
         },
         {
           label: 'Header action with href',
           onClick: action('click fired'),
-          btnContent: <Checkbox16 fill="white" description="icon" />,
+          btnContent: <Checkbox fill="white" description="icon" />,
           href: 'https://www.ibm.com',
         },
 

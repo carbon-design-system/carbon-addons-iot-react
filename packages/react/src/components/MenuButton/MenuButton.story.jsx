@@ -1,10 +1,10 @@
-import { Copy16, OverflowMenuVertical16, TrashCan16 } from '@carbon/icons-react';
+import { Copy, OverflowMenuVertical, TrashCan } from '@carbon/icons-react';
 import {
   unstable_MenuItem as MenuItem,
   unstable_MenuDivider as MenuDivider,
   unstable_MenuRadioGroup as MenuRadioGroup,
   unstable_MenuSelectableItem as MenuSelectableItem,
-} from 'carbon-components-react';
+} from "@carbon/react";
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
@@ -21,7 +21,7 @@ export const menuItems = [
     initialChecked={false}
     onChange={action('Publish')}
   />,
-  <MenuItem key="duplicate" renderIcon={Copy16} label="Duplicate" onClick={action('Duplicate')} />,
+  <MenuItem key="duplicate" renderIcon={Copy} label="Duplicate" onClick={action('Duplicate')} />,
   <MenuItem key="share" label="Share with">
     <MenuRadioGroup
       label="Shared with"
@@ -43,7 +43,7 @@ export const menuItems = [
   <MenuItem
     key="delete"
     label="Delete"
-    renderIcon={TrashCan16}
+    renderIcon={TrashCan}
     onClick={action('Delete')}
     shortcut="⌘⌫"
     /** this is unavailable until we upgrade to Carbon 10.32/7.32 */
@@ -103,8 +103,8 @@ SplitMenuButton.storyName = 'split menu button';
 const IconOnlyButton = () => (
   <MenuButton
     size={select('Button size (size)', sizes, 'default')}
-    renderOpenIcon={OverflowMenuVertical16}
-    renderCloseIcon={OverflowMenuVertical16}
+    renderOpenIcon={OverflowMenuVertical}
+    renderCloseIcon={OverflowMenuVertical}
   >
     {menuItems}
   </MenuButton>

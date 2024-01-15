@@ -13,8 +13,8 @@ import {
   OrderedList,
   ListItem,
   TooltipDefinition,
-} from 'carbon-components-react';
-import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
+} from "@carbon/react";
+import { Calendar, WarningFilled } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -725,7 +725,7 @@ const DateTimePicker = ({
             </TooltipDefinition>
           ) : null}
           {invalidState ? (
-            <WarningFilled16
+            <WarningFilled
               data-testid={`${testId}__invalid-icon`}
               aria-label={mergedI18n.invalidLabel}
               className={classnames(
@@ -734,7 +734,7 @@ const DateTimePicker = ({
               )}
             />
           ) : (
-            <Calendar16
+            <Calendar
               aria-label={mergedI18n.calendarLabel}
               className={classnames(`${iotPrefix}--date-time-picker__icon`, {
                 [`${iotPrefix}--date-time-picker__icon--disabled`]: disabled,

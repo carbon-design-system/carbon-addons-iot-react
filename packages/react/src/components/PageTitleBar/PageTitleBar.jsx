@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import classnames from 'classnames';
-import { Information16, Edit16 } from '@carbon/icons-react';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
+import { Information, Edit } from '@carbon/icons-react';
+import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from "@carbon/react";
 import { throttle } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
@@ -278,7 +278,7 @@ const PageTitleBar = ({
             triggerText=""
             triggerId="tooltip"
             tooltipId="tooltip"
-            renderIcon={Information16}
+            renderIcon={Information}
             iconDescription={tooltipIconDescription}
             data-testid={`${testId}-tooltip`}
           >
@@ -291,7 +291,7 @@ const PageTitleBar = ({
             kind="ghost"
             size="field"
             hasIconOnly
-            renderIcon={Edit16}
+            renderIcon={Edit}
             title={editIconDescription}
             iconDescription={editIconDescription}
             tooltipAlignment="center"
@@ -386,7 +386,7 @@ const PageTitleBar = ({
                             triggerText=""
                             triggerId="tooltip"
                             tooltipId="tooltip"
-                            renderIcon={Information16}
+                            renderIcon={Information}
                             iconDescription={tooltipIconDescription}
                             data-testid={`${testId}-tooltip`}
                           >

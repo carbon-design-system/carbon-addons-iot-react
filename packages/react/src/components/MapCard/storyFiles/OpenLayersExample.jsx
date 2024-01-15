@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Events32 } from '@carbon/icons-react';
-import { Accordion, AccordionItem } from 'carbon-components-react';
+import { Events } from '@carbon/icons-react';
+import { Accordion, AccordionItem } from "@carbon/react";
 import PropTypes from 'prop-types';
 // The OpenLayersExample is not exported and is only used by StoryBook
 /* eslint-disable import/no-extraneous-dependencies */
@@ -202,34 +202,34 @@ const OpenLayersExample = ({
     {
       group: [
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'GDP',
           onClick: () => changeState(1),
         },
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'Population',
           onClick: () => changeState(0),
         },
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'Map control 3A',
           onClick: () => changeState(1),
         },
       ],
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 1',
       onClick: () => changeState(0),
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 2',
       onClick: () => changeState(1),
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 3',
       onClick: () => changeState(0),
     },
@@ -237,17 +237,17 @@ const OpenLayersExample = ({
 
   const layeredControls = [
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 1',
       onClick: () => changeState(0),
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 2',
       onClick: () => changeState(1),
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Map control 3',
       onClick: () => changeState(0),
     },

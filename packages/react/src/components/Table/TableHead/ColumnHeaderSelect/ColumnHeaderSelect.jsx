@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
-import { Draggable16 } from '@carbon/icons-react';
+import { Draggable } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import Button from '../../../Button';
@@ -36,7 +36,7 @@ const ColumnHeaderSelect = ({
       onClick={() => onClick()}
       role="button"
       data-ishidden={isHidden}
-      renderIcon={Draggable16}
+      renderIcon={Draggable}
       size="small"
       ref={(instance) => {
         if (!isDisabled) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Tree16, Add16 } from '@carbon/icons-react';
-import { ContentSwitcher } from 'carbon-components-react';
+import { Tree, Add } from '@carbon/icons-react';
+import { ContentSwitcher } from "@carbon/react";
 
 import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -116,7 +116,7 @@ export const Basic = () => {
             clone: false,
             delete: false,
           })}
-          renderExpandIcon={Tree16}
+          renderExpandIcon={Tree}
           onFocus={action('onFocus')}
           tabIndex={0}
           padding={select(
@@ -138,7 +138,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const extraaction = select('extra actions', ['Single', 'Multiple'], 'Single');
   const singleExtraAction = {
     id: 'extrasingleaction',
-    icon: Add16,
+    icon: Add,
     iconDescription: 'Add',
     callback: action('extra single action icon clicked.'),
   };
@@ -896,7 +896,7 @@ export const BasicWithCustomAction = () => {
             delete: false,
             extra: true,
           })}
-          renderExpandIcon={Tree16}
+          renderExpandIcon={Tree}
           onFocus={action('onFocus')}
           tabIndex={0}
           padding={select(
@@ -921,14 +921,14 @@ export const BasicWithCustomAction = () => {
                   name="one"
                   onClick={action('Tree icon')}
                   text="Graphical View"
-                  renderIcon={Tree16}
+                  renderIcon={Tree}
                   size="small"
                 />
                 <IconSwitch
                   name="two"
                   onClick={action('Add icon')}
                   text="Source View"
-                  renderIcon={Add16}
+                  renderIcon={Add}
                   size="small"
                 />
               </ContentSwitcher>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab } from '../../Tabs';
+import { Tabs, Tab } from '@carbon/react';
 import {
   DashboardEditorActionsPropTypes,
   DataItemsPropTypes,

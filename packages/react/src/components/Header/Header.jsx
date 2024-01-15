@@ -6,7 +6,7 @@ import {
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Switcher20 } from '@carbon/icons-react';
+import { Switcher } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -117,10 +117,10 @@ const Header = ({
           label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
-            <Switcher20
+            <Switcher
+              size={20}
               fill="white"
-              className={`${carbonPrefix}--header__menu-item ${carbonPrefix}--header__menu-title`}
-            />
+              className={`${carbonPrefix}--header__menu-item ${carbonPrefix}--header__menu-title`} />
           ),
           childContent: [
             {

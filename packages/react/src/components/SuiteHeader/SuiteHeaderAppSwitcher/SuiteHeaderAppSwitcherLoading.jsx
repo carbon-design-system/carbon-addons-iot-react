@@ -3,10 +3,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonSkeleton } from 'carbon-components-react';
+import { ButtonSkeleton } from "@carbon/react";
 
 import { settings } from '../../../constants/Settings';
-import { SkeletonText } from '../../SkeletonText';
+import { SkeletonText } from '@carbon/react';
 
 const defaultProps = {
   testId: 'suite-header-app-switcher',

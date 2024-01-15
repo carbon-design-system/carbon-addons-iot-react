@@ -5,7 +5,7 @@ import {
   SideNavMenu,
   SideNavMenuItem,
   // SideNavSwitcher,
-} from 'carbon-components-react/es/components/UIShell';
+} from '@carbon/react';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classnames from 'classnames';
@@ -13,7 +13,7 @@ import { partition } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { CarbonIconPropType } from '../../constants/SharedPropTypes';
-import { Search } from '../Search';
+import { Search } from '@carbon/react';
 import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
 
 import { SideNavMetaDataPropType } from './sideNavPropTypes';

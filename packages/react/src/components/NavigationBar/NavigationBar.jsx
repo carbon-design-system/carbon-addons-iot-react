@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Tabs, Tab } from 'carbon-components-react';
+import { Tabs, Tab } from "@carbon/react";
 import { spacing09 } from '@carbon/layout';
 
 import { settings } from '../../constants/Settings';

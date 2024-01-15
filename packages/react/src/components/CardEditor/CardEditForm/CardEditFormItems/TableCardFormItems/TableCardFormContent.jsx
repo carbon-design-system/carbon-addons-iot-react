@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16, Subtract16 } from '@carbon/icons-react';
+import { Edit, Subtract } from '@carbon/icons-react';
 import { isEmpty, omit } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
@@ -13,7 +13,7 @@ import {
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
-import { MultiSelect } from '../../../../MultiSelect';
+import { MultiSelect } from '@carbon/react';
 import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
@@ -347,7 +347,7 @@ const TableCardFormContent = ({
           rowActions: () => [
             <Button
               key={`data-item-${dataItem.dataSourceId}`}
-              renderIcon={Edit16}
+              renderIcon={Edit}
               hasIconOnly
               kind="ghost"
               size="small"
@@ -358,7 +358,7 @@ const TableCardFormContent = ({
             />,
             <Button
               key={`data-item-${dataItem.dataSourceId}_remove`}
-              renderIcon={Subtract16}
+              renderIcon={Subtract}
               hasIconOnly
               kind="ghost"
               size="small"

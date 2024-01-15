@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
-import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Tooltip } from "@carbon/react";
 
 import ComposedModalREADME from './ComposedModal.mdx';
 import ComposedModal from './ComposedModal';

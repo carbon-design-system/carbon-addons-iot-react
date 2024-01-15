@@ -1,4 +1,4 @@
-import { ChevronDown32 } from '@carbon/icons-react';
+import { ChevronDown } from '@carbon/icons-react';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import React from 'react';
@@ -16,7 +16,7 @@ const { prefix } = settings;
 const defaultRenderMenuContent = ({ ariaLabel }) => (
   <>
     {ariaLabel}
-    <ChevronDown32 className={`${prefix}--header__menu-arrow`} />
+    <ChevronDown size={32} className={`${prefix}--header__menu-arrow`} />
   </>
 );
 

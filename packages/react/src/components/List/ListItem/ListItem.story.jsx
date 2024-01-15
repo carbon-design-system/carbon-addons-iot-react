@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
+import { Edit, Star, StarFilled } from '@carbon/icons-react';
 
 import Button from '../../Button';
 import { OverflowMenu } from '../../OverflowMenu';
@@ -39,7 +39,7 @@ export const BasicWKnobs = () => {
   const secondaryValue = text('secondaryValue', undefined);
   const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
   const iconComponent =
-    iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
+    iconName === 'Star16' ? Star : iconName === 'StarFilled16' ? StarFilled : null;
   const rowActionSet = select('row action example', ['none', 'single', 'multi'], 'none');
   const tagsConfig = select('tags example', ['none', 'single', 'multi'], 'none');
 
@@ -50,7 +50,7 @@ export const BasicWKnobs = () => {
             tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
             key="list-item-edit"
             style={{ color: 'black' }}
-            renderIcon={Edit16}
+            renderIcon={Edit}
             hasIconOnly
             kind="ghost"
             size="small"
@@ -148,7 +148,7 @@ export const WithIcon = () => (
       {...dndProps}
       id="list-item"
       value="List Item"
-      icon={<Star16 />}
+      icon={<Star />}
       iconPosition={select('iconPosition', ['left', 'right'])}
     />
   </div>
@@ -244,7 +244,7 @@ export const WithSingleRowAction = () => (
           tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
           key="list-item-edit"
           style={{ color: 'black' }}
-          renderIcon={Edit16}
+          renderIcon={Edit}
           hasIconOnly
           kind="ghost"
           size="small"
@@ -272,7 +272,7 @@ export const WithDisabled = () => (
           tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
           key="list-item-edit"
           style={{ color: 'black' }}
-          renderIcon={Edit16}
+          renderIcon={Edit}
           hasIconOnly
           disabled={boolean('action disabled', true)}
           kind="ghost"

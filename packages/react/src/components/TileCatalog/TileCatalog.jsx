@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { RadioTile, Tile, SkeletonText, TableToolbarSearch } from 'carbon-components-react';
-import { Bee32 } from '@carbon/icons-react';
+import { RadioTile, Tile, SkeletonText, TableToolbarSearch } from "@carbon/react";
+import { Bee } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
@@ -147,7 +147,7 @@ const TileCatalog = ({
         <Tile data-testid={`${testId}-empty`} className={`${iotPrefix}--tile-catalog--empty-tile`}>
           {error || (
             <Fragment>
-              <Bee32 />
+              <Bee size={32} />
               <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
             </Fragment>
           )}

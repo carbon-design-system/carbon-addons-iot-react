@@ -2,8 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
-import { ToastNotification, BreadcrumbItem } from 'carbon-components-react';
-import { SettingsAdjust16 } from '@carbon/icons-react';
+import { ToastNotification } from "@carbon/react";
+import { SettingsAdjust } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
@@ -1645,7 +1645,7 @@ export const WithToolbar = () => {
       key="custom-content-2"
       direction={FlyoutMenuDirection.BottomEnd}
       iconDescription="Toggle flyout Menu"
-      buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
+      buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
       onApply={action('Flyout Menu Apply Clicked')}
       onCancel={action('Flyout Menu Cancel Clicked')}
       hideTooltip={false}

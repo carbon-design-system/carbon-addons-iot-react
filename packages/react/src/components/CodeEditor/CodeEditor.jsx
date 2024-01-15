@@ -1,8 +1,8 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, CopyButton, Button } from 'carbon-components-react';
+import { CodeSnippetSkeleton, CopyButton, Button } from "@carbon/react";
 import PropTypes from 'prop-types';
-import { Upload16 } from '@carbon/icons-react';
+import { Upload } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -149,7 +149,7 @@ const CodeEditor = ({
                 inputNode.current.click();
               }
             }}
-            renderIcon={Upload16}
+            renderIcon={Upload}
             kind="ghost"
             size="field"
             data-testid={`${testId}-upload-button`}

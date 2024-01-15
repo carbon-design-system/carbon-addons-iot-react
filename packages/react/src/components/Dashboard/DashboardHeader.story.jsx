@@ -2,9 +2,9 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Pin from '@carbon/icons-react/es/pin/20';
 import Edit from '@carbon/icons-react/es/edit/20';
-import { TrashCan20 } from '@carbon/icons-react';
+import { TrashCan } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
-import { DatePicker, DatePickerInput } from 'carbon-components-react';
+import { DatePicker, DatePickerInput } from "@carbon/react";
 
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
@@ -69,7 +69,7 @@ export const WithCustomActions = () => {
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         actions={[
           { id: 'edit', labelText: 'Edit', icon: <Edit /> },
-          { id: 'delete', labelText: 'Delete', icon: TrashCan20 },
+          { id: 'delete', labelText: 'Delete', icon: TrashCan },
         ]}
         onDashboardAction={action('onDashboardAction')}
       />
@@ -104,7 +104,7 @@ export const WithFilterAndCustomActions = () => {
         }
         actions={[
           { id: 'edit', labelText: 'Edit', icon: <Edit /> },
-          { id: 'delete', labelText: 'Delete', icon: <TrashCan20 /> },
+          { id: 'delete', labelText: 'Delete', icon: <TrashCan size={20} /> },
           { id: 'pin', labelText: 'Pin', icon: <Pin /> },
         ]}
         onDashboardAction={action('onDashboardAction')}

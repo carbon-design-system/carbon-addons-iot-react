@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Grid16 } from '@carbon/icons-react';
+import { ChevronRight, ChevronLeft, Launch, Bee, Grid } from '@carbon/icons-react';
 import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';
@@ -181,7 +181,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         title={name}
       >
         {name}
-        {isExternal ? <Launch16 /> : null}
+        {isExternal ? <Launch /> : null}
       </SideNavLink>
     ),
 
@@ -207,7 +207,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 onClick={() => setWorkspacesView(true)}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () => setWorkspacesView(true))}
                 tabIndex={tabIndex}
-                renderIcon={ChevronRight16}
+                renderIcon={ChevronRight}
                 large
                 title={selectedWorkspaceLabel}
               >
@@ -222,7 +222,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 mergedI18n.allApplicationsLink,
                 selectedWorkspace.href,
                 false,
-                Grid16,
+                Grid,
                 handleWorkspaceRoute({ id: selectedWorkspace.id, href: selectedWorkspace.href }),
                 false,
                 `all-applications`
@@ -258,7 +258,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           {selectedWorkspace && workspaceApplications?.length === 0 ? (
             <div data-testid={`${testId}--no-app`} className={`${baseClassName}--no-app`}>
               <div className="bee-icon-container">
-                <Bee32 />
+                <Bee size={32} />
                 <div className="bee-shadow" />
               </div>
               <span>{mergedI18n.requestAccess}</span>
@@ -296,7 +296,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
                   setWorkspacesView(false)
                 )}
-                renderIcon={ChevronLeft16}
+                renderIcon={ChevronLeft}
                 tabIndex={tabIndex}
                 large
                 title={mergedI18n.backToAppSwitcher}

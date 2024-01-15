@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers16, CaretSortDown16 } from '@carbon/icons-react';
+import { Layers, CaretSortDown } from '@carbon/icons-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -149,11 +149,11 @@ const MapControls = ({
             size={buttonSize}
             hasIconOnly
             tooltipPosition={tooltipPosition}
-            renderIcon={Layers16}
+            renderIcon={Layers}
             iconDescription={layerTriggerIconDescription}
             onClick={handleLayerClick}
           >
-            <CaretSortDown16 className={`${BASE_CLASS_NAME}-layers-trigger__caret`} />
+            <CaretSortDown className={`${BASE_CLASS_NAME}-layers-trigger__caret`} />
           </Button>
           <div className={`${BASE_CLASS_NAME}-layers-wrapper`}>
             {layeredControls.map(renderLayers)}

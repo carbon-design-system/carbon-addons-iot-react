@@ -1,12 +1,12 @@
 import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
+import { HeaderGlobalBar } from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
+import { Close, OverflowMenuVertical } from '@carbon/icons-react';
 import ReactDOM from 'react-dom';
 import { useLangDirection } from 'use-lang-direction';
 
 import { OverflowMenu } from '../OverflowMenu';
-import { OverflowMenuItem } from '../OverflowMenuItem';
+import { OverflowMenuItem } from '@carbon/react';
 import { settings } from '../../constants/Settings';
 
 import HeaderAction from './HeaderAction/HeaderAction';
@@ -155,13 +155,13 @@ const HeaderActionGroup = ({
                 open={overflowOpen}
                 renderIcon={(iconProps) =>
                   overflowOpen ? (
-                    <Close16
+                    <Close
                       {...iconProps}
                       aria-label={mergedI18n.closeMenu}
                       description={mergedI18n.closeMenu}
                     />
                   ) : (
-                    <OverflowMenuVertical16
+                    <OverflowMenuVertical
                       {...iconProps}
                       aria-label={mergedI18n.openMenu}
                       description={mergedI18n.openMenu}

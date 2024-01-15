@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Minimize20 } from '@carbon/icons-react';
+import { Minimize } from '@carbon/icons-react';
 
 import Minimap, { MinimapPropTypes } from './Minimap';
 
@@ -52,27 +52,25 @@ const ImageControls = ({
     justifyContent: 'center',
     alignItems: 'center',
   };
-  return (
-    <>
-      <div style={bottomControlsStyle}>
-        {draggable && (
-          <>
-            <button type="button" style={buttonStyle} onClick={onZoomToFit}>
-              <Minimize20 aria-label={zoomToFit} />
-            </button>
-            <br />
-          </>
-        )}
-        <button title={zoomIn} type="button" style={buttonStyle} onClick={onZoomIn}>
-          +
-        </button>
-        <button title={zoomOut} type="button" style={buttonStyle} onClick={onZoomOut}>
-          -
-        </button>
-      </div>
-      {!hideMinimap && <Minimap {...minimap} />}
-    </>
-  );
+  return <>
+    <div style={bottomControlsStyle}>
+      {draggable && (
+        <>
+          <button type="button" style={buttonStyle} onClick={onZoomToFit}>
+            <Minimize size={20} aria-label={zoomToFit} />
+          </button>
+          <br />
+        </>
+      )}
+      <button title={zoomIn} type="button" style={buttonStyle} onClick={onZoomIn}>
+        +
+      </button>
+      <button title={zoomOut} type="button" style={buttonStyle} onClick={onZoomOut}>
+        -
+      </button>
+    </div>
+    {!hideMinimap && <Minimap {...minimap} />}
+  </>;
 };
 
 ImageControls.propTypes = propTypes;

@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { FormLabel, Tooltip } from 'carbon-components-react';
+import { FormLabel, Tooltip } from '@carbon/react';
 
 export default {
   title: '3 - Carbon/FormLabel',

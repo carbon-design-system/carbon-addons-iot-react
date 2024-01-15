@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { TableCell, Loading } from 'carbon-components-react';
+import { TableCell, Loading } from "@carbon/react";
 import classnames from 'classnames';
 import { omit } from 'lodash-es';
 
@@ -8,7 +8,7 @@ import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { OverflowMenu } from '../../../OverflowMenu';
-import { OverflowMenuItem } from '../../../OverflowMenuItem';
+import { OverflowMenuItem } from '@carbon/react';
 import { renderTableOverflowItemText } from '../../tableUtilities';
 
 import RowActionsError from './RowActionsError';

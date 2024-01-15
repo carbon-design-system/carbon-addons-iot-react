@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
-import { Add16, Search16 } from '@carbon/icons-react';
-import { ButtonSkeleton } from 'carbon-components-react';
+import { Add, Search } from '@carbon/icons-react';
+import { ButtonSkeleton } from "@carbon/react";
 
 import Button from './Button';
 
@@ -20,8 +20,8 @@ const icons = {
 };
 
 const iconMap = {
-  Add16,
-  Search16,
+  Add,
+  Search,
 };
 
 const kinds = {

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
-import { ScreenOff16 } from '@carbon/icons-react';
+import { ScreenOff } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 
@@ -1352,7 +1352,7 @@ describe('SuiteHeader', () => {
           {
             label: firstActionLabel,
             btnContent: (
-              <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />
+              <ScreenOff id="hidden-button" fill="white" description="hidden-button-icon" />
             ),
           },
           {

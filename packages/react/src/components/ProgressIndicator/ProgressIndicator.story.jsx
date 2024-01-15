@@ -2,7 +2,7 @@
 import React from 'react';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ProgressIndicatorSkeleton, Tooltip } from 'carbon-components-react';
+import { ProgressIndicatorSkeleton, Tooltip } from "@carbon/react";
 import { settings } from 'carbon-components';
 
 import ProgressIndicator from './ProgressIndicator';

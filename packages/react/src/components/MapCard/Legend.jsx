@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { ChevronLeft32, ChevronRight32 } from '@carbon/icons-react';
+import { ChevronLeft, ChevronRight } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button/Button';
@@ -73,8 +73,8 @@ const Legend = ({
         size="small"
         renderIcon={
           (document.dir === 'ltr' && isCollapsed) || (document.dir === 'rtl' && !isCollapsed)
-            ? ChevronRight32
-            : ChevronLeft32
+            ? ChevronRight
+            : ChevronLeft
         }
         hasIconOnly
         iconDescription={isCollapsed ? showLegendText : hideLegendText}

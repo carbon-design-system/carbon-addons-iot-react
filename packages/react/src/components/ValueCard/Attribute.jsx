@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isNil } from 'lodash-es';
-import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
+import { CaretUp, CaretDown } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { gray60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
 import useMatchingThreshold from '../../hooks/useMatchingThreshold';
-import { Link } from '../Link';
+import { Link } from '@carbon/react';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -100,7 +100,7 @@ const Attribute = ({
   // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
 
-  return (
+  return <>
     <div
       className={classnames(`${BEM_BASE}-wrapper`, {
         [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
@@ -152,14 +152,14 @@ const Attribute = ({
           }}
         >
           {secondaryValue.trend === 'up' ? (
-            <CaretUp16
+            <CaretUp
               className={`${BEM_BASE}_trend-icon`}
               aria-label="trending up"
               data-testid={`${testId}-trending-up`}
               fill={secondaryValue.color || gray60}
             />
           ) : secondaryValue.trend === 'down' ? (
-            <CaretDown16
+            <CaretDown
               className={`${BEM_BASE}_trend-icon`}
               aria-label="trending down"
               data-testid={`${testId}-trending-down`}
@@ -182,7 +182,7 @@ const Attribute = ({
         </div>
       ) : null}
     </div>
-  );
+  </>;
 };
 
 Attribute.propTypes = propTypes;

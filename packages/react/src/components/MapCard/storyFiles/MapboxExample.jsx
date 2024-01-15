@@ -1,15 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
-  Events32,
-  Cloud32,
-  Cloudy32,
-  Fog32,
-  Hail32,
-  PartlyCloudy32,
-  Rain32,
-  Sun32,
+  Events,
+  Cloud,
+  Cloudy,
+  Fog,
+  Hail,
+  PartlyCloudy,
+  Rain,
+  Sun,
 } from '@carbon/icons-react';
-import { Accordion, AccordionItem } from 'carbon-components-react';
+import { Accordion, AccordionItem } from "@carbon/react";
 // The MapboxExample is not exported and is only used by StoryBook
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';
@@ -97,38 +97,38 @@ const MapboxExample = ({
       visibleItemsCount: 4,
       group: [
         {
-          icon: Hail32,
+          icon: Hail,
           iconDescription: 'Map scroll hail',
           onClick: () => changeState(0),
         },
         {
-          icon: Rain32,
+          icon: Rain,
           iconDescription: 'Map scroll rain',
           onClick: () => changeState(0),
         },
         {
-          icon: Fog32,
+          icon: Fog,
           iconDescription: 'Map scroll fog',
           onClick: () => changeState(0),
         },
         {
-          icon: Cloudy32,
+          icon: Cloudy,
           iconDescription: 'Map scroll cloudy',
           onClick: () => changeState(1),
         },
         {
-          icon: Cloud32,
+          icon: Cloud,
           iconDescription: 'Map scroll cloud',
           onClick: () => changeState(0),
         },
         {
-          icon: PartlyCloudy32,
+          icon: PartlyCloudy,
           iconDescription: 'Map scroll partly cloudy',
           onClick: () => changeState(0),
         },
 
         {
-          icon: Sun32,
+          icon: Sun,
           iconDescription: 'Map scroll sun',
           onClick: () => changeState(0),
         },
@@ -137,17 +137,17 @@ const MapboxExample = ({
     {
       group: [
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'GDP',
           onClick: () => changeState(1),
         },
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'Population',
           onClick: () => changeState(0),
         },
         {
-          icon: Events32,
+          icon: Events,
           iconDescription: 'Map control 3A',
           onClick: () => changeState(1),
         },
@@ -157,7 +157,7 @@ const MapboxExample = ({
       id: 'toggle1',
       kind: 'icon-selection',
       selected: selectedControls.includes('toggle1'),
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Toggle control 1',
       onClick: () => toggleControlSelection('toggle1'),
     },
@@ -165,7 +165,7 @@ const MapboxExample = ({
       id: 'toggle2',
       kind: 'icon-selection',
       selected: selectedControls.includes('toggle2'),
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Toggle control 2',
       onClick: () => toggleControlSelection('toggle2'),
     },
@@ -173,7 +173,7 @@ const MapboxExample = ({
       id: 'toggle3',
       kind: 'icon-selection',
       selected: selectedControls.includes('toggle3'),
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Toggle control 3',
       onClick: () => toggleControlSelection('toggle3'),
     },
@@ -184,19 +184,19 @@ const MapboxExample = ({
       id: 'layerControl1',
       selected: selectedControls.includes('layerControl1'),
       kind: 'icon-selection',
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Toggle Layer control 1',
       onClick: () => {
         toggleControlSelection('layerControl1');
       },
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Layer control 2',
       onClick: () => changeState(1),
     },
     {
-      icon: Events32,
+      icon: Events,
       iconDescription: 'Layer control 3',
       onClick: () => changeState(0),
     },

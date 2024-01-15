@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Filter16 } from '@carbon/icons-react';
+import { Filter } from '@carbon/icons-react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import { TooltipIcon } from '.';
@@ -41,7 +41,7 @@ export default {
 
 export const Default = () => (
   <TooltipIcon {...props()}>
-    <Filter16 />
+    <Filter />
   </TooltipIcon>
 );
 

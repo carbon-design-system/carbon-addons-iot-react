@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { EventSchedule16 } from '@carbon/icons-react';
-import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import { EventSchedule } from '@carbon/icons-react';
+import { ToolbarItem, OverflowMenu, OverflowMenuItem } from "@carbon/react";
 import classnames from 'classnames';
 import { isNil } from 'lodash-es';
 
@@ -80,7 +80,7 @@ const CardRangePicker = ({
           title={i18n.selectTimeRangeLabel}
           iconDescription={i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
-          renderIcon={EventSchedule16}
+          renderIcon={EventSchedule}
           data-testid={testId}
         >
           <OverflowMenuItem

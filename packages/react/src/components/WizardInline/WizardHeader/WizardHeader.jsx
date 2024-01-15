@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Close20 } from '@carbon/icons-react';
+import { Close } from '@carbon/icons-react';
 
 import PageTitleBar from '../../PageTitleBar/PageTitleBar';
 import Button from '../../Button/Button';
@@ -70,7 +70,7 @@ class WizardHeader extends Component {
         // TODO: pass testId in v3 to override defaults
         // testId={`${testId}-close-button`}
       >
-        <Close20 onClick={onClose} />
+        <Close size={20} onClick={onClose} />
       </Button>
     );
 

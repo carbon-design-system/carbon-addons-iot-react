@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Close16, Scale32 } from '@carbon/icons-react';
+import { Close, Scale } from '@carbon/icons-react';
 import { omit } from 'lodash-es';
 
 import Button from '../../../../Button';
@@ -121,77 +121,75 @@ const ImageCardFormItems = ({
     },
     [handleCloseHotspotEditor, onChange]
   );
-  return (
-    <>
-      {isHotspotModalShowing ? (
-        <HotspotEditorModal
-          cardConfig={cardConfig}
-          displayOption={cardConfig.content?.displayOption}
-          getValidDataItems={getValidDataItems}
-          dataItems={dataItems}
-          availableDimensions={availableDimensions}
-          onSave={handleSaveHotspotEditor}
-          onClose={handleCloseHotspotEditor}
-          translateWithId={translateWithId}
-          i18n={mergedI18n}
-          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-          actions={actions}
-        />
-      ) : null}
-      <ContentFormItemTitle
-        title={mergedI18n.image}
-        tooltip={{
-          tooltipText: mergedI18n.dataItemEditorSectionImageTooltipText,
-          ...(dataSeriesItemLinks?.image
-            ? {
-                linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
-                href: dataSeriesItemLinks.image,
-              }
-            : {}),
-        }}
+  return <>
+    {isHotspotModalShowing ? (
+      <HotspotEditorModal
+        cardConfig={cardConfig}
+        displayOption={cardConfig.content?.displayOption}
+        getValidDataItems={getValidDataItems}
+        dataItems={dataItems}
+        availableDimensions={availableDimensions}
+        onSave={handleSaveHotspotEditor}
+        onClose={handleCloseHotspotEditor}
+        translateWithId={translateWithId}
+        i18n={mergedI18n}
+        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+        actions={actions}
       />
-      <div className={`${baseClassName}--form-section-image--input`}>
-        <label
-          id={`${mergedI18n.imageFile}-label`}
-          className={`${prefix}--label`}
-          htmlFor={mergedI18n.imageFile}
-        >
-          {mergedI18n.imageFile}
-          <input
-            id={mergedI18n.imageFile}
-            className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light ${baseClassName}--form-section-image-input`}
-            readOnly
-            value={cardConfig.content?.id || ''}
-          />
-          {cardConfig.content?.id ? (
-            <Button
-              kind="ghost"
-              renderIcon={Close16}
-              size="field"
-              iconDescription={mergedI18n.close}
-              className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
-              onClick={() =>
-                // close means clear the image info out of the JSON
-                onChange(
-                  omit(cardConfig, 'content.id', 'content.src', 'content.alt', 'content.imgState')
-                )
-              }
-            />
-          ) : null}
-        </label>
+    ) : null}
+    <ContentFormItemTitle
+      title={mergedI18n.image}
+      tooltip={{
+        tooltipText: mergedI18n.dataItemEditorSectionImageTooltipText,
+        ...(dataSeriesItemLinks?.image
+          ? {
+              linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
+              href: dataSeriesItemLinks.image,
+            }
+          : {}),
+      }}
+    />
+    <div className={`${baseClassName}--form-section-image--input`}>
+      <label
+        id={`${mergedI18n.imageFile}-label`}
+        className={`${prefix}--label`}
+        htmlFor={mergedI18n.imageFile}
+      >
+        {mergedI18n.imageFile}
+        <input
+          id={mergedI18n.imageFile}
+          className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light ${baseClassName}--form-section-image-input`}
+          readOnly
+          value={cardConfig.content?.id || ''}
+        />
         {cardConfig.content?.id ? (
           <Button
-            className={`${baseClassName}--form-section-image-btn`}
-            size="small"
-            renderIcon={Scale32}
-            onClick={handleShowHotspotEditor}
-          >
-            {mergedI18n.editImage}
-          </Button>
+            kind="ghost"
+            renderIcon={Close}
+            size="field"
+            iconDescription={mergedI18n.close}
+            className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
+            onClick={() =>
+              // close means clear the image info out of the JSON
+              onChange(
+                omit(cardConfig, 'content.id', 'content.src', 'content.alt', 'content.imgState')
+              )
+            }
+          />
         ) : null}
-      </div>
-    </>
-  );
+      </label>
+      {cardConfig.content?.id ? (
+        <Button
+          className={`${baseClassName}--form-section-image-btn`}
+          size="small"
+          renderIcon={props => <Scale size={32} {...props} />}
+          onClick={handleShowHotspotEditor}
+        >
+          {mergedI18n.editImage}
+        </Button>
+      ) : null}
+    </div>
+  </>;
 };
 
 ImageCardFormItems.propTypes = propTypes;

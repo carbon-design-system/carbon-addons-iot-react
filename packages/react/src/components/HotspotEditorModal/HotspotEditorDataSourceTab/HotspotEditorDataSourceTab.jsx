@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16 } from '@carbon/icons-react';
-import { MultiSelect } from 'carbon-components-react';
+import { Edit } from '@carbon/icons-react';
+import { MultiSelect } from "@carbon/react";
 import { isEmpty } from 'lodash-es';
 
 import DataSeriesFormItemModal from '../../CardEditor/CardEditForm/CardEditFormItems/DataSeriesFormItemModal';
@@ -232,7 +232,7 @@ const HotspotEditorDataSourceTab = ({
             rowActions: () => [
               <Button
                 key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
+                renderIcon={Edit}
                 hasIconOnly
                 kind="ghost"
                 size="small"

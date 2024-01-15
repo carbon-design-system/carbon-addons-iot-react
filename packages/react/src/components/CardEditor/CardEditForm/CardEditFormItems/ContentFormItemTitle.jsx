@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tooltip, Link } from 'carbon-components-react';
+import { Tooltip, Link } from "@carbon/react";
 
 import { settings } from '../../../../constants/Settings';
 

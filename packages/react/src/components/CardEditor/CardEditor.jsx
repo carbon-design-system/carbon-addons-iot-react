@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Apps16, Data_116 as Data116, Code16 } from '@carbon/icons-react';
+import { Apps, Data_1 as Data116, Code } from '@carbon/icons-react';
 import { isNil, isEmpty, omit, pick } from 'lodash-es';
 import warning from 'warning';
 
@@ -412,7 +412,7 @@ const CardEditor = ({
               testId={`${testId}-open-editor-button`}
               kind="ghost"
               size="small"
-              renderIcon={Code16}
+              renderIcon={Code}
               onClick={() => {
                 const cardConfigForModal = onCardJsonPreview
                   ? onCardJsonPreview(hideCardPropertiesForEditor(cardConfig))
@@ -428,7 +428,7 @@ const CardEditor = ({
             <Button
               kind="ghost"
               size="small"
-              renderIcon={Apps16}
+              renderIcon={Apps}
               onClick={onShowGallery}
               testId={`${testId}-add-card-button`}
             >

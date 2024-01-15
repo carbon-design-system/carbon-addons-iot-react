@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { NumberInput } from '../../../../NumberInput';
-import { Toggle } from '../../../../Toggle';
+import { NumberInput } from '@carbon/react';
+import { Toggle } from '@carbon/react';
 import { Tooltip } from '../../../../Tooltip';
 import { DEFAULT_FONT_SIZE } from '../../../../ValueCard/valueCardUtils';
 import { isNumberValidForMinMax } from '../../../../../utils/componentUtilityFunctions';

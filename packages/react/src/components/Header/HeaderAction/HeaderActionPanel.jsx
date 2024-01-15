@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
-import { Close16 } from '@carbon/icons-react';
+import { Close } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../headerConstants';
@@ -96,87 +96,85 @@ const HeaderActionPanel = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded, onToggleExpansion]);
 
-  return (
-    <>
-      <HeaderGlobalAction
-        className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
-        key={`menu-item-${item.label}-global`}
-        aria-label={item.label}
-        aria-haspopup="menu"
-        aria-expanded={isExpanded}
-        onClick={() => onToggleExpansion()}
-        ref={focusRef}
-        id={id}
-      >
-        {renderLabel ? (
-          item.label
-        ) : isExpanded && (inOverflow || showCloseIconWhenPanelExpanded) ? (
-          <Close16 fill={white} description={mergedI18n.closeMenu} />
-        ) : (
-          item.btnContent
-        )}
-      </HeaderGlobalAction>
-      <HeaderPanel
-        data-testid="action-btn__panel"
-        ref={panelRef}
-        tabIndex="-1"
-        key={`panel-${index}`}
-        className={
-          item.label !== APP_SWITCHER
-            ? classnames('action-btn__headerpanel', {
-                'action-btn__headerpanel--closed': !isExpanded,
-              })
-            : classnames(`${carbonPrefix}--app-switcher`, {
-                [item.childContent[0].className]: item.childContent[0].className,
-                [item.childContent[0].metaData.className]: item.childContent[0].metaData.className,
-              })
-        }
-        expanded={isExpanded}
-      >
-        <ul aria-label={item.label}>
-          {item.childContent.map((childItem, k) => {
-            const { element, ...metaData } = childItem?.metaData ?? {};
-            const ChildElement = element || 'a';
-            const onKeyDownClick = (e) => e.target.click();
+  return <>
+    <HeaderGlobalAction
+      className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
+      key={`menu-item-${item.label}-global`}
+      aria-label={item.label}
+      aria-haspopup="menu"
+      aria-expanded={isExpanded}
+      onClick={() => onToggleExpansion()}
+      ref={focusRef}
+      id={id}
+    >
+      {renderLabel ? (
+        item.label
+      ) : isExpanded && (inOverflow || showCloseIconWhenPanelExpanded) ? (
+        <Close fill={white} description={mergedI18n.closeMenu} />
+      ) : (
+        item.btnContent
+      )}
+    </HeaderGlobalAction>
+    <HeaderPanel
+      data-testid="action-btn__panel"
+      ref={panelRef}
+      tabIndex="-1"
+      key={`panel-${index}`}
+      className={
+        item.label !== APP_SWITCHER
+          ? classnames('action-btn__headerpanel', {
+              'action-btn__headerpanel--closed': !isExpanded,
+            })
+          : classnames(`${carbonPrefix}--app-switcher`, {
+              [item.childContent[0].className]: item.childContent[0].className,
+              [item.childContent[0].metaData.className]: item.childContent[0].metaData.className,
+            })
+      }
+      expanded={isExpanded}
+    >
+      <ul aria-label={item.label}>
+        {item.childContent.map((childItem, k) => {
+          const { element, ...metaData } = childItem?.metaData ?? {};
+          const ChildElement = element || 'a';
+          const onKeyDownClick = (e) => e.target.click();
 
-            // if the item is an A and doesn't have an onClick event
-            // do nothing. An A tag doesn't need an onClick handler.
-            const onClick =
-              ChildElement === 'a' && !metaData?.onClick
-                ? undefined
-                : // otherwise, if an onClick exists use that, or fallback to a noop.
-                  metaData?.onClick || (() => {});
+          // if the item is an A and doesn't have an onClick event
+          // do nothing. An A tag doesn't need an onClick handler.
+          const onClick =
+            ChildElement === 'a' && !metaData?.onClick
+              ? undefined
+              : // otherwise, if an onClick exists use that, or fallback to a noop.
+                metaData?.onClick || (() => {});
 
-            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
-            // or create a custom handler to trigger the click
-            const onKeyDown = metaData?.onKeyDown ? metaData.onKeyDown : onClick || onKeyDownClick;
+          // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+          // or create a custom handler to trigger the click
+          const onKeyDown = metaData?.onKeyDown ? metaData.onKeyDown : onClick || onKeyDownClick;
 
-            return (
-              <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
-                <ChildElement
-                  key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
-                  {...metaData}
-                  onClick={onClick}
-                  onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
-                >
-                  {
-                    // if we're working with an actual react component (not an html element) pass
-                    // the isExpanded prop, so we can control tab-navigation on the closed AppSwitcher
-                    React.isValidElement(childItem.content) &&
-                    typeof childItem.content.type !== 'string'
-                      ? React.cloneElement(childItem.content, {
-                          isExpanded,
-                        })
-                      : childItem.content
-                  }
-                </ChildElement>
-              </li>
-            );
-          })}
-        </ul>
-      </HeaderPanel>
-    </>
-  );
+          return (
+            <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
+              <ChildElement
+                key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
+                {...metaData}
+                onClick={onClick}
+                onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
+              >
+                {
+                  // if we're working with an actual react component (not an html element) pass
+                  // the isExpanded prop, so we can control tab-navigation on the closed AppSwitcher
+                  React.isValidElement(childItem.content) &&
+                  typeof childItem.content.type !== 'string'
+                    ? React.cloneElement(childItem.content, {
+                        isExpanded,
+                      })
+                    : childItem.content
+                }
+              </ChildElement>
+            </li>
+          );
+        })}
+      </ul>
+    </HeaderPanel>
+  </>;
 };
 
 HeaderActionPanel.propTypes = propTypes;

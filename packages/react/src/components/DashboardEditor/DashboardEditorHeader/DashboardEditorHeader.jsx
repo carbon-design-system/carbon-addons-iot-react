@@ -1,20 +1,20 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
-  TrashCan16,
-  DocumentImport16,
-  DocumentExport16,
-  Maximize16,
-  Tablet16,
-  Laptop16,
-  Screen16,
+  TrashCan,
+  DocumentImport,
+  DocumentExport,
+  Maximize,
+  Tablet,
+  Laptop,
+  Screen,
 } from '@carbon/icons-react';
 import {
   FileUploaderButton,
   TooltipIcon,
   ContentSwitcher,
   TextInput,
-} from 'carbon-components-react';
+} from "@carbon/react";
 import { isEmpty } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
@@ -152,28 +152,28 @@ const DashboardEditorHeader = ({
             <IconSwitch
               name="fit-to-screen"
               text={mergedI18n.headerFitToScreenButton}
-              renderIcon={Maximize16}
+              renderIcon={Maximize}
               index={0}
               testId={`${testId}-fit-to-screen-switch`}
             />
             <IconSwitch
               name="large"
               text={mergedI18n.headerLargeButton}
-              renderIcon={Screen16}
+              renderIcon={Screen}
               index={1}
               testId={`${testId}-large-switch`}
             />
             <IconSwitch
               name="medium"
               text={mergedI18n.headerMediumButton}
-              renderIcon={Laptop16}
+              renderIcon={Laptop}
               index={2}
               testId={`${testId}-medium-switch`}
             />
             <IconSwitch
               name="small"
               text={mergedI18n.headerSmallButton}
-              renderIcon={Tablet16}
+              renderIcon={Tablet}
               index={3}
               testId={`${testId}-small-switch`}
             />
@@ -192,7 +192,7 @@ const DashboardEditorHeader = ({
               <FileUploaderButton
                 buttonKind="ghost"
                 size="field"
-                labelText={<DocumentImport16 fill="#161616" />}
+                labelText={<DocumentImport fill="#161616" />}
                 onChange={onImport}
                 disableLabelChanges
                 accepts={['.json']}
@@ -210,7 +210,7 @@ const DashboardEditorHeader = ({
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
-            renderIcon={DocumentExport16}
+            renderIcon={DocumentExport}
             onClick={() => onExport(dashboardJson)}
             // TODO: pass testId in v3 to override defaults
             // testId={`${testId}-export-button`}
@@ -224,7 +224,7 @@ const DashboardEditorHeader = ({
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
-            renderIcon={TrashCan16}
+            renderIcon={TrashCan}
             onClick={onDelete}
             // TODO: pass testId in v3 to override defaults
             // testId={`${testId}-delete-button`}

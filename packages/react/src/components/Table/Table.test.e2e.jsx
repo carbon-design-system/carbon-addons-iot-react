@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 import { onlyOn } from '@cypress/skip-test';
-import { Button } from 'carbon-components-react';
-import { ArrowRight16, TrashCan16 } from '@carbon/icons-react';
+import { Button } from "@carbon/react";
+import { ArrowRight, TrashCan } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -244,7 +244,7 @@ describe('Table visual regression tests', () => {
     tableData[0].rowActions = [
       {
         id: 'drilldown',
-        renderIcon: ArrowRight16,
+        renderIcon: ArrowRight,
         iconDescription: 'Drill in',
         labelText: 'Drill in',
         isOverflow: false,
@@ -334,7 +334,7 @@ describe('Table visual regression tests', () => {
                   iconDescription: 'Delete Item',
                   id: 'delete',
                   labelText: 'Delete',
-                  renderIcon: TrashCan16,
+                  renderIcon: TrashCan,
                 },
               ],
               advancedFilterFlyoutOpen: false,

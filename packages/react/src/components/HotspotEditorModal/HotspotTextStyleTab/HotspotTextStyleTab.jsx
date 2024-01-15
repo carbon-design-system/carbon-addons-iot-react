@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { merge } from 'lodash-es';
-import { NumberInput } from 'carbon-components-react';
+import { NumberInput } from "@carbon/react";
 import {
-  TrashCan32,
-  InformationFilled24,
-  TextBold16 as TextBold,
-  TextItalic16 as TextItalic,
-  TextUnderline16 as TextUnderline,
+  TrashCan,
+  InformationFilled,
+  TextBold,
+  TextItalic,
+  TextUnderline,
 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
@@ -211,7 +211,7 @@ const HotspotTextStyleTab = ({
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--text-info-message`}>
-      <InformationFilled24 />
+      <InformationFilled size={24} />
       <p>{infoMessageText}</p>
     </div>
   );
@@ -374,7 +374,7 @@ const HotspotTextStyleTab = ({
           <div className={`${iotPrefix}--hotspot-text-style-tab__delete-button-container`}>
             <Button
               kind="ghost"
-              renderIcon={TrashCan32}
+              renderIcon={props => <TrashCan size={32} {...props} />}
               iconDescription={deleteButtonIconDescription}
               onClick={onDelete}
             >

@@ -8,8 +8,8 @@ import {
   ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { TextArea } from '../../TextArea';
-import { TextInput } from '../../TextInput';
+import { TextArea } from '@carbon/react';
+import { TextInput } from '@carbon/react';
 import { Dropdown } from '../../Dropdown';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 

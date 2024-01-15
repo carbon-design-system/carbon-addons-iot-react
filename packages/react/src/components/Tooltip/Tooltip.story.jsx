@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import { settings } from 'carbon-components';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs';
-import { OverflowMenuVertical16 } from '@carbon/icons-react';
+import { OverflowMenuVertical } from '@carbon/icons-react';
 
 import Button from '../Button';
 
@@ -63,7 +63,7 @@ const props = {
     iconDescription: 'Helpful Information',
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
-    renderIcon: OverflowMenuVertical16,
+    renderIcon: OverflowMenuVertical,
     triggerId: 'customIconOnly',
   }),
 };

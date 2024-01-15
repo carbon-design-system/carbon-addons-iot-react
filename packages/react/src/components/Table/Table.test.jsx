@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { ArrowRight16, Screen16, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { ArrowRight, Screen, TrashCan, ViewOff } from '@carbon/icons-react';
 import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
@@ -141,7 +141,7 @@ describe('Table', () => {
               {
                 id: 'delete',
                 labelText: 'Delete',
-                renderIcon: TrashCan16,
+                renderIcon: TrashCan,
                 iconDescription: 'Delete Item',
               },
             ],
@@ -196,7 +196,7 @@ describe('Table', () => {
               {
                 id: 'delete',
                 labelText: 'Delete',
-                renderIcon: TrashCan16,
+                renderIcon: TrashCan,
                 iconDescription: 'Delete Item',
               },
             ],
@@ -295,7 +295,7 @@ describe('Table', () => {
               {
                 id: 'delete',
                 labelText: 'Delete',
-                renderIcon: TrashCan16,
+                renderIcon: TrashCan,
                 iconDescription: 'Delete Item',
               },
             ],
@@ -1403,7 +1403,7 @@ describe('Table', () => {
               {
                 id: 'delete',
                 labelText: 'Delete',
-                renderIcon: TrashCan16,
+                renderIcon: TrashCan,
                 iconDescription: 'Delete Item',
               },
             ],
@@ -1564,7 +1564,7 @@ describe('Table', () => {
                 ...tableData[0].rowActions,
                 {
                   id: 'drilldown',
-                  renderIcon: ArrowRight16,
+                  renderIcon: ArrowRight,
                   iconDescription: 'Drill in 2',
                   labelText: 'Drill in 2',
                   isOverflow: false,
@@ -3059,7 +3059,7 @@ describe('Table', () => {
       {
         id: 'in-toolbar',
         labelText: 'Do something',
-        renderIcon: Screen16,
+        renderIcon: Screen,
       },
       {
         id: 'edit',
@@ -3070,7 +3070,7 @@ describe('Table', () => {
       {
         id: 'hide',
         labelText: 'Hide something',
-        renderIcon: ViewOff16,
+        renderIcon: ViewOff,
         hasDivider: true,
         isOverflow: true,
       },
@@ -3299,13 +3299,13 @@ describe('Table', () => {
                 },
                 {
                   id: 'off',
-                  renderIcon: () => <ViewOff16 aria-label="View off" />,
+                  renderIcon: () => <ViewOff aria-label="View off" />,
                   labelText: 'View off',
                   isOverflow: true,
                 },
                 {
                   id: 'arrow-right',
-                  renderIcon: ArrowRight16,
+                  renderIcon: ArrowRight,
                   labelText: 'Arrow right',
                   isOverflow: true,
                 },
@@ -3316,12 +3316,12 @@ describe('Table', () => {
                 },
                 {
                   id: viewOffActionId,
-                  renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
+                  renderIcon: () => <ViewOff aria-label="View off toolbar" />,
                   labelText: 'View off toolbar',
                 },
                 {
                   id: arrowRightActionId,
-                  renderIcon: ArrowRight16,
+                  renderIcon: ArrowRight,
                   labelText: 'Arrow right toolbar',
                 },
               ],
@@ -3419,27 +3419,27 @@ describe('Table', () => {
                 {
                   id: 'test-overflow-batch-action-icon',
                   labelText: 'overflow batch action with icon',
-                  renderIcon: Screen16,
+                  renderIcon: Screen,
                   isOverflow: true,
                 },
                 {
                   id: 'test-overflow-batch-action-hidden',
                   labelText: "overflow batch action that's hidden",
-                  renderIcon: Screen16,
+                  renderIcon: Screen,
                   isOverflow: true,
                   hidden: true,
                 },
                 {
                   id: 'test-overflow-batch-action-disabled',
                   labelText: "overflow batch action that's disabled",
-                  renderIcon: Screen16,
+                  renderIcon: Screen,
                   isOverflow: true,
                   disabled: true,
                 },
                 {
                   id: 'test-overflow-batch-action-delete',
                   labelText: 'overflow batch action delete',
-                  renderIcon: TrashCan16,
+                  renderIcon: TrashCan,
                   isOverflow: true,
                   isDelete: true,
                   hasDivider: true,

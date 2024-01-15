@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { defaultsDeep } from 'lodash-es';
 
-import { MeterChart } from '../MeterChart';
-import { AreaChart } from '../AreaChart';
-import { StackedAreaChart } from '../StackedAreaChart';
+import { MeterChart } from '@carbon/charts';
+import { AreaChart } from '@carbon/charts';
+import { StackedAreaChart } from '@carbon/charts';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { MeterChartPropTypes, SparklineChartPropTypes } from '../../constants/ChartPropTypes';
 import { settings } from '../../constants/Settings';

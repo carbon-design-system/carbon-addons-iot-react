@@ -1,10 +1,10 @@
 import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Application32, Group32 } from '@carbon/icons-react';
+import { Application, Group } from '@carbon/icons-react';
 import { spacing05, spacing04, spacing09 } from '@carbon/layout';
 import { gray20, red60, green50, yellow } from '@carbon/colors';
-import { ClickableTile } from 'carbon-components-react';
+import { ClickableTile } from "@carbon/react";
 
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -1401,7 +1401,7 @@ export const WithCustomCards = () => {
                       padding: '0 36px 16px 0',
                     }}
                   >
-                    <Application32 aria-label="Track Usage" />
+                    <Application size={32} aria-label="Track Usage" />
                   </div>
                 </div>
               ),
@@ -1423,7 +1423,7 @@ export const WithCustomCards = () => {
                       padding: '0 36px 16px 0',
                     }}
                   >
-                    <Group32 aria-label="Track Usage" />
+                    <Group size={32} aria-label="Track Usage" />
                   </div>
                 </div>
               ),

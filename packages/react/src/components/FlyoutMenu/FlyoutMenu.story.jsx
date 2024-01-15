@@ -2,8 +2,8 @@ import React from 'react';
 import { boolean, number, object, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import {
-  SettingsAdjust16 as SettingsAdjust,
-  ShareKnowledge16 as ShareKnowledge,
+  SettingsAdjust,
+  ShareKnowledge,
 } from '@carbon/icons-react';
 
 import Button from '../Button/Button';

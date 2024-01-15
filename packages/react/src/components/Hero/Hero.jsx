@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Information20 } from '@carbon/icons-react';
+import { Information } from '@carbon/icons-react';
 import { spacing06, spacing03, spacing07 } from '@carbon/layout';
 import { gray100 } from '@carbon/colors';
 import warning from 'warning';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
+import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from "@carbon/react";
 
 import { settings } from '../../constants/Settings';
 
@@ -139,7 +139,7 @@ const Hero = ({
                   tooltipId="hero-tooltip"
                   triggerId="hero-tooltip-trigger"
                   renderIcon={React.forwardRef((props, ref) => (
-                    <Information20 ref={ref} />
+                    <Information size={20} ref={ref} />
                   ))}
                   data-testid={`${testId}-tooltip`}
                 >

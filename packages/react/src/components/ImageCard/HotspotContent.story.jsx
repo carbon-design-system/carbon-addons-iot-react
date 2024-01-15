@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, object, select } from '@storybook/addon-knobs';
-import { Tooltip } from 'carbon-components-react';
-import { Warning16 } from '@carbon/icons-react';
+import { Tooltip } from "@carbon/react";
+import { Warning } from '@carbon/icons-react';
 import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
@@ -95,9 +95,9 @@ export const WithThresholds = () => {
         })}
         renderIconByName={(icon, props) =>
           icon === 'Warning' ? (
-            <Warning16 {...props}>
+            <Warning {...props}>
               <title>{props.title}</title>
-            </Warning16>
+            </Warning>
           ) : null
         }
       />
@@ -152,9 +152,9 @@ export const Locale = () => {
         })}
         renderIconByName={(icon, props) =>
           icon === 'Warning' ? (
-            <Warning16 {...props}>
+            <Warning {...props}>
               <title>{props.title}</title>
-            </Warning16>
+            </Warning>
           ) : null
         }
       />

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContentSwitcher, Switch } from 'carbon-components-react';
+import { ContentSwitcher, Switch } from "@carbon/react";
 import styled from 'styled-components';
 
 import { settings } from '../../constants/Settings';

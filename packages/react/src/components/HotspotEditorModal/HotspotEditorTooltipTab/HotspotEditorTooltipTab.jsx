@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { merge } from 'lodash-es';
-import { TrashCan32, InformationFilled24 } from '@carbon/icons-react';
+import { TrashCan, InformationFilled } from '@carbon/icons-react';
 
 import Dropdown from '../../Dropdown/Dropdown';
-import { TextInput } from '../../TextInput';
-import { TextArea } from '../../TextArea';
+import { TextInput } from '@carbon/react';
+import { TextArea } from '@carbon/react';
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button/Button';
 import ColorDropdown from '../../ColorDropdown/ColorDropdown';
@@ -154,7 +154,7 @@ const HotspotEditorTooltipTab = ({
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
-      <InformationFilled24 />
+      <InformationFilled size={24} />
       <p>{infoMessageText}</p>
     </div>
   );
@@ -243,7 +243,7 @@ const HotspotEditorTooltipTab = ({
             <div className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
               <Button
                 kind="ghost"
-                renderIcon={TrashCan32}
+                renderIcon={props => <TrashCan size={32} {...props} />}
                 iconDescription={deleteButtonIconDescriptionText}
                 onClick={onDelete}
               >

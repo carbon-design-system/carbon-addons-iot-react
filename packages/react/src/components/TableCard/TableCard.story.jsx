@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Bee16 } from '@carbon/icons-react';
+import { Bee } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
 import dayjs from '../../utils/dayjs';
@@ -237,9 +237,9 @@ export const WithThresholdsPrecisionAndExpandedRows = () => {
         isLoading={boolean('isLoading', false)}
         renderIconByName={(name, props = {}) =>
           name === 'bee' ? (
-            <Bee16 {...props}>
+            <Bee {...props}>
               <title>{props.title}</title>
-            </Bee16>
+            </Bee>
           ) : (
             <span>Unknown</span>
           )

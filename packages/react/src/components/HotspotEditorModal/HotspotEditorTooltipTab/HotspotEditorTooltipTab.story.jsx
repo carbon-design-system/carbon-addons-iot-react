@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
-import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+import { InformationSquareFilled, InformationFilled } from '@carbon/icons-react';
 
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 
@@ -27,12 +27,12 @@ const commonActions = {
 const selectableIcons = [
   {
     id: 'InformationSquareFilled24',
-    icon: InformationSquareFilled24,
+    icon: InformationSquareFilled,
     text: 'Information square filled',
   },
   {
     id: 'InformationFilled24',
-    icon: InformationFilled24,
+    icon: InformationFilled,
     text: 'Information filled',
   },
 ];

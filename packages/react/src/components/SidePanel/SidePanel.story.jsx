@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
+import { Edit, Information, SendAlt } from '@carbon/icons-react';
 
 import Button from '../Button';
 
@@ -11,17 +11,17 @@ import SidePanelReadMe from './SidePanel.mdx';
 const actionItemButtons = [
   {
     buttonLabel: 'Edit',
-    buttonIcon: Edit16,
+    buttonIcon: Edit,
     buttonCallback: action('Edit clicked'),
   },
   {
     buttonLabel: 'Info',
-    buttonIcon: Information16,
+    buttonIcon: Information,
     buttonCallback: action('Info clicked'),
   },
   {
     buttonLabel: 'Send',
-    buttonIcon: SendAlt16,
+    buttonIcon: SendAlt,
     buttonCallback: action('Send clicked'),
   },
 ];

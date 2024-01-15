@@ -4,7 +4,7 @@
 import React, { createElement, useEffect, useState } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ScreenOff16, Switcher24, Home24, RecentlyViewed24, Apps24 } from '@carbon/icons-react';
+import { ScreenOff, Switcher, Home, RecentlyViewed, Apps } from '@carbon/icons-react';
 import Group from '@carbon/icons-react/es/group/24';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
 import Bee from '@carbon/icons-react/es/bee/24';
@@ -56,7 +56,7 @@ const applications = [
 const customActionItems = [
   {
     label: 'aHiddenIcon',
-    btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+    btnContent: <ScreenOff id="hidden-button" fill="white" description="hidden-button-icon" />,
   },
   {
     label: 'bell',
@@ -370,7 +370,7 @@ export const HeaderWithSideNav = () => {
   useEffect(() => {
     setLinksState([
       {
-        icon: Home24,
+        icon: Home,
         isEnabled: true,
         isPinned: true,
         metaData: {
@@ -382,7 +382,7 @@ export const HeaderWithSideNav = () => {
       },
       {
         isEnabled: true,
-        icon: Switcher24,
+        icon: Switcher,
         metaData: {
           label: 'Dashboards',
           element: 'button',
@@ -441,7 +441,7 @@ export const HeaderWithSideNav = () => {
       },
       demoMostRecentLinks
         ? {
-            icon: Apps24,
+            icon: Apps,
             isEnabled: true,
             metaData: {
               onClick: action('menu click'),
@@ -485,7 +485,7 @@ export const HeaderWithSideNav = () => {
 
     setRecentLinksState([
       {
-        icon: RecentlyViewed24,
+        icon: RecentlyViewed,
         isEnabled: true,
         metaData: {
           onClick: action('menu click'),

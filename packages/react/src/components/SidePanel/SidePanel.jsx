@@ -1,12 +1,12 @@
 import React, { useRef, useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip } from 'carbon-components-react';
+import { Tooltip } from "@carbon/react";
 import { debounce } from 'lodash-es';
 import {
-  Close16,
-  ChevronLeft16 as OpenLeft,
-  ChevronRight16 as OpenRight,
+  Close,
+  ChevronLeft as OpenLeft,
+  ChevronRight as OpenRight,
 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
@@ -116,7 +116,7 @@ const SidePanel = ({
   const toggleIcon = useMemo(() => {
     return isOpen
       ? {
-          icon: Close16,
+          icon: Close,
           label: mergedI18n.closeIconLabel,
           tooltipPostion: 'left',
           disabled: isBusy,

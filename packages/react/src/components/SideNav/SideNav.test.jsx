@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Switcher24,
-  Chip24,
-  Group24,
-  ParentChild24,
-  Home24,
-  RecentlyViewed24,
+  Switcher,
+  Chip,
+  Group,
+  ParentChild,
+  Home,
+  RecentlyViewed,
 } from '@carbon/icons-react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -22,11 +22,11 @@ describe('SideNav', () => {
   const links = [
     {
       icon: () => (
-        <Switcher24
+        <Switcher
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       isEnabled: true,
       metaData: {
@@ -41,11 +41,11 @@ describe('SideNav', () => {
       current: true,
       isEnabled: true,
       icon: () => (
-        <Chip24
+        <Chip
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       metaData: {
         label: 'Devices',
@@ -58,11 +58,11 @@ describe('SideNav', () => {
     {
       isEnabled: true,
       icon: () => (
-        <Group24
+        <Group
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       metaData: {
         label: 'Members',
@@ -86,11 +86,11 @@ describe('SideNav', () => {
   const links2 = [
     {
       icon: () => (
-        <Switcher24
+        <Switcher
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       isEnabled: true,
       metaData: {
@@ -105,7 +105,7 @@ describe('SideNav', () => {
 
   const mostRecentLinks = [
     {
-      icon: RecentlyViewed24,
+      icon: RecentlyViewed,
       isEnabled: true,
       metaData: {
         onClick: jest.fn(),
@@ -140,11 +140,11 @@ describe('SideNav', () => {
   const linksDisabled = [
     {
       icon: () => (
-        <Switcher24
+        <Switcher
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       isEnabled: false,
       metaData: {
@@ -159,11 +159,11 @@ describe('SideNav', () => {
       current: true,
       isEnabled: true,
       icon: () => (
-        <Chip24
+        <Chip
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       metaData: {
         label: 'Devices',
@@ -176,11 +176,11 @@ describe('SideNav', () => {
     {
       isEnabled: true,
       icon: () => (
-        <Group24
+        <Group
+          size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
-        />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
       ),
       metaData: {
         label: 'Members',
@@ -193,7 +193,7 @@ describe('SideNav', () => {
   const getDeeplyNestedlinks = (onClick) => [
     {
       isEnabled: true,
-      icon: ParentChild24,
+      icon: ParentChild,
       metaData: {
         label: 'Nested Levels',
         element: 'button',
@@ -523,7 +523,7 @@ describe('SideNav', () => {
     const myLinks = [
       ...links,
       {
-        icon: Home24,
+        icon: Home,
         isEnabled: true,
         isPinned: true,
         metaData: {
@@ -536,7 +536,7 @@ describe('SideNav', () => {
         isActive: true,
       },
       {
-        icon: Home24,
+        icon: Home,
         isEnabled: true,
         isPinned: true,
         metaData: {
@@ -580,7 +580,7 @@ describe('SideNav', () => {
     const myLinks = [
       ...links,
       {
-        icon: Home24,
+        icon: Home,
         isEnabled: true,
         isPinned: true,
         metaData: {
@@ -593,7 +593,7 @@ describe('SideNav', () => {
         isActive: true,
       },
       {
-        icon: Home24,
+        icon: Home,
         isEnabled: true,
         isPinned: true,
         metaData: {

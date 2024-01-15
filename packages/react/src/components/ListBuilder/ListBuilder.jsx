@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight16, Reset16, Subtract16 } from '@carbon/icons-react';
+import { ArrowRight, Reset, Subtract } from '@carbon/icons-react';
 import warning from 'warning';
 import { isNil } from 'lodash-es';
 
@@ -173,7 +173,7 @@ const defaultProps = {
     loadMoreButtonLabel: 'Load more...',
   },
   useCheckboxes: false,
-  removeIcon: Subtract16,
+  removeIcon: Subtract,
   selectedEditingStyle: undefined,
   showLoaderInAvailableList: false,
   showLoaderInSelectedList: false,
@@ -280,7 +280,7 @@ const ListBuilder = ({
                   testId={`${testID || testId}-add-button-${item.id}`}
                   role="button"
                   aria-label={mergedI18n.addLabel}
-                  renderIcon={ArrowRight16}
+                  renderIcon={ArrowRight}
                   hasIconOnly
                   kind="ghost"
                   size="small"
@@ -470,7 +470,7 @@ const ListBuilder = ({
                   <Button
                     className={`${iotPrefix}--list-builder__reset-button`}
                     testId={`${testId}__selected__reset-button`}
-                    renderIcon={Reset16}
+                    renderIcon={Reset}
                     kind="ghost"
                     size="small"
                     iconDescription={resetLabel}

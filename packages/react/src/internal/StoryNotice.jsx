@@ -1,4 +1,4 @@
-import { ToastNotification } from 'carbon-components-react';
+import { ToastNotification } from "@carbon/react";
 import PropTypes from 'prop-types';
 import React from 'react';
 import { spacing03 } from '@carbon/layout';

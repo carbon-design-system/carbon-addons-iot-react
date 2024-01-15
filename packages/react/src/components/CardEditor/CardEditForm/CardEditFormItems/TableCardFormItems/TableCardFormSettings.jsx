@@ -4,10 +4,10 @@ import { isEmpty } from 'lodash-es';
 import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
-import { Toggle } from '../../../../Toggle';
+import { Toggle } from '@carbon/react';
 import { Dropdown } from '../../../../Dropdown';
-import { RadioButton } from '../../../../RadioButton';
-import { RadioButtonGroup } from '../../../../RadioButtonGroup';
+import { RadioButton } from '@carbon/react';
+import { RadioButtonGroup } from '@carbon/react';
 import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;

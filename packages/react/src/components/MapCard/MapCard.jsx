@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import classnames from 'classnames';
-import { Maximize16, Close16 } from '@carbon/icons-react';
+import { Maximize, Close } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
 
 import Button from '../Button';
@@ -111,7 +111,7 @@ const MapCard = ({
       resizeHandles={resizeHandles}
       i18n={mergedI18n}
       id={id}
-      renderExpandIcon={Maximize16}
+      renderExpandIcon={Maximize}
       onCardAction={onCardAction}
       contentClassName={`${BASE_CLASS_NAME}-card-content`}
       className={`${BASE_CLASS_NAME}`}
@@ -175,7 +175,7 @@ const MapCard = ({
               kind="ghost"
               size="small"
               hasIconOnly
-              renderIcon={Close16}
+              renderIcon={Close}
               iconDescription={mergedI18n.closeSettingsIconText}
               onClick={() => {
                 onCardAction(id, CARD_ACTIONS.ON_SETTINGS_CLICK);

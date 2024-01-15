@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, object, number } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16 } from '@carbon/icons-react';
+import { Add, Edit, Star } from '@carbon/icons-react';
 import { cloneDeep } from 'lodash-es';
 
 import Button from '../Button';
@@ -107,7 +107,7 @@ const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 
 
 const headerButton = (
   <Button
-    renderIcon={Add16}
+    renderIcon={Add}
     hasIconOnly
     size="small"
     iconDescription="Add"
@@ -353,7 +353,7 @@ export const WithIsLargeRowAndIcon = () => (
           content: {
             value: key,
             secondaryValue: value,
-            icon: <Star16 />,
+            icon: <Star />,
           },
         })
       )}
@@ -379,7 +379,7 @@ export const WithRowActionsSingle = () => (
               <Button
                 key={`${key}-list-item-button-${value}`}
                 style={{ color: 'black' }}
-                renderIcon={Edit16}
+                renderIcon={Edit}
                 hasIconOnly
                 kind="ghost"
                 size="small"
@@ -445,7 +445,7 @@ export const WithHierarchy = () => (
                 <Button
                   key={`${key}-list-item-button-${level}`}
                   style={{ color: 'black' }}
-                  renderIcon={Edit16}
+                  renderIcon={Edit}
                   hasIconOnly
                   kind="ghost"
                   size="small"
@@ -467,7 +467,7 @@ export const WithHierarchy = () => (
                 </OverflowMenu>,
               ]
             : [],
-        (key, level) => (level === 3 ? <Star16 /> : null)
+        (key, level) => (level === 3 ? <Star /> : null)
       )}
       expandedIds={[
         'MLB',

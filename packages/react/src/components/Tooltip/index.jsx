@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tooltip as CarbonTooltip } from 'carbon-components-react';
+import { Tooltip as CarbonTooltip } from "@carbon/react";
 import PropTypes from 'prop-types';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';

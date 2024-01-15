@@ -5,8 +5,8 @@ import {
   TableToolbarSearch,
   SkeletonText,
   Tile,
-} from 'carbon-components-react';
-import { Bee32 } from '@carbon/icons-react';
+} from "@carbon/react";
+import { Bee } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
@@ -187,7 +187,7 @@ const TileCatalogNew = ({
               className={`${iotPrefix}--tile-catalog--empty-tile`}
             >
               <>
-                <Bee32 />
+                <Bee size={32} />
                 <p>{error || i18n.error}</p>
               </>
             </Tile>

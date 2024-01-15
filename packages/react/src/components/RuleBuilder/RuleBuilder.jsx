@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from 'carbon-components-react';
-import { Add24 } from '@carbon/icons-react';
+import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from "@carbon/react";
+import { Add } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
@@ -344,7 +344,7 @@ const RuleBuilder = ({
                         customToolbarContent: (
                           <Button
                             aria-labelledby="add-editors-label"
-                            renderIcon={Add24}
+                            renderIcon={props => <Add size={24} {...props} />}
                             id="add-editors-button"
                             kind="ghost"
                             testId="rule-builder-add-edit-users"
@@ -389,7 +389,7 @@ const RuleBuilder = ({
                         customToolbarContent: (
                           <Button
                             aria-labelledby="read-only-access-label"
-                            renderIcon={Add24}
+                            renderIcon={props => <Add size={24} {...props} />}
                             id="add-read-users"
                             kind="ghost"
                             testId="rule-builder-add-read-users"

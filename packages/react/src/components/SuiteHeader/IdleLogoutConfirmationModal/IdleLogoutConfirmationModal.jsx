@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
-import { Modal } from '../../Modal';
+import { Modal } from '@carbon/react';
 import IdleTimer from '../util/IdleTimer';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 

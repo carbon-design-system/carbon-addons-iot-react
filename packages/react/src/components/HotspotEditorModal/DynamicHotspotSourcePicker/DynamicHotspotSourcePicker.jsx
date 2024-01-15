@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Erase32 } from '@carbon/icons-react';
+import { Erase } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
@@ -119,7 +119,7 @@ const DynamicHotspotSourcePicker = ({
         })}
         kind="ghost"
         size="small"
-        renderIcon={Erase32}
+        renderIcon={props => <Erase size={32} {...props} />}
         iconDescription={clearIconDescription}
         tooltipPosition="top"
         tooltipAlignment="end"

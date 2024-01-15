@@ -1,26 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
-import { ContentSwitcher } from 'carbon-components-react';
-import {
-  List16,
-  Code16,
-  List20,
-  Code20,
-  List24,
-  Code24,
-  Screen16,
-  Screen20,
-  Screen24,
-  Laptop16,
-  Laptop20,
-  Laptop24,
-  Mobile16,
-  Mobile20,
-  Mobile24,
-  ScreenOff16,
-  ScreenOff20,
-  ScreenOff24,
-} from '@carbon/icons-react';
+import { ContentSwitcher } from "@carbon/react";
+import { List, Code, Screen, Laptop, Mobile, ScreenOff } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -29,39 +10,39 @@ import IconSwitch, { ICON_SWITCH_SIZES } from './IconSwitch';
 const { iotPrefix } = settings;
 
 const codeIcons = {
-  [ICON_SWITCH_SIZES.small]: Code16,
-  [ICON_SWITCH_SIZES.default]: Code20,
-  [ICON_SWITCH_SIZES.large]: Code24,
+  [ICON_SWITCH_SIZES.small]: Code,
+  [ICON_SWITCH_SIZES.default]: Code,
+  [ICON_SWITCH_SIZES.large]: Code,
 };
 
 const listIcons = {
-  [ICON_SWITCH_SIZES.small]: List16,
-  [ICON_SWITCH_SIZES.default]: List20,
-  [ICON_SWITCH_SIZES.large]: List24,
+  [ICON_SWITCH_SIZES.small]: List,
+  [ICON_SWITCH_SIZES.default]: List,
+  [ICON_SWITCH_SIZES.large]: List,
 };
 
 const mobileIcons = {
-  [ICON_SWITCH_SIZES.small]: Mobile16,
-  [ICON_SWITCH_SIZES.default]: Mobile20,
-  [ICON_SWITCH_SIZES.large]: Mobile24,
+  [ICON_SWITCH_SIZES.small]: Mobile,
+  [ICON_SWITCH_SIZES.default]: Mobile,
+  [ICON_SWITCH_SIZES.large]: Mobile,
 };
 
 const laptopIcons = {
-  [ICON_SWITCH_SIZES.small]: Laptop16,
-  [ICON_SWITCH_SIZES.default]: Laptop20,
-  [ICON_SWITCH_SIZES.large]: Laptop24,
+  [ICON_SWITCH_SIZES.small]: Laptop,
+  [ICON_SWITCH_SIZES.default]: Laptop,
+  [ICON_SWITCH_SIZES.large]: Laptop,
 };
 
 const desktopIcons = {
-  [ICON_SWITCH_SIZES.small]: Screen16,
-  [ICON_SWITCH_SIZES.default]: Screen20,
-  [ICON_SWITCH_SIZES.large]: Screen24,
+  [ICON_SWITCH_SIZES.small]: Screen,
+  [ICON_SWITCH_SIZES.default]: Screen,
+  [ICON_SWITCH_SIZES.large]: Screen,
 };
 
 const screenOffIcons = {
-  [ICON_SWITCH_SIZES.small]: ScreenOff16,
-  [ICON_SWITCH_SIZES.default]: ScreenOff20,
-  [ICON_SWITCH_SIZES.large]: ScreenOff24,
+  [ICON_SWITCH_SIZES.small]: ScreenOff,
+  [ICON_SWITCH_SIZES.default]: ScreenOff,
+  [ICON_SWITCH_SIZES.large]: ScreenOff,
 };
 
 export default {

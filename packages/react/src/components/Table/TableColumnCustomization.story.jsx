@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Column20 } from '@carbon/icons-react';
+import { Column } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, select } from '@storybook/addon-knobs';
 import { v4 as uuidv4 } from 'uuid';
@@ -134,90 +134,88 @@ export const Playground = () => {
   ];
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  return (
-    <>
-      <div style={{ width: tableContainerWidth }}>
-        <MyTable
-          key={`table${initialColumnsWidth}`} // Regenarate to show change in story
-          columns={activeColumns.map((col) => ({
-            ...col,
-            width: initialColumnsWidth,
-            tooltip: demoColumnTooltips
-              ? col.id === 'select'
-                ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
-                : `A tooltip for ${col.name} here`
-              : undefined,
-            overflowMenuItems: demoOverflowMenu ? getOverflowMenuItems(col.name) : undefined,
-          }))}
-          columnGroups={demoGroupExample ? columnGroups : undefined}
-          data={smallDataSet}
-          options={{
-            hasResize,
-            preserveColumnWidths,
-            useAutoTableLayoutForResize,
-          }}
-          view={{
-            table: { ordering: demoGroupExample ? ordering.map(appendGrouping) : ordering },
-            toolbar: {
-              customToolbarContent: (
-                <Button
-                  kind="ghost"
-                  renderIcon={Column20}
-                  iconDescription="Customize columns"
-                  hasIconOnly
-                  onClick={() => setShowModal(true)}
-                />
-              ),
-            },
-          }}
-          actions={{
-            table: {
-              onOverflowItemClicked: action('onOverflowItemClicked'),
-              onColumnResize: action('onColumnResize'),
-              onChangeOrdering: action('onChangeOrdering'),
-            },
-          }}
-        />
-      </div>
-      <TableColumnCustomizationModal
-        key={modalKey}
-        groupMapping={demoGroupExample ? columnGroupMapping : []}
-        hasLoadMore={demoHasLoadMore && canLoadMore}
-        hasVisibilityToggle={hasVisibilityToggle}
-        availableColumns={loadedColumns}
-        initialOrdering={ordering}
-        loadingMoreIds={loadingMoreIds}
-        onClose={() => {
-          setShowModal(false);
-          action('onClose');
+  return <>
+    <div style={{ width: tableContainerWidth }}>
+      <MyTable
+        key={`table${initialColumnsWidth}`} // Regenarate to show change in story
+        columns={activeColumns.map((col) => ({
+          ...col,
+          width: initialColumnsWidth,
+          tooltip: demoColumnTooltips
+            ? col.id === 'select'
+              ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
+              : `A tooltip for ${col.name} here`
+            : undefined,
+          overflowMenuItems: demoOverflowMenu ? getOverflowMenuItems(col.name) : undefined,
+        }))}
+        columnGroups={demoGroupExample ? columnGroups : undefined}
+        data={smallDataSet}
+        options={{
+          hasResize,
+          preserveColumnWidths,
+          useAutoTableLayoutForResize,
         }}
-        onChange={action('onChange')}
-        onLoadMore={(id) => {
-          setLoadingMoreIds([id]);
-          setTimeout(() => {
-            setLoadedColumns(allAvailableColumns);
-            setLoadingMoreIds([]);
-            setCanLoadMore(false);
-          }, 2000);
-          action('onLoadMore')(id);
+        view={{
+          table: { ordering: demoGroupExample ? ordering.map(appendGrouping) : ordering },
+          toolbar: {
+            customToolbarContent: (
+              <Button
+                kind="ghost"
+                renderIcon={props => <Column size={20} {...props} />}
+                iconDescription="Customize columns"
+                hasIconOnly
+                onClick={() => setShowModal(true)}
+              />
+            ),
+          },
         }}
-        onReset={() => {
-          setModalKey(uuidv4());
-          action('onReset');
+        actions={{
+          table: {
+            onOverflowItemClicked: action('onOverflowItemClicked'),
+            onColumnResize: action('onColumnResize'),
+            onChangeOrdering: action('onChangeOrdering'),
+          },
         }}
-        onSave={(updatedOrdering, updatedColumns) => {
-          setOrdering(updatedOrdering);
-          setActiveColumns(updatedColumns);
-          setShowModal(false);
-          action('onSave')(updatedOrdering, updatedColumns);
-        }}
-        open={showModal || showColumnCustomizationModal}
-        pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
-        primaryValue={primaryValue}
-        secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
       />
-    </>
-  );
+    </div>
+    <TableColumnCustomizationModal
+      key={modalKey}
+      groupMapping={demoGroupExample ? columnGroupMapping : []}
+      hasLoadMore={demoHasLoadMore && canLoadMore}
+      hasVisibilityToggle={hasVisibilityToggle}
+      availableColumns={loadedColumns}
+      initialOrdering={ordering}
+      loadingMoreIds={loadingMoreIds}
+      onClose={() => {
+        setShowModal(false);
+        action('onClose');
+      }}
+      onChange={action('onChange')}
+      onLoadMore={(id) => {
+        setLoadingMoreIds([id]);
+        setTimeout(() => {
+          setLoadedColumns(allAvailableColumns);
+          setLoadingMoreIds([]);
+          setCanLoadMore(false);
+        }, 2000);
+        action('onLoadMore')(id);
+      }}
+      onReset={() => {
+        setModalKey(uuidv4());
+        action('onReset');
+      }}
+      onSave={(updatedOrdering, updatedColumns) => {
+        setOrdering(updatedOrdering);
+        setActiveColumns(updatedColumns);
+        setShowModal(false);
+        action('onSave')(updatedOrdering, updatedColumns);
+      }}
+      open={showModal || showColumnCustomizationModal}
+      pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
+      primaryValue={primaryValue}
+      secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
+    />
+  </>;
 };
 
 Playground.storyName = 'Playground';

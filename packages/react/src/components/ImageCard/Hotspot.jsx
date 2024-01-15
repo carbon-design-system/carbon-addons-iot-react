@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Tooltip } from 'carbon-components-react';
+import { Tooltip } from "@carbon/react";
 import { g10 } from '@carbon/themes';
 
 import { settings } from '../../constants/Settings';

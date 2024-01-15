@@ -1,4 +1,4 @@
-import { CloseOutline16, View16, ViewOff16 } from '@carbon/icons-react';
+import { CloseOutline, View, ViewOff } from '@carbon/icons-react';
 import React, { useCallback, useMemo } from 'react';
 
 import Button from '../../Button/Button';
@@ -46,7 +46,7 @@ export const useVisibilityToggle = ({
       <Button
         key={`${id}-list-item-visibility-button`}
         testId={`${testId}-toggle-visibility-button-${id}`}
-        renderIcon={isHidden ? ViewOff16 : View16}
+        renderIcon={isHidden ? ViewOff : View}
         hasIconOnly
         kind="ghost"
         size="small"
@@ -60,7 +60,7 @@ export const useVisibilityToggle = ({
         // of the ListBuilder and want to have the same test-id for the same button
         // regardless of where it is rendered.
         testId={`${testId}-list-builder-remove-button-${id}`}
-        renderIcon={CloseOutline16}
+        renderIcon={CloseOutline}
         hasIconOnly
         kind="ghost"
         size="small"

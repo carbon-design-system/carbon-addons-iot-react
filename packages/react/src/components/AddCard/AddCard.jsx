@@ -1,9 +1,9 @@
-import { ClickableTile } from 'carbon-components-react';
+import { ClickableTile } from "@carbon/react";
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import { g10 } from '@carbon/themes';
-import { Add20 } from '@carbon/icons-react';
+import { Add } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -27,7 +27,7 @@ const AddCard = ({ onClick, title, className, testId }) => (
     onClick={onClick}
   >
     <p className={`${iotPrefix}-addcard-title`}>{title}</p>
-    <Add20 fill={g10.icon01} description={title} />
+    <Add size={20} fill={g10.icon01} description={title} />
   </ClickableTile>
 );
 
