@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
 import { ToastNotification } from "@carbon/react";
-import { SettingsAdjust } from '@carbon/icons-react';
+import { SettingsAdjust } from "@carbon/react/icons";
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';

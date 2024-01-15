@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { ArrowRight, Screen, TrashCan, ViewOff } from '@carbon/icons-react';
+import { ArrowRight, Screen, TrashCan, ViewOff } from "@carbon/react/icons";
 import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';

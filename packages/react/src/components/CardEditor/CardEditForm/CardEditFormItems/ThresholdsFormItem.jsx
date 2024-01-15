@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Add, TrashCan } from '@carbon/icons-react';
+import { Add, TrashCan } from "@carbon/react/icons";
 import { omit, isEmpty } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import { red60 } from '@carbon/colors';

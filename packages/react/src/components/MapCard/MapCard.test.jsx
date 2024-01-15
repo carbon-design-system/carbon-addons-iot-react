@@ -10,7 +10,7 @@ import {
   Rain,
   Sun,
   ChevronRight,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';

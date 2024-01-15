@@ -1,5 +1,5 @@
 import React from 'react';
-import { Move } from '@carbon/icons-react';
+import { Move } from "@carbon/react/icons";
 
 import Button from '../../Button';
 import { settings } from '../../../constants/Settings';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { act, render, screen, within } from '@testing-library/react';
-import { Share, Star, TrashCan } from '@carbon/icons-react';
+import { Share, Star, TrashCan } from "@carbon/react/icons";
 import userEvent from '@testing-library/user-event';
 
 import RuleBuilder from './RuleBuilder';

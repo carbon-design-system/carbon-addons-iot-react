@@ -6,7 +6,7 @@ import {
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Switcher } from '@carbon/icons-react';
+import { Switcher } from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 

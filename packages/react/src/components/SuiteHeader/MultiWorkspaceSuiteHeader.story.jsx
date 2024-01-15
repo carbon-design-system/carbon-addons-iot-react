@@ -4,7 +4,7 @@
 import React, { createElement, useEffect, useState } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ScreenOff, Switcher, Home, RecentlyViewed, Apps } from '@carbon/icons-react';
+import { ScreenOff, Switcher, Home, RecentlyViewed, Apps } from "@carbon/react/icons";
 import Group from '@carbon/icons-react/es/group/24';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
 import Bee from '@carbon/icons-react/es/bee/24';

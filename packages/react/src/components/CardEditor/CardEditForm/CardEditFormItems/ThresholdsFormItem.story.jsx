@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { red60, green50, orange40 } from '@carbon/colors';
-import { Checkmark, MisuseOutline } from '@carbon/icons-react';
+import { Checkmark, MisuseOutline } from "@carbon/react/icons";
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 

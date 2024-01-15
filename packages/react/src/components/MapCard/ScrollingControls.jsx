@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronUp, ChevronDown } from '@carbon/icons-react';
+import { ChevronUp, ChevronDown } from "@carbon/react/icons";
 import classnames from 'classnames';
 
 import Button from '../Button';

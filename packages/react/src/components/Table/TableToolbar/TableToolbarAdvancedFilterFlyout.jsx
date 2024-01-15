@@ -1,4 +1,4 @@
-import { Close, Filter } from '@carbon/icons-react';
+import { Close, Filter } from "@carbon/react/icons";
 import {
   Button,
   ComboBox,

@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { UserAvatar, Settings, Help } from '@carbon/icons-react';
+import { UserAvatar, Settings, Help } from "@carbon/react/icons";
 import { ButtonSkeleton } from "@carbon/react";
 import classnames from 'classnames';
 import { HeaderContainer } from '@carbon/react';

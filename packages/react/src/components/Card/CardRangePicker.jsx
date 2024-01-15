@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { EventSchedule } from '@carbon/icons-react';
+import { EventSchedule } from "@carbon/react/icons";
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from "@carbon/react";
 import classnames from 'classnames';
 import { isNil } from 'lodash-es';

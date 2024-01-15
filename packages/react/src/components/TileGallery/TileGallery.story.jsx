@@ -8,7 +8,7 @@ import {
   StarFilled,
   Activity,
   Light,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 import { green40 } from '@carbon/colors';
 import { spacing07 } from '@carbon/layout';
 

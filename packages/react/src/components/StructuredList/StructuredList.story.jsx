@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { CheckmarkFilled } from '@carbon/icons-react';
+import { CheckmarkFilled } from "@carbon/react/icons";
 import { settings } from 'carbon-components';
 
 import {

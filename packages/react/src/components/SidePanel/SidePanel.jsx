@@ -7,7 +7,7 @@ import {
   Close,
   ChevronLeft as OpenLeft,
   ChevronRight as OpenRight,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';

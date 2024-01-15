@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { WarningAlt } from '@carbon/icons-react';
+import { WarningAlt } from "@carbon/react/icons";
 import { Tooltip, Button } from "@carbon/react";
 
 import { settings } from '../../../../constants/Settings';

@@ -1,5 +1,5 @@
 import { SelectableTile } from "@carbon/react";
-import { TrashCan } from '@carbon/icons-react';
+import { TrashCan } from "@carbon/react/icons";
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';

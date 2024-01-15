@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { ChevronLeft, ChevronRight } from '@carbon/icons-react';
+import { ChevronLeft, ChevronRight } from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button/Button';

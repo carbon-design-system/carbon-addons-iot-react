@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Bee, Edit } from '@carbon/icons-react';
+import { Bee, Edit } from "@carbon/react/icons";
 
 import ResourceList from './ResourceList';
 

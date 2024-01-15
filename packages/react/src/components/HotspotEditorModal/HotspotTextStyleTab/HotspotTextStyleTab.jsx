@@ -8,7 +8,7 @@ import {
   TextBold,
   TextItalic,
   TextUnderline,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 
 import { settings } from '../../../constants/Settings';
 import IconSwitch from '../../IconSwitch/IconSwitch';

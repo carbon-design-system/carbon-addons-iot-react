@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
-import { ScreenOff } from '@carbon/icons-react';
+import { ScreenOff } from "@carbon/react/icons";
 import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 

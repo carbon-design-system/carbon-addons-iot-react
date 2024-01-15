@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Erase } from '@carbon/icons-react';
+import { Erase } from "@carbon/react/icons";
 import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';

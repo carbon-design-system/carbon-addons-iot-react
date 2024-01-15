@@ -12,7 +12,7 @@ import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
-import { FilterEdit } from '@carbon/icons-react';
+import { FilterEdit } from "@carbon/react/icons";
 
 import {
   TableColumnsPropTypes,

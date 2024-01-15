@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import {
   SettingsAdjust,
   ShareKnowledge,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 
 import Button from '../Button/Button';
 

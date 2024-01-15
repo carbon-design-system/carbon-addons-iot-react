@@ -6,7 +6,7 @@ import { Table as CarbonTable, TableContainer, Tag } from "@carbon/react";
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import warning from 'warning';
-import { FilterEdit } from '@carbon/icons-react';
+import { FilterEdit } from "@carbon/react/icons";
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';

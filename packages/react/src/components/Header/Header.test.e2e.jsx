@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
-import { Checkbox, Help, User } from '@carbon/icons-react';
+import { Checkbox, Help, User } from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 

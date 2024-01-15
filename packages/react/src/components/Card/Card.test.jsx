@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tree, Add } from '@carbon/icons-react';
+import { Tree, Add } from "@carbon/react/icons";
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';

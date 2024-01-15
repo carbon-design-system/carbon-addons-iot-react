@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TrashCan, Edit } from '@carbon/icons-react';
+import { TrashCan, Edit } from "@carbon/react/icons";
 
 import { Tag } from '@carbon/react';
 import { settings } from '../../../constants/Settings';

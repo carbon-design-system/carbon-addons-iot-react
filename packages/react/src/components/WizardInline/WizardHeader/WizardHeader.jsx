@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Close } from '@carbon/icons-react';
+import { Close } from "@carbon/react/icons";
 
 import PageTitleBar from '../../PageTitleBar/PageTitleBar';
 import Button from '../../Button/Button';

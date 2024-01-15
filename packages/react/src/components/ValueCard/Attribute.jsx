@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isNil } from 'lodash-es';
-import { CaretUp, CaretDown } from '@carbon/icons-react';
+import { CaretUp, CaretDown } from "@carbon/react/icons";
 import classnames from 'classnames';
 import { gray60 } from '@carbon/colors';
 

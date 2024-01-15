@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add as AddIcon, TrashCan, BeeBat, Activity, ViewOff, Error } from '@carbon/icons-react';
+import { Add as AddIcon, TrashCan, BeeBat, Activity, ViewOff, Error } from "@carbon/react/icons";
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';

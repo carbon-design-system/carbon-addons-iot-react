@@ -6,7 +6,7 @@ import {
   Download,
   Edit,
   OverflowMenuVertical,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 import {
   TableToolbar as CarbonTableToolbar,
   TableToolbarContent,

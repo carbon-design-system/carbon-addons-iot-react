@@ -7,7 +7,7 @@ import {
   TextInput,
   FilterableMultiSelect,
 } from "@carbon/react";
-import { Close } from '@carbon/icons-react';
+import { Close } from "@carbon/react/icons";
 import { memoize, debounce, isEqual, isNil } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';

@@ -1,6 +1,6 @@
 import React, { cloneElement, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Close } from '@carbon/icons-react';
+import { Close } from "@carbon/react/icons";
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

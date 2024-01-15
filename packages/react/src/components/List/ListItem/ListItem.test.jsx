@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { Add, Edit } from '@carbon/icons-react';
+import { Add, Edit } from "@carbon/react/icons";
 import userEvent from '@testing-library/user-event';
 
 import { DragAndDrop } from '../../../utils/DragAndDropUtils';

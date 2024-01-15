@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/es/notification/16';
 import HeaderHelp from '@carbon/icons-react/es/help/16';
 import Avatar from '@carbon/icons-react/es/user--avatar/16';
-import { Bullhorn, Checkbox } from '@carbon/icons-react';
+import { Bullhorn, Checkbox } from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';

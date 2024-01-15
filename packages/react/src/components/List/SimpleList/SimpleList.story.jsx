@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Add, Close, Edit } from '@carbon/icons-react';
+import { Add, Close, Edit } from "@carbon/react/icons";
 import { boolean, select, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';

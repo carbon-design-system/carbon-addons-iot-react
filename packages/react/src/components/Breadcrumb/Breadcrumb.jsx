@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, Children } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { OverflowMenuHorizontal } from '@carbon/icons-react';
+import { OverflowMenuHorizontal } from "@carbon/react/icons";
 import { Breadcrumb as CarbonBreadcrumb } from "@carbon/react";
 
 import { OverflowMenu } from '../OverflowMenu';

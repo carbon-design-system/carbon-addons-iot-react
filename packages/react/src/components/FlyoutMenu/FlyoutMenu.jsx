@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { SettingsAdjust } from '@carbon/icons-react';
+import { SettingsAdjust } from "@carbon/react/icons";
 
 import Button from '../Button/Button';
 import { Tooltip } from '../Tooltip';

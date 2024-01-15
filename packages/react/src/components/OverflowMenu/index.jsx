@@ -14,7 +14,7 @@ import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
 } from 'carbon-components-react/es/internal/FloatingMenu';
-import { OverflowMenuVertical } from '@carbon/icons-react';
+import { OverflowMenuVertical } from "@carbon/react/icons";
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 import { settings } from '../../constants/Settings';

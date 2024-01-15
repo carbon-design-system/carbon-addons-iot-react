@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZoomIn, ZoomOut } from '@carbon/icons-react';
+import { ZoomIn, ZoomOut } from "@carbon/react/icons";
 import PropTypes from 'prop-types';
 
 import Button from '../Button';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, number, boolean } from '@storybook/addon-knobs';
-import { Bee, WarningFilled } from '@carbon/icons-react';
+import { Bee, WarningFilled } from "@carbon/react/icons";
 import { green20, green30, green40, green50, red60, yellow30, yellow50 } from '@carbon/colors';
 
 import ProgressBarREADME from './ProgressBar.mdx';

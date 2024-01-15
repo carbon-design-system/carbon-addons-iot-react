@@ -5,7 +5,7 @@ import {
   unstable_MenuRadioGroup as MenuRadioGroup,
   unstable_MenuSelectableItem as MenuSelectableItem,
 } from "@carbon/react";
-import { ChevronDown, ChevronUp, Copy, TrashCan } from '@carbon/icons-react';
+import { ChevronDown, ChevronUp, Copy, TrashCan } from "@carbon/react/icons";
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 

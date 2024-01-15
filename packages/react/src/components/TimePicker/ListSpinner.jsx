@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronUp, ChevronDown } from '@carbon/icons-react';
+import { ChevronUp, ChevronDown } from "@carbon/react/icons";
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

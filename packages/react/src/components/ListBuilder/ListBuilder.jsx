@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight, Reset, Subtract } from '@carbon/icons-react';
+import { ArrowRight, Reset, Subtract } from "@carbon/react/icons";
 import warning from 'warning';
 import { isNil } from 'lodash-es';
 

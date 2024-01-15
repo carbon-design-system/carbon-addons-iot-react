@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { Button, Form, FormGroup, FormItem, Link, TextInput } from "@carbon/react";
-import { InformationFilled } from '@carbon/icons-react';
+import { InformationFilled } from "@carbon/react/icons";
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 

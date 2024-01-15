@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, object, number } from '@storybook/addon-knobs';
-import { Add, Edit, Star } from '@carbon/icons-react';
+import { Add, Edit, Star } from "@carbon/react/icons";
 import { cloneDeep } from 'lodash-es';
 
 import Button from '../Button';

@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Accordion, AccordionItem, Tag, TextInput, Tab, Tabs } from "@carbon/react";
-import { Add } from '@carbon/icons-react';
+import { Add } from "@carbon/react/icons";
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';

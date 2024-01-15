@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { AddFilled, Search } from '@carbon/icons-react';
+import { AddFilled, Search } from "@carbon/react/icons";
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';

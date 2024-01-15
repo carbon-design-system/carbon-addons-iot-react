@@ -1,6 +1,6 @@
 import React from 'react';
 import { merge, omit } from 'lodash-es';
-import { Add } from '@carbon/icons-react';
+import { Add } from "@carbon/react/icons";
 
 import { fillArrWithRowIds } from '../../utils/tableReducer';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { red50, blue50, green50 } from '@carbon/colors';
-import { InformationSquareFilled, InformationFilled } from '@carbon/icons-react';
+import { InformationSquareFilled, InformationFilled } from "@carbon/react/icons";
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 

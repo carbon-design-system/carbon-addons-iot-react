@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { merge } from 'lodash-es';
-import { TrashCan, InformationFilled } from '@carbon/icons-react';
+import { TrashCan, InformationFilled } from "@carbon/react/icons";
 
 import Dropdown from '../../Dropdown/Dropdown';
 import { TextInput } from '@carbon/react';

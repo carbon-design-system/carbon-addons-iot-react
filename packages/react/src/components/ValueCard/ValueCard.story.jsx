@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
-import { Bee, Checkmark, WarningFilled } from '@carbon/icons-react';
+import { Bee, Checkmark, WarningFilled } from "@carbon/react/icons";
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';

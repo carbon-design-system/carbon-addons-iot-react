@@ -2,7 +2,7 @@ import React from 'react';
 import { actions } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Table, TableContainer, TableBody } from "@carbon/react";
-import { Add, Edit, Stop, TrashCan } from '@carbon/icons-react';
+import { Add, Edit, Stop, TrashCan } from "@carbon/react/icons";
 
 import TableBodyRow from './TableBodyRow';
 

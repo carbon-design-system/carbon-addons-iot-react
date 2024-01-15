@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Add, TextNewLine } from '@carbon/icons-react';
+import { Add, TextNewLine } from "@carbon/react/icons";
 import PropTypes from 'prop-types';
 
 import Button from '../Button';

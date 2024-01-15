@@ -9,7 +9,7 @@ import {
   Home,
   RecentlyViewed,
   Apps,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
 import { partition } from 'lodash-es';

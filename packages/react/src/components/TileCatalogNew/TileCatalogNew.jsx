@@ -6,7 +6,7 @@ import {
   SkeletonText,
   Tile,
 } from "@carbon/react";
-import { Bee } from '@carbon/icons-react';
+import { Bee } from "@carbon/react/icons";
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';

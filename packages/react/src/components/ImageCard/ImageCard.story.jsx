@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import { omit } from 'lodash-es';
-import { Bee, Checkmark } from '@carbon/icons-react';
+import { Bee, Checkmark } from "@carbon/react/icons";
 import { spacing03, spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';

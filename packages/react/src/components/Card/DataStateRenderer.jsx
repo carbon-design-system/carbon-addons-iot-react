@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { ErrorFilled, WarningFilled } from '@carbon/icons-react';
+import { ErrorFilled, WarningFilled } from "@carbon/react/icons";
 
 import { Tooltip } from '../Tooltip';
 import { settings } from '../../constants/Settings';

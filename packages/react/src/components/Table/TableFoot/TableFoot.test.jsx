@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Add, ArrowRight } from '@carbon/icons-react';
+import { Add, ArrowRight } from "@carbon/react/icons";
 
 import { settings } from '../../../constants/Settings';
 import { getTableColumns } from '../Table.story.helpers';

@@ -11,7 +11,7 @@ import {
   ChartEvaluation,
   ChartSunburst,
   Diagram,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 
 import Dropdown from './Dropdown';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Pin from '@carbon/icons-react/es/pin/20';
 import Edit from '@carbon/icons-react/es/edit/20';
-import { TrashCan } from '@carbon/icons-react';
+import { TrashCan } from "@carbon/react/icons";
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput } from "@carbon/react";
 

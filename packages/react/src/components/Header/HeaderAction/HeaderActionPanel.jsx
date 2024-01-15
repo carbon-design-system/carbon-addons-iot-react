@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
-import { Close } from '@carbon/icons-react';
+import { Close } from "@carbon/react/icons";
 import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../headerConstants';

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Close, Scale } from '@carbon/icons-react';
+import { Close, Scale } from "@carbon/react/icons";
 import { omit } from 'lodash-es';
 
 import Button from '../../../../Button';

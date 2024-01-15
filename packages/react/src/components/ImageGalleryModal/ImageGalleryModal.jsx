@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Grid, List } from '@carbon/icons-react';
+import { Grid, List } from "@carbon/react/icons";
 import { omit, isEqual } from 'lodash-es';
 import { Modal } from "@carbon/react";
 

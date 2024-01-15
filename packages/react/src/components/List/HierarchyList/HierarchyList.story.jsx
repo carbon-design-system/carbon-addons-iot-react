@@ -1,7 +1,7 @@
 import React, { createElement, useMemo, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean, object, number, array } from '@storybook/addon-knobs';
-import { Add } from '@carbon/icons-react';
+import { Add } from "@carbon/react/icons";
 import { OverflowMenu, OverflowMenuItem } from "@carbon/react";
 
 import Button from '../../Button';

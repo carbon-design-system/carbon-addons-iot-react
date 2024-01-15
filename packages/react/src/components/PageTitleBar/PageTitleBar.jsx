@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import classnames from 'classnames';
-import { Information, Edit } from '@carbon/icons-react';
+import { Information, Edit } from "@carbon/react/icons";
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from "@carbon/react";
 import { throttle } from 'lodash-es';
 

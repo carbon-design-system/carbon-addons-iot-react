@@ -7,7 +7,7 @@ import {
   StructuredListCell,
 } from "@carbon/react";
 import PropTypes from 'prop-types';
-import { Bee } from '@carbon/icons-react';
+import { Bee } from "@carbon/react/icons";
 import warning from 'warning';
 import classnames from 'classnames';
 

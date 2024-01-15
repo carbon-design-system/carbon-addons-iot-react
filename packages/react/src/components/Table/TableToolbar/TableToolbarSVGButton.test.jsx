@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
-import { Edit } from '@carbon/icons-react';
+import { Edit } from "@carbon/react/icons";
 
 import { settings } from '../../../constants/Settings';
 

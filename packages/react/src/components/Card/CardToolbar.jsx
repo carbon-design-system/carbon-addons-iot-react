@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { omit, keyBy } from 'lodash-es';
-import { Close, Popup, Settings } from '@carbon/icons-react';
+import { Close, Popup, Settings } from "@carbon/react/icons";
 import { OverflowMenu, OverflowMenuItem } from "@carbon/react";
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';

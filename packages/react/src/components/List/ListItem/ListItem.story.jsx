@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import { Edit, Star, StarFilled } from '@carbon/icons-react';
+import { Edit, Star, StarFilled } from "@carbon/react/icons";
 
 import Button from '../../Button';
 import { OverflowMenu } from '../../OverflowMenu';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dropdown } from "@carbon/react";
-import { Add, Subtract, TextNewLine } from '@carbon/icons-react';
+import { Add, Subtract, TextNewLine } from "@carbon/react/icons";
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';

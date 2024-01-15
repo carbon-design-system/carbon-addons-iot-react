@@ -8,7 +8,7 @@ import {
   Tablet,
   Laptop,
   Screen,
-} from '@carbon/icons-react';
+} from "@carbon/react/icons";
 import {
   FileUploaderButton,
   TooltipIcon,

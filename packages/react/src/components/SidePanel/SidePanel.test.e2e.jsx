@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
-import { Edit, Information, SendAlt } from '@carbon/icons-react';
+import { Edit, Information, SendAlt } from "@carbon/react/icons";
 
 import Button from '../Button';
 

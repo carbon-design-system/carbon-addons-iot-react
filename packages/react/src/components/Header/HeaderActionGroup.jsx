@@ -1,7 +1,7 @@
 import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { HeaderGlobalBar } from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Close, OverflowMenuVertical } from '@carbon/icons-react';
+import { Close, OverflowMenuVertical } from "@carbon/react/icons";
 import ReactDOM from 'react-dom';
 import { useLangDirection } from 'use-lang-direction';
 

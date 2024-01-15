@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
-import { Carbon, Compass, Tag as TagIcon } from '@carbon/icons-react';
+import { Carbon, Compass, Tag as TagIcon } from "@carbon/react/icons";
 import { action } from '@storybook/addon-actions';
 import { types as typesList } from 'carbon-components-react/es/components/Tag';
 

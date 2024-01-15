@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit } from '@carbon/icons-react';
+import { Edit } from "@carbon/react/icons";
 import { MultiSelect } from "@carbon/react";
 import { isEmpty } from 'lodash-es';
 

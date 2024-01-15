@@ -9,7 +9,7 @@
  */
 import React, { useRef, useState, useMemo } from 'react';
 import { isNil, isEmpty } from 'lodash-es';
-import { Edit } from '@carbon/icons-react';
+import { Edit } from "@carbon/react/icons";
 
 import {
   formatNumberWithPrecision,

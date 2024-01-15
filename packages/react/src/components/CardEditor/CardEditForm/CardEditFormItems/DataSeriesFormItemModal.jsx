@@ -14,7 +14,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt, Add } from '@carbon/icons-react';
+import { WarningAlt, Add } from "@carbon/react/icons";
 import { FormLabel } from "@carbon/react";
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';

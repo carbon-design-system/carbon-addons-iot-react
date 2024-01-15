@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { View } from '@carbon/icons-react';
+import { View } from "@carbon/react/icons";
 
 import { settings } from '../../../constants/Settings';
 

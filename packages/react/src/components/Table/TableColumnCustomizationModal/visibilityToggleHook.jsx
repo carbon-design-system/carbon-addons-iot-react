@@ -1,4 +1,4 @@
-import { CloseOutline, View, ViewOff } from '@carbon/icons-react';
+import { CloseOutline, View, ViewOff } from "@carbon/react/icons";
 import React, { useCallback, useMemo } from 'react';
 
 import Button from '../../Button/Button';

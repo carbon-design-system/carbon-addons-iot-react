@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select, text, boolean, number, withKnobs, optionsKnob } from '@storybook/addon-knobs';
-import { Add, TrashCan, SettingsAdjust, Warning } from '@carbon/icons-react';
+import { Add, TrashCan, SettingsAdjust, Warning } from "@carbon/react/icons";
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from "@carbon/react";
 

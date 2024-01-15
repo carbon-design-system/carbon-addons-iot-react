@@ -1,4 +1,4 @@
-import { Copy, OverflowMenuVertical, TrashCan } from '@carbon/icons-react';
+import { Copy, OverflowMenuVertical, TrashCan } from "@carbon/react/icons";
 import {
   unstable_MenuItem as MenuItem,
   unstable_MenuDivider as MenuDivider,
