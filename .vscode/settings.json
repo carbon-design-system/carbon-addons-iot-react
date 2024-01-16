@@ -6,20 +6,4 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#ff6e60",
-    "titleBar.activeForeground": "#000000",
-    "titleBar.inactiveBackground": "#ff6e60",
-    "titleBar.inactiveForeground": "#000000",
-    "titleBar.border": "#ff6e60",
-    "activityBar.background": "#ff6e60",
-    "activityBar.foreground": "#000000",
-    "statusBar.background": "#ff6e60",
-    "statusBar.foreground": "#000000",
-    "statusBar.debuggingBackground": "#ff6e60",
-    "statusBar.debuggingForeground": "#000000",
-    "tab.activeBorder": "#ff6e60",
-    "iLoveWorkSpaceColors": true,
-    "iLoveWorkSpaceRandom": false
-  }
 }
