@@ -106,6 +106,8 @@ const propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   /** If room is reserved for drag handles at the start of rows. */
   hasDragAndDrop: PropTypes.bool,
+  /** If true will pass it to DnD component so that breadcrumb items are considered as drop targets. */
+  hasBreadcrumbDrop: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
   /** Optional base z-index for the drag image. See details on Table component. */
@@ -148,6 +150,7 @@ const defaultProps = {
   actionFailedText: 'Action failed',
   size: undefined,
   hasDragAndDrop: false,
+  hasBreadcrumbDrop: false,
   hideDragHandles: false,
   zIndex: 0,
   pinColumn: PIN_COLUMN.NONE,
@@ -194,6 +197,7 @@ const TableBody = ({
   preserveCellWhiteSpace,
   size,
   hasDragAndDrop,
+  hasBreadcrumbDrop,
   hideDragHandles,
   zIndex,
   pinColumn,
@@ -288,7 +292,7 @@ const TableBody = ({
     handleStartPossibleDrag,
     handleEnterRow,
     handleLeaveRow,
-  } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop);
+  } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop, hasBreadcrumbDrop);
 
   const tableBodyClassNames = classnames(
     pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })

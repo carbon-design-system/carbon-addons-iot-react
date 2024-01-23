@@ -91,7 +91,7 @@ function getRtlVerticalScrollbarWidth() {
  * rows being dragged and the ID of the row being dropped on.
  * @returns {UseTableDndResult} Values to mix into the table.
  */
-function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
+function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop, hasBreadcrumbDrop) {
   // These are related. When the user "mousedown"s on a drag handle, we consider it a "possible"
   // drag. At this point we add all the event listeners to track the drag. Put only after they move
   // past some threshold do we actually set `isDragging`. At that point the drag is "real" and we'll
@@ -252,6 +252,9 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
     []
   );
 
+  /** Ref to the root DOM element of the row overlay. Used to directly update its style. */
+  const overlayRef = useRef(null);
+
   useEffect(
     /**
      * Once a drag appears to start (user "mousedown"s on a drag handle) this adds the needed event
@@ -284,6 +287,159 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       }
 
       /**
+       * Callback when item drag mouse enters li of overflow menu
+       * @param {React.MouseEvent} e
+       */
+      function handleOverflowLiEnter(e) {
+        const node = e.currentTarget;
+        const hyperLink = node.querySelector(`.${prefix}--overflow-menu-options__btn`);
+        hyperLink.classList.add(`${prefix}--breadcrumbmenu--on--row--dropping`);
+        activeDropRowIdRef.current = node;
+      }
+
+      /**
+       * Callback when item drag mouse leaves li of overflow menu
+       * @param {React.MouseEvent} e
+       */
+      function handleOverflowLiLeave(e) {
+        const node = e.currentTarget;
+        if (activeDropRowIdRef.current === node) {
+          activeDropRowIdRef.current = null;
+        }
+        const hyperLink = node.querySelector(`.${prefix}--overflow-menu-options__btn`);
+        if (hyperLink) hyperLink.classList.remove(`${prefix}--breadcrumbmenu--on--row--dropping`);
+      }
+
+      /**
+       * Callback when the mouse enters a table row. The table needs to add this as an onmouseenter
+       * handler.
+       * @param {React.MouseEvent} e
+       * @returns
+       */
+      function handleEnterNode(e) {
+        /* istanbul ignore if */
+        if (!isPossibleDrag) {
+          // shouldn't happen
+          return;
+        }
+        const node = e.currentTarget;
+        // To have breadcrumb leaf node as disabled by specfying isCurrentPage prop which adds the below class
+        // and for the same page drop shouldn't be allowed hence the below condition
+        if (!node.classList.contains(`${prefix}--breadcrumb-item--current`)) {
+          const link = node.querySelector(`.${prefix}--link`);
+          const linkRect = link.getBoundingClientRect();
+          // There is another way to have breadcrumb leaf node as disabled by not setting the href,
+          // in any case it should be a enabled hyperlink to consider as drop target
+          // istanbul ignore else
+          if (link.nodeType === Node.ELEMENT_NODE && link.tagName.toLowerCase() === 'a') {
+            const verticalPadding = 5;
+            const horizontalPadding = 4;
+            const style = {
+              display: 'block',
+              top: `${linkRect.top - verticalPadding}px`,
+              left: `${linkRect.left - horizontalPadding}px`,
+              height: `${linkRect.height + 2 * verticalPadding}px`,
+              width: `${linkRect.width + 2 * horizontalPadding}px`,
+              zIndex: -1,
+            };
+            // istanbul ignore else
+            if (overlayRef.current) {
+              Object.assign(overlayRef.current.style, style);
+              overlayRef.current.classList.add(`${iotPrefix}--breadcrumb-drop-node-overlay`);
+            }
+
+            link.classList.add(`${prefix}--row--on--link--dropping`);
+            activeDropRowIdRef.current = node;
+          }
+        }
+      }
+
+      /**
+       *  Callback when the mouse leaves a breadcrumb node. Removes the class added on mouse enter
+       * @param {React.MouseEvent} e
+       */
+      function handleLeaveNode(e) {
+        const node = e.currentTarget;
+        /* istanbul ignore else */
+        if (activeDropRowIdRef.current === node) {
+          activeDropRowIdRef.current = null;
+          const link = node.querySelector(`.${prefix}--link`);
+          link.classList.remove(`${prefix}--row--on--link--dropping`);
+          /* istanbul ignore else */
+          if (overlayRef.current) {
+            overlayRef.current.classList.remove(`${iotPrefix}--breadcrumb-drop-node-overlay`);
+            overlayRef.current.style.display = 'none';
+          }
+        }
+      }
+
+      /**
+       * Attaches event listeners to list nodes of overflow menu items of breadcrumb
+       */
+      function handleMenuItemEnter() {
+        const items = document.body.querySelectorAll(`.breadcrumb--overflow-items`);
+        /* istanbul ignore else */
+        if (items && items.length > 0) {
+          const listItems = items[0].querySelectorAll(`.${prefix}--overflow-menu-options__option`);
+          listItems.forEach((li) => {
+            li.addEventListener('mouseenter', handleOverflowLiEnter);
+            li.addEventListener('mouseleave', handleOverflowLiLeave);
+          });
+        }
+      }
+
+      /**
+       * Removes event listeners from list nodes of overflow menu items of breadcrumb
+       */
+      function handleMenuItemLeave() {
+        const items = document.body.querySelectorAll(`.breadcrumb--overflow-items`);
+        /* istanbul ignore else */
+        if (items && items.length > 0) {
+          const listItems = items[0].querySelectorAll(`.${prefix}--overflow-menu-options__option`);
+          listItems.forEach((li) => {
+            li.removeEventListener('mouseenter', handleOverflowLiEnter);
+            li.removeEventListener('mouseleave', handleOverflowLiLeave);
+          });
+        }
+      }
+
+      /**
+       * Finds and attaches event listeners to all kind of possible breadcrumb nodes upon drag start setUpDnd is invoked
+       */
+      function addBreadcrumbEventListners() {
+        // Nodes which are visible are selected using common class name
+        const elements = document.querySelectorAll(`.${prefix}--breadcrumb-item`);
+        elements.forEach((element) => {
+          element.addEventListener('mouseenter', handleEnterNode);
+          element.addEventListener('mouseleave', handleLeaveNode);
+        });
+
+        // Detects if overflow menu containing hidden nodes is open or not
+        const elementExist = !!document.querySelectorAll(`.breadcrumb--overflow-items`);
+        // istanbul ignore else
+        if (elementExist) {
+          handleMenuItemEnter();
+        }
+      }
+
+      /**
+       * Removes all the event listeners attached to breadcrumb nodes
+       */
+      function removeBreadcrumbEventListeners() {
+        const elements = document.querySelectorAll(`.${prefix}--breadcrumb-item`);
+        elements.forEach((element) => {
+          element.removeEventListener('mouseenter', handleEnterNode);
+          element.removeEventListener('mouseleave', handleLeaveNode);
+        });
+
+        const elementExist = !!document.querySelectorAll(`.breadcrumb--overflow-items`);
+        // istanbul ignore else
+        if (elementExist) {
+          handleMenuItemLeave();
+        }
+      }
+
+      /**
        * Stops an event. This is used to stop click event during drag and drop, otherwise the
        * mouseup can trigger a click on the row and the row click handler will be invoked. For
        * expandable rows, this might expand or collapse the row. We add this to the event capture
@@ -299,6 +455,10 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       document.body.addEventListener('mouseup', handleDrop);
       document.body.addEventListener('mousemove', handleDragMove);
       document.body.addEventListener('keydown', handleEscapeKey);
+      // istanbul ignore else
+      if (hasBreadcrumbDrop) {
+        addBreadcrumbEventListners();
+      }
 
       // If the user goes to another window, cancel the dnd.
       window.addEventListener('blur', cancel);
@@ -310,12 +470,20 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       document.body.classList.add(`${iotPrefix}--is-dragging`);
 
       return function tearDown() {
-        // console.debug('Clean up table DnD');
         document.body.removeEventListener('click', stopEvent, true);
         document.body.removeEventListener('mouseup', handleDrop);
         document.body.removeEventListener('mousemove', handleDragMove);
         document.body.removeEventListener('keydown', handleEscapeKey);
-
+        // istanbul ignore else
+        if (hasBreadcrumbDrop) {
+          removeBreadcrumbEventListeners();
+          // removes style override of hyperlink on drop which was added on drag start
+          // istanbul ignore else
+          if (activeDropRowIdRef.current && activeDropRowIdRef.current.children)
+            activeDropRowIdRef.current.children[0].classList.remove(
+              `${prefix}--row--on--link--dropping`
+            );
+        }
         window.removeEventListener('blur', cancel);
 
         document.body.classList.remove(`${iotPrefix}--is-dragging`);
@@ -326,7 +494,15 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
         setIsDragging(false);
       };
     },
-    [isPossibleDrag, handleDragMove, handleDrop, cancel, setIsDragging, setDragRowIds]
+    [
+      isPossibleDrag,
+      handleDragMove,
+      handleDrop,
+      cancel,
+      setIsDragging,
+      setDragRowIds,
+      hasBreadcrumbDrop,
+    ]
   );
 
   const handleStartPossibleDrag = useCallback(
@@ -354,9 +530,6 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
     },
     [setDragRowIds, selectedIds]
   );
-
-  /** Ref to the root DOM element of the row overlay. Used to directly update its style. */
-  const overlayRef = useRef(null);
 
   const handleEnterRow = useCallback(
     /**
@@ -422,7 +595,9 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       {isDragging && <TableDropRowOverlay ref={overlayRef} />}
       {/* We can show the preview even if not isDragging during snapback time. */}
       {dragPreview && (
-        <TableDragAvatar zIndex={zIndex + 1001} ref={avatarRef}>
+        // For breadcrumb overflow menu has zindex of 6000 hence to show the drag above it given
+        // value 6001 when breadcrumb drop is enabled.
+        <TableDragAvatar zIndex={zIndex + hasBreadcrumbDrop ? 6001 : 1001} ref={avatarRef}>
           {dragPreview}
         </TableDragAvatar>
       )}

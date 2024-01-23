@@ -164,6 +164,8 @@ const propTypes = {
      * `actions.table.onDrag` and `actions.table.onDrop` callback props.
      */
     hasDragAndDrop: PropTypes.bool,
+    /** Making this true in addition to hasDragAndDrop will consider breadcrumb nodes as drop targets */
+    hasBreadcrumbDrop: PropTypes.bool,
     /** Freezes table header and footer */
     pinHeaderAndFooter: PropTypes.bool,
   }),
@@ -448,6 +450,7 @@ export const defaultProps = (baseProps) => ({
     hasFilterRowIcon: false,
     pinColumn: PIN_COLUMN.NONE,
     hasDragAndDrop: false,
+    hasBreadcrumbDrop: false,
     pinHeaderAndFooter: false,
   },
   size: undefined,
@@ -1205,7 +1208,8 @@ const Table = (props) => {
                   'shouldLazyRender',
                   'preserveCellWhiteSpace',
                   'useRadioButtonSingleSelect',
-                  'hasDragAndDrop'
+                  'hasDragAndDrop',
+                  'hasBreadcrumbDrop'
                 )}
                 hideDragHandles={hideDragHandles}
                 hasRowExpansion={!!options.hasRowExpansion}

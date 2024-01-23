@@ -65,3 +65,28 @@ const columns = [
 
 ];
 ```
+
+### Enabling drop over breadcrumb nodes
+
+To support dropping over breadcrumb nodes/items in the table set the `hasBreadcrumbDrop` property to
+true. This will enable drop over all the breadcrumb nodes available in the dom. Upon drop over a 
+breadcrumb item dom element will be returned of type `Node.ELEMENT_NODE`. So on caller side `onDrop` 
+needs following modifications to handle nodes types returned when `hasBreadcrumbDrop` is set to `true`
+and inaddition to `String` types which is returned for dropping on table row.
+
+A breadcrumb node won't be considered as droppable target if prop `isCurrentPage` is passed or
+`href` is not passed to the `BreadcrumbItem`.
+
+```js
+...
+ onDrop: (dragRowIds, dropRowIdOrNode) => {
+  if(typeof dropRowIdOrNode === 'string'){
+     console.info(`Dropped ${dragRowIds} onto ${dropRowId}`);
+  }else if (dropRowIdOrNode instanceof Element || (dropRowIdOrNode && dropRowIdOrNode.nodeType === Node.ELEMENT_NODE)){
+    //for nodes residing in overflow menus need to read title through innerText
+    let breadcrumbTitle = dropRowIdOrNode.title && dropRowIdOrNode.title != "" ? dropRowIdOrNode.title : dropRowIdOrNode.innerText;
+    console.info(`Dropped ${dragRowIds} onto ${breadcrumbTitle}`);
+  }
+}
+...
+```

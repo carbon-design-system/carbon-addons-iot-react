@@ -1667,6 +1667,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
     hasDragAndDrop: shouldCreate('hasDragAndDrop')
       ? boolean('Drag and drop (hasDragAndDrop)', getDefaultValue('hasDragAndDrop'), DND_GROUP)
       : null,
+    hasBreadcrumbDrop: shouldCreate('hasBreadcrumbDrop')
+      ? boolean(
+          'Enable drop over breadcrumb (hasBreadcrumbDrop)',
+          getDefaultValue('hasBreadcrumbDrop'),
+          DND_GROUP
+        )
+      : null,
   };
 };
 
