@@ -321,6 +321,9 @@ describe('stateful table with real reducer', () => {
       fireEvent.mouseMove(breadcrumbNodes[0], { clientX: 100, clientY: 100 });
       fireEvent.mouseEnter(breadcrumbNodes[0]);
       fireEvent.mouseLeave(breadcrumbNodes[0]);
+      // Added to avoid warning of wrraping in act() in case of state change due to mouse events
+      fireEvent.keyDown(container, { key: 'a' }); // this is ignored, but needed for code coverage
+      fireEvent.keyDown(container, { key: 'Escape' });
 
       const ellipsisNode = container.querySelectorAll(`.${prefix}--overflow-menu`);
 
