@@ -4,9 +4,11 @@ import { merge, pick, cloneDeep } from 'lodash-es';
 import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
+import { BreadcrumbItem } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
@@ -217,6 +219,135 @@ describe('stateful table with real reducer', () => {
 
       // Make sure we started the drags
       expect(handleDrag).toHaveBeenCalledTimes(3);
+    });
+
+    it('does drop over breadcrumb node', () => {
+      // Reduce screen size to show overflow menu inside the breadcrumb
+      Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+        writable: true,
+        configurable: true,
+        value: 400,
+      });
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+
+      const data = [
+        {
+          id: '0',
+          values: {
+            string: 'row 0',
+          },
+          isDraggable: true,
+        },
+        {
+          id: '1',
+          values: {
+            string: 'row 1',
+          },
+          isDraggable: true,
+        },
+      ];
+
+      const handleDrag = jest.fn();
+      let lastDroppedOnNode;
+
+      const { container } = render(
+        <>
+          <div style={{ width: '40vw', padding: 10 }}>
+            <Breadcrumb hasOverflow>
+              <BreadcrumbItem href="#" title="Folder with very long name is created for example">
+                Folder with very long name is created for example
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="2 Devices">
+                2 Devices
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="A really long folder name">
+                A really long folder name
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="4 Another folder">
+                4 Another folder
+              </BreadcrumbItem>
+              <BreadcrumbItem isCurrentPage title="5th level folder">
+                5th level folder
+              </BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+          <StatefulTable
+            id="dndTable"
+            columns={tableColumns}
+            data={data}
+            options={{ hasDragAndDrop: true, hasBreadcrumbDrop: true }}
+            actions={{
+              table: {
+                onDrag() {
+                  handleDrag();
+                  return {
+                    dropIds: ['Folder 1'],
+                    preview: 'mock preview',
+                  };
+                },
+                onDrop(dragRowId, droppedOnNode) {
+                  lastDroppedOnNode = droppedOnNode;
+                },
+              },
+            }}
+          />
+        </>
+      );
+
+      const breadcrumbNodes = container.querySelectorAll(`.${prefix}--breadcrumb-item`);
+      // will return 3 as screen size is reduced
+      expect(breadcrumbNodes.length).toBe(3);
+
+      const dragHandles = container.querySelectorAll(`.${iotPrefix}--table-drag-handle`);
+      expect(dragHandles.length).toBe(2);
+
+      // mimicks drop over breadcrumb node
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(breadcrumbNodes[0], { buttons: 1, clientX: 100, clientY: 100 });
+      fireEvent.mouseEnter(breadcrumbNodes[0]);
+      fireEvent.mouseUp(breadcrumbNodes[0]);
+
+      expect(lastDroppedOnNode).toEqual(breadcrumbNodes[0]);
+      expect(lastDroppedOnNode.title).toEqual('Folder with very long name is created for example');
+
+      // mimicks hover over breadcrumb node but won't drop
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(breadcrumbNodes[0], { clientX: 100, clientY: 100 });
+      fireEvent.mouseEnter(breadcrumbNodes[0]);
+      fireEvent.mouseLeave(breadcrumbNodes[0]);
+      // Added to avoid warning of wrraping in act() in case of state change due to mouse events
+      fireEvent.keyDown(container, { key: 'a' }); // this is ignored, but needed for code coverage
+      fireEvent.keyDown(container, { key: 'Escape' });
+
+      const ellipsisNode = container.querySelectorAll(`.${prefix}--overflow-menu`);
+
+      userEvent.click(ellipsisNode[0]);
+      const overflowMenuNode = screen.getByText('A really long folder name').closest('li');
+
+      // mimicks drop over breadcrumb node inside overflow menu
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(overflowMenuNode, { clientX: 100, clientY: 100 });
+      fireEvent.mouseEnter(overflowMenuNode);
+      fireEvent.mouseUp(overflowMenuNode);
+
+      expect(lastDroppedOnNode).toEqual(overflowMenuNode);
+
+      // mimicks hover over breadcrumb node inside overflow menu but won't drop
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(overflowMenuNode, { clientX: 100, clientY: 100 });
+      fireEvent.mouseEnter(overflowMenuNode);
+      fireEvent.mouseLeave(overflowMenuNode);
+
+      delete HTMLElement.prototype.clientWidth;
+      delete HTMLElement.prototype.scrollWidth;
     });
   });
 

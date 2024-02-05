@@ -90,3 +90,21 @@ body.#{$iot-prefix}--is-dragging {
     transition: none;
   }
 }
+
+// Additional styles for overlay in case of breadcrumb nodes to change the background color and show
+// border when drop is happening
+.#{$iot-prefix}--breadcrumb-drop-node-overlay {
+  background-color: $carbon--blue-10;
+  border: dashed 2px $carbon--blue-60;
+}
+
+// To hide default underline during drop which is shown on link hover of breadcrumb node
+.#{$prefix}--row--on--link--dropping {
+  text-decoration: none !important;
+}
+
+// Added to overflow menu for items which are shown in menu when breadcrumb length too big
+.#{$prefix}--breadcrumbmenu--on--row--dropping {
+  background-color: $carbon--blue-10 !important;
+  outline: dashed 2px $carbon--blue-60 !important;
+}

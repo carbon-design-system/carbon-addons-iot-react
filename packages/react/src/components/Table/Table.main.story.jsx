@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
-import { ToastNotification } from 'carbon-components-react';
+import { ToastNotification, BreadcrumbItem } from 'carbon-components-react';
 import { SettingsAdjust16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -12,6 +12,7 @@ import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
@@ -520,6 +521,11 @@ function NaiveMultiRowDragPreview({ rows }) {
 }
 
 export function WithDragAndDrop() {
+  const { hasBreadcrumbDrop } = getTableKnobs({
+    knobsToCreate: ['hasBreadcrumbDrop'],
+    getDefaultValue: () => true,
+  });
+
   const columns = [
     {
       id: 'type',
@@ -579,12 +585,32 @@ export function WithDragAndDrop() {
       <button type="button" style={{ marginBottom: '1rem' }} onClick={reset}>
         Reset Rows
       </button>
+      <div style={{ width: '40vw', padding: 10 }}>
+        <Breadcrumb hasOverflow>
+          <BreadcrumbItem href="#" title="Folder with very long name is created for example">
+            Folder with very long name is created for example
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#" title="2 Devices">
+            2 Devices
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#" title="A really long folder name">
+            A really long folder name
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#" title="4 Another folder">
+            4 Another folder
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage title="5th level folder">
+            5th level folder
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </div>
       <StatefulTable
         secondaryTitle="Table"
         columns={columns}
         data={data}
         options={{
           hasDragAndDrop: true,
+          hasBreadcrumbDrop,
           hasResize: true,
           hasRowSelection: 'multi',
           hasFilter: true,
@@ -600,13 +626,23 @@ export function WithDragAndDrop() {
                 preview: <NaiveMultiRowDragPreview rows={rows} />,
               };
             },
-            onDrop: (dragRowIds, dropRowId) => {
-              action('onDrop')(dragRowIds, dropRowId);
-
+            onDrop: (dragRowIds, dropRowIdOrNode) => {
+              action('onDrop')(dragRowIds, dropRowIdOrNode);
               const newData = data.filter((row) => !dragRowIds.includes(row.id));
-              const folderRow = newData.find((row) => dropRowId === row.id);
-              folderRow.values.count += dragRowIds.length;
-              folderRow.values.name = `${folderRow.values.string} (${folderRow.values.count} inside)`;
+              if (typeof dropRowIdOrNode === 'string') {
+                const folderRow = newData.find((row) => dropRowIdOrNode === row.id);
+                folderRow.values.count += dragRowIds.length;
+                folderRow.values.name = `${folderRow.values.string} (${folderRow.values.count} inside)`;
+              } else if (
+                dropRowIdOrNode instanceof Element ||
+                (dropRowIdOrNode && dropRowIdOrNode.nodeType === Node.ELEMENT_NODE)
+              ) {
+                const name =
+                  dropRowIdOrNode.title && dropRowIdOrNode.title !== ''
+                    ? dropRowIdOrNode.title
+                    : dropRowIdOrNode.innerText;
+                console.info(`>>> Dropped ${dragRowIds} onto breadcrumb node ${name}`);
+              }
               setData(newData);
             },
           },

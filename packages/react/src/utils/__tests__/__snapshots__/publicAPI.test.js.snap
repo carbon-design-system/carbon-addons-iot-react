@@ -801,6 +801,7 @@ Map {
         "hasAdvancedFilter": false,
         "hasAggregations": false,
         "hasBatchActionToolbar": true,
+        "hasBreadcrumbDrop": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
         "hasDragAndDrop": false,
@@ -1605,6 +1606,9 @@ Map {
               "type": "bool",
             },
             "hasBatchActionToolbar": Object {
+              "type": "bool",
+            },
+            "hasBreadcrumbDrop": Object {
               "type": "bool",
             },
             "hasColumnSelection": Object {
@@ -3285,6 +3289,7 @@ Map {
       "dismissText": "Dismiss",
       "expandedIds": Array [],
       "expandedRows": Array [],
+      "hasBreadcrumbDrop": false,
       "hasDragAndDrop": false,
       "hasRowActions": false,
       "hasRowExpansion": false,
@@ -3528,6 +3533,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "hasBreadcrumbDrop": Object {
+        "type": "bool",
       },
       "hasDragAndDrop": Object {
         "type": "bool",

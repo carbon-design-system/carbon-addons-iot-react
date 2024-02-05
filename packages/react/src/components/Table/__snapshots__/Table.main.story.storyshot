@@ -32185,6 +32185,88 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     Reset Rows
   </button>
   <div
+    style={
+      Object {
+        "padding": 10,
+        "width": "40vw",
+      }
+    }
+  >
+    <div
+      className="breadcrumb--container"
+      data-testid="overflow"
+    >
+      <nav
+        aria-label="Breadcrumb"
+        className={null}
+        data-testid="breadcrumb"
+      >
+        <ol
+          className="bx--breadcrumb"
+        >
+          <li
+            className="bx--breadcrumb-item"
+            title="Folder with very long name is created for example"
+          >
+            <a
+              className="bx--link"
+              href="#"
+              rel={null}
+            >
+              Folder with very long name is created for example
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+            title="2 Devices"
+          >
+            <a
+              className="bx--link"
+              href="#"
+              rel={null}
+            >
+              2 Devices
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+            title="A really long folder name"
+          >
+            <a
+              className="bx--link"
+              href="#"
+              rel={null}
+            >
+              A really long folder name
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+            title="4 Another folder"
+          >
+            <a
+              className="bx--link"
+              href="#"
+              rel={null}
+            >
+              4 Another folder
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item bx--breadcrumb-item--current"
+            title="5th level folder"
+          >
+            <span
+              className="bx--link"
+            >
+              5th level folder
+            </span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div
     className="iot--table-container bx--data-table-container"
     data-testid="null-table-container"
   >
