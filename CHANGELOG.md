@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.11...v2.154.0-next.12) (2024-02-06)
+
+
+### Features
+
+* removed additional condition for current node ([67eef98](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/67eef98cc6ea0dcbe0c966829518cf6034d43de8))
+
+
+
+
+
 # [2.154.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.10...v2.154.0-next.11) (2024-02-05)
 
 **Note:** Version bump only for package ibm-ai-applications
