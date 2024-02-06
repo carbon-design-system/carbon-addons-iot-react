@@ -331,7 +331,7 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop, hasBreadcrumbDro
           // There is another way to have breadcrumb leaf node as disabled by not setting the href,
           // in any case it should be a enabled hyperlink to consider as drop target
           // istanbul ignore else
-          if (link.nodeType === Node.ELEMENT_NODE && link.tagName.toLowerCase() === 'a') {
+          if (link.nodeType === Node.ELEMENT_NODE) {
             const verticalPadding = 5;
             const horizontalPadding = 4;
             const style = {
