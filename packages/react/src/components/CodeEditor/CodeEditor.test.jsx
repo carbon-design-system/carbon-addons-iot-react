@@ -223,7 +223,7 @@ describe('CardEditor', () => {
     expect(uploadInputDisabled).toHaveAttribute('disabled');
 
     const copyDisabled = container.querySelector(`.${iotPrefix}--code-editor-copy`);
-    expect(copyDisabled).toHaveAttribute('disabled');
+    expect(copyDisabled).not.toHaveAttribute('disabled');
 
     rerender(
       <CodeEditor

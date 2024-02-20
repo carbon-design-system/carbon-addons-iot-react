@@ -42,16 +42,8 @@
   &-copy--light {
     background-color: $ui-background;
   }
-
-  &-copy--disabled {
-    cursor: not-allowed;
-    background-color: $disabled-02;
-    &:hover {
-      background-color: $disabled-02;
-    }
-    > svg {
-      fill: $disabled-03;
-    }
+  &-copy--disabled-container {
+    background-color: $active-ui;
   }
 
   &-upload.bx--btn.bx--btn--icon-only {

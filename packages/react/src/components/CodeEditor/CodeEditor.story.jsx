@@ -18,12 +18,12 @@ export const Default = () => (
   <CodeEditor
     language={select('Editor language', ['css', 'json', 'javascript'])}
     onCopy={action('onCopy')}
-    initialValue="/* write your code here */"
+    initialValue=".className{ background: purple;}"
     light={boolean('Light (light)', false)}
     hasUpload={boolean('Has upload button (hasUpload)', true)}
     accept={array('Accepted file types (accept)', ['.scss', '.css'], ',')}
     onCodeEditorChange={action('onCodeEditorChange')}
-    disabled={boolean('Disabled state (disabled)', false)}
+    disabled={boolean('Disabled state (disabled)', true)}
   />
 );
 
