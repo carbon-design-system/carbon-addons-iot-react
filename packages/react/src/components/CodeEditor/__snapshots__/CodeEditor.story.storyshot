@@ -10,9 +10,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
   >
     <button
       aria-describedby={null}
-      className="iot--code-editor-upload bx--btn bx--btn--md bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      className="iot--code-editor-upload iot--code-editor-upload--disabled bx--btn bx--btn--md bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
       data-testid="code-editor-upload-button"
-      disabled={false}
+      disabled={true}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -53,7 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         ]
       }
       className="bx--visually-hidden"
-      disabled={false}
+      disabled={true}
       id="upload"
       multiple={false}
       name="upload"
@@ -64,7 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <button
       aria-label={null}
       aria-live="polite"
-      className="iot--code-editor-copy bx--copy-btn bx--copy"
+      className="iot--code-editor-copy iot--code-editor-copy--disabled-container bx--copy-btn bx--copy"
       data-testid="code-editor-copy-button"
       onAnimationEnd={[Function]}
       onClick={[Function]}
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
       </div>
       <div
-        className="iot--code-editor-container"
+        className="iot--code-editor-container iot--code-editor-container--disabled"
         style={
           Object {
             "display": "none",
