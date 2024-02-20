@@ -849,7 +849,6 @@ const Table = (props) => {
     (options.hasRowActions ? 1 : 0) +
     (showExpanderColumn ? 1 : 0) +
     (options.hasDragAndDrop ? 1 : 0);
-  console.log('totalColumns', totalColumns);
   const isFiltered =
     view.filters.length > 0 ||
     view.selectedAdvancedFilterIds.length ||
