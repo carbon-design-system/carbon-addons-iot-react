@@ -82,14 +82,6 @@ const CodeEditor = ({
 
   useEffect(() => {
     updateEditorAttribute(disabled, editorValue);
-
-    const button = document.getElementsByClassName('iot--code-editor-copy')[0];
-
-    if (disabled) {
-      button.setAttribute('disabled', '');
-    } else if (button?.hasAttribute('disabled')) {
-      button.removeAttribute('disabled');
-    }
   }, [disabled]);
 
   /**
@@ -181,7 +173,7 @@ const CodeEditor = ({
         <CopyButton
           className={classnames(`${iotPrefix}--code-editor-copy`, {
             [`${iotPrefix}--code-editor-copy--light`]: light,
-            [`${iotPrefix}--code-editor-copy--disabled`]: disabled,
+            [`${iotPrefix}--code-editor-copy--disabled-container`]: disabled,
           })}
           onClick={handleOnCopy}
           iconDescription={mergedI18n.copyBtnDescription}
