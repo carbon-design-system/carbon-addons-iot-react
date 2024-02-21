@@ -168,6 +168,11 @@ const propTypes = {
     hasBreadcrumbDrop: PropTypes.bool,
     /** Freezes table header and footer */
     pinHeaderAndFooter: PropTypes.bool,
+    /** display icon while Table data is empty */
+    noDataIcon: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.oneOf(['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', '']),
+    ]),
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -613,6 +618,7 @@ export const defaultProps = (baseProps) => ({
   // previously used as testId.
   testId: null,
   enablePercentageColumnWidth: false,
+  noDataIcon: '',
 });
 
 const Table = (props) => {
@@ -639,6 +645,7 @@ const Table = (props) => {
     testId,
     size,
     zIndex,
+    noDataIcon,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -1239,6 +1246,7 @@ const Table = (props) => {
                 id={id}
                 totalColumns={totalColumns}
                 isFiltered={isFiltered}
+                noDataIcon={noDataIcon}
                 emptyState={
                   // only show emptyState if no filters or search is applied
                   view.table.emptyState && !isFiltered

@@ -564,6 +564,7 @@ Map {
   "EmptyTable" => Object {
     "defaultProps": Object {
       "id": "EmptyTable",
+      "noDataIcon": "",
       "onEmptyStateAction": null,
       "testId": "",
     },
@@ -671,6 +672,30 @@ Map {
       "isFiltered": Object {
         "isRequired": true,
         "type": "bool",
+      },
+      "noDataIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  "error",
+                  "error404",
+                  "empty",
+                  "not-authorized",
+                  "no-result",
+                  "success",
+                  "",
+                ],
+              ],
+              "type": "oneOf",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "onEmptyStateAction": Object {
         "type": "func",
@@ -797,6 +822,7 @@ Map {
       "id": null,
       "lightweight": undefined,
       "locale": null,
+      "noDataIcon": "",
       "options": Object {
         "hasAdvancedFilter": false,
         "hasAggregations": false,
@@ -1724,6 +1750,30 @@ Map {
             },
             "hasUserViewManagement": Object {
               "type": "bool",
+            },
+            "noDataIcon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "error",
+                        "error404",
+                        "empty",
+                        "not-authorized",
+                        "no-result",
+                        "success",
+                        "",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "pinColumn": Object {
               "args": Array [

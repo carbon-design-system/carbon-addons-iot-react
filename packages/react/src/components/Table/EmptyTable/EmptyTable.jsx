@@ -24,12 +24,18 @@ const propTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** icon to display while no data in table */
+  noDataIcon: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.oneOf(['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', '']),
+  ]),
 };
 
 const defaultProps = {
   id: 'EmptyTable',
   onEmptyStateAction: null,
   testId: '',
+  noDataIcon: '',
 };
 
 const EmptyTable = ({
@@ -49,55 +55,61 @@ const EmptyTable = ({
   // TODO: remove deprecated 'testID' in v3
   testID,
   testId,
-}) => (
-  <TableBody
-    id={`${id}-empty-table`}
-    // TODO: remove deprecated 'testID' in v3
-    data-testid={testID || testId}
-  >
-    <TableRow className={`${iotPrefix}--empty-table--table-row`}>
-      <TableCell colSpan={totalColumns}>
-        {React.isValidElement(emptyState) ? (
-          emptyState
-        ) : (
-          <div className="empty-table-cell--default">
-            {isFiltered ? (
-              <EmptyState
-                icon="no-result"
-                title={messageWithFilters}
-                body={messageWithFiltersBody || ''}
-                action={
-                  onEmptyStateAction
-                    ? {
-                        label: buttonLabelWithFilters,
-                        onClick: onEmptyStateAction,
-                        kind: 'secondary',
-                      }
-                    : null
-                }
-              />
-            ) : (
-              <EmptyState
-                icon="empty"
-                title={message}
-                body={messageBody || ''}
-                action={
-                  onEmptyStateAction
-                    ? {
-                        label: buttonLabel,
-                        onClick: onEmptyStateAction,
-                      }
-                    : null
-                }
-              />
-            )}
-          </div>
-        )}
-      </TableCell>
-    </TableRow>
-  </TableBody>
-);
+  noDataIcon,
+}) => {
+  const isFilterEmptyTable = (
+    <EmptyState
+      icon="no-result"
+      title={messageWithFilters}
+      body={messageWithFiltersBody || ''}
+      action={
+        onEmptyStateAction
+          ? {
+              label: buttonLabelWithFilters,
+              onClick: onEmptyStateAction,
+              kind: 'secondary',
+            }
+          : null
+      }
+    />
+  );
 
+  const defaultEmptyTable = (
+    <EmptyState
+      icon={noDataIcon !== '' ? noDataIcon : 'empty'}
+      title={message}
+      body={messageBody || ''}
+      action={
+        onEmptyStateAction
+          ? {
+              label: buttonLabel,
+              onClick: onEmptyStateAction,
+            }
+          : null
+      }
+    />
+  );
+
+  return (
+    <TableBody
+      id={`${id}-empty-table`}
+      // TODO: remove deprecated 'testID' in v3
+      data-testid={testID || testId}
+    >
+      <TableRow className={`${iotPrefix}--empty-table--table-row`}>
+        <TableCell colSpan={totalColumns}>
+          {React.isValidElement(emptyState) ? (
+            emptyState
+          ) : (
+            <div className="empty-table-cell--default">
+              {isFiltered ? isFilterEmptyTable : defaultEmptyTable}
+            </div>
+          )}
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  );
+};
 EmptyTable.propTypes = propTypes;
 EmptyTable.defaultProps = defaultProps;
 
