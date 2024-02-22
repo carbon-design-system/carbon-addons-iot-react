@@ -25,7 +25,7 @@ const propTypes = {
   ),
   testId: PropTypes.string,
   /** icon to display while no data in table */
-  noDataIcon: PropTypes.oneOfType([
+  emptyStateIcon: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.oneOf(['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', '']),
   ]),
@@ -35,7 +35,7 @@ const defaultProps = {
   id: 'EmptyTable',
   onEmptyStateAction: null,
   testId: '',
-  noDataIcon: '',
+  emptyStateIcon: '',
 };
 
 const EmptyTable = ({
@@ -55,7 +55,7 @@ const EmptyTable = ({
   // TODO: remove deprecated 'testID' in v3
   testID,
   testId,
-  noDataIcon,
+  emptyStateIcon,
 }) => {
   const isFilterEmptyTable = (
     <EmptyState
@@ -76,7 +76,7 @@ const EmptyTable = ({
 
   const defaultEmptyTable = (
     <EmptyState
-      icon={noDataIcon !== '' ? noDataIcon : 'empty'}
+      icon={emptyStateIcon ?? 'empty'}
       title={message}
       body={messageBody || ''}
       action={

@@ -169,7 +169,7 @@ const propTypes = {
     /** Freezes table header and footer */
     pinHeaderAndFooter: PropTypes.bool,
     /** display icon while Table data is empty */
-    noDataIcon: PropTypes.oneOfType([
+    emptyStateIcon: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.oneOf(['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', '']),
     ]),
@@ -618,7 +618,7 @@ export const defaultProps = (baseProps) => ({
   // previously used as testId.
   testId: null,
   enablePercentageColumnWidth: false,
-  noDataIcon: '',
+  emptyStateIcon: '',
 });
 
 const Table = (props) => {
@@ -645,7 +645,7 @@ const Table = (props) => {
     testId,
     size,
     zIndex,
-    noDataIcon,
+    emptyStateIcon,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -1246,7 +1246,7 @@ const Table = (props) => {
                 id={id}
                 totalColumns={totalColumns}
                 isFiltered={isFiltered}
-                noDataIcon={noDataIcon}
+                emptyStateIcon={emptyStateIcon}
                 emptyState={
                   // only show emptyState if no filters or search is applied
                   view.table.emptyState && !isFiltered
