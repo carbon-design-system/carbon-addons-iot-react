@@ -563,8 +563,8 @@ Map {
   },
   "EmptyTable" => Object {
     "defaultProps": Object {
+      "emptyStateIcon": "",
       "id": "EmptyTable",
-      "noDataIcon": "",
       "onEmptyStateAction": null,
       "testId": "",
     },
@@ -666,14 +666,7 @@ Map {
         "isRequired": true,
         "type": "oneOfType",
       },
-      "id": Object {
-        "type": "string",
-      },
-      "isFiltered": Object {
-        "isRequired": true,
-        "type": "bool",
-      },
-      "noDataIcon": Object {
+      "emptyStateIcon": Object {
         "args": Array [
           Array [
             Object {
@@ -696,6 +689,13 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "isFiltered": Object {
+        "isRequired": true,
+        "type": "bool",
       },
       "onEmptyStateAction": Object {
         "type": "func",
@@ -750,6 +750,7 @@ Map {
         },
       },
       "columnGroups": Array [],
+      "emptyStateIcon": "",
       "enablePercentageColumnWidth": false,
       "error": null,
       "i18n": Object {
@@ -822,7 +823,6 @@ Map {
       "id": null,
       "lightweight": undefined,
       "locale": null,
-      "noDataIcon": "",
       "options": Object {
         "hasAdvancedFilter": false,
         "hasAggregations": false,
@@ -1627,6 +1627,30 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "emptyStateIcon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "error",
+                        "error404",
+                        "empty",
+                        "not-authorized",
+                        "no-result",
+                        "success",
+                        "",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
             "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
               "type": "bool",
@@ -1750,30 +1774,6 @@ Map {
             },
             "hasUserViewManagement": Object {
               "type": "bool",
-            },
-            "noDataIcon": Object {
-              "args": Array [
-                Array [
-                  Object {
-                    "type": "func",
-                  },
-                  Object {
-                    "args": Array [
-                      Array [
-                        "error",
-                        "error404",
-                        "empty",
-                        "not-authorized",
-                        "no-result",
-                        "success",
-                        "",
-                      ],
-                    ],
-                    "type": "oneOf",
-                  },
-                ],
-              ],
-              "type": "oneOfType",
             },
             "pinColumn": Object {
               "args": Array [
