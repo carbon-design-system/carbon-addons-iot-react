@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.13...v2.154.0-next.14) (2024-02-26)
+
+
+### Features
+
+* code review changes and storybook example ([ad2c042](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad2c04288fd28689ca120d04def04a060c697460))
+* expose noDataIcon props to display more icon while table is empty ([1d7c69f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d7c69f3bf986979326072f724c9f144e3ea28b8))
+* snapshort updated ([65c281b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65c281bf18943e8598888cc9b0a05877b172d22f))
+
+
+
+
+
 # [2.154.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.12...v2.154.0-next.13) (2024-02-20)
 
 
