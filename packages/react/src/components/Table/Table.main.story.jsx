@@ -170,6 +170,7 @@ export const Playground = () => {
     hasFilterRowIcon,
     pinColumn,
     pinHeaderAndFooter,
+    emptyStateIcon,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -240,10 +241,8 @@ export const Playground = () => {
   );
 
   const customToolbarContentElement = getCustomToolbarContentElement();
-
   const customEmptyState = getCustomEmptyState();
   const customErrorState = getCustomErrorState();
-
   // INITIAL DATA STATE
   const [data, setData] = useStoryState(
     [...(demoEmptyState || demoCustomEmptyState ? [] : storyTableData)]
@@ -262,6 +261,7 @@ export const Playground = () => {
       hasRowNesting,
       selectionCheckboxEnabled,
       demoHasLoadMore,
+      numberOfRows,
     ]
   );
 
@@ -500,6 +500,7 @@ export const Playground = () => {
         i18n={getI18nKnobs()}
         error={error}
         locale={locale}
+        emptyStateIcon={emptyStateIcon}
       />
     </DragAndDrop>
   );

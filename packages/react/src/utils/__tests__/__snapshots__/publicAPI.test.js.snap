@@ -563,6 +563,7 @@ Map {
   },
   "EmptyTable" => Object {
     "defaultProps": Object {
+      "emptyStateIcon": "",
       "id": "EmptyTable",
       "onEmptyStateAction": null,
       "testId": "",
@@ -665,6 +666,30 @@ Map {
         "isRequired": true,
         "type": "oneOfType",
       },
+      "emptyStateIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  "error",
+                  "error404",
+                  "empty",
+                  "not-authorized",
+                  "no-result",
+                  "success",
+                  "",
+                ],
+              ],
+              "type": "oneOf",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "id": Object {
         "type": "string",
       },
@@ -725,6 +750,7 @@ Map {
         },
       },
       "columnGroups": Array [],
+      "emptyStateIcon": "",
       "enablePercentageColumnWidth": false,
       "error": null,
       "i18n": Object {
@@ -1601,6 +1627,30 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "emptyStateIcon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "error",
+                        "error404",
+                        "empty",
+                        "not-authorized",
+                        "no-result",
+                        "success",
+                        "",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
             "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
               "type": "bool",

@@ -1112,7 +1112,6 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'Main view states' : undefined;
   const DND_GROUP = useGroups ? 'Drag & drop' : undefined;
-
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
   return {
@@ -1134,8 +1133,16 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
     size: shouldCreate('size')
       ? select('Row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg', TABLE_GROUP)
       : null,
-    numerOfRows: shouldCreate('numerOfRows')
-      ? select('Demo number of rows in data', [100, 50, 20, 5], 100, TABLE_GROUP)
+    numberOfRows: shouldCreate('numberOfRows')
+      ? select('Demo number of rows in data', [100, 50, 20, 5, 0], 100, TABLE_GROUP)
+      : null,
+    emptyStateIcon: shouldCreate('emptyStateIcon')
+      ? select(
+          'Demo empty Table Icon',
+          ['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success'],
+          'no-result',
+          TABLE_GROUP
+        )
       : null,
     hasUserViewManagement: shouldCreate('hasUserViewManagement')
       ? boolean(
