@@ -1042,7 +1042,7 @@ const DateTimePicker = ({
                     [`${iotPrefix}--date-time-picker__disabled`]:
                       disabled ||
                       (isSingleSelect &&
-                        (!singleDateValue.startDate || (hasTimeInput ? !singleTimeValue : false))),
+                        (!singleDateValue?.startDate || (hasTimeInput ? !singleTimeValue : false))), // singleDateValue might be null or undefined
                   })}
                   title={humanValue}
                 >
@@ -1314,7 +1314,7 @@ const DateTimePicker = ({
                             absoluteValue && datePickerType === 'range'
                               ? [absoluteValue.startDate, absoluteValue.endDate]
                               : singleDateValue && datePickerType === 'single'
-                              ? [singleDateValue.startDate]
+                              ? [singleDateValue?.startDate]
                               : null
                           }
                           locale={locale}
