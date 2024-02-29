@@ -87,7 +87,7 @@ const EmptyTable = ({
               ) : (
                 <EmptyState
                   icon={emptyStateIcon ?? 'empty'}
-                  title={message || ''}
+                  title={message}
                   body={messageBody || ''}
                   action={
                     onEmptyStateAction
