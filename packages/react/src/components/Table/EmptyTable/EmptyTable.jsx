@@ -57,39 +57,6 @@ const EmptyTable = ({
   testId,
   emptyStateIcon,
 }) => {
-  const isFilterEmptyTable = (
-    <EmptyState
-      icon="no-result"
-      title={messageWithFilters}
-      body={messageWithFiltersBody || ''}
-      action={
-        onEmptyStateAction
-          ? {
-              label: buttonLabelWithFilters,
-              onClick: onEmptyStateAction,
-              kind: 'secondary',
-            }
-          : null
-      }
-    />
-  );
-
-  const defaultEmptyTable = (
-    <EmptyState
-      icon={emptyStateIcon ?? 'empty'}
-      title={message}
-      body={messageBody || ''}
-      action={
-        onEmptyStateAction
-          ? {
-              label: buttonLabel,
-              onClick: onEmptyStateAction,
-            }
-          : null
-      }
-    />
-  );
-
   return (
     <TableBody
       id={`${id}-empty-table`}
@@ -102,7 +69,36 @@ const EmptyTable = ({
             emptyState
           ) : (
             <div className="empty-table-cell--default">
-              {isFiltered ? isFilterEmptyTable : defaultEmptyTable}
+              {isFiltered ? (
+                <EmptyState
+                  icon="no-result"
+                  title={messageWithFilters}
+                  body={messageWithFiltersBody || ''}
+                  action={
+                    onEmptyStateAction
+                      ? {
+                          label: buttonLabelWithFilters,
+                          onClick: onEmptyStateAction,
+                          kind: 'secondary',
+                        }
+                      : null
+                  }
+                />
+              ) : (
+                <EmptyState
+                  icon={emptyStateIcon ?? 'empty'}
+                  title={message || ''}
+                  body={messageBody || ''}
+                  action={
+                    onEmptyStateAction
+                      ? {
+                          label: buttonLabel,
+                          onClick: onEmptyStateAction,
+                        }
+                      : null
+                  }
+                />
+              )}
             </div>
           )}
         </TableCell>
