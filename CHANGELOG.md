@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.16...v2.154.0-next.17) (2024-03-18)
+
+
+### Bug Fixes
+
+* **tablecard:** file download timestamp mismatch from ui ([8a29dc3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8a29dc39d8e88d46226ab1cc9f4c3585c661165f))
+
+
+
+
+
 # [2.154.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.15...v2.154.0-next.16) (2024-02-29)
 
 
