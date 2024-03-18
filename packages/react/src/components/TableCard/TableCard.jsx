@@ -300,6 +300,24 @@ const TableCard = ({
         .filter((i) => !isNil(i)),
     [columns]
   );
+
+  const updatedTableData = useMemo(() => {
+    return tableData.map((row) => {
+      const { values } = row;
+      Object.keys(values).forEach((column) => {
+        if (filteredTimestampColumns.includes(column) && !isEditable) {
+          values[column] = values[column]
+            ? dayjs(values[column]).format(defaultDateFormatPattern)
+            : '';
+        }
+      });
+      return {
+        ...row,
+        values,
+      };
+    });
+  }, [defaultDateFormatPattern, filteredTimestampColumns, isEditable, tableData]);
+
   const columnsToRender = useMemo(
     () =>
       newColumns
@@ -320,19 +338,13 @@ const TableCard = ({
                 { value } // default render function is to handle timestamp
               ) =>
                 // if it's a timestamp column type make sure to format it
-                filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
-                  ? dayjs(value).format(defaultDateFormatPattern)
-                  : isNil(value)
-                  ? ''
-                  : value.toString(),
+                isNil(value) ? '' : value.toString(),
         }))
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
       defaultDateFormatPattern,
-      filteredTimestampColumns,
       hasActionColumn,
-      isEditable,
       mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
@@ -377,7 +389,7 @@ const TableCard = ({
       isEditable
         ? generateTableSampleValues(id, columns)
         : hasActionColumn || filteredPrecisionColumns.length || thresholds
-        ? tableData.map((i) => {
+        ? updatedTableData.map((i) => {
             // if has custom action
             const action = hasActionColumn ? { actionColumn: i.actions || [] } : null;
 
@@ -426,7 +438,7 @@ const TableCard = ({
               isSelectable: false,
             };
           })
-        : tableData,
+        : updatedTableData,
     [
       isEditable,
       id,
@@ -434,7 +446,7 @@ const TableCard = ({
       hasActionColumn,
       filteredPrecisionColumns,
       thresholds,
-      tableData,
+      updatedTableData,
       thresholdSeverityLabelsMap,
       locale,
     ]
@@ -444,7 +456,7 @@ const TableCard = ({
   const expandedRowsFormatted = useMemo(
     () =>
       expandedRows && expandedRows.length
-        ? tableData.map((dataItem) => {
+        ? updatedTableData.map((dataItem) => {
             // filter the data keys and find the expandaded row exist for that key
             const expandedItem = Object.keys(dataItem.values)
               .map((value) => expandedRows.filter((item) => item.id === value)[0])
@@ -489,11 +501,7 @@ const TableCard = ({
                               {item?.label ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>
-                              {item
-                                ? item.type === 'TIMESTAMP'
-                                  ? dayjs(dataItem.values[item.id]).format(defaultDateFormatPattern)
-                                  : dataItem.values[item.id]
-                                : null}
+                              {item ? dataItem.values[item.id] : null}
                             </span>
                           </>
                         )}
@@ -513,7 +521,7 @@ const TableCard = ({
             };
           })
         : [],
-    [defaultDateFormatPattern, expandedRows, others.cardVariables, tableData]
+    [expandedRows, others.cardVariables, updatedTableData]
   );
 
   // is columns recieved is different from the columnsToRender show card expand
