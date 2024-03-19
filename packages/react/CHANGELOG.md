@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.17...v2.154.0-next.18) (2024-03-19)
+
+
+### Reverts
+
+* table empty state icon changes ([4a03fa2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4a03fa24e8a15e1d8ac61c0d5fd6c4d1f706369f))
+
+
+
+
+
 # [2.154.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.16...v2.154.0-next.17) (2024-03-18)
 
 
