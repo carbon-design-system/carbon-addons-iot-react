@@ -710,6 +710,7 @@ const Table = (props) => {
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();
   const hasMultiSelect = options.hasRowSelection === 'multi';
+  const hasSingleSelect = options.hasRowSelection === 'single';
 
   const [tableId] = useState(() => uniqueId('table-'));
   const [, forceUpdateCellTextWidth] = useState(0);
@@ -850,11 +851,11 @@ const Table = (props) => {
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
+    (hasSingleSelect ? 1 : 0) +
     (options.hasRowExpansion || options.hasRowNesting ? 1 : 0) +
     (options.hasRowActions ? 1 : 0) +
     (showExpanderColumn ? 1 : 0) +
     (options.hasDragAndDrop ? 1 : 0);
-
   const isFiltered =
     view.filters.length > 0 ||
     view.selectedAdvancedFilterIds.length ||
