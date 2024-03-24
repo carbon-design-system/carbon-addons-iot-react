@@ -63,7 +63,7 @@
   "devDependencies": {
     "arg": "^5.0.2",
     "husky": "^8.0.3",
-    "lerna": "^7.4.2",
+    "lerna": "^6.6.2",
     "lint-staged": "^8.1.0",
     "prettier": "^2.1.2",
     "prettier-config-carbon": "^0.4.0"
