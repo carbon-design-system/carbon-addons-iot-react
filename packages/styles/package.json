@@ -32,7 +32,7 @@
     "carbon-components": "10.47.0",
     "react-grid-layout": "1.2.0",
     "react-resizable": "1.11.0",
-    "rimraf": "3.0.2",
+    "rimraf": "^5.0.5",
     "sass": "^1.42.1"
   },
   "author": "IBM",
