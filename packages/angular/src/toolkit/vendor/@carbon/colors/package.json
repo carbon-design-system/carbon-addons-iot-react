@@ -39,7 +39,7 @@
     "core-js": "^3.0.1",
     "fs-extra": "^8.1.0",
     "node-sass": "^4.13.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^5.0.5"
   },
   "eyeglass": {
     "exports": false,

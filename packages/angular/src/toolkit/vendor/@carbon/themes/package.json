@@ -44,7 +44,7 @@
     "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.0",
     "node-sass": "^4.13.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^5.0.5"
   },
   "gitHead": "10963409141c46b204e83fd5ba7672ce49d66fe7",
   "keywords": [
