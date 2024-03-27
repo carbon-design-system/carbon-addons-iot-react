@@ -992,53 +992,18 @@ collect:
         - end
         - start
         # General - breakpoint
-        - '"lg"'
-        - '"max"'
-        - '"md"'
-        - '"sm"'
-        - '"xl"'
-        - '"xs"'
         - lg
         - max
         - md
         - sm
         - xl
         - xs
-        # General - content
-        - |-
-          PropTypes.shape({
-            peak: PropTypes.number,
-            meterTotal: PropTypes.number,
-            meterUnit: PropTypes.string,
-            totalFormatter: PropTypes.func,
-            legendPosition: PropTypes.string,
-            ...ChartColorPropType,
-          })
-        - >-
-          PropTypes.shape({
-            xLabel: PropTypes.string,
-            yLabel: PropTypes.string,
-            xProperty: PropTypes.string.isRequired,
-            yProperty: PropTypes.string.isRequired,
-            listContent: PropTypes.arrayOf(
-              PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })
-            ),
-            ...ChartColorPropType,
-          })
-        # General - data
-        - |-
-          PropTypes.arrayOf(
-            PropTypes.shape({
-              group: PropTypes.string,
-              value: PropTypes.number,
-            })
-          )
-        - |-
-          PropTypes.arrayOf(
-            PropTypes.shape({
-              group: PropTypes.string.isRequired,
-            })
-          )
+        - lg
+        - max
+        - md
+        - sm
+        - xl
+        - xs
         # General - design
         - inline
         - mini
@@ -1066,7 +1031,6 @@ collect:
         - multi
         - single
         # General - icon
-        - ''
         - empty
         - error
         - error404
@@ -1092,40 +1056,37 @@ collect:
         - ltr
         - rtl
         # General - layout
-        - '"HORIZONTAL"'
-        - '"VERTICAL"'
+        - HORIZONTAL
+        - VERTICAL
         - HORIZONTAL
         - VERTICAL
         # General - padding
         - default
         - none
         # General - primaryValue
-        - '"id"'
-        - '"name"'
-        # General - secondaryValue
-        - ...Object.values(ITEM_VALUE_KEYS)
-        - undefined
+        - id
+        - name
         # General - size
-        - '"default"'
-        - '"large"'
-        - '"LARGE"'
-        - '"LARGETHICK"'
-        - '"LARGETHIN"'
-        - '"LARGEWIDE"'
-        - '"MEDIUM"'
-        - '"MEDIUMTHICK"'
-        - '"MEDIUMTHIN"'
-        - '"MEDIUMWIDE"'
-        - '"small"'
-        - '"SMALL"'
-        - '"SMALLFULL"'
-        - '"SMALLTHICK"'
-        - '"SMALLWIDE"'
-        - '"TALL"'
-        - '"WIDE"'
-        - '"XLARGE"'
-        - '"XSMALL"'
-        - '"XSMALLWIDE"'
+        - default
+        - large
+        - LARGE
+        - LARGETHICK
+        - LARGETHIN
+        - LARGEWIDE
+        - MEDIUM
+        - MEDIUMTHICK
+        - MEDIUMTHIN
+        - MEDIUMWIDE
+        - small
+        - SMALL
+        - SMALLFULL
+        - SMALLTHICK
+        - SMALLWIDE
+        - TALL
+        - WIDE
+        - XLARGE
+        - XSMALL
+        - XSMALLWIDE
         - default
         - LARGE
         - LARGEWIDE
@@ -1171,7 +1132,6 @@ collect:
         - inline
         - stacked
         # EmptyTable - emptyStateIcon
-        - ''
         - empty
         - error
         - error404
@@ -1179,8 +1139,8 @@ collect:
         - not-authorized
         - success
         # FileDrop - fileType
-        - '"BINARY"'
-        - '"TEXT"'
+        - BINARY
+        - TEXT
         # HotspotEditorModal - defaultHotspotType
         - dynamic
         - fixed
@@ -1200,10 +1160,10 @@ collect:
         - half
         - third
         # PageTitleBar - headerMode
-        - '"CONDENSED"'
-        - '"DYNAMIC"'
-        - '"STATIC"'
-        - '"STICKY"'
+        - CONDENSED
+        - DYNAMIC
+        - STATIC
+        - STICKY
         # RuleBuilderHeader - groupLogic
         - ALL
         - ANY
@@ -1217,13 +1177,13 @@ collect:
         - secondary
         - tertiary
         # TableBody - pinColumn
-        - '"first"'
-        - '"last"'
-        - '"none"'
+        - first
+        - last
+        - none
         # TableHeader - sortDirection
-        - '"ASC"'
-        - '"DESC"'
-        - '"NONE"'
+        - ASC
+        - DESC
+        - NONE
         # ThresholdIcon - severity
         - '1'
         - '2'
