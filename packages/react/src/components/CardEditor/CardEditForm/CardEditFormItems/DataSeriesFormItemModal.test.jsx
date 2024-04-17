@@ -1257,11 +1257,11 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
     expect(setEditDataItem).toHaveBeenLastCalledWith({
-      thresholds: [{ color: '#da1e28', comparison: '>', icon: 'Warning alt', value: 0 }],
+      thresholds: [{ color: '#da1e28', comparison: '>', value: 0 }],
     });
     userEvent.click(screen.getByLabelText('Increment number'));
     expect(setEditDataItem).toHaveBeenLastCalledWith({
-      thresholds: [{ color: '#da1e28', comparison: '>', icon: 'Warning alt', value: 1 }],
+      thresholds: [{ color: '#da1e28', comparison: '>', value: 1 }],
     });
   });
 

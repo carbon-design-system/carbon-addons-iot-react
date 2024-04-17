@@ -620,7 +620,7 @@ describe('HotspotEditorModal', () => {
                         color: '#da1e28',
                         comparison: '>',
                         dataSourceId: 'pressure',
-                        icon: 'Warning alt',
+
                         value: 0,
                       },
                     ],

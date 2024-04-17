@@ -6,7 +6,6 @@ import {
   teal70,
   magenta70,
   red50,
-  red60,
   red90,
   green60,
   blue80,
@@ -15,7 +14,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt32, Add16 } from '@carbon/icons-react';
+import { Add16 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';
@@ -563,8 +562,6 @@ const DataSeriesFormItemModal = ({
             dataSourceId={type !== CARD_TYPES.VALUE ? editDataItem.dataSourceId : null}
             thresholds={editDataItem.thresholds}
             translateWithId={handleTranslation}
-            selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
-            selectedColor={{ carbonColor: red60, name: 'red60' }}
             onChange={(thresholds) => {
               setEditDataItem({
                 ...editDataItem,

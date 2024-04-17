@@ -66,7 +66,7 @@ const defaultProps = {
   // TODO: fix this after v3.
   // since the default card props aren't merged with the default image card props the
   // testId is technically undefined here, so we're matching the Card default to maintain backwards compat.
-  testId: 'Card',
+  testId: 'ImageCard',
 };
 
 const ImageCard = ({

@@ -276,9 +276,12 @@ const ThresholdsFormItem = ({
           let newThreshold = {
             comparison: '>',
             value: 0,
-            icon: selectedIcon?.name || 'Warning alt',
             color: selectedColor?.carbonColor || red60,
           };
+          if (selectedIcon?.name) {
+            newThreshold.icon = selectedIcon.name;
+          }
+
           if (dataSourceId) {
             newThreshold = { dataSourceId, ...newThreshold };
           }

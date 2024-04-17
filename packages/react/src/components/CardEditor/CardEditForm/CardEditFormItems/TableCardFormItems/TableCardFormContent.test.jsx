@@ -467,7 +467,7 @@ describe('TableCardFormContent', () => {
                 dataSourceId: 'manufacturer',
                 comparison: '>',
                 value: 5,
-                icon: 'Warning alt',
+
                 color: '#da1e28',
                 severity: 1,
               },
@@ -550,7 +550,7 @@ describe('TableCardFormContent', () => {
             color: '#da1e28',
             comparison: '>',
             dataSourceId: 'manufacturer',
-            icon: 'Warning alt',
+
             value: 0,
           },
         ],
@@ -584,14 +584,14 @@ describe('TableCardFormContent', () => {
             color: '#da1e28',
             comparison: '<',
             dataSourceId: 'temperature',
-            icon: 'Warning alt',
+
             value: 10,
           },
           {
             color: '#da1e28',
             comparison: '<',
             dataSourceId: 'manufacturer',
-            icon: 'Warning alt',
+
             value: 0,
           },
         ],
@@ -605,7 +605,7 @@ describe('TableCardFormContent', () => {
       color: '#da1e28',
       comparison: '<',
       dataSourceId: 'temperature',
-      icon: 'Warning alt',
+
       value: 10,
     });
 
@@ -613,7 +613,7 @@ describe('TableCardFormContent', () => {
       color: '#da1e28',
       comparison: '<',
       dataSourceId: 'manufacturer',
-      icon: 'Warning alt',
+
       value: 0,
     });
 
@@ -621,7 +621,7 @@ describe('TableCardFormContent', () => {
       color: '#da1e28',
       comparison: '>',
       dataSourceId: 'manufacturer',
-      icon: 'Warning alt',
+
       value: 0,
     });
 
@@ -701,7 +701,7 @@ describe('TableCardFormContent', () => {
             color: '#da1e28',
             comparison: '>',
             dataSourceId: 'manufacturer',
-            icon: 'Warning alt',
+
             value: 1,
           },
         ],
@@ -746,7 +746,7 @@ describe('TableCardFormContent', () => {
             color: '#da1e28',
             comparison: '>',
             dataSourceId: 'manufacturer',
-            icon: 'Warning alt',
+
             value: 1,
           },
         ],

@@ -529,22 +529,20 @@ export const HeaderWithSideNav = () => {
   }, []);
 
   return (
-    <>
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName="Admin User"
-        username="adminuser"
-        closeSideNavOnNavigation={boolean('Close side nav on navigation', false)}
-        routes={routes}
-        applications={applications}
-        sideNavProps={{
-          links: linksState,
-          recentLinks: demoMostRecentLinks ? recentLinksState : [],
-        }}
-        hideMenuButton={hideMenuButton}
-      />
-    </>
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName="Admin User"
+      username="adminuser"
+      closeSideNavOnNavigation={boolean('Close side nav on navigation', false)}
+      routes={routes}
+      applications={applications}
+      sideNavProps={{
+        links: linksState,
+        recentLinks: demoMostRecentLinks ? recentLinksState : [],
+      }}
+      hideMenuButton={hideMenuButton}
+    />
   );
 };
 
