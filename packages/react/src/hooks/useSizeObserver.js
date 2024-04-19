@@ -20,7 +20,11 @@ const useSizeObserver = ({ initialHeight = 0, initialWidth = 0, ref = undefined 
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { height = initialHeight, width = initialWidth, ref: observerRef } = useResizeObserver({
+  const {
+    height = initialHeight,
+    width = initialWidth,
+    ref: observerRef,
+  } = useResizeObserver({
     ref,
   });
 

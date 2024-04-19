@@ -129,12 +129,16 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'],
   .#{$prefix}--side-nav__link--current,
   .#{$prefix}--side-nav__menu
-    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
+      [aria-current='page']
+    ):hover {
     background-color: $selectedBgColor;
   }
 
   .#{$prefix}--side-nav__menu
-    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
+      [aria-current='page']
+    ):hover,
   &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
   &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'] > span,
   &.#{$prefix}--side-nav__link--current > span {

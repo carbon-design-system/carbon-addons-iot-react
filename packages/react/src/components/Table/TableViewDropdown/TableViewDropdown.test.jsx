@@ -42,13 +42,8 @@ describe('TableViewDropdown', () => {
 
   describe('item rendering', () => {
     it('hides standard actions on isHidingStandardActions:true', () => {
-      const {
-        viewAll,
-        saveAsNewView,
-        saveChanges,
-        manageViews,
-        edited,
-      } = TableViewDropdown.defaultProps.i18n;
+      const { viewAll, saveAsNewView, saveChanges, manageViews, edited } =
+        TableViewDropdown.defaultProps.i18n;
       const { rerender } = render(
         <TableViewDropdown
           selectedViewEdited
