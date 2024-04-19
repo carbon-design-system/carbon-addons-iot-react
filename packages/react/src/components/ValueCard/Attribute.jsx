@@ -101,89 +101,87 @@ const Attribute = ({
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
 
   return (
-    <>
-      <div
-        className={classnames(`${BEM_BASE}-wrapper`, {
-          [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
-          [`${BEM_BASE}-wrapper--horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
-        })}
-        style={{
-          '--value-card-attribute-width': `${attributeWidthPercentage}%`,
-        }}
-      >
-        <div className={`${BEM_BASE}-label`}>
-          {matchingThreshold?.icon ? (
-            <CardIcon
-              fill={matchingThreshold.color}
-              color={matchingThreshold.color}
-              width={16}
-              height={16}
-              title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-              renderIconByName={renderIconByName}
-              icon={matchingThreshold.icon}
-              testId={`${testId}-threshold-icon`}
+    <div
+      className={classnames(`${BEM_BASE}-wrapper`, {
+        [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+        [`${BEM_BASE}-wrapper--horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
+      })}
+      style={{
+        '--value-card-attribute-width': `${attributeWidthPercentage}%`,
+      }}
+    >
+      <div className={`${BEM_BASE}-label`}>
+        {matchingThreshold?.icon ? (
+          <CardIcon
+            fill={matchingThreshold.color}
+            color={matchingThreshold.color}
+            width={16}
+            height={16}
+            title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+            renderIconByName={renderIconByName}
+            icon={matchingThreshold.icon}
+            testId={`${testId}-threshold-icon`}
+          />
+        ) : null}
+        <span data-testid={`${testId}-threshold-label`}>{label}</span>
+      </div>
+
+      <div className={`${BEM_BASE}`}>
+        <ValueRenderer
+          value={value}
+          layout={layout}
+          precision={precision}
+          color={valueColor}
+          locale={locale}
+          customFormatter={customFormatter}
+          fontSize={fontSize}
+          isNumberValueCompact={isNumberValueCompact}
+          testId={`${testId}-value`}
+          dataSourceId={dataSourceId}
+          measurementUnitLabel={measurementUnitLabel}
+          onClick={onValueClick}
+        />
+        <UnitRenderer unit={unit} testId={`${testId}-unit`} />
+      </div>
+      {!isNil(secondaryValue) ? (
+        <div
+          data-testid={`${testId}-secondary-value`}
+          className={`${BEM_BASE}-secondary-value`}
+          style={{
+            '--secondary-value-color': gray60,
+          }}
+        >
+          {secondaryValue.trend === 'up' ? (
+            <CaretUp16
+              className={`${BEM_BASE}_trend-icon`}
+              aria-label="trending up"
+              data-testid={`${testId}-trending-up`}
+              fill={secondaryValue.color || gray60}
+            />
+          ) : secondaryValue.trend === 'down' ? (
+            <CaretDown16
+              className={`${BEM_BASE}_trend-icon`}
+              aria-label="trending down"
+              data-testid={`${testId}-trending-down`}
+              fill={secondaryValue.color || gray60}
             />
           ) : null}
-          <span data-testid={`${testId}-threshold-label`}>{label}</span>
+          {secondaryValue.href || secondaryValue.onClick ? (
+            <Link
+              data-testid={`${testId}-secondary-value--link`}
+              className={`${BEM_BASE}-secondary-value--link`}
+              href={secondaryValue?.href}
+              rel="noopener noreferrer"
+              onClick={() => secondaryValue?.onClick({ dataSourceId, secondaryValue })}
+            >
+              {secondaryValue.value}
+            </Link>
+          ) : (
+            secondaryValue.value
+          )}
         </div>
-
-        <div className={`${BEM_BASE}`}>
-          <ValueRenderer
-            value={value}
-            layout={layout}
-            precision={precision}
-            color={valueColor}
-            locale={locale}
-            customFormatter={customFormatter}
-            fontSize={fontSize}
-            isNumberValueCompact={isNumberValueCompact}
-            testId={`${testId}-value`}
-            dataSourceId={dataSourceId}
-            measurementUnitLabel={measurementUnitLabel}
-            onClick={onValueClick}
-          />
-          <UnitRenderer unit={unit} testId={`${testId}-unit`} />
-        </div>
-        {!isNil(secondaryValue) ? (
-          <div
-            data-testid={`${testId}-secondary-value`}
-            className={`${BEM_BASE}-secondary-value`}
-            style={{
-              '--secondary-value-color': gray60,
-            }}
-          >
-            {secondaryValue.trend === 'up' ? (
-              <CaretUp16
-                className={`${BEM_BASE}_trend-icon`}
-                aria-label="trending up"
-                data-testid={`${testId}-trending-up`}
-                fill={secondaryValue.color || gray60}
-              />
-            ) : secondaryValue.trend === 'down' ? (
-              <CaretDown16
-                className={`${BEM_BASE}_trend-icon`}
-                aria-label="trending down"
-                data-testid={`${testId}-trending-down`}
-                fill={secondaryValue.color || gray60}
-              />
-            ) : null}
-            {secondaryValue.href || secondaryValue.onClick ? (
-              <Link
-                data-testid={`${testId}-secondary-value--link`}
-                className={`${BEM_BASE}-secondary-value--link`}
-                href={secondaryValue?.href}
-                rel="noopener noreferrer"
-                onClick={() => secondaryValue?.onClick({ dataSourceId, secondaryValue })}
-              >
-                {secondaryValue.value}
-              </Link>
-            ) : (
-              secondaryValue.value
-            )}
-          </div>
-        ) : null}
-      </div>
-    </>
+      ) : null}
+    </div>
   );
 };
 

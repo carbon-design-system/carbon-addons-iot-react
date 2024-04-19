@@ -21037,7 +21037,7 @@ Map {
       "onBrowseClick": null,
       "onUpload": [Function],
       "renderIconByName": [Function],
-      "testId": "Card",
+      "testId": "ImageCard",
       "validateUploadedImage": null,
     },
     "propTypes": Object {

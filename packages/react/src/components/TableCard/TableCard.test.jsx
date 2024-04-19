@@ -1174,7 +1174,7 @@ describe('TableCard', () => {
       />
     );
 
-    expect(screen.getAllByTitle(/>= 10/i)).toHaveLength(3);
+    expect(screen.getAllByTitle(/>= 10/i)).toHaveLength(6);
     // this is only five, because the other rows with pressure:0 don't
     // meet the filter. Should 0 be considered a value?
     expect(container.querySelectorAll('tbody > tr')).toHaveLength(5);

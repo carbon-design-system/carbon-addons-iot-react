@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -26,29 +26,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -84,7 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -338,29 +338,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -396,7 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -728,7 +728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -739,29 +739,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -797,7 +797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -1075,7 +1075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -1086,29 +1086,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -1144,7 +1144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -1422,7 +1422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -1433,29 +1433,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -1491,7 +1491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -1661,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -1672,28 +1672,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         />
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -1705,7 +1705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--image-uploader iot--image-uploader__medium"
-            data-testid="Card-image-uploader"
+            data-testid="ImageCard-image-uploader"
           >
             <div
               className="bx--file"
@@ -1715,7 +1715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             >
               <label
                 className="bx--file-browse-btn"
-                data-testid="Card-image-uploader-file-drop-container"
+                data-testid="ImageCard-image-uploader-file-drop-container"
                 htmlFor="id16"
                 onKeyDown={[Function]}
                 size="field"
@@ -1829,7 +1829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -1840,28 +1840,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         />
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",
@@ -1873,7 +1873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--image-uploader iot--image-uploader__medium"
-            data-testid="Card-image-uploader"
+            data-testid="ImageCard-image-uploader"
           >
             <div
               className="bx--file"
@@ -1883,7 +1883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             >
               <label
                 className="bx--file-browse-btn"
-                data-testid="Card-image-uploader-file-drop-container"
+                data-testid="ImageCard-image-uploader-file-drop-container"
                 htmlFor="id14"
                 onKeyDown={[Function]}
                 size="field"
@@ -1997,7 +1997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     <div
       accept={null}
       className="iot--card iot--card--wrapper"
-      data-testid="Card"
+      data-testid="ImageCard"
       id="image-hotspots"
       role="presentation"
       style={
@@ -2008,29 +2008,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <div
         className="iot--card--header"
-        data-testid="Card-header"
+        data-testid="ImageCard-header"
       >
         <span
           className="iot--card--title"
-          data-testid="Card-title"
+          data-testid="ImageCard-title"
           title="Image"
         >
           <div
             className="iot--card--title--text"
-            data-testid="Card-title-notip"
+            data-testid="ImageCard-title-notip"
           >
             Image
           </div>
         </span>
         <div
           className="iot--card--toolbar"
-          data-testid="Card-toolbar"
+          data-testid="ImageCard-toolbar"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-expand-button"
+            data-testid="ImageCard-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -2066,7 +2066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="iot--card--content"
-        data-testid="Card-content"
+        data-testid="ImageCard-content"
         style={
           Object {
             "--card-content-height": "576px",

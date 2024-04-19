@@ -13,7 +13,7 @@ options: --privileged
     steps:
       - name: Upgrade git
         run: |
-          echo deb "http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+          echo deb "http://archive.debian.org/debian buster-backports main" >> /etc/apt/sources.list
           apt-get update
           apt-get install -y git/buster-backports
 

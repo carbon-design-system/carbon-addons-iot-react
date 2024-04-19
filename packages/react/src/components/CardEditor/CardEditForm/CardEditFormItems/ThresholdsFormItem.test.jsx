@@ -58,7 +58,7 @@ describe('ThresholdsFormItem', () => {
   };
 
   it('Adding thresholds invokes onChange', () => {
-    render(<ThresholdsFormItem {...commonProps} />);
+    render(<ThresholdsFormItem {...commonProps} selectedIcon={{ name: 'Warning alt' }} />);
 
     const addBtn = screen.getByText('Add threshold');
     expect(addBtn).toBeInTheDocument();
