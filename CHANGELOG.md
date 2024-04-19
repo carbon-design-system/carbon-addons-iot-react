@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.20...v2.154.0-next.21) (2024-04-19)
+
+
+### Features
+
+* make the threshold icon optional ([f054a7a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f054a7a919b0aa80001f23aa74ccb9c6410abb96))
+
+
+
+
+
 # [2.154.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.19...v2.154.0-next.20) (2024-04-08)
 
 **Note:** Version bump only for package ibm-ai-applications
