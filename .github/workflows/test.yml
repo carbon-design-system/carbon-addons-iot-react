@@ -90,6 +90,13 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
       - name: Cache dependencies
         uses: actions/cache@v2
         if: steps.changes.outputs.react == 'true'
@@ -105,13 +112,6 @@ jobs:
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install dependencies
-        if: steps.changes.outputs.react == 'true'
-        run: |
-          yarn --frozen-lockfile
-          yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Run Cypress tests, collect coverage
         if: steps.changes.outputs.react == 'true'
