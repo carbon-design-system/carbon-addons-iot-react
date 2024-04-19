@@ -244,9 +244,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -825,9 +826,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -1307,9 +1309,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     Default
                   </div>
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                     data-testid="Card-toolbar-range-picker"
                     onClick={[Function]}
@@ -1652,9 +1655,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -1779,9 +1783,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -1906,9 +1911,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -2277,9 +2283,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -2648,9 +2655,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -3019,9 +3027,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -3390,9 +3399,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -3761,9 +3771,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -4132,9 +4143,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -4503,9 +4515,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -4874,9 +4887,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -5249,9 +5263,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
@@ -6178,9 +6193,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Default
             </div>
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}

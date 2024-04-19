@@ -134,7 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -579,7 +579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -1777,7 +1777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -1882,9 +1882,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -1894,7 +1895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -1921,7 +1922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -1972,9 +1973,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -1984,7 +1986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2011,7 +2013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2062,9 +2064,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2074,7 +2077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2101,7 +2104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2152,9 +2155,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2164,7 +2168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2191,7 +2195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2242,9 +2246,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2254,7 +2259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2281,7 +2286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2332,9 +2337,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2344,7 +2350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2371,7 +2377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2422,9 +2428,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2434,7 +2441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2461,7 +2468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2512,9 +2519,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2524,7 +2532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2551,7 +2559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -2602,9 +2610,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   onKeyPress={[Function]}
                 >
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
-                    aria-label="open and close list of options"
+                    aria-label="Open and close list of options"
                     className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -2614,7 +2623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     type="button"
                   >
                     <svg
-                      aria-label="open and close list of options"
+                      aria-label="Open and close list of options"
                       className="bx--overflow-menu__icon"
                       fill="currentColor"
                       focusable="false"
@@ -2641,7 +2650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                         r="2"
                       />
                       <title>
-                        open and close list of options
+                        Open and close list of options
                       </title>
                     </svg>
                   </button>
@@ -3074,7 +3083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -3527,7 +3536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -4735,7 +4744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -5559,7 +5568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -16289,7 +16298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -16917,7 +16926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -17740,7 +17749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -18139,7 +18148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
@@ -18423,7 +18432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
               </svg>
             </button>
