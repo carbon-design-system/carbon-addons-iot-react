@@ -182,9 +182,8 @@ storiesOf('Components/Table', module)
         customSort: (index: number) => {
           if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
             // if already sorted flip sorting direction
-            simpleMultiHeaderModel.getClosestHeader(
-              index
-            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
+            simpleMultiHeaderModel.getClosestHeader(index).ascending =
+              simpleMultiHeaderModel.getClosestHeader(index).descending;
           }
           simpleMultiHeaderModel.sort(index);
         },
@@ -216,9 +215,8 @@ storiesOf('Components/Table', module)
         customSort: (index: number) => {
           if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
             // if already sorted flip sorting direction
-            simpleMultiHeaderModel.getClosestHeader(
-              index
-            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
+            simpleMultiHeaderModel.getClosestHeader(index).ascending =
+              simpleMultiHeaderModel.getClosestHeader(index).descending;
           }
           simpleMultiHeaderModel.sort(index);
         },

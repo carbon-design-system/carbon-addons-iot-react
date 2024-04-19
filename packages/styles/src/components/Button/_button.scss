@@ -14,7 +14,9 @@
   }
 }
 
-.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(.#{$iot-prefix}--btn-icon-selection--selected).#{$iot-prefix}--btn-icon-selection--recommended {
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(
+    .#{$iot-prefix}--btn-icon-selection--selected
+  ).#{$iot-prefix}--btn-icon-selection--recommended {
   border: 1px solid $support-02;
 }
 
