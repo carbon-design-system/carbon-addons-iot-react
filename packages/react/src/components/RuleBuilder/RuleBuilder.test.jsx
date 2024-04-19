@@ -155,9 +155,7 @@ describe('The RuleBuilder', () => {
 
     expect(screen.getByTestId('rule-builder')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Save' })).toBeInTheDocument();
-    // one for edit modal, read modal, and main page cancel
-    expect(screen.getAllByRole('button', { name: 'Cancel' })).toHaveLength(3);
-    expect(screen.getAllByRole('button', { name: 'Cancel' })[0]).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Preview results' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Apply' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Share' })).toBeInTheDocument();
