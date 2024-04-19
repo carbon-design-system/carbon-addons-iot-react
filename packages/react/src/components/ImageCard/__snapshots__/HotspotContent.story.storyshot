@@ -55,7 +55,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
-      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
       direction="right"
@@ -225,7 +224,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
-      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
       direction="right"
@@ -405,7 +403,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
-      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
       direction="right"
@@ -631,7 +628,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
-      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
       direction="right"

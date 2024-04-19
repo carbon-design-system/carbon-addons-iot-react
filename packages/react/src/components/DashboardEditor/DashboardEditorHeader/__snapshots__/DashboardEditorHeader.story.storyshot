@@ -110,7 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   Import
                 </span>
-                <label
+                <button
                   accepts={
                     Array [
                       ".json",
@@ -118,14 +118,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   }
                   className="bx--btn bx--btn--ghost bx--btn--md"
                   data-testid="dashboard-editor-header-file-uploader-button"
-                  htmlFor="id11"
+                  disabled={false}
+                  onClick={[Function]}
                   onKeyDown={[Function]}
-                  tabIndex={0}
+                  type="button"
                 >
-                  <span
-                    aria-disabled={false}
-                    role="button"
+                  <svg
+                    aria-hidden={true}
+                    fill="#161616"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
+                    <path
+                      d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                    />
+                    <path
+                      d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                    />
+                  </svg>
+                </button>
+                <label
+                  className="bx--visually-hidden"
+                  htmlFor="id11"
+                >
+                  <span>
                     <svg
                       aria-hidden={true}
                       fill="#161616"
@@ -151,8 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="id11"
                   multiple={false}
                   onChange={[Function]}
-                  onClick={[Function]}
-                  tabIndex="-1"
+                  tabIndex={-1}
                   type="file"
                 />
               </button>

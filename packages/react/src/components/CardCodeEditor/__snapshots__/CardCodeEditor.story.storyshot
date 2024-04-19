@@ -5,6 +5,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
+    aria-hidden={false}
     className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
@@ -16,232 +17,234 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     open={true}
     role="presentation"
   >
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
       aria-label="JSON Editor"
       aria-modal="true"
       className="bx--modal-container"
       role="dialog"
     >
-      <div
-        className="bx--modal-header"
+      <button
+        className="bx--visually-hidden"
+        type="button"
       >
-        <h2
-          className="bx--modal-header__label bx--type-delta"
-        >
-          JSON Editor
-        </h2>
-        <h3
-          className="bx--modal-header__heading bx--type-beta"
-        >
-          Edit the JSONs
-        </h3>
-        <button
-          aria-label="Close"
-          className="bx--modal-close"
-          onClick={[Function]}
-          title="Close"
-          type="button"
-        >
-          <svg
-            aria-hidden={true}
-            className="bx--modal-close__icon"
-            fill="currentColor"
-            focusable="false"
-            height={20}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={20}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-            />
-          </svg>
-        </button>
-      </div>
+        Focus sentinel
+      </button>
       <div
-        className="bx--modal-content"
-        style={
-          Object {
-            "maxHeight": "calc(100vh - 0px)",
-          }
-        }
+        className="bx--modal-container-body"
       >
-        <button
-          aria-describedby={null}
-          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="card-code-editor-expand-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Expand
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Expand"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-            />
-            <path
-              d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-            />
-          </svg>
-        </button>
         <div
-          className="iot--editor-copy-wrapper"
-          data-testid="card-code-editor"
+          className="bx--modal-header"
         >
+          <h2
+            className="bx--modal-header__label bx--type-delta"
+          >
+            JSON Editor
+          </h2>
+          <h3
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Edit the JSONs
+          </h3>
           <button
-            aria-label={null}
-            aria-live="polite"
-            className="iot--editor-copy bx--copy-btn bx--copy"
-            data-testid="card-code-editor-copy-button"
-            onAnimationEnd={[Function]}
+            aria-label="Close"
+            className="bx--modal-close"
             onClick={[Function]}
-            title="Copy to clipboard"
+            title="Close"
             type="button"
           >
             <svg
               aria-hidden={true}
-              className="bx--snippet__icon"
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="card-code-editor-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Expand
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Expand"
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
+              role="img"
               viewBox="0 0 32 32"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
               />
               <path
-                d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
               />
             </svg>
-            Copy to clipboard
-            <span
-              aria-hidden="true"
-              className="bx--assistive-text bx--copy-btn__feedback"
-            >
-              Copied!
-            </span>
           </button>
-          <section
-            style={
-              Object {
-                "display": "flex",
-                "height": "100%",
-                "position": "relative",
-                "textAlign": "initial",
-                "width": "100%",
-              }
-            }
+          <div
+            className="iot--editor-copy-wrapper"
+            data-testid="card-code-editor"
           >
-            <div
+            <button
+              aria-label={null}
+              aria-live="polite"
+              className="iot--editor-copy bx--copy-btn bx--copy"
+              data-testid="card-code-editor-copy-button"
+              onAnimationEnd={[Function]}
+              onClick={[Function]}
+              title="Copy to clipboard"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--snippet__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"
+                />
+                <path
+                  d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"
+                />
+              </svg>
+              Copy to clipboard
+              <span
+                aria-hidden="true"
+                className="bx--assistive-text bx--copy-btn__feedback"
+              >
+                Copied!
+              </span>
+            </button>
+            <section
               style={
                 Object {
-                  "alignItems": "center",
                   "display": "flex",
                   "height": "100%",
-                  "justifyContent": "center",
+                  "position": "relative",
+                  "textAlign": "initial",
                   "width": "100%",
                 }
               }
             >
               <div
-                className="bx--snippet bx--skeleton bx--snippet--single"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  }
+                }
               >
                 <div
-                  className="bx--snippet-container"
+                  className="bx--snippet bx--skeleton bx--snippet--single"
                 >
-                  <span />
+                  <div
+                    className="bx--snippet-container"
+                  >
+                    <span />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="iot--editor-container"
-              style={
-                Object {
-                  "display": "none",
-                  "width": "100%",
+              <div
+                className="iot--editor-container"
+                style={
+                  Object {
+                    "display": "none",
+                    "width": "100%",
+                  }
                 }
-              }
-            />
-          </section>
+              />
+            </section>
+          </div>
+        </div>
+        <div
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
         </div>
       </div>
-      <div
-        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      <button
+        className="bx--visually-hidden"
+        type="button"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--secondary"
-          data-testid="ComposedModal-modal-secondary-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
-          data-testid="ComposedModal-modal-primary-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Save
-        </button>
-      </div>
+        Focus sentinel
+      </button>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
 </div>
 `;
@@ -251,6 +254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
+    aria-hidden={false}
     className="bx--modal is-visible iot--editor iot--composed-modal--large iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
@@ -262,232 +266,234 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     open={true}
     role="presentation"
   >
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
       aria-label="JSON Editor"
       aria-modal="true"
       className="bx--modal-container"
       role="dialog"
     >
-      <div
-        className="bx--modal-header"
+      <button
+        className="bx--visually-hidden"
+        type="button"
       >
-        <h2
-          className="bx--modal-header__label bx--type-delta"
-        >
-          JSON Editor
-        </h2>
-        <h3
-          className="bx--modal-header__heading bx--type-beta"
-        >
-          Edit the JSONs
-        </h3>
-        <button
-          aria-label="Close"
-          className="bx--modal-close"
-          onClick={[Function]}
-          title="Close"
-          type="button"
-        >
-          <svg
-            aria-hidden={true}
-            className="bx--modal-close__icon"
-            fill="currentColor"
-            focusable="false"
-            height={20}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={20}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-            />
-          </svg>
-        </button>
-      </div>
+        Focus sentinel
+      </button>
       <div
-        className="bx--modal-content"
-        style={
-          Object {
-            "maxHeight": "calc(100vh - 0px)",
-          }
-        }
+        className="bx--modal-container-body"
       >
-        <button
-          aria-describedby={null}
-          className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="card-code-editor-expand-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Expand
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Expand"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-            />
-            <path
-              d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-            />
-          </svg>
-        </button>
         <div
-          className="iot--editor-copy-wrapper"
-          data-testid="card-code-editor"
+          className="bx--modal-header"
         >
+          <h2
+            className="bx--modal-header__label bx--type-delta"
+          >
+            JSON Editor
+          </h2>
+          <h3
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Edit the JSONs
+          </h3>
           <button
-            aria-label={null}
-            aria-live="polite"
-            className="iot--editor-copy bx--copy-btn bx--copy"
-            data-testid="card-code-editor-copy-button"
-            onAnimationEnd={[Function]}
+            aria-label="Close"
+            className="bx--modal-close"
             onClick={[Function]}
-            title="Copy to clipboard"
+            title="Close"
             type="button"
           >
             <svg
               aria-hidden={true}
-              className="bx--snippet__icon"
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            className="iot--editor-expand iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="card-code-editor-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Expand
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Expand"
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
+              role="img"
               viewBox="0 0 32 32"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
               />
               <path
-                d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
               />
             </svg>
-            Copy to clipboard
-            <span
-              aria-hidden="true"
-              className="bx--assistive-text bx--copy-btn__feedback"
-            >
-              Copied!
-            </span>
           </button>
-          <section
-            style={
-              Object {
-                "display": "flex",
-                "height": "100%",
-                "position": "relative",
-                "textAlign": "initial",
-                "width": "100%",
-              }
-            }
+          <div
+            className="iot--editor-copy-wrapper"
+            data-testid="card-code-editor"
           >
-            <div
+            <button
+              aria-label={null}
+              aria-live="polite"
+              className="iot--editor-copy bx--copy-btn bx--copy"
+              data-testid="card-code-editor-copy-button"
+              onAnimationEnd={[Function]}
+              onClick={[Function]}
+              title="Copy to clipboard"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--snippet__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"
+                />
+                <path
+                  d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"
+                />
+              </svg>
+              Copy to clipboard
+              <span
+                aria-hidden="true"
+                className="bx--assistive-text bx--copy-btn__feedback"
+              >
+                Copied!
+              </span>
+            </button>
+            <section
               style={
                 Object {
-                  "alignItems": "center",
                   "display": "flex",
                   "height": "100%",
-                  "justifyContent": "center",
+                  "position": "relative",
+                  "textAlign": "initial",
                   "width": "100%",
                 }
               }
             >
               <div
-                className="bx--snippet bx--skeleton bx--snippet--single"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "width": "100%",
+                  }
+                }
               >
                 <div
-                  className="bx--snippet-container"
+                  className="bx--snippet bx--skeleton bx--snippet--single"
                 >
-                  <span />
+                  <div
+                    className="bx--snippet-container"
+                  >
+                    <span />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="iot--editor-container"
-              style={
-                Object {
-                  "display": "none",
-                  "width": "100%",
+              <div
+                className="iot--editor-container"
+                style={
+                  Object {
+                    "display": "none",
+                    "width": "100%",
+                  }
                 }
-              }
-            />
-          </section>
+              />
+            </section>
+          </div>
+        </div>
+        <div
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
         </div>
       </div>
-      <div
-        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      <button
+        className="bx--visually-hidden"
+        type="button"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--secondary"
-          data-testid="ComposedModal-modal-secondary-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
-          data-testid="ComposedModal-modal-primary-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Save
-        </button>
-      </div>
+        Focus sentinel
+      </button>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
 </div>
 `;

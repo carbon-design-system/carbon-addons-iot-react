@@ -39,6 +39,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-0-menu"
+            aria-describedby="dropdown-helper-text-72"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -48,6 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Dropdown menu options"
             type="button"
           >
@@ -93,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         </div>
         <div
           className="bx--form__helper-text"
+          id="dropdown-helper-text-72"
         >
           This is some helper text.
         </div>

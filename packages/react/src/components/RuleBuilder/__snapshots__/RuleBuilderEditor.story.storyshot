@@ -27,6 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -36,6 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="ALL"
                 type="button"
               >
@@ -168,6 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-1-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -177,6 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-1-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Column 1"
             type="button"
           >
@@ -233,6 +237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-2-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -242,6 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-2-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Equals"
             type="button"
           >
@@ -443,6 +449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-3-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -452,6 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-3-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Column 2"
             type="button"
           >
@@ -508,6 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-4-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -517,6 +526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-4-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Less than"
             type="button"
           >
@@ -721,6 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-5-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -730,6 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-5-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="ANY"
                 type="button"
               >
@@ -795,6 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onKeyDown={[Function]}
           >
             <button
+              aria-controls="downshift-6-menu"
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
@@ -804,6 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               id="downshift-6-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role="combobox"
               title="Column 2"
               type="button"
             >
@@ -860,6 +874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onKeyDown={[Function]}
           >
             <button
+              aria-controls="downshift-7-menu"
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
@@ -869,6 +884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               id="downshift-7-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role="combobox"
               title="Greater than or equal to"
               type="button"
             >
@@ -1070,6 +1086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onKeyDown={[Function]}
           >
             <button
+              aria-controls="downshift-8-menu"
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
@@ -1079,6 +1096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               id="downshift-8-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role="combobox"
               title="Column 1"
               type="button"
             >
@@ -1135,6 +1153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onKeyDown={[Function]}
           >
             <button
+              aria-controls="downshift-9-menu"
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
@@ -1144,6 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               id="downshift-9-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role="combobox"
               title="Less than"
               type="button"
             >
@@ -1348,6 +1368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onKeyDown={[Function]}
               >
                 <button
+                  aria-controls="downshift-10-menu"
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
@@ -1357,6 +1378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="downshift-10-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  role="combobox"
                   title="ALL"
                   type="button"
                 >
@@ -1422,6 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-11-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -1431,6 +1454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-11-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a column"
                 type="button"
               >
@@ -1487,6 +1511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-12-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -1496,6 +1521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-12-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select an operand"
                 type="button"
               >
@@ -1700,6 +1726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   onKeyDown={[Function]}
                 >
                   <button
+                    aria-controls="downshift-13-menu"
                     aria-disabled={false}
                     aria-expanded={false}
                     aria-haspopup="listbox"
@@ -1709,6 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-13-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    role="combobox"
                     title="ALL"
                     type="button"
                   >
@@ -1774,6 +1802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onKeyDown={[Function]}
               >
                 <button
+                  aria-controls="downshift-14-menu"
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
@@ -1783,6 +1812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="downshift-14-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  role="combobox"
                   title="Column 1"
                   type="button"
                 >
@@ -1839,6 +1869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onKeyDown={[Function]}
               >
                 <button
+                  aria-controls="downshift-15-menu"
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
@@ -1848,6 +1879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="downshift-15-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  role="combobox"
                   title="Equals"
                   type="button"
                 >
@@ -2049,6 +2081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onKeyDown={[Function]}
               >
                 <button
+                  aria-controls="downshift-16-menu"
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
@@ -2058,6 +2091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="downshift-16-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  role="combobox"
                   title="Column 2"
                   type="button"
                 >
@@ -2114,6 +2148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onKeyDown={[Function]}
               >
                 <button
+                  aria-controls="downshift-17-menu"
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
@@ -2123,6 +2158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   id="downshift-17-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  role="combobox"
                   title="Equals"
                   type="button"
                 >
@@ -2342,6 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -2351,6 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="ALL"
                 type="button"
               >
@@ -2483,6 +2521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-1-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -2492,6 +2531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-1-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Select a column"
             type="button"
           >
@@ -2548,6 +2588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-2-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -2557,6 +2598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-2-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Select an operand"
             type="button"
           >
@@ -2773,6 +2815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -2782,6 +2825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="ALL"
                 type="button"
               >
@@ -2914,6 +2958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-1-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -2923,6 +2968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-1-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Select a column"
             type="button"
           >
@@ -2979,6 +3025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           onKeyDown={[Function]}
         >
           <button
+            aria-controls="downshift-2-menu"
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
@@ -2988,6 +3035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-2-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            role="combobox"
             title="Select an operand"
             type="button"
           >

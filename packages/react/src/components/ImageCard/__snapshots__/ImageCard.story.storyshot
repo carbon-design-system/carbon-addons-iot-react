@@ -1551,7 +1551,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 <div
                   aria-atomic="true"
-                  aria-labelledby="loading-id-7"
                   aria-live="assertive"
                   className="bx--loading bx--loading--small"
                 >
@@ -1713,20 +1712,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               onDragOver={[Function]}
               onDrop={[Function]}
             >
-              <label
-                className="bx--file-browse-btn"
+              <button
+                className="bx--file__drop-container bx--file-browse-btn"
                 data-testid="ImageCard-image-uploader-file-drop-container"
-                htmlFor="id16"
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 size="field"
-                tabIndex={0}
+                type="button"
               >
-                <div
-                  className="bx--file__drop-container"
-                  role="button"
-                >
-                  
-                </div>
+                
+              </button>
+              <label
+                className="bx--visually-hidden"
+                htmlFor="id16"
+              >
+                
               </label>
               <input
                 accept={Array []}
@@ -1881,20 +1881,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               onDragOver={[Function]}
               onDrop={[Function]}
             >
-              <label
-                className="bx--file-browse-btn"
+              <button
+                className="bx--file__drop-container bx--file-browse-btn"
                 data-testid="ImageCard-image-uploader-file-drop-container"
-                htmlFor="id14"
+                onClick={[Function]}
                 onKeyDown={[Function]}
                 size="field"
-                tabIndex={0}
+                type="button"
               >
-                <div
-                  className="bx--file__drop-container"
-                  role="button"
-                >
-                  
-                </div>
+                
+              </button>
+              <label
+                className="bx--visually-hidden"
+                htmlFor="id14"
+              >
+                
               </label>
               <input
                 accept={Array []}
