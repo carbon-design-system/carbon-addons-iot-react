@@ -15,7 +15,7 @@ describe('SimpleIconDropdown', () => {
   it('Selecting an icon should fire onChange', () => {
     render(<SimpleIconDropdown {...commonProps} />);
 
-    const iconDropdown = screen.getByRole('button');
+    const iconDropdown = screen.getByRole('combobox');
     expect(iconDropdown).toBeInTheDocument();
 
     fireEvent.click(iconDropdown);

@@ -52,7 +52,7 @@ describe('TableViewDropdown', () => {
           actions={actions}
         />
       );
-      userEvent.click(screen.getByRole('button'));
+      userEvent.click(screen.getByRole('combobox'));
 
       expect(screen.getByRole('option', { name: viewAll })).toBeVisible();
       expect(screen.getByRole('option', { name: `View 1 - ${edited}` })).toBeVisible();
@@ -386,7 +386,7 @@ describe('TableViewDropdown', () => {
     );
 
     // The list of options is not rendered to the DOM until the dropdown button has been clicked
-    fireEvent.click(screen.getByRole('button'));
+    fireEvent.click(screen.getByRole('combobox'));
 
     expect(screen.getAllByText(i18nTest.view, { exact: false })[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.viewAll)[0]).toBeInTheDocument();
@@ -431,7 +431,7 @@ describe('TableViewDropdown', () => {
 
     render(<TableViewDropdown views={views} actions={actions} i18n={i18nDefault} />);
 
-    fireEvent.click(screen.getByRole('button'));
+    fireEvent.click(screen.getByRole('combobox'));
 
     expect(screen.getByTitle('Custom tooltip: View 1')).toBeInTheDocument();
     expect(screen.getByTitle('Custom tooltip: View 2')).toBeInTheDocument();
@@ -468,7 +468,7 @@ describe('TableViewDropdown', () => {
       />
     );
 
-    fireEvent.click(screen.getByRole('button'));
+    fireEvent.click(screen.getByRole('combobox'));
 
     expect(screen.getAllByTitle('Custom tooltip: View 1 - Edited')).toHaveLength(2);
   });
@@ -488,7 +488,7 @@ describe('TableViewDropdown', () => {
     render(<TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />);
 
     jest.runAllTimers();
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('combobox');
     expect(button).toHaveAttribute('title', myViews[0].text);
   });
 });
