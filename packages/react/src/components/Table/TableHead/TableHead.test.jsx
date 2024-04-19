@@ -70,7 +70,7 @@ describe('TableHead', () => {
     expect(screen.getByTestId('TABLE_HEAD-column-col2')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col3')).toBeDefined();
     expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
-    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
+    userEvent.click(screen.getAllByRole('button', { name: 'Open and close list of options' })[1]);
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
     expect(console.error).toHaveBeenCalledWith(
@@ -87,7 +87,7 @@ describe('TableHead', () => {
     expect(screen.getByTestId('table_head-column-col2')).toBeDefined();
     expect(screen.getByTestId('table_head-column-col3')).toBeDefined();
     expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
-    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[0]);
+    userEvent.click(screen.getAllByRole('button', { name: 'Open and close list of options' })[0]);
     expect(screen.getByTestId('table_head-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('table_head-column-overflow-menu-item-2')).toBeDefined();
   });
@@ -360,7 +360,7 @@ describe('TableHead', () => {
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
     expect(screen.queryByText('Multi-sort')).not.toBeInTheDocument();
     userEvent.click(
-      within(column3).getByRole('button', { name: 'open and close list of options' })
+      within(column3).getByRole('button', { name: 'Open and close list of options' })
     );
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 

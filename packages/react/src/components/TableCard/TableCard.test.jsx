@@ -814,7 +814,7 @@ describe('TableCard', () => {
     );
 
     const firstRow = container.querySelectorAll('tbody > tr')[0];
-    userEvent.click(within(firstRow).getByLabelText('open and close list of options'));
+    userEvent.click(within(firstRow).getByLabelText('Open and close list of options'));
     const viewButton = screen.getByText('View');
     const clickEvent = createEvent.click(viewButton);
     const mockEventCalls = {
