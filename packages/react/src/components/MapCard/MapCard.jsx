@@ -76,10 +76,10 @@ const MapCard = ({
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
   const BASE_CLASS_NAME = `${iotPrefix}--map`;
-  const resizeHandles = useMemo(() => (isResizable ? getResizeHandles(children) : []), [
-    children,
-    isResizable,
-  ]);
+  const resizeHandles = useMemo(
+    () => (isResizable ? getResizeHandles(children) : []),
+    [children, isResizable]
+  );
   const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
 
   const tooltipPosition = React.useMemo(() => (langDir === 'ltr' ? 'left' : 'right'), [langDir]);

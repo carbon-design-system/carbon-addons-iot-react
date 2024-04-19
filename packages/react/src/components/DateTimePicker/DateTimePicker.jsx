@@ -332,9 +332,8 @@ const DateTimePicker = ({
   }, [newLocale]);
 
   // State
-  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
-    showRelativeOption
-  );
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] =
+    useDateTimePickerRangeKind(showRelativeOption);
   const {
     isExpanded,
     setIsExpanded,
@@ -902,7 +901,8 @@ const DateTimePicker = ({
                           `${iotPrefix}--date-time-picker__fields-wrapper`,
                           `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`,
                           {
-                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]: !hasTimeInput,
+                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]:
+                              !hasTimeInput,
                           }
                         )}
                       >

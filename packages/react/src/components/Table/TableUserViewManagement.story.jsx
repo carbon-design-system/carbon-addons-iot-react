@@ -141,10 +141,8 @@ export const WithUserViewManagement = () => {
     viewsStorage.slice(0, manageViewsRowsPerPage)
   );
   /** Determine if the TableManageViewModal should list public views  */
-  const [
-    manageViewsDisplayPublicDefaultChecked,
-    setManageViewsDisplayPublicDefaultChecked,
-  ] = useState(true);
+  const [manageViewsDisplayPublicDefaultChecked, setManageViewsDisplayPublicDefaultChecked] =
+    useState(true);
 
   // This is the state of the current table.
   const [currentTableState, setCurrentTableState] = useState(

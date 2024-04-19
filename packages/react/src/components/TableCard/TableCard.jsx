@@ -116,10 +116,10 @@ const TableCard = ({
   const newSize = getUpdatedCardSize(size);
 
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
-    onCardAction,
-    id,
-  ]);
+  const cachedOnCardAction = useCallback(
+    (...args) => onCardAction(id, ...args),
+    [onCardAction, id]
+  );
 
   const renderActionCell = ({ value: actionList, rowId }) => {
     return actionList && actionList.length === 1 ? (
