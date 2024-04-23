@@ -571,7 +571,7 @@ export const I18NLabels = () => {
           monthlyLabel: text('monthlyLabel', 'Monthly'),
           overflowMenuDescription: text(
             'overflowMenuDescription',
-            'open and close list of options'
+            'Open and close list of options'
           ),
           // card actions
           expandLabel: text('expandLabel', 'Expand to fullscreen'),
