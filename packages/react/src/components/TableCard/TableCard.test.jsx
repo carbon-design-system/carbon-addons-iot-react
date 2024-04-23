@@ -856,7 +856,7 @@ describe('TableCard', () => {
     );
 
     const firstRow = container.querySelectorAll('tbody > tr')[0];
-    expect(within(firstRow).queryByLabelText('open and close list of options')).toBeNull();
+    expect(within(firstRow).queryByLabelText('Open and close list of options')).toBeNull();
   });
 
   it('should render an action icon that is a node.', () => {

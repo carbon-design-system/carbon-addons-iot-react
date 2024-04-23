@@ -796,8 +796,8 @@ describe('HierarchyList', () => {
 
     const listItems = screen.queryAllByRole('listitem');
 
-    expect(within(listItems[2]).queryAllByText('Luke Voit').length).toBeGreaterThanOrEqual(1);
-    expect(within(listItems[3]).queryAllByText('Gary Sanchez').length).toBeGreaterThanOrEqual(1);
+    expect(within(listItems[1]).queryAllByText('Luke Voit').length).toBeGreaterThanOrEqual(1);
+    expect(within(listItems[2]).queryAllByText('Gary Sanchez').length).toBeGreaterThanOrEqual(1);
   });
 
   it('should clear selected ids in bulk mode when cancelled.', () => {

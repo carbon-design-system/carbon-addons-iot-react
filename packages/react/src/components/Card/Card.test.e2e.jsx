@@ -199,7 +199,7 @@ describe('Card', () => {
       />
     );
 
-    cy.findByRole('button', { name: 'open and close list of options' }).click();
+    cy.findByRole('button', { name: 'Open and close list of options' }).click();
     cy.findByRole('menu').then(($el) => {
       const menu = $el[0].getBoundingClientRect();
       expect(menu.width).to.be.greaterThan(160);
