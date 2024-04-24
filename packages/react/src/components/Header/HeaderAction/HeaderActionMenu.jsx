@@ -7,6 +7,7 @@ import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import Button from '../../Button/Button';
 
 const { prefix } = settings;
 
@@ -111,39 +112,31 @@ class HeaderActionMenu extends React.Component {
 
     const className = classnames(`${prefix}--header__submenu`, customClassName);
 
-    // Prevents the a element from navigating to it's href target
-    const handleDefaultClick = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      onToggleExpansion();
-    };
-
     // Notes on eslint comments and based on the examples in:
     // https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#
     // - The focus is handled by the <a> menuitem, onMouseOver is for mouse
     // users
     // - aria-haspopup can definitely have the value "menu"
     // - aria-expanded is on their example node with role="menuitem"
-    // - href can be set to javascript:void(0), ideally this will be a button
 
     return (
       // TODO: CAN WE REMOVE THIS DIV WRAPPER AND ATTACH THE CLASS DIRECTLY
       <div className={className}>
-        <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
+        <Button
+          hasIconOnly
+          iconDescription={ariaLabel}
+          tooltipPosition="bottom"
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          href="#"
-          onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
-          onClick={handleDefaultClick}
+          onClick={onToggleExpansion}
           ref={focusRef}
-          data-testid="menuitem"
-          tabIndex={0}
+          testId="menuitem"
           aria-label={ariaLabel}
           role="menuitem"
         >
           <MenuContent ariaLabel={ariaLabel} />
-        </a>
+        </Button>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
           {childContent.map((childItem, index) => {
             const { isOverflowing } = this.state;
