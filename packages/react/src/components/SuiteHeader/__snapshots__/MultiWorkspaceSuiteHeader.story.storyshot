@@ -224,18 +224,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -263,7 +275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -413,18 +425,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -448,7 +472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -1004,18 +1028,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -1043,7 +1079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -1193,18 +1229,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -1228,7 +1276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -1843,18 +1891,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -1882,7 +1942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -2032,18 +2092,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -2067,7 +2139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -2870,18 +2942,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="car"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                car
+              </div>
               <span
                 id="car-icon"
               >
@@ -2901,7 +2985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="car"
               className="bx--header__menu"
@@ -3040,18 +3124,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -3079,7 +3175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -3304,18 +3400,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -3339,7 +3447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -4116,18 +4224,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -4155,7 +4275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -4305,18 +4425,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -4340,7 +4472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -5081,18 +5213,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -5120,7 +5264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -5270,18 +5414,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -5305,7 +5461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -5965,18 +6121,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -6004,7 +6172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -6154,18 +6322,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -6189,7 +6369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -7330,18 +7510,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -7369,7 +7561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -7519,18 +7711,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -7554,7 +7758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -8173,18 +8377,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -8212,7 +8428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -8298,18 +8514,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -8333,7 +8561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -8768,18 +8996,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -8807,7 +9047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -8957,18 +9197,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -8992,7 +9244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -9623,18 +9875,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -9662,7 +9926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -9812,18 +10076,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -9847,7 +10123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -10403,18 +10679,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -10442,7 +10730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -10592,18 +10880,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -10627,7 +10927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -11219,18 +11519,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -11258,7 +11570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -11408,18 +11720,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -11443,7 +11767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
@@ -12074,18 +12398,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="Help"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Help
+              </div>
               <span
                 id="suite-header-action-item-help"
               >
@@ -12113,7 +12449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="Help"
               className="bx--header__menu"
@@ -12263,18 +12599,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <div
             className="bx--header__submenu bx--header-action-btn"
           >
-            <a
+            <button
+              aria-describedby={null}
               aria-expanded={false}
               aria-haspopup="menu"
               aria-label="user"
-              className="bx--header__menu-item bx--header__menu-title"
+              aria-pressed={null}
+              className="bx--header__menu-item bx--header__menu-title iot--btn bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
               data-testid="menuitem"
-              href="#"
+              disabled={false}
+              onBlur={[Function]}
               onClick={[Function]}
-              onKeyDown={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
               role="menuitem"
               tabIndex={0}
+              type="button"
             >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                user
+              </div>
               <span
                 id="suite-header-action-item-profile"
               >
@@ -12298,7 +12646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   />
                 </svg>
               </span>
-            </a>
+            </button>
             <ul
               aria-label="user"
               className="bx--header__menu"
