@@ -4854,7 +4854,7 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@ibm/telemetry-js@1.5.0":
+"@ibm/telemetry-js@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@ibm/telemetry-js/-/telemetry-js-1.5.0.tgz#ab73e0988088e2cbb01a7086a31ccc3826a81ba0"
   integrity sha512-RwOohLaWw97vEEwhPnlDJlORuworVOjC2R6WzSVlG7suG08qTMLVRVpnnunUCSQHyxP1Y30V9IF5vsxVrMBOHg==
