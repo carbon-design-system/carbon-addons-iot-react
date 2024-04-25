@@ -998,12 +998,6 @@ collect:
         - sm
         - xl
         - xs
-        - lg
-        - max
-        - md
-        - sm
-        - xl
-        - xs
         # General - design
         - inline
         - mini
@@ -1058,8 +1052,6 @@ collect:
         # General - layout
         - HORIZONTAL
         - VERTICAL
-        - HORIZONTAL
-        - VERTICAL
         # General - padding
         - default
         - none
@@ -1073,10 +1065,13 @@ collect:
         - LARGETHICK
         - LARGETHIN
         - LARGEWIDE
+        - lg
+        - md
         - MEDIUM
         - MEDIUMTHICK
         - MEDIUMTHIN
         - MEDIUMWIDE
+        - sm
         - small
         - SMALL
         - SMALLFULL
@@ -1084,18 +1079,11 @@ collect:
         - SMALLWIDE
         - TALL
         - WIDE
+        - xl
         - XLARGE
+        - xs
         - XSMALL
         - XSMALLWIDE
-        - default
-        - LARGE
-        - LARGEWIDE
-        - lg
-        - md
-        - sm
-        - small
-        - xl
-        - xs
         # General - tooltipAlignment
         - center
         - end
@@ -1204,6 +1192,6 @@ collect:
         - year
   npm:
     dependencies: null
-  js: 
+  js:
     functions: {}
     tokens: null
