@@ -2397,7 +2397,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={34}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -2405,7 +2404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               transform="translate(0 1)"
                             >
                               <path
-                                d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                                 fill="#0062FF"
                               />
                               <circle
@@ -2481,7 +2480,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
                               d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -2531,7 +2529,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -2629,7 +2626,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -2751,7 +2747,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -2762,7 +2757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 stroke="#2160F8"
                               />
                               <path
-                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                                 fill="#8EC1FF"
                               />
                               <text
@@ -2822,14 +2817,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
                               fillRule="evenodd"
                             >
                               <path
-                                d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                                 stroke="#0062FF"
                               />
                               <ellipse
@@ -2888,7 +2882,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -3576,7 +3569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -3587,7 +3579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -3647,7 +3639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -3655,7 +3646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -3731,14 +3722,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -3797,7 +3787,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -3860,7 +3849,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -3910,7 +3898,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -4008,7 +3995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -4130,7 +4116,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -5821,7 +5806,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -5829,7 +5813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -5905,7 +5889,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -5955,7 +5938,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -6053,7 +6035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -6175,7 +6156,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -6186,7 +6166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -6246,14 +6226,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -6312,7 +6291,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -6374,8 +6352,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <svg
                           viewBox="0 0 170.76 146.75"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
                         >
                           <defs>
                             <linearGradient
@@ -6408,8 +6384,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               y2={4806.28}
                             />
                             <linearGradient
-                              gradientTransform="rotate(-90 -23201.61 33766.93)scale(9.62)"
-                              id="data-scientist-icon_svg__h"
+                              gradientTransform="matrix(0 -9.62 9.62 0 -56968.54 10565.32)"
+                              id="data-scientist-icon_svg__f"
                               x1={1094.71}
                               x2={1095.26}
                               xlinkHref="#data-scientist-icon_svg__a"
@@ -6438,7 +6414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <linearGradient
                               gradientTransform="matrix(-.5 .87 -.87 -.5 -139.51 3689.13)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__f"
+                              id="data-scientist-icon_svg__e"
                               x1={-3262.79}
                               x2={-3262.33}
                               y1={1608.24}
@@ -6496,7 +6472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </linearGradient>
                             <linearGradient
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__i"
+                              id="data-scientist-icon_svg__g"
                               x1={85.42}
                               x2={85.42}
                               y1={139.12}
@@ -6513,7 +6489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </linearGradient>
                             <linearGradient
                               gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
-                              id="data-scientist-icon_svg__n"
+                              id="data-scientist-icon_svg__l"
                               x1={-143.47}
                               x2={-143.1}
                               xlinkHref="#data-scientist-icon_svg__b"
@@ -6521,8 +6497,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               y2={4805.36}
                             />
                             <linearGradient
-                              gradientTransform="rotate(180 -636.865 23137.985)scale(9.62)"
-                              id="data-scientist-icon_svg__p"
+                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
+                              id="data-scientist-icon_svg__n"
                               x1={-141.79}
                               x2={-141.16}
                               xlinkHref="#data-scientist-icon_svg__b"
@@ -6532,7 +6508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <linearGradient
                               gradientTransform="translate(-12645.2)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__q"
+                              id="data-scientist-icon_svg__o"
                               x1={12749.65}
                               x2={12755.31}
                               y1={37.47}
@@ -6584,9 +6560,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               />
                             </linearGradient>
                             <linearGradient
-                              gradientTransform="rotate(-90 -23201.61 33766.93)scale(9.62)"
+                              gradientTransform="matrix(0 -9.62 9.62 0 -56968.54 10565.32)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__u"
+                              id="data-scientist-icon_svg__s"
                               x1={1094.69}
                               x2={1095.32}
                               y1={5933.84}
@@ -6645,7 +6621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <linearGradient
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__w"
+                              id="data-scientist-icon_svg__u"
                               x1={-2637.72}
                               x2={-2656}
                               y1={74.55}
@@ -6669,7 +6645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <linearGradient
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__x"
+                              id="data-scientist-icon_svg__v"
                               x1={-2655.26}
                               x2={-2657.15}
                               y1={49.06}
@@ -6713,7 +6689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <linearGradient
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__y"
+                              id="data-scientist-icon_svg__w"
                               x1={-2661.83}
                               x2={-2660.08}
                               y1={47.76}
@@ -6759,7 +6735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               cy={53.56}
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__e"
+                              id="data-scientist-icon_svg__d"
                               r={6.74}
                             >
                               <stop
@@ -6784,7 +6760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               cy={70.73}
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__j"
+                              id="data-scientist-icon_svg__h"
                               r={20.6}
                             >
                               <stop
@@ -6803,27 +6779,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <radialGradient
                               cx={-2644.06}
                               cy={60.05}
-                              id="data-scientist-icon_svg__r"
+                              id="data-scientist-icon_svg__p"
                               r={5.83}
-                              xlinkHref="#data-scientist-icon_svg__e"
+                              xlinkHref="#data-scientist-icon_svg__d"
                             />
                             <radialGradient
                               cx={-2647.22}
                               cy={59.91}
-                              id="data-scientist-icon_svg__v"
+                              id="data-scientist-icon_svg__t"
                               r={6.78}
-                              xlinkHref="#data-scientist-icon_svg__e"
+                              xlinkHref="#data-scientist-icon_svg__d"
                             />
                             <clipPath
-                              id="data-scientist-icon_svg__k"
+                              id="data-scientist-icon_svg__i"
                             >
                               <path
-                                d="m107.14 46.8 1.55.92v-6.13l-1.57 3.79z"
+                                d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
                                 fill="none"
                               />
                             </clipPath>
                             <clipPath
-                              id="data-scientist-icon_svg__l"
+                              id="data-scientist-icon_svg__j"
                             >
                               <path
                                 d="M104 45.28v-3.7l4.65 2.72-2 3.43c-1.55-.33-2.67-1.3-2.67-2.45"
@@ -6831,17 +6807,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               />
                             </clipPath>
                             <clipPath
-                              id="data-scientist-icon_svg__s"
+                              id="data-scientist-icon_svg__q"
                             >
                               <path
-                                d="m97.01 62.16 1.41 3.21 1.99-10.03-1.02-2.06z"
-                                fill="url(#data-scientist-icon_svg__f)"
+                                d="M97.01 62.16l1.41 3.21 1.99-10.03-1.02-2.06-2.38 8.88z"
+                                fill="url(#data-scientist-icon_svg__e)"
                                 opacity={0.7}
                               />
                             </clipPath>
                             <mask
                               height={6.35}
-                              id="data-scientist-icon_svg__m"
+                              id="data-scientist-icon_svg__k"
                               maskUnits="userSpaceOnUse"
                               width={6.35}
                               x={103.38}
@@ -6855,7 +6831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </mask>
                             <mask
                               height={10.77}
-                              id="data-scientist-icon_svg__o"
+                              id="data-scientist-icon_svg__m"
                               maskUnits="userSpaceOnUse"
                               width={10.76}
                               x={84.58}
@@ -6869,7 +6845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </mask>
                             <mask
                               height={9.63}
-                              id="data-scientist-icon_svg__t"
+                              id="data-scientist-icon_svg__r"
                               maskUnits="userSpaceOnUse"
                               width={9.56}
                               x={94.09}
@@ -6877,7 +6853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               <path
                                 d="M95.09 33.81h7.57v7.68h-7.57z"
-                                fill="url(#data-scientist-icon_svg__h)"
+                                fill="url(#data-scientist-icon_svg__f)"
                                 transform="rotate(-17.95 98.86 37.646)"
                               />
                             </mask>
@@ -6890,164 +6866,159 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             }
                           >
                             <path
-                              d="m85.15 41.78-84.73 49 85.28 49 84.73-49z"
-                              fill="url(#data-scientist-icon_svg__i)"
+                              d="M85.15 41.78l-84.73 49 85.28 49 84.73-49-85.28-49z"
+                              fill="url(#data-scientist-icon_svg__g)"
                             />
                             <path
-                              d="m85.48 139.64-.06 6.14 84.95-48.85.06-6.15z"
+                              d="M85.48 139.64l-.06 6.14 84.95-48.85.06-6.15-84.95 48.86z"
                               fill="#054ada"
                             />
                             <path
-                              d="M85.42 139.64.48 90.78l-.06 6.15 84.95 48.85z"
+                              d="M85.42 139.64L.48 90.78l-.06 6.15 84.95 48.85.05-6.14z"
                               fill="#051b75"
                             />
                             <path
-                              d="M38.18 38a9.14 9.14 0 0 1 4.15-7.2L95.89 1.3c2.3-1.32 4.18-.25 4.19 2.39l.12 42a9.2 9.2 0 0 1-4.2 7.24L42.48 84.08c-2.3 1.33-4.18.26-4.18-2.38z"
+                              d="M38.18 38a9.14 9.14 0 014.15-7.2L95.89 1.3c2.3-1.32 4.18-.25 4.19 2.39l.12 42a9.2 9.2 0 01-4.2 7.24L42.48 84.08c-2.3 1.33-4.18.26-4.18-2.38L38.18 38"
                               fill="#b9bfc7"
                             />
                             <path
-                              d="M102.75 2.74c2.42-1.4 4.4-.27 4.41 2.51l-.33 44c0 2.78-2.85 6.48-5.27 7.88L47 88.55c-2.42 1.39-4.42-.38-4-3.6V40.78a8.63 8.63 0 0 1 3.92-7.25z"
+                              d="M102.75 2.74c2.42-1.4 4.4-.27 4.41 2.51l-.33 44c0 2.78-2.85 6.48-5.27 7.88L47 88.55c-2.42 1.39-4.42-.38-4-3.6V40.78a8.63 8.63 0 013.92-7.25l55.83-30.79"
                               fill="#13171a"
                             />
                             <path
-                              d="m95.53 21.63.07 29 1.5-.01-.07-28.99M91.51 33.48l.08 20.03 1.5-.01-.08-20.03M87.23 30.24l.08 26.61h1.5l-.08-26.61M83.58 50.7l.08 8.35 1.5-.01-.08-8.36M79.56 45.93l.08 15.23h1.5l-.08-15.24M75.37 39.05l.07 24.37 1.5-.01-.07-24.36M71.71 31.21l.08 34.4h1.5l-.08-34.4M67.69 50.09l.08 17.64 1.5-.01-.08-17.63M63.42 46.71l.08 23.89 1.5-.01-.08-23.89M59.76 62.52l.08 10.75 1.5-.01-.08-10.75M55.74 40.99l.08 34.39h1.5l-.08-34.4M51.84 57.88l.07 19.72h1.5l-.07-19.73M99.55 24.33l.08 24.37 1.5-.01-.08-24.36"
+                              d="M95.53 21.63l.07 29 1.5-.01-.07-28.99M91.51 33.48l.08 20.03 1.5-.01-.08-20.03M87.23 30.24l.08 26.61h1.5l-.08-26.61M83.58 50.7l.08 8.35 1.5-.01-.08-8.36M79.56 45.93l.08 15.23h1.5l-.08-15.24M75.37 39.05l.07 24.37 1.5-.01-.07-24.36M71.71 31.21l.08 34.4h1.5l-.08-34.4M67.69 50.09l.08 17.64 1.5-.01-.08-17.63M63.42 46.71l.08 23.89 1.5-.01-.08-23.89M59.76 62.52l.08 10.75 1.5-.01-.08-10.75M55.74 40.99l.08 34.39h1.5l-.08-34.4M51.84 57.88l.07 19.72h1.5l-.07-19.73M99.55 24.33l.08 24.37 1.5-.01-.08-24.36"
                               fill="#bb8eff"
                             />
                             <path
-                              d="m109.74 94.13-.33 13.92-4.29 3.1-2.06-3.23s-.23-7.73-.15-14.1c0-3.45.36-6.13 1.21-7.3"
+                              d="M109.74 94.13l-.33 13.92-4.29 3.1-2.06-3.23s-.23-7.73-.15-14.1c0-3.45.36-6.13 1.21-7.3"
                               fill="#202529"
                             />
                             <path
-                              d="M101.75 104.47c-.92-.53-3.5-1.24-4 1.12a2.63 2.63 0 0 0 .33 2.09l.79.94c1 .33 4.24 2.66 5.73 3.59a2 2 0 0 0 1.09.32h2.17a1.87 1.87 0 0 0 1.25-1.44l.23-3.07-4.34-.82-1.64-2.4a4.7 4.7 0 0 1-1.61-.33M118.31 91.65l-.31 13.91-4.29 3.11-2.06-3.23s-.23-7.74-.15-14.11c0-3.44.36-6.13 1.21-7.3"
+                              d="M101.75 104.47c-.92-.53-3.5-1.24-4 1.12a2.63 2.63 0 00.33 2.09l.79.94c1 .33 4.24 2.66 5.73 3.59a2 2 0 001.09.32h2.17a1.87 1.87 0 001.25-1.44l.23-3.07-4.34-.82-1.64-2.4a4.69 4.69 0 01-1.61-.33zM118.31 91.65l-.31 13.91-4.29 3.11-2.06-3.23s-.23-7.74-.15-14.11c0-3.44.36-6.13 1.21-7.3"
                               fill="#202529"
                             />
                             <path
-                              d="M110.32 102c-.92-.52-3.5-1.24-4 1.12a2.66 2.66 0 0 0 .33 2.1l.79.94c1 .32 4.24 2.65 5.73 3.59a2.1 2.1 0 0 0 1.09.31h2.17a1.87 1.87 0 0 0 1.25-1.44l.23-3.07-4.34-.81-1.64-2.41a4.7 4.7 0 0 1-1.61-.33"
+                              d="M110.32 102c-.92-.52-3.5-1.24-4 1.12a2.66 2.66 0 00.33 2.1l.79.94c1 .32 4.24 2.65 5.73 3.59a2.12 2.12 0 001.09.31h2.17a1.87 1.87 0 001.25-1.44l.23-3.07-4.34-.81-1.64-2.41a4.69 4.69 0 01-1.61-.33z"
                               fill="#202529"
                             />
                             <path
-                              d="M119.89 44.76a1.35 1.35 0 0 0-.76-.12 3 3 0 0 0-.68.25s.08.06.1 0-.25 0-.34.08a4 4 0 0 0-1.6 1.86 6.6 6.6 0 0 0-.4 1.15c-.5 2.48-.67 6-1 8.81a10 10 0 0 0-.25 2c.24 2.38 1.18 3.3 2.17 3.57a2.5 2.5 0 0 0 3-1.92c.09-.36.25-.91.31-1.27.2-1.14.37-2.28.52-3.43a44 44 0 0 0 .57-6.58c0-1.58 0-3.69-1.71-4.42"
-                              fill="url(#data-scientist-icon_svg__e)"
+                              d="M119.89 44.76a1.35 1.35 0 00-.76-.12 3.06 3.06 0 00-.68.25s.08.06.1 0-.25 0-.34.08a4 4 0 00-1.6 1.86 6.58 6.58 0 00-.4 1.15c-.5 2.48-.67 6-1 8.81a10.11 10.11 0 00-.25 2c.24 2.38 1.18 3.3 2.17 3.57a2.5 2.5 0 003-1.92v0c.09-.36.25-.91.31-1.27.2-1.14.37-2.28.52-3.43a43.94 43.94 0 00.57-6.58c0-1.58 0-3.69-1.71-4.42"
+                              fill="url(#data-scientist-icon_svg__d)"
                               stroke="#b9bfc7"
                               strokeMiterlimit={10}
                             />
                             <path
-                              d="M101.07 53c.47-1.1 5.24-5.73 7.1-7.32 1.45-1.52 4.4-1.74 6.61-1.23h.79c1.64.14 3.55-.1 4.06.42l.06.13c.13.32.26.65.37 1 1 3.05.33 5.71-.8 8.75a37 37 0 0 0-1.26 5.4c-.12 1.19-.61 3.51-.63 4.76 0 0 5.22 21.28 5.46 26.26.17 3.44-14.36 6.08-14.36 6.08s-8.88-1.15-9.64-3.33 3.31-26.52 3.31-26.52l-1-14.52"
-                              fill="url(#data-scientist-icon_svg__j)"
+                              d="M101.07 53c.47-1.1 5.24-5.73 7.1-7.32 1.45-1.52 4.4-1.74 6.61-1.23h.79c1.64.14 3.55-.1 4.06.42l.06.13c.13.32.26.65.37 1 1 3.05.33 5.71-.8 8.75a37.28 37.28 0 00-1.26 5.4c-.12 1.19-.61 3.51-.63 4.76 0 0 5.22 21.28 5.46 26.26.17 3.44-14.36 6.08-14.36 6.08s-8.88-1.15-9.64-3.33 3.31-26.52 3.31-26.52l-1-14.52"
+                              fill="url(#data-scientist-icon_svg__h)"
                               stroke="#b9bfc7"
                               strokeMiterlimit={10}
                             />
                             <path
-                              d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07Z"
+                              d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z"
                               fill="#f3f3f3"
                             />
                             <g
-                              clipPath="url(#data-scientist-icon_svg__k)"
-                              style={
-                                Object {
-                                  "mixBlendMode": "multiply",
-                                }
-                              }
+                              clipPath="url(#data-scientist-icon_svg__i)"
                             >
                               <path
                                 d="M104 45.28v-3.7l4.65 2.72-2 3.43c-1.55-.33-2.67-1.3-2.67-2.45"
                                 fill="url(#data-scientist-icon_svg__b)"
                               />
                               <g
-                                clipPath="url(#data-scientist-icon_svg__l)"
+                                clipPath="url(#data-scientist-icon_svg__j)"
                               >
                                 <g
-                                  mask="url(#data-scientist-icon_svg__m)"
+                                  mask="url(#data-scientist-icon_svg__k)"
                                 >
                                   <path
                                     d="M104.29 42.23h4.53v4.46h-4.53z"
-                                    fill="url(#data-scientist-icon_svg__n)"
+                                    fill="url(#data-scientist-icon_svg__l)"
                                     transform="rotate(-47.95 106.56 44.465)"
                                   />
                                 </g>
                                 <g
-                                  mask="url(#data-scientist-icon_svg__o)"
+                                  mask="url(#data-scientist-icon_svg__m)"
                                 >
                                   <path
                                     d="M86.12 48.38h7.68v7.57h-7.68z"
-                                    fill="url(#data-scientist-icon_svg__p)"
+                                    fill="url(#data-scientist-icon_svg__n)"
                                     transform="rotate(-47.95 89.952 52.163)"
                                   />
                                 </g>
                               </g>
                             </g>
                             <path
-                              d="M110.35 45.17a4.2 4.2 0 0 1-2 .49 2.73 2.73 0 0 1-2.78-2.34 20.8 20.8 0 0 1-.52-6.24l.19-.59 7.28.5v7Z"
+                              d="M110.35 45.17a4.19 4.19 0 01-2 .49 2.73 2.73 0 01-2.78-2.34 20.8 20.8 0 01-.52-6.24l.19-.59 7.28.5v7z"
                               fill="#f3f3f3"
                             />
                             <path
-                              d="M105 37.82c.58-.56.47 1.39 1.35 1.46s1.39 1 1.54 1.87l.58 2.23a1.1 1.1 0 0 0 .36.57l.52.45c.78.42 3.26.2 3.75-1.36l1-2a4.92 4.92 0 0 0-.44-5.22c-2.25-3.06-6.64-1.67-8.07.15a3.4 3.4 0 0 0-.59 1.85"
+                              d="M105 37.82c.58-.56.47 1.39 1.35 1.46s1.39 1 1.54 1.87l.58 2.23a1.12 1.12 0 00.36.57l.52.45c.78.42 3.26.2 3.75-1.36l1-2a4.92 4.92 0 00-.44-5.22c-2.25-3.06-6.64-1.67-8.07.15a3.41 3.41 0 00-.59 1.85z"
                               fill="#50565b"
                             />
                             <path
-                              d="M107.8 34.45s-2.75 1-3.24 3.21a4.8 4.8 0 0 0 .4 2.82s4.55-1.29 5.11-2.44-2.27-3.59-2.27-3.59"
+                              d="M107.8 34.45s-2.75 1-3.24 3.21a4.8 4.8 0 00.4 2.82s4.55-1.29 5.11-2.44-2.27-3.59-2.27-3.59z"
                               fill="#50565b"
                             />
                             <path
-                              d="M107.1 38.21a3.1 3.1 0 0 1 .34 1.36 2.37 2.37 0 0 1-1.14 1.94s.29-2-.86-2.84c-.52-.39 1.66-.46 1.66-.46"
+                              d="M107.1 38.21a3.13 3.13 0 01.34 1.36 2.37 2.37 0 01-1.14 1.94s.29-2-.86-2.84c-.52-.39 1.66-.46 1.66-.46z"
                               fill="#50565b"
                             />
                             <path
-                              d="M107.24 42.46c1 .47 1.84-.91 1.68-2.16-.13-1.06-.86-.84-1.39-.52a1.43 1.43 0 0 0-.69 1l-.43 2.39Z"
+                              d="M107.24 42.46c1 .47 1.84-.91 1.68-2.16-.13-1.06-.86-.84-1.39-.52a1.43 1.43 0 00-.69 1l-.43 2.39z"
                               fill="#f3f3f3"
                             />
                             <path
-                              d="M107.76 34.46s-2.75 1-3.23 3.21a4.8 4.8 0 0 0 .4 2.82s4.55-1.29 5.11-2.44-2.28-3.59-2.28-3.59"
-                              fill="url(#data-scientist-icon_svg__q)"
+                              d="M107.76 34.46s-2.75 1-3.23 3.21a4.8 4.8 0 00.4 2.82s4.55-1.29 5.11-2.44-2.28-3.59-2.28-3.59z"
+                              fill="url(#data-scientist-icon_svg__o)"
                               opacity={0.3}
                             />
                             <path
-                              d="M103.45 62.87c-.44-.8-1.24-2.59-2-4.47-.13-.32-.26-.63-.4-.94-.59-1.4-1.15-2.75-1.54-3.7 0-.09-.07-.17-.11-.25a.14.14 0 0 1 0-.06l-.47-.16-.27-.1a4.1 4.1 0 0 1-2.42 1.38 3 3 0 0 1-1.24.07c-.15 0-.34-.12-.24 0a3.7 3.7 0 0 0-.29 1.28 3.3 3.3 0 0 1 .2.58l.29.76c.24.65.51 1.35.8 2.08.71 1.8 1.52 3.74 2.2 5.23.06.12.12.24.17.36a6.2 6.2 0 0 0 1.16 2.08"
-                              fill="url(#data-scientist-icon_svg__r)"
+                              d="M103.45 62.87c-.44-.8-1.24-2.59-2-4.47-.13-.32-.26-.63-.4-.94-.59-1.4-1.15-2.75-1.54-3.7 0-.09-.07-.17-.11-.25s0 0 0 0a.14.14 0 010-.06l-.47-.16-.27-.1a4.11 4.11 0 01-2.42 1.38 3 3 0 01-1.24.07c-.15 0-.34-.12-.24 0a3.67 3.67 0 00-.29 1.28 3.3 3.3 0 01.2.58l.29.76c.24.65.51 1.35.8 2.08.71 1.8 1.52 3.74 2.2 5.23.06.12.12.24.17.36a6.16 6.16 0 001.16 2.08"
+                              fill="url(#data-scientist-icon_svg__p)"
                               stroke="#b9bfc7"
                               strokeMiterlimit={10}
                             />
                             <path
-                              d="m97.01 62.16 1.41 3.21 1.99-10.03-1.02-2.06z"
-                              fill="url(#data-scientist-icon_svg__f)"
+                              d="M97.01 62.16l1.41 3.21 1.99-10.03-1.02-2.06-2.38 8.88z"
+                              fill="url(#data-scientist-icon_svg__e)"
                               opacity={0.7}
                             />
                             <g
-                              clipPath="url(#data-scientist-icon_svg__s)"
-                              mask="url(#data-scientist-icon_svg__t)"
+                              clipPath="url(#data-scientist-icon_svg__q)"
+                              mask="url(#data-scientist-icon_svg__r)"
                             >
                               <path
                                 d="M95.09 33.81h7.57v7.68h-7.57z"
-                                fill="url(#data-scientist-icon_svg__u)"
+                                fill="url(#data-scientist-icon_svg__s)"
                                 transform="rotate(-18.2 98.109 37.727)"
                               />
                             </g>
                             <path
-                              d="M104.3 51.22a1.4 1.4 0 0 0-.75-.17 3.3 3.3 0 0 0-.7.2l-.24.11a4.1 4.1 0 0 0-1.73 1.74 8 8 0 0 0-.48 1.12c-.67 2.44-1.09 6-1.58 8.73a10.6 10.6 0 0 0-.39 2c.08 2.4.94 3.38 1.91 3.72a2.5 2.5 0 0 0 3.16-1.71c.12-.35.32-.89.4-1.24.28-1.13.53-2.25.76-3.39a42 42 0 0 0 1-6.52c.08-1.58.28-3.69-1.39-4.53"
-                              fill="url(#data-scientist-icon_svg__v)"
+                              d="M104.3 51.22a1.42 1.42 0 00-.75-.17 3.31 3.31 0 00-.7.2l-.24.11a4.09 4.09 0 00-1.73 1.74 8 8 0 00-.48 1.12c-.67 2.44-1.09 6-1.58 8.73a10.62 10.62 0 00-.39 2c.08 2.4.94 3.38 1.91 3.72a2.5 2.5 0 003.16-1.71v0c.12-.35.32-.89.4-1.24.28-1.13.53-2.25.76-3.39a42.31 42.31 0 001-6.52c.08-1.58.28-3.69-1.39-4.53"
+                              fill="url(#data-scientist-icon_svg__t)"
                               stroke="#b9bfc7"
                               strokeMiterlimit={10}
                             />
                             <path
-                              d="m105.86 55.33 4.9 13.39-2.34 28.53s-8.9-1.16-9.64-3.33 3-25.13 3-25.13c.95-.42 2.33.45 4.08-13.46"
-                              fill="url(#data-scientist-icon_svg__w)"
+                              d="M105.86 55.33l4.9 13.39-2.34 28.53s-8.9-1.16-9.64-3.33 3-25.13 3-25.13c.95-.42 2.33.45 4.08-13.46z"
+                              fill="url(#data-scientist-icon_svg__u)"
                             />
                             <path
-                              d="M111.43 42.32c.81.86-.22 8.15.12 9 .67 1.67 3.07 3.52 3.7 5.21.2.53.75-.73.75-.73l-3.23-5.37-.31-3.26.14-3.71s.24-2.95-.38-3.69a4.3 4.3 0 0 0-.79-.52s-1.28 1.75 0 3.07"
-                              fill="url(#data-scientist-icon_svg__x)"
+                              d="M111.43 42.32c.81.86-.22 8.15.12 9 .67 1.67 3.07 3.52 3.7 5.21.2.53.75-.73.75-.73l-3.23-5.37-.31-3.26.14-3.71s.24-2.95-.38-3.69a4.27 4.27 0 00-.79-.52s-1.28 1.75 0 3.07z"
+                              fill="url(#data-scientist-icon_svg__v)"
                               opacity={0.2}
                             />
                             <path
-                              d="M114.07 40.85c.68 3.52 2.05 3.86 3.29 5.08s.87 4.78.87 4.78a3.31 3.31 0 0 1 .33 3.62 17 17 0 0 1-2.72 2.25 8.07 8.07 0 0 0-2.12-3.64 4.84 4.84 0 0 1-1.72-3.55s.59-6.37-.35-8.62.37-1.45.71-1.46l1.68 1.54"
+                              d="M114.07 40.85c.68 3.52 2.05 3.86 3.29 5.08s.87 4.78.87 4.78a3.31 3.31 0 01.33 3.62 17 17 0 01-2.72 2.25 8.07 8.07 0 00-2.12-3.64 4.84 4.84 0 01-1.72-3.55s.59-6.37-.35-8.62.37-1.45.71-1.46l1.68 1.54"
                               fill="#50565b"
                             />
                             <path
                               d="M118.06 52.62c-.45-1.74-2.69-2.47-3.36-4.14-.34-.83 0-3.49-1.2-3.74"
-                              fill="url(#data-scientist-icon_svg__y)"
+                              fill="url(#data-scientist-icon_svg__w)"
                               opacity={0.3}
                             />
                             <path
-                              d="M96.16 54.51a4.1 4.1 0 0 0 2.42-1.38 1 1 0 0 1 0-.57 9.8 9.8 0 0 0 .85-3 9 9 0 0 0-.81-.9c-.23-.23-.46-.45-.71-.66a4 4 0 0 1-.49-.36 8 8 0 0 0-.85-.5c-.09-.05-.16-.12-.11-.11l-.22-.22-.37-.43-.33.12a.66.66 0 0 0 0 .32v.08c-.53.34-.46.63-.17 1.14a5 5 0 0 1 .3.78c0-.08.1.3.18.61l-.06-.07a12 12 0 0 0-.84-.91l-.5-.45a.6.6 0 0 1-.15-.1 2 2 0 0 0-.16.37 1.08 1.08 0 0 0 .09.83 3.3 3.3 0 0 1 .51.67 5 5 0 0 1 .3.55l.29.59c-.07.71-.33 1.43-.46 2.14a3.05 3.05 0 0 0 0 1.47 2.84 2.84 0 0 0 1.24-.07"
+                              d="M96.16 54.51a4.11 4.11 0 002.42-1.38 1 1 0 010-.57 9.78 9.78 0 00.85-3 8.66 8.66 0 00-.81-.9c-.23-.23-.46-.45-.71-.66a4.06 4.06 0 01-.49-.36 7.67 7.67 0 00-.85-.5c-.09-.05-.16-.12-.11-.11l-.22-.22-.37-.43-.33.12a.66.66 0 000 .32v.08c-.53.34-.46.63-.17 1.14a5.24 5.24 0 01.3.78c0-.08.1.3.18.61l-.06-.07a12.07 12.07 0 00-.84-.91l-.5-.45a.63.63 0 01-.15-.1 1.88 1.88 0 00-.16.37 1.08 1.08 0 00.09.83 3.3 3.3 0 01.51.67 4.79 4.79 0 01.3.55l.29.59c-.07.71-.33 1.43-.46 2.14a3.05 3.05 0 000 1.47 2.84 2.84 0 001.24-.07"
                               fill="#f3f3f3"
                             />
                           </g>
@@ -10308,7 +10279,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10316,7 +10286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -10392,7 +10362,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -10442,7 +10411,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10540,7 +10508,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10662,7 +10629,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10673,7 +10639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -10733,14 +10699,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -10799,7 +10764,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10862,7 +10826,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -10877,7 +10840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               fill="#D8D8D8"
                             />
                             <path
-                              d="m18.415 19.585-2.915-2.92V14.5a.5.5 0 0 0-.145-.355l-5-5a.5.5 0 0 0-.71 0l-4.5 4.5a.5.5 0 0 0 0 .71l5 5a.5.5 0 0 0 .355.145h2.17l2.915 2.92a2.001 2.001 0 0 0 2.83-2.83zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14zm10.705 8.5a1 1 0 0 1-1.41 0l-3.065-3.06a.9.9 0 0 0-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 0 0 .145.35l3.06 3.07a1 1 0 0 1 0 1.41"
+                              d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
                               fill="#0F62FE"
                             />
                           </g>
@@ -11381,7 +11344,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -11392,7 +11354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 stroke="#2160F8"
                               />
                               <path
-                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                                 fill="#8EC1FF"
                               />
                               <text
@@ -11452,7 +11414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={34}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -11460,7 +11421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               transform="translate(0 1)"
                             >
                               <path
-                                d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                                 fill="#0062FF"
                               />
                               <circle
@@ -11536,14 +11497,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
                               fillRule="evenodd"
                             >
                               <path
-                                d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                                 stroke="#0062FF"
                               />
                               <ellipse
@@ -11602,7 +11562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -11665,7 +11624,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
                               d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -11715,7 +11673,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -11813,7 +11770,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -11935,7 +11891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -13627,7 +13582,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -13635,7 +13589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -13711,7 +13665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -13761,7 +13714,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -13859,7 +13811,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -13981,7 +13932,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -13992,7 +13942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -14052,14 +14002,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -14118,7 +14067,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -14181,7 +14129,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -14196,7 +14143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               fill="#D8D8D8"
                             />
                             <path
-                              d="m18.415 19.585-2.915-2.92V14.5a.5.5 0 0 0-.145-.355l-5-5a.5.5 0 0 0-.71 0l-4.5 4.5a.5.5 0 0 0 0 .71l5 5a.5.5 0 0 0 .355.145h2.17l2.915 2.92a2.001 2.001 0 0 0 2.83-2.83zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14zm10.705 8.5a1 1 0 0 1-1.41 0l-3.065-3.06a.9.9 0 0 0-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 0 0 .145.35l3.06 3.07a1 1 0 0 1 0 1.41"
+                              d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
                               fill="#0F62FE"
                             />
                           </g>
@@ -16020,7 +15967,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16028,7 +15974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -16104,7 +16050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -16154,7 +16099,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16252,7 +16196,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16374,7 +16317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16385,7 +16327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -16445,14 +16387,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -16511,7 +16452,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16574,7 +16514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -16589,7 +16528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               fill="#D8D8D8"
                             />
                             <path
-                              d="m18.415 19.585-2.915-2.92V14.5a.5.5 0 0 0-.145-.355l-5-5a.5.5 0 0 0-.71 0l-4.5 4.5a.5.5 0 0 0 0 .71l5 5a.5.5 0 0 0 .355.145h2.17l2.915 2.92a2.001 2.001 0 0 0 2.83-2.83zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14zm10.705 8.5a1 1 0 0 1-1.41 0l-3.065-3.06a.9.9 0 0 0-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 0 0 .145.35l3.06 3.07a1 1 0 0 1 0 1.41"
+                              d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
                               fill="#0F62FE"
                             />
                           </g>
@@ -17563,7 +17502,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={34}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -17571,7 +17509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               transform="translate(0 1)"
                             >
                               <path
-                                d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                                 fill="#0062FF"
                               />
                               <circle
@@ -17647,7 +17585,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
                               d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -17697,7 +17634,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -17795,7 +17731,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -17917,7 +17852,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -17928,7 +17862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 stroke="#2160F8"
                               />
                               <path
-                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                                 fill="#8EC1FF"
                               />
                               <text
@@ -17988,14 +17922,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
                               fillRule="evenodd"
                             >
                               <path
-                                d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                                 stroke="#0062FF"
                               />
                               <ellipse
@@ -18054,7 +17987,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <svg
                             height={32}
                             width={40}
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
                               fill="none"
@@ -18946,7 +18878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -18954,7 +18885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -19030,7 +18961,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -19080,7 +19010,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -19178,7 +19107,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -19300,7 +19228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -19311,7 +19238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -19371,14 +19298,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -19437,7 +19363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -22048,7 +21973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -22056,7 +21980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -22132,7 +22056,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -22182,7 +22105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -22280,7 +22202,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -22402,7 +22323,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -22413,7 +22333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -22473,14 +22393,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -22539,7 +22458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -23523,7 +23441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={34}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -23531,7 +23448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             transform="translate(0 1)"
                           >
                             <path
-                              d="M20.556 1.233 32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                              d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
                               fill="#0062FF"
                             />
                             <circle
@@ -23607,7 +23524,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
@@ -23657,7 +23573,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -23755,7 +23670,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -23877,7 +23791,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -23888,7 +23801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               stroke="#2160F8"
                             />
                             <path
-                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0 1.988 4.572h-3.975z"
+                              d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
                               fill="#8EC1FF"
                             />
                             <text
@@ -23948,14 +23861,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
                             fillRule="evenodd"
                           >
                             <path
-                              d="M1.29 21.57 13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                              d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
                               stroke="#0062FF"
                             />
                             <ellipse
@@ -24014,7 +23926,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -24077,7 +23988,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <svg
                           height={32}
                           width={40}
-                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
                             fill="none"
@@ -24092,7 +24002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               fill="#D8D8D8"
                             />
                             <path
-                              d="m18.415 19.585-2.915-2.92V14.5a.5.5 0 0 0-.145-.355l-5-5a.5.5 0 0 0-.71 0l-4.5 4.5a.5.5 0 0 0 0 .71l5 5a.5.5 0 0 0 .355.145h2.17l2.915 2.92a2.001 2.001 0 0 0 2.83-2.83zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14zm10.705 8.5a1 1 0 0 1-1.41 0l-3.065-3.06a.9.9 0 0 0-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 0 0 .145.35l3.06 3.07a1 1 0 0 1 0 1.41"
+                              d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
                               fill="#0F62FE"
                             />
                           </g>
