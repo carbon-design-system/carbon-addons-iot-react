@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.22...v2.154.0-next.23) (2024-05-13)
+
+
+### Bug Fixes
+
+* context added to useDNDProviderElement ([#3862](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3862)) ([ad40350](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad40350a9689dee0e2e1846d075d08a89562089e))
+
+
+
+
+
 # [2.154.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.21...v2.154.0-next.22) (2024-05-02)
 
 **Note:** Version bump only for package carbon-addons-iot-react
