@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.23...v2.154.0-next.24) (2024-05-15)
+
+
+### Bug Fixes
+
+* **tablehead:** group table headers offset ([#3863](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3863)) ([c5e717e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5e717ed0486192d5f6f30eb3695e499d2c47e5f))
+
+
+
+
+
 # [2.154.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.22...v2.154.0-next.23) (2024-05-13)
 
 
