@@ -35,5 +35,5 @@ export const ReadOnlyValueDefaultProps = {
   isLoading: false,
   skeletonLoadingLabel: skeletonLoadingDefaultProps,
   skeletonLoadingValue: skeletonLoadingDefaultProps,
-  textAreaAttr: {},
+  textAreaAttributes: {},
 };

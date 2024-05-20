@@ -13478,7 +13478,7 @@ Map {
         "width": "100%",
       },
       "testId": "read-only-value",
-      "textAreaAttr": Object {},
+      "textAreaAttributes": Object {},
       "type": "stacked",
       "value": "",
     },
