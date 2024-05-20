@@ -17,6 +17,7 @@ const ReadOnlyValue = ({
   isLoading,
   skeletonLoadingLabel,
   skeletonLoadingValue,
+  textAreaAttributes = {},
 }) => (
   <div
     data-testid={testId}
@@ -44,6 +45,7 @@ const ReadOnlyValue = ({
               name={value}
               value={value}
               readOnly
+              {...textAreaAttributes}
             />
           ) : (
             <div id={`readonly-${label}`}>{value}</div>
