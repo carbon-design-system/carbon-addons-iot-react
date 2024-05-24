@@ -37,13 +37,13 @@ const ReadOnlyValue = ({
         <>
           {typeof value === 'string' ? (
             <textarea
+              {...textAreaAttributes}
               data-testid={`${testId}--value`}
               type="text"
               id={`readonly-${label}`}
               name={value}
               value={value}
               readOnly
-              {...textAreaAttributes}
             />
           ) : (
             <div id={`readonly-${label}`}>{value}</div>
