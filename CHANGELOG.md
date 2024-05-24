@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.24...v2.154.0-next.25) (2024-05-24)
+
+
+### Bug Fixes
+
+* ReadOnlyValue component changes ([#3865](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3865)) ([34708ec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34708ecbc17bb838a5327124efb81021bb200034))
+
+
+
+
+
 # [2.154.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.23...v2.154.0-next.24) (2024-05-15)
 
 
