@@ -22,7 +22,6 @@ export const ReadOnlyValuePropTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   testId: PropTypes.string,
   isLoading: PropTypes.bool,
-  skeletonLoadingLabel: skeletonLoadingPropTypes,
   skeletonLoadingValue: skeletonLoadingPropTypes,
   textAreaAttributes: PropTypes.object,
 };
@@ -33,7 +32,6 @@ export const ReadOnlyValueDefaultProps = {
   value: '',
   testId: 'read-only-value',
   isLoading: false,
-  skeletonLoadingLabel: skeletonLoadingDefaultProps,
   skeletonLoadingValue: skeletonLoadingDefaultProps,
   textAreaAttributes: {},
 };

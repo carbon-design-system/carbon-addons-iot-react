@@ -552,16 +552,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     >
       <label
         data-testid="read-only-value--label"
-        htmlFor="readonly-null"
+        htmlFor="readonly-Label 01"
       >
-        <p
-          className="bx--skeleton__text"
-          style={
-            Object {
-              "width": "100%",
-            }
-          }
-        />
+        Label 01
         <p
           className="bx--skeleton__text"
           style={
@@ -578,16 +571,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     >
       <label
         data-testid="read-only-value--label"
-        htmlFor="readonly-null"
+        htmlFor="readonly-Label 02"
       >
-        <p
-          className="bx--skeleton__text"
-          style={
-            Object {
-              "width": "100%",
-            }
-          }
-        />
+        Label 02
         <p
           className="bx--skeleton__text"
           style={

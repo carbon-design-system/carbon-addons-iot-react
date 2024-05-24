@@ -56,10 +56,10 @@ describe('ReadOnlyValue', () => {
     const [label, value] = ['label-test01', 'some testing value'];
     const { container } = render(<ReadOnlyValue label={label} value={value} isLoading />);
 
-    expect(screen.queryByText(label)).toBeNull();
+    expect(screen.queryByText(label)).toBeDefined();
     expect(screen.queryByText(value)).toBeNull();
     expect(container.querySelector(`.${prefix}--skeleton__text`)).toBeInTheDocument();
-    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(2);
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(1);
   });
 
   it('should pass prop to skeleton loaders', () => {
@@ -69,12 +69,10 @@ describe('ReadOnlyValue', () => {
         label={label}
         value={value}
         isLoading
-        skeletonLoadingLabel={{ className: 'test-class-1' }}
         skeletonLoadingValue={{ className: 'test-class-2' }}
       />
     );
 
-    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)[0]).toHaveClass('test-class-1');
-    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)[1]).toHaveClass('test-class-2');
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)[0]).toHaveClass('test-class-2');
   });
 });

@@ -15,7 +15,6 @@ const ReadOnlyValue = ({
   className,
   testId,
   isLoading,
-  skeletonLoadingLabel,
   skeletonLoadingValue,
   textAreaAttributes,
 }) => (
@@ -29,14 +28,13 @@ const ReadOnlyValue = ({
   >
     {/* eslint-disable-next-line jsx-a11y/label-has-for */}
     <label data-testid={`${testId}--label`} htmlFor={`readonly-${label}`}>
+      {label}
       {isLoading ? (
         <>
-          <SkeletonText {...skeletonLoadingLabel} />
           <SkeletonText {...skeletonLoadingValue} />
         </>
       ) : (
         <>
-          {label}
           {typeof value === 'string' ? (
             <textarea
               data-testid={`${testId}--value`}

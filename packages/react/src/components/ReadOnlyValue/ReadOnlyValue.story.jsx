@@ -16,13 +16,6 @@ export default {
   },
 };
 
-const loadingKnobsLabel = () => ({
-  heading: boolean('If content is heading', false, 'Loading (label)'),
-  paragraph: boolean('If content is paragraph', true, 'Loading (label)'),
-  lineCount: text('Line count', 1, 'Loading (label)'),
-  width: text('Width of the loader', '100%', 'Loading (label)'),
-});
-
 const loadingKnobsValue = () => ({
   heading: boolean('If content is heading', false, 'Loading (value)'),
   paragraph: boolean('If content is paragraph', true, 'Loading (value)'),
@@ -36,7 +29,6 @@ export const Basic = () => (
       label="Label"
       value="input value"
       isLoading={boolean('Loading state (isLoading)', false)}
-      skeletonLoadingLabel={loadingKnobsLabel()}
       skeletonLoadingValue={loadingKnobsValue()}
     />
   </div>
@@ -53,7 +45,6 @@ export const MultipleValuesStacked = () => {
         value={text('label text', 'input value 01')}
         isLoading={isLoading}
         type="stacked"
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -61,7 +52,6 @@ export const MultipleValuesStacked = () => {
         value={text('label text', 'input value 02')}
         isLoading={isLoading}
         type="stacked"
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -69,7 +59,6 @@ export const MultipleValuesStacked = () => {
         value={text('label text', 'input value 03')}
         isLoading={isLoading}
         type="stacked"
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -77,7 +66,6 @@ export const MultipleValuesStacked = () => {
         value={text('label text', 'input value 04')}
         isLoading={isLoading}
         type="stacked"
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
     </div>
@@ -123,7 +111,6 @@ export const BasicInline = () => (
       value="input value"
       type="inline"
       isLoading={boolean('Loading state (isLoading)', false)}
-      skeletonLoadingLabel={loadingKnobsLabel()}
       skeletonLoadingValue={loadingKnobsValue()}
     />
   </div>
@@ -140,7 +127,6 @@ export const MultipleValuesInline = () => {
         value="input value 01"
         type="inline"
         isLoading={isLoading}
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -148,7 +134,6 @@ export const MultipleValuesInline = () => {
         value="input value 02"
         type="inline"
         isLoading={isLoading}
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -156,7 +141,6 @@ export const MultipleValuesInline = () => {
         value="input value 03"
         type="inline"
         isLoading={isLoading}
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
@@ -164,7 +148,6 @@ export const MultipleValuesInline = () => {
         value="input value 04"
         type="inline"
         isLoading={isLoading}
-        skeletonLoadingLabel={loadingKnobsLabel()}
         skeletonLoadingValue={loadingKnobsValue()}
       />
     </div>
@@ -215,11 +198,11 @@ export const WithAsyncDataLoad = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [values, setValues] = useState([
     {
-      label: null,
+      label: 'Label 01',
       value: null,
     },
     {
-      label: null,
+      label: 'Label 02',
       value: null,
     },
   ]);
