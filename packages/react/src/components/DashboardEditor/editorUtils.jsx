@@ -635,7 +635,12 @@ export const handleDataSeriesChange = (
  * @param {string} editDataSeries only used for bar chart card forms
  * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
  */
-export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hotspotIndex) => {
+export const handleDefaultDataItemEdit = (
+  editDataItem,
+  cardConfig,
+  editDataSeries,
+  hotspotIndex
+) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
