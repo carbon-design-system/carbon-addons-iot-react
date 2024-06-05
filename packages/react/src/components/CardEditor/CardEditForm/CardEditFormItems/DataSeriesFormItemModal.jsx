@@ -24,7 +24,7 @@ import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import {
-  handleDataItemEdit,
+  handleDefaultDataItemEdit,
   DataItemsPropTypes,
   DashboardEditorActionsPropTypes,
 } from '../../../DashboardEditor/editorUtils';
@@ -143,6 +143,10 @@ const propTypes = {
     secondaryButtonLabelText: PropTypes.string,
   }),
   actions: DashboardEditorActionsPropTypes,
+  /**
+   * Used to override the default behaviour of handleDataItemEdit. if we dont pass any function then it uses handleDefaultDataItemEdit function by default
+   */
+  handleDataItemEdit: PropTypes.func,
 };
 
 const defaultProps = {
@@ -203,6 +207,7 @@ const defaultProps = {
       onAddAggregations: noop,
     },
   },
+  handleDataItemEdit: handleDefaultDataItemEdit,
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -237,6 +242,7 @@ const DataSeriesFormItemModal = ({
   actions: {
     dataSeriesFormActions: { hasAggregationsDropDown, onAddAggregations, hasDataFilterDropdown },
   },
+  handleDataItemEdit,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
