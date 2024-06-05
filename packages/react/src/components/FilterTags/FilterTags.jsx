@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, Children } from 'react';
 import PropTypes from 'prop-types';
-import { OverflowMenuItem, OverflowMenu } from "@carbon/react";
-import { Close } from "@carbon/react/icons";
+import { OverflowMenuItem, OverflowMenu } from '@carbon/react';
+import { Close } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

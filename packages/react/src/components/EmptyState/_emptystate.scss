@@ -1,6 +1,6 @@
-@import '../../globals/vars';
-@import '../../globals/spacing';
-@import '../../globals/typography';
+@use '../../globals/vars' as *;
+@use '../../globals/spacing' as *;
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--empty-state {
   $parent-container: &;

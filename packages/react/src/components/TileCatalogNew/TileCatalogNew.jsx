@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Select,
-  SelectItem,
-  TableToolbarSearch,
-  SkeletonText,
-  Tile,
-} from "@carbon/react";
-import { Bee } from "@carbon/react/icons";
+import { Select, SelectItem, TableToolbarSearch, SkeletonText, Tile } from '@carbon/react';
+import { Bee } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';

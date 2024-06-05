@@ -1,6 +1,13 @@
 import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from "@carbon/react";
+import {
+  ContentSwitcher,
+  Switch,
+  Tabs,
+  Tab,
+  InlineNotification,
+  InlineLoading,
+} from '@carbon/react';
 import { pick, sortBy } from 'lodash-es';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
@@ -9,7 +16,6 @@ import warning from 'warning';
 import { HotspotIconPropType, ColorPropType } from '../../constants/SharedPropTypes';
 import ImageHotspots from '../ImageCard/ImageHotspots';
 import ComposedModal from '../ComposedModal';
-import { InlineLoading } from '@carbon/react';
 import { settings } from '../../constants/Settings';
 import {
   validThresholdIcons,

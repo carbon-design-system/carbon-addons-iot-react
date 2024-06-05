@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 $size-sm: rem(32px);
 $size-md: rem(40px);

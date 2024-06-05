@@ -1,4 +1,4 @@
-import { Add } from "@carbon/react/icons";
+import { Add } from '@carbon/react/icons';
 
 import { getRowAction } from './tableUtilities';
 

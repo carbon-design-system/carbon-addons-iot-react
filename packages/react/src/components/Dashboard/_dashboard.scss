@@ -1,6 +1,6 @@
-@import '~react-grid-layout/css/styles';
-@import '~react-resizable/css/styles';
-@import '../../globals/vars';
+@use '~react-grid-layout/css/styles' as *;
+@use '~react-resizable/css/styles' as *;
+@use '../../globals/vars' as *;
 
 .dashboard {
   &--header {

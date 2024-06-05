@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Apps, Data_1 as Data116, Code } from "@carbon/react/icons";
+import { Apps, Data_1 as Data116, Code } from '@carbon/react/icons';
 import { isNil, isEmpty, omit, pick } from 'lodash-es';
 import warning from 'warning';
 

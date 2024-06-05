@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ChevronRight } from "@carbon/react/icons";
-import { TableCell } from "@carbon/react";
+import { ChevronRight } from '@carbon/react/icons';
+import { TableCell } from '@carbon/react';
 
 import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';

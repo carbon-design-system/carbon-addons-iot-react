@@ -4,7 +4,7 @@ import { act, isDOMComponent } from 'react-dom/test-utils';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-import { Error } from "@carbon/react/icons";
+import { Error } from '@carbon/react/icons';
 
 import landscape from './landscape.jpg';
 import portrait from './portrait.jpg';

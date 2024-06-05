@@ -1,4 +1,4 @@
-@import '../../../../globals/vars';
+@use '../../../../globals/vars' as *;
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }

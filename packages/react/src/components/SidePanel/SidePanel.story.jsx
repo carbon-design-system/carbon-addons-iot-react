@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Edit, Information, SendAlt } from "@carbon/react/icons";
+import { Edit, Information, SendAlt } from '@carbon/react/icons';
 
 import Button from '../Button';
 

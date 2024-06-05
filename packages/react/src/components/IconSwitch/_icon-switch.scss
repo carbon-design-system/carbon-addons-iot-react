@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 $icon-switch-size-small: $spacing-07;
 $icon-switch-size-default: $spacing-08;

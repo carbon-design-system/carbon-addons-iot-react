@@ -4,12 +4,18 @@
 import React, { createElement, useEffect, useState } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ScreenOff, Switcher, Home, RecentlyViewed, Apps } from "@carbon/react/icons";
-import Group from '@carbon/icons-react/es/group/24';
-import NotificationOn from '@carbon/icons-react/es/notification/24';
-import Bee from '@carbon/icons-react/es/bee/24';
-import Car from '@carbon/icons-react/es/car/24';
-import Chat from '@carbon/icons-react/es/chat/24';
+import {
+  ScreenOff,
+  Switcher,
+  Home,
+  RecentlyViewed,
+  Apps,
+  Group,
+  NotificationOn,
+  Car,
+  Chat,
+  Bee,
+} from '@carbon/react/icons';
 import { partition } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
@@ -150,7 +156,7 @@ const customActionItems = [
     label: 'bell',
     btnContent: (
       <span id="bell-icon">
-        <NotificationOn id="notification-button" fill="white" description="Icon" />
+        <NotificationOn id="notification-button" size={24} fill="white" description="Icon" />
       </span>
     ),
     onClick: action('bell clicked'),
@@ -162,6 +168,7 @@ const customActionItems = [
       <span id="bee-icon">
         <Bee
           fill="white"
+          size={24}
           description="Icon"
           className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
@@ -199,7 +206,7 @@ const customActionItems = [
         content: (
           <span id="an-email">
             JohnDoe@ibm.com
-            <Chat fill="white" description="Icon" />
+            <Chat fill="white" size={24} description="Icon" />
           </span>
         ),
       },
@@ -209,7 +216,7 @@ const customActionItems = [
     label: 'car',
     btnContent: (
       <span id="car-icon">
-        <Car fill="white" description="Icon" />
+        <Car fill="white" description="Icon" size={24} />
       </span>
     ),
     childContent: [
@@ -244,7 +251,7 @@ const customActionItems = [
         content: (
           <span id="another-email">
             JohnDoe@ibm.com
-            <Chat fill="white" description="Icon" />
+            <Chat fill="white" size={24} description="Icon" />
           </span>
         ),
       },
@@ -597,7 +604,7 @@ export const HeaderWithSideNav = () => {
       },
       {
         isEnabled: true,
-        icon: Group,
+        icon: <Group size={24} />,
         metaData: {
           label: 'Members',
           element: 'button',

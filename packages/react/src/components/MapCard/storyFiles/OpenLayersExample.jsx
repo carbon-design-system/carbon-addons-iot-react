@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Events } from "@carbon/react/icons";
-import { Accordion, AccordionItem } from "@carbon/react";
+import { Events } from '@carbon/react/icons';
+import { Accordion, AccordionItem } from '@carbon/react';
 import PropTypes from 'prop-types';
 // The OpenLayersExample is not exported and is only used by StoryBook
 /* eslint-disable import/no-extraneous-dependencies */

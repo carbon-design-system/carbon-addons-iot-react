@@ -1,6 +1,6 @@
-@import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
+@use '../../globals/vars' as *;
+@use '@carbon/styles/scss/layout' as *;
+// @import '~carbon-components/scss/globals/scss/helper-mixins'; // did not find any suitable style path, need to replace
 
 $shadow-plus-padding: 1.4rem;
 $shadow: 0.4rem;

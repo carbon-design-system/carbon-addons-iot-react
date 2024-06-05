@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import classnames from 'classnames';
-import { Close } from "@carbon/react/icons";
+import { Close } from '@carbon/react/icons';
 import { white } from '@carbon/colors';
 
 import { keyboardKeys } from '../../../constants/KeyCodeConstants';

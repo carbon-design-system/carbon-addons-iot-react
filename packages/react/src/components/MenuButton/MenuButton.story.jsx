@@ -1,10 +1,10 @@
-import { Copy, OverflowMenuVertical, TrashCan } from "@carbon/react/icons";
+import { Copy, OverflowMenuVertical, TrashCan } from '@carbon/react/icons';
 import {
   unstable_MenuItem as MenuItem,
   unstable_MenuDivider as MenuDivider,
   unstable_MenuRadioGroup as MenuRadioGroup,
   unstable_MenuSelectableItem as MenuSelectableItem,
-} from "@carbon/react";
+} from '@carbon/react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';

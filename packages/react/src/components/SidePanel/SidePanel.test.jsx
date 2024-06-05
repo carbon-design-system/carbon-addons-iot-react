@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Edit, Information, SendAlt } from "@carbon/react/icons";
+import { Edit, Information, SendAlt } from '@carbon/react/icons';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';

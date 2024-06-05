@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import classnames from 'classnames';
-import { Maximize, Close } from "@carbon/react/icons";
+import { Maximize, Close } from '@carbon/react/icons';
 import { useLangDirection } from 'use-lang-direction';
 
 import Button from '../Button';

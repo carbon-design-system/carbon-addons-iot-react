@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/components/button/button';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/components/button' as *;
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--btn {
   justify-content: flex-start;

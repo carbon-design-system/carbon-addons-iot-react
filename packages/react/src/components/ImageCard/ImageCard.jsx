@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { isNil, pick } from 'lodash-es';
-import { Image, Warning } from "@carbon/react/icons";
+import { Image, Warning } from '@carbon/react/icons';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';

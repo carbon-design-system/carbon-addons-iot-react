@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/components/progress-bar/progress-bar';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/components/progress-bar' as *;
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--progress-bar-container {
   position: relative;

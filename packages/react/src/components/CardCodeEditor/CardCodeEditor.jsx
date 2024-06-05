@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, InlineNotification, CopyButton } from "@carbon/react";
-import { Popup } from "@carbon/react/icons";
+import { CodeSnippetSkeleton, InlineNotification, CopyButton } from '@carbon/react';
+import { Popup } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 

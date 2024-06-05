@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Filter } from "@carbon/react/icons";
+import { Filter } from '@carbon/react/icons';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import { TooltipIcon } from '.';

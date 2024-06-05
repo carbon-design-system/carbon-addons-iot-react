@@ -1,1 +1,1 @@
-export { TooltipDefinition } from 'carbon-components-react';
+export { TooltipDefinition } from '@carbon/react';

@@ -2,8 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
-import { ToastNotification } from "@carbon/react";
-import { SettingsAdjust } from "@carbon/react/icons";
+import { ToastNotification } from '@carbon/react';
+import { SettingsAdjust } from '@carbon/react/icons';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
@@ -13,7 +13,7 @@ import useStoryState from '../../internal/storyState';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
-
+import { BreadcrumbItem } from '@carbon/react';
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
 import DragAndDropREADME from './mdx/DragAndDrop.mdx';
@@ -69,6 +69,8 @@ import {
 import MockApiClient from './AsyncTable/MockApiClient';
 import AsyncTable from './AsyncTable/AsyncTable';
 import { PIN_COLUMN } from './tableUtilities';
+
+export { BreadcrumbItem } from '@carbon/react';
 
 // Dataset used to speed up stories using row edit
 const storyTableData = getTableData();

@@ -1,4 +1,4 @@
-@import '../../../../globals/vars';
+@use '../../../../globals/vars' as *;
 
 .#{$iot-prefix}--load-more-cell {
   &--content.#{$iot-prefix}--btn {

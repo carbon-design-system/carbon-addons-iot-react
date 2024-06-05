@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Add, Close, Edit } from "@carbon/react/icons";
+import { Add, Close, Edit } from '@carbon/react/icons';
 import { boolean, select, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
-import { Button, OverflowMenu, OverflowMenuItem } from "@carbon/react";
+import { Button, OverflowMenu, OverflowMenuItem } from '@carbon/react';
 
 import { DragAndDrop, EditingStyle } from '../../../utils/DragAndDropUtils';
 

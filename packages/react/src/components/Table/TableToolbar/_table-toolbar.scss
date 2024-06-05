@@ -1,8 +1,8 @@
-@import '../../../globals/vars';
-@import '../../../globals/mixins';
-@import './table-toolbar-svg-button';
-@import './advanced-filter-flyout';
-@import './table-toolbar-search';
+@use '../../../globals/vars' as *;
+@use '../../../globals/mixins' as *;
+@use './table-toolbar-svg-button' as *;
+@use './advanced-filter-flyout' as *;
+@use './table-toolbar-search' as *;
 
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {

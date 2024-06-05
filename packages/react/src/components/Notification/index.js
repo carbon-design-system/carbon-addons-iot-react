@@ -4,4 +4,4 @@ export {
   NotificationActionButton,
   NotificationButton,
   NotificationTextDetails,
-} from 'carbon-components-react';
+} from '@carbon/react';

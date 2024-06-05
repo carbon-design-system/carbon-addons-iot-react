@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Switcher,
-  Chip,
-  Group,
-  ParentChild,
-  Home,
-  RecentlyViewed,
-} from "@carbon/react/icons";
+import { Switcher, Chip, Group, ParentChild, Home, RecentlyViewed } from '@carbon/react/icons';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -26,7 +19,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       isEnabled: true,
       metaData: {
@@ -45,7 +39,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       metaData: {
         label: 'Devices',
@@ -62,7 +57,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       metaData: {
         label: 'Members',
@@ -90,7 +86,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       isEnabled: true,
       metaData: {
@@ -144,7 +141,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       isEnabled: false,
       metaData: {
@@ -163,7 +161,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       metaData: {
         label: 'Devices',
@@ -180,7 +179,8 @@ describe('SideNav', () => {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       metaData: {
         label: 'Members',

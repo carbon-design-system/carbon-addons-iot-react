@@ -1,15 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import {
-  Events,
-  Cloud,
-  Cloudy,
-  Fog,
-  Hail,
-  PartlyCloudy,
-  Rain,
-  Sun,
-} from "@carbon/react/icons";
-import { Accordion, AccordionItem } from "@carbon/react";
+import { Events, Cloud, Cloudy, Fog, Hail, PartlyCloudy, Rain, Sun } from '@carbon/react/icons';
+import { Accordion, AccordionItem } from '@carbon/react';
 // The MapboxExample is not exported and is only used by StoryBook
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import mapboxgl from 'mapbox-gl';

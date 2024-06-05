@@ -1,6 +1,6 @@
 import React from 'react';
 import { merge, omit } from 'lodash-es';
-import { Add } from "@carbon/react/icons";
+import { Add } from '@carbon/react/icons';
 
 import { fillArrWithRowIds } from '../../utils/tableReducer';
 
@@ -960,7 +960,9 @@ describe('table reducer', () => {
 
 describe('filter, search and sort', () => {
   it('filterData', () => {
-    const mockData = [{ values: { number: 10, node: <Add size={20} />, string: 'string', null: null } }];
+    const mockData = [
+      { values: { number: 10, node: <Add size={20} />, string: 'string', null: null } },
+    ];
     const mockDataWithMultiselect = [
       {
         values: {
@@ -1076,7 +1078,9 @@ describe('filter, search and sort', () => {
   });
 
   it('filterSearchAndSort', () => {
-    const mockData = [{ values: { number: 10, node: <Add size={20} />, string: 'string', null: null } }];
+    const mockData = [
+      { values: { number: 10, node: <Add size={20} />, string: 'string', null: null } },
+    ];
     expect(filterSearchAndSort(mockData)).toHaveLength(1);
     expect(filterSearchAndSort(mockData, {}, { value: 10 })).toHaveLength(1);
     expect(filterSearchAndSort(mockData, {}, { value: 20 })).toHaveLength(0);

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Information } from "@carbon/react/icons";
+import { Information } from '@carbon/react/icons';
 import { spacing06, spacing03, spacing07 } from '@carbon/layout';
 import { gray100 } from '@carbon/colors';
 import warning from 'warning';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from "@carbon/react";
+import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from '@carbon/react';
 
 import { settings } from '../../constants/Settings';
 

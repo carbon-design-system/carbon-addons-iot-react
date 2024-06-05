@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/components/text-input/text-input';
+@use '@carbon/styles/scss/components/text-input' as *;
 
 .#{$prefix}--text-input--xxl {
   height: 3.5rem;

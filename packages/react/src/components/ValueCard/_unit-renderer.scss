@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--value-card__attribute-unit {
   @include type-style('productive-heading-03');

@@ -1,7 +1,7 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import 'legend';
-@import 'zoom-control';
-@import 'scrolling-controls';
+@use '@carbon/styles/scss/config'  as *;
+@use 'legend' as *;
+@use 'zoom-control' as *;
+@use 'scrolling-controls' as *;
 
 $cardPadding: $spacing-05;
 

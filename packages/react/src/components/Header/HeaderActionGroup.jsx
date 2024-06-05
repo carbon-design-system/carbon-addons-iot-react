@@ -1,12 +1,11 @@
 import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { HeaderGlobalBar } from '@carbon/react';
+import { HeaderGlobalBar, OverflowMenuItem } from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Close, OverflowMenuVertical } from "@carbon/react/icons";
+import { Close, OverflowMenuVertical } from '@carbon/react/icons';
 import ReactDOM from 'react-dom';
 import { useLangDirection } from 'use-lang-direction';
 
 import { OverflowMenu } from '../OverflowMenu';
-import { OverflowMenuItem } from '@carbon/react';
 import { settings } from '../../constants/Settings';
 
 import HeaderAction from './HeaderAction/HeaderAction';

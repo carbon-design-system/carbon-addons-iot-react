@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronUp, ChevronDown } from "@carbon/react/icons";
+import { ChevronUp, ChevronDown } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import Button from '../Button';
@@ -66,7 +66,7 @@ const ScrollingControls = ({
         size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
-        renderIcon={props => <ChevronUp size={32} {...props} />}
+        renderIcon={(props) => <ChevronUp size={32} {...props} />}
         iconDescription={scrollUpIconDescriptionText}
         onClick={() => handleScrolling(scrollBy * -1)}
       />
@@ -112,7 +112,7 @@ const ScrollingControls = ({
         size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
-        renderIcon={props => <ChevronDown size={32} {...props} />}
+        renderIcon={(props) => <ChevronDown size={32} {...props} />}
         iconDescription={scrollDownIconDescriptionText}
         onClick={() => handleScrolling(scrollBy)}
       />

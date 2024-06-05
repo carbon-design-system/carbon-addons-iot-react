@@ -1,7 +1,7 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
-import { TrashCan, Edit, Copy } from "@carbon/react/icons";
+import { TrashCan, Edit, Copy } from '@carbon/react/icons';
 
 import Button from '../../Button';
 import { Tag } from '../../Tag';

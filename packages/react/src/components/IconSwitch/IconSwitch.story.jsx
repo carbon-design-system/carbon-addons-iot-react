@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
-import { ContentSwitcher } from "@carbon/react";
-import { List, Code, Screen, Laptop, Mobile, ScreenOff } from "@carbon/react/icons";
+import { ContentSwitcher } from '@carbon/react';
+import { List, Code, Screen, Laptop, Mobile, ScreenOff } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

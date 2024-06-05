@@ -6,6 +6,7 @@ import {
   teal70,
   magenta70,
   red50,
+  red60,
   red90,
   green60,
   blue80,
@@ -14,15 +15,14 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt, Add } from "@carbon/react/icons";
-import { FormLabel } from "@carbon/react";
+import { WarningAlt, Add } from '@carbon/react/icons';
+import { FormLabel, TextInput } from '@carbon/react';
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';
 
 import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
-import { TextInput } from '@carbon/react';
 import {
   handleDataItemEdit,
   DataItemsPropTypes,

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { Add, Draggable, Subtract } from "@carbon/react/icons";
-import { Select, SelectItem } from "@carbon/react";
+import { Add, Draggable, Subtract } from '@carbon/react/icons';
+import { Select, SelectItem } from '@carbon/react';
 import PropTypes from 'prop-types';
 import { useDrag, useDrop } from 'react-dnd';
 import classnames from 'classnames';

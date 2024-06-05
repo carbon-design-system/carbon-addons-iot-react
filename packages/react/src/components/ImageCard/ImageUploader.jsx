@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { FileUploaderDropContainer, TextInput, InlineNotification } from "@carbon/react";
-import { Image } from "@carbon/react/icons";
+import { FileUploaderDropContainer, TextInput, InlineNotification } from '@carbon/react';
+import { Image } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

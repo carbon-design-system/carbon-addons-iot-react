@@ -1,5 +1,5 @@
-@import '../../globals/vars';
-@import 'list-spinner';
+@use '../../globals/vars' as *;
+@use 'list-spinner' as *;
 
 .#{$iot-prefix}--time-picker {
   width: 16.125rem;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Add, TextNewLine } from "@carbon/react/icons";
+import { Add, TextNewLine } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
@@ -72,7 +72,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID, 
           // TODO: remove the deprecated 'testID' in v3.
           testId={`${testID || testId}-add-rule-button`}
           kind="ghost"
-          renderIcon={props => <Add size={32} {...props} />}
+          renderIcon={(props) => <Add size={32} {...props} />}
           onClick={onAddRule()}
         >
           {mergedI18n.addRule}
@@ -81,7 +81,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID, 
           // TODO: remove the deprecated 'testID' in v3.
           testId={`${testID || testId}-add-group-button`}
           kind="ghost"
-          renderIcon={props => <TextNewLine size={32} {...props} />}
+          renderIcon={(props) => <TextNewLine size={32} {...props} />}
           onClick={onAddRule(undefined, true)}
         >
           {mergedI18n.addGroup}

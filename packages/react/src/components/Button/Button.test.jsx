@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Loading } from "@carbon/react";
+import { Loading } from '@carbon/react';
 import { render, screen } from '@testing-library/react';
-import { Add } from "@carbon/react/icons";
+import { Add } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

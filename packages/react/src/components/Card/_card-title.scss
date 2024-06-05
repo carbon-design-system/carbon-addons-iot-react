@@ -1,5 +1,5 @@
-@import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
+@use '../../globals/vars' as *;
+@use '@carbon/styles/scss/layout' as *;
 
 $tooltipSize: $spacing-07;
 $lineHeightSize: 1.375em;

@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { Add } from "@carbon/react/icons";
+import { Add } from '@carbon/react/icons';
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';

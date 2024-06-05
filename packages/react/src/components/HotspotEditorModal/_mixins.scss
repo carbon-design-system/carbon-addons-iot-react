@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 @mixin vertical-form() {
   & > * {

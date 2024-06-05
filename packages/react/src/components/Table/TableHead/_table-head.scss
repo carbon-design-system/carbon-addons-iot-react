@@ -1,9 +1,9 @@
-@import '../../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-@import 'column-resize';
-@import 'ColumnHeaderRow/column-header-row';
-@import 'FilterHeaderRow/filter-header-row';
-@import 'ColumnGrouping/column-grouping';
+@use '../../../globals/vars' as *;
+@use '@carbon/styles/scss/layout' as *;
+@use 'column-resize' as *;
+@use 'ColumnHeaderRow/column-header-row' as *;
+@use 'FilterHeaderRow/filter-header-row' as *;
+@use 'ColumnGrouping/column-grouping' as *;
 
 .#{$prefix}--data-table {
   th {

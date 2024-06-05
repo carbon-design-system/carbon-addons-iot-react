@@ -2,7 +2,7 @@ import React, { createElement, useMemo, useState } from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { isEmpty } from 'lodash-es';
-import { ArrowRight, CloseOutline, Subtract } from "@carbon/react/icons";
+import { ArrowRight, CloseOutline, Subtract } from '@carbon/react/icons';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import Button from '../Button/Button';

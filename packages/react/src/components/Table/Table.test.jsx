@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { ArrowRight, Screen, TrashCan, ViewOff } from "@carbon/react/icons";
+import { ArrowRight, Screen, TrashCan, ViewOff } from '@carbon/react/icons';
 import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
@@ -2673,9 +2673,7 @@ describe('Table', () => {
         'The value `compact` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(
-      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="sm" />
-    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="sm" />);
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `short` has been deprecated for the `size` prop on the Table component.'
@@ -2686,9 +2684,7 @@ describe('Table', () => {
         'The value `short` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(
-      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />
-    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />);
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `normal` has been deprecated for the `size` prop on the Table component.'

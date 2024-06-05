@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Close } from "@carbon/react/icons";
+import { Close } from '@carbon/react/icons';
 
 import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';

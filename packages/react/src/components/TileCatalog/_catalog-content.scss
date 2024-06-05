@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/config'  as *;
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--sample-tile {
   display: flex;

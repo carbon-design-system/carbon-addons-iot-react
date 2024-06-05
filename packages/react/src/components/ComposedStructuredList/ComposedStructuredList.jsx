@@ -5,9 +5,9 @@ import {
   StructuredListBody,
   StructuredListRow,
   StructuredListCell,
-} from "@carbon/react";
+} from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Bee } from "@carbon/react/icons";
+import { Bee } from '@carbon/react/icons';
 import warning from 'warning';
 import classnames from 'classnames';
 
@@ -36,84 +36,86 @@ const StructuredList = ({
       'ComposedStructuredList component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use StructureList component instead.'
     );
   }
-  return <>
-    <StructuredListWrapper
-      {...StructuredListWrapperProps}
-      className={classnames({
-        [`${iotPrefix}--composed-structured-list__wrapper`]: isFixedWidth,
-      })}
-      selection
-      data-testid={testId}
-    >
-      <StructuredListHead data-testid={`${testId}-head`} className={StructuredListHeadClassName}>
-        <StructuredListRow head>
-          {columns.map(({ id, title, width = undefined }) => (
-            <StructuredListCell
-              className={classnames({
-                [`${iotPrefix}--composed-structured-list__list-cell`]: width !== undefined,
-              })}
-              key={`${id}-column`}
-              title={title}
-              head
-            >
-              {title}
-            </StructuredListCell>
-          ))}
-        </StructuredListRow>
-      </StructuredListHead>
-      <StructuredListBody data-testid={`${testId}-body`}>
-        {data.map((item) => (
-          <StructuredListRow
-            data-testid={`${testId}-row-${item.id}`}
-            key={`${item.id}-row`}
-            onClick={() => onRowClick(item.id)}
-          >
-            {columns.map((col) => (
+  return (
+    <>
+      <StructuredListWrapper
+        {...StructuredListWrapperProps}
+        className={classnames({
+          [`${iotPrefix}--composed-structured-list__wrapper`]: isFixedWidth,
+        })}
+        selection
+        data-testid={testId}
+      >
+        <StructuredListHead data-testid={`${testId}-head`} className={StructuredListHeadClassName}>
+          <StructuredListRow head>
+            {columns.map(({ id, title, width = undefined }) => (
               <StructuredListCell
                 className={classnames({
-                  [`${iotPrefix}--composed-structured-list__list-cell`]: col.width !== undefined,
+                  [`${iotPrefix}--composed-structured-list__list-cell`]: width !== undefined,
                 })}
-                key={`${col.id}-item`}
-                noWrap
-                title={
-                  typeof item.values[col.id] === 'string' ||
-                  typeof item.values[col.id] === 'number'
-                    ? item.values[col.id]
-                    : null
-                }
-                style={
-                  design === 'normal'
-                    ? { '--width': col.width, lineHeight: '16px' }
-                    : { '--width': col.width }
-                }
+                key={`${id}-column`}
+                title={title}
+                head
               >
-                {col.renderDataFunction
-                  ? col.renderDataFunction({
-                      // Call the column renderer if it's provided
-                      value: item.values[col.id],
-                      columnId: col.id,
-                      rowId: item.id,
-                      row: item.values,
-                    })
-                  : item.values[col.id]}
+                {title}
               </StructuredListCell>
             ))}
           </StructuredListRow>
-        ))}
-      </StructuredListBody>
-      {!data.length ? (
-        <div
-          data-testid={`${testId}-empty`}
-          className={`${iotPrefix}--composed-structured-list__empty-content`}
-        >
-          <Bee size={32} width={100} height={100} fill={COLORS.gray} />
-          <div className={`${iotPrefix}--composed-structured-list__loading`}>
-            {loadingDataLabel}
+        </StructuredListHead>
+        <StructuredListBody data-testid={`${testId}-body`}>
+          {data.map((item) => (
+            <StructuredListRow
+              data-testid={`${testId}-row-${item.id}`}
+              key={`${item.id}-row`}
+              onClick={() => onRowClick(item.id)}
+            >
+              {columns.map((col) => (
+                <StructuredListCell
+                  className={classnames({
+                    [`${iotPrefix}--composed-structured-list__list-cell`]: col.width !== undefined,
+                  })}
+                  key={`${col.id}-item`}
+                  noWrap
+                  title={
+                    typeof item.values[col.id] === 'string' ||
+                    typeof item.values[col.id] === 'number'
+                      ? item.values[col.id]
+                      : null
+                  }
+                  style={
+                    design === 'normal'
+                      ? { '--width': col.width, lineHeight: '16px' }
+                      : { '--width': col.width }
+                  }
+                >
+                  {col.renderDataFunction
+                    ? col.renderDataFunction({
+                        // Call the column renderer if it's provided
+                        value: item.values[col.id],
+                        columnId: col.id,
+                        rowId: item.id,
+                        row: item.values,
+                      })
+                    : item.values[col.id]}
+                </StructuredListCell>
+              ))}
+            </StructuredListRow>
+          ))}
+        </StructuredListBody>
+        {!data.length ? (
+          <div
+            data-testid={`${testId}-empty`}
+            className={`${iotPrefix}--composed-structured-list__empty-content`}
+          >
+            <Bee size={32} width={100} height={100} fill={COLORS.gray} />
+            <div className={`${iotPrefix}--composed-structured-list__loading`}>
+              {loadingDataLabel}
+            </div>
           </div>
-        </div>
-      ) : undefined}
-    </StructuredListWrapper>
-  </>;
+        ) : undefined}
+      </StructuredListWrapper>
+    </>
+  );
 };
 
 StructuredList.propTypes = {

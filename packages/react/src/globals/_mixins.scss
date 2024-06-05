@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/globals/scss/mixins';
-@import 'vars';
+@use '@carbon/styles/scss/mixins' as *;
+@use './vars' as *;
 
 @mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
   overflow: hidden;

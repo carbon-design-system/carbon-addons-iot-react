@@ -3,7 +3,7 @@ import React from 'react';
 import { merge, pick, cloneDeep } from 'lodash-es';
 import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Screen, ViewOff } from "@carbon/react/icons";
+import { Screen, ViewOff } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
@@ -28,6 +28,8 @@ import {
   decorateTableColumns,
   getTableDataWithEmptySelectFilter,
 } from './Table.story.helpers';
+
+import { BreadcrumbItem } from '@carbon/react';
 
 const { prefix, iotPrefix } = settings;
 const mockActions = getMockActions(jest.fn);

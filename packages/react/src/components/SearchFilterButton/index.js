@@ -1,1 +1,1 @@
-export { SearchFilterButton } from 'carbon-components-react';
+export { SearchFilterButton } from '@carbon/react';

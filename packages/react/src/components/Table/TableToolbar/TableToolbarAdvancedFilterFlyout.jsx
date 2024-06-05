@@ -1,4 +1,4 @@
-import { Close, Filter } from "@carbon/react/icons";
+import { Close, Filter } from '@carbon/react/icons';
 import {
   Button,
   ComboBox,
@@ -10,7 +10,7 @@ import {
   TextInput,
   DatePicker,
   DatePickerInput,
-} from "@carbon/react";
+} from '@carbon/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { memoize, isEqual } from 'lodash-es';
@@ -267,7 +267,7 @@ const TableToolbarAdvancedFilterFlyout = ({
       iconDescription={toolbarIconLabelText}
       direction={FlyoutMenuDirection.BottomEnd}
       disabled={isDisabled}
-      renderIcon={props => <Filter size={20} {...props} />}
+      renderIcon={(props) => <Filter size={20} {...props} />}
       hideTooltip={false}
       light
       isOpen={advancedFilterFlyoutOpen}

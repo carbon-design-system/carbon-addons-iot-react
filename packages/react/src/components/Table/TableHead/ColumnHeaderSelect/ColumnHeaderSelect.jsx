@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
-import { Draggable } from "@carbon/react/icons";
+import { Draggable } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import Button from '../../../Button';

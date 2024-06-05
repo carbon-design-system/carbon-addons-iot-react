@@ -1,8 +1,8 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, CopyButton, Button } from "@carbon/react";
+import { CodeSnippetSkeleton, CopyButton, Button } from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Upload } from "@carbon/react/icons";
+import { Upload } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

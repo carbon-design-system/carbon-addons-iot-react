@@ -1,10 +1,10 @@
-@import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-@import './card-range-picker';
-@import './card-toolbar';
-@import './card-title';
-@import './data-state-renderer';
-@import '../../globals/mixins';
+@use '../../globals/vars' as *;
+@use '@carbon/styles/scss/layout' as *;
+@use './card-range-picker' as *;
+@use './card-toolbar' as *;
+@use './card-title' as *;
+@use './data-state-renderer' as *;
+@use '../../globals/mixins' as *;
 
 // delcare variables
 $iot-header-padding: $spacing-05;

@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--icon-dropdown {
   .#{$prefix}--list-box__menu-item__option {

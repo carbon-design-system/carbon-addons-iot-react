@@ -10,7 +10,7 @@ import {
   User,
   Information,
   Help,
-} from "@carbon/react/icons";
+} from '@carbon/react/icons';
 
 export const bundledIconNames = [
   'caretUp',

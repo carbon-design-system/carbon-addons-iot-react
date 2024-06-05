@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--view-dropdown__container {
   padding: 0 $spacing-05;

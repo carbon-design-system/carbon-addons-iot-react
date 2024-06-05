@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 $side-panel-width: 320px;
 $side-panel-drawer-width: $spacing-09;

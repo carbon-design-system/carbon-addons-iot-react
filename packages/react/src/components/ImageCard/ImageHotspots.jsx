@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { InlineLoading } from "@carbon/react";
+import { InlineLoading } from '@carbon/react';
 import { omit, isEmpty } from 'lodash-es';
 import warning from 'warning';
 

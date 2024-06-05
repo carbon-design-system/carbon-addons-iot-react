@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Star, Share, TrashCan } from "@carbon/react/icons";
+import { Star, Share, TrashCan } from '@carbon/react/icons';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 

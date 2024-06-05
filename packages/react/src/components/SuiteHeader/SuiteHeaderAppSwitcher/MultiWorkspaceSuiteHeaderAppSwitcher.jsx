@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight, ChevronLeft, Launch, Bee, Grid } from "@carbon/react/icons";
+import { ChevronRight, ChevronLeft, Launch, Bee, Grid } from '@carbon/react/icons';
 import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';

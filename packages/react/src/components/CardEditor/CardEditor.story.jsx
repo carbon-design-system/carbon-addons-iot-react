@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import { EscalatorDown } from '@carbon/pictograms-react';
-import { Basketball, Code } from "@carbon/react/icons";
-import { TextInput, Select, SelectItem } from "@carbon/react";
+import { Basketball, Code } from '@carbon/react/icons';
+import { TextInput, Select, SelectItem } from '@carbon/react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
 import {

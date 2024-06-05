@@ -1,4 +1,4 @@
-import { ChevronDown } from "@carbon/react/icons";
+import { ChevronDown } from '@carbon/react/icons';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import React from 'react';

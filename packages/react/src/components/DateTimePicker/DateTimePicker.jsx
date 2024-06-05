@@ -13,8 +13,8 @@ import {
   OrderedList,
   ListItem,
   TooltipDefinition,
-} from "@carbon/react";
-import { Calendar, WarningFilled } from "@carbon/react/icons";
+} from '@carbon/react';
+import { Calendar, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 

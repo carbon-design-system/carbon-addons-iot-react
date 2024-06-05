@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
-import { OverflowMenu, OverflowMenuItem, Link } from "@carbon/react";
+import { OverflowMenu, OverflowMenuItem, Link } from '@carbon/react';
 import { isNil, uniqBy, cloneDeep, capitalize } from 'lodash-es';
-import { OverflowMenuVertical } from "@carbon/react/icons";
+import { OverflowMenuVertical } from '@carbon/react/icons';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 

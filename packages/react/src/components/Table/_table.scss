@@ -1,12 +1,12 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import 'TableHead/table-head';
-@import 'TableFoot/table-foot';
-@import 'TableSkeletonWithHeaders/table-skeleton-with-headers';
-@import 'TableCellRenderer/table-cell-renderer';
-@import 'TableDetailWizard/table-detail-wizard';
-@import 'TableMultiSortModal/table-multi-sort-modal';
-@import '../../globals/vars';
-@import '../../globals/mixins';
+@use '@carbon/styles/scss/config'  as *;
+@use 'TableHead/table-head' as *;
+@use 'TableFoot/table-foot' as *;
+@use 'TableSkeletonWithHeaders/table-skeleton-with-headers' as *;
+@use 'TableCellRenderer/table-cell-renderer' as *;
+@use 'TableDetailWizard/table-detail-wizard' as *;
+@use 'TableMultiSortModal/table-multi-sort-modal' as *;
+@use '../../globals/vars' as *;
+@use '../../globals/mixins' as *;
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;

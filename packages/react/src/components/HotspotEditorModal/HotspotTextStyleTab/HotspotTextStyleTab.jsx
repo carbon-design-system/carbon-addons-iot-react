@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { merge } from 'lodash-es';
-import { NumberInput } from "@carbon/react";
+import { NumberInput } from '@carbon/react';
 import {
   TrashCan,
   InformationFilled,
   TextBold,
   TextItalic,
   TextUnderline,
-} from "@carbon/react/icons";
+} from '@carbon/react/icons';
 
 import { settings } from '../../../constants/Settings';
 import IconSwitch from '../../IconSwitch/IconSwitch';
@@ -374,7 +374,7 @@ const HotspotTextStyleTab = ({
           <div className={`${iotPrefix}--hotspot-text-style-tab__delete-button-container`}>
             <Button
               kind="ghost"
-              renderIcon={props => <TrashCan size={32} {...props} />}
+              renderIcon={(props) => <TrashCan size={32} {...props} />}
               iconDescription={deleteButtonIconDescription}
               onClick={onDelete}
             >

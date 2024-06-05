@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit, Subtract } from "@carbon/react/icons";
+import { Edit, Subtract } from '@carbon/react/icons';
 import { isEmpty, omit } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
+import { MultiSelect } from '@carbon/react';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -13,7 +14,6 @@ import {
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
-import { MultiSelect } from '@carbon/react';
 import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';

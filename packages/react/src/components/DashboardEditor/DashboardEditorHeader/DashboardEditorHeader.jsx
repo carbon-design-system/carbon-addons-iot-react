@@ -8,13 +8,8 @@ import {
   Tablet,
   Laptop,
   Screen,
-} from "@carbon/react/icons";
-import {
-  FileUploaderButton,
-  TooltipIcon,
-  ContentSwitcher,
-  TextInput,
-} from "@carbon/react";
+} from '@carbon/react/icons';
+import { FileUploaderButton, TooltipIcon, ContentSwitcher, TextInput } from '@carbon/react';
 import { isEmpty } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';

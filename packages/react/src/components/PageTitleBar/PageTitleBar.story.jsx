@@ -1,9 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select, text, boolean, number, withKnobs, optionsKnob } from '@storybook/addon-knobs';
-import { Add, TrashCan, SettingsAdjust, Warning } from "@carbon/react/icons";
+import { Add, TrashCan, SettingsAdjust, Warning } from '@carbon/react/icons';
 import { spacing05 } from '@carbon/layout';
-import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from "@carbon/react";
+import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from '@carbon/react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
@@ -30,7 +30,7 @@ export const commonPageTitleBarProps = {
       <Button
         className="some-right-content"
         size="md"
-        renderIcon={props => <Add size={24} {...props} />}
+        renderIcon={(props) => <Add size={24} {...props} />}
         onClick={action('click')}
       >
         Take an action
@@ -51,7 +51,7 @@ export const PageTitleBarNodeTooltip = () => (
       }}
     >
       <a href="/">Link one</a>
-      <Button renderIcon={props => <Add size={24} {...props} />} onClick={action('click')}>
+      <Button renderIcon={(props) => <Add size={24} {...props} />} onClick={action('click')}>
         Take an action
       </Button>
     </div>
@@ -195,7 +195,7 @@ export const WithSelect = () => (
       extraContent={
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button
-            renderIcon={props => <SettingsAdjust size={24} {...props} />}
+            renderIcon={(props) => <SettingsAdjust size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -210,7 +210,7 @@ export const WithSelect = () => (
             <SelectItem value="option-4" text="Option 4" />
           </Select>
           <Button
-            renderIcon={props => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -220,7 +220,7 @@ export const WithSelect = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={props => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -257,7 +257,7 @@ export const WithEverything = () => (
       extraContent={
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button
-            renderIcon={props => <SettingsAdjust size={24} {...props} />}
+            renderIcon={(props) => <SettingsAdjust size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -274,7 +274,7 @@ export const WithEverything = () => (
             labelText="Search"
           />
           <Button
-            renderIcon={props => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -284,7 +284,7 @@ export const WithEverything = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={props => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -396,7 +396,7 @@ export const WithDynamicScrolling = () => (
       extraContent={
         <div style={{ display: 'flex' }}>
           <Button
-            renderIcon={props => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -406,7 +406,7 @@ export const WithDynamicScrolling = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={props => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -459,7 +459,7 @@ export const WithDynamicScrollingAndTabs = () => (
       extraContent={
         <div style={{ display: 'flex' }}>
           <Button
-            renderIcon={props => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -469,7 +469,7 @@ export const WithDynamicScrollingAndTabs = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={props => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan size={24} {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly

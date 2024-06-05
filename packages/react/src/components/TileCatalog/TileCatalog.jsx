@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { RadioTile, Tile, SkeletonText, TableToolbarSearch } from "@carbon/react";
-import { Bee } from "@carbon/react/icons";
+import { RadioTile, Tile, SkeletonText, TableToolbarSearch } from '@carbon/react';
+import { Bee } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';

@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 .#{$iot-prefix}-table-foot {
   border-top: 2px solid $ui-03;

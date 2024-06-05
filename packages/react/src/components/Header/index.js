@@ -10,4 +10,4 @@ export {
   HeaderNavigation,
   HeaderPanel,
   HeaderSideNavItems,
-} from 'carbon-components-react';
+} from '@carbon/react';

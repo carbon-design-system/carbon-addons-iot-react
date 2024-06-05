@@ -1,5 +1,5 @@
-@import '../../globals/vars';
-@import '~@carbon/motion/scss/motion.scss';
+@use '../../globals/vars' as *;
+@use '@carbon/styles/scss/motion' as *;
 
 // wraps the entire component
 .#{$iot-prefix}--date-time-pickerv2__wrapper {

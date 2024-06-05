@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { CheckmarkFilled, WarningAltFilled, WarningFilled } from "@carbon/react/icons";
+import { CheckmarkFilled, WarningAltFilled, WarningFilled } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

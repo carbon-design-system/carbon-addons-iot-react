@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight, Subtract } from "@carbon/react/icons";
+import { ArrowRight, Subtract } from '@carbon/react/icons';
 import { isEmpty } from 'lodash-es';
 
 import ComposedModal from '../ComposedModal/ComposedModal';

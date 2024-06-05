@@ -52,7 +52,7 @@ import {
   Flag,
   Tag,
   Alarm,
-} from "@carbon/react/icons";
+} from '@carbon/react/icons';
 
 import {
   CARD_SIZES,

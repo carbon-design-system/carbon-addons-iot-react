@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Bee } from "@carbon/react/icons";
+import { Bee } from '@carbon/react/icons';
 import { spacing05 } from '@carbon/layout';
 
 import dayjs from '../../utils/dayjs';

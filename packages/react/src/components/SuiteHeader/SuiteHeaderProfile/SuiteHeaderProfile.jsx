@@ -2,10 +2,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonSkeleton } from "@carbon/react";
+import { ButtonSkeleton, SkeletonText } from '@carbon/react';
 
 import Button from '../../Button';
-import { SkeletonText } from '@carbon/react';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 

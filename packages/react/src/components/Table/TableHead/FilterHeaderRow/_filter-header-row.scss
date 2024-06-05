@@ -1,5 +1,5 @@
-@import '../../../../globals/vars';
-@import '../../../../globals/mixins';
+@use '../../../../globals/vars' as *;
+@use '../../../../globals/mixins' as *;
 
 $grouped-columns-filter-border-width: 2px;
 

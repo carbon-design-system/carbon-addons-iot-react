@@ -1,5 +1,5 @@
-@import '../../../globals/vars';
-@import '../list-vars';
+@use '../../../globals/vars' as *;
+@use '../list-vars' as *;
 
 .#{$iot-prefix}--list-header {
   display: flex;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Tree, Add } from "@carbon/react/icons";
-import { ContentSwitcher } from "@carbon/react";
+import { Tree, Add } from '@carbon/react/icons';
+import { ContentSwitcher } from '@carbon/react';
 
 import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';

@@ -1,9 +1,9 @@
-import { ClickableTile } from "@carbon/react";
+import { ClickableTile } from '@carbon/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import { g10 } from '@carbon/themes';
-import { Add } from "@carbon/react/icons";
+import { Add } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

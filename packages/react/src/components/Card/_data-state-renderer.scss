@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--data-state-container {
   // the custom property (CSS var) is defined in the Card that is using it

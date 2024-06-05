@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '@carbon/styles/scss/config'  as *;
 
 .#{$iot-prefix}--wizard-inline {
   &__header {

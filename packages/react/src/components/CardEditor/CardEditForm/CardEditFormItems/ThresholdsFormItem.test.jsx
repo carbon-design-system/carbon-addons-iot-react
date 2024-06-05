@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { green50 } from '@carbon/colors';
-import { Help } from "@carbon/react/icons";
+import { Help } from '@carbon/react/icons';
 
 import { validThresholdIcons, validThresholdColors } from '../../../DashboardEditor/editorUtils';
 

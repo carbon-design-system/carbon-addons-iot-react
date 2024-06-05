@@ -2,13 +2,7 @@
 import React, { Fragment } from 'react';
 import { text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import {
-  CheckmarkFilled,
-  Rocket,
-  StarFilled,
-  Activity,
-  Light,
-} from "@carbon/react/icons";
+import { CheckmarkFilled, Rocket, StarFilled, Activity, Light } from '@carbon/react/icons';
 import { green40 } from '@carbon/colors';
 import { spacing07 } from '@carbon/layout';
 

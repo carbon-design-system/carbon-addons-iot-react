@@ -1,5 +1,5 @@
-@import '../../../globals/vars';
-@import '../../../globals/spacing';
+@use '../../../globals/vars' as *;
+@use '../../../globals/spacing' as *;
 
 // The 6-dots grable handle area on a row that can be dragged. This is really that the parent of
 // that picture so the draggable area is a larger, square.

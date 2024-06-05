@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/components/tag/tag';
+@use '@carbon/styles/scss/components/tag' as *;
 
 html[dir='rtl'] {
   .#{$prefix}--tag--filter {

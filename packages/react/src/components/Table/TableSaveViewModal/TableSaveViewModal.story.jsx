@@ -1,7 +1,7 @@
 import React, { Fragment, useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
-import { AccordionItem, Accordion } from "@carbon/react";
+import { AccordionItem, Accordion } from '@carbon/react';
 
 import { TextArea } from '../../TextArea';
 

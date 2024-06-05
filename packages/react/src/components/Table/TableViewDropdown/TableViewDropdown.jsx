@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown } from "@carbon/react";
-import { Settings } from "@carbon/react/icons";
+import { Dropdown } from '@carbon/react';
+import { Settings } from '@carbon/react/icons';
 
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';

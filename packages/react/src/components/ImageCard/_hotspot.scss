@@ -1,8 +1,8 @@
 // Part of the css and the colors used come from old StyledComponents code
 // and should be replaced with actual carbon colors and design. See issue 1806
 
-@import '../../globals/vars';
-@import '../../globals/theme';
+@use '../../globals/vars' as *;
+@use '../../globals/theme' as *;
 
 $selected-border-width: $spacing-01;
 $selected-border: solid $selected-border-width $interactive-04;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, object, select } from '@storybook/addon-knobs';
-import { Tooltip } from "@carbon/react";
-import { Warning } from "@carbon/react/icons";
+import { Tooltip } from '@carbon/react';
+import { Warning } from '@carbon/react/icons';
 import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';

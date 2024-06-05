@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
-import { Add, Search } from "@carbon/react/icons";
-import { ButtonSkeleton } from "@carbon/react";
+import { Add, Search } from '@carbon/react/icons';
+import { ButtonSkeleton } from '@carbon/react';
 
 import Button from './Button';
 

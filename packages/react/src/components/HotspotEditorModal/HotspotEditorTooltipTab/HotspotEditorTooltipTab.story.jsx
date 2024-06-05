@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
-import { InformationSquareFilled, InformationFilled } from "@carbon/react/icons";
+import { InformationSquareFilled, InformationFilled } from '@carbon/react/icons';
 
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 

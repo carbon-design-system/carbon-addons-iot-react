@@ -1,24 +1,18 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Column,
-  Filter,
-  Download,
-  Edit,
-  OverflowMenuVertical,
-} from "@carbon/react/icons";
+import { Column, Filter, Download, Edit, OverflowMenuVertical } from '@carbon/react/icons';
 import {
   TableToolbar as CarbonTableToolbar,
   TableToolbarContent,
   TableBatchActions,
   TableBatchAction,
   Tooltip,
-} from "@carbon/react";
+  OverflowMenuItem,
+} from '@carbon/react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import { isNil, pick } from 'lodash-es';
 
-import { OverflowMenuItem } from '@carbon/react';
 import { OverflowMenu } from '../../OverflowMenu';
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
@@ -345,7 +339,7 @@ const TableToolbar = ({
               flipped={langDir === 'ltr'}
               direction="bottom"
               onClick={(e) => e.stopPropagation()}
-              renderIcon={props => <OverflowMenuVertical size={20} {...props} />}
+              renderIcon={(props) => <OverflowMenuVertical size={20} {...props} />}
               tabIndex={shouldShowBatchActions ? 0 : -1}
               size="md"
               menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
@@ -457,7 +451,7 @@ const TableToolbar = ({
               }}
               description={i18n.downloadIconDescription}
               testId="download-button"
-              renderIcon={props => <Download size={20} {...props} />}
+              renderIcon={(props) => <Download size={20} {...props} />}
               disabled={isDisabled}
               langDir={langDir}
             />
@@ -468,7 +462,7 @@ const TableToolbar = ({
               onClick={onToggleColumnSelection}
               description={i18n.columnSelectionButtonAria}
               testId="column-selection-button"
-              renderIcon={props => <Column size={20} {...props} />}
+              renderIcon={(props) => <Column size={20} {...props} />}
               disabled={isDisabled}
               langDir={langDir}
             />
@@ -479,7 +473,7 @@ const TableToolbar = ({
               onClick={onToggleFilter}
               description={i18n.filterButtonAria}
               testId="filter-button"
-              renderIcon={props => <Filter size={20} {...props} />}
+              renderIcon={(props) => <Filter size={20} {...props} />}
               disabled={isDisabled}
               langDir={langDir}
             />
@@ -535,7 +529,7 @@ const TableToolbar = ({
               description={i18n.editButtonAria}
               onClick={onShowRowEdit}
               testId="row-edit-button"
-              renderIcon={props => <Edit size={20} {...props} />}
+              renderIcon={(props) => <Edit size={20} {...props} />}
               disabled={isDisabled}
               langDir={langDir}
             />
@@ -564,7 +558,7 @@ const TableToolbar = ({
               flipped={langDir === 'ltr'}
               data-testid="table-head--overflow"
               onClick={(e) => e.stopPropagation()}
-              renderIcon={props => <OverflowMenuVertical size={20} {...props} />}
+              renderIcon={(props) => <OverflowMenuVertical size={20} {...props} />}
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
               onOpen={() => setIsOpen(true)}
               onClose={() => setIsOpen(false)}

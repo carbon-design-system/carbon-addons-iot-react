@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { mount } from '@cypress/react';
 import { onlyOn } from '@cypress/skip-test';
 import { omit } from 'lodash-es';
-import { Bee, Close } from "@carbon/react/icons";
+import { Bee, Close } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 import { gray20 } from '@carbon/colors';
 import MockDate from 'mockdate';

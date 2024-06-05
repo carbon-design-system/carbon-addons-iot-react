@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
   // Revert the styles added by the tooltip since we want

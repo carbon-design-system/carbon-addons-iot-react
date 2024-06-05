@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Bee } from "@carbon/react/icons";
+import { Bee } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import { CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';

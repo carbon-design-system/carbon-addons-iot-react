@@ -55,10 +55,12 @@ $css--use-experimental-grid: false !default;
 $css--use-experimental-grid-fallback: false !default;
 
 /// Set the theme to Gray 10
-@import '~@carbon/themes/scss/themes';
+@use '@carbon/styles/scss/themes' as *;
 $carbon--theme: $carbon--theme--g10;
-// Use the gray 10 theme
-@include carbon--theme();
+@use '@carbon/styles/scss/theme' as theme;
+
+// Apply the theme globally
+@include theme.apply($carbon--theme);
 
 @import 'globals/feature-flags';
 @import 'globals/vars';

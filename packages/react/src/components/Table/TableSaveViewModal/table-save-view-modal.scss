@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--save-view-modal__body-text {
   margin-bottom: $spacing-06;

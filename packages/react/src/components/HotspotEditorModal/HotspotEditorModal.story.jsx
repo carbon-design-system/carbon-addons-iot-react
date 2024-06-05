@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
-import { InformationSquareFilled, InformationFilled } from "@carbon/react/icons";
+import { InformationSquareFilled, InformationFilled } from '@carbon/react/icons';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';

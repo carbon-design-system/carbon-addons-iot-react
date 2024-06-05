@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 button.#{$iot-prefix}--tooltip-svg-wrapper,
 .#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost:hover {

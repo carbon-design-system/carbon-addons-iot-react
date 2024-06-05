@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
-import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from "@carbon/react/icons";
+import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

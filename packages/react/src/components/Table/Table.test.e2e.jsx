@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 import { onlyOn } from '@cypress/skip-test';
-import { Button } from "@carbon/react";
-import { ArrowRight, TrashCan } from "@carbon/react/icons";
+import { Button } from '@carbon/react';
+import { ArrowRight, TrashCan } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 

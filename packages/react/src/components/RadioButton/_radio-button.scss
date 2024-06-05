@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/components/radio-button/radio-button';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/components/radio-button' as *;
+@use '../../globals/vars' as *;
 
 html[dir='rtl'] {
   .#{$prefix}--radio-button-wrapper:not(:last-of-type) {

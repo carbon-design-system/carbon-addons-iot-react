@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import { settings } from 'carbon-components';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs';
-import { OverflowMenuVertical } from "@carbon/react/icons";
+import { OverflowMenuVertical } from '@carbon/react/icons';
 
 import Button from '../Button';
 

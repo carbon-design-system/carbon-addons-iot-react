@@ -1,4 +1,4 @@
-import { Draggable } from "@carbon/react/icons";
+import { Draggable } from '@carbon/react/icons';
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TrashCan, Edit } from "@carbon/react/icons";
-
+import { TrashCan, Edit } from '@carbon/react/icons';
 import { Tag } from '@carbon/react';
+
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import List from '../../List/List';

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
-import { Draggable, ChevronUp, ChevronDown, Locked } from "@carbon/react/icons";
+import { Draggable, ChevronUp, ChevronDown, Locked } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 

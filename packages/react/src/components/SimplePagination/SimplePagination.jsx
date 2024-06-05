@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CaretLeft, CaretRight } from "@carbon/react/icons";
+import { CaretLeft, CaretRight } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';

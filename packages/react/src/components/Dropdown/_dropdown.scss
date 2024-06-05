@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/components/dropdown/dropdown';
+@use '@carbon/styles/scss/components/dropdown';
 
 .#{$iot-prefix}--dropdown__label {
   display: flex;

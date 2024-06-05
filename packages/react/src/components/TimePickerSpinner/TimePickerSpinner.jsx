@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TimePicker } from "@carbon/react";
-import { CaretDownGlyph, CaretUpGlyph } from "@carbon/react/icons";
+import { TimePicker } from '@carbon/react';
+import { CaretDownGlyph, CaretUpGlyph } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { merge } from 'lodash-es';
 

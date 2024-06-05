@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, within, screen, createEvent, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Bee } from "@carbon/react/icons";
+import { Bee } from '@carbon/react/icons';
 import fileDownload from 'js-file-download';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';

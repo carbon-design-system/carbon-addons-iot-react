@@ -10,7 +10,7 @@ import {
   QqPlot,
   ChartEvaluation,
   ChartSunburst,
-} from "@carbon/react/icons";
+} from '@carbon/react/icons';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 

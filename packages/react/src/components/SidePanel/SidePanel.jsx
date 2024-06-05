@@ -1,13 +1,9 @@
 import React, { useRef, useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip } from "@carbon/react";
+import { Tooltip } from '@carbon/react';
 import { debounce } from 'lodash-es';
-import {
-  Close,
-  ChevronLeft as OpenLeft,
-  ChevronRight as OpenRight,
-} from "@carbon/react/icons";
+import { Close, ChevronLeft as OpenLeft, ChevronRight as OpenRight } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';

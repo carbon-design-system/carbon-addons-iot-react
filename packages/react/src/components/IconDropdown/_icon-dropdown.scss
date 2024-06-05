@@ -1,6 +1,6 @@
-@import '~carbon-components/scss/components/dropdown/dropdown';
+@use '@carbon/styles/scss/components/dropdown' as *;
 
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--dropdown__image-button:hover {
   border-color: transparent;

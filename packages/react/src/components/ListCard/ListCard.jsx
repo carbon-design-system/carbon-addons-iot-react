@@ -6,7 +6,7 @@ import {
   StructuredListRow,
   StructuredListCell,
   Link,
-} from "@carbon/react";
+} from '@carbon/react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { isEmpty } from 'lodash-es';

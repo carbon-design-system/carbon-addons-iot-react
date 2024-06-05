@@ -1,5 +1,5 @@
-@import '../../../globals/mixins';
-@import '../../../globals/vars';
+@use '../../../globals/mixins' as *;
+@use '../../../globals/vars' as *;
 
 .drag-panel {
   position: absolute;

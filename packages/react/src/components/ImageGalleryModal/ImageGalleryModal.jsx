@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Grid, List } from "@carbon/react/icons";
+import { Grid, List } from '@carbon/react/icons';
 import { omit, isEqual } from 'lodash-es';
-import { Modal } from "@carbon/react";
+import { Modal, Search, ContentSwitcher } from '@carbon/react';
 
 import { settings } from '../../constants/Settings';
 import ComposedModal from '../ComposedModal';
 import IconSwitch from '../IconSwitch/IconSwitch';
-import { Search } from '@carbon/react';
-import { ContentSwitcher } from '@carbon/react';
 import { ComposedModalPropTypes } from '../ComposedModal/ComposedModal';
 import { usePrevious } from '../../hooks/usePrevious';
 
@@ -157,113 +155,115 @@ const ImageGalleryModal = ({
   };
 
   const baseClass = `${iotPrefix}--image-gallery-modal`;
-  return <>
-    {isDeleteWarningModalOpen ? ( // warning modal to show first
-      <Modal
-        className={`${baseClass}--warning-modal`}
-        open={isDeleteWarningModalOpen}
-        danger
-        primaryButtonText={deleteLabelText}
-        secondaryButtonText={modalSecondaryButtonLabelText}
-        modalHeading={deleteModalTitleText(selectedImage?.id)}
-        size="xs"
-        closeButtonLabel={modalCloseIconDescriptionText}
-        onRequestClose={() => setIsDeleteWarningModalOpen(false)}
-        onRequestSubmit={handleDelete}
-        data-testid={`${testId}-warning-modal`}
-      />
-    ) : null}
-    <ComposedModal
-      type="normal"
-      className={classnames(className, baseClass)}
-      footer={{
-        isPrimaryButtonDisabled: !selectedImage,
-        primaryButtonLabel: modalPrimaryButtonLabelText,
-        secondaryButtonLabel: modalSecondaryButtonLabelText,
-        ...footer,
-      }}
-      header={{
-        label: modalLabelText,
-        title: modalTitleText,
-      }}
-      isLarge
-      iconDescription={modalCloseIconDescriptionText}
-      onClose={onClose}
-      onSubmit={() => {
-        // title only makes sense in the modal selector, not in the image card
-        onSubmit(omit(selectedImage, 'title'));
-      }}
-      testId={testId}
-      {...composedModalProps}
-    >
-      <div className={`${baseClass}__top-section`}>
-        <p className={`${baseClass}__instruction-text`} alt={instructionText}>
-          {instructionText}
-        </p>
-        <div className={`${baseClass}__search-list-view-container`}>
-          <Search
-            id={`${baseClass}--search`}
-            onChange={filterContent}
-            labelText=""
-            light
-            placeholder={searchPlaceHolderText}
-            data-testid={`${testId}-search-input`}
-          />
-          <ContentSwitcher
-            className={`${baseClass}__content-switcher`}
-            onChange={(selected) => {
-              setActiveView(selected.name);
-            }}
-            selectedIndex={activeView === GRID ? 0 : 1}
-            data-testid={`${testId}-content-switcher`}
-          >
-            <IconSwitch
-              name={GRID}
-              size="large"
-              text={gridButtonText}
-              renderIcon={props => <Grid size={20} {...props} />}
-              index={0}
-              data-testid={`${testId}-grid-switch`}
+  return (
+    <>
+      {isDeleteWarningModalOpen ? ( // warning modal to show first
+        <Modal
+          className={`${baseClass}--warning-modal`}
+          open={isDeleteWarningModalOpen}
+          danger
+          primaryButtonText={deleteLabelText}
+          secondaryButtonText={modalSecondaryButtonLabelText}
+          modalHeading={deleteModalTitleText(selectedImage?.id)}
+          size="xs"
+          closeButtonLabel={modalCloseIconDescriptionText}
+          onRequestClose={() => setIsDeleteWarningModalOpen(false)}
+          onRequestSubmit={handleDelete}
+          data-testid={`${testId}-warning-modal`}
+        />
+      ) : null}
+      <ComposedModal
+        type="normal"
+        className={classnames(className, baseClass)}
+        footer={{
+          isPrimaryButtonDisabled: !selectedImage,
+          primaryButtonLabel: modalPrimaryButtonLabelText,
+          secondaryButtonLabel: modalSecondaryButtonLabelText,
+          ...footer,
+        }}
+        header={{
+          label: modalLabelText,
+          title: modalTitleText,
+        }}
+        isLarge
+        iconDescription={modalCloseIconDescriptionText}
+        onClose={onClose}
+        onSubmit={() => {
+          // title only makes sense in the modal selector, not in the image card
+          onSubmit(omit(selectedImage, 'title'));
+        }}
+        testId={testId}
+        {...composedModalProps}
+      >
+        <div className={`${baseClass}__top-section`}>
+          <p className={`${baseClass}__instruction-text`} alt={instructionText}>
+            {instructionText}
+          </p>
+          <div className={`${baseClass}__search-list-view-container`}>
+            <Search
+              id={`${baseClass}--search`}
+              onChange={filterContent}
+              labelText=""
+              light
+              placeholder={searchPlaceHolderText}
+              data-testid={`${testId}-search-input`}
             />
-            <IconSwitch
-              name={LIST}
-              size="large"
-              text={listButtonText}
-              renderIcon={props => <List size={20} {...props} />}
-              index={1}
-              data-testid={`${testId}-list-switch`}
-            />
-          </ContentSwitcher>
-        </div>
-      </div>
-      <div className={`${baseClass}__flex-wrapper`}>
-        <div
-          className={classnames(`${baseClass}__scroll-panel`, {
-            [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
-            [`${baseClass}__scroll-panel--list`]: activeView === LIST,
-          })}
-        >
-          {filteredContent.map((imageProps) => (
-            <ImageTile
-              isWide={activeView === LIST}
-              key={imageProps.id}
-              onDelete={(id) => {
-                // set the current selected image and popup the warning modal
-                if (selectedImage?.id !== id) {
-                  setSelectedImage(imageProps);
-                }
-                setIsDeleteWarningModalOpen(true);
+            <ContentSwitcher
+              className={`${baseClass}__content-switcher`}
+              onChange={(selected) => {
+                setActiveView(selected.name);
               }}
-              {...imageProps}
-              toggleImageSelection={() => toggleImageSelection(imageProps)}
-              isSelected={selectedImage?.id === imageProps.id}
-              testId={`${testId}-${imageProps.id}`}
-            />
-          ))}
+              selectedIndex={activeView === GRID ? 0 : 1}
+              data-testid={`${testId}-content-switcher`}
+            >
+              <IconSwitch
+                name={GRID}
+                size="large"
+                text={gridButtonText}
+                renderIcon={(props) => <Grid size={20} {...props} />}
+                index={0}
+                data-testid={`${testId}-grid-switch`}
+              />
+              <IconSwitch
+                name={LIST}
+                size="large"
+                text={listButtonText}
+                renderIcon={(props) => <List size={20} {...props} />}
+                index={1}
+                data-testid={`${testId}-list-switch`}
+              />
+            </ContentSwitcher>
+          </div>
         </div>
-      </div>
-    </ComposedModal>
-  </>;
+        <div className={`${baseClass}__flex-wrapper`}>
+          <div
+            className={classnames(`${baseClass}__scroll-panel`, {
+              [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
+              [`${baseClass}__scroll-panel--list`]: activeView === LIST,
+            })}
+          >
+            {filteredContent.map((imageProps) => (
+              <ImageTile
+                isWide={activeView === LIST}
+                key={imageProps.id}
+                onDelete={(id) => {
+                  // set the current selected image and popup the warning modal
+                  if (selectedImage?.id !== id) {
+                    setSelectedImage(imageProps);
+                  }
+                  setIsDeleteWarningModalOpen(true);
+                }}
+                {...imageProps}
+                toggleImageSelection={() => toggleImageSelection(imageProps)}
+                isSelected={selectedImage?.id === imageProps.id}
+                testId={`${testId}-${imageProps.id}`}
+              />
+            ))}
+          </div>
+        </div>
+      </ComposedModal>
+    </>
+  );
 };
 
 ImageGalleryModal.propTypes = propTypes;

@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { isNil, uniqBy, cloneDeep, merge } from 'lodash-es';
-import { CloseOutline } from "@carbon/react/icons";
+import { CloseOutline } from '@carbon/react/icons';
 import warning from 'warning';
 import classNames from 'classnames';
 

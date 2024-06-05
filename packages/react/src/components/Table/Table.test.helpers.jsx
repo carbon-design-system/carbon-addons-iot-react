@@ -1,5 +1,5 @@
 import React from 'react';
-import { Add, ArrowRight } from "@carbon/react/icons";
+import { Add, ArrowRight } from '@carbon/react/icons';
 
 const getSentence = (index, words) => {
   const getWord = (i, step = 1) => words[(step * i) % words.length];

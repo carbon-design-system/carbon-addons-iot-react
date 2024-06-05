@@ -2,11 +2,11 @@ import React, { useMemo, useState, useRef, useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { merge, pick, uniqueId } from 'lodash-es';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import { Table as CarbonTable, TableContainer, Tag } from "@carbon/react";
+import { Table as CarbonTable, TableContainer, Tag } from '@carbon/react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import warning from 'warning';
-import { FilterEdit } from "@carbon/react/icons";
+import { FilterEdit } from '@carbon/react/icons';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';

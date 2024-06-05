@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { User, Help } from "@carbon/react/icons";
+import { User, Help } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
@@ -30,7 +30,8 @@ describe('Header', () => {
             size={20}
             fill="white"
             description="Icon"
-            className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+            className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+          />
         ),
         childContent: [
           {

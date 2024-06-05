@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
-import { Checkbox, Help, User } from "@carbon/react/icons";
+import { Checkbox, Help, User } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 
@@ -42,7 +42,8 @@ const commonProps = {
           size={20}
           fill="white"
           description="Help icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
       childContent: [
         {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TableHeader, TableRow, Button } from "@carbon/react";
-import { Settings } from "@carbon/react/icons";
+import { TableHeader, TableRow, Button } from '@carbon/react';
+import { Settings } from '@carbon/react/icons';
 
 import { settings } from '../../../../constants/Settings';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';

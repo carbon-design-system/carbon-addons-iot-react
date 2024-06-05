@@ -2,8 +2,8 @@ import React, { useMemo, useState, useRef, useEffect, useCallback } from 'react'
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
-import { TextInput } from "@carbon/react";
-import { Time, EditOff, WarningAltFilled, WarningFilled } from "@carbon/react/icons";
+import { TextInput } from '@carbon/react';
+import { Time, EditOff, WarningAltFilled, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

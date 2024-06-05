@@ -4,11 +4,9 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add as AddIcon, TrashCan, BeeBat, Activity, ViewOff, Error } from "@carbon/react/icons";
-import Arrow from '@carbon/icons-react/es/arrow--right/16';
-import Add from '@carbon/icons-react/es/add/16';
-import Edit from '@carbon/icons-react/es/edit/16';
-import { ComboBox, DatePickerInput, NumberInput } from "@carbon/react";
+import { Add as AddIcon, TrashCan, BeeBat, Activity, ViewOff, Error } from '@carbon/react/icons';
+import { Arrow, Add, Edit } from '@carbon/react/icons';
+import { ComboBox, DatePickerInput, NumberInput } from '@carbon/react';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
@@ -445,13 +443,13 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     ? [
         {
           id: 'drilldown',
-          renderIcon: Arrow,
+          renderIcon: <Arrow size={16} />,
           iconDescription: 'Drill in',
           labelText: 'Drill in',
         },
         {
           id: 'Add',
-          renderIcon: Add,
+          renderIcon: <Add size={16} />,
           iconDescription: 'Add',
           labelText: 'Add',
           isOverflow: true,
@@ -488,7 +486,7 @@ export const getDrillDownRowAction = () => ({
 
 export const getOverflowEditRowAction = () => ({
   id: 'edit',
-  renderIcon: Edit,
+  renderIcon: <Edit size={16} />,
   labelText: 'Edit',
   isOverflow: true,
   iconDescription: 'Edit',

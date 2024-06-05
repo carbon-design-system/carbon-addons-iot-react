@@ -1,5 +1,5 @@
-@import '../../globals/vars';
-@import '../../globals/typography';
+@use '../../globals/vars' as *;
+@use '../../globals/typography' as *;
 
 @mixin condensed-style() {
   @include make-sticky();

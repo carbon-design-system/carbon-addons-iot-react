@@ -9,14 +9,14 @@
  */
 import React, { useRef, useState, useMemo } from 'react';
 import { isNil, isEmpty } from 'lodash-es';
-import { Edit } from "@carbon/react/icons";
+import { Edit } from '@carbon/react/icons';
+import { TextInput } from '@carbon/react';
 
 import {
   formatNumberWithPrecision,
   findMatchingThresholds,
 } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
-import { TextInput } from '@carbon/react';
 import { HotspotContentPropTypes } from '../../constants/SharedPropTypes';
 
 import CardIcon from './CardIcon';

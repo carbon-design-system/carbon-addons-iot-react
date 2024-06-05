@@ -1,7 +1,7 @@
-@import './side-nav-carbon';
-@import '../../globals/typography';
-@import '../../globals/vars';
-@import '../../globals/spacing';
+@use './side-nav-carbon' as *;
+@use '../../globals/typography' as *;
+@use '../../globals/vars' as *;
+@use '../../globals/spacing' as *;
 
 /////////////////////////////////////////////
 // AI applications dark sidenav theme styles

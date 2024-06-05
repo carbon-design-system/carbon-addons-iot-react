@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import { OverflowMenu as CarbonOverflowMenu } from "@carbon/react";
+import { OverflowMenu as CarbonOverflowMenu } from '@carbon/react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { getMenuOffset } from 'carbon-components-react/es/components/OverflowMenu/OverflowMenu';
@@ -14,13 +14,13 @@ import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
 } from 'carbon-components-react/es/internal/FloatingMenu';
-import { OverflowMenuVertical } from "@carbon/react/icons";
+import { OverflowMenuVertical } from '@carbon/react/icons';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 
-export { OverflowMenuItem } from 'carbon-components-react';
+export { OverflowMenuItem } from '@carbon/react';
 
 const { prefix: carbonPrefix, iotPrefix } = settings;
 

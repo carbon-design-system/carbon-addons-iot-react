@@ -1,5 +1,5 @@
-@import '../../../globals/vars';
-@import '../mixins';
+@use '../../../globals/vars' as *;
+@use '../mixins' as *;
 
 .#{$iot-prefix}--hotspot-editor-tooltip-tab {
   background-color: $ui-01;

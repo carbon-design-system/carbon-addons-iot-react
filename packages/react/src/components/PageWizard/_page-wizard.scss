@@ -1,6 +1,6 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/config' as *;
+@use '@carbon/styles/scss/typography' as *;
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--page-wizard {
   display: flex;

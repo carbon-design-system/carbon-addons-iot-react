@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { spacing05, spacing07, layout06 } from '@carbon/layout';
-import { SkeletonText } from "@carbon/react";
+import { SkeletonText } from '@carbon/react';
 import warning from 'warning';
 
 import Button from '../Button/Button';

@@ -1,4 +1,4 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
 // We need to override some List specific styles to
 // make the list behave correctly

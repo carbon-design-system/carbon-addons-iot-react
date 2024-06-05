@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Tooltip } from "@carbon/react";
+import { Tooltip } from '@carbon/react';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';

@@ -1,4 +1,4 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
 
 .#{$iot-prefix}--time-series-card--stateful-table {
   padding: 0 $spacing-05 $spacing-05;

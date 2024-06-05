@@ -3,7 +3,7 @@
 
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight, Bee } from "@carbon/react/icons";
+import { ArrowRight, Bee } from '@carbon/react/icons';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';

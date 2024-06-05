@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/components/breadcrumb/breadcrumb';
-@import '../../globals/vars';
+@use '@carbon/styles/scss/components/breadcrumb' as *;
+@use '../../globals/vars' as *;
 
 .#{$prefix}--breadcrumb {
   display: flex;

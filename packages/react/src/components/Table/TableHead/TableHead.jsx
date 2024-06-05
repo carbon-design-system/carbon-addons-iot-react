@@ -7,12 +7,13 @@ import {
   TableRow,
   TableExpandHeader,
   Checkbox,
-} from "@carbon/react";
+  OverflowMenuItem,
+} from '@carbon/react';
 import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
-import { FilterEdit } from "@carbon/react/icons";
+import { FilterEdit } from '@carbon/react/icons';
 
 import {
   TableColumnsPropTypes,
@@ -29,7 +30,6 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import { OverflowMenu } from '../../OverflowMenu';
-import { OverflowMenuItem } from '@carbon/react';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
 import { pinColumnClassNames } from '../tableUtilities';

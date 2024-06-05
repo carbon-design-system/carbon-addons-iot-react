@@ -9,7 +9,7 @@ import {
   Home,
   RecentlyViewed,
   Apps,
-} from "@carbon/react/icons";
+} from '@carbon/react/icons';
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
 import { partition } from 'lodash-es';
@@ -167,7 +167,8 @@ const HeaderProps = {
           size={24}
           fill="white"
           description="Icon"
-          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`} />
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
+        />
       ),
     },
   ],

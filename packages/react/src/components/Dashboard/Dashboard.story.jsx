@@ -1,10 +1,10 @@
 import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Application, Group } from "@carbon/react/icons";
+import { Application, Group } from '@carbon/react/icons';
 import { spacing05, spacing04, spacing09 } from '@carbon/layout';
 import { gray20, red60, green50, yellow } from '@carbon/colors';
-import { ClickableTile } from "@carbon/react";
+import { ClickableTile } from '@carbon/react';
 
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';

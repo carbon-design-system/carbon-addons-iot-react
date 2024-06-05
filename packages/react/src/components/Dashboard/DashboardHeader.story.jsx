@@ -1,10 +1,8 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Pin from '@carbon/icons-react/es/pin/20';
-import Edit from '@carbon/icons-react/es/edit/20';
-import { TrashCan } from "@carbon/react/icons";
+import { TrashCan, Pin, Edit } from '@carbon/react/icons';
 import { action } from '@storybook/addon-actions';
-import { DatePicker, DatePickerInput } from "@carbon/react";
+import { DatePicker, DatePickerInput } from '@carbon/react';
 
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
@@ -68,7 +66,7 @@ export const WithCustomActions = () => {
         description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         actions={[
-          { id: 'edit', labelText: 'Edit', icon: <Edit /> },
+          { id: 'edit', labelText: 'Edit', icon: <Edit size={20} /> },
           { id: 'delete', labelText: 'Delete', icon: TrashCan },
         ]}
         onDashboardAction={action('onDashboardAction')}
@@ -103,9 +101,9 @@ export const WithFilterAndCustomActions = () => {
           </DatePicker>
         }
         actions={[
-          { id: 'edit', labelText: 'Edit', icon: <Edit /> },
+          { id: 'edit', labelText: 'Edit', icon: <Edit size={20} /> },
           { id: 'delete', labelText: 'Delete', icon: <TrashCan size={20} /> },
-          { id: 'pin', labelText: 'Pin', icon: <Pin /> },
+          { id: 'pin', labelText: 'Pin', icon: <Pin size={20} /> },
         ]}
         onDashboardAction={action('onDashboardAction')}
       />
