@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.25...v2.154.0-next.26) (2024-06-05)
+
+
+### Features
+
+* override the default behaviour of handledataitemedit ([5257d1b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5257d1b54a988e1915081ac9807a35d0c32e915a))
+
+
+
+
+
 # [2.154.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.24...v2.154.0-next.25) (2024-05-24)
 
 
