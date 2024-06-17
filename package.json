@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/carbon-design-system/carbon-addons-iot-react/issues"
   },
-  "homepage": "https://carbon-addons-iot-react.com",
+  "homepage": "https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react",
   "scripts": {
     "build:storybook": "node ./scripts/storybook.js --build",
     "build": "lerna run --stream build",
