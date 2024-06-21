@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - 'next'
+      - 'feat-pulish-to-github-page'
 
 permissions:
   contents: read
