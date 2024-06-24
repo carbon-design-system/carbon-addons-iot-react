@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/carbon-design-system/carbon-addons-iot-react/issues"
   },
-  "homepage": "https://carbon-addons-iot-react.com",
+  "homepage": "https://carbon-design-system.github.io/carbon-addons-iot-react",
   "scripts": {
     "build": "yarn svg-convert && cross-env BABEL_ENV='production' NODE_ENV='production' yarn build:pre && rollup -c && yarn build:post",
     "build:pre": "yarn test:engines && rimraf lib es umd css scss tmp storybook-static",
