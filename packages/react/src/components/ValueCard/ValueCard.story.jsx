@@ -151,6 +151,7 @@ export const WithLinkAndMeasurementUnit = () => {
             {
               dataSourceId: 'peakUsage',
               label: text('content.attributes[0].label', 'Peak usage'),
+              tooltip: text('content.attributes[0].tooltip', 'Peak usage tooltip'),
               measurementUnitLabel: text('content.attributes[0].measurementUnitLabel', 'AppPoints'),
               thresholds: [
                 {

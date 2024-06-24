@@ -386,6 +386,13 @@ const TableCardFormContent = ({
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
         actions={actions}
+        options={{
+          hasColorDropdown: false,
+          hasUnit: false,
+          hasDecimalPlacesDropdown: false,
+          hasThresholds: true,
+          hasTooltip: true,
+        }}
       />
       <ContentFormItemTitle
         title={mergedI18n.tableColumnEditorSectionTitle}
