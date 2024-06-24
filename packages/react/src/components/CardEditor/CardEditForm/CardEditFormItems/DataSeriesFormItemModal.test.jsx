@@ -171,6 +171,13 @@ describe('DataSeriesFormItemModal', () => {
         onAddAggregations: jest.fn(),
       },
     },
+    options: {
+      hasColorDropdown: true,
+      hasUnit: true,
+      hasDecimalPlacesDropdown: true,
+      hasThresholds: true,
+      hasTooltip: true,
+    },
   };
 
   it('Renders for timeseries card data', () => {
@@ -189,12 +196,38 @@ describe('DataSeriesFormItemModal', () => {
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
 
+    const tooltip = screen.getByText('Tooltip');
+    expect(tooltip).toBeInTheDocument();
+
     const dataFilter = screen.getByRole('listbox', { name: 'Data filter' });
     expect(dataFilter).toBeInTheDocument();
 
     const aggregationDropdown = screen.getByRole('listbox', { name: 'Aggregation method' });
     expect(aggregationDropdown).toBeInTheDocument();
   });
+
+  it('Renders card data with out any options', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={valueCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+        options={undefined}
+      />
+    );
+
+    const label = screen.queryByText('Custom label');
+    expect(label).toBeInTheDocument();
+
+    const unit = screen.queryByText('Unit');
+    expect(unit).not.toBeInTheDocument();
+
+    const tooltip = screen.queryByText('Tooltip');
+    expect(tooltip).not.toBeInTheDocument();
+  });
+
   it('Renders for timeseries card data without datafilter', () => {
     render(
       <DataSeriesFormItemModal

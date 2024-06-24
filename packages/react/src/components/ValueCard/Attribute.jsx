@@ -4,6 +4,7 @@ import { isNil } from 'lodash-es';
 import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { gray60 } from '@carbon/colors';
+import { TooltipDefinition } from 'carbon-components-react';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
@@ -30,6 +31,7 @@ const propTypes = {
         icon: PropTypes.string,
       })
     ),
+    tooltip: PropTypes.string,
   }).isRequired,
   customFormatter: PropTypes.func,
   isEditable: PropTypes.bool,
@@ -75,7 +77,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel },
+  attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel, tooltip },
   attributeCount,
   customFormatter,
   isEditable,
@@ -123,7 +125,13 @@ const Attribute = ({
             testId={`${testId}-threshold-icon`}
           />
         ) : null}
-        <span data-testid={`${testId}-threshold-label`}>{label}</span>
+        {tooltip ? (
+          <TooltipDefinition direction="right" tooltipText={tooltip}>
+            {label}
+          </TooltipDefinition>
+        ) : (
+          <span data-testid={`${testId}-threshold-label`}>{label}</span>
+        )}
       </div>
 
       <div className={`${BEM_BASE}`}>
