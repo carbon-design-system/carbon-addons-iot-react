@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.27...v2.154.0-next.28) (2024-06-24)
+
+
+### Features
+
+* add tooltip to the tablecard column ([3f4f934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3f4f934bb9dac5322d77f0bc5fb46c53ea31f043))
+
+
+
+
+
 # [2.154.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.26...v2.154.0-next.27) (2024-06-24)
 
 
