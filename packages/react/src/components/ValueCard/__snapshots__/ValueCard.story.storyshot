@@ -1281,9 +1281,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </title>
               </svg>
               <span
-                data-testid="Card-attribute-0-threshold-label"
+                className="bx--tooltip--definition bx--tooltip--a11y"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                Peak usage
+                <button
+                  aria-describedby="definition-tooltip-21"
+                  className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--right bx--tooltip--align-start"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  type="button"
+                >
+                  Peak usage
+                </button>
+                <span
+                  className="bx--assistive-text"
+                  id="definition-tooltip-21"
+                  role="tooltip"
+                >
+                  Peak usage tooltip
+                </span>
               </span>
             </div>
             <div

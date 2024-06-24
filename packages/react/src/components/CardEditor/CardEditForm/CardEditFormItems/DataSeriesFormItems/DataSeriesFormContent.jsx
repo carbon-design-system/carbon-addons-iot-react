@@ -275,6 +275,7 @@ const DataSeriesFormItem = ({
   const [removedDataItems, setRemovedDataItems] = useState([]);
 
   const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
+  const { type } = cardConfig;
 
   // determine which content section to look at
   const dataSection =
@@ -467,6 +468,13 @@ const DataSeriesFormItem = ({
         onChange={onChange}
         i18n={mergedI18n}
         actions={actions}
+        options={{
+          hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
+          hasUnit: type === CARD_TYPES.VALUE,
+          hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
+          hasThresholds: type === CARD_TYPES.VALUE,
+          hasTooltip: type === CARD_TYPES.VALUE,
+        }}
       />
       <ContentFormItemTitle
         title={mergedI18n.dataItemEditorSectionTitle}
