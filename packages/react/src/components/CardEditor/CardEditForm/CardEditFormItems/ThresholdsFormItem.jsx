@@ -258,8 +258,8 @@ const ThresholdsFormItem = ({
                   >
                     {booleanTypeOptions.map(({ label, value }, index) => (
                       <RadioButton
-                        key={index}
-                        id={`${value}-${index}`}
+                        key={`${i}-${index}`}
+                        id={`${i}-${index}`}
                         labelText={label}
                         value={value}
                       />
