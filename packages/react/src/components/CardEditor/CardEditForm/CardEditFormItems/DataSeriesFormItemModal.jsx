@@ -76,6 +76,7 @@ const propTypes = {
   showEditor: PropTypes.bool,
   setShowEditor: PropTypes.func,
   editDataItem: PropTypes.shape({
+    columnType: PropTypes.oneOf(['LITERAL', 'BOOLEAN', 'TIMESTAMP', 'NUMBER']),
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     /** Maps to data item columnType */
@@ -203,6 +204,7 @@ const defaultProps = {
   availableDimensions: {},
   editDataItem: {
     hasStreamingMetricEnabled: false,
+    columnType: undefined,
   },
   setEditDataItem: null,
   isSummaryDashboard: false,
@@ -618,6 +620,7 @@ const DataSeriesFormItemModal = ({
                 thresholds,
               });
             }}
+            columnType={editDataItem.columnType || editDataItem.type}
           />
         )}
       </>
