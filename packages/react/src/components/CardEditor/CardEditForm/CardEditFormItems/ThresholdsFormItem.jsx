@@ -131,9 +131,10 @@ const ThresholdsFormItem = ({
     thresholdsProp.map((threshold) => ({ ...threshold, id: uuidv4() }))
   );
 
-  const comparisonItems = useMemo(() => (columnType === 'NUMBER' ? ['>', '<', '='] : ['=']), [
-    columnType,
-  ]);
+  const comparisonItems = useMemo(
+    () => (['BOOLEAN', 'LITERAL', 'TIMESTAMP'].includes(columnType) ? ['='] : ['>', '<', '=']),
+    [columnType]
+  );
 
   return (
     <>
@@ -224,19 +225,18 @@ const ThresholdsFormItem = ({
                 />
               </div>
               <div className={`${baseClassName}--threshold-input-group--item-end`}>
-                {columnType === 'NUMBER' ? (
-                  <NumberInput
+                {threshold.comparison === '=' &&
+                (!columnType || columnType === 'LITERAL' || columnType === 'TIMESTAMP') ? (
+                  <TextInput
+                    data-testid={`threshold-${i}-text-input`}
                     id={`${cardConfig.id}_value-card-threshold-value_${i}`}
-                    step={1}
-                    hideLabel
-                    translateWithId={translateWithId}
-                    invalid={false} // don't allow invalid state
-                    value={threshold.value?.toString() || 0}
-                    onChange={({ imaginaryTarget }) => {
+                    labelText=""
+                    value={threshold.value?.toString()}
+                    onChange={({ target }) => {
                       const updatedThresholds = [...thresholds];
                       updatedThresholds[i] = {
                         ...updatedThresholds[i],
-                        value: Number(imaginaryTarget.value) || imaginaryTarget.value,
+                        value: target.value,
                       };
                       onChange(updatedThresholds.map((item) => omit(item, 'id')));
                       setThresholds(updatedThresholds);
@@ -267,16 +267,18 @@ const ThresholdsFormItem = ({
                     ))}
                   </RadioButtonGroup>
                 ) : (
-                  <TextInput
-                    data-testid={`threshold-${i}-text-input`}
+                  <NumberInput
                     id={`${cardConfig.id}_value-card-threshold-value_${i}`}
-                    labelText=""
-                    value={threshold.value?.toString()}
-                    onChange={({ target }) => {
+                    step={1}
+                    hideLabel
+                    translateWithId={translateWithId}
+                    invalid={false} // don't allow invalid state
+                    value={threshold.value?.toString() || 0}
+                    onChange={({ imaginaryTarget }) => {
                       const updatedThresholds = [...thresholds];
                       updatedThresholds[i] = {
                         ...updatedThresholds[i],
-                        value: target.value,
+                        value: Number(imaginaryTarget.value) || imaginaryTarget.value,
                       };
                       onChange(updatedThresholds.map((item) => omit(item, 'id')));
                       setThresholds(updatedThresholds);
@@ -309,18 +311,17 @@ const ThresholdsFormItem = ({
         size="small"
         renderIcon={Add16}
         onClick={() => {
-          let newThreshold =
-            columnType === 'NUMBER'
-              ? {
-                  comparison: '>',
-                  value: 0,
-                  color: selectedColor?.carbonColor || red60,
-                }
-              : {
-                  comparison: '=',
-                  value: columnType === 'BOOLEAN' ? false : '',
-                  color: selectedColor?.carbonColor || red60,
-                };
+          let newThreshold = ['BOOLEAN', 'LITERAL', 'TIMESTAMP'].includes(columnType)
+            ? {
+                comparison: '=',
+                value: columnType === 'BOOLEAN' ? false : '',
+                color: selectedColor?.carbonColor || red60,
+              }
+            : {
+                comparison: '>',
+                value: 0,
+                color: selectedColor?.carbonColor || red60,
+              };
           if (selectedIcon?.name) {
             newThreshold.icon = selectedIcon.name;
           }
