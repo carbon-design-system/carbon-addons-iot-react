@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.28...v2.154.0-next.29) (2024-06-26)
+
+
+### Bug Fixes
+
+* pr comment ([bb72bde](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb72bdeeeab73815bc09d845475db3aca7871d9e))
+* testcases ([f1a0b2f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1a0b2f21f3d4c1b9b1c5817f6f620a0dc32abcc))
+* threshold item ([0467b0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0467b0fbf6ab5c0d60a939a4af2261a31770ca5e))
+* thresold item ([8e6b408](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e6b408d35203c9cc2d319d1aa35937a8375af24))
+* thresold item ([19142ea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/19142ea68dc44c639d6910f974e3fcbc416288f1))
+
+
+
+
+
 # [2.154.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.27...v2.154.0-next.28) (2024-06-24)
 
 
