@@ -3,7 +3,9 @@
 @use './table-toolbar-svg-button' as *;
 @use './advanced-filter-flyout' as *;
 @use './table-toolbar-search' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
@@ -12,7 +14,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$iot-prefix}--table-toolbar-secondary-title {
   padding: $spacing-05;
-  @include type-style('productive-heading-01');
+  // @include type-style('productive-heading-01');
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -39,11 +41,11 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   }
 
   .#{$iot-prefix}--table-overflow-batch-actions.#{$prefix}--overflow-menu--open {
-    @include hide-tooltip();
+    // @include hide-tooltip();
   }
 
   .#{$iot-prefix}--table-toolbar-aggregations__overflow-menu.#{$prefix}--overflow-menu--open {
-    @include hide-tooltip();
+    // @include hide-tooltip();
   }
 }
 
@@ -132,16 +134,16 @@ html[dir='rtl'] {
   &.#{$prefix}--overflow-menu--open,
   &.#{$prefix}--overflow-menu--open:hover,
   &:hover {
-    background-color: $hover-primary;
+    // background-color: $hover-primary;//$$hover-primary;
   }
 
   &:focus {
-    outline: 2px solid $ui-01;
+    outline: 2px solid $layer-01; //$ui-01
     outline-offset: -($spacing-01);
   }
 
   &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper .#{$prefix}--btn__icon {
-    fill: $ui-01;
+    fill: $layer-01; //$ui-01
   }
 
   // hide the divider between overflow menu and cancel on hover
@@ -153,13 +155,13 @@ html[dir='rtl'] {
 
     &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
       svg.#{$prefix}--btn__icon {
-      fill: $ui-01;
+      fill: $layer-01; //$ui-01
     }
   }
 }
 
 .#{$iot-prefix}--table-overflow-batch-actions__menu {
   &:after {
-    background-color: $hover-primary;
+    // background-color: $hover-primary; // $hover-primary
   }
 }

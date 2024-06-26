@@ -2,10 +2,8 @@ import React, { useMemo, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { defaultsDeep } from 'lodash-es';
+import { MeterChart, AreaChart, StackedAreaChart } from '@carbon/charts';
 
-import { MeterChart } from '@carbon/charts';
-import { AreaChart } from '@carbon/charts';
-import { StackedAreaChart } from '@carbon/charts';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { MeterChartPropTypes, SparklineChartPropTypes } from '../../constants/ChartPropTypes';
 import { settings } from '../../constants/Settings';
@@ -35,9 +33,10 @@ const CardTypeContent = ({ testId, isExpanded, type, data, content }) => {
   const listRef = useRef(null);
   const [listHeight, setListHeight] = useState();
 
-  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
-    content,
-  ]);
+  const contentWithDefaults = useMemo(
+    () => defaultsDeep({}, content, defaultProps.content),
+    [content]
+  );
 
   const options = getChartOptions(type, data.length > 1, contentWithDefaults);
 

@@ -1,7 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
-import { Bullhorn, Checkbox, NotificationOn, HeaderHelp, Avatar } from '@carbon/react/icons';
+import {
+  Bullhorn,
+  Checkbox,
+  NotificationFilled,
+  HelpFilled,
+  UserAvatarFilled,
+} from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -26,13 +32,13 @@ const HeaderProps = {
     {
       label: 'alerts',
       onClick: action('click fired'),
-      btnContent: <NotificationOn fill="white" size={16} description="Icon" />,
+      btnContent: <NotificationFilled fill="white" size={16} description="Icon" />,
     },
     {
       label: 'help',
       hasHeaderPanel: true,
       btnContent: (
-        <HeaderHelp
+        <HelpFilled
           fill="white"
           description="Icon"
           size={16}
@@ -59,7 +65,7 @@ const HeaderProps = {
           content: (
             <span>
               JohnDoe@ibm.com
-              <Avatar fill="white" size={16} description="Icon" />
+              <UserAvatarFilled fill="white" size={16} description="Icon" />
             </span>
           ),
         },
@@ -67,7 +73,7 @@ const HeaderProps = {
     },
     {
       label: 'user',
-      btnContent: <Avatar fill="white" size={16} description="Icon" />,
+      btnContent: <UserAvatarFilled fill="white" size={16} description="Icon" />,
       childContent: [
         {
           metaData: {
@@ -88,7 +94,7 @@ const HeaderProps = {
           content: (
             <span>
               JohnDoe@ibm.com
-              <Avatar fill="white" size={16} description="Icon" />
+              <UserAvatarFilled fill="white" size={16} description="Icon" />
             </span>
           ),
         },
@@ -107,7 +113,7 @@ const HeaderMenuProps = {
   actionItems: [
     {
       label: 'user',
-      btnContent: <Avatar fill="white" size={16} description="Icon" />,
+      btnContent: <UserAvatarFilled fill="white" size={16} description="Icon" />,
       childContent: [
         {
           metaData: {
@@ -128,7 +134,7 @@ const HeaderMenuProps = {
           content: (
             <span>
               JohnDoe@ibm.com
-              <Avatar fill="white" size={16} description="Icon" />
+              <UserAvatarFilled fill="white" size={16} description="Icon" />
             </span>
           ),
         },
@@ -188,7 +194,7 @@ export const HeaderNoSubmenu = () => (
       {
         label: 'user',
         onClick: action('click'),
-        btnContent: <Avatar fill="white" size={16} description="Icon" />,
+        btnContent: <UserAvatarFilled fill="white" size={16} description="Icon" />,
       },
     ]}
   />

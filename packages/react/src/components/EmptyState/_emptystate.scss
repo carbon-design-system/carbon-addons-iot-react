@@ -1,6 +1,8 @@
 @use '../../globals/vars' as *;
-@use '../../globals/spacing' as *;
-@use '../../globals/typography' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
 
 .#{$iot-prefix}--empty-state {
   $parent-container: &;
@@ -40,7 +42,7 @@
 
   &--title {
     @include type-style('productive-heading-03');
-    color: $text-01;
+    color: $text-primary; //$text-01 carbon 11
     margin-bottom: $spacing-03;
     word-break: break-word;
 
@@ -55,7 +57,7 @@
   }
 
   &--text {
-    color: $text-01;
+    color: $text-primary; //$text-01 carbon 11
     @include type-style('body-short-01');
 
     #{$parent-container}--inline & {
@@ -74,7 +76,7 @@
   &--link {
     margin-top: $spacing-05;
     @include type-style('body-short-01');
-    color: $interactive-01;
+    color: $background-brand; //$interactive-01 carbon 11
 
     #{$parent-container}--inline & {
       grid-column: 2/2;

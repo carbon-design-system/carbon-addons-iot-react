@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { unstable_Menu as Menu } from '@carbon/react';
+import { Menu } from '@carbon/react';
 import { ChevronDown, ChevronUp } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';

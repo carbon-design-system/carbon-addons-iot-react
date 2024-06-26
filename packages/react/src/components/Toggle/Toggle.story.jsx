@@ -1,1 +1,6 @@
-export { default as ToggleStory } from 'carbon-components-react/es/components/Toggle/Toggle-story';
+// export { ToggleStory } from '@carbon/react/es/components/Toggle/Toggle-story';
+import React from 'react';
+
+export default {
+  component: <div>Toggle Story</div>,
+};

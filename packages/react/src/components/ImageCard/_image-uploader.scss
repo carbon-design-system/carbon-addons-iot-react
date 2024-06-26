@@ -1,5 +1,9 @@
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '../../globals/vars' as *;
 .#{$iot-prefix}--image-uploader {
-  background: $ui-02;
+  background: $layer-02; //$ui-02
   display: flex;
   height: calc(100% - 1rem);
   margin-top: $spacing-05;
@@ -15,9 +19,9 @@
   }
 
   &-drop-label-text {
-    color: $interactive-01;
+    // color: $interactive-01;
     display: block;
-    @include carbon--type-style('productive-heading-02');
+    // @include carbon--type-style('productive-heading-02');
     margin-bottom: $spacing-03;
   }
 
@@ -104,7 +108,7 @@
   }
 
   .#{$iot-prefix}--image-uploader-drop-label-text {
-    @include carbon--type-style('productive-heading-01');
+    // @include carbon--type-style('productive-heading-01'); @include carbon--type-style('productive-heading-01'); carbon 11
     margin-bottom: $spacing-05;
   }
 
@@ -137,7 +141,7 @@
   padding-top: $spacing-07;
 
   .#{$iot-prefix}--image-uploader-drop-description-text {
-    @include carbon--type-style('body-long-01');
+    // @include carbon--type-style('body-long-01'); //    @include carbon--type-style('body-long-01');
   }
 
   .#{$iot-prefix}--image-uploader-url-wrapper {

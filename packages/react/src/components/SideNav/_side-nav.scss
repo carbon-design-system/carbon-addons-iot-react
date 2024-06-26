@@ -2,16 +2,20 @@
 @use '../../globals/typography' as *;
 @use '../../globals/vars' as *;
 @use '../../globals/spacing' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/colors' as *;
 /////////////////////////////////////////////
 // AI applications dark sidenav theme styles
 ////////////////////////////////////////////
-$textColor: $inverse-01;
-$selectedBgColor: $inverse-02;
+$textColor: $text-inverse; //$inverse-01
+$selectedBgColor: $background-inverse; //$inverse-02
 $hoverBgColor: #2c2c2c;
 
 .#{$iot-prefix}--side-nav {
-  background: $ui-05;
+  background: $border-inverse; //$ui-05
 
   .#{$prefix}--side-nav__submenu,
   .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text,
@@ -44,7 +48,7 @@ $hoverBgColor: #2c2c2c;
   }
   .#{$prefix}--search-magnifier-icon,
   .#{$prefix}--search-close svg {
-    fill: $inverse-01;
+    fill: $text-inverse; //$inverse-01
   }
 
   .#{$prefix}--search-close {
@@ -58,15 +62,15 @@ $hoverBgColor: #2c2c2c;
   }
 
   .#{$prefix}--search-input {
-    background-color: $ui-05;
+    background-color: $border-inverse; //$ui-05
     &::placeholder {
-      color: $ui-03;
+      color: $border-subtle; //$ui-03
     }
   }
 
   .#{$iot-prefix}--side-nav__pinned-items {
     flex: none;
-    border-bottom: 1px solid $ui-04;
+    border-bottom: 1px solid $border-strong; //$ui-04
     & + .#{$prefix}--side-nav__items {
       padding-top: 0;
     }
@@ -86,8 +90,8 @@ $hoverBgColor: #2c2c2c;
       overflow: hidden;
       white-space: pre;
       flex-shrink: 1;
-      background: $ui-01;
-      color: $interactive-04;
+      background: $layer-01; //$ui-01
+      color: $border-interactive; //$interactive-04;
     }
 
     span {
@@ -102,7 +106,7 @@ $hoverBgColor: #2c2c2c;
     margin: $spacing-07 $spacing-09 $spacing-05 $spacing-09;
     color: $textColor;
     display: none;
-    @include type-style('body-short-01');
+    // @include type-style('body-short-01'); //@include type-style('body-short-01');
   }
 
   &.#{$iot-prefix}--side-nav--expanded,
@@ -129,12 +133,16 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'],
   .#{$prefix}--side-nav__link--current,
   .#{$prefix}--side-nav__menu
-    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
+      [aria-current='page']
+    ):hover {
     background-color: $selectedBgColor;
   }
 
   .#{$prefix}--side-nav__menu
-    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
+      [aria-current='page']
+    ):hover,
   &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
   &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'] > span,
   &.#{$prefix}--side-nav__link--current > span {
@@ -148,7 +156,7 @@ $hoverBgColor: #2c2c2c;
 
   &.#{$prefix}--side-nav.#{$prefix}--side-nav--rail:not(.#{$prefix}--side-nav--fixed):hover {
     // stylelint-disable-next-line declaration-property-unit-blacklist
-    transition: width $duration--fast-01 motion(entrance, productive) 300ms;
+    transition: width $duration-fast-01 motion(entrance, productive) 300ms;
   }
 }
 

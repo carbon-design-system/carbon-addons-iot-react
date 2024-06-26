@@ -1,5 +1,8 @@
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
-@use '@carbon/styles/scss/layout' as *;
+@use '@carbon/react/scss/layout' as *;
 
 $tooltipSize: $spacing-07;
 $lineHeightSize: 1.375em;
@@ -35,7 +38,7 @@ $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--title--text,
 .#{$iot-prefix}--card--subtitle--text {
-  @include multiline-text-overflow(1, $lineHeightSize);
+  // @include multiline-text-overflow(1, $lineHeightSize);
   word-break: break-all;
   min-width: 3rem;
 }
@@ -47,8 +50,8 @@ $lineHeightSize: 1.375em;
 }
 
 .#{$iot-prefix}--card--title--text {
-  @include type-style('productive-heading-02');
-  color: $text-01;
+  // @include type-style('productive-heading-02'); //Carbon 11
+  color: $text-primary;
   max-width: calc(100% - #{$tooltipSize});
 }
 
@@ -62,13 +65,13 @@ $lineHeightSize: 1.375em;
 }
 
 p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
-  @include type-style('label-01');
+  // @include type-style('label-01'); //Carbon 11
   margin-bottom: $spacing-03;
 }
 
 .#{$iot-prefix}--card--subtitle--text {
-  @include type-style('label-01');
-  color: $text-02;
+  // @include type-style('label-01'); //Carbon 11
+  color: $text-secondary;
   font-weight: normal;
   width: 100%;
   max-height: 1.34em;

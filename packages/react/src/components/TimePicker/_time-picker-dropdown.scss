@@ -1,6 +1,8 @@
 @use '../../globals/vars' as *;
 @use 'list-spinner' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 .#{$iot-prefix}--time-picker {
   width: 16.125rem;
   position: relative;
@@ -20,7 +22,7 @@
     position: relative;
 
     &--selected input {
-      outline: 0.0625rem solid $ui-05;
+      outline: 0.0625rem solid $border-inverse; //$ui-05 carbon 11
     }
   }
 
@@ -79,7 +81,7 @@
     }
 
     .#{$iot-prefix}--time-picker--disabled & svg {
-      fill: $disabled-02;
+      fill: $icon-disabled; //$disabled-02 carbon 11
     }
     .#{$iot-prefix}--time-picker--disabled & {
       cursor: not-allowed;
@@ -89,9 +91,9 @@
 
   &--warn {
     .#{$iot-prefix}--time-picker__icon--warn:not(.#{$iot-prefix}--time-picker__icon--invalid) svg {
-      fill: $support-03;
+      fill: $support-warning; //$support-03 carbon 11
       path:first-of-type {
-        fill: $icon-01;
+        fill: $icon-primary; //$icon-01 carbon 11
         opacity: 1;
       }
     }
@@ -99,7 +101,7 @@
 
   &--invalid {
     .#{$iot-prefix}--time-picker__icon--invalid svg {
-      fill: $danger-01;
+      // fill: $button-danger-primary ; //$danger-01 carbon 11
     }
   }
 
@@ -179,7 +181,7 @@
 .#{$iot-prefix}--time-picker-spinner {
   --zIndex: 0;
   z-index: var(--zIndex);
-  background-color: $ui-01;
+  background-color: $layer-01; //$ui-01 carbon 11
   box-shadow: 0 7px 10px 2px #ddd;
   display: flex;
   gap: 1px;
@@ -255,7 +257,7 @@
   }
 
   .#{$iot-prefix}--time-picker-spinner &-button {
-    color: $icon-01;
+    color: $icon-primary; //$icon-01 carbon 11
     justify-content: center;
     margin: 0 auto;
     min-height: unset;
@@ -263,9 +265,9 @@
     width: 100%;
 
     &--selected {
-      color: $ui-01;
+      color: $layer-01; //$ui-01 carbon 11
       &:hover {
-        color: $icon-01;
+        color: $icon-primary; //$icon-01 carbon 11
       }
     }
 

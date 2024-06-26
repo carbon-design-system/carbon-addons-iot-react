@@ -10,9 +10,11 @@ import React from 'react';
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 import { Carbon, Compass, Tag as TagIcon } from '@carbon/react/icons';
 import { action } from '@storybook/addon-actions';
-import { types as typesList } from 'carbon-components-react/es/components/Tag';
+import { DismissibleTag, OperationalTag, SelectableTag } from '@carbon/react';
 
 import { Tag, TagSkeleton } from '.';
+
+const typesList = [DismissibleTag, OperationalTag, SelectableTag];
 
 const icons = {
   'Carbon (Carbon16 from `@carbon/icons-react`)': 'Carbon16',

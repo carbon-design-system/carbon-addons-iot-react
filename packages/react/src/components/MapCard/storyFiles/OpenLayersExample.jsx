@@ -20,7 +20,7 @@ import { defaults } from 'ol/control';
 import MapCard from '../MapCard';
 
 import Optionsfield from './Optionsfield';
-import './open-layers-example.scss';
+// import './open-layers-example.scss'; Carbon 11
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';
@@ -78,8 +78,7 @@ const getColor = (feature, featureName = 'population') => {
 
 const gdp = new VectorImage({
   source: new VectorSource({
-    url:
-      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    url: 'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
     format: new GeoJSON(),
   }),
   visible: true,
@@ -95,8 +94,7 @@ const gdp = new VectorImage({
 
 const population = new VectorImage({
   source: new VectorSource({
-    url:
-      'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
+    url: 'https://raw.githubusercontent.com/mapbox/mapbox-react-examples/master/data-overlay/src/data.json',
     format: new GeoJSON(),
   }),
   visible: false,

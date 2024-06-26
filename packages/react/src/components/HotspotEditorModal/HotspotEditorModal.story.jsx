@@ -9,7 +9,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
-import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
+// import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx'; //carbon 11
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.storyName = experimentalStoryTitle;
@@ -109,10 +109,10 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorModal,
-    docs: {
-      inlineStories: false,
-      page: HotspotEditorModalREADME,
-    },
+    // docs: {
+    //   inlineStories: false,
+    //   page: HotspotEditorModalREADME,
+    // },
   },
 };
 

@@ -1,9 +1,4 @@
-import {
-  Header as CarbonHeader,
-  HeaderMenuButton,
-  HeaderName,
-  SkipToContent,
-} from 'carbon-components-react/es/components/UIShell';
+import { Header as CarbonHeader, HeaderMenuButton, HeaderName, SkipToContent } from '@carbon/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Switcher } from '@carbon/react/icons';

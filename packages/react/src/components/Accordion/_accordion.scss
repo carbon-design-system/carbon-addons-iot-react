@@ -1,5 +1,5 @@
-@use '@carbon/styles/scss/config' as *;
-@use '@carbon/styles/scss/components/accordion' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/components/accordion' as *;
 
 [dir='rtl'] .#{$prefix}--accordion__title {
   margin: 0 $spacing-05 0 0;

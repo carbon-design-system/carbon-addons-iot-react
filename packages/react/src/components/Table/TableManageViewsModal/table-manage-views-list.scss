@@ -1,5 +1,5 @@
 @use '../../../globals/vars' as *;
-
+@use '@carbon/react/scss/spacing' as *;
 // We need to override some List specific styles to
 // make the list behave correctly
 .#{$iot-prefix}--manage-views-list {

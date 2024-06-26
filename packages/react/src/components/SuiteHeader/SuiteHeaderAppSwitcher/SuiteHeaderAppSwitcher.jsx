@@ -61,20 +61,21 @@ const SuiteHeaderAppSwitcher = ({
     : null;
 
   const handleRouteChange = useCallback(
-    ({ href, id, isExternal }) => async (e) => {
-      e.preventDefault();
-      const newWindow = shouldOpenInNewWindow(e);
-      const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, {
-        appId: id,
-      });
-      if (result) {
-        if (isExternal || newWindow) {
-          window.open(href, '_blank', 'noopener noreferrer');
-        } else {
-          window.location.href = href;
+    ({ href, id, isExternal }) =>
+      async (e) => {
+        e.preventDefault();
+        const newWindow = shouldOpenInNewWindow(e);
+        const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, {
+          appId: id,
+        });
+        if (result) {
+          if (isExternal || newWindow) {
+            window.open(href, '_blank', 'noopener noreferrer');
+          } else {
+            window.location.href = href;
+          }
         }
-      }
-    },
+      },
     [onRouteChange]
   );
 

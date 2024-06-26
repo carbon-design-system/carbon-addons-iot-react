@@ -1,10 +1,5 @@
 import { Copy, OverflowMenuVertical, TrashCan } from '@carbon/react/icons';
-import {
-  unstable_MenuItem as MenuItem,
-  unstable_MenuDivider as MenuDivider,
-  unstable_MenuRadioGroup as MenuRadioGroup,
-  unstable_MenuSelectableItem as MenuSelectableItem,
-} from '@carbon/react';
+import { MenuItem, MenuItemDivider, MenuItemRadioGroup, MenuItemSelectable } from '@carbon/react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
@@ -15,7 +10,7 @@ import MenuButtonREADME from './MenuButton.mdx';
 import MenuButton from './MenuButton';
 
 export const menuItems = [
-  <MenuSelectableItem
+  <MenuItemSelectable
     key="publish"
     label="Publish"
     initialChecked={false}
@@ -23,7 +18,7 @@ export const menuItems = [
   />,
   <MenuItem key="duplicate" renderIcon={Copy} label="Duplicate" onClick={action('Duplicate')} />,
   <MenuItem key="share" label="Share with">
-    <MenuRadioGroup
+    <MenuItemRadioGroup
       label="Shared with"
       items={['None', 'Product Team', 'Organization', 'Company']}
       initialSelectedItem="None"
@@ -39,7 +34,7 @@ export const menuItems = [
     label={<span title="You must have proper credentials to use this option.">Disabled</span>}
     disabled
   />,
-  <MenuDivider key="div-1" />,
+  <MenuItemDivider key="div-1" />,
   <MenuItem
     key="delete"
     label="Delete"

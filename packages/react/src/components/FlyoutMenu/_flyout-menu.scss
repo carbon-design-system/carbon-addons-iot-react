@@ -1,5 +1,10 @@
 @use '../../globals/vars' as *;
-@use '@carbon/styles/scss/layout' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/layout' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/spacing' as *;
+
 // @import '~carbon-components/scss/globals/scss/helper-mixins'; // did not find any suitable style path, need to replace
 
 $shadow-plus-padding: 1.4rem;
@@ -31,18 +36,18 @@ $shadow: 0.4rem;
     border-radius: 0;
 
     &:not(.#{$iot-prefix}--flyout-menu--body__light) {
-      background: $ui-01;
+      background: $layer-01;
 
       .#{$prefix}--tooltip__content::after {
-        background-color: $ui-01;
+        background-color: $layer-01;
       }
     }
 
     &.#{$iot-prefix}--flyout-menu--body__light {
-      background: $ui-02;
+      background: $layer-02;
 
       .#{$prefix}--tooltip__content::after {
-        background-color: $ui-02;
+        background-color: $layer-02;
       }
     }
 
@@ -168,7 +173,7 @@ $shadow: 0.4rem;
   &__shadow-block {
     display: block;
     position: absolute;
-    background: $ui-02;
+    background: $layer-02;
 
     &.bottom-start {
       height: $shadow-plus-padding;
@@ -263,27 +268,28 @@ $shadow: 0.4rem;
 }
 
 .#{$iot-prefix}--flyout-menu--trigger-button {
-  color: $icon-01;
+  color: $icon-primary;
 
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger svg,
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:hover svg {
-    fill: $gray-70;
+    // fill: $gray-70; did not find proper color token
+    fill: #f4f4f4;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
-    background-color: $ui-01;
+    background-color: $layer-01;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__open) &:hover {
-    background-color: $hover-ui;
+    background-color: $background-hover;
   }
 
   .#{$iot-prefix}--flyout-menu__light.#{$iot-prefix}--flyout-menu__open &:hover {
-    background-color: $ui-02;
+    background-color: $layer-02;
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $ui-background;
+    box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $background;
   }
 
   .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger::before {

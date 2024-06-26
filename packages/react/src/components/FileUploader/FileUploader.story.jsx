@@ -12,7 +12,7 @@
 import React, { createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, array, boolean, number, select, text } from '@storybook/addon-knobs';
-import { settings } from 'carbon-components';
+// import { settings } from 'carbon-components';
 
 import {
   FileUploader,
@@ -21,9 +21,10 @@ import {
   FileUploaderItem,
   FileUploaderDropContainer,
 } from '.';
-import './FileUploader-story.scss';
+// import './FileUploader-story.scss';  //carbon 11
 
-const { prefix } = settings;
+// const { prefix } = settings;
+const prefix = 'cds';
 const buttonKinds = {
   'Primary (primary)': 'primary',
   'Secondary (secondary)': 'secondary',
@@ -175,8 +176,7 @@ _FileUploaderDropContainer.storyName = 'FileUploaderDropContainer';
 
 _FileUploaderDropContainer.parameters = {
   info: {
-    text:
-      '<FileUploaderDropContainer /> is a drag and drop file uploader which allows users to upload files via both the normal file selection dialog and by dragging and dropping files.',
+    text: '<FileUploaderDropContainer /> is a drag and drop file uploader which allows users to upload files via both the normal file selection dialog and by dragging and dropping files.',
   },
 };
 

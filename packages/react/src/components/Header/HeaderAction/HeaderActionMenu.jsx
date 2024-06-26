@@ -1,17 +1,17 @@
 import { ChevronDown } from '@carbon/react/icons';
-import { settings } from 'carbon-components';
+// import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
+import { HeaderMenuItem } from '@carbon/react';
 
 import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 import Button from '../../Button/Button';
 import { isSafari } from '../../SuiteHeader/suiteHeaderUtils';
 
-const { prefix } = settings;
-
+// const { prefix } = settings; carbon 11
+const prefix = 'cds';
 // eslint-disable-next-line react/prop-types
 const defaultRenderMenuContent = ({ ariaLabel }) => (
   <>

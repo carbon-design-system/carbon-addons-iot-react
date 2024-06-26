@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
-import { ToastNotification } from '@carbon/react';
+import { ToastNotification, BreadcrumbItem } from '@carbon/react';
 import { SettingsAdjust } from '@carbon/react/icons';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -13,23 +13,23 @@ import useStoryState from '../../internal/storyState';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
-import { BreadcrumbItem } from '@carbon/react';
-import TableREADME from './mdx/Table.mdx';
-import SortingREADME from './mdx/Sorting.mdx';
-import DragAndDropREADME from './mdx/DragAndDrop.mdx';
-import RowExpansionREADME from './mdx/RowExpansion.mdx';
-import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
-import InlineActionsREADME from './mdx/InlineActions.mdx';
-import RowNestingREADME from './mdx/RowNesting.mdx';
-import FilteringREADME from './mdx/Filtering.mdx';
-import AggregationsREADME from './mdx/Aggregations.mdx';
-import SearchingREADME from './mdx/Searching.mdx';
-import StatesREADME from './mdx/States.mdx';
-import PaginationREADME from './mdx/Pagination.mdx';
-import ToolbarREADME from './mdx/Toolbar.mdx';
-import EditDataREADME from './mdx/EditData.mdx';
-import PinnedHeaderAndFooterREADME from './mdx/PinnedHeaderAndFooter.mdx';
-import PinnedColumnREADME from './mdx/PinnedColumn.mdx';
+
+// import TableREADME from './mdx/Table.mdx'; //carbon 11
+// import SortingREADME from './mdx/Sorting.mdx'; //Carbon 11
+// import DragAndDropREADME from './mdx/DragAndDrop.mdx'; //carbon11
+// import RowExpansionREADME from './mdx/RowExpansion.mdx';
+// import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
+// import InlineActionsREADME from './mdx/InlineActions.mdx';
+// import RowNestingREADME from './mdx/RowNesting.mdx';
+// import FilteringREADME from './mdx/Filtering.mdx';
+// import AggregationsREADME from './mdx/Aggregations.mdx';
+// import SearchingREADME from './mdx/Searching.mdx';
+// import StatesREADME from './mdx/States.mdx';
+// import PaginationREADME from './mdx/Pagination.mdx';
+// import ToolbarREADME from './mdx/Toolbar.mdx';
+// import EditDataREADME from './mdx/EditData.mdx';
+// import PinnedHeaderAndFooterREADME from './mdx/PinnedHeaderAndFooter.mdx';
+// import PinnedColumnREADME from './mdx/PinnedColumn.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -70,8 +70,6 @@ import MockApiClient from './AsyncTable/MockApiClient';
 import AsyncTable from './AsyncTable/AsyncTable';
 import { PIN_COLUMN } from './tableUtilities';
 
-export { BreadcrumbItem } from '@carbon/react';
-
 // Dataset used to speed up stories using row edit
 const storyTableData = getTableData();
 
@@ -79,9 +77,9 @@ export default {
   title: '1 - Watson IoT/Table',
   parameters: {
     component: Table,
-    docs: {
-      page: TableREADME,
-    },
+    // docs: {
+    //   page: TableREADME,
+    // },
   },
 };
 
@@ -658,9 +656,9 @@ export function WithDragAndDrop() {
 WithDragAndDrop.storyName = 'With drag and drop rows';
 WithDragAndDrop.parameters = {
   component: Table,
-  docs: {
-    page: DragAndDropREADME,
-  },
+  // docs: {
+  //   page: DragAndDropREADME,
+  // },
 };
 
 export const WithSorting = () => {
@@ -709,9 +707,9 @@ export const WithSorting = () => {
 WithSorting.storyName = 'With sorting';
 WithSorting.parameters = {
   component: Table,
-  docs: {
-    page: SortingREADME,
-  },
+  // docs: {
+  //   page: SortingREADME,
+  // },
 };
 
 export const WithSearching = () => {
@@ -769,9 +767,9 @@ export const WithSearching = () => {
 WithSearching.storyName = 'With searching';
 WithSearching.parameters = {
   component: Table,
-  docs: {
-    page: SearchingREADME,
-  },
+  // docs: {
+  //   page: SearchingREADME,
+  // },
 };
 
 export const WithRowExpansion = () => {
@@ -818,9 +816,9 @@ export const WithRowExpansion = () => {
 WithRowExpansion.storyName = 'With row expansion';
 WithRowExpansion.parameters = {
   component: Table,
-  docs: {
-    page: RowExpansionREADME,
-  },
+  // docs: {
+  //   page: RowExpansionREADME,
+  // },
 };
 
 export const WithRowNesting = () => {
@@ -910,26 +908,22 @@ export const WithRowNesting = () => {
 WithRowNesting.storyName = 'With row nesting';
 WithRowNesting.parameters = {
   component: Table,
-  docs: {
-    page: RowNestingREADME,
-  },
+  // docs: {
+  //   page: RowNestingREADME,
+  // },
 };
 
 export const WithAggregations = () => {
-  const {
-    selectedTableType,
-    hasAggregations,
-    aggregationLabel,
-    aggregationsColumns,
-  } = getTableKnobs({
-    knobsToCreate: [
-      'selectedTableType',
-      'hasAggregations',
-      'aggregationLabel',
-      'aggregationsColumns',
-    ],
-    getDefaultValue: () => true,
-  });
+  const { selectedTableType, hasAggregations, aggregationLabel, aggregationsColumns } =
+    getTableKnobs({
+      knobsToCreate: [
+        'selectedTableType',
+        'hasAggregations',
+        'aggregationLabel',
+        'aggregationsColumns',
+      ],
+      getDefaultValue: () => true,
+    });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const data = getTableData().slice(0, 10);
@@ -958,9 +952,9 @@ export const WithAggregations = () => {
 WithAggregations.storyName = 'With aggregations';
 WithAggregations.parameters = {
   component: Table,
-  docs: {
-    page: AggregationsREADME,
-  },
+  // docs: {
+  //   page: AggregationsREADME,
+  // },
 };
 
 export const WithFiltering = () => {
@@ -1168,9 +1162,9 @@ export const WithFiltering = () => {
 WithFiltering.storyName = 'With filtering';
 WithFiltering.parameters = {
   component: Table,
-  docs: {
-    page: FilteringREADME,
-  },
+  // docs: {
+  //   page: FilteringREADME,
+  // },
 };
 
 export const WithCustomInputFiltering = () => {
@@ -1266,9 +1260,9 @@ export const WithCustomInputFiltering = () => {
 WithCustomInputFiltering.storyName = 'With custom input filtering';
 WithCustomInputFiltering.parameters = {
   component: Table,
-  docs: {
-    page: FilteringREADME,
-  },
+  // docs: {
+  //   page: FilteringREADME,
+  // },
 };
 
 export const WithSelectionAndBatchActions = () => {
@@ -1336,9 +1330,9 @@ export const WithSelectionAndBatchActions = () => {
 WithSelectionAndBatchActions.storyName = 'With selection and batch actions';
 WithSelectionAndBatchActions.parameters = {
   component: Table,
-  docs: {
-    page: SelectionAndBatchActionsREADME,
-  },
+  // docs: {
+  //   page: SelectionAndBatchActionsREADME,
+  // },
 };
 
 export const WithInlineActions = () => {
@@ -1406,9 +1400,9 @@ export const WithInlineActions = () => {
 WithInlineActions.storyName = 'With inline actions';
 WithInlineActions.parameters = {
   component: Table,
-  docs: {
-    page: InlineActionsREADME,
-  },
+  // docs: {
+  //   page: InlineActionsREADME,
+  // },
 };
 
 export const WithPinnedHeaderAndFooter = () => {
@@ -1479,9 +1473,9 @@ export const WithPinnedHeaderAndFooter = () => {
 WithPinnedHeaderAndFooter.storyName = 'With pinned header and footer';
 WithPinnedHeaderAndFooter.parameters = {
   component: Table,
-  docs: {
-    page: PinnedHeaderAndFooterREADME,
-  },
+  // docs: {
+  //   page: PinnedHeaderAndFooterREADME,
+  // },
 };
 
 export const WithMainViewStates = () => {
@@ -1551,9 +1545,9 @@ export const WithMainViewStates = () => {
 WithMainViewStates.storyName = 'With main view states';
 WithMainViewStates.parameters = {
   component: Table,
-  docs: {
-    page: StatesREADME,
-  },
+  // docs: {
+  //   page: StatesREADME,
+  // },
 };
 
 export const WithPagination = () => {
@@ -1612,9 +1606,9 @@ export const WithPagination = () => {
 WithPagination.storyName = 'With pagination';
 WithPagination.parameters = {
   component: Table,
-  docs: {
-    page: PaginationREADME,
-  },
+  // docs: {
+  //   page: PaginationREADME,
+  // },
 };
 
 export const WithToolbar = () => {
@@ -1704,9 +1698,9 @@ export const WithToolbar = () => {
 WithToolbar.storyName = 'With toolbar';
 WithToolbar.parameters = {
   component: Table,
-  docs: {
-    page: ToolbarREADME,
-  },
+  // docs: {
+  //   page: ToolbarREADME,
+  // },
 };
 
 export const WithPinnedColumn = () => {
@@ -1754,28 +1748,23 @@ export const WithPinnedColumn = () => {
 WithPinnedColumn.storyName = 'With pinned column';
 WithPinnedColumn.parameters = {
   component: Table,
-  docs: {
-    page: PinnedColumnREADME,
-  },
+  // docs: {
+  //   page: PinnedColumnREADME,
+  // },
 };
 
 export const WithDataEditing = () => {
-  const {
-    selectedTableType,
-    hasRowActions,
-    hasRowEdit,
-    hasSingleRowEdit,
-    preserveCellWhiteSpace,
-  } = getTableKnobs({
-    knobsToCreate: [
-      'selectedTableType',
-      'hasRowActions',
-      'hasRowEdit',
-      'hasSingleRowEdit',
-      'preserveCellWhiteSpace',
-    ],
-    getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
-  });
+  const { selectedTableType, hasRowActions, hasRowEdit, hasSingleRowEdit, preserveCellWhiteSpace } =
+    getTableKnobs({
+      knobsToCreate: [
+        'selectedTableType',
+        'hasRowActions',
+        'hasRowEdit',
+        'hasSingleRowEdit',
+        'preserveCellWhiteSpace',
+      ],
+      getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
+    });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const editAction = getOverflowEditRowAction();
@@ -1949,9 +1938,9 @@ export const WithDataEditing = () => {
 WithDataEditing.storyName = 'With data editing';
 WithDataEditing.parameters = {
   component: Table,
-  docs: {
-    page: EditDataREADME,
-  },
+  // docs: {
+  //   page: EditDataREADME,
+  // },
 };
 
 export const WithAsynchronousDataSource = () => {
@@ -1961,7 +1950,7 @@ export const WithAsynchronousDataSource = () => {
 WithAsynchronousDataSource.storyName = 'With asynchronous data source';
 WithAsynchronousDataSource.parameters = {
   component: Table,
-  docs: {
-    page: TableREADME,
-  },
+  // docs: {
+  //   page: TableREADME,
+  // },
 };

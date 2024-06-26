@@ -10,16 +10,16 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { tableColumns, tableData, actions1 } from '../../utils/sample';
 
 import TableCard from './TableCard';
-import TableCardREADME from './TableCard.mdx';
+// import TableCardREADME from './TableCard.mdx'; // carbon 11
 
 export default {
   title: '1 - Watson IoT/Card/TableCard',
 
   parameters: {
     component: TableCard,
-    docs: {
-      page: TableCardREADME,
-    },
+    // docs: {
+    //   page: TableCardREADME,
+    // }, // carbon 11
   },
 };
 

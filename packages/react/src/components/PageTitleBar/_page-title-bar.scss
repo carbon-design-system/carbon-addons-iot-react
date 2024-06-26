@@ -1,11 +1,14 @@
 @use '../../globals/vars' as *;
 @use '../../globals/typography' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/motion' as *;
 @mixin condensed-style() {
-  @include make-sticky();
-  background: rgba($ui-01, var(--scroll-transition-progress));
-  border-bottom: 1px solid rgba($ui-03, var(--scroll-transition-progress));
-  transition: all $duration--fast-02;
+  // @include make-sticky(); //  @include make-sticky();
+  background: rgba($layer-01, var(--scroll-transition-progress)); //$ui-01
+  border-bottom: 1px solid rgba($border-subtle, var(--scroll-transition-progress)); //$ui-03
+  transition: all $duration-fast-02;
 }
 
 @mixin make-sticky() {
@@ -43,7 +46,7 @@
       auto auto min-content;
 
     .page-title-bar--sticky & {
-      @include condensed-style();
+      // @include condensed-style(); //   @include condensed-style();
       width: 100%;
       padding-bottom: $spacing-05;
       z-index: 1000;
@@ -88,14 +91,14 @@
       margin-left: $spacing-05;
     }
 
-    transition: opacity $duration--moderate-02;
+    transition: opacity $duration-moderate-02;
 
     .page-title-bar--condensed-static & {
-      @include condensed-style();
+      // @include condensed-style(); //   @include condensed-style();
     }
 
     .page-title-bar--dynamic & {
-      @include make-sticky();
+      // @include make-sticky(); //@include make-sticky();
       margin-left: $spacing-05;
       [dir='rtl'] & {
         margin-left: unset;
@@ -108,7 +111,7 @@
       grid-area: actions-condensed;
       padding-right: 0;
       opacity: 1;
-      transition: opacity $duration--moderate-02;
+      transition: opacity $duration-moderate-02;
     }
 
     // Fade out the action buttons and scroll them underneath the backdrop
@@ -136,12 +139,12 @@
 
     .page-title-bar--dynamic--during &,
     .page-title-bar--dynamic--after & {
-      @include condensed-style();
+      // @include condensed-style(); //@include condensed-style()
       z-index: 1;
       display: grid;
       content: '';
-      background: rgba($ui-01, var(--scroll-transition-progress));
-      border-bottom: 1px solid rgba($ui-03, var(--scroll-transition-progress));
+      background: rgba($layer-01, var(--scroll-transition-progress)); //$ui-01
+      border-bottom: 1px solid rgba($border-subtle, var(--scroll-transition-progress)); //$ui-03
     }
   }
 
@@ -159,22 +162,22 @@
     }
 
     .page-title-bar--dynamic & {
-      @include make-sticky();
+      // @include make-sticky(); //@include make-sticky();
       overflow: hidden;
-      transition: all $duration--fast-02;
+      transition: all $duration-fast-02;
       border-bottom: 1px solid transparent;
     }
 
     .page-title-bar--dynamic--during &,
     .page-title-bar--dynamic--after & {
       padding-bottom: $spacing-04;
-      transition: all $duration--fast-02;
+      transition: all $duration-fast-02;
       z-index: 900;
       max-height: $spacing-08;
     }
 
     .page-title-bar--condensed-static & {
-      @include condensed-style();
+      // @include condensed-style(); //@include condensed-style();
       grid-area: title;
       padding-bottom: $spacing-04;
       z-index: 1000;
@@ -195,7 +198,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      transition: opacity $duration--fast-01 linear, transform $duration--fast-01 linear;
+      transition: opacity $duration-fast-01 linear, transform $duration-fast-01 linear;
       margin-left: 0;
 
       // Add 1px of padding to prevent tooltip outline from getting cropped
@@ -232,7 +235,7 @@
   }
 
   &-actions-upper {
-    @include type-style('label-01');
+    // @include type-style('label-01'); //    @include type-style('label-01');
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -249,7 +252,7 @@
     }
 
     .page-title-bar--dynamic & {
-      @include make-sticky();
+      // @include make-sticky(); //@include make-sticky();
     }
 
     .page-title-bar--dynamic--after & {
@@ -281,7 +284,7 @@
       overflow: hidden;
 
       h2 {
-        @include type-style('productive-heading-04');
+        // @include type-style('productive-heading-04'); //@include type-style('productive-heading-04');
         // need to match the 40x40px icons that could render in
         height: $spacing-08;
         white-space: nowrap;
@@ -291,7 +294,7 @@
       }
 
       & #tooltip {
-        fill: $icon-01;
+        fill: $icon-primary; //$icon-01
       }
 
       .#{$prefix}--tooltip__label {
@@ -337,14 +340,14 @@
   &-description {
     display: grid;
     grid-area: description;
-    @include type-style('body-long-01');
+    // @include type-style('body-long-01'); //@include type-style('body-long-01');
     margin-top: $spacing-02;
     max-width: 40rem;
     padding-left: $spacing-07;
     padding-right: $spacing-07;
 
     .#{$prefix}--inline-loading {
-      @include type-style('label-01');
+      // @include type-style('label-01'); //  @include type-style('label-01');
       height: $spacing-04;
       min-height: unset;
       &__animation {
@@ -368,9 +371,9 @@
 
     &.page-title-bar-content--active {
       .#{$prefix}--tabs--scrollable {
-        transition: all $duration--fast-02 ease-in;
-        background: $ui-01;
-        border-bottom: 1px solid $ui-03;
+        transition: all $duration-fast-02 ease-in;
+        background: $layer-01; //$ui-01
+        border-bottom: 1px solid $border-subtle; //$ui-03
       }
     }
 
@@ -396,7 +399,7 @@
 
       .page-title-bar--dynamic & {
         z-index: 1100;
-        @include make-sticky();
+        // @include make-sticky(); //@include make-sticky();
       }
     }
   }
@@ -409,7 +412,7 @@
   &.page-title-bar--dynamic--after,
   &.page-title-bar--condensed-static {
     .page-title-bar-header {
-      @include make-sticky();
+      // @include make-sticky(); //@include make-sticky();
       top: var(--negative-header-offset);
     }
   }
@@ -422,7 +425,7 @@
 
   &.page-title-bar--condensed-static {
     .#{$prefix}--tabs--scrollable {
-      @include make-sticky();
+      // @include make-sticky(); //@include make-sticky();
     }
   }
 }

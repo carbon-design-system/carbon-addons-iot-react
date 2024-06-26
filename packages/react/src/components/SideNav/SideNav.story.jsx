@@ -10,7 +10,7 @@ import {
   RecentlyViewed,
   Apps,
 } from '@carbon/react/icons';
-import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
+import { HeaderContainer } from '@carbon/react';
 import { boolean } from '@storybook/addon-knobs';
 import { partition } from 'lodash-es';
 
@@ -18,7 +18,7 @@ import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import { settings } from '../../constants/Settings';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import './SideNav.story.scss';
+// import './SideNav.story.scss'; carbon 11
 import StatefulTable from '../Table/StatefulTable';
 import { getInitialState } from '../Table/Table.story.helpers';
 

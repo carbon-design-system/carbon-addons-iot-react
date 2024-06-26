@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { EventSchedule } from '@carbon/react/icons';
-import { ToolbarItem, OverflowMenu, OverflowMenuItem } from '@carbon/react';
+import { AccordionItem, OverflowMenu, OverflowMenuItem } from '@carbon/react';
+// import {ToolbarItem} from '@carbon/react'; need to find the correct component
 import classnames from 'classnames';
 import { isNil } from 'lodash-es';
 
@@ -63,7 +64,7 @@ const CardRangePicker = ({
 
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
-      <ToolbarItem>
+      <AccordionItem>
         <div
           id="timeRange"
           className={classnames(`${iotPrefix}--card--toolbar-timerange-label`, {
@@ -119,7 +120,7 @@ const CardRangePicker = ({
               />
             ))}
         </OverflowMenu>
-      </ToolbarItem>
+      </AccordionItem>
     </div>
   );
 };

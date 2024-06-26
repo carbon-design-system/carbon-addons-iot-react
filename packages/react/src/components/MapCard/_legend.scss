@@ -1,9 +1,14 @@
-@use '@carbon/styles/scss/config' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/utilities/_box-shadow' as *;
 .#{$iot-prefix}--map {
   &-legend {
     max-width: 50%;
-    background: $ui-02;
+    background: $layer-02; //$ui-02 carbon 11
     bottom: $spacing-05;
     left: $spacing-05;
     padding: $spacing-05;
@@ -32,7 +37,7 @@
     // We want the same height independent if scrollbars are present and
     // we need space for the logo and attribution links.
     height: 6.5rem;
-    transition: width $duration--fast-02 motion(entrance, productive);
+    transition: width $duration-fast-02 motion(entrance, productive);
     max-width: unset;
     bottom: 0;
     display: flex;
@@ -81,7 +86,7 @@
   }
 
   &-legend__label {
-    @include type-style('productive-heading-01');
+    // @include type-style('productive-heading-01'); //  @include type-style('productive-heading-01');
     padding-bottom: $spacing-03;
     overflow: hidden;
     text-overflow: ellipsis;

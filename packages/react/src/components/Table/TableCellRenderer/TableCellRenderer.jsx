@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip, TooltipDefinition } from '@carbon/react';
+import { Tooltip, DefinitionTooltip } from '@carbon/react';
 import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
@@ -85,14 +85,14 @@ const TableCellRenderer = ({
 
   const withTooltip = (element, tooltipForExtraInformation) => {
     return tooltip ? (
-      <TooltipDefinition
+      <DefinitionTooltip
         triggerClassName={`${iotPrefix}--table__cell-tooltip`}
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"
         align={tooltipDirection}
       >
         {element}
-      </TooltipDefinition>
+      </DefinitionTooltip>
     ) : (
       <Tooltip
         showIcon={false}

@@ -1,5 +1,7 @@
-@use '@carbon/styles/scss/config'  as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
 .#{$iot-prefix}--file-drop {
   &__selected-file {
     background-color: rgba(85, 150, 230, 0.1);
@@ -11,7 +13,7 @@
     padding: 0;
     font: inherit;
     outline: none;
-    color: $interactive-01;
+    // color: $background-brand; //$interactive-01 carbon 11
     cursor: pointer;
     margin-left: 0.25rem;
     text-decoration: underline;

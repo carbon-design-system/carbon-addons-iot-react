@@ -71,15 +71,8 @@ const StatefulTileCatalog = ({
     }
   }, [selectedTileIdProp]);
 
-  const {
-    page,
-    startingIndex,
-    endingIndex,
-    searchState,
-    tiles,
-    filteredTiles,
-    selectedTileId,
-  } = state;
+  const { page, startingIndex, endingIndex, searchState, tiles, filteredTiles, selectedTileId } =
+    state;
 
   const handlePage = (...args) => {
     dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args && args[0] });

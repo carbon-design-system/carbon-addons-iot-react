@@ -14,7 +14,7 @@ import { settings } from '../../constants/Settings';
 import { getInitialState } from '../Table/Table.story.helpers';
 
 import PageTitleBar from './PageTitleBar';
-import PageTitleBarREADME from './PageTitleBar.mdx';
+// import PageTitleBarREADME from './PageTitleBar.mdx'; carbon 11
 
 const { prefix } = settings;
 const initialTableState = getInitialState();
@@ -75,9 +75,9 @@ export default {
 
   parameters: {
     component: PageTitleBar,
-    docs: {
-      page: PageTitleBarREADME,
-    },
+    // docs: {
+    //   page: PageTitleBarREADME,
+    // }, //carbon 11
   },
 
   excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],

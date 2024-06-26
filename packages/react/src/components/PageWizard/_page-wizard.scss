@@ -1,12 +1,14 @@
-@use '@carbon/styles/scss/config' as *;
-@use '@carbon/styles/scss/typography' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--page-wizard {
   display: flex;
 
   &__sticky {
-    padding-bottom: $layout-06;
+    padding-bottom: $spacing-12; //$layout-06
   }
 
   &--progress {
@@ -28,10 +30,10 @@
 
   &--step {
     padding-bottom: $spacing-07;
-    @include type-style('body-long-01');
+    // @include type-style('body-long-01'); //@include type-style('body-long-01');
 
     &--title {
-      @include type-style('productive-heading-02');
+      // @include type-style('productive-heading-02');
       margin-bottom: $spacing-03;
     }
     &--description {
@@ -59,9 +61,9 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: $ui-01;
+      background: $layer-01; //$ui-01
       padding: $spacing-05 $spacing-07;
-      border-top: rem(1px) solid $ui-03;
+      border-top: to-rem(1px) solid $border-subtle; //$ui-03
       .#{$prefix}--btn {
         margin-right: $spacing-05;
       }

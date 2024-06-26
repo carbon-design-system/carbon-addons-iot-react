@@ -1,14 +1,16 @@
-@use '@carbon/styles/scss/config'  as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '../../globals/vars' as *;
 .#{$iot-prefix}--composed-structured-list {
   &__wrapper {
     width: inherit;
   }
 
   &__empty-content {
-    background-color: $ui-01;
+    background-color: $layer-01; //$ui-01
     text-align: center;
-    color: $text-03;
+    color: $text-placeholder; //$text-03
     // stylelint-disable-next-line declaration-property-unit-blacklist
     font-size: 14px;
     padding-top: 90px;

@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ChevronRight, ChevronLeft, Launch, Bee, Grid } from '@carbon/react/icons';
-import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
+import { SideNavLink, SideNavDivider } from '@carbon/react';
 
 import { settings } from '../../../constants/Settings';
 import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
@@ -123,14 +123,16 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   );
 
   const handleApplicationRoute = useCallback(
-    ({ id, href, isExternal }) => async (e) =>
-      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, isExternal, { appId: id }),
+    ({ id, href, isExternal }) =>
+      async (e) =>
+        handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, isExternal, { appId: id }),
     [handleRouteChange]
   );
 
   const handleWorkspaceRoute = useCallback(
-    ({ id, href }) => async (e) =>
-      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
+    ({ id, href }) =>
+      async (e) =>
+        handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
     [handleRouteChange]
   );
 

@@ -1,4 +1,4 @@
-@use '@carbon/styles/scss/mixins' as *;
+@use '@carbon/react/scss/utilities' as *;
 @use './vars' as *;
 
 @mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
@@ -77,10 +77,10 @@
     @content;
     position: sticky;
     overflow: hidden;
-    filter: drop-shadow(1px 0 0 $active-ui);
+    // filter: drop-shadow(1px 0 0 $active-ui); //$active-ui)
 
     [dir='rtl'] & {
-      filter: drop-shadow(-1px 0 0 $active-ui);
+      // filter: drop-shadow(-1px 0 0 $active-ui); //$active-ui)
     }
   }
 }

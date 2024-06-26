@@ -1,6 +1,8 @@
 @use '../../../../globals/vars' as *;
 @use '../../../../globals/mixins' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 $grouped-columns-filter-border-width: 2px;
 
 .#{$iot-prefix}--filter-header-row--form-item {
@@ -56,8 +58,8 @@ $grouped-columns-filter-border-width: 2px;
 
   &.#{$iot-prefix}--filter-header-row--with-margin {
     .#{$prefix}--table-header-label {
-      min-width: rem(120px);
-      padding-right: rem(42px);
+      min-width: to-rem(120px);
+      padding-right: to-rem(42px);
 
       [dir='rtl'] & {
         padding-right: unset;
@@ -70,10 +72,10 @@ $grouped-columns-filter-border-width: 2px;
     position: absolute;
     right: 0;
     z-index: 1;
-    background-color: $ui-03;
+    background-color: $border-subtle; //$ui-03
 
     &:hover {
-      background-color: $hover-light-ui;
+      // background-color: $hover-light-ui;
     }
 
     [dir='rtl'] & {
@@ -82,11 +84,11 @@ $grouped-columns-filter-border-width: 2px;
     }
 
     &.#{$iot-prefix}--filter-header-icon--with-border {
-      border-right: $spacing-01 solid $ui-background;
+      border-right: $spacing-01 solid $background; //$ui-background
 
       [dir='rtl'] & {
         border-right: none;
-        border-left: $spacing-01 solid $ui-background;
+        border-left: $spacing-01 solid $background; //$ui-background
       }
     }
 
@@ -95,7 +97,7 @@ $grouped-columns-filter-border-width: 2px;
 
       [dir='rtl'] & {
         right: unset;
-        left: rem(22px);
+        left: to-rem(22px);
       }
     }
   }
@@ -105,12 +107,12 @@ $grouped-columns-filter-border-width: 2px;
     right: 0;
     width: $spacing-03;
     height: $spacing-08;
-    background-color: $ui-03;
+    background-color: $border-subtle; // $ui-03
 
     [dir='rtl'] & {
       right: unset;
       left: 0;
-      width: rem(22px);
+      width: to-rem(22px);
     }
   }
 }
@@ -120,7 +122,9 @@ $grouped-columns-filter-border-width: 2px;
 }
 
 .#{$prefix}--data-table
-  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(:last-of-type) {
+  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(
+    :last-of-type
+  ) {
   border-right-width: $grouped-columns-filter-border-width;
 
   [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {
@@ -159,27 +163,27 @@ $grouped-columns-filter-border-width: 2px;
      were being overridden by other styles */
   .#{$iot-prefix}--filterheader-multiselect {
     .#{$prefix}--list-box__selection--multi {
-      background-color: $interactive-02;
+      // background-color: $interactive-02; //$interactive-02;
     }
     .#{$prefix}--list-box__selection--multi > svg {
-      fill: $ui-background;
+      fill: $background; //$ui-background
     }
 
     &.#{$iot-prefix}--filterheader-multiselect__menu--fit-content {
-      @include list-box-menu-fits-content();
+      // @include list-box-menu-fits-content(); //      @include list-box-menu-fits-content();
     }
 
     // Default for when fit-content is active and the menu is wider than the input
     // is that the menu expands to the right. This style makes it expand tp the left
     // unless we are in RTL mode.
     &.#{$iot-prefix}--filterheader-multiselect__menu--flip-horizontal {
-      @include list-box-menu-flip-horizontal();
+      // @include list-box-menu-flip-horizontal(); //      @include list-box-menu-flip-horizontal();
     }
   }
 
   .#{$prefix}--tag--filter {
     &:focus {
-      outline: 2px solid $interactive-01;
+      // outline: 2px solid $interactive-01; // $interactive-01;
       outline-offset: -2px;
 
       svg {
@@ -188,7 +192,7 @@ $grouped-columns-filter-border-width: 2px;
     }
 
     & > svg {
-      fill: $ui-05;
+      fill: $border-inverse; //$ui-05
       border-radius: 0;
 
       &:hover {

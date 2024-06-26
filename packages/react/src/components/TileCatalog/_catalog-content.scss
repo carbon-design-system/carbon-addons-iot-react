@@ -1,6 +1,8 @@
-@use '@carbon/styles/scss/config'  as *;
+@use '@carbon/react/scss/config' as *;
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--sample-tile {
   display: flex;
   flex-flow: row nowrap;
@@ -22,7 +24,7 @@
 }
 
 .#{$iot-prefix}--sample-tile-title {
-  color: $link-01;
+  color: $link-primary; //$link-01
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;

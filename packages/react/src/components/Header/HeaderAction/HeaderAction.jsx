@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { settings } from 'carbon-components';
-import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
+// import { settings } from 'carbon-components';
+import { HeaderGlobalAction } from '@carbon/react';
 import classnames from 'classnames';
 import { Close } from '@carbon/react/icons';
 import { white } from '@carbon/colors';
@@ -12,8 +12,8 @@ import { HeaderActionPropTypes } from '../HeaderPropTypes';
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
 
-const { prefix: carbonPrefix } = settings;
-
+// const { prefix: carbonPrefix } = settings; need to upgrade carbon 11
+const carbonPrefix = 'cds';
 const defaultProps = {
   testId: 'header-action',
   renderLabel: false,

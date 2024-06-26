@@ -1,6 +1,8 @@
 @use '../../../globals/vars' as *;
 @use '../list-vars' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
 .#{$iot-prefix}--list-item-parent {
   position: relative;
 }
@@ -11,14 +13,14 @@
     overflow: hidden;
     align-items: stretch;
     justify-content: space-between;
-    background: $ui-01;
+    background: $layer-01; //$ui-01 carbon 11
 
     &:hover {
       cursor: grab;
     }
 
     &:active {
-      background: $hover-ui;
+      // background: $hover-ui; //$hover-ui; carbon 11
 
       cursor: grabbing;
     }
@@ -26,7 +28,7 @@
 
   &--drop-targets {
     width: 100%;
-    height: rem(40px);
+    height: to-rem(40px);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -79,8 +81,8 @@
 
   &--drag-preview {
     position: absolute;
-    background: $inverse-02;
-    color: $text-04;
+    background: $background-inverse; //$inverse-02 carbon 11
+    color: $text-on-color; //$text-04 carbon 11
     padding: $spacing-02 $spacing-04;
     border-radius: 0.125rem;
     opacity: 1;
@@ -89,12 +91,12 @@
   }
 
   &--dragging {
-    background: $hover-ui;
+    // background: $hover-ui; //$hover-ui carbon 11
     cursor: grabbing;
   }
 
   &:hover {
-    background: $hover-ui;
+    // background: $hover-ui; //$hover-ui carbon 11
     cursor: grab;
   }
 }
@@ -103,7 +105,7 @@
   border-bottom: 1px solid $list-item-border-color;
   display: flex;
   height: $list-item-height;
-  color: $text-02;
+  color: $text-secondary; //$text-02 carbon 11
   padding: $spacing-03 $spacing-05;
   align-items: center;
   overflow: hidden;
@@ -117,11 +119,11 @@
   &--handle,
   &--lock {
     flex-shrink: 0;
-    fill: $inverse-02;
+    // fill: $inverse-02; //$inverse-02 Carbon 11
     margin-right: $spacing-04;
 
     &__disabled {
-      fill: $disabled-02;
+      fill: $text-disabled; //$disabled-02
       cursor: not-allowed;
     }
   }
@@ -133,22 +135,22 @@
   }
 
   &--category {
-    @include type-style('productive-heading-01');
-    color: $text-01;
+    // @include type-style('productive-heading-01');
+    color: $text-primary; //$text-01 carbon 11
   }
 
   &__selectable {
     cursor: pointer;
     &:hover {
-      background: $hover-row;
-      color: $text-01;
+      // background: $hover-row; //$hover-row;
+      color: $text-primary; //$text-01
     }
   }
 
   &__selected {
     $selected-mark-width: $spacing-02;
     // Box shadow used to avoid mitered corner with the bottom border
-    box-shadow: calc(-1 * #{$selected-mark-width}) 0 $interactive-01;
+    box-shadow: calc(-1 * #{$selected-mark-width}) 0 blue; //$interactive-01 carbon11
     // Can't use inset box-shadow because of bottom border so we need a left margin
     margin-left: $selected-mark-width;
     // Make sure content is unaffected by extra left margin
@@ -158,8 +160,8 @@
       margin-left: $spacing-01;
       padding-left: calc(#{$spacing-05} - #{$spacing-01});
     }
-    color: $text-01;
-    background: $selected-ui;
+    color: $text-primary; //$text-01
+    background: $background-selected; //selected-ui carbon 11
   }
 
   &--expand-icon {
@@ -170,14 +172,14 @@
     }
 
     &__disabled {
-      fill: $disabled-02;
-      color: $disabled-02;
+      fill: $icon-disabled; //$disabled-02
+      color: $icon-disabled; //$disabled-02
       cursor: not-allowed;
     }
   }
 
   &--content {
-    @include type-style('body-short-01');
+    // @include type-style('body-short-01');
     display: flex;
     width: 100%;
     height: 100%;
@@ -220,8 +222,8 @@
         &__large {
           flex-direction: column;
           align-items: unset;
-          @include type-style('productive-heading-01');
-          color: $text-01;
+          // @include type-style('productive-heading-01');
+          color: $text-primary; //$text-01
         }
       }
       &--value {
@@ -230,12 +232,12 @@
         overflow: hidden;
         text-overflow: ellipsis;
         &__large {
-          @include type-style('body-short-01');
-          color: $text-05;
+          // @include type-style('body-short-01');
+          color: $text-helper; //$text-05;
         }
       }
       &__disabled {
-        color: $disabled-02;
+        color: $text-disabled; //$disabled-02
       }
     }
     &--row-actions {

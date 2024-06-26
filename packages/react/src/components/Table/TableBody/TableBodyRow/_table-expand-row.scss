@@ -1,5 +1,6 @@
 @use '../../../../globals/vars' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
 .#{$iot-prefix}--table-expand__button {
   &.#{$prefix}--btn--sm {
     min-height: unset;

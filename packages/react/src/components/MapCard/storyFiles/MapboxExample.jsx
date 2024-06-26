@@ -10,7 +10,7 @@ import MapCard from '../MapCard';
 import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import Optionsfield from './Optionsfield';
-import './mapbox-example.scss';
+// import './mapbox-example.scss';  carbon 11
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiZGF2aWRpY3VzIiwiYSI6ImNrbTN4OWpsZTBjYm0ybnBsaWZkemV6MmgifQ.jpqC4rJzYG6CY3IXc9NLuw';

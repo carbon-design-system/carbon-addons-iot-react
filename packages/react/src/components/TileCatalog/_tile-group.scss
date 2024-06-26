@@ -1,17 +1,19 @@
-@use '@carbon/styles/scss/config'  as *;
+@use '@carbon/react/scss/config' as *;
 @use '../../globals/vars' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
 
 .#{$iot-prefix}--tile-group {
   display: flex;
   flex-flow: row wrap;
   > * {
-    border: 1px solid $ui-03;
+    border: 1px solid $border-subtle; //$ui-03
     flex: 1 1 33.33%;
     min-width: 300px;
   }
 
   > label {
-    border: 1px solid $ui-03;
+    border: 1px solid $border-subtle; //$ui-03
     outline-offset: -1px;
   }
   overflow-y: hidden;

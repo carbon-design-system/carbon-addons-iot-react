@@ -4,16 +4,23 @@ import React, { Component } from 'react';
 import { OverflowMenu as CarbonOverflowMenu } from '@carbon/react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { getMenuOffset } from 'carbon-components-react/es/components/OverflowMenu/OverflowMenu';
-import { keys, matches as keyCodeMatches } from 'carbon-components-react/es/internal/keyboard';
-import ClickListener from 'carbon-components-react/es/internal/ClickListener';
-import { PrefixContext } from 'carbon-components-react/es/internal/usePrefix';
-import mergeRefs from 'carbon-components-react/es/tools/mergeRefs';
+import { getMenuOffset } from '@carbon/react/es/components/OverflowMenu/OverflowMenu';
+import {
+  Escape,
+  ArrowUp,
+  ArrowDown,
+  ArrowRight,
+  ArrowLeft,
+} from '@carbon/react/es/internal/keyboard/keys';
+import { matches as keyCodeMatches } from '@carbon/react/es/internal/keyboard/match';
+import ClickListener from '@carbon/react/es/internal/ClickListener';
+import { PrefixContext } from '@carbon/react/es/internal/usePrefix';
+import mergeRefs from '@carbon/react/es/tools/mergeRefs';
 import { useLangDirection } from 'use-lang-direction';
 import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
-} from 'carbon-components-react/es/internal/FloatingMenu';
+} from '@carbon/react/es/internal/FloatingMenu';
 import { OverflowMenuVertical } from '@carbon/react/icons';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
@@ -275,10 +282,7 @@ class IotOverflowMenu extends Component {
 
   handleKeyPress = (evt) => {
     const { onKeyDown } = this.props;
-    if (
-      this.state.open &&
-      keyCodeMatches(evt, [keys.ArrowUp, keys.ArrowRight, keys.ArrowDown, keys.ArrowLeft])
-    ) {
+    if (this.state.open && keyCodeMatches(evt, [ArrowUp, ArrowRight, ArrowDown, ArrowLeft])) {
       evt.preventDefault();
     }
 
@@ -287,7 +291,7 @@ class IotOverflowMenu extends Component {
     }
 
     // Close the overflow menu on escape
-    if (keyCodeMatches(evt, [keys.Escape])) {
+    if (keyCodeMatches(evt, [Escape])) {
       const wasOpen = this.state.open;
       this.closeMenu(() => {
         /* istanbul ignore else */

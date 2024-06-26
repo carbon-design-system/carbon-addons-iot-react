@@ -1,24 +1,27 @@
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 .#{$iot-prefix}--card-editor {
   height: 100%;
   width: 16rem;
   display: flex;
-  background: $ui-01;
+  background: $layer-01; ////$ui-01
   flex-direction: column;
-  border-left: 1px solid $ui-03;
+  border-left: 1px solid $border-subtle-01; ////$ui-03
   &--header {
     flex: 0 0 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 $spacing-02;
-    border-bottom: 1px solid $ui-03;
+    border-bottom: 1px solid $border-subtle-01; ////$ui-03
     h5 {
       padding: 0 $spacing-03;
     }
   }
 
   &--footer {
-    border-top: solid 1px $ui-03;
+    border-top: solid 1px $border-subtle-01; ///$ui-03
     & > button {
       justify-content: space-between;
       width: 100%;
@@ -36,7 +39,7 @@
   }
 
   &--header--title {
-    @include type-style('productive-heading-02');
+    // @include type-style('productive-heading-02');
     padding-left: $spacing-03;
     width: 100%;
   }

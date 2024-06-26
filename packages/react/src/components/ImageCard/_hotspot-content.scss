@@ -1,13 +1,16 @@
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/theme' as *;
 .#{$iot-prefix}--hotspot-content {
   h4 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: carbon--type-scale(5);
+    font-size: type-scale(5);
     padding-bottom: $spacing-03;
-    color: $ui-01;
+    color: $layer-01; //$ui-01 carbon 11
   }
   &-description {
     padding-bottom: $spacing-03;

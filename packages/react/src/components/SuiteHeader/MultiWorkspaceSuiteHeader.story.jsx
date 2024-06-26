@@ -11,7 +11,7 @@ import {
   RecentlyViewed,
   Apps,
   Group,
-  NotificationOn,
+  NotificationFilled,
   Car,
   Chat,
   Bee,
@@ -156,7 +156,7 @@ const customActionItems = [
     label: 'bell',
     btnContent: (
       <span id="bell-icon">
-        <NotificationOn id="notification-button" size={24} fill="white" description="Icon" />
+        <NotificationFilled id="notification-button" size={24} fill="white" description="Icon" />
       </span>
     ),
     onClick: action('bell clicked'),

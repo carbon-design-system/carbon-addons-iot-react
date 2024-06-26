@@ -7,7 +7,7 @@ import { InformationSquareFilled, InformationFilled } from '@carbon/react/icons'
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
-import HotspotEditorTooltipTabREADME from './HotspotEditorTooltipTabREADME.mdx';
+// import HotspotEditorTooltipTabREADME from './HotspotEditorTooltipTabREADME.mdx'; //carbon 11
 
 const commonActions = {
   onEditDataItem: (cardConfig, dataItem) =>
@@ -48,9 +48,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorTooltipTab,
-    docs: {
-      page: HotspotEditorTooltipTabREADME,
-    },
+    // docs: {
+    //   page: HotspotEditorTooltipTabREADME,
+    // }, //carbon 11
   },
 };
 

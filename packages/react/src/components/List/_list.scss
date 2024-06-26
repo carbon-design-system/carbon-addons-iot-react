@@ -1,6 +1,9 @@
 @use '../../globals/vars' as *;
 @use './list-vars' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
 .#{$iot-prefix}--list {
   display: flex;
   width: 100%;
@@ -10,7 +13,7 @@
     flex: 0;
   }
   &--content {
-    background: $ui-01;
+    background: $layer-01; //$ui-01
     flex: 1;
     overflow-y: auto;
 
@@ -81,17 +84,17 @@
     min-height: $list-item-height;
     cursor: pointer;
     min-width: 100%;
-    background: $ui-01;
+    background: $layer-01; //$ui-01 carbon 11
     &--content {
-      color: $interactive-01;
+      // color: $interactive-01; // $interactive-01 carbon 11
     }
     .#{prefix}--loading__stroke {
-      stroke: $interactive-01;
+      // stroke: $interactive-01; // $interactive-01 carbon 11
     }
     &.#{$prefix}--btn--disabled,
     .#{$prefix}--btn--disabled:focus,
     .#{$prefix}--btn--disabled:hover {
-      border-bottom: 1px solid $decorative-01;
+      // border-bottom: 1px solid $decorative-01; // $decorative-01 carbon 11
     }
   }
 

@@ -9,7 +9,7 @@ import {
   Laptop,
   Screen,
 } from '@carbon/react/icons';
-import { FileUploaderButton, TooltipIcon, ContentSwitcher, TextInput } from '@carbon/react';
+import { FileUploaderButton, Tooltip, ContentSwitcher, TextInput } from '@carbon/react';
 import { isEmpty } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
@@ -178,7 +178,7 @@ const DashboardEditorHeader = ({
         {
           // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
           onImport && (
-            <TooltipIcon
+            <Tooltip
               align="center"
               direction="bottom"
               tooltipText={mergedI18n.headerImportButton}
@@ -194,7 +194,7 @@ const DashboardEditorHeader = ({
                 multiple={false}
                 data-testid={`${testId}-file-uploader-button`}
               />
-            </TooltipIcon>
+            </Tooltip>
           )
         }
         {onExport && (

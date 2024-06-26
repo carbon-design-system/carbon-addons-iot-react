@@ -1,9 +1,11 @@
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
 @use '../../globals/vars' as *;
 @use '../../globals/layout' as *;
 
 .#{$iot-prefix}--composed-modal {
   .#{$prefix}--modal-container {
-    @media (min-height: rem(515px)) {
+    @media (min-height: to-rem(515px)) {
       overflow-y: auto;
     }
   }
@@ -24,16 +26,16 @@
       margin-bottom: 0;
     }
     .#{$prefix}--modal-container {
-      min-height: carbon--rem(600px);
-      min-width: carbon--rem(800px);
+      min-height: to-rem(600px);
+      min-width: to-rem(800px);
       max-height: 80%;
-      @media (min-width: rem(600px)) {
+      @media (min-width: to-rem(600px)) {
         height: auto;
       }
-      @media (min-width: rem(1024px)) {
+      @media (min-width: to-rem(1024px)) {
         max-width: 80%;
       }
-      @media (min-width: rem(1200px)) {
+      @media (min-width: to-rem(1200px)) {
         max-width: 60%;
       }
     }
@@ -45,10 +47,10 @@
       min-height: $min-width;
       min-width: $min-width;
       max-height: 80%;
-      @media (min-width: rem(1024px)) {
+      @media (min-width: to-rem(1024px)) {
         min-width: $min-width;
       }
-      @media (min-width: rem(1200px)) {
+      @media (min-width: to-rem(1200px)) {
         min-width: $min-width;
       }
 
@@ -65,7 +67,7 @@
   }
 
   .#{$prefix}--modal-content {
-    min-height: rem(200px);
+    min-height: to-rem(200px);
   }
 }
 

@@ -8,7 +8,7 @@
 import React from 'react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 
-import { TooltipDefinition } from '.';
+import { DefinitionTooltip } from '.';
 
 const directions = {
   'Bottom (bottom)': 'bottom',
@@ -36,13 +36,13 @@ export default {
   decorators: [withKnobs],
 
   parameters: {
-    component: TooltipDefinition,
+    component: DefinitionTooltip,
   },
 };
 
 export const Default = () => (
   <div style={{ marginTop: '2rem' }}>
-    <TooltipDefinition {...props()}>Definition Tooltip</TooltipDefinition>
+    <DefinitionTooltip {...props()}>Definition Tooltip</DefinitionTooltip>
   </div>
 );
 

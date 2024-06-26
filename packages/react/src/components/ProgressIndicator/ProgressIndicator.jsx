@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
+import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
+import { matches } from '@carbon/react/es/internal/keyboard/match';
 import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
@@ -39,7 +40,7 @@ const ProgressStep = ({
   };
 
   const handleKeyDown = (e) => {
-    if (matches(e, [keys.Enter, keys.Space])) {
+    if (matches(e, [Enter, Space])) {
       handleClick();
     }
   };

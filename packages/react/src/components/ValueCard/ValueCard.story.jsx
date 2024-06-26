@@ -8,16 +8,16 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getDataStateProp } from '../Card/Card.story';
 
 import ValueCard from './ValueCard';
-import ValueCardREADME from './ValueCard.mdx';
+// import ValueCardREADME from './ValueCard.mdx'; //carbon 11
 
 export default {
   title: '1 - Watson IoT/Card/ValueCard',
 
   parameters: {
     component: ValueCard,
-    docs: {
-      page: ValueCardREADME,
-    },
+    // docs: {
+    //   page: ValueCardREADME,
+    // },
   },
 };
 
@@ -62,8 +62,7 @@ SmallLongNoUnits.storyName = 'with long text, no units, no click handler';
 
 SmallLongNoUnits.parameters = {
   info: {
-    text:
-      'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
+    text: 'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
   },
 };
 

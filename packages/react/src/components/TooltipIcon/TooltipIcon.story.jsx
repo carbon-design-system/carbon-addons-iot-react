@@ -9,7 +9,7 @@ import React from 'react';
 import { Filter } from '@carbon/react/icons';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 
-import { TooltipIcon } from '.';
+import { Tooltip } from '.';
 
 const directions = {
   'Top (top)': 'top',
@@ -35,14 +35,14 @@ export default {
   decorators: [withKnobs],
 
   parameters: {
-    component: TooltipIcon,
+    component: Tooltip,
   },
 };
 
 export const Default = () => (
-  <TooltipIcon {...props()}>
+  <Tooltip {...props()}>
     <Filter />
-  </TooltipIcon>
+  </Tooltip>
 );
 
 Default.storyName = 'default';

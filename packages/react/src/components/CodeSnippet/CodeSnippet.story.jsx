@@ -86,7 +86,7 @@ export const multiline = () => (
 
 export const singleline = () => (
   <CodeSnippet type="single" feedback="Copied to clipboard">
-    yarn add carbon-components@latest carbon-components-react@latest @carbon/icons-react@latest
+    yarn add carbon-components@latest @carbon/react@latest @carbon/icons-react@latest
     carbon-icons@latest
   </CodeSnippet>
 );

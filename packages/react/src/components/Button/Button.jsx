@@ -1,12 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from '@carbon/react';
-import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
 
+const ButtonKinds = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'ghost',
+  'danger',
+  'danger--primary',
+  'danger--ghost',
+  'danger--tertiary',
+];
 const { iotPrefix } = settings;
 const propTypes = {
   /** Show loading spinner, only new prop */
@@ -85,9 +94,8 @@ const Button = React.forwardRef((props, ref) => {
     >
       {loading ? <Loading small withOverlay={false} /> : null}
       {kind === 'icon-selection' && !disabled && recommended ? (
-        <div className={`${iotPrefix}--btn-icon-selection--recommended_marker`} />
+        <div className={`${iotPrefix}--btn-icon-selection--recommended_marker`} /> // For different icons this block in not rendering need to fix it
       ) : null}
-
       {children}
     </CarbonButton>
   );

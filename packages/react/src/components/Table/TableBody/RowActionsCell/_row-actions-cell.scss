@@ -1,4 +1,9 @@
 @use '../../../../globals/vars' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/motion' as *;
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }
@@ -35,7 +40,7 @@
   padding-left: $spacing-06;
   padding-right: $spacing-03;
   z-index: 0;
-  @include backgroundGradient($hover-ui);
+  // @include backgroundGradient($hover-ui);
 }
 
 body:not(.#{$iot-prefix}--is-dragging)
@@ -43,7 +48,7 @@ body:not(.#{$iot-prefix}--is-dragging)
   tbody
   tr:hover
   .#{$iot-prefix}--row-actions-container__background {
-  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} $spacing-05);
+  // background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} $spacing-05);
 }
 
 .#{$iot-prefix}--action-overflow-item {
@@ -62,8 +67,8 @@ body:not(.#{$iot-prefix}--is-dragging)
 
 .#{$iot-prefix}--row-actions-container__background:focus-within {
   opacity: 1;
-  @include backgroundGradient($ui-01);
-  transition: opacity $duration--fast-02 motion(entrance, productive);
+  @include backgroundGradient($layer-01); //$ui-01
+  transition: opacity $duration-fast-02 motion(entrance, productive);
 }
 
 body:not(.#{$iot-prefix}--is-dragging)
@@ -73,24 +78,24 @@ body:not(.#{$iot-prefix}--is-dragging)
   .#{$iot-prefix}--row-actions-container__background,
 .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
   opacity: 1;
-  transition: opacity $duration--fast-02 motion(entrance, productive);
+  transition: opacity $duration-fast-02 motion(entrance, productive);
 }
 
 .#{$prefix}--data-table tbody tr {
   &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
     // doesn't use the mixin above because safari has problems with 229 rgb values being rendered
     // as transparent.
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #{$ui-01} 16px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #{$layer-01} 16px); //$ui-01
   }
 
   &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
-    @include backgroundGradient($hover-selected-ui);
+    @include backgroundGradient($background-selected-hover); //$hover-selected-ui
   }
 
   &.#{$prefix}--data-table--selected:not(:hover) {
     .#{$iot-prefix}--row-actions-container__background--overflow-menu-open,
     .#{$iot-prefix}--row-actions-container__background:focus-within {
-      @include backgroundGradient($carbon--gray-20);
+      @include backgroundGradient($gray-20); //$carbon--gray-20
     }
   }
 }
@@ -135,7 +140,7 @@ html[dir='rtl'] {
   &.#{$iot-prefix}--row-actions-cell--overflow-menu {
     margin-left: 0.5rem;
     &:hover > svg {
-      fill: $interactive-01;
+      // fill: $interactive-01;//$interactive-01
     }
   }
 }

@@ -1,6 +1,10 @@
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
 .#{$iot-prefix}--suite-header-profile {
-  background-color: $ui-05;
-  color: $inverse-01;
+  background-color: $border-inverse; //$ui-05
+  color: $text-inverse; //$inverse-01
   width: 100%;
   padding: $spacing-05;
 
@@ -17,8 +21,8 @@
       width: $spacing-07;
       height: $spacing-07;
       border-radius: $spacing-05;
-      background-color: $ui-03;
-      color: $text-01;
+      background-color: $border-subtle; // $ui-03
+      color: $text-primary; //$text-01;
       text-align: center;
       line-height: $spacing-07;
     }
@@ -39,12 +43,12 @@
 
     /* mimic tertiary button from grey-100 theme */
     .#{$prefix}--btn {
-      border: solid 1px $ui-02;
-      background-color: $ui-05;
+      border: solid 1px $layer-02; //$ui-02
+      background-color: $border-inverse; //$ui-05
 
       &:hover {
-        background-color: $ui-02;
-        color: $ui-05;
+        background-color: $layer-02; //$ui-02
+        color: $border-inverse; //$ui-05;
       }
     }
     &--no-logout {
@@ -55,7 +59,7 @@
   &--loading {
     height: 120px;
     p {
-      background-color: $inverse-hover-ui;
+      background-color: $background-inverse-hover; //$inverse-hover-ui carbon 11
       height: $spacing-04;
       margin-bottom: $spacing-02;
     }
@@ -72,7 +76,7 @@
     }
     &--loading {
       div {
-        background-color: $inverse-hover-ui !important;
+        background-color: $background-inverse-hover !important; //$inverse-hover-ui
       }
     }
   }
@@ -80,9 +84,9 @@
 
 .#{$iot-prefix}--suite-header-survey-toast {
   position: fixed;
-  top: $layout-04;
+  top: $spacing-09; //$layout-04
   right: 0;
-  max-width: rem(425px);
+  max-width: to-rem(425px);
   width: auto;
   z-index: z('overlay');
 
@@ -116,12 +120,12 @@
       min-height: 40px;
     }
     p {
-      @include type-style('productive-heading-01');
+      // @include type-style('productive-heading-01');
       display: flex;
       align-items: center;
       padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: $text-01;
+      color: $text-primary; //$text-01
     }
   }
 
@@ -151,7 +155,7 @@
     &--separator {
       padding: 0;
       height: 0;
-      border-bottom: 1px solid $ui-03;
+      border-bottom: 1px solid $border-subtle; //$ui-03
       margin: 0 $spacing-05 0 $spacing-05;
     }
   }
@@ -159,21 +163,21 @@
   &--app-link {
     button,
     a {
-      @include type-style('productive-heading-01');
+      // @include type-style('productive-heading-01'); //@include type-style('productive-heading-01');
       text-decoration: none;
-      color: $text-02;
+      color: $text-secondary; //$text-02
     }
   }
 
   &--no-app {
-    padding: $layout-05 $spacing-07 $spacing-05;
+    padding: $spacing-10 $spacing-07 $spacing-05; // $layout-05
     .bee-icon-container {
       display: block;
       svg {
         display: inherit;
       }
       .bee-shadow {
-        background-color: $ui-03;
+        background-color: $border-subtle; //$ui-03
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -181,12 +185,12 @@
       }
     }
     span {
-      @include type-style('body-short-01');
-      color: $text-01;
+      // @include type-style('body-short-01');//@include type-style('body-short-01');
+      color: $text-primary; // $text-01
       padding-top: $spacing-05;
     }
     a {
-      @include type-style('body-short-01');
+      // @include type-style('body-short-01'); // @include type-style('body-short-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
@@ -196,38 +200,38 @@
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
   overflow-y: auto;
-  background-color: $ui-05;
+  background-color: $border-inverse; //$ui-05;
   padding-top: 0;
 
   p {
-    @include type-style('body-short-01');
+    // @include type-style('body-short-01');//@include type-style('body-short-01');
     display: flex;
     align-items: center;
     padding: $spacing-05 $spacing-05 $spacing-03;
 
     text-decoration: none;
-    color: $inverse-01;
+    color: $text-inverse; //$inverse-01;
   }
 
   &--divider {
     margin: $spacing-03 0 0 0;
-    background-color: $interactive-02;
+    // background-color: $interactive-02;//$interactive-02;
   }
 
   &--app-link,
   a.#{$prefix}--side-nav__link {
     &.#{$prefix}--side-nav__link--current {
-      background-color: $inverse-02;
+      background-color: $background-inverse; //$inverse-02;
       > .#{$prefix}--side-nav__link-text {
         color: $field-01;
       }
     }
     > .#{$prefix}--side-nav__link-text {
       white-space: nowrap;
-      color: $inverse-01;
+      color: $text-inverse; //$inverse-01
     }
     svg {
-      fill: $icon-03;
+      fill: $icon-on-color; //$icon-03
     }
   }
   &--external {
@@ -242,12 +246,12 @@
   }
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
-    background-color: $hover-secondary;
+    // background-color: $hover-secondary;
     .#{$prefix}--side-nav__link-text {
-      color: $inverse-01;
+      color: $text-inverse; //$inverse-01
     }
     svg {
-      fill: $icon-03;
+      fill: $icon-on-color; //$icon-03
     }
   }
 
@@ -265,10 +269,10 @@
       display: block;
       svg {
         display: inherit;
-        fill: $ui-03;
+        fill: $border-subtle; //$ui-03
       }
       .bee-shadow {
-        background-color: $active-ui;
+        // background-color: $active-ui; //$active-ui
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -276,16 +280,16 @@
       }
     }
     span {
-      @include type-style('body-short-01');
-      color: $active-ui;
+      // @include type-style('body-short-01'); //  @include type-style('body-short-01');
+      // color: $active-ui; //$active-ui;
       padding-top: $spacing-05;
     }
     a {
-      @include type-style('body-short-01');
+      // @include type-style('body-short-01'); //@include type-style('body-short-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
-      color: $inverse-link;
+      color: $link-inverse; //$inverse-link;
     }
   }
 }
@@ -304,16 +308,16 @@
   }
   a.admin-icon {
     .#{$prefix}--tooltip__trigger svg {
-      fill: $ui-01;
+      fill: $layer-01; //$ui-0
     }
   }
   a.admin-icon__hidden {
     visibility: hidden !important;
   }
   a.admin-icon__selected {
-    background-color: $interactive-02;
+    // background-color: $interactive-02;//$interactive-02
     border: none;
-    border-bottom: $spacing-01 solid $ui-01;
+    border-bottom: $spacing-01 solid $layer-01; //$ui-01
     padding-top: $spacing-01;
   }
 
@@ -345,8 +349,8 @@
     div.#{$prefix}--header__menu-item {
       padding: 0;
       border: none;
-      color: $text-02;
-      background-color: $ui-background;
+      color: $text-secondary; //$text-02;
+      background-color: $background; // $ui-background
 
       &:hover {
         background-color: inherit;
@@ -364,7 +368,7 @@
       padding: $spacing-05;
 
       &:hover {
-        color: $text-04;
+        color: $text-on-color; //$text-04;
       }
     }
   }
@@ -375,12 +379,12 @@
   }
 
   .#{$iot-prefix}--suite-header-help--loading {
-    background-color: $ui-05;
-    color: $inverse-01;
+    background-color: $border-inverse; //$ui-05;
+    color: $text-inverse; //$inverse-01;
     width: 100%;
     padding: $spacing-05;
     p {
-      background-color: $inverse-hover-ui;
+      background-color: $background-inverse-hover; //$inverse-hover-ui
       margin-bottom: $spacing-06;
     }
   }
@@ -388,22 +392,22 @@
   .#{$iot-prefix}--suite-header-help--separator {
     padding: 0;
     height: 0;
-    border-bottom: 1px solid $hover-secondary;
+    // border-bottom: 1px solid $hover-secondary; //$hover-secondary;
     margin: 0 $spacing-05 0 $spacing-05;
   }
 
   &--logout {
     a {
-      background-color: $interactive-02;
-      color: $inverse-01;
+      // background-color: $interactive-02;//$interactive-02
+      color: $text-inverse; //$inverse-01
       &:hover {
-        background-color: $hover-secondary !important;
+        // background-color: $hover-secondary !important; //$hover-secondary
       }
     }
   }
   &--logout--loading {
     div {
-      background-color: $inverse-hover-ui !important;
+      // background-color: $inverse-hover-ui !important; //$inverse-hover-ui
       width: 256px !important;
     }
   }

@@ -1,10 +1,13 @@
 @use '../../../globals/vars' as *;
-@use '@carbon/styles/scss/layout' as *;
+@use '@carbon/react/scss/layout' as *;
 @use 'column-resize' as *;
 @use 'ColumnHeaderRow/column-header-row' as *;
 @use 'FilterHeaderRow/filter-header-row' as *;
 @use 'ColumnGrouping/column-grouping' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;
@@ -138,15 +141,15 @@
   .lightweight {
     tr:last-of-type {
       th {
-        border-bottom: solid 2px $interactive-02;
+        // border-bottom: solid 2px $interactive-02;//$interactive-02
       }
     }
     th {
-      background-color: $ui-01;
+      background-color: $layer-01; //$ui-01
       .#{$prefix}--table-sort {
-        background-color: $ui-01;
+        background-color: $layer-01; //$ui-01
         &:hover {
-          background-color: $ui-03;
+          background-color: $border-subtle; //$ui-03
         }
       }
     }
@@ -201,7 +204,7 @@
   }
 
   .#{$iot-prefix}--clear-filters-button--disabled {
-    @include disabled-icon-button();
+    // @include disabled-icon-button();
   }
 
   .#{$prefix}--table-sort {

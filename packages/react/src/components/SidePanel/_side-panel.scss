@@ -1,18 +1,21 @@
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/motion' as *;
 $side-panel-width: 320px;
 $side-panel-drawer-width: $spacing-09;
 $border-width: 1px;
 
 .#{$iot-prefix}--side-panel {
   position: relative;
-  background-color: $ui-background;
+  background-color: $background; //$ui-background;
   width: fit-content;
   overflow-x: hidden;
   display: inline-block;
   min-width: $side-panel-width;
-  transition: min-width $duration--moderate-02, width $duration--moderate-02,
-    left $duration--moderate-02, right $duration--moderate-02;
+  transition: min-width $duration-moderate-02, width $duration-moderate-02,
+    left $duration-moderate-02, right $duration-moderate-02;
   transition-timing-function: carbon--motion(standard);
 
   &.#{$iot-prefix}--side-panel__right {
@@ -43,11 +46,11 @@ $border-width: 1px;
 
 .#{$iot-prefix}--side-panel-title {
   padding: $spacing-05;
-  color: $text-01;
-  @include type-style('productive-heading-03');
+  color: $text-primary; //$text-01;
+  // @include type-style('productive-heading-03'); //  @include type-style('productive-heading-03');
 
   &.#{$iot-prefix}--side-panel-title__condensed {
-    @include type-style('productive-heading-02');
+    // @include type-style('productive-heading-02'); //@include type-style('productive-heading-02');
   }
 
   &.#{$iot-prefix}--side-panel-title__with-close {
@@ -95,21 +98,21 @@ $border-width: 1px;
 .#{$iot-prefix}--side-panel__inline {
   .panel {
     &.#{$iot-prefix}--side-panel__left {
-      border-right: $border-width solid $ui-03;
+      border-right: $border-width solid $border-subtle; //$ui-03;
     }
 
     &.#{$iot-prefix}--side-panel__right {
-      border-left: $border-width solid $ui-03;
+      border-left: $border-width solid $border-subtle; //$ui-03;
     }
   }
 }
 
 .#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__left {
-  border-right: $border-width solid $ui-03;
+  border-right: $border-width solid $border-subtle; //$ui-03;
 }
 
 .#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__right {
-  border-left: $border-width solid $ui-03;
+  border-left: $border-width solid $border-subtle; //$ui-03;
 }
 
 .#{$iot-prefix}--side-panel__slide-in,
@@ -159,9 +162,9 @@ $duration-moderate-01: 150ms;
 
 // React styles
 .#{$iot-prefix}--sidepanel {
-  background: $ui-01;
-  border-left: 1px solid $ui-03;
-  box-shadow: -2px 0 3px rgba($ui-03, 0.6);
+  background: $layer-01; //$ui-01;
+  border-left: 1px solid $border-subtle; //$ui-03;
+  box-shadow: -2px 0 3px rgba($border-subtle, 0.6); //$ui-03;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -201,8 +204,8 @@ $duration-moderate-01: 150ms;
   }
 
   &__title {
-    @include type-style('productive-heading-03');
-    @include multiline-text-overflow(2, 1.4rem);
+    // @include type-style('productive-heading-03');
+    // @include multiline-text-overflow(2, 1.4rem);
     color: $text-primary;
     // animation: line-clamper $duration-moderate-02 ease-in-out forwards reverse;
     margin-bottom: $spacing-03;
@@ -273,13 +276,13 @@ $duration-moderate-01: 150ms;
 .#{$iot-prefix}--sidepanel--start {
   transform-origin: left;
   border-left: unset;
-  border-right: 1px solid $ui-03;
-  box-shadow: 2px 0 2px rgba($ui-03, 0.6);
+  border-right: 1px solid $border-subtle; //$ui-03;
+  box-shadow: 2px 0 2px rgba($border-subtle, 0.6); //$ui-03;
 }
 
 // Slide over behavior styles
 .#{$iot-prefix}--sidepanel--slide-over {
-  box-shadow: -5px 0 5px rgba($ui-03, 0.8);
+  box-shadow: -5px 0 5px rgba($border-subtle, 0.8); //$ui-03;
 
   &::before {
     display: none;
@@ -287,7 +290,7 @@ $duration-moderate-01: 150ms;
 
   // Left direction slide over
   &.#{$iot-prefix}--sidepanel--start {
-    box-shadow: 5px 0 5px rgba($ui-03, 0.8);
+    box-shadow: 5px 0 5px rgba($border-subtle, 0.8); //$ui-03;
   }
 }
 
@@ -331,11 +334,11 @@ $duration-moderate-01: 150ms;
     }
 
     &__header::after {
-      background-color: $ui-03;
+      background-color: $border-subtle; //$ui-03
     }
 
     &__title {
-      @include type-style('productive-heading-02');
+      // @include type-style('productive-heading-02');
       margin-bottom: $spacing-03;
       animation: line-clamper 0.35s ease-in-out forwards;
       max-height: 22px;

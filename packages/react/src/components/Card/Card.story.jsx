@@ -12,7 +12,7 @@ import Button from '../Button';
 import IconSwitch from '../IconSwitch/IconSwitch';
 import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
-import CardREADME from './Card.mdx';
+// import CardREADME from './Card.mdx'; carbon 11
 import Card from './Card';
 
 const { prefix } = settings;
@@ -39,9 +39,9 @@ export default {
 
   parameters: {
     component: Card,
-    docs: {
-      page: CardREADME,
-    },
+    // docs: {
+    //   page: CardREADME,
+    // },
   },
 
   excludeStories: ['getDataStateProp'],

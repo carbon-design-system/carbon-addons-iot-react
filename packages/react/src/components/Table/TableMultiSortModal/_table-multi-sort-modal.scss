@@ -1,3 +1,7 @@
+@use '../../../globals/vars' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
 .#{$iot-prefix}--table-multi-sort-modal {
   html[dir='rtl'] & {
     .#{$prefix}--modal-content {

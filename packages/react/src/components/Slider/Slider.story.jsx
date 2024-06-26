@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
-import { sliderValuePropSync } from 'carbon-components-react/es/components/Slider';
+// import { sliderValuePropSync } from 'carbon-components-react/es/components/Slider';
 
 import { Slider, SliderSkeleton } from '.';
 
@@ -19,7 +19,8 @@ const props = () => ({
   disabled: boolean('Disabled (disabled)', false),
   light: boolean('Light variant (light)', false),
   hideTextInput: boolean('Without text input (hideTextInput)', false),
-  value: !sliderValuePropSync ? 50 : number('The value (value)', 50),
+  // value: !sliderValuePropSync ? 50 : number('The value (value)', 50), // need to check sliderValuePropSync
+  value: 50,
   min: number('The minimum value (min)', 0),
   max: number('The maximum value (max)', 100),
   step: number('The step (step)', 1),

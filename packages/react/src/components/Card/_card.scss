@@ -1,5 +1,8 @@
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
-@use '@carbon/styles/scss/layout' as *;
+@use '@carbon/react/scss/layout' as *;
 @use './card-range-picker' as *;
 @use './card-toolbar' as *;
 @use './card-title' as *;
@@ -19,13 +22,13 @@ $iot-header-padding: $spacing-05;
   overflow: hidden;
 
   &__selected {
-    outline: solid $spacing-01 $interactive-02;
+    // outline: solid $spacing-01 $interactive-02; //$interactive-02 = Carbon 11
     box-sizing: border-box;
   }
 }
 
 .#{$iot-prefix}--card--resizing {
-  outline: $spacing-01 solid $interactive-02;
+  // outline: $spacing-01 solid $interactive-02; //$interactive-02 = Carbon 11
   box-sizing: border-box;
 }
 
@@ -81,7 +84,7 @@ $iot-header-padding: $spacing-05;
 
 .#{$iot-prefix}--card--footer--wrapper {
   align-items: center;
-  border-top: 1px solid $ui-03;
+  border-top: 1px solid $border-subtle-01; //// $ui-03
   display: flex;
   height: $spacing-08;
   overflow: hidden;
@@ -101,7 +104,7 @@ $iot-header-padding: $spacing-05;
 
 // Change background for charts in Cards
 .#{$iot-prefix}--card .#{$prefix}--chart-holder {
-  background-color: $ui-01;
+  background-color: $layer-01; //// $ui-01
 }
 
 // Needed to allow the overflow menu to overlay the expanded card correctly

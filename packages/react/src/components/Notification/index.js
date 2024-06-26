@@ -3,5 +3,5 @@ export {
   InlineNotification,
   NotificationActionButton,
   NotificationButton,
-  NotificationTextDetails,
+  // NotificationTextDetails,
 } from '@carbon/react';

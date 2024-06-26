@@ -1,6 +1,9 @@
 @use '../../../globals/vars' as *;
 @use '../../../globals/spacing' as *;
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
 // The 6-dots grable handle area on a row that can be dragged. This is really that the parent of
 // that picture so the draggable area is a larger, square.
 .#{$iot-prefix}--table-drag-handle {
@@ -30,7 +33,7 @@
   display: none;
   top: 0;
   left: 0;
-  border: dashed 2px $carbon--blue-60;
+  border: dashed 2px $blue-60; //$carbon--blue-60
   pointer-events: none;
 }
 
@@ -42,7 +45,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: solid 1px $carbon--blue-60;
+  border: solid 1px $blue-60; //$carbon--blue-60;
   // background-color: $carbon--gray-10;
   background-color: white;
   pointer-events: none;
@@ -73,7 +76,7 @@ body.#{$iot-prefix}--is-dragging {
       td:first-of-type:before {
       // There are quite a few rules for tables cells (zebra, hover, etc) so just use !important
       // to override them all during a drag.
-      background-color: $carbon--blue-10 !important;
+      background-color: $blue-10 !important; //$carbon--blue-10
       border-color: transparent !important;
     }
 
@@ -94,8 +97,8 @@ body.#{$iot-prefix}--is-dragging {
 // Additional styles for overlay in case of breadcrumb nodes to change the background color and show
 // border when drop is happening
 .#{$iot-prefix}--breadcrumb-drop-node-overlay {
-  background-color: $carbon--blue-10;
-  border: dashed 2px $carbon--blue-60;
+  background-color: $blue-10; //$carbon--blue-10;
+  border: dashed 2px $blue-60; //$carbon--blue-60
 }
 
 // To hide default underline during drop which is shown on link hover of breadcrumb node
@@ -105,6 +108,6 @@ body.#{$iot-prefix}--is-dragging {
 
 // Added to overflow menu for items which are shown in menu when breadcrumb length too big
 .#{$prefix}--breadcrumbmenu--on--row--dropping {
-  background-color: $carbon--blue-10 !important;
-  outline: dashed 2px $carbon--blue-60 !important;
+  background-color: $blue-10 !important; //$carbon--blue-10
+  outline: dashed 2px $blue-60 !important; //$carbon--blue-60
 }

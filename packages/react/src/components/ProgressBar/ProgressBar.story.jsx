@@ -3,7 +3,7 @@ import { text, number, boolean } from '@storybook/addon-knobs';
 import { Bee, WarningFilled } from '@carbon/react/icons';
 import { green20, green30, green40, green50, red60, yellow30, yellow50 } from '@carbon/colors';
 
-import ProgressBarREADME from './ProgressBar.mdx';
+// import ProgressBarREADME from './ProgressBar.mdx'; //carbon 11
 import ProgressBar from './ProgressBar';
 
 export default {
@@ -11,9 +11,9 @@ export default {
 
   parameters: {
     component: ProgressBar,
-    docs: {
-      page: ProgressBarREADME,
-    },
+    // docs: {
+    //   page: ProgressBarREADME,
+    // }, //carbon 11
   },
 };
 

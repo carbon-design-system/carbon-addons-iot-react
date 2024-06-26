@@ -9,7 +9,7 @@ import {
   Select,
   SelectItem,
   NumberInput,
-  TooltipDefinition,
+  DefinitionTooltip,
   OrderedList,
   ListItem,
 } from '@carbon/react';
@@ -362,9 +362,8 @@ const DateTimePicker = ({
   }, [locale]);
 
   // State
-  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
-    showRelativeOption
-  );
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] =
+    useDateTimePickerRangeKind(showRelativeOption);
   const [isCustomRange, setIsCustomRange] = useState(false);
   const [selectedPreset, setSelectedPreset] = useState(null);
   const [currentValue, setCurrentValue] = useState(null);
@@ -1049,14 +1048,14 @@ const DateTimePicker = ({
                   {humanValue}
                 </span>
               ) : humanValue ? (
-                <TooltipDefinition
+                <DefinitionTooltip
                   align="start"
                   direction="bottom"
                   tooltipText={tooltipValue}
                   triggerClassName={disabled ? `${iotPrefix}--date-time-picker__disabled` : ''}
                 >
                   {humanValue}
-                </TooltipDefinition>
+                </DefinitionTooltip>
               ) : null}
               {!isExpanded && isTooltipOpen && !isSingleSelect ? (
                 <Tooltip

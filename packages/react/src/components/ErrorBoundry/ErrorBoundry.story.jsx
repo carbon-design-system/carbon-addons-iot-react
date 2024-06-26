@@ -1,1 +1,5 @@
-export { ErrorBoundary } from '@carbon/react';
+import { ErrorBoundary } from '@carbon/react';
+
+export default {
+  component: ErrorBoundary,
+};

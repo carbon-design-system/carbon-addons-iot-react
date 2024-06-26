@@ -6,7 +6,7 @@ import { Edit, Information, SendAlt } from '@carbon/react/icons';
 import Button from '../Button';
 
 import SidePanel from './SidePanel';
-import SidePanelReadMe from './SidePanel.mdx';
+// import SidePanelReadMe from './SidePanel.mdx'; carbon  11
 
 const actionItemButtons = [
   {
@@ -148,9 +148,9 @@ export default {
 
   parameters: {
     component: SidePanel,
-    docs: {
-      page: SidePanelReadMe,
-    },
+    // docs: {
+    //   page: SidePanelReadMe,
+    // }, //carbon 11
   },
 };
 

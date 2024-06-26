@@ -12,7 +12,7 @@ import {
   NumberInput,
   OrderedList,
   ListItem,
-  TooltipDefinition,
+  DefinitionTooltip,
 } from '@carbon/react';
 import { Calendar, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
@@ -332,9 +332,8 @@ const DateTimePicker = ({
   }, [newLocale]);
 
   // State
-  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
-    showRelativeOption
-  );
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] =
+    useDateTimePickerRangeKind(showRelativeOption);
   const {
     isExpanded,
     setIsExpanded,
@@ -715,14 +714,14 @@ const DateTimePicker = ({
               {humanValue}
             </span>
           ) : humanValue ? (
-            <TooltipDefinition
+            <DefinitionTooltip
               align="center"
               direction="bottom"
               tooltipText={tooltipValue}
               triggerClassName={disabled ? `${iotPrefix}--date-time-picker__disabled` : ''}
             >
               {humanValue}
-            </TooltipDefinition>
+            </DefinitionTooltip>
           ) : null}
           {invalidState ? (
             <WarningFilled
@@ -902,7 +901,8 @@ const DateTimePicker = ({
                           `${iotPrefix}--date-time-picker__fields-wrapper`,
                           `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`,
                           {
-                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]: !hasTimeInput,
+                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]:
+                              !hasTimeInput,
                           }
                         )}
                       >

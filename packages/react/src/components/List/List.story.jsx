@@ -11,7 +11,7 @@ import { Tag } from '../Tag';
 import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import List from './List';
-import ListREADME from './List.mdx';
+// import ListREADME from './List.mdx'; //carbon 11
 
 export const sampleHierarchy = {
   MLB: {
@@ -121,9 +121,9 @@ export default {
 
   parameters: {
     component: List,
-    docs: {
-      page: ListREADME,
-    },
+    // docs: {
+    //   page: ListREADME,
+    // }, //carbon 11
   },
 
   excludeStories: ['sampleHierarchy'],

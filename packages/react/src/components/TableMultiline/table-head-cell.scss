@@ -1,5 +1,5 @@
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/config' as *;
 /* stylelint-disable-next-line */
 ai-table {
   // TODO add styling hooks to carbon-components-angular so we can remove aiTableHeadCell

@@ -1,4 +1,6 @@
 @use '../../../globals/vars' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
 
 .#{$iot-prefix}--save-view-modal__body-text {
   margin-bottom: $spacing-06;
@@ -7,5 +9,5 @@
 .#{$iot-prefix}--save-view-modal__view-description {
   margin-top: $spacing-04;
   margin-bottom: $spacing-04;
-  color: $carbon--gray-60;
+  color: $gray-60; //$carbon--gray-60;
 }

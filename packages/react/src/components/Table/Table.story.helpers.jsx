@@ -4,8 +4,17 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add as AddIcon, TrashCan, BeeBat, Activity, ViewOff, Error } from '@carbon/react/icons';
-import { Arrow, Add, Edit } from '@carbon/react/icons';
+import {
+  Add as AddIcon,
+  TrashCan,
+  BeeBat,
+  Activity,
+  ViewOff,
+  Error,
+  DrillDown,
+  Add,
+  Edit,
+} from '@carbon/react/icons';
 import { ComboBox, DatePickerInput, NumberInput } from '@carbon/react';
 
 import { Checkbox } from '../Checkbox';
@@ -443,7 +452,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     ? [
         {
           id: 'drilldown',
-          renderIcon: <Arrow size={16} />,
+          renderIcon: <DrillDown size={16} />,
           iconDescription: 'Drill in',
           labelText: 'Drill in',
         },
@@ -479,7 +488,7 @@ export const getTableDataWithEmptySelectFilter = () =>
 
 export const getDrillDownRowAction = () => ({
   id: 'drilldown',
-  renderIcon: Arrow,
+  renderIcon: <DrillDown size={16} />,
   iconDescription: 'Drill in',
   labelText: 'Drill in to find out more after observing',
 });
@@ -753,77 +762,80 @@ const convertUTCDateToLocalDate = (date) => {
   return localDate.toISOString().slice(0, 10);
 };
 // eslint-disable-next-line react/prop-types
-export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
-  const elementId = `${columnId}-${rowId}`;
+export const getEditDataFunction =
+  (onDataChange) =>
+  // eslint-disable-next-line react/prop-types
+  ({ value, columnId, rowId }) => {
+    const elementId = `${columnId}-${rowId}`;
 
-  return columnId === 'node' ? (
-    value
-  ) : columnId === 'date' ? (
-    <TextInput
-      id={elementId}
-      onChange={(e) => {
-        const dateCleared = e.currentTarget.value === '';
-        const newVal = dateCleared
-          ? value
-          : new Date(e.currentTarget.value).toISOString().split('T')[0];
-        onDataChange(newVal, columnId, rowId);
-      }}
-      type="date"
-      light
-      defaultValue={convertUTCDateToLocalDate(new Date(value))}
-      labelText=""
-      hideLabel
-    />
-  ) : columnId === 'select' ? (
-    <Dropdown
-      id={elementId}
-      light
-      items={getSelectDataOptions()}
-      initialSelectedItem={value}
-      onChange={({ selectedItem: { id } }) => onDataChange(id, columnId, rowId)}
-      label=""
-    />
-  ) : columnId === 'boolean' ? (
-    <Checkbox
-      defaultChecked={value}
-      id={elementId}
-      labelText=""
-      hideLabel
-      onChange={(e) => onDataChange(e, columnId, rowId)}
-    />
-  ) : columnId === 'object' ? (
-    <TextInput
-      id={elementId}
-      onChange={(e) => onDataChange({ ...value, id: e.currentTarget.value }, columnId, rowId)}
-      type="text"
-      light
-      // eslint-disable-next-line react/prop-types
-      defaultValue={value.id}
-      labelText=""
-      hideLabel
-    />
-  ) : columnId === 'number' ? (
-    <TextInput
-      id={elementId}
-      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
-      type="number"
-      light
-      defaultValue={value}
-      labelText=""
-      hideLabel
-    />
-  ) : (
-    <TextInput
-      id={elementId}
-      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
-      type="text"
-      light
-      defaultValue={value}
-      labelText=""
-      hideLabel
-    />
-  );
-};
+    return columnId === 'node' ? (
+      value
+    ) : columnId === 'date' ? (
+      <TextInput
+        id={elementId}
+        onChange={(e) => {
+          const dateCleared = e.currentTarget.value === '';
+          const newVal = dateCleared
+            ? value
+            : new Date(e.currentTarget.value).toISOString().split('T')[0];
+          onDataChange(newVal, columnId, rowId);
+        }}
+        type="date"
+        light
+        defaultValue={convertUTCDateToLocalDate(new Date(value))}
+        labelText=""
+        hideLabel
+      />
+    ) : columnId === 'select' ? (
+      <Dropdown
+        id={elementId}
+        light
+        items={getSelectDataOptions()}
+        initialSelectedItem={value}
+        onChange={({ selectedItem: { id } }) => onDataChange(id, columnId, rowId)}
+        label=""
+      />
+    ) : columnId === 'boolean' ? (
+      <Checkbox
+        defaultChecked={value}
+        id={elementId}
+        labelText=""
+        hideLabel
+        onChange={(e) => onDataChange(e, columnId, rowId)}
+      />
+    ) : columnId === 'object' ? (
+      <TextInput
+        id={elementId}
+        onChange={(e) => onDataChange({ ...value, id: e.currentTarget.value }, columnId, rowId)}
+        type="text"
+        light
+        // eslint-disable-next-line react/prop-types
+        defaultValue={value.id}
+        labelText=""
+        hideLabel
+      />
+    ) : columnId === 'number' ? (
+      <TextInput
+        id={elementId}
+        onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+        type="number"
+        light
+        defaultValue={value}
+        labelText=""
+        hideLabel
+      />
+    ) : (
+      <TextInput
+        id={elementId}
+        onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+        type="text"
+        light
+        defaultValue={value}
+        labelText=""
+        hideLabel
+      />
+    );
+  };
 
 export const addColumnGroupIds = (col, index) => {
   return index === 1 || index === 2

@@ -1,3 +1,5 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
 
 @mixin vertical-form() {
@@ -9,18 +11,18 @@
 @mixin info-message() {
   display: flex;
   align-items: flex-start;
-  color: $text-02;
+  color: $text-secondary;
 
   svg {
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    fill: $icon-02;
+    fill: $icon-secondary;
     margin-right: $spacing-05;
   }
 
   p {
     max-width: 22rem;
-    @include type-style('body-short-01');
+    // @include type-style('body-short-01'); Carbon 11 - Need to find proper mixin
   }
 }

@@ -1,3 +1,8 @@
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/utilities' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--data-state-container {
@@ -7,7 +12,7 @@
 }
 
 .#{$iot-prefix}--data-state-dashes {
-  color: $gray-20;
+  // color: #f4f4f4; // $gray-20 need to find in carbon 11
   font-size: 4rem;
   line-height: 0.67;
 }
@@ -52,17 +57,17 @@
 }
 
 .#{$iot-prefix}--data-state-grid__label {
-  @include type-style('productive-heading-01');
+  // @include type-style('productive-heading-01'); //carbon 11
   @include text-overflow();
 }
 
 .#{$iot-prefix}--data-state-grid__description {
-  @include type-style('helper-text-01');
-  color: $gray-70;
+  // @include type-style('helper-text-01');  //carbon 11
+  // color: #f4f4f4; //carbon 11 -  $gray-70
 
   $max-lines: 2;
   $line-height: 1rem;
-  @include multiline-text-overflow($max-lines, $line-height);
+  // @include multiline-text-overflow($max-lines, $line-height);  //carbon 11
 }
 
 .#{$iot-prefix}--data-state-tooltip:focus {
@@ -75,16 +80,16 @@
   }
 
   .#{$iot-prefix}--data-state-tooltip__label {
-    @include type-style('productive-heading-01');
+    // @include type-style('productive-heading-01');
   }
 }
 
 .#{$iot-prefix}--data-state-default-error-icon {
-  fill: $carbon--red-60;
+  fill: $red-60; //
 }
 
 .#{$iot-prefix}--data-state-default-warning-icon {
-  fill: $carbon--yellow-30;
+  fill: $yellow-30;
 }
 
 html[dir='rtl'] .#{$iot-prefix}--data-state-grid {
