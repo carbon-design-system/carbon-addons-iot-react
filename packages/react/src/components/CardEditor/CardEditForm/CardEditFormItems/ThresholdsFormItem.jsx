@@ -212,7 +212,7 @@ const ThresholdsFormItem = ({
                   translateWithId={translateWithId}
                   label=""
                   items={comparisonItems} // current valid comparison operators
-                  selectedItem={threshold.comparison || '>'}
+                  selectedItem={threshold.comparison || comparisonItems[0]}
                   onChange={({ selectedItem }) => {
                     const updatedThresholds = [...thresholds];
                     updatedThresholds[i] = {
