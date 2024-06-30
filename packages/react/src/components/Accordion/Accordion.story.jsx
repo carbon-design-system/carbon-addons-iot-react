@@ -10,10 +10,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
+import { Accordion, AccordionItem, AccordionSkeleton } from '@carbon/react';
 
 import Button from '../Button';
-
-import { Accordion, AccordionItem, AccordionSkeleton } from '.';
 
 export default {
   title: '3 - Carbon/Accordion',

@@ -34,7 +34,7 @@
     width: auto;
 
     & svg {
-      fill: $link-01;
+      fill: $link-primary;
       border-bottom: 1px solid transparent;
     }
 
@@ -43,7 +43,7 @@
     }
 
     &:hover svg {
-      border-color: $link-01;
+      border-color: $link-primary;
     }
 
     &.#{$prefix}--overflow-menu--open {
@@ -77,7 +77,7 @@
     background-color: $field-02;
 
     &:hover {
-      background-color: $hover-ui;
+      background-color: $layer-hover-01;
     }
   }
 

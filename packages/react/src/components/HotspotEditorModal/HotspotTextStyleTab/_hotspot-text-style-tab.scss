@@ -3,6 +3,8 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/utilities' as *;
 @use '../mixins' as *;
+@use '../../../globals/mixins' as *;
+@use '@carbon/react/scss/components/content-switcher' as *;
 
 $border-radius: 5px;
 
@@ -15,11 +17,11 @@ $border-radius: 5px;
   }
 
   &__text-style {
-    // @include content-switcher-border-radius($border-radius, left, right); carbon 11
+    @include content-switcher-border-radius($border-radius, left, right);
   }
 
   html[dir='rtl'] &__text-style {
-    // @include content-switcher-border-radius($border-radius, right, left); carbon 11
+    @include content-switcher-border-radius($border-radius, right, left);
   }
 
   &__dropdown {

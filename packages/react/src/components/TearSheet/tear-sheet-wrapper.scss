@@ -50,7 +50,7 @@
   }
 
   &.#{$iot-prefix}--tear-sheet-wrapper__is-visible {
-    background-color: $overlay; //$overlay-01; carbon 11
+    background-color: $overlay;
     z-index: 5999;
     transition: opacity $duration-slow-01 motion(standard, expressive),
       background-color $duration-slow-02 motion(standard, productive);

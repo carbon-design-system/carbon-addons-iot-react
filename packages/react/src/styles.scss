@@ -2,11 +2,13 @@
 // 🌍 Global
 //-------------------------
 @use '@carbon/react/scss/config' as *;
-@use '@carbon/react/scss/themes' as *;
-@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/compat/themes' as compat;
+@use '@carbon/react/scss/themes';
+@use '@carbon/react/scss/theme' with (
+  $fallback: compat.$g10,
+  $theme: themes.$g10
+);
 @use '@carbon/react/scss/type' as *;
-/// Set the theme to Gray 10
-$carbon--theme: $g10;
 @use 'globals/feature-flags' as *;
 @use 'globals/vars' as *;
 @use 'globals/colors' as *;
@@ -122,6 +124,10 @@ $carbon--theme: $g10;
 @use 'components/MeterChartCard/meter-chart-card' as *;
 @use 'components/SidePanel/side-panel' as *;
 @use 'components/CodeEditor/code-editor' as *;
+
+:root {
+  @include theme.theme();
+}
 
 /// If true, includes font face mixins in `_css--font-face.scss` depending on the `css--plex` feature flag
 /// @access public

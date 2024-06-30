@@ -15,11 +15,11 @@
 
   &--head {
     td {
-      background-color: $border-subtle; // $ui-03
+      background-color: $layer-accent-01;
     }
 
     .#{$prefix}--skeleton__text {
-      background: $border-strong; // $ui-04;
+      background: $border-strong-01;
 
       &:before {
         background: $text-placeholder; //$text-03

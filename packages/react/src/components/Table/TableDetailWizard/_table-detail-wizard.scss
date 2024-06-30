@@ -5,7 +5,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 .#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
-  background-color: $background; //$ui-background;
+  background-color: $background;
   display: flex;
   flex-flow: column;
   align-items: left;

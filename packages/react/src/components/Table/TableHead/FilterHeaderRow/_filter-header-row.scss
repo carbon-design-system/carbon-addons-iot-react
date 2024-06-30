@@ -3,6 +3,10 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/components/button' as *;
+@use '@carbon/react/scss/utilities' as *;
+@use '@carbon/react/scss/components/combo-box' as *;
+@use '../../../../globals/mixins' as *;
 $grouped-columns-filter-border-width: 2px;
 
 .#{$iot-prefix}--filter-header-row--form-item {
@@ -72,10 +76,10 @@ $grouped-columns-filter-border-width: 2px;
     position: absolute;
     right: 0;
     z-index: 1;
-    background-color: $border-subtle; //$ui-03
+    background-color: $layer-accent-01;
 
     &:hover {
-      // background-color: $hover-light-ui;
+      background-color: $layer-hover-02;
     }
 
     [dir='rtl'] & {
@@ -84,11 +88,11 @@ $grouped-columns-filter-border-width: 2px;
     }
 
     &.#{$iot-prefix}--filter-header-icon--with-border {
-      border-right: $spacing-01 solid $background; //$ui-background
+      border-right: $spacing-01 solid $background;
 
       [dir='rtl'] & {
         border-right: none;
-        border-left: $spacing-01 solid $background; //$ui-background
+        border-left: $spacing-01 solid $background;
       }
     }
 
@@ -107,7 +111,7 @@ $grouped-columns-filter-border-width: 2px;
     right: 0;
     width: $spacing-03;
     height: $spacing-08;
-    background-color: $border-subtle; // $ui-03
+    background-color: $layer-accent-01;
 
     [dir='rtl'] & {
       right: unset;
@@ -163,27 +167,27 @@ $grouped-columns-filter-border-width: 2px;
      were being overridden by other styles */
   .#{$iot-prefix}--filterheader-multiselect {
     .#{$prefix}--list-box__selection--multi {
-      // background-color: $interactive-02; //$interactive-02;
+      background-color: $button-secondary;
     }
     .#{$prefix}--list-box__selection--multi > svg {
-      fill: $background; //$ui-background
+      fill: $background;
     }
 
     &.#{$iot-prefix}--filterheader-multiselect__menu--fit-content {
-      // @include list-box-menu-fits-content(); //      @include list-box-menu-fits-content();
+      @include list-box-menu-fits-content();
     }
 
     // Default for when fit-content is active and the menu is wider than the input
     // is that the menu expands to the right. This style makes it expand tp the left
     // unless we are in RTL mode.
     &.#{$iot-prefix}--filterheader-multiselect__menu--flip-horizontal {
-      // @include list-box-menu-flip-horizontal(); //      @include list-box-menu-flip-horizontal();
+      @include list-box-menu-flip-horizontal();
     }
   }
 
   .#{$prefix}--tag--filter {
     &:focus {
-      // outline: 2px solid $interactive-01; // $interactive-01;
+      outline: 2px solid $button-primary;
       outline-offset: -2px;
 
       svg {
@@ -192,7 +196,7 @@ $grouped-columns-filter-border-width: 2px;
     }
 
     & > svg {
-      fill: $border-inverse; //$ui-05
+      fill: $layer-selected-inverse;
       border-radius: 0;
 
       &:hover {

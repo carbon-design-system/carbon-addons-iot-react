@@ -3,14 +3,16 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/layer' as *;
 $hoverBgColor: #2c2c2c;
 
 .#{$prefix}--header {
   .#{$prefix}--skip-to-content:focus {
     min-width: 240px;
     justify-content: center;
-    border: $spacing-01 solid $layer-01; //$ui-01 carbon 11
+    border: $spacing-01 solid $layer-01;
   }
 
   &__menu-toggle {
@@ -65,7 +67,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   &__menu-item[role='menuitem']:focus {
-    border-color: $layer-01; //$ui-01 carbo 11
+    border-color: $layer-01;
     outline: none;
   }
 
@@ -104,7 +106,7 @@ $hoverBgColor: #2c2c2c;
     }
 
     &__icon {
-      fill: $layer-01; //$ui-01 carbon 11
+      fill: $layer-01;
     }
 
     .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
@@ -132,10 +134,10 @@ $hoverBgColor: #2c2c2c;
 }
 
 .#{$iot-prefix}--header__subtitle {
-  // @include type-style('body-short-01');  @include type-style('body-short-01'); carbon 11
-  border-left: $icon-secondary 1px solid; //$icon-02 carbon 11
+  @include type-style('body-compact-01');
+  border-left: $icon-secondary 1px solid;
   padding: $spacing-01 $spacing-05;
-  color: grey; // $disabled-02; carbon 11
+  color: $text-disabled;
   margin-left: $spacing-05;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -156,15 +158,15 @@ $hoverBgColor: #2c2c2c;
   padding: 0;
 
   &.#{$prefix}--btn--primary {
-    background-color: $border-inverse; //$ui-05 carbon 11
+    background-color: $layer-selected-inverse;
 
     &:hover {
       background-color: $hoverBgColor;
     }
 
     &.#{$prefix}--btn:focus {
-      outline-color: $layer-01; //$ui-01 carbon 11
-      border-color: $layer-01; //$ui-01 carbon 11
+      outline-color: $layer-01;
+      border-color: $layer-01;
       box-shadow: none;
     }
   }
@@ -189,7 +191,7 @@ $hoverBgColor: #2c2c2c;
 .#{$prefix}--header__menu .#{$prefix}--header__menu-item[data-testid='menuitem'] {
   display: flex;
   align-items: center;
-  // color: $active-ui; $ $active-ui carbon 11
+  color: $layer-active-01;
   height: 100%;
   font-size: 0.875rem;
   font-weight: 400;
@@ -210,7 +212,7 @@ $hoverBgColor: #2c2c2c;
 }
 
 .#{$prefix}--app-switcher {
-  background-color: $layer-01; //$ui-01 carbon 11
+  background-color: $layer-01;
   border: none;
   overflow-y: scroll;
 }
@@ -232,7 +234,7 @@ $hoverBgColor: #2c2c2c;
   // Used for links that are directly in the menubar to span the full height
   height: 100%;
   // Text styles
-  // @include carbon--type-style('body-short-01');
+  @include type-style('body-compact-01');
   // Reset link styles and make sure the text isn't selectable
   text-decoration: none;
   user-select: none;
@@ -248,16 +250,15 @@ button.#{$prefix}--header__menu-item {
 
   &:focus {
     border-color: $focus-inverse; //$inverse-focus-ui carbon 11
-    color: $layer-02; //$ui-02 carbon 11
+    color: $layer-02;
     outline: none;
   }
 }
 
 .#{$prefix}--header__menu-title.#{$iot-prefix}--btn.#{$prefix}--btn--primary {
-  color: $layer-01; //$ui-01 carbon 11
-
+  color: $layer-01;
   &:focus {
-    border-color: $layer-01; //$ui-01 carbon 11
+    border-color: $layer-01;
     box-shadow: none;
     border-width: 1px;
   }

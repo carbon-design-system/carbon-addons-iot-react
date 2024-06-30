@@ -7,13 +7,13 @@
   display: flex;
   flex-flow: row wrap;
   > * {
-    border: 1px solid $border-subtle; //$ui-03
+    border: 1px solid $layer-accent-01;
     flex: 1 1 33.33%;
     min-width: 300px;
   }
 
   > label {
-    border: 1px solid $border-subtle; //$ui-03
+    border: 1px solid $layer-accent-01;
     outline-offset: -1px;
   }
   overflow-y: hidden;

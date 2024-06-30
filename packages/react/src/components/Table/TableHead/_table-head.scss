@@ -8,6 +8,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/components/button' as *;
+@use '../../../globals/mixins' as *;
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;
@@ -141,15 +143,15 @@
   .lightweight {
     tr:last-of-type {
       th {
-        // border-bottom: solid 2px $interactive-02;//$interactive-02
+        border-bottom: solid 2px $button-secondary;
       }
     }
     th {
-      background-color: $layer-01; //$ui-01
+      background-color: $layer-01;
       .#{$prefix}--table-sort {
-        background-color: $layer-01; //$ui-01
+        background-color: $layer-01;
         &:hover {
-          background-color: $border-subtle; //$ui-03
+          background-color: $layer-accent-01;
         }
       }
     }
@@ -204,7 +206,7 @@
   }
 
   .#{$iot-prefix}--clear-filters-button--disabled {
-    // @include disabled-icon-button();
+    @include disabled-icon-button();
   }
 
   .#{$prefix}--table-sort {

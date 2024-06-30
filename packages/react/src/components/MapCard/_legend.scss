@@ -3,12 +3,13 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
 .#{$iot-prefix}--map {
   &-legend {
     max-width: 50%;
-    background: $layer-02; //$ui-02 carbon 11
+    background: $layer-02;
     bottom: $spacing-05;
     left: $spacing-05;
     padding: $spacing-05;
@@ -86,7 +87,7 @@
   }
 
   &-legend__label {
-    // @include type-style('productive-heading-01'); //  @include type-style('productive-heading-01');
+    @include type-style('heading-compact-01');
     padding-bottom: $spacing-03;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -4,7 +4,9 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/utilities' as *;
 /*****************************
 *
 * This file brings in Carbon sidenav styles and aligns the pattern changes
@@ -55,7 +57,7 @@ $small-screen-breakpoint: 65.99em;
     .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
       [aria-current='page']
     ):hover {
-    color: $gray-100; //$ibm-color__gray-100
+    color: $gray-100;
     // background-color: $shell-side-nav-bg-04;
   }
 
@@ -80,14 +82,14 @@ $small-screen-breakpoint: 65.99em;
     background-color: $gray-20; //$ibm-color__gray-20;
 
     > span {
-      color: $gray-100; //$ibm-color__gray-100
+      color: $gray-100;
       font-weight: 600;
     }
   }
 
   .#{$prefix}--side-nav__link {
-    // @include focus-outline('reset');
-    // @include type-style('productive-heading-01');
+    @include focus-outline('reset');
+    @include type-style('heading-compact-01');
 
     position: relative;
     display: flex;
@@ -100,8 +102,7 @@ $small-screen-breakpoint: 65.99em;
   }
 
   .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
-    // @include text-overflow(); //@include text-overflow()
-
+    @include text-overflow();
     // color: $shell-side-nav-text-01; // $shell-side-nav-text-01;
     font-size: to-rem(14px);
     line-height: 1.25rem;
@@ -110,7 +111,7 @@ $small-screen-breakpoint: 65.99em;
   }
 
   .#{$prefix}--side-nav__link:focus {
-    // @include focus-outline('outline'); //    @include focus-outline('outline');
+    @include focus-outline('outline');
 
     // Windows, Firefox HCM Fix
     @media screen and (-ms-high-contrast: active), screen and (prefers-contrast) {
@@ -127,7 +128,7 @@ $small-screen-breakpoint: 65.99em;
 
   .#{$prefix}--side-nav__link[aria-current='page'] .#{$prefix}--side-nav__link-text,
   .#{$prefix}--side-nav__link--current .#{$prefix}--side-nav__link-text {
-    color: $gray-100; //$ibm-color__gray-100
+    color: $gray-100;
   }
 
   .#{$prefix}--side-nav__link[aria-current='page']::before,

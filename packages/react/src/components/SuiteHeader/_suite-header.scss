@@ -2,8 +2,11 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/layer' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/components/button' as *;
 .#{$iot-prefix}--suite-header-profile {
-  background-color: $border-inverse; //$ui-05
+  background-color: $layer-selected-inverse;
   color: $text-inverse; //$inverse-01
   width: 100%;
   padding: $spacing-05;
@@ -21,8 +24,8 @@
       width: $spacing-07;
       height: $spacing-07;
       border-radius: $spacing-05;
-      background-color: $border-subtle; // $ui-03
-      color: $text-primary; //$text-01;
+      background-color: $layer-accent-01;
+      color: $text-primary;
       text-align: center;
       line-height: $spacing-07;
     }
@@ -43,12 +46,12 @@
 
     /* mimic tertiary button from grey-100 theme */
     .#{$prefix}--btn {
-      border: solid 1px $layer-02; //$ui-02
-      background-color: $border-inverse; //$ui-05
+      border: solid 1px $layer-02;
+      background-color: $layer-selected-inverse;
 
       &:hover {
-        background-color: $layer-02; //$ui-02
-        color: $border-inverse; //$ui-05;
+        background-color: $layer-02;
+        color: $layer-selected-inverse;
       }
     }
     &--no-logout {
@@ -59,7 +62,7 @@
   &--loading {
     height: 120px;
     p {
-      background-color: $background-inverse-hover; //$inverse-hover-ui carbon 11
+      background-color: $background-inverse-hover;
       height: $spacing-04;
       margin-bottom: $spacing-02;
     }
@@ -76,7 +79,7 @@
     }
     &--loading {
       div {
-        background-color: $background-inverse-hover !important; //$inverse-hover-ui
+        background-color: $background-inverse-hover !important;
       }
     }
   }
@@ -120,12 +123,12 @@
       min-height: 40px;
     }
     p {
-      // @include type-style('productive-heading-01');
+      @include type-style('heading-compact-01');
       display: flex;
       align-items: center;
       padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: $text-primary; //$text-01
+      color: $text-primary;
     }
   }
 
@@ -155,7 +158,7 @@
     &--separator {
       padding: 0;
       height: 0;
-      border-bottom: 1px solid $border-subtle; //$ui-03
+      border-bottom: 1px solid $layer-accent-01;
       margin: 0 $spacing-05 0 $spacing-05;
     }
   }
@@ -163,9 +166,9 @@
   &--app-link {
     button,
     a {
-      // @include type-style('productive-heading-01'); //@include type-style('productive-heading-01');
+      @include type-style('heading-compact-01');
       text-decoration: none;
-      color: $text-secondary; //$text-02
+      color: $text-secondary;
     }
   }
 
@@ -177,7 +180,7 @@
         display: inherit;
       }
       .bee-shadow {
-        background-color: $border-subtle; //$ui-03
+        background-color: $layer-accent-01;
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -185,12 +188,12 @@
       }
     }
     span {
-      // @include type-style('body-short-01');//@include type-style('body-short-01');
-      color: $text-primary; // $text-01
+      @include type-style('body-compact-01');
+      color: $text-primary;
       padding-top: $spacing-05;
     }
     a {
-      // @include type-style('body-short-01'); // @include type-style('body-short-01');
+      @include type-style('body-compact-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
@@ -200,11 +203,11 @@
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
   overflow-y: auto;
-  background-color: $border-inverse; //$ui-05;
+  background-color: $layer-selected-inverse;
   padding-top: 0;
 
   p {
-    // @include type-style('body-short-01');//@include type-style('body-short-01');
+    @include type-style('body-compact-01');
     display: flex;
     align-items: center;
     padding: $spacing-05 $spacing-05 $spacing-03;
@@ -215,13 +218,13 @@
 
   &--divider {
     margin: $spacing-03 0 0 0;
-    // background-color: $interactive-02;//$interactive-02;
+    background-color: $button-secondary;
   }
 
   &--app-link,
   a.#{$prefix}--side-nav__link {
     &.#{$prefix}--side-nav__link--current {
-      background-color: $background-inverse; //$inverse-02;
+      background-color: $background-inverse;
       > .#{$prefix}--side-nav__link-text {
         color: $field-01;
       }
@@ -231,7 +234,7 @@
       color: $text-inverse; //$inverse-01
     }
     svg {
-      fill: $icon-on-color; //$icon-03
+      fill: $icon-on-color;
     }
   }
   &--external {
@@ -246,12 +249,12 @@
   }
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
-    // background-color: $hover-secondary;
+    background-color: $button-secondary-hover;
     .#{$prefix}--side-nav__link-text {
       color: $text-inverse; //$inverse-01
     }
     svg {
-      fill: $icon-on-color; //$icon-03
+      fill: $icon-on-color;
     }
   }
 
@@ -269,10 +272,10 @@
       display: block;
       svg {
         display: inherit;
-        fill: $border-subtle; //$ui-03
+        fill: $layer-accent-01;
       }
       .bee-shadow {
-        // background-color: $active-ui; //$active-ui
+        background-color: $border-disabled;
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -280,12 +283,12 @@
       }
     }
     span {
-      // @include type-style('body-short-01'); //  @include type-style('body-short-01');
-      // color: $active-ui; //$active-ui;
+      @include type-style('body-compact-01');
+      color: $layer-active-01;
       padding-top: $spacing-05;
     }
     a {
-      // @include type-style('body-short-01'); //@include type-style('body-short-01');
+      @include type-style('body-compact-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
@@ -315,9 +318,9 @@
     visibility: hidden !important;
   }
   a.admin-icon__selected {
-    // background-color: $interactive-02;//$interactive-02
+    background-color: $button-secondary;
     border: none;
-    border-bottom: $spacing-01 solid $layer-01; //$ui-01
+    border-bottom: $spacing-01 solid $layer-01;
     padding-top: $spacing-01;
   }
 
@@ -349,8 +352,8 @@
     div.#{$prefix}--header__menu-item {
       padding: 0;
       border: none;
-      color: $text-secondary; //$text-02;
-      background-color: $background; // $ui-background
+      color: $text-secondary;
+      background-color: $background;
 
       &:hover {
         background-color: inherit;
@@ -368,7 +371,7 @@
       padding: $spacing-05;
 
       &:hover {
-        color: $text-on-color; //$text-04;
+        color: $text-on-color;
       }
     }
   }
@@ -379,12 +382,12 @@
   }
 
   .#{$iot-prefix}--suite-header-help--loading {
-    background-color: $border-inverse; //$ui-05;
+    background-color: $layer-selected-inverse;
     color: $text-inverse; //$inverse-01;
     width: 100%;
     padding: $spacing-05;
     p {
-      background-color: $background-inverse-hover; //$inverse-hover-ui
+      background-color: $background-inverse-hover;
       margin-bottom: $spacing-06;
     }
   }
@@ -392,22 +395,22 @@
   .#{$iot-prefix}--suite-header-help--separator {
     padding: 0;
     height: 0;
-    // border-bottom: 1px solid $hover-secondary; //$hover-secondary;
+    border-bottom: 1px solid $button-secondary-hover;
     margin: 0 $spacing-05 0 $spacing-05;
   }
 
   &--logout {
     a {
-      // background-color: $interactive-02;//$interactive-02
+      background-color: $button-secondary;
       color: $text-inverse; //$inverse-01
       &:hover {
-        // background-color: $hover-secondary !important; //$hover-secondary
+        background-color: $button-secondary-hover !important;
       }
     }
   }
   &--logout--loading {
     div {
-      // background-color: $inverse-hover-ui !important; //$inverse-hover-ui
+      background-color: $background-inverse-hover !important;
       width: 256px !important;
     }
   }

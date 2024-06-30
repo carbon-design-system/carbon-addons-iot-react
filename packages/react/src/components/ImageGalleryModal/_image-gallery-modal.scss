@@ -3,6 +3,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/components/content-switcher' as *;
+@use '../../globals/mixins' as *;
 $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
 
@@ -12,7 +13,7 @@ $border-radius: 0.25rem;
   }
   &.#{$iot-prefix}--composed-modal.#{$iot-prefix}--composed-modal--large {
     .#{$prefix}--modal-container {
-      background-color: $layer-02; //$ui-02 carbon 11
+      background-color: $layer-02;
       overflow: hidden;
       height: 80%;
       $min-width: calc(100% - #{$spacing-06}); //$layout-02 to $spacing-06
@@ -62,7 +63,7 @@ $border-radius: 0.25rem;
   width: auto;
   margin-left: $spacing-05;
   margin-right: $spacing-05;
-  // @include content-switcher-border-radius($border-radius, left, right); // @include content-switcher-border-radius($border-radius, left, right) carbon 11
+  @include content-switcher-border-radius($border-radius, left, right);
 }
 
 // Container that lets the scroll panel use negative margin.
@@ -94,6 +95,6 @@ $border-radius: 0.25rem;
 
 html[dir='rtl'] {
   .#{$iot-prefix}--image-gallery-modal__content-switcher {
-    // @include content-switcher-border-radius($border-radius, right, left); // @include content-switcher-border-radius($border-radius, left, right) carbon 11
+    @include content-switcher-border-radius($border-radius, right, left);
   }
 }

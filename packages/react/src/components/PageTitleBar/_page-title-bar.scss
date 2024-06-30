@@ -4,10 +4,11 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/type' as *;
 @mixin condensed-style() {
   // @include make-sticky(); //  @include make-sticky();
-  background: rgba($layer-01, var(--scroll-transition-progress)); //$ui-01
-  border-bottom: 1px solid rgba($border-subtle, var(--scroll-transition-progress)); //$ui-03
+  background: rgba($layer-01, var(--scroll-transition-progress));
+  border-bottom: 1px solid rgba($layer-accent-01, var(--scroll-transition-progress));
   transition: all $duration-fast-02;
 }
 
@@ -46,7 +47,7 @@
       auto auto min-content;
 
     .page-title-bar--sticky & {
-      // @include condensed-style(); //   @include condensed-style();
+      @include condensed-style();
       width: 100%;
       padding-bottom: $spacing-05;
       z-index: 1000;
@@ -94,7 +95,7 @@
     transition: opacity $duration-moderate-02;
 
     .page-title-bar--condensed-static & {
-      // @include condensed-style(); //   @include condensed-style();
+      @include condensed-style();
     }
 
     .page-title-bar--dynamic & {
@@ -139,12 +140,12 @@
 
     .page-title-bar--dynamic--during &,
     .page-title-bar--dynamic--after & {
-      // @include condensed-style(); //@include condensed-style()
+      @include condensed-style();
       z-index: 1;
       display: grid;
       content: '';
-      background: rgba($layer-01, var(--scroll-transition-progress)); //$ui-01
-      border-bottom: 1px solid rgba($border-subtle, var(--scroll-transition-progress)); //$ui-03
+      background: rgba($layer-01, var(--scroll-transition-progress));
+      border-bottom: 1px solid rgba($layer-accent-01, var(--scroll-transition-progress));
     }
   }
 
@@ -177,7 +178,7 @@
     }
 
     .page-title-bar--condensed-static & {
-      // @include condensed-style(); //@include condensed-style();
+      @include condensed-style();
       grid-area: title;
       padding-bottom: $spacing-04;
       z-index: 1000;
@@ -235,7 +236,7 @@
   }
 
   &-actions-upper {
-    // @include type-style('label-01'); //    @include type-style('label-01');
+    @include type-style('label-01');
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -284,7 +285,7 @@
       overflow: hidden;
 
       h2 {
-        // @include type-style('productive-heading-04'); //@include type-style('productive-heading-04');
+        @include type-style('heading-04');
         // need to match the 40x40px icons that could render in
         height: $spacing-08;
         white-space: nowrap;
@@ -294,7 +295,7 @@
       }
 
       & #tooltip {
-        fill: $icon-primary; //$icon-01
+        fill: $icon-primary;
       }
 
       .#{$prefix}--tooltip__label {
@@ -340,14 +341,14 @@
   &-description {
     display: grid;
     grid-area: description;
-    // @include type-style('body-long-01'); //@include type-style('body-long-01');
+    @include type-style('body-01');
     margin-top: $spacing-02;
     max-width: 40rem;
     padding-left: $spacing-07;
     padding-right: $spacing-07;
 
     .#{$prefix}--inline-loading {
-      // @include type-style('label-01'); //  @include type-style('label-01');
+      @include type-style('label-01');
       height: $spacing-04;
       min-height: unset;
       &__animation {
@@ -372,8 +373,8 @@
     &.page-title-bar-content--active {
       .#{$prefix}--tabs--scrollable {
         transition: all $duration-fast-02 ease-in;
-        background: $layer-01; //$ui-01
-        border-bottom: 1px solid $border-subtle; //$ui-03
+        background: $layer-01;
+        border-bottom: 1px solid $layer-accent-01;
       }
     }
 

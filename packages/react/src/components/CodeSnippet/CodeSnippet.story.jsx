@@ -108,11 +108,11 @@ const lightPropMessage = (
     </CodeSnippet>
     {' variant on '}
     <CodeSnippet type="inline" light>
-      $ui-background
+      $ui-background/$background
     </CodeSnippet>
     {' or '}
     <CodeSnippet type="inline" light>
-      $ui-02
+      $ui-02/$layer-02
     </CodeSnippet>
     .
   </small>

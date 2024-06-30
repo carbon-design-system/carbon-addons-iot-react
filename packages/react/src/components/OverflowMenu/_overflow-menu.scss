@@ -14,13 +14,13 @@ button.#{$iot-prefix}--overflow-menu-icon {
 
   &.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
     & svg {
-      fill: $ui-05;
+      fill: $layer-selected-inverse;
       margin-left: 0;
     }
 
     &:hover svg,
     &:focus svg {
-      fill: $ui-05;
+      fill: $layer-selected-inverse;
     }
   }
 }

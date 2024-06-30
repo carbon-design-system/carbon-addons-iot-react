@@ -2,7 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
-@use '@carbon/react/scss/components/button';
+@use '@carbon/react/scss/components/button' as *;
 
 .#{$iot-prefix}--list-spinner {
   &__section {
@@ -29,7 +29,7 @@
     bottom: 0;
     right: 0;
     overflow: hidden;
-    scrollbar-color: $layer-01; //$ui-01 carbon 11
+    scrollbar-color: $layer-01;
     scrollbar-width: none;
     /* stylelint-disable-next-line */
     &::scrollbar,
@@ -49,16 +49,16 @@
 
     .#{$iot-prefix}--list-spinner__list &--selected,
     .#{$iot-prefix}--list-spinner__list &--selected .#{$iot-prefix}--btn {
-      color: $layer-01; // $ui-01 carbon 11
+      color: $layer-01;
       &:hover {
-        // background: $button-primary-hover; //$button-primary-hover carbon 11
+        background: $button-primary-hover;
       }
     }
   }
 
   &__btn,
   &__list-item .#{$iot-prefix}--btn {
-    color: $icon-primary; // $icon-01 carbon 11
+    color: $icon-primary;
     justify-content: center;
     margin: 0 auto;
     min-height: unset;
@@ -74,17 +74,17 @@
   &__btn {
     z-index: 1;
     &:first-child {
-      box-shadow: 0 1px 5px 4px $layer-01; // $ui-01 carbon 11
+      box-shadow: 0 1px 5px 4px $layer-01;
       border-width: 1.5px;
     }
 
     &:last-child {
-      box-shadow: 0 -1px 5px 4px $layer-01; // $ui-01 carbon 11
+      box-shadow: 0 -1px 5px 4px $layer-01;
       border-width: 1.5px;
     }
 
     &:hover {
-      color: $icon-primary; //$icon-01 carbon 11
+      color: $icon-primary;
     }
   }
   /* stylelint-enable declaration-property-unit-blacklist */

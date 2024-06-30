@@ -12,7 +12,7 @@
     @include box-shadow();
 
     & > *:first-child {
-      border-bottom: 1px solid $border-subtle; //$ui-03 carbon 11 // should be updated to $button-separator once available
+      border-bottom: 1px solid $layer-accent-01;
     }
   }
 }

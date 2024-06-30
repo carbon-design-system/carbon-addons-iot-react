@@ -92,7 +92,7 @@ class IotOverflowMenu extends Component {
     id: PropTypes.string,
 
     /**
-     * `true` to use the light version. For use on $ui-01 backgrounds only.
+     * `true` to use the light version. For use on $ui-01/$layer-01 backgrounds only.
      * Don't use this to make OverflowMenu background color same as container background color.
      */
     light: PropTypes.bool,

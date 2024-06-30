@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/components/button' as *;
 .#{$iot-prefix}--list {
   display: flex;
   width: 100%;
@@ -13,7 +14,7 @@
     flex: 0;
   }
   &--content {
-    background: $layer-01; //$ui-01
+    background: $layer-01;
     flex: 1;
     overflow-y: auto;
 
@@ -84,12 +85,12 @@
     min-height: $list-item-height;
     cursor: pointer;
     min-width: 100%;
-    background: $layer-01; //$ui-01 carbon 11
+    background: $layer-01;
     &--content {
-      // color: $interactive-01; // $interactive-01 carbon 11
+      color: $button-primary;
     }
     .#{prefix}--loading__stroke {
-      // stroke: $interactive-01; // $interactive-01 carbon 11
+      stroke: $button-primary;
     }
     &.#{$prefix}--btn--disabled,
     .#{$prefix}--btn--disabled:focus,

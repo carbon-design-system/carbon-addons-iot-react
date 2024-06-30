@@ -3,7 +3,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--page-wizard {
   display: flex;
 
@@ -30,10 +30,10 @@
 
   &--step {
     padding-bottom: $spacing-07;
-    // @include type-style('body-long-01'); //@include type-style('body-long-01');
+    @include type-style('body-01');
 
     &--title {
-      // @include type-style('productive-heading-02');
+      @include type-style('heading-compact-02');
       margin-bottom: $spacing-03;
     }
     &--description {
@@ -61,9 +61,9 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: $layer-01; //$ui-01
+      background: $layer-01;
       padding: $spacing-05 $spacing-07;
-      border-top: to-rem(1px) solid $border-subtle; //$ui-03
+      border-top: to-rem(1px) solid $layer-accent-01;
       .#{$prefix}--btn {
         margin-right: $spacing-05;
       }

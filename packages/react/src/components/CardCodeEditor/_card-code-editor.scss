@@ -8,7 +8,7 @@
   }
 
   &-container {
-    background-color: $background; //$ui-background
+    background-color: $background;
     height: 100%;
     overflow: hidden;
     min-height: 3.5rem;
@@ -25,7 +25,7 @@
   }
 
   &-copy {
-    background-color: $background; // $ui-background
+    background-color: $background;
     position: absolute;
     right: 0;
     top: 0;

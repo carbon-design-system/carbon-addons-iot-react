@@ -2,6 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/components/button' as *;
 
 .#{$iot-prefix}--table-toolbar {
   &__search-wrapper {
@@ -36,7 +37,7 @@
 
       top: to-rem(-5px);
       border-width: 0 0.25rem 0.3125rem 0.25rem;
-      // border-color: transparent transparent $interactive-02 transparent; //$interactive-02
+      border-color: transparent transparent $button-secondary transparent;
       transform: translateX(-50%);
     }
 

@@ -6,6 +6,7 @@
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
 $cardPadding: $spacing-05;
 
@@ -58,7 +59,7 @@ $cardPadding: $spacing-05;
   }
 
   &-settings-header__title {
-    // @include type-style('productive-heading-01'); //@include type-style('productive-heading-01'
+    @include type-style('heading-compact-01');
     margin-right: auto;
 
     [dir='rtl'] & {
@@ -142,7 +143,7 @@ $cardPadding: $spacing-05;
 
   &-controls-btn:not(:last-child) {
     &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-      border-bottom: 1px solid $border-subtle; //$ui-03
+      border-bottom: 1px solid $layer-accent-01;
     }
   }
 
@@ -167,7 +168,7 @@ $cardPadding: $spacing-05;
     }
 
     svg.#{$iot-prefix}--map-controls-layers-trigger__caret {
-      fill: $icon-primary !important; //$icon-01
+      fill: $icon-primary !important;
       transform: rotate(45deg);
       bottom: -1px;
       left: -1px;
@@ -223,12 +224,12 @@ $cardPadding: $spacing-05;
   &-controls-layers-btn {
     background-color: white;
     &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-      border-right: 1px solid $border-subtle; //$ui-03 carbon 11
+      border-right: 1px solid $layer-accent-01;
     }
 
     [dir='rtl'] & {
       &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-        border-left: 1px solid $border-subtle; //$ui-03 carbon 11
+        border-left: 1px solid $layer-accent-01;
         border-right: none;
       }
     }

@@ -22,7 +22,7 @@
   width: var(--gauge-size);
 
   text {
-    fill: $text-secondary; //$text-02 carbon 11
+    fill: $text-secondary;
   }
 }
 
@@ -84,14 +84,14 @@
   }
 
   &__up {
-    color: $support-success; //$support-02 carbon 11
+    color: $support-success;
 
     & p::before {
       border-bottom: 0.3rem solid;
     }
   }
   &__down {
-    color: $support-error; //$support-01 carbon 11
+    color: $support-error;
 
     & p::before {
       border-top: 0.3rem solid;

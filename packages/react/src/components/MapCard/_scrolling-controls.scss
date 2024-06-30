@@ -17,15 +17,15 @@
   }
   &__btn {
     background: white;
-    border-bottom: 1px solid $border-subtle; //$ui-03 carbon 11
+    border-bottom: 1px solid $layer-accent-01;
   }
 
   &__scroll-btn {
-    border-bottom: 1px solid $border-subtle; //$ui-03 carbon 11
+    border-bottom: 1px solid $layer-accent-01;
     &:disabled,
     &:disabled:hover {
       background: white;
-      border-bottom: 1px solid $border-subtle; //$ui-03 carbon 11
+      border-bottom: 1px solid $layer-accent-01;
       &:last-child {
         border-bottom: inherit;
       }

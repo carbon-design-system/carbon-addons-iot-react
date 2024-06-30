@@ -2,6 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--rule-builder-wrap {
   background: $layer-01;
   border: 1px solid $border-subtle;
@@ -21,7 +22,7 @@
     }
 
     &-title {
-      // @include type-style('productive-heading-03'); //carbon 11 - need to find proper mixin
+      @include type-style('heading-03');
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -29,7 +30,7 @@
     }
 
     &-metatext {
-      // @include type-style('body-short-01'); //carbon 11 - need to find proper mixin
+      @include type-style('body-compact-01');
     }
 
     & div:first-child {
@@ -89,7 +90,7 @@
     }
 
     .#{$prefix}--accordion__title {
-      // @include type-style('productive-heading-02'); //carbon 11 - need to find proper mixin
+      @include type-style('heading-compact-02');
       margin-left: 0;
     }
   }

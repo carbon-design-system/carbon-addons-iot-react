@@ -12,7 +12,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
-
+@use '@carbon/react/scss/layer' as *;
+@use '../../globals/mixins' as *;
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
@@ -70,7 +71,7 @@ td.#{$iot-prefix}--table__cell--sortable {
 }
 
 .#{$iot-prefix}-table-container--dropdown-height-fix {
-  background-color: $layer-01; //$ui-01;
+  background-color: $layer-01;
   min-height: calc(#{$spacing-10} * 5);
   .#{$prefix}--data-table-content {
     min-height: calc(#{$spacing-10} * 5);
@@ -117,9 +118,9 @@ html[dir='rtl'] {
 }
 
 .#{$iot-prefix}--table__advanced-filters-container {
-  background-color: $layer-01; //$ui-01
+  background-color: $layer-01;
   padding: $spacing-02 $spacing-04;
-  border-top: 1px solid $border-subtle; //$ui-03
+  border-top: 1px solid $layer-accent-01;
 }
 
 // needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
@@ -133,7 +134,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 }
 
 .#{$iot-prefix}--table-toolbar__advanced-filters-button.#{$iot-prefix}--table-toolbar-button-active.#{$iot-prefix}--flyout-menu--trigger-button {
-  // @include hide-tooltip();
+  @include hide-tooltip();
 }
 
 // regression fix for tiny expand chrevron on some expandable table rows
@@ -154,15 +155,15 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     &,
     td {
       background-color: inherit;
-      color: $text-secondary; //$text-02
-      border-bottom-color: $border-subtle; //$ui-03
-      border-top-color: $layer-01; //$ui-01
+      color: $text-secondary;
+      border-bottom-color: $layer-accent-01;
+      border-top-color: $layer-01;
     }
   }
 }
 
 .#{$iot-prefix}--table__row--background td {
-  background-color: $border-subtle; //$ui-03
+  background-color: $layer-accent-01;
 }
 
 .#{$iot-prefix}--table__row--singly-selected,
@@ -180,7 +181,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       left: 0;
       height: calc(100% + 1px);
       width: to-rem(3px);
-      // background-color: $interactive-04;//$interactive-04;
+      background-color: $border-interactive;
       border-right: solid 1px $highlight;
     }
   }
@@ -200,8 +201,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     left: calc(var(--row-nesting-offset) * -1);
     height: calc(100% + 1px);
     width: var(--row-nesting-offset);
-    background-color: $layer-01; //$ui-01;
-    border-right: solid 1px $layer-01; //$ui-01;
+    background-color: $layer-01;
+    border-right: solid 1px $layer-01;
   }
 
   &[data-nesting-offset='0'] {
@@ -210,7 +211,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
   td.bx--table-expand[data-previous-value='collapsed'] {
-    border-bottom: solid 1px $layer-01; //$ui-01;
+    border-bottom: solid 1px $layer-01;
   }
 }
 
@@ -242,7 +243,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   cursor: pointer;
   td {
     div .#{$prefix}--btn--ghost:hover {
-      background: $border-subtle; //$ui-03
+      background: $layer-accent-01;
     }
   }
 }
@@ -251,7 +252,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   td.#{$prefix}--table-expand {
     position: relative;
     left: var(--row-nesting-offset);
-    border-bottom: 1px solid $layer-01; //$ui-01
+    border-bottom: 1px solid $layer-01;
 
     [dir='rtl'] & {
       left: unset;
@@ -269,9 +270,9 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       left: calc(-1 * var(--row-nesting-offset));
       height: calc(100% + 1px);
       width: var(--row-nesting-offset);
-      background-color: $layer-01; //$ui-01
-      border-right: solid 1px $layer-01; //$ui-01
-      border-bottom: solid 1px $layer-01; //$ui-01
+      background-color: $layer-01;
+      border-right: solid 1px $layer-01;
+      border-bottom: solid 1px $layer-01;
 
       [dir='rtl'] & {
         left: unset;
@@ -288,7 +289,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       height: 1px;
       bottom: -1px;
       width: $spacing-03;
-      border-bottom: solid 1px $layer-01; //$ui-01
+      border-bottom: solid 1px $layer-01;
 
       [dir='rtl'] & {
         left: unset;
@@ -309,7 +310,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       height: 1px;
       bottom: -1px;
       width: $spacing-03;
-      border-bottom: solid 1px $layer-01; //$ui-01
+      border-bottom: solid 1px $layer-01;
 
       [dir='rtl'] & {
         left: unset;
@@ -333,7 +334,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     td:first-of-type:after {
       left: -($spacing-06);
       width: $spacing-07;
-      border-bottom-color: $border-subtle; //$ui-03
+      border-bottom-color: $layer-accent-01;
 
       [dir='rtl'] & {
         left: unset;
@@ -348,7 +349,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     td:first-of-type:after {
       left: -($spacing-07);
       width: $spacing-08;
-      border-bottom-color: $border-subtle; //$ui-03
+      border-bottom-color: $layer-accent-01;
 
       [dir='rtl'] & {
         left: unset;
@@ -392,7 +393,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
         right: to-rem(52px);
       }
     }
-    // @include disable-nth-col-border(1);
+    @include disable-nth-col-border(1);
   }
 
   /*
@@ -407,7 +408,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
         right: to-rem(40px);
       }
     }
-    // @include disable-nth-col-border(1);
+    @include disable-nth-col-border(1);
 
     .#{$iot-prefix}--expandable-tablerow--expanded td:nth-of-type(1),
     .#{$iot-prefix}--expandable-tablerow--indented td:nth-of-type(1) {
@@ -427,8 +428,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
         right: to-rem(92px);
       }
     }
-    // @include disable-nth-col-border(1);
-    // @include disable-nth-col-border(2);
+    @include disable-nth-col-border(1);
+    @include disable-nth-col-border(2);
   }
 }
 
@@ -438,7 +439,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     position: sticky;
     z-index: 1;
     right: 0;
-    // filter: drop-shadow(-1px 0 0 $active-ui); // $active-ui
+    // filter: drop-shadow(-1px 0 0 $border-disabled);
 
     min-width: to-rem(56px);
     width: to-rem(56px); // Needed for fixed/resizable columns that don't respect min-width
@@ -446,7 +447,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     [dir='rtl'] & {
       right: unset;
       left: 0;
-      // filter: drop-shadow(1px 0 0 $active-ui); // $active-ui
+      // filter: drop-shadow(1px 0 0 $border-disabled);
     }
   }
 

@@ -2,8 +2,10 @@
 @use '@carbon/react/scss/utilities' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '../../globals/vars' as *;
+@use '../../globals/mixins' as *;
 
 .#{$iot-prefix}--data-state-container {
   // the custom property (CSS var) is defined in the Card that is using it
@@ -12,7 +14,7 @@
 }
 
 .#{$iot-prefix}--data-state-dashes {
-  // color: #f4f4f4; // $gray-20 need to find in carbon 11
+  color: $gray-20;
   font-size: 4rem;
   line-height: 0.67;
 }
@@ -57,17 +59,17 @@
 }
 
 .#{$iot-prefix}--data-state-grid__label {
-  // @include type-style('productive-heading-01'); //carbon 11
+  @include type-style('heading-compact-01');
   @include text-overflow();
 }
 
 .#{$iot-prefix}--data-state-grid__description {
-  // @include type-style('helper-text-01');  //carbon 11
-  // color: #f4f4f4; //carbon 11 -  $gray-70
+  @include type-style('helper-text-01');
+  color: $gray-70;
 
   $max-lines: 2;
   $line-height: 1rem;
-  // @include multiline-text-overflow($max-lines, $line-height);  //carbon 11
+  @include multiline-text-overflow($max-lines, $line-height);
 }
 
 .#{$iot-prefix}--data-state-tooltip:focus {
@@ -80,7 +82,7 @@
   }
 
   .#{$iot-prefix}--data-state-tooltip__label {
-    // @include type-style('productive-heading-01');
+    @include type-style('heading-compact-01');
   }
 }
 

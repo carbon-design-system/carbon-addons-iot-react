@@ -38,7 +38,7 @@
 .#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(
     .#{$iot-prefix}--btn-icon-selection--selected
   ).#{$iot-prefix}--btn-icon-selection--recommended {
-  border: 1px solid $support-success; //carbon 11
+  border: 1px solid $support-success;
 }
 
 .#{$iot-prefix}--btn:not(.#{$iot-prefix}--btn-icon-selection--selected)
@@ -48,7 +48,7 @@
   right: 0;
   border-width: $spacing-04 0 0 $spacing-04;
   border-style: solid;
-  border-color: $support-success transparent; //carbon 11
+  border-color: $support-success transparent;
 }
 
 .#{$iot-prefix}--btn.#{$prefix}--btn--field:not(.#{$iot-prefix}--btn-icon-selection--selected)
@@ -68,14 +68,14 @@
 .#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection
   svg
   path {
-  fill: $icon-primary; //carbon 11
+  fill: $icon-primary;
   outline-color: transparent;
 }
 
 .#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection.#{$iot-prefix}--btn-icon-selection--selected
   svg
   path {
-  fill: $button-primary; //carbon 11
+  fill: $button-primary;
   outline-color: transparent;
 }
 

@@ -2,6 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/utilities' as *;
 .#{$iot-prefix}--time-picker__wrapper {
   position: relative;
 
@@ -72,14 +73,14 @@
       }
 
       &:focus {
-        // @include focus-outline; //    @include focus-outline;
+        @include focus-outline;
         outline-width: 2px;
         outline-offset: -2px;
       }
 
       &:hover {
         cursor: pointer;
-        color: $icon-primary; //$icon-01
+        color: $icon-primary;
       }
 
       &:disabled {

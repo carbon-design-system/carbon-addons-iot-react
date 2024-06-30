@@ -2,6 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 $rem-value: to-rem(35px);
 .#{$iot-prefix}--table-card {
   .#{$iot-prefix}--card--content {
@@ -9,7 +10,7 @@ $rem-value: to-rem(35px);
   }
   .#{$iot-prefix}--table-toolbar-secondary-title {
     // title needs to match new card title font size and padding
-    // @include type-style('productive-heading-02'); //    @include type-style('productive-heading-02');
+    @include type-style('heading-compact-02');
     padding-top: $spacing-04;
   }
   .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
@@ -115,7 +116,7 @@ $rem-value: to-rem(35px);
     height: $spacing-08;
   }
   .#{$prefix}--data-table-content + .#{$prefix}--pagination {
-    border: 1px solid $border-subtle; //$ui-03;
+    border: 1px solid $layer-accent-01;
   }
 
   .#{$prefix}--toolbar-search-container {

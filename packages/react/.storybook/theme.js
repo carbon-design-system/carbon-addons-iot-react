@@ -1,20 +1,9 @@
 import { create } from '@storybook/theming';
-// import { g10 } from '@carbon/themes'; //carbon 11
 import { name, homepage } from '../package.json';
-
 // const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g10; //carbon 11
-const interactive01 = '#3f51b5';
-const field01 = '#FFFFFF';
-const text01 = '#161616';
-const text04 = '#FFFFFF';
-const ui01 = '#FFFFFF';
-const ui03 = '#e0e0e0';
-const ui04 = '#8d8d8d';
-const uiBackground = '#FFFFFF';
 
 export default create({
   base: 'light',
-
   // Typography
   fontBase: "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
   fontCode: "'IBM Plex Mono', Menlo, 'DejaVu Sans Mono'",

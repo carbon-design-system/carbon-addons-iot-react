@@ -4,17 +4,17 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
-
+@use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
-  background: $layer-01; //$ui-01 carbon 11
+  background: $layer-01;
   padding: $spacing-04 $spacing-05;
-  border-bottom: 1px solid $border-subtle; //$ui-03 carbon 11
+  border-bottom: 1px solid $layer-accent-01;
   height: to-rem(56px);
   column-gap: $spacing-05;
   &--title {
-    // @include type-style('productive-heading-02');
+    @include type-style('heading-compact-02');
     flex: 1;
   }
 
@@ -37,7 +37,7 @@
     }
 
     .#{$prefix}--search .#{$prefix}--search-input {
-      background: $layer-01; //$ui-01
+      background: $layer-01;
       border-bottom-color: $list-item-border-color;
       padding: 0 $spacing-09;
     }

@@ -3,7 +3,10 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/components/button' as *;
+
 .#{$iot-prefix}--progress-indicator {
   display: flex;
 
@@ -14,13 +17,13 @@
       position: absolute;
       width: calc(100% - #{$spacing-06});
       height: $spacing-01;
-      background-color: $border-subtle; //$ui-03
+      background-color: $layer-accent-01;
       top: to-rem(11px);
       left: $spacing-06;
 
       &--complete {
         @extend .#{$iot-prefix}--progress-step-line;
-        // background-color: $interactive-01; //$interactive-01
+        background-color: $button-primary;
       }
 
       &--sub {
@@ -30,7 +33,7 @@
 
         &-complete {
           @extend .#{$iot-prefix}--progress-step-line--sub;
-          // background-color: $interactive-03; //$interactive-03
+          background-color: $button-tertiary;
         }
       }
     }
@@ -79,9 +82,9 @@
         }
 
         &-label {
-          // @include type-style('body-short-01');
+          @include type-style('body-compact-01');
           position: relative;
-          color: $text-primary; //$text-01
+          color: $text-primary;
           cursor: default;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -92,19 +95,19 @@
             color $duration-fast-02 motion(standard, productive);
 
           &:focus {
-            // color: $interactive-01; //$interactive-01;
+            color: $button-primary;
           }
           &:hover {
-            box-shadow: 0 to-rem(1px) $link-primary; //$link-01
-            // color: $interactive-01; //$interactive-01;
+            box-shadow: 0 to-rem(1px) $link-primary;
+            color: $button-primary;
           }
           &:active {
-            // box-shadow: 0 to-rem(3px) 0 0 $interactive-01; //$interactive-01;
+            box-shadow: 0 to-rem(3px) 0 0 $button-primary;
           }
         }
 
         &-label--optional {
-          // @include type-style('body-short-01');//@include type-style('body-short-01');
+          @include type-style('body-compact-01');
           position: relative;
           cursor: default;
           overflow: hidden;
@@ -112,7 +115,7 @@
           white-space: nowrap;
           width: auto;
           font-size: $spacing-04;
-          color: $icon-secondary; //$icon-02
+          color: $icon-secondary;
           margin-top: $spacing-01;
         }
       }
@@ -129,22 +132,22 @@
       &:not(.#{$iot-prefix}--progress-step--invalid) {
         .#{$iot-prefix}--progress-step-button {
           &--main-step {
-            // fill: $interactive-01; //$interactive-01;
+            fill: $button-primary;
 
             // force the correct color for the svg
             text {
-              fill: $text-on-color; //$text-04
+              fill: $text-on-color;
             }
             circle {
-              // fill: $interactive-01; //$interactive-01;
+              fill: $button-primary;
             }
             path {
-              // fill: $interactive-01; //$interactive-01;
+              fill: $button-primary;
             }
           }
           &--sub-step {
             svg {
-              // fill: $interactive-03; //$interactive-03;
+              fill: $button-tertiary;
             }
           }
         }
@@ -152,11 +155,11 @@
       .#{$iot-prefix}--progress-text-label {
         &:focus {
           box-shadow: unset;
-          color: $text-primary; //$text-01
+          color: $text-primary;
         }
         &:hover {
           box-shadow: unset;
-          color: $text-primary; //$text-01
+          color: $text-primary;
         }
         &:active {
           box-shadow: unset;
@@ -166,18 +169,18 @@
 
     &--complete {
       svg {
-        // fill: $interactive-01;// $interactive-01;
+        fill: $button-primary;
       }
     }
 
     &--incomplete {
       .#{$iot-prefix}--progress-step-button--main-step {
-        fill: $text-primary; //$text-01
+        fill: $text-primary;
       }
 
       .#{$iot-prefix}--progress-step-button--sub-step {
         svg {
-          color: $text-primary; //$text-01
+          color: $text-primary;
         }
       }
     }
@@ -185,26 +188,26 @@
     &--disabled {
       &:not(.#{$iot-prefix}--progress-step--invalid) {
         .#{$iot-prefix}--progress-step-button--main-step {
-          fill: $text-disabled; //disabled-02
+          fill: $icon-disabled;
         }
 
         .#{$iot-prefix}--progress-step-button--sub-step {
           svg {
-            fill: $text-disabled; //disabled-02
+            fill: $icon-disabled;
           }
         }
       }
 
       &.#{$iot-prefix}--progress-step--invalid {
         svg {
-          fill: $text-disabled; //$disabled-02
+          fill: $icon-disabled;
         }
       }
 
       .#{$iot-prefix}--progress-step-button .#{$iot-prefix}--progress-text {
         &-label,
         &-label--optional {
-          color: $text-disabled; //$disabled-02
+          color: $text-disabled;
           cursor: default;
           box-shadow: none;
         }

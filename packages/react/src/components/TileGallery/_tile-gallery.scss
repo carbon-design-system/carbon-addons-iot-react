@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/layer' as *;
 // StatefulTileGallery extra content
 .extra-content {
   display: flex;
@@ -51,7 +52,7 @@
       border-top: none;
     }
     .#{$prefix}--accordion__heading {
-      border-bottom: to-rem(1px) solid $border-subtle; //$ui-03;
+      border-bottom: to-rem(1px) solid $layer-accent-01;
     }
 
     &--items {
@@ -72,12 +73,12 @@
   position: relative;
   margin-top: $spacing-05;
   box-shadow: none;
-  border: solid to-rem(1px) $background; //$ui-background
+  border: solid to-rem(1px) $background;
   padding: $spacing-05;
 
   .options {
     flex: 0;
-    color: $text-primary; //$text-01
+    color: $text-primary;
     .#{$prefix}--overflow-menu {
       height: $spacing-07;
       margin-right: -$spacing-03;
@@ -95,10 +96,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
-    // color: $active-ui; //$active-ui
+    color: $layer-active-01;
   }
   small {
-    color: $text-primary; //$text-01;
+    color: $text-primary;
   }
   .title-card {
     white-space: nowrap;
@@ -117,7 +118,7 @@
     margin-top: -$spacing-03;
     margin-left: auto;
     .#{$prefix}--overflow-menu:hover {
-      // background-color: $hover-selected-ui; // $hover-selected-ui;
+      background-color: $layer-accent-hover-01;
     }
   }
   &.#{$prefix}--link:hover {
@@ -129,13 +130,13 @@
     flex: 0 0 31.25rem;
     box-shadow: none;
     border-bottom: 0.0625rem solid rgb(223, 227, 230);
-    background: $layer-01; //$ui-01;
+    background: $layer-01;
     cursor: pointer;
     pointer-events: auto;
     touch-action: auto;
 
     &:hover {
-      background: $border-subtle; //$ui-03
+      background: $layer-accent-01;
       border-color: transparent;
     }
     .title-card {
@@ -144,7 +145,7 @@
     .description-card {
       span {
         padding-left: $spacing-07;
-        color: $border-strong; //$ui-04
+        color: $border-strong-01;
       }
     }
   }
@@ -159,7 +160,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $layer-02; //$ui-02;
+      background: $layer-02;
       margin-bottom: 0.9375rem;
       position: relative;
       width: 100%;
@@ -183,7 +184,7 @@
       align-items: center;
       justify-content: center;
       span {
-        color: $background; //$ui-background;
+        color: $background;
       }
     }
     .description-card:hover {

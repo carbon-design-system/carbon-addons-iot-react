@@ -5,7 +5,9 @@
 @use './table-toolbar-search' as *;
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '../../../globals/mixins' as *;
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
@@ -14,7 +16,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$iot-prefix}--table-toolbar-secondary-title {
   padding: $spacing-05;
-  // @include type-style('productive-heading-01');
+  @include type-style('heading-compact-01');
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -41,11 +43,11 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   }
 
   .#{$iot-prefix}--table-overflow-batch-actions.#{$prefix}--overflow-menu--open {
-    // @include hide-tooltip();
+    @include hide-tooltip();
   }
 
   .#{$iot-prefix}--table-toolbar-aggregations__overflow-menu.#{$prefix}--overflow-menu--open {
-    // @include hide-tooltip();
+    @include hide-tooltip();
   }
 }
 
@@ -138,12 +140,12 @@ html[dir='rtl'] {
   }
 
   &:focus {
-    outline: 2px solid $layer-01; //$ui-01
+    outline: 2px solid $layer-01;
     outline-offset: -($spacing-01);
   }
 
   &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper .#{$prefix}--btn__icon {
-    fill: $layer-01; //$ui-01
+    fill: $layer-01;
   }
 
   // hide the divider between overflow menu and cancel on hover
@@ -155,7 +157,7 @@ html[dir='rtl'] {
 
     &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
       svg.#{$prefix}--btn__icon {
-      fill: $layer-01; //$ui-01
+      fill: $layer-01;
     }
   }
 }

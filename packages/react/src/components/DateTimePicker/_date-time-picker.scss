@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '../../globals/vars' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/components/button' as *;
 
 .#{$iot-prefix}--date-time-picker {
   padding: 0 $spacing-05 $spacing-05;
@@ -74,12 +75,12 @@
     position: relative;
     list-style: none;
     display: block;
-    background-color: $layer-01; ////$ui-01
+    background-color: $layer-01;
     border: none;
     width: 100%;
     height: $spacing-08;
     cursor: pointer;
-    color: $gray-100; ////$carbon--gray-100
+    color: $gray-100;
     outline: 0.125rem solid transparent;
     transition: background-color $duration-fast-01 motion(standard);
 
@@ -97,7 +98,7 @@
       cursor: pointer;
       outline: none;
       white-space: nowrap;
-      border-bottom: 1px solid $gray-50; //$carbon--gray-50
+      border-bottom: 1px solid $gray-50;
 
       & > span {
         overflow: hidden;
@@ -105,7 +106,7 @@
       }
 
       &:hover {
-        background-color: $background-hover; //$hover-ui
+        background-color: $layer-hover-01;
       }
 
       &:focus {
@@ -124,12 +125,11 @@
       }
 
       .#{$iot-prefix}--date-time-picker__icon--invalid {
-        // fill: $danger-01; carbon 11
-        fill: red;
+        fill: $button-danger-primary;
       }
 
       .#{$iot-prefix}--date-time-picker__icon--disabled {
-        // fill: $disabled-02; carbon 11
+        fill: $icon-disabled;
         fill: grey;
       }
 
@@ -176,8 +176,8 @@
         overflow-x: hidden;
 
         .#{$prefix}--fieldset {
-          margin-bottom: $spacing-05; //$spacing-lg=carbon 11
-          padding: 0 $spacing-02; //spacing-baseline
+          margin-bottom: $spacing-05;
+          padding: 0 $spacing-02;
 
           &:last-child {
             margin-bottom: 0;
@@ -226,13 +226,13 @@
           padding: $spacing-04 $spacing-02; //$spacing-baseline
           cursor: pointer;
           border-left: 4px solid transparent;
-          border-bottom: 1px solid $border-subtle; //$ui-03
+          border-bottom: 1px solid $layer-accent-01;
         }
 
         .#{$iot-prefix}--date-time-picker__listitem--preset {
           &:hover,
           &:focus {
-            // background-color: $field-ui;  //$hover-ui
+            background-color: $layer-hover-01;
           }
 
           &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
@@ -251,7 +251,7 @@
 
           &:hover,
           &:focus {
-            // background-color: $field-ui; //$hover-ui
+            background-color: $layer-hover-01;
           }
         }
       }
@@ -271,7 +271,7 @@
   }
 
   .#{$iot-prefix}--date-time-picker__box--invalid {
-    outline: 2px solid red; //$danger-01
+    outline: 2px solid $button-danger-primary;
   }
 
   .#{$iot-prefix}--date-time-picker__box--disabled {

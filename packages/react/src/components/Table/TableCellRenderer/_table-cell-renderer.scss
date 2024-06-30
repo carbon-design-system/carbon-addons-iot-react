@@ -1,6 +1,9 @@
 @use '../../../globals/vars' as *;
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/utilities' as *;
 .#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
   // Revert the styles added by the tooltip since we want
   // normal table cell content style even if a tooltip is triggered.
@@ -18,7 +21,7 @@
 }
 
 .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip--a11y.#{$iot-prefix}--table__cell-tooltip {
-  // @include type-style('productive-heading-01'); // @include type-style('productive-heading-01');
+  @include type-style('heading-compact-01');
   display: grid;
   min-width: $spacing-08;
   span {
@@ -34,7 +37,7 @@
 }
 
 .#{$iot-prefix}--table__cell-text--truncate {
-  // @include text-overflow(); //  @include text-overflow();
+  @include text-overflow();
   display: block;
 }
 

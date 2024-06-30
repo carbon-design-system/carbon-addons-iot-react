@@ -3,9 +3,10 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--card-edit-form {
   height: 100%;
-  background: $layer-01; ////$ui-01
+  background: $layer-01;
   display: flex;
   flex-direction: column;
 
@@ -32,7 +33,7 @@
   }
 
   .#{$prefix}--file__selected-file {
-    background-color: $layer-02; //$ui-02
+    background-color: $layer-02;
   }
 
   .color-picker {
@@ -40,11 +41,11 @@
       // need to leave just enough room for the selected border
       width: 1.95rem;
       height: 1.95rem;
-      border: solid $spacing-01 $layer-01; ////$ui-01
+      border: solid $spacing-01 $layer-01;
     }
 
     .color-picker-button__selected {
-      border: solid $spacing-01 $interactive; ////$interactive-04
+      border: solid $spacing-01 $border-interactive;
     }
   }
 
@@ -57,9 +58,9 @@
 
   &--form-section {
     padding: $spacing-03 $spacing-05;
-    // @include type-style('productive-heading-01');
-    border-top: solid 1px $border-subtle; //$ui-03
-    border-bottom: solid 1px $border-subtle; //$ui-03
+    @include type-style('heading-compact-01');
+    border-top: solid 1px $layer-accent-01;
+    border-bottom: solid 1px $layer-accent-01;
     margin-left: -$spacing-05;
     margin-right: -$spacing-05;
     margin-bottom: $spacing-05;
@@ -205,7 +206,7 @@
   }
 
   &--footer {
-    border-top: solid 1px $border-subtle; //$ui-03
+    border-top: solid 1px $layer-accent-01;
     & > button {
       justify-content: space-between;
       width: 100%;
@@ -248,11 +249,11 @@
     position: absolute;
     right: 0;
     top: 1.25rem;
-    color: $border-inverse; //$ui-05
-    background-color: $layer-02; //$ui-02
+    color: $layer-selected-inverse;
+    background-color: $layer-02;
     &:hover,
     &:active {
-      color: $border-inverse; //$ui-05
+      color: $layer-selected-inverse;
     }
     border: 0;
     min-height: 2rem;

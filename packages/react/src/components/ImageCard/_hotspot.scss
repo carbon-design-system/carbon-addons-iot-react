@@ -7,9 +7,10 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
 $selected-border-width: $spacing-01;
-$selected-border: solid $selected-border-width red; //$interactive-04
+$selected-border: solid $selected-border-width $border-interactive;
 
 // The custom properties --x-pos, --y-pos, --width, --height are set
 // on the container by the react js code. They do not include units.
@@ -100,7 +101,7 @@ $selected-border: solid $selected-border-width red; //$interactive-04
     }
 
     h4 {
-      // @include type-style('productive-heading-01'); //@include type-style('productive-heading-01');
+      @include type-style('heading-compact-01');
       text-align: left;
       padding-bottom: 0;
       line-height: calc(var(--title-font-size) * 1.4px);
@@ -129,7 +130,7 @@ $selected-border: solid $selected-border-width red; //$interactive-04
   }
   .#{$iot-prefix}--hotspot-content-label,
   .#{$iot-prefix}--hotspot-content-threshold {
-    // @include type-style('helper-text-01');
+    @include type-style('helper-text-01');
     font-weight: normal;
   }
 

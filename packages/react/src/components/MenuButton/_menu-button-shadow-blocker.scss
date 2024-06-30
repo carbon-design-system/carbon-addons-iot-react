@@ -22,8 +22,8 @@ $shadow-blocker-border-width: to-rem(1px);
     top: calc((-#{$shadow-blocker-height}) + #{$shadow-blocker-border-width});
     left: 0;
     width: $size-sm; // small is the default size
-    background-color: $layer-01; //$ui-01 carbon 11
-    border-bottom: $shadow-blocker-border-width solid $layer-01; //$ui-01 carbon 11
+    background-color: $layer-01;
+    border-bottom: $shadow-blocker-border-width solid $layer-01;
 
     &--flip-y {
       left: unset;
@@ -57,13 +57,13 @@ $shadow-blocker-border-width: to-rem(1px);
       width: $width;
       left: calc((#{$width}) * (-1));
       border-bottom: none;
-      border-right: $shadow-blocker-border-width solid $layer-01; //$ui-01
+      border-right: $shadow-blocker-border-width solid $layer-01;
 
       &.#{$iot-prefix}--menu__shadow-blocker--flip-y {
         right: calc((#{$width}) * (-1));
         left: unset;
         border-right: none;
-        border-left: $shadow-blocker-border-width solid $layer-01; //$ui-01
+        border-left: $shadow-blocker-border-width solid $layer-01;
       }
 
       &.#{$iot-prefix}--menu__shadow-blocker--md {
@@ -82,7 +82,7 @@ $shadow-blocker-border-width: to-rem(1px);
   &:focus .#{$iot-prefix}--menu__shadow-blocker {
     border-bottom: $shadow-blocker-border-width solid $focus;
     &--flip-x {
-      border-bottom-color: $layer-01; //$ui-01
+      border-bottom-color: $layer-01;
       border-top: $shadow-blocker-border-width solid $focus;
     }
     &--opens-horizontally {
