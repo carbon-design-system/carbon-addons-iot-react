@@ -37,7 +37,7 @@ const kinds = {
   'Icon Selection button (ghost)': 'icon-selection',
 };
 
-const sizes = ['sm', 'md', 'lg', 'xl', '2xl'];
+const sizes = ['default', 'field', 'small', 'large', 'extralarge'];
 
 const props = {
   regular: () => {
@@ -46,7 +46,7 @@ const props = {
       className: 'some-class',
       kind: select('Button kind (kind)', kinds, 'primary'),
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'lg'),
+      size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       onClick: action('onClick'),
@@ -68,7 +68,7 @@ const props = {
         'primary'
       ),
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'lg'),
+      size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       tooltipPosition: select(
@@ -90,7 +90,7 @@ const props = {
     return {
       className: 'some-class',
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'lg'),
+      size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       onClick: action('onClick'),
@@ -106,7 +106,7 @@ const props = {
       recommended: boolean('Recommended (recommended)', false),
       hasIconOnly: true,
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'lg'),
+      size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       tooltipPosition: select(
