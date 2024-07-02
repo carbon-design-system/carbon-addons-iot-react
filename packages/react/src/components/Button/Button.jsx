@@ -17,6 +17,8 @@ const ButtonKinds = [
   'danger--tertiary',
 ];
 
+const palSizes = ['default', 'field', 'small', 'large', 'extralarge'];
+
 const sizes = {
   default: 'lg',
   field: 'md',
@@ -45,8 +47,7 @@ const propTypes = {
   /** Toggle selected styling for buttons of kind=icon-selection */
   selected: PropTypes.bool,
   /** Size of the button */
-  size: PropTypes.oneOf(Object.keys(sizes)),
-
+  size: PropTypes.oneOf(palSizes),
   // TODO: remove deprecated testID prop in v3
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
@@ -65,8 +66,8 @@ const defaultProps = {
   children: null,
   recommended: false,
   hasIconOnly: false,
+  size: 'default',
   selected: false,
-  size: 'Default',
   testId: 'Button',
 };
 
@@ -111,7 +112,7 @@ const Button = React.forwardRef((props, ref) => {
     >
       {loading ? <Loading small withOverlay={false} /> : null}
       {kind === 'icon-selection' && !disabled && recommended ? (
-        <div className={`${iotPrefix}--btn-icon-selection--recommended_marker`} /> // For different icons this block in not rendering need to fix it
+        <div className={`${iotPrefix}--btn-icon-selection--recommended_marker`} />
       ) : null}
       {children}
     </CarbonButton>
