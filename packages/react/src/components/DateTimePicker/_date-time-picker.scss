@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '../../globals/vars' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/utilities/_box-shadow' as *;
 @use '@carbon/react/scss/components/button' as *;
 
 .#{$iot-prefix}--date-time-picker {
@@ -281,6 +282,10 @@
   .#{$iot-prefix}--date-time-picker__helper-text--invalid {
     color: $text-error;
   }
+}
+
+.#{$prefix}--date-picker__calendar.open {
+  box-shadow: 0 2px 6px var(--cds-shadow, rgba(0, 0, 0, 0.3));
 }
 
 .#{$iot-prefix}--date-time-picker__wrapper--disabled {
