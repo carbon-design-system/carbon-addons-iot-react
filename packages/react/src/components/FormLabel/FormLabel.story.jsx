@@ -7,6 +7,7 @@
 
 import React from 'react';
 import { FormLabel, Tooltip } from '@carbon/react';
+import { Information } from '@carbon/icons-react';
 
 export default {
   title: '3 - Carbon/FormLabel',
@@ -19,11 +20,12 @@ export default {
 export const Default = () => <FormLabel>Form label</FormLabel>;
 
 export const WithTooltip = () => (
-  <FormLabel>
-    <Tooltip triggerText="Form label">
-      This can be used to provide more information about a field.
+  <div>
+    <FormLabel>Form label</FormLabel>
+    <Tooltip align="right" label="This can be used to provide more information about a field.">
+      <Information />
     </Tooltip>
-  </FormLabel>
+  </div>
 );
 
 WithTooltip.storyName = 'Form Label with Tooltip';
