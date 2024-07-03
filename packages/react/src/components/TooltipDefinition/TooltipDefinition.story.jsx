@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 
-import { DefinitionTooltip } from '.';
+import TooltipDefinition from './TooltipDefinition';
 
 const directions = {
   'Bottom (bottom)': 'bottom',
@@ -29,6 +29,7 @@ const props = () => ({
     'Tooltip content (tooltipText)',
     'Brief description of the dotted, underlined word above.'
   ),
+  openOnHover: boolean('Open on Hover', false),
 });
 
 export default {
@@ -36,13 +37,13 @@ export default {
   decorators: [withKnobs],
 
   parameters: {
-    component: DefinitionTooltip,
+    component: TooltipDefinition,
   },
 };
 
 export const Default = () => (
   <div style={{ marginTop: '2rem' }}>
-    <DefinitionTooltip {...props()}>Definition Tooltip</DefinitionTooltip>
+    <TooltipDefinition {...props()}>Definition Tooltip</TooltipDefinition>
   </div>
 );
 
