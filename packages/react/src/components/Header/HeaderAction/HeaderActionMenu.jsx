@@ -148,7 +148,7 @@ class HeaderActionMenu extends React.Component {
 
     return (
       // TODO: CAN WE REMOVE THIS DIV WRAPPER AND ATTACH THE CLASS DIRECTLY
-      <div className={className}>
+      <div aria-expanded={isExpanded} className={className}>
         <Button
           hasIconOnly
           iconDescription={ariaLabel}
