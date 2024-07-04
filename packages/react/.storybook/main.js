@@ -96,10 +96,7 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sassOptions: {
-              includePaths: [
-                path.resolve(__dirname, '..', 'node_modules'),
-                path.resolve(__dirname, '..', '..', '..', 'node_modules'),
-              ],
+              includePaths: [path.resolve(__dirname, '..', '..', '..', 'node_modules')],
             },
           },
         },

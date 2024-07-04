@@ -3,11 +3,12 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}-simple-pagination-container {
   display: flex;
   height: $spacing-09;
   width: 100%;
-  border: to-rem(1px) solid $border-subtle; //$ui-01
+  border: convert.to-rem(1px) solid $border-subtle; //$ui-01
   background-color: $layer-01;
 }
 

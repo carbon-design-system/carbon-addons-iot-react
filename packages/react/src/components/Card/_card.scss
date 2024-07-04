@@ -9,6 +9,7 @@
 @use './data-state-renderer' as *;
 @use '../../globals/mixins' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/charts/scss' as *;
 // delcare variables
 $iot-header-padding: $spacing-05;
 $duration-moderate-02: 240ms;
@@ -237,24 +238,6 @@ $duration-fast-02: 110ms;
   margin-left: 4px;
 }
 
-.#{$prefix}--modal {
-  position: fixed;
-  z-index: 9000;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(22, 22, 22, 0.5);
-  content: '';
-  opacity: 0;
-  transition: opacity $duration-moderate-02 cubic-bezier(0.4, 0.14, 1, 1),
-    visibility 0 linear $duration-moderate-02;
-  visibility: hidden;
-}
-
 .#{$prefix}--cc--threshold--label.hidden {
   opacity: 0;
   transition: opacity $duration-fast-02;
@@ -359,7 +342,7 @@ div.#{$prefix}--cc--legend div.legend-item p {
   fill: $text-primary;
 }
 
-.iot--bar-chart-container .axis-title {
+.#{$prefix}--bar-chart-container .axis-title {
   font-weight: 500;
 }
 
@@ -441,75 +424,11 @@ div.#{$prefix}--cc--legend div.legend-item div.checkbox svg {
   margin: 0;
 }
 
-.cds--overflow-menu__wrapper {
-  background: none;
-}
-
-.cds--popover-container {
-  width: 3rem;
-  height: 3rem;
-}
-
-button.cds--overflow-menu {
-  background: none;
-}
-
-.cds--overflow-menu--xl,
-.cds--overflow-menu--lg {
-  width: 3rem;
-  height: 3rem;
-}
-
-.cds--overflow-menu,
-.cds--overflow-menu__trigger {
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-  display: inline-block;
-  -webkit-appearance: none;
-  appearance: none;
-  background: none;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  transition: outline $duration-fast-02 cubic-bezier(0, 0, 0.38, 0.9),
-    background-color $duration-fast-02 cubic-bezier(0, 0, 0.38, 0.9);
-}
-
-.cds--overflow-menu__icon {
-  width: 1rem;
-  height: 1rem;
-  fill: $text-primary;
-}
-
-.cds--overflow-menu *,
-.cds--overflow-menu *::before,
-.cds--overflow-menu *::after,
-.cds--overflow-menu__trigger *,
-.cds--overflow-menu__trigger *::before,
-.cds--overflow-menu__trigger *::after {
-  box-sizing: inherit;
-}
-
-.iot--card--toolbar-date-range-wrapper > .iot--card--toolbar-date-range-action:hover {
+.#{$prefix}--card--toolbar-date-range-wrapper > .#{$prefix}--card--toolbar-date-range-action:hover {
   background: #e5e5e5;
 }
 
-.cds--overflow-menu:hover,
-.cds--overflow-menu__trigger:hover {
-  background-color: #e5e5e5;
-}
-
-.iot--card--toolbar-svg-wrapper {
+.#{$prefix}--card--toolbar-svg-wrapper {
   align-items: center;
   background: transparent;
   border: none;
@@ -521,12 +440,12 @@ button.cds--overflow-menu {
   margin: 0;
 }
 
-.iot--card--toolbar-svg-wrapper:active {
+.#{$prefix}--card--toolbar-svg-wrapper:active {
   outline: 2px solid #0f62fe;
   outline-offset: -2px;
 }
 
-.iot--card--toolbar-action {
+.#{$prefix}--card--toolbar-action {
   color: $text-primary;
   border-width: 2px;
   display: flex;
@@ -537,13 +456,13 @@ button.cds--overflow-menu {
   width: 2rem;
 }
 
-.iot--card--toolbar-action:focus {
+.#{$prefix}--card--toolbar-action:focus {
   border-color: transparent;
   outline: 2px solid #0f62fe;
   outline-offset: -2px;
 }
 
-.iot--card--toolbar-action:hover {
+.#{$prefix}--card--toolbar-action:hover {
   background-color: #e5e5e5;
   color: $text-primary;
 }

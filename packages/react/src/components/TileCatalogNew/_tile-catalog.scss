@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--tile-catalog {
   &--persistent-search {
     margin-bottom: $spacing-05;
@@ -41,8 +42,8 @@
 
       &--search {
         flex: 1;
-        height: to-rem(40px);
-        width: to-rem(40px);
+        height: convert.to-rem(40px);
+        width: convert.to-rem(40px);
         .#{$prefix}--search {
           svg {
             height: 2.5rem;
@@ -76,12 +77,12 @@
 
     &--placeholder-tile {
       background: $layer-accent-01;
-      height: to-rem(224px);
+      height: convert.to-rem(224px);
     }
 
     &--no-placeholder-tile {
       background: $layer-02;
-      height: to-rem(224px);
+      height: convert.to-rem(224px);
     }
 
     &--bottom {
@@ -92,7 +93,7 @@
   &--filter {
     margin-left: $spacing-05;
 
-    width: to-rem(212px);
+    width: convert.to-rem(212px);
     &--title {
       @include type-style('heading-compact-01');
       margin-bottom: $spacing-05;
@@ -101,11 +102,11 @@
       background: $layer-01;
 
       &--select {
-        width: to-rem(212px);
+        width: convert.to-rem(212px);
         padding: $spacing-05;
 
         .#{$prefix}--select-input {
-          width: to-rem(180px);
+          width: convert.to-rem(180px);
           background: $layer-02;
         }
       }
@@ -126,7 +127,7 @@
 .sample-tile {
   background: $layer-01;
   padding: $spacing-05;
-  height: to-rem(224px);
+  height: convert.to-rem(224px);
   &--title {
     @include type-style('heading-compact-01');
     padding-bottom: $spacing-03;

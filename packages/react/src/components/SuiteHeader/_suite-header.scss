@@ -5,6 +5,7 @@
 @use '@carbon/react/scss/layer' as *;
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--suite-header-profile {
   background-color: $layer-selected-inverse;
   color: $text-inverse; //$inverse-01
@@ -89,7 +90,7 @@
   position: fixed;
   top: $spacing-09; //$layout-04
   right: 0;
-  max-width: to-rem(425px);
+  max-width: convert.to-rem(425px);
   width: auto;
   z-index: z('overlay');
 

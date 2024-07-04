@@ -8,20 +8,17 @@
  */
 
 /* eslint-disable no-console */
-
 import React, { createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, array, boolean, number, select, text } from '@storybook/addon-knobs';
 // import { settings } from 'carbon-components';
-
 import {
   FileUploader,
-  FileUploaderButton,
   FileUploaderSkeleton,
   FileUploaderItem,
   FileUploaderDropContainer,
-} from '.';
-// import './FileUploader-story.scss';  //carbon 11
+} from '@carbon/react';
+// import './FileUploader-story.scss';
 
 // const { prefix } = settings;
 const prefix = 'cds';
@@ -34,9 +31,9 @@ const buttonKinds = {
   'Tertiary (tertiary)': 'tertiary',
 };
 const sizes = {
-  Default: 'default',
-  Field: 'field',
-  Small: 'small',
+  'Large size (lg)': 'lg',
+  'Regular size (md)': 'md',
+  'Small size (sm)': 'sm',
 };
 const filenameStatuses = {
   'Edit (edit)': 'edit',
@@ -54,7 +51,7 @@ const props = {
       multiple: boolean('Supports multiple files (multiple)', true),
       disabled: boolean('Disabled (disabled)', false),
       buttonKind: buttonKind || 'primary',
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'md'),
       disableLabelChanges: boolean(
         'Prevent the label from being replaced with file selected file (disableLabelChanges)',
         false
@@ -81,7 +78,7 @@ const props = {
       ),
       buttonLabel: text('The button label (buttonLabel)', 'Add file'),
       buttonKind: buttonKind || 'primary',
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'md'),
       filenameStatus: select('Status for file name (filenameStatus)', filenameStatuses, 'edit'),
       accept: array('Accepted file extensions (accept)', ['.jpg', '.png'], ','),
       name: text('Form item name: (name)', ''),
@@ -103,10 +100,10 @@ const props = {
       'Error body (errorBody)',
       '500kb max file size. Select a new file and try again.'
     ),
-    size: select('FileUploaderItem height (size)', sizes, 'default'),
+    size: select('FileUploaderItem height (size)', sizes, 'md'),
   }),
   fileUploaderDropContainer: () => ({
-    size: select('Filename height (size)', sizes, 'default'),
+    size: select('Filename height (size)', sizes, 'md'),
     labelText: text('Label text (labelText)', 'Drag and drop files here or click to upload'),
     name: text('Form item name (name)', ''),
     multiple: boolean('Supports multiple files (multiple)', true),
@@ -128,13 +125,6 @@ export default {
 
   parameters: {
     component: FileUploader,
-
-    subcomponents: {
-      FileUploaderButton,
-      FileUploaderSkeleton,
-      FileUploaderItem,
-      FileUploaderDropContainer,
-    },
   },
 };
 
@@ -196,7 +186,7 @@ DragAndDropUploadContainerExampleApplication.decorators = [createElement];
 
 export const Skeleton = () => (
   <div style={{ width: '500px' }}>
-    <FileUploaderSkeleton />
+    <FileUploaderSkeleton linecount="3" />
   </div>
 );
 

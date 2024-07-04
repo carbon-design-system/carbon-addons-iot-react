@@ -3,6 +3,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/react/scss/utilities/convert';
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--btn {
@@ -91,6 +92,6 @@
   // }
 
   .#{$prefix}--btn-set .#{$prefix}--btn:last-of-type:not(:focus) {
-    box-shadow: to-rem(1px) 0 0 0 $button-separator;
+    box-shadow: convert.to-rem(1px) 0 0 0 $button-separator;
   }
 }

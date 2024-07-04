@@ -5,13 +5,14 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
   background: $layer-01;
   padding: $spacing-04 $spacing-05;
   border-bottom: 1px solid $layer-accent-01;
-  height: to-rem(56px);
+  height: convert.to-rem(56px);
   column-gap: $spacing-05;
   &--title {
     @include type-style('heading-compact-02');
