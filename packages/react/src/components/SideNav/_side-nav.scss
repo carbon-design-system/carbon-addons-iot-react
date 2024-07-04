@@ -179,7 +179,7 @@ html[dir='rtl'] {
   }
 
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
-    margin-left: mini-units(3);
+    margin-left: $spacing-06;
     margin-right: unset;
   }
 

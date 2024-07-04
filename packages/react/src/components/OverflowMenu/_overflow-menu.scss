@@ -1,4 +1,7 @@
-@use '@carbon/reacts/scss/components/overflow-menu' as *;
+@use '@carbon/react/scss/config' as *;
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/styles/scss/components/overflow-menu' as *;
 
 button.#{$prefix}--overflow-menu {
   background: none;
