@@ -6,11 +6,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState } from 'react';
-import { settings } from 'carbon-components';
+import React from 'react';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs';
 import { OverflowMenuVertical } from '@carbon/react/icons';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
 
 import { Tooltip } from '.';
@@ -30,6 +30,20 @@ const props = {
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     triggerId: 'withIcon',
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
   withoutIcon: () => ({
     showIcon: false,
@@ -38,6 +52,20 @@ const props = {
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     triggerId: 'withoutIcon',
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
   customIcon: () => ({
     showIcon: true,
@@ -56,6 +84,20 @@ const props = {
         </svg>
       </div>
     )),
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
   customIconOnly: () => ({
     showIcon: true,
@@ -65,6 +107,20 @@ const props = {
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     renderIcon: OverflowMenuVertical,
     triggerId: 'customIconOnly',
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
 };
 
@@ -77,32 +133,6 @@ const containerStyles = {
 
 Tooltip.displayName = 'Tooltip';
 
-function UncontrolledTooltipExample() {
-  const [value, setValue] = useState(true);
-  return (
-    <>
-      <Button style={{ padding: '15px 20px', margin: '4px 20px' }} onClick={() => setValue(false)}>
-        Hide
-      </Button>
-      <Button style={{ padding: '15px 20px', margin: '4px 20px' }} onClick={() => setValue(true)}>
-        Show
-      </Button>
-      <div style={{ padding: '15px', margin: '4px 20px' }}>
-        <Tooltip
-          triggerId="uncontrolled"
-          tooltipId="uncontrolled"
-          id="uncontrolled"
-          triggerText={<div>My text wrapped with tooltip</div>}
-          open={value}
-          showIcon={false}
-        >
-          Some text
-        </Tooltip>
-      </div>
-    </>
-  );
-}
-
 export default {
   title: '1 - Watson IoT/Tooltip',
   decorators: [withKnobs],
@@ -114,18 +144,7 @@ export default {
 
 export const DefaultBottom = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.withIcon()} tooltipBodyId="tooltip-body">
-      <p id="tooltip-body">
-        This is some tooltip text. This box shows the maximum amount of text that should appear
-        inside. If more room is needed please use a modal instead.
-      </p>
-      <div className={`${prefix}--tooltip__footer`}>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </div>
-    </Tooltip>
+    <Tooltip {...props.withIcon()} tooltipBodyId="tooltip-body" />
   </div>
 );
 
@@ -143,18 +162,7 @@ DefaultBottom.parameters = {
 
 export const NoIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.withoutIcon()}>
-      <p>
-        This is some tooltip text. This box shows the maximum amount of text that should appear
-        inside. If more room is needed please use a modal instead.
-      </p>
-      <div className={`${prefix}--tooltip__footer`}>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </div>
-    </Tooltip>
+    <Tooltip {...props.withoutIcon()} />
   </div>
 );
 
@@ -172,18 +180,7 @@ NoIcon.parameters = {
 
 export const RenderCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.customIcon()}>
-      <p>
-        This is some tooltip text. This box shows the maximum amount of text that should appear
-        inside. If more room is needed please use a modal instead.
-      </p>
-      <div className={`${prefix}--tooltip__footer`}>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </div>
-    </Tooltip>
+    <Tooltip {...props.customIcon()} />
   </div>
 );
 
@@ -201,18 +198,7 @@ RenderCustomIcon.parameters = {
 
 export const OnlyCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.customIconOnly()}>
-      <p>
-        This is some tooltip text. This box shows the maximum amount of text that should appear
-        inside. If more room is needed please use a modal instead.
-      </p>
-      <div className={`${prefix}--tooltip__footer`}>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </div>
-    </Tooltip>
+    <Tooltip {...props.customIconOnly()} />
   </div>
 );
 
@@ -227,10 +213,6 @@ OnlyCustomIcon.parameters = {
       `,
   },
 };
-
-export const UncontrolledTooltip = () => <UncontrolledTooltipExample />;
-
-UncontrolledTooltip.storyName = 'uncontrolled tooltip';
 
 export const AutoPositioningExample = () => {
   return (
@@ -256,9 +238,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -273,9 +254,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -290,9 +270,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -309,9 +288,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -326,9 +304,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -343,9 +320,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -362,9 +338,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -379,9 +354,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -396,9 +370,8 @@ export const AutoPositioningExample = () => {
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
     </div>

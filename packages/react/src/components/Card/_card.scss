@@ -9,6 +9,7 @@
 @use './data-state-renderer' as *;
 @use '../../globals/mixins' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/charts/scss' as *;
 // delcare variables
 $iot-header-padding: $spacing-05;
 $duration-moderate-02: 240ms;
