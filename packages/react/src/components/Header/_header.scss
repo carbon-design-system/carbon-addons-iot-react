@@ -66,6 +66,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   &__menu-title[data-testid='menuitem'][aria-expanded='true'] + &__menu {
+    display: flex;
     left: auto;
     right: 0;
     [dir='rtl'] & {
@@ -115,6 +116,10 @@ $hoverBgColor: #2c2c2c;
         // color: $shell-header-text-02; //$shell-header-text-02; carbon 11
         background-color: $gray-90;
         text-decoration: none;
+        color: $gray-30;
+        &:hover {
+          color: $gray-30;
+        }
       }
     }
 
@@ -144,13 +149,27 @@ $hoverBgColor: #2c2c2c;
       // color: $shell-header-text-02;//$shell-header-text-02 carbon 11
     }
   }
+
+  .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open,
+  .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open .#{$prefix}--overflow-menu__trigger {
+    background-color: $gray-90;
+    &:hover {
+      background-color: $gray-90;
+    }
+  }
+
+  .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
+    .#{$prefix}--popover-container {
+      width: 100%;
+    }
+  }
 }
 
 .#{$iot-prefix}--header__subtitle {
   @include type-style('body-compact-01');
   border-left: $icon-secondary 1px solid;
   padding: $spacing-01 $spacing-05;
-  color: $skeleton-element; // Force dark mode in header even in gray-10 theme
+  color: $gray-30; // Force dark mode in header even in gray-10 theme
   margin-left: $spacing-05;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -281,7 +300,9 @@ button.#{$prefix}--header__menu-item {
     box-shadow: none;
     border-width: 1px;
   }
-
+  &[aria-expanded='true'] {
+    background-color: $hoverBgColor;
+  }
   &:hover {
     background-color: $hoverBgColor; // Force dark mode in header even in gray-10 theme
   }
