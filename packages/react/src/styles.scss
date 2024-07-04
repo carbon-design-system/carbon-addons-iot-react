@@ -9,6 +9,7 @@
   $theme: themes.$g10
 );
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/styles/scss/fonts' as *;
 @use 'globals/feature-flags' as *;
 @use 'globals/vars' as *;
 @use 'globals/colors' as *;
@@ -59,6 +60,7 @@
 @use 'components/FilterTags/filter-tags' as *;
 @use 'components/GaugeCard/gauge-card' as *;
 @use 'components/Header/header' as *;
+@use 'components/OverflowMenu/overflow-menu' as *;
 @use 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab' as *;
 @use 'components/IconDropdown/icon-dropdown' as *;
 @use 'components/IconSwitch/icon-switch' as *;
