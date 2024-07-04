@@ -5,6 +5,7 @@
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/layer' as *;
+@use '@carbon/react/scss/utilities/convert';
 // StatefulTileGallery extra content
 .extra-content {
   display: flex;
@@ -52,7 +53,7 @@
       border-top: none;
     }
     .#{$prefix}--accordion__heading {
-      border-bottom: to-rem(1px) solid $layer-accent-01;
+      border-bottom: convert.to-rem(1px) solid $layer-accent-01;
     }
 
     &--items {
@@ -67,13 +68,13 @@
   text-decoration: none;
   margin-right: $spacing-05;
   flex-basis: 30%;
-  height: to-rem(128px);
-  min-width: to-rem(256px);
-  width: to-rem(256px);
+  height: convert.to-rem(128px);
+  min-width: convert.to-rem(256px);
+  width: convert.to-rem(256px);
   position: relative;
   margin-top: $spacing-05;
   box-shadow: none;
-  border: solid to-rem(1px) $background;
+  border: solid convert.to-rem(1px) $background;
   padding: $spacing-05;
 
   .options {
@@ -168,7 +169,7 @@
     }
     .thumbnail {
       display: block;
-      padding-left: to-rem(5px);
+      padding-left: convert.to-rem(5px);
     }
     .description-card {
       position: absolute;

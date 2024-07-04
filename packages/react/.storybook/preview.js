@@ -14,14 +14,11 @@ export const parameters = {
     container: DocsContainer,
     page: DocsPage,
   },
-  // options: {
-  //   storySort: (a, b) =>
-  //     a[1].kind.replace(/☢️-|🚫-|⚠️-/i, '') === b[1].kind.replace(/☢️-|🚫-|⚠️-/i, '')
-  //       ? 0
-  //       : a[1].id
-  //           .replace(/☢️-|🚫-|⚠️-/i, '')
-  //           .localeCompare(b[1].id.replace(/☢️-|🚫-|⚠️-/i, ''), undefined, { numeric: true }),
-  // },
+  options: {
+    storySort: (a, b) => {
+      return a.title === b.title ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true });
+    },
+  },
   a11y: {
     element: '#root',
     config: {},

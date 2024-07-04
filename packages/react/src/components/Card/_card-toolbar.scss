@@ -2,7 +2,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
-
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--card--toolbar {
   margin: 0;
   display: flex;
@@ -18,7 +18,7 @@
   &__overflow-menu {
     min-width: 10rem;
     width: unset;
-    max-width: to-rem(350px); // 350px mobile screen width
+    max-width: convert.to-rem(350px); // 350px mobile screen width
 
     & .#{$prefix}--overflow-menu-options__btn {
       max-width: unset;

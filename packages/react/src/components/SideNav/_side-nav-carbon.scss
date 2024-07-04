@@ -7,6 +7,7 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/utilities' as *;
+@use '@carbon/react/scss/utilities/convert';
 /*****************************
 *
 * This file brings in Carbon sidenav styles and aligns the pattern changes
@@ -104,7 +105,7 @@ $small-screen-breakpoint: 65.99em;
   .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
     @include text-overflow();
     // color: $shell-side-nav-text-01; // $shell-side-nav-text-01;
-    font-size: to-rem(14px);
+    font-size: convert.to-rem(14px);
     line-height: 1.25rem;
     letter-spacing: 0.1px;
     user-select: none;

@@ -5,6 +5,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/components/button' as *;
 @use '@carbon/react/scss/utilities' as *;
+@use '@carbon/react/scss/utilities/convert';
 @use '@carbon/react/scss/components/combo-box' as *;
 @use '../../../../globals/mixins' as *;
 $grouped-columns-filter-border-width: 2px;
@@ -62,8 +63,8 @@ $grouped-columns-filter-border-width: 2px;
 
   &.#{$iot-prefix}--filter-header-row--with-margin {
     .#{$prefix}--table-header-label {
-      min-width: to-rem(120px);
-      padding-right: to-rem(42px);
+      min-width: convert.to-rem(120px);
+      padding-right: convert.to-rem(42px);
 
       [dir='rtl'] & {
         padding-right: unset;
@@ -101,7 +102,7 @@ $grouped-columns-filter-border-width: 2px;
 
       [dir='rtl'] & {
         right: unset;
-        left: to-rem(22px);
+        left: convert.to-rem(22px);
       }
     }
   }
@@ -116,7 +117,7 @@ $grouped-columns-filter-border-width: 2px;
     [dir='rtl'] & {
       right: unset;
       left: 0;
-      width: to-rem(22px);
+      width: convert.to-rem(22px);
     }
   }
 }

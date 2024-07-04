@@ -6,19 +6,19 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/components/button' as *;
-
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--progress-indicator {
   display: flex;
 
   .#{$iot-prefix}--progress-step {
     width: 8rem;
-    height: to-rem(68px);
+    height: convert.to-rem(68px);
     &-line {
       position: absolute;
       width: calc(100% - #{$spacing-06});
       height: $spacing-01;
       background-color: $layer-accent-01;
-      top: to-rem(11px);
+      top: convert.to-rem(11px);
       left: $spacing-06;
 
       &--complete {
@@ -98,11 +98,11 @@
             color: $button-primary;
           }
           &:hover {
-            box-shadow: 0 to-rem(1px) $link-primary;
+            box-shadow: 0 convert.to-rem(1px) $link-primary;
             color: $button-primary;
           }
           &:active {
-            box-shadow: 0 to-rem(3px) 0 0 $button-primary;
+            box-shadow: 0 convert.to-rem(3px) 0 0 $button-primary;
           }
         }
 
@@ -260,7 +260,7 @@
       &-button {
         .#{$iot-prefix}--progress-text {
           left: $spacing-07;
-          top: to-rem(3px);
+          top: convert.to-rem(3px);
         }
         &--sub-step {
           .#{$iot-prefix}--progress-text {
@@ -278,7 +278,7 @@
         width: $spacing-01;
         height: calc(100% - #{$spacing-06});
         top: $layout-02;
-        left: to-rem(11px);
+        left: convert.to-rem(11px);
 
         &--complete {
           @extend .#{$iot-prefix}--progress-step-line;
@@ -310,7 +310,7 @@
         }
         &-line {
           left: unset;
-          right: to-rem(11px);
+          right: convert.to-rem(11px);
           text-align: right;
         }
       }

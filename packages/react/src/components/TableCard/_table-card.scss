@@ -3,7 +3,8 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/type' as *;
-$rem-value: to-rem(35px);
+@use '@carbon/react/scss/utilities/convert';
+$rem-value: convert.to-rem(35px);
 .#{$iot-prefix}--table-card {
   .#{$iot-prefix}--card--content {
     padding: 0;
@@ -132,8 +133,8 @@ $rem-value: to-rem(35px);
     height: $spacing-10;
 
     th {
-      padding-top: to-rem(5px);
-      padding-bottom: to-rem(10px);
+      padding-top: convert.to-rem(5px);
+      padding-bottom: convert.to-rem(10px);
 
       input {
         height: $spacing-07;
@@ -157,7 +158,7 @@ $rem-value: to-rem(35px);
 
   .#{$prefix}--pagination {
     position: fixed;
-    bottom: to-rem(25px);
+    bottom: convert.to-rem(25px);
     width: calc(100% - #{$rem-value});
   }
 }
@@ -175,7 +176,7 @@ $rem-value: to-rem(35px);
 
   &:not(.#{$iot-prefix}--table-card__table--expanded) {
     .#{$prefix}--data-table-content {
-      max-height: to-rem(523px);
+      max-height: convert.to-rem(523px);
     }
   }
 }

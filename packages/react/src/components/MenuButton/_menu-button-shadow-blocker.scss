@@ -2,11 +2,12 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
-$size-sm: to-rem(32px);
-$size-md: to-rem(40px);
-$size-lg: to-rem(48px);
-$shadow-blocker-height: to-rem(8px);
-$shadow-blocker-border-width: to-rem(1px);
+@use '@carbon/react/scss/utilities/convert';
+$size-sm: convert.to-rem(32px);
+$size-md: convert.to-rem(40px);
+$size-lg: convert.to-rem(48px);
+$shadow-blocker-height: convert.to-rem(8px);
+$shadow-blocker-border-width: convert.to-rem(1px);
 
 @mixin shadow-blocker-element {
   position: absolute;

@@ -2,7 +2,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
-
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--hierarchy-list-bulk {
   &-header {
     width: 100%;
@@ -63,7 +63,7 @@
       width: 100%;
 
       align-items: flex-start;
-      margin-top: to-rem(6px);
+      margin-top: convert.to-rem(6px);
       flex-direction: column;
 
       &-item {

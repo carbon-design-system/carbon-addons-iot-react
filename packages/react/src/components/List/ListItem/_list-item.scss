@@ -5,6 +5,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/react/scss/utilities/convert';
 .#{$iot-prefix}--list-item-parent {
   position: relative;
 }
@@ -30,7 +31,7 @@
 
   &--drop-targets {
     width: 100%;
-    height: to-rem(40px);
+    height: convert.to-rem(40px);
     display: flex;
     flex-direction: column;
     position: absolute;
