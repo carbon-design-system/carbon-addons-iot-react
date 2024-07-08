@@ -172,9 +172,6 @@ export const ComposedModalWithOverflowAndTooltip = () => (
     <OverflowMenu title="Test Overflow" iconDescription="Expand">
       <OverflowMenuItem key="default" onClick={action('onClick')} itemText="Click me" />
     </OverflowMenu>
-    <Tooltip triggerId="my test tooltip" triggerText="Trigger Text">
-      Hi there
-    </Tooltip>
   </ComposedModal>
 );
 
