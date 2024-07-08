@@ -50,10 +50,10 @@
 @use 'components/CardEditor/CardEditForm/card-edit-form' as *;
 @use 'components/CodeSnippet/code-snippet' as *;
 @use 'components/ComposedModal/composed-modal' as *;
-@use 'components/ComposedStructuredList/composed-structured-list' as *;
 @use 'components/CardCodeEditor/card-code-editor' as *;
 @use 'components/CopyButton/copy-button' as *;
 @use 'components/Checkbox/checkbox' as *;
+@use 'components/Dropdown/dropdown' as *;
 @use 'components/Dashboard/dashboard' as *;
 @use 'components/Dashboard/dashboard-grid' as *;
 @use 'components/DashboardEditor/dashboard-editor' as *;
@@ -157,6 +157,9 @@
 @use 'components/MeterChartCard/meter-chart-card' as *;
 @use 'components/SidePanel/side-panel' as *;
 @use 'components/CodeEditor/code-editor' as *;
+@use 'components/Modal/modal' as *;
+@use 'components/multiselect/multi-select' as *;
+@use 'components/OverflowMenu/overflow-menu' as *;
 
 :root {
   @include theme.theme();

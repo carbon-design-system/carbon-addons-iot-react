@@ -6,13 +6,13 @@ import {
   TableToolbarContent,
   TableBatchActions,
   TableBatchAction,
-  Tooltip,
   OverflowMenuItem,
 } from '@carbon/react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import { isNil, pick } from 'lodash-es';
 
+import { Tooltip } from '../../Tooltip';
 import { OverflowMenu } from '../../OverflowMenu';
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
@@ -400,9 +400,8 @@ const TableToolbar = ({
             tooltipId={`card-tooltip-${tableId}`}
             triggerText=""
             iconDescription={i18n.toolbarTooltipLabel}
-          >
-            {tooltip}
-          </Tooltip>
+            content={tooltip}
+          />
         </div>
       )}
       {activeBar === 'rowEdit' ? (

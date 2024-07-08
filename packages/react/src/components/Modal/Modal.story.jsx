@@ -21,7 +21,7 @@ import { Modal } from '.';
 const { prefix } = settings;
 
 const sizes = {
-  Default: '',
+  'Default (md)': 'md',
   'Extra small (xs)': 'xs',
   'Small (sm)': 'sm',
   'Large (lg)': 'lg',

@@ -103,7 +103,7 @@ const TileCatalog = ({
       <div data-testid={`${testId}-header`} className={`${iotPrefix}--tile-catalog--header`}>
         {search && (search.placeHolderText || search.placeholder) ? (
           <TableToolbarSearch
-            size="sm"
+            size="lg"
             value={searchState}
             labelText={search.placeHolderText ?? search.placeholder}
             placeholder={search.placeHolderText ?? search.placeholder}

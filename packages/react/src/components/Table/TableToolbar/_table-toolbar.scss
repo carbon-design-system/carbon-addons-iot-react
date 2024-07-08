@@ -8,6 +8,7 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '../../../globals/mixins' as *;
+$duration-fast-02: 110ms;
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
@@ -29,6 +30,33 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$prefix}--table-toolbar {
   height: $spacing-09;
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 3rem;
+  background-color: $layer-01;
+}
+
+.#{$prefix}--batch-actions {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f62fe;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  pointer-events: none;
+  -webkit-transform: translate3d(0, 48px, 0);
+  transform: translate3d(0, 48px, 0);
+  transition: transform $duration-fast-02 cubic-bezier(0.2, 0, 0.38, 0.9),
+    clip-path $duration-fast-02 cubic-bezier(0.2, 0, 0.38, 0.9),
+    opacity $duration-fast-02 cubic-bezier(0.2, 0, 0.38, 0.9),
+    -webkit-transform $duration-fast-02 cubic-bezier(0.2, 0, 0.38, 0.9),
+    -webkit-clip-path $duration-fast-02 cubic-bezier(0.2, 0, 0.38, 0.9);
+  will-change: transform;
 }
 
 .#{$iot-prefix}--table-toolbar-content {
@@ -37,6 +65,8 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   // Z-index higher than 1 is needed to have Dropdown components correctly show
   // the listbox on top of the relatively positioned table columns and resize handle.
   z-index: 2;
+  display: flex;
+  justify-content: flex-end;
 
   .#{$prefix}--toolbar-search-container-active .#{$prefix}--search-input {
     border-bottom: 0;
