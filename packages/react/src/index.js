@@ -17,15 +17,12 @@ export { default as TableManageViewsModal } from './components/Table/TableManage
 export { default as TableSkeletonWithHeaders } from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export { default as TableToolbar } from './components/Table/TableToolbar/TableToolbar';
 export { default as WizardModal } from './components/WizardModal';
-export { default as WizardInline } from './components/WizardInline/WizardInline';
-export { default as StatefulWizardInline } from './components/WizardInline/StatefulWizardInline';
 export { default as StatefulTable } from './components/Table/StatefulTable';
 export { default as TileCatalog } from './components/TileCatalog/TileCatalog';
 export { default as StatefulTileCatalog } from './components/TileCatalog/StatefulTileCatalog';
 export { default as CatalogContent } from './components/TileCatalog/CatalogContent';
 export { default as SimplePagination } from './components/SimplePagination/SimplePagination';
 export { default as ProgressIndicator } from './components/ProgressIndicator/ProgressIndicator';
-export { default as ComposedStructuredList } from './components/ComposedStructuredList/ComposedStructuredList';
 export { default as ResourceList } from './components/ResourceList/ResourceList';
 export { default as FileDrop } from './components/FileDrop/FileDrop';
 export { default as PageTitleBar } from './components/PageTitleBar/PageTitleBar';
@@ -50,9 +47,7 @@ export { tileCatalogReducer } from './components/TileCatalog/tileCatalogReducer'
 export * as tableActions from './components/Table/tableActionCreators';
 
 // Page related helpers
-export { default as PageHero } from './components/Page/PageHero';
 export { default as PageWorkArea } from './components/Page/PageWorkArea';
-export { default as EditPage } from './components/Page/EditPage';
 export { default as NavigationBar } from './components/NavigationBar/NavigationBar';
 export { default as Header } from './components/Header';
 export { default as SideNav } from './components/SideNav';

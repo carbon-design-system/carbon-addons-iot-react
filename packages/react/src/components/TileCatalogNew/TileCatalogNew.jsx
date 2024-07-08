@@ -152,6 +152,7 @@ const TileCatalogNew = ({
               <TableToolbarSearch
                 placeholder={i18n.searchPlaceHolderText}
                 onChange={onSearch}
+                size="md"
                 className={`${iotPrefix}--tile-catalog--tile-canvas--header--search`}
                 data-testid={`${testId}-search-input`}
               />

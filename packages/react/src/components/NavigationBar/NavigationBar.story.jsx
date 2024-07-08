@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import PageWorkArea from '../Page/PageWorkArea';
-import WizardInline from '../WizardInline/StatefulWizardInline';
-import { itemsAndComponents } from '../WizardInline/WizardInline.story';
+// import WizardInline from '../WizardInline/StatefulWizardInline';
+// import { itemsAndComponents } from '../WizardInline/WizardInline.story';
 
 import NavigationBar from './NavigationBar';
 
@@ -48,12 +48,12 @@ const StatefulNavigationBar = () => {
         workArea={
           workAreaOpen ? (
             <PageWorkArea isOpen={workAreaOpen}>
-              <WizardInline
+              {/* <WizardInline
                 title="Sample Wizard"
                 items={itemsAndComponents}
                 onClose={() => setWorkAreaOpen(false)}
                 onSubmit={() => setWorkAreaOpen(false)}
-              />
+              /> */}
             </PageWorkArea>
           ) : null
         }
