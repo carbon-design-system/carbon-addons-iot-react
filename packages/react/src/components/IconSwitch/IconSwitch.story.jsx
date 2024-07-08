@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
-import { ContentSwitcher } from '@carbon/react';
+import { ContentSwitcher, Switch } from '@carbon/react';
 import { List, Code, Screen, Laptop, Mobile, ScreenOff } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
@@ -54,61 +54,6 @@ export default {
   },
 };
 
-export const Unselected = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
-  const isDisabled = boolean('disabled', false);
-  const isLight = boolean('light', false);
-  return (
-    <IconSwitch
-      name="one"
-      onClick={function noRefCheck() {}}
-      onKeyDown={function noRefCheck() {}}
-      text="Graphical View"
-      renderIcon={listIcons[size]}
-      size={size}
-      index={0}
-      disabled={isDisabled}
-      light={isLight}
-    />
-  );
-};
-
-Unselected.storyName = 'unselected';
-
-Unselected.parameters = {
-  info: {
-    text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
-  },
-};
-
-export const Selected = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
-  const isDisabled = boolean('disabled', false);
-  const isLight = boolean('light', false);
-  return (
-    <IconSwitch
-      name="one"
-      onClick={function noRefCheck() {}}
-      onKeyDown={function noRefCheck() {}}
-      selected
-      text="Graphical View"
-      renderIcon={listIcons[size]}
-      size={size}
-      index={0}
-      disabled={isDisabled}
-      light={isLight}
-    />
-  );
-};
-
-Selected.storyName = 'selected';
-
-Selected.parameters = {
-  info: {
-    text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
-  },
-};
-
 export const ExampleUsedInContentSwitcherTwoIcons = () => {
   const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
   const isDisabled = boolean('disabled', false);
@@ -118,6 +63,7 @@ export const ExampleUsedInContentSwitcherTwoIcons = () => {
       className={`${iotPrefix}--content-switcher--icon`}
       onChange={function noRefCheck() {}}
       selectedIndex={0}
+      size={size}
     >
       <IconSwitch
         name="one"
@@ -125,7 +71,6 @@ export const ExampleUsedInContentSwitcherTwoIcons = () => {
         onKeyDown={function noRefCheck() {}}
         text="Graphical View"
         renderIcon={listIcons[size]}
-        size={size}
         index={0}
         disabled={isDisabled}
         light={isLight}
@@ -136,7 +81,6 @@ export const ExampleUsedInContentSwitcherTwoIcons = () => {
         onKeyDown={function noRefCheck() {}}
         text="Source View"
         renderIcon={codeIcons[size]}
-        size={size}
         index={0}
         disabled={isDisabled}
         light={isLight}
@@ -151,163 +95,70 @@ export const ExampleUsedInContentSwitcher = () => {
   const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
   const isDisabled = boolean('disabled', false);
   return (
-    <div style={{ backgroundColor: 'white', padding: '3rem' }}>
-      <ContentSwitcher
-        className={`${iotPrefix}--content-switcher--icon`}
-        onChange={function noRefCheck() {}}
-        selectedIndex={0}
-      >
-        <IconSwitch
-          name="one"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected
-          text="Desktop view"
-          renderIcon={desktopIcons[size]}
-          size={size}
-          index={0}
-          disabled={isDisabled}
-        />
-        <IconSwitch
-          name="two"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Laptop view"
-          renderIcon={laptopIcons[size]}
-          size={size}
-          index={1}
-          disabled={isDisabled}
-        />
-        <IconSwitch
-          name="three"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Mobile view"
-          renderIcon={mobileIcons[size]}
-          size={size}
-          index={2}
-          disabled={isDisabled}
-        />
-        <IconSwitch
-          name="four"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Screen off"
-          renderIcon={screenOffIcons[size]}
-          size={size}
-          index={3}
-          disabled={isDisabled}
-        />
-      </ContentSwitcher>
-    </div>
-  );
-};
-
-ExampleUsedInContentSwitcher.storyName = 'with 4 icons in ContentSwitcher';
-
-export const ExampleUsedInContentSwitcherLightVersionFourIcons = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
-  const isDisabled = boolean('disabled', false);
-
-  return (
-    <div style={{ backgroundColor: 'white', padding: '3rem' }}>
-      <ContentSwitcher
-        className={`${iotPrefix}--content-switcher--icon`}
-        onChange={function noRefCheck() {}}
-        selectedIndex={0}
-      >
-        <IconSwitch
-          name="one"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected
-          text="Desktop view"
-          renderIcon={desktopIcons[size]}
-          size={size}
-          index={0}
-          disabled={isDisabled}
-          light
-        />
-        <IconSwitch
-          name="two"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Laptop view"
-          renderIcon={laptopIcons[size]}
-          size={size}
-          index={1}
-          disabled={isDisabled}
-          light
-        />
-        <IconSwitch
-          name="three"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Mobile view"
-          renderIcon={mobileIcons[size]}
-          size={size}
-          index={2}
-          disabled={isDisabled}
-          light
-        />
-        <IconSwitch
-          name="four"
-          onClick={function noRefCheck() {}}
-          onKeyDown={function noRefCheck() {}}
-          selected={false}
-          text="Screen off"
-          renderIcon={screenOffIcons[size]}
-          size={size}
-          index={3}
-          disabled={isDisabled}
-          light
-        />
-      </ContentSwitcher>
-    </div>
-  );
-};
-
-ExampleUsedInContentSwitcherLightVersionFourIcons.storyName =
-  'with light version and four icons in ContentSwitcher';
-
-export const ExampleUsedInContentSwitcherLightVersionTwoIcons = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
-
-  return (
     <ContentSwitcher
       className={`${iotPrefix}--content-switcher--icon`}
       onChange={function noRefCheck() {}}
       selectedIndex={0}
+      size={size}
     >
       <IconSwitch
         name="one"
         onClick={function noRefCheck() {}}
         onKeyDown={function noRefCheck() {}}
         selected
-        text="Graphical View"
-        renderIcon={listIcons[size]}
-        size={size}
+        text="Desktop view"
+        renderIcon={desktopIcons[size]}
         index={0}
-        light
+        disabled={isDisabled}
       />
       <IconSwitch
         name="two"
         onClick={function noRefCheck() {}}
         onKeyDown={function noRefCheck() {}}
         selected={false}
-        text="Source View"
-        renderIcon={codeIcons[size]}
-        size={size}
+        text="Laptop view"
+        renderIcon={laptopIcons[size]}
         index={1}
-        light
+        disabled={isDisabled}
+      />
+      <IconSwitch
+        name="three"
+        onClick={function noRefCheck() {}}
+        onKeyDown={function noRefCheck() {}}
+        selected={false}
+        text="Mobile view"
+        renderIcon={mobileIcons[size]}
+        index={2}
+        disabled={isDisabled}
+      />
+      <IconSwitch
+        name="four"
+        onClick={function noRefCheck() {}}
+        onKeyDown={function noRefCheck() {}}
+        selected={false}
+        text="Screen off"
+        renderIcon={screenOffIcons[size]}
+        index={3}
+        disabled={isDisabled}
       />
     </ContentSwitcher>
   );
 };
 
-ExampleUsedInContentSwitcherLightVersionTwoIcons.storyName = 'with light version and two icons';
+ExampleUsedInContentSwitcher.storyName = 'With 4 icons in ContentSwitcher';
+
+export const ContentSwitcherWithLabels = () => {
+  const isDisabled = boolean('disabled', false);
+  return (
+    <ContentSwitcher
+      className={`${iotPrefix}--content-switcher--icon`}
+      onChange={function noRefCheck() {}}
+      selectedIndex={0}
+    >
+      <Switch key="label1" name="label1" text="Label 1" disabled={isDisabled} />
+      <Switch key="label2" name="label2" text="Label 2" disabled={isDisabled} />
+    </ContentSwitcher>
+  );
+};
+
+ContentSwitcherWithLabels.storyName = 'With labels';
