@@ -156,6 +156,9 @@
 @use 'components/MeterChartCard/meter-chart-card' as *;
 @use 'components/SidePanel/side-panel' as *;
 @use 'components/CodeEditor/code-editor' as *;
+@use 'components/Modal/modal' as *;
+@use 'components/multiselect/multi-select' as *;
+@use 'components/OverflowMenu/overflow-menu' as *;
 
 :root {
   @include theme.theme();
