@@ -176,7 +176,7 @@
 
     &__disabled {
       fill: $icon-disabled;
-      color: $text-disabled;
+      color: $layer-active-01;
       cursor: not-allowed;
     }
   }
@@ -240,7 +240,7 @@
         }
       }
       &__disabled {
-        color: $text-disabled;
+        color: $layer-active-01;
       }
     }
     &--row-actions {

@@ -2,8 +2,10 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/layout' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/components/popover' as *;
 
 // @import '~carbon-components/scss/globals/scss/helper-mixins'; // did not find any suitable style path, need to replace
 
@@ -271,8 +273,7 @@
 
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger svg,
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:hover svg {
-    // fill: $gray-70; did not find proper color token
-    fill: #f4f4f4;
+    fill: $gray-70;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {

@@ -169,7 +169,7 @@ class RowActionsCell extends React.Component {
                       hasIconOnly={!labelText}
                       tooltipPosition="left"
                       tooltipAlignment="end"
-                      size="sm"
+                      size="small"
                       onClick={(e) => this.onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}

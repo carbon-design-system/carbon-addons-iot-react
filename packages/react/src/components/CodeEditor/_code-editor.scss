@@ -14,9 +14,9 @@
     background-color: $background;
   }
   &-container--disabled {
-    background-color: $text-disabled;
+    background-color: $layer-active-01;
     .view-lines.monaco-mouse-cursor-text {
-      background-color: $text-disabled;
+      background-color: $layer-active-01;
       > div > span > * {
         color: $icon-on-color-disabled; //$disabled-03;
       }
@@ -36,13 +36,24 @@
       background-color: transparent;
     }
   }
+
   &-copy {
     background-color: $layer-01;
-    position: absolute;
-    inset-inline-start: calc(100% - 2.5rem);
-    top: 0;
     z-index: 1;
   }
+
+  &-copy-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &-upload-wrapper {
+    position: absolute;
+    top: 0;
+    right: $spacing-08;
+  }
+
   &-copy--light {
     background-color: $background;
   }
@@ -50,20 +61,17 @@
     background-color: $border-disabled;
   }
 
-  &-upload.bx--btn.bx--btn--icon-only {
+  &-upload.cds--btn.cds--btn--icon-only {
     background-color: $layer-01;
-    position: absolute;
-    inset-inline-start: calc(100% - 5.03rem);
-    top: 0;
     z-index: 1;
   }
-  &-upload--light.bx--btn.bx--btn--icon-only {
+  &-upload--light.cds--btn.cds--btn--icon-only {
     background-color: $background;
     &:hover {
       background-color: $layer-hover-01;
     }
   }
-  &-upload--disabled.bx--btn.bx--btn--icon-only {
-    background-color: $text-disabled;
+  &-upload--disabled.cds--btn.cds--btn--icon-only {
+    background-color: $layer-active-01;
   }
 }
