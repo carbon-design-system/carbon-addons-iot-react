@@ -37,7 +37,7 @@ const kinds = {
   'Icon Selection button (ghost)': 'icon-selection',
 };
 
-const sizes = ['default', 'field', 'small', 'large', 'extralarge'];
+const sizes = ['lg', 'md', 'sm', 'xl', '2xl'];
 
 const props = {
   regular: () => {
@@ -46,7 +46,7 @@ const props = {
       className: 'some-class',
       kind: select('Button kind (kind)', kinds, 'primary'),
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'lg'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       onClick: action('onClick'),
@@ -68,7 +68,7 @@ const props = {
         'primary'
       ),
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'lg'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       tooltipPosition: select(
@@ -90,7 +90,7 @@ const props = {
     return {
       className: 'some-class',
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'lg'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       onClick: action('onClick'),
@@ -106,7 +106,7 @@ const props = {
       recommended: boolean('Recommended (recommended)', false),
       hasIconOnly: true,
       disabled: boolean('Disabled (disabled)', false),
-      size: select('Button size (size)', sizes, 'default'),
+      size: select('Button size (size)', sizes, 'lg'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       tooltipPosition: select(
@@ -274,7 +274,7 @@ export const Skeleton = () => (
     &nbsp;
     <ButtonSkeleton href="#" />
     &nbsp;
-    <ButtonSkeleton size="small" />
+    <ButtonSkeleton size="sm" />
   </div>
 );
 

@@ -1840,10 +1840,10 @@ export const WithDataEditing = () => {
 
   const saveCancelButtons = (
     <div style={{ display: 'flex', gap: '0.5rem' }}>
-      <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+      <Button key="cancel" size="sm" kind="tertiary" onClick={onCancelRowEdit}>
         Cancel
       </Button>
-      <Button key="save" size="small" onClick={onSaveRowEdit} disabled={isPristine}>
+      <Button key="save" size="sm" onClick={onSaveRowEdit} disabled={isPristine}>
         Save
       </Button>
     </div>
