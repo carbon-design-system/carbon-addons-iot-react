@@ -4,6 +4,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 // The 6-dots grable handle area on a row that can be dragged. This is really that the parent of
 // that picture so the draggable area is a larger, square.
 .#{$iot-prefix}--table-drag-handle {

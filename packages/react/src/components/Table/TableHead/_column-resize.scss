@@ -2,6 +2,8 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}--column-resize-handle {
   top: 0;
   cursor: col-resize;

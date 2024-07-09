@@ -8,6 +8,8 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '../../../globals/mixins' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 $duration-fast-02: 110ms;
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {

@@ -3,6 +3,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '../../../globals/mixins' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 button.#{$iot-prefix}--tooltip-svg-wrapper,
 .#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost:hover {
   color: $gray-70; //$carbon--gray-70

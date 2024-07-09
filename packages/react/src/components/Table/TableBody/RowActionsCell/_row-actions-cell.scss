@@ -5,6 +5,8 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/components/button' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }

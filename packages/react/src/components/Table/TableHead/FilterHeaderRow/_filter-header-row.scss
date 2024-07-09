@@ -8,6 +8,8 @@
 @use '@carbon/react/scss/utilities/convert';
 @use '@carbon/react/scss/components/combo-box' as *;
 @use '../../../../globals/mixins' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 $grouped-columns-filter-border-width: 2px;
 
 .#{$iot-prefix}--filter-header-row--form-item {

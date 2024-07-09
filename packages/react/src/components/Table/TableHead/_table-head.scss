@@ -10,6 +10,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/components/button' as *;
 @use '../../../globals/mixins' as *;
+@use '@carbon/react/scss/components/data-table' as *;
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;

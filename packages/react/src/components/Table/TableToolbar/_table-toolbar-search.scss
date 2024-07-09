@@ -4,6 +4,8 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/components/button' as *;
 @use '@carbon/react/scss/utilities/convert';
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}--table-toolbar {
   &__search-wrapper {
     width: 100%;

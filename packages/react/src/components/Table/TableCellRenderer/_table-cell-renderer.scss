@@ -4,6 +4,8 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/utilities' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
   // Revert the styles added by the tooltip since we want
   // normal table cell content style even if a tooltip is triggered.

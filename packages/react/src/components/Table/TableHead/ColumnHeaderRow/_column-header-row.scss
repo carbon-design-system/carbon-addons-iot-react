@@ -1,5 +1,7 @@
 @use '../../../../globals/vars' as *;
 @use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}--column-header-row--select-wrapper {
   display: flex;
   flex-wrap: wrap;
