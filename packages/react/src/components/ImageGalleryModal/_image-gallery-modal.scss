@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/components/content-switcher' as *;
 @use '../../globals/mixins' as *;
+@use '@carbon/react/scss/components/modal/' as *;
 $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
 
