@@ -27,6 +27,10 @@ $title-height: 3rem;
 
   .#{$iot-prefix}--image-tile__image-container {
     @include image-container($image-max-height, $image-max-width);
+
+    .#{$prefix}--popover-container:not(.#{$prefix}--popover--auto-align) {
+      position: static;
+    }
   }
 }
 
