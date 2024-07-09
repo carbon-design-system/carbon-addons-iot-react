@@ -300,17 +300,23 @@ const FlyoutMenu = ({
             tabIndex={tabIndex}
             useAutoPositioning={false}
             onChange={onChange}
-          >
-            <div
-              className={classnames(`${iotPrefix}--flyout-menu--content`, tooltipContentClassName)}
-              style={updatedStyle}
-            >
-              {children}
-            </div>
-            {!passive && (
-              <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
-            )}
-          </Tooltip>
+            content={
+              <>
+                <div
+                  className={classnames(
+                    `${iotPrefix}--flyout-menu--content`,
+                    tooltipContentClassName
+                  )}
+                  style={updatedStyle}
+                >
+                  {children}
+                </div>
+                {!passive && (
+                  <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
+                )}
+              </>
+            }
+          />
         </div>
       }
     </div>

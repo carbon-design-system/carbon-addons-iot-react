@@ -24,14 +24,23 @@ export const Tooltip = ({
   content,
   action,
   useAutoPositioning,
+  showIcon,
   ...other
 }) => {
   return (
     <>
-      <ToggletipLabel>{triggerText}</ToggletipLabel>
+      {showIcon ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
       <Toggletip align={direction} autoAlign={useAutoPositioning} {...other}>
         <ToggletipButton>
-          {IconCustomElement ? <IconCustomElement /> : <Information />}
+          {showIcon ? (
+            IconCustomElement ? (
+              <IconCustomElement />
+            ) : (
+              <Information />
+            )
+          ) : (
+            <ToggletipLabel>{triggerText}</ToggletipLabel>
+          )}
         </ToggletipButton>
         <ToggletipContent>
           {content}
@@ -50,6 +59,7 @@ Tooltip.propTypes = {
   content: PropTypes.node,
   action: PropTypes.node,
   useAutoPositioning: PropTypes.bool,
+  showIcon: PropTypes.bool,
 };
 
 Tooltip.defaultProps = {
@@ -57,6 +67,7 @@ Tooltip.defaultProps = {
   direction: 'bottom',
   triggerText: '',
   useAutoPositioning: false,
+  showIcon: true,
 };
 
 export default Tooltip;
