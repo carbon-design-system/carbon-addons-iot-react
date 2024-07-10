@@ -123,16 +123,14 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   );
 
   const handleApplicationRoute = useCallback(
-    ({ id, href, isExternal }) =>
-      async (e) =>
-        handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, isExternal, { appId: id }),
+    ({ id, href, isExternal }) => async (e) =>
+      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, isExternal, { appId: id }),
     [handleRouteChange]
   );
 
   const handleWorkspaceRoute = useCallback(
-    ({ id, href }) =>
-      async (e) =>
-        handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
+    ({ id, href }) => async (e) =>
+      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
     [handleRouteChange]
   );
 

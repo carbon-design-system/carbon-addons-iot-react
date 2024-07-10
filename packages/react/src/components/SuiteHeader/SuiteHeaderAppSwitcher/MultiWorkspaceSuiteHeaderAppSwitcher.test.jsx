@@ -368,11 +368,9 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace-workspace1`));
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--all-applications`));
     const expectedHref = adminPageCommonProps.workspaces.find((wo) => wo.id === 'workspace1').href;
-    expect(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
-      'NAVIGATOR',
-      expectedHref,
-      { workspaceId: 'workspace1' }
-    );
+    expect(
+      MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps.onRouteChange
+    ).toHaveBeenCalledWith('NAVIGATOR', expectedHref, { workspaceId: 'workspace1' });
     expect(window.location.href).toBe(expectedHref);
     jest.restoreAllMocks();
   });

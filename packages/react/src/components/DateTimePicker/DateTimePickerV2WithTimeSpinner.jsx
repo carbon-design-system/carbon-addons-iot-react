@@ -362,8 +362,9 @@ const DateTimePicker = ({
   }, [locale]);
 
   // State
-  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] =
-    useDateTimePickerRangeKind(showRelativeOption);
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
+    showRelativeOption
+  );
   const [isCustomRange, setIsCustomRange] = useState(false);
   const [selectedPreset, setSelectedPreset] = useState(null);
   const [currentValue, setCurrentValue] = useState(null);

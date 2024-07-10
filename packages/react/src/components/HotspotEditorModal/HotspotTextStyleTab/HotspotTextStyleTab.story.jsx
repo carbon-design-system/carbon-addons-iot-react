@@ -106,10 +106,13 @@ Default.storyName = 'Example with externaly managed state';
 
 export const UsingHotspotStateHook = () => {
   const WithState = () => {
-    const { selectedHotspot, deleteSelectedHotspot, updateTextHotspotStyle } =
-      useHotspotEditorState({
-        initialState: { selectedHotspot: { type: hotspotTypes.TEXT } },
-      });
+    const {
+      selectedHotspot,
+      deleteSelectedHotspot,
+      updateTextHotspotStyle,
+    } = useHotspotEditorState({
+      initialState: { selectedHotspot: { type: hotspotTypes.TEXT } },
+    });
 
     return (
       <HotspotTextStyleTab

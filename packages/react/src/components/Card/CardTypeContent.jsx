@@ -35,10 +35,9 @@ const CardTypeContent = ({ testId, isExpanded, type, data, content }) => {
   const listRef = useRef(null);
   const [listHeight, setListHeight] = useState();
 
-  const contentWithDefaults = useMemo(
-    () => defaultsDeep({}, content, defaultProps.content),
-    [content]
-  );
+  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
+    content,
+  ]);
 
   const options = getChartOptions(type, data.length > 1, contentWithDefaults);
 

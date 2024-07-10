@@ -369,34 +369,30 @@ describe('DashboardGrid', () => {
     });
 
     describe('resizes properly when dragging', () => {
-      const generateParentBoundingClientRect =
-        ({ width }) =>
-        () => {
-          return {
-            bottom: 206,
-            height: 144,
-            left: 48,
-            right: width + 48,
-            top: 62,
-            width,
-            x: 48,
-            y: 62,
-          };
+      const generateParentBoundingClientRect = ({ width }) => () => {
+        return {
+          bottom: 206,
+          height: 144,
+          left: 48,
+          right: width + 48,
+          top: 62,
+          width,
+          x: 48,
+          y: 62,
         };
-      const generateHandleBoundingClientRect =
-        ({ parentWidth }) =>
-        () => {
-          return {
-            bottom: 204,
-            height: 20,
-            left: parentWidth + 26,
-            right: parentWidth + 46,
-            top: 184,
-            width: 20,
-            x: parentWidth + 26,
-            y: 184,
-          };
+      };
+      const generateHandleBoundingClientRect = ({ parentWidth }) => () => {
+        return {
+          bottom: 204,
+          height: 20,
+          left: parentWidth + 26,
+          right: parentWidth + 46,
+          top: 184,
+          width: 20,
+          x: parentWidth + 26,
+          y: 184,
         };
+      };
 
       const resizeHandleClass = 'react-resizable-handle';
       const getResizeHandle = (testId, resizeHandleIndex = 2) =>

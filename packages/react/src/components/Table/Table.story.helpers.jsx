@@ -755,8 +755,7 @@ const convertUTCDateToLocalDate = (date) => {
   return localDate.toISOString().slice(0, 10);
 };
 
-export const getEditDataFunction =
-  (onDataChange) =>
+export const getEditDataFunction = (onDataChange) =>
   // eslint-disable-next-line react/prop-types
   ({ value, columnId, rowId }) => {
     const elementId = `${columnId}-${rowId}`;

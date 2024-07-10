@@ -800,8 +800,9 @@ export const useCloseDropdown = ({
           ...lastAppliedValue,
           ...(!lastAppliedValue.timeRangeKind && {
             timeRangeKind: lastAppliedValue?.kind,
-            [getTimeRangeKindKey(lastAppliedValue)]:
-              lastAppliedValue[lastAppliedValue?.kind.toLowerCase()],
+            [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
+              lastAppliedValue?.kind.toLowerCase()
+            ],
           }),
         });
       } else {

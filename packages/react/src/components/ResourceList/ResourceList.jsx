@@ -51,8 +51,15 @@ class ResourceList extends Component {
   }
 
   render = () => {
-    const { design, data, customAction, currentItemId, onRowClick, extraContent, testId } =
-      this.props;
+    const {
+      design,
+      data,
+      customAction,
+      currentItemId,
+      onRowClick,
+      extraContent,
+      testId,
+    } = this.props;
 
     const checkboxCell = (
       <div className={`${prefix}--structured-list-td`} style={{ verticalAlign: 'middle' }}>

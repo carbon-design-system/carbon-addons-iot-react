@@ -196,8 +196,7 @@ export const CardTitle = (
           {
             [`${iotPrefix}--card--title--text--wrapped`]:
               hasTitleWrap && !subtitle && !hasExternalTitleTextTooltip,
-            [`${iotPrefix}--card-title__title-text--has-title-text-tooltip`]:
-              hasExternalTitleTextTooltip,
+            [`${iotPrefix}--card-title__title-text--has-title-text-tooltip`]: hasExternalTitleTextTooltip,
           }
         )}
         triggerText={title}

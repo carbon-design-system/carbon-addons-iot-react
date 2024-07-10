@@ -9,7 +9,8 @@ const defaultProps = {
     heading: 'Do you wish to log out?',
     secondaryButton: 'Cancel',
     primaryButton: 'Log out',
-    body: 'Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
+    body:
+      'Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
     closeButtonLabel: 'Close',
   },
   testId: 'suite-header-logout-modal',

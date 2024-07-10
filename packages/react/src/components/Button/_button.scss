@@ -19,9 +19,7 @@
   }
 }
 
-.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(
-    .#{$iot-prefix}--btn-icon-selection--selected
-  ).#{$iot-prefix}--btn-icon-selection--recommended {
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(.#{$iot-prefix}--btn-icon-selection--selected).#{$iot-prefix}--btn-icon-selection--recommended {
   border: 1px solid $support-02;
 }
 
@@ -81,9 +79,7 @@
   // For Carbon v.11 when the button sizes are adjusted we should take the oportunity to
   // see if we can remove this global ghost padding.
   .#{$iot-prefix}--btn.#{$prefix}--btn--ghost {
-    &:not(.#{$prefix}--btn--sm.#{$prefix}--btn--icon-only):not(
-        .#{$iot-prefix}--menu-button__trigger
-      ) {
+    &:not(.#{$prefix}--btn--sm.#{$prefix}--btn--icon-only):not(.#{$iot-prefix}--menu-button__trigger) {
       padding-left: $spacing-05;
       padding-right: $spacing-05;
     }

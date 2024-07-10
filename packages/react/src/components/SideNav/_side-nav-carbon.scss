@@ -47,9 +47,7 @@ $small-screen-breakpoint: 65.99em;
   // carbon does to anchor element
   //////////////////////////////////////
   .#{$prefix}--side-nav__menu
-    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not(
-      [aria-current='page']
-    ):hover {
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
     color: $ibm-color__gray-100;
     background-color: $shell-side-nav-bg-04;
   }

@@ -253,10 +253,10 @@ const extractDataAndColumnNames = (values, chartOptions) => {
 };
 
 export const useTableData = (values, chartOptions) => {
-  const { tableData } = useMemo(
-    () => extractDataAndColumnNames(values, chartOptions),
-    [values, chartOptions]
-  );
+  const { tableData } = useMemo(() => extractDataAndColumnNames(values, chartOptions), [
+    values,
+    chartOptions,
+  ]);
   return tableData;
 };
 

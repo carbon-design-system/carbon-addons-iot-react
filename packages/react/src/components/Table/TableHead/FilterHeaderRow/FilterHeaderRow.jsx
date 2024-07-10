@@ -425,8 +425,7 @@ class FilterHeaderRow extends Component {
                     `${iotPrefix}--filterheader-multiselect`,
                     `${iotPrefix}--filterheader-multiselect__menu--fit-content`,
                     {
-                      [`${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`]:
-                        isLastColumn,
+                      [`${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`]: isLastColumn,
                     }
                   )}
                   id={`column-${i}`}

@@ -278,14 +278,18 @@ export const formatColors = (series) => {
  * @param {string} originalStrokeColor --> map to defaultStrokeColor. Default setting from carbon charts
  * @returns {string} stroke color
  */
-export const applyStrokeColor =
-  (alertRanges) => (datasetLabel, label, data, originalStrokeColor) => {
-    if (!isNil(data)) {
-      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
-    }
-    return originalStrokeColor;
-  };
+export const applyStrokeColor = (alertRanges) => (
+  datasetLabel,
+  label,
+  data,
+  originalStrokeColor
+) => {
+  if (!isNil(data)) {
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+  }
+  return originalStrokeColor;
+};
 
 /**
  * Determines the dot fill color based on matching alerts

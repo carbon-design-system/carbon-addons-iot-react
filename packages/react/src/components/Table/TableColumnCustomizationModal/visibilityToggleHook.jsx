@@ -42,34 +42,33 @@ export const useVisibilityToggle = ({
   const generateRowActions = useCallback(
     // We need to create custom row actions with icon buttons
     // that are state dependent.
-    (id, isHidden) => () =>
-      [
-        <Button
-          key={`${id}-list-item-visibility-button`}
-          testId={`${testId}-toggle-visibility-button-${id}`}
-          renderIcon={isHidden ? ViewOff16 : View16}
-          hasIconOnly
-          kind="ghost"
-          size="small"
-          onClick={() => toggleVisibility(id, isHidden)}
-          iconDescription={isHidden ? showIconDescription : hideIconDescription}
-          title={isHidden ? showIconDescription : hideIconDescription}
-        />,
-        <Button
-          key={`${id}-list-item-delete-button`}
-          // We use the "list-builder" test since we are "overwriting" the buttons
-          // of the ListBuilder and want to have the same test-id for the same button
-          // regardless of where it is rendered.
-          testId={`${testId}-list-builder-remove-button-${id}`}
-          renderIcon={CloseOutline16}
-          hasIconOnly
-          kind="ghost"
-          size="small"
-          onClick={() => handleRemove(null, id)}
-          iconDescription={removeIconDescription}
-          title={removeIconDescription}
-        />,
-      ],
+    (id, isHidden) => () => [
+      <Button
+        key={`${id}-list-item-visibility-button`}
+        testId={`${testId}-toggle-visibility-button-${id}`}
+        renderIcon={isHidden ? ViewOff16 : View16}
+        hasIconOnly
+        kind="ghost"
+        size="small"
+        onClick={() => toggleVisibility(id, isHidden)}
+        iconDescription={isHidden ? showIconDescription : hideIconDescription}
+        title={isHidden ? showIconDescription : hideIconDescription}
+      />,
+      <Button
+        key={`${id}-list-item-delete-button`}
+        // We use the "list-builder" test since we are "overwriting" the buttons
+        // of the ListBuilder and want to have the same test-id for the same button
+        // regardless of where it is rendered.
+        testId={`${testId}-list-builder-remove-button-${id}`}
+        renderIcon={CloseOutline16}
+        hasIconOnly
+        kind="ghost"
+        size="small"
+        onClick={() => handleRemove(null, id)}
+        iconDescription={removeIconDescription}
+        title={removeIconDescription}
+      />,
+    ],
     [
       toggleVisibility,
       handleRemove,

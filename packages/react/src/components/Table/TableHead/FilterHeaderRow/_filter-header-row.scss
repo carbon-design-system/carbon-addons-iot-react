@@ -120,9 +120,7 @@ $grouped-columns-filter-border-width: 2px;
 }
 
 .#{$prefix}--data-table
-  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(
-    :last-of-type
-  ) {
+  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(:last-of-type) {
   border-right-width: $grouped-columns-filter-border-width;
 
   [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {

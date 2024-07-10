@@ -232,10 +232,9 @@ const TimeSeriesCard = ({
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
-  const contentWithDefaults = useMemo(
-    () => defaultsDeep({}, content, defaultProps.content),
-    [content]
-  );
+  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
+    content,
+  ]);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const {
     title,
@@ -283,10 +282,11 @@ const TimeSeriesCard = ({
     ]
   );
 
-  const values = useMemo(
-    () => (isEditable ? sampleValues : valuesProp),
-    [isEditable, sampleValues, valuesProp]
-  );
+  const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
+    isEditable,
+    sampleValues,
+    valuesProp,
+  ]);
 
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
@@ -344,10 +344,11 @@ const TimeSeriesCard = ({
   const colors = useMemo(() => formatColors(series), [series]);
 
   /** This caches the chart value */
-  const chartData = useMemo(
-    () => formatChartData(timeDataSourceId, series, valueSort),
-    [timeDataSourceId, series, valueSort]
-  );
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
+    timeDataSourceId,
+    series,
+    valueSort,
+  ]);
 
   const previousChartData = usePrevious(chartData);
 
