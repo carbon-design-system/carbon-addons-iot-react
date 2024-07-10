@@ -62,7 +62,8 @@ SmallLongNoUnits.storyName = 'with long text, no units, no click handler';
 
 SmallLongNoUnits.parameters = {
   info: {
-    text: 'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
+    text:
+      'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
   },
 };
 
@@ -151,6 +152,7 @@ export const WithLinkAndMeasurementUnit = () => {
             {
               dataSourceId: 'peakUsage',
               label: text('content.attributes[0].label', 'Peak usage'),
+              tooltip: text('content.attributes[0].tooltip', 'Peak usage tooltip'),
               measurementUnitLabel: text('content.attributes[0].measurementUnitLabel', 'AppPoints'),
               thresholds: [
                 {

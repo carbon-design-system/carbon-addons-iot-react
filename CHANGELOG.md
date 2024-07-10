@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.28...v2.154.0-next.29) (2024-06-26)
+
+
+### Bug Fixes
+
+* pr comment ([bb72bde](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb72bdeeeab73815bc09d845475db3aca7871d9e))
+* testcases ([f1a0b2f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1a0b2f21f3d4c1b9b1c5817f6f620a0dc32abcc))
+* threshold item ([0467b0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0467b0fbf6ab5c0d60a939a4af2261a31770ca5e))
+* thresold item ([8e6b408](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e6b408d35203c9cc2d319d1aa35937a8375af24))
+* thresold item ([19142ea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/19142ea68dc44c639d6910f974e3fcbc416288f1))
+
+
+
+
+
+# [2.154.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.27...v2.154.0-next.28) (2024-06-24)
+
+
+### Features
+
+* add tooltip to the tablecard column ([3f4f934](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3f4f934bb9dac5322d77f0bc5fb46c53ea31f043))
+
+
+
+
+
+# [2.154.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.26...v2.154.0-next.27) (2024-06-24)
+
+
+### Bug Fixes
+
+* deploy only when code is updated on next branch ([1e9c7cc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e9c7cc71e5c628314c3b33d392abd892eceef6d))
+
+
+### Features
+
+* deploy storybook to github page ([ed3f9f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed3f9f24c63b73d2687b9ab104c07acc6f2aeae8))
+
+
+
+
+
+# [2.154.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.25...v2.154.0-next.26) (2024-06-05)
+
+
+### Features
+
+* override the default behaviour of handledataitemedit ([5257d1b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5257d1b54a988e1915081ac9807a35d0c32e915a))
+
+
+
+
+
+# [2.154.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.24...v2.154.0-next.25) (2024-05-24)
+
+
+### Bug Fixes
+
+* ReadOnlyValue component changes ([#3865](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3865)) ([34708ec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34708ecbc17bb838a5327124efb81021bb200034))
+
+
+
+
+
+# [2.154.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.23...v2.154.0-next.24) (2024-05-15)
+
+
+### Bug Fixes
+
+* **tablehead:** group table headers offset ([#3863](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3863)) ([c5e717e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5e717ed0486192d5f6f30eb3695e499d2c47e5f))
+
+
+
+
+
+# [2.154.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.22...v2.154.0-next.23) (2024-05-13)
+
+
+### Bug Fixes
+
+* context added to useDNDProviderElement ([#3862](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3862)) ([ad40350](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad40350a9689dee0e2e1846d075d08a89562089e))
+
+
+
+
+
+# [2.154.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.21...v2.154.0-next.22) (2024-05-02)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.154.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.20...v2.154.0-next.21) (2024-04-19)
 
 

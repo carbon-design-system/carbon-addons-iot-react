@@ -787,7 +787,14 @@ const TableHead = ({
         <ColumnGrouping
           appendedColumns={+showExpanderColumn + !!options.hasRowActions}
           testId={`${testId}-column-grouping`}
-          prependedColumns={+(hasRowSelection === 'multi') + !!(hasRowExpansion || hasRowNesting)}
+          prependedColumns={
+            +!!(
+              hasRowSelection === 'multi' ||
+              (useRadioButtonSingleSelect && hasRowSelection === 'single')
+            ) +
+            !!(hasRowExpansion || hasRowNesting) +
+            !!hasDragAndDrop
+          }
           columnGroups={columnGroups}
           ordering={ordering}
         />

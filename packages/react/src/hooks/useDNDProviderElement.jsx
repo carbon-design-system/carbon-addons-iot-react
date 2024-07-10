@@ -7,5 +7,9 @@ export function useDNDProviderElement(props) {
 
   if (!children) return null;
 
-  return <DndProvider backend={HTML5Backend}>{children}</DndProvider>;
+  return (
+    <DndProvider backend={HTML5Backend} context={window}>
+      {children}
+    </DndProvider>
+  );
 }

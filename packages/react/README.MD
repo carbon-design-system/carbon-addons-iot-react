@@ -1,4 +1,4 @@
-> [!WARNING]  
+> [!WARNING]
 > This library no longer has a dedicated development resource maintaining it. When you are able to [migrate to Carbon v11](https://carbondesignsystem.com/migrating/guide/overview/) we recommend you reference the [related component guide](../../.github/migration.md) and use components from [Carbon for IBM Products](https://carbon-for-ibm-products.netlify.app/?path=/story/overview-welcome--overview) and core [Carbon](https://react.carbondesignsystem.com/).
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 **@latest from
 [`master`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/master)**
-&nbsp; - &nbsp; <a href="https://carbon-addons-iot-react.com">
+&nbsp; - &nbsp; <a href="https://carbon-design-system.github.io/carbon-addons-iot-react">
 <img valign=middle src="https://img.shields.io/badge/view%20%40latest-storybook-ff4785" alt="view @latest storybook" />
 </a>
 
@@ -166,3 +166,11 @@ window.SVGPathElement = SVGPathElement;
 <a href="https://www.netlify.com">
     <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" />
 </a>
+
+## <picture><source height="20" width="20" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ibm-telemetry/telemetry-js/main/docs/images/ibm-telemetry-dark.svg"><source height="20" width="20" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ibm-telemetry/telemetry-js/main/docs/images/ibm-telemetry-light.svg"><img height="20" width="20" alt="IBM Telemetry" src="https://raw.githubusercontent.com/ibm-telemetry/telemetry-js/main/docs/images/ibm-telemetry-light.svg"></picture> IBM Telemetry
+
+This package uses IBM Telemetry to collect metrics data. By installing this package as a dependency
+you are agreeing to telemetry collection. To opt out, see
+[Opting out of IBM Telemetry data collection](https://github.com/ibm-telemetry/telemetry-js/tree/main#opting-out-of-ibm-telemetry-data-collection).
+For more information on the data being collected, please see the
+[IBM Telemetry documentation](https://github.com/ibm-telemetry/telemetry-js/tree/main#ibm-telemetry-collection-basics).

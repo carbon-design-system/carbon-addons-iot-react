@@ -24,7 +24,7 @@ import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import { TextInput } from '../../../TextInput';
 import {
-  handleDataItemEdit,
+  handleDefaultDataItemEdit,
   DataItemsPropTypes,
   DashboardEditorActionsPropTypes,
 } from '../../../DashboardEditor/editorUtils';
@@ -76,6 +76,7 @@ const propTypes = {
   showEditor: PropTypes.bool,
   setShowEditor: PropTypes.func,
   editDataItem: PropTypes.shape({
+    columnType: PropTypes.oneOf(['LITERAL', 'BOOLEAN', 'TIMESTAMP', 'NUMBER']),
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     /** Maps to data item columnType */
@@ -104,6 +105,7 @@ const propTypes = {
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
       })
     ),
+    tooltip: PropTypes.string,
   }),
   setEditDataItem: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -143,6 +145,18 @@ const propTypes = {
     secondaryButtonLabelText: PropTypes.string,
   }),
   actions: DashboardEditorActionsPropTypes,
+  /**
+   * Used to override the default behaviour of handleDataItemEdit. if we dont pass any function then it uses handleDefaultDataItemEdit function by default
+   */
+  handleDataItemEdit: PropTypes.func,
+
+  options: PropTypes.shape({
+    hasColorDropdown: PropTypes.bool,
+    hasUnit: PropTypes.bool,
+    hasDecimalPlacesDropdown: PropTypes.bool,
+    hasThresholds: PropTypes.bool,
+    hasTooltip: PropTypes.bool,
+  }),
 };
 
 const defaultProps = {
@@ -166,6 +180,7 @@ const defaultProps = {
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
+    dataItemEditorDataItemTooltip: 'Tooltip',
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
     dataItemEditorAddAggregationMethodLabel: 'Add aggregation method',
@@ -189,6 +204,7 @@ const defaultProps = {
   availableDimensions: {},
   editDataItem: {
     hasStreamingMetricEnabled: false,
+    columnType: undefined,
   },
   setEditDataItem: null,
   isSummaryDashboard: false,
@@ -202,6 +218,14 @@ const defaultProps = {
       hasDataFilterDropdown: noop,
       onAddAggregations: noop,
     },
+  },
+  handleDataItemEdit: handleDefaultDataItemEdit,
+  options: {
+    hasColorDropdown: false,
+    hasUnit: false,
+    hasDecimalPlacesDropdown: false,
+    hasThresholds: false,
+    hasTooltip: false,
   },
 };
 
@@ -237,10 +261,19 @@ const DataSeriesFormItemModal = ({
   actions: {
     dataSeriesFormActions: { hasAggregationsDropDown, onAddAggregations, hasDataFilterDropdown },
   },
+  handleDataItemEdit,
+  options,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
+  const {
+    hasColorDropdown,
+    hasUnit,
+    hasDecimalPlacesDropdown,
+    hasThresholds,
+    hasTooltip,
+  } = options;
 
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
@@ -260,8 +293,6 @@ const DataSeriesFormItemModal = ({
         decrementNumberText,
       } = mergedI18n;
       switch (idToTranslate) {
-        default:
-          return '';
         case 'clear.all':
           return clearAllText || 'Clear all';
         case 'clear.selection':
@@ -274,6 +305,8 @@ const DataSeriesFormItemModal = ({
           return incrementNumberText || 'Increment number';
         case 'decrement.number':
           return decrementNumberText || 'Decrement number';
+        default:
+          return '';
       }
     },
     [mergedI18n]
@@ -421,7 +454,7 @@ const DataSeriesFormItemModal = ({
             />
           </div>
 
-          {(type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR) && ( // show color selector
+          {hasColorDropdown && ( // show color selector
             <div className={`${baseClassName}--input-group--item`}>
               <ColorDropdown
                 id={`${id}_color-dropdown`}
@@ -443,47 +476,68 @@ const DataSeriesFormItemModal = ({
               />
             </div>
           )}
-        </div>
 
-        {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE) && (
-          <div className={`${baseClassName}--input-group`}>
+          {hasTooltip && (
             <div className={`${baseClassName}--input-group--item`}>
               <TextInput
-                id={`${id}_attribute-unit`}
-                labelText={mergedI18n.dataItemEditorDataItemUnit}
+                id={`${id}_attribute-tooltip`}
+                labelText={mergedI18n.dataItemEditorDataItemTooltip}
                 light
-                placeholder={`${mergedI18n.example}: %`}
                 onChange={(evt) =>
                   setEditDataItem({
                     ...editDataItem,
-                    unit: evt.target.value,
+                    tooltip: evt.target.value,
                   })
                 }
-                value={editDataItem.unit}
+                value={editDataItem.tooltip}
               />
             </div>
-            <div className={`${baseClassName}--input-group--item-end`}>
-              <Dropdown
-                id={`${id}_value-card-decimal-place`}
-                titleText={mergedI18n.decimalPlacesLabel}
-                direction="bottom"
-                label=""
-                items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
-                light
-                selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
-                onChange={({ selectedItem }) => {
-                  const isSet = selectedItem !== mergedI18n.notSet;
-                  if (isSet) {
+          )}
+        </div>
+
+        {(hasUnit || hasDecimalPlacesDropdown) && (
+          <div className={`${baseClassName}--input-group`}>
+            {hasUnit && (
+              <div className={`${baseClassName}--input-group--item`}>
+                <TextInput
+                  id={`${id}_attribute-unit`}
+                  labelText={mergedI18n.dataItemEditorDataItemUnit}
+                  light
+                  placeholder={`${mergedI18n.example}: %`}
+                  onChange={(evt) =>
                     setEditDataItem({
                       ...editDataItem,
-                      precision: Number(selectedItem),
-                    });
-                  } else {
-                    setEditDataItem(omit(editDataItem, 'precision'));
+                      unit: evt.target.value,
+                    })
                   }
-                }}
-              />
-            </div>
+                  value={editDataItem.unit}
+                />
+              </div>
+            )}
+            {hasDecimalPlacesDropdown && (
+              <div className={`${baseClassName}--input-group--item-end`}>
+                <Dropdown
+                  id={`${id}_value-card-decimal-place`}
+                  titleText={mergedI18n.decimalPlacesLabel}
+                  direction="bottom"
+                  label=""
+                  items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
+                  light
+                  selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
+                  onChange={({ selectedItem }) => {
+                    const isSet = selectedItem !== mergedI18n.notSet;
+                    if (isSet) {
+                      setEditDataItem({
+                        ...editDataItem,
+                        precision: Number(selectedItem),
+                      });
+                    } else {
+                      setEditDataItem(omit(editDataItem, 'precision'));
+                    }
+                  }}
+                />
+              </div>
+            )}
           </div>
         )}
 
@@ -525,37 +579,36 @@ const DataSeriesFormItemModal = ({
                   titleText={mergedI18n.dataItemEditorDataItemFilter}
                 />
               </div>
-              {!isEmpty(editDataItem.dataFilter) &&
-                availableDimensions[selectedDimensionFilter] && (
-                  <div className={`${baseClassName}--input-group--item-end`}>
-                    <Dropdown
-                      id={`${id}_data-filter-value`}
-                      label=""
-                      direction="bottom"
-                      items={availableDimensions[selectedDimensionFilter]?.sort()}
-                      light
-                      itemToString={(item) => item?.toString()}
-                      selectedItem={
-                        editDataItem.dataFilter
-                          ? editDataItem.dataFilter[selectedDimensionFilter]
-                          : undefined
-                      }
-                      onChange={({ selectedItem }) => {
-                        const dataFilter = {
-                          [selectedDimensionFilter]: selectedItem,
-                        };
-                        setEditDataItem({
-                          ...editDataItem,
-                          dataFilter,
-                        });
-                      }}
-                    />
-                  </div>
-                )}
+              {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] && (
+                <div className={`${baseClassName}--input-group--item-end`}>
+                  <Dropdown
+                    id={`${id}_data-filter-value`}
+                    label=""
+                    direction="bottom"
+                    items={availableDimensions[selectedDimensionFilter]?.sort()}
+                    light
+                    itemToString={(item) => item?.toString()}
+                    selectedItem={
+                      editDataItem.dataFilter
+                        ? editDataItem.dataFilter[selectedDimensionFilter]
+                        : undefined
+                    }
+                    onChange={({ selectedItem }) => {
+                      const dataFilter = {
+                        [selectedDimensionFilter]: selectedItem,
+                      };
+                      setEditDataItem({
+                        ...editDataItem,
+                        dataFilter,
+                      });
+                    }}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-        {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE || type === CARD_TYPES.TABLE) && (
+        {hasThresholds && (
           <ThresholdsFormItem
             id={`${id}_thresholds`}
             i18n={mergedI18n}
@@ -569,6 +622,7 @@ const DataSeriesFormItemModal = ({
                 thresholds,
               });
             }}
+            columnType={editDataItem.columnType || editDataItem.type}
           />
         )}
       </>
@@ -581,7 +635,12 @@ const DataSeriesFormItemModal = ({
       editDataItem,
       handleTranslation,
       hasAggregationsDropDown,
+      hasColorDropdown,
       hasDataFilterDropdown,
+      hasDecimalPlacesDropdown,
+      hasThresholds,
+      hasTooltip,
+      hasUnit,
       id,
       initialAggregation,
       initialGrain,

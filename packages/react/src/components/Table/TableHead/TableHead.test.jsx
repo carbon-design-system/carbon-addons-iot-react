@@ -1914,6 +1914,91 @@ describe('TableHead', () => {
       );
     });
 
+    it('only prepends one extra column header for row nesting and multi row selection and drag and drop enabled', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowNesting: true,
+            hasRowSelection: 'multi',
+            hasDragAndDrop: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveAttribute('colspan', '3');
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('only prepends one extra column header for row nesting and single row radiobutton selection', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowNesting: true,
+            hasRowSelection: 'single',
+            useRadioButtonSingleSelect: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveAttribute('colspan', '2');
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('only prepends one extra column header for row nesting and single row radiobutton selection and drag and drop enabled', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowNesting: true,
+            hasRowSelection: 'single',
+            useRadioButtonSingleSelect: true,
+            hasDragAndDrop: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveAttribute('colspan', '3');
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
     it('adds rowspan to "normal column headers" that do not belong to a group while group row is showing', () => {
       render(<TableHead {...myProps} testId="my-tablehead" />, {
         container: document.body.appendChild(document.createElement('table')),
