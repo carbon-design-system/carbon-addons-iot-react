@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { act, render, screen, within } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { Share16, Star16, TrashCan16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
@@ -542,11 +542,7 @@ describe('The RuleBuilder', () => {
       filterTitleText: 'A Test Filter',
     });
 
-    userEvent.click(
-      within(screen.getByLabelText('Clear Filter first-tag')).getByRole('button', {
-        title: 'Clear Filter',
-      })
-    );
+    userEvent.click(screen.getByLabelText('first-tag')?.parent.getByTitle('Clear Filter'));
 
     userEvent.click(saveButton);
     expect(handleSave).toHaveBeenCalledWith({

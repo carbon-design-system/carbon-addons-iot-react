@@ -4300,17 +4300,15 @@
   integrity sha512-xghg4aeanayxtrWC38L128jkI/l+iX7z0xnIofygiOLyQM7MGzhtvQrF8G3ZUIJ7/7tpQ3xgYCNhhY43qj4GMw==
   dependencies:
     "@carbon/import-once" "^10.7.2"
+    "@carbon/layout" "^10.37.4"
+    "@ibm/telemetry-js" "^1.5.0"
 
 "@carbon/icon-helpers@10.9.0":
   version "10.9.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.9.0.tgz#5aee08e9d253d3bf6f996bc61f739660c62cbb21"
   integrity sha512-JtmCXV7iIc+N5RqQQy+MGT8T+5KcF7+BUKADvHnJKZ8o+ncF5gI4hmrP450dQD76mikI4fqQ0dQflaosesdSPw==
 
-"@carbon/icon-helpers@^10.28.0":
-  version "10.28.0"
-  integrity sha512-hf4fjouzr3jCvh5lTWJt87ABWmoq+3ck0/OOLpxUZLfhumTLRW+8H1Ctz0ldQh5mhmFaPNQUifll6tGI5bkmTw==
-
-"@carbon/icon-helpers@^10.28.4", "@carbon/icon-helpers@^10.49.0":
+"@carbon/icon-helpers@^10.28.0", "@carbon/icon-helpers@^10.28.4", "@carbon/icon-helpers@^10.49.0":
   version "10.49.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.49.0.tgz#94a8e6fcef773e632ce90697ca6ddebf7fa79192"
   integrity sha512-GSx22ch7ahJ3u/7ZRIykeO8h/uBx3Qruybz3VYi5JBIM+smHDLldXRpJTQk65JsXuSiPWWGepIb1FlhV99fgtw==
