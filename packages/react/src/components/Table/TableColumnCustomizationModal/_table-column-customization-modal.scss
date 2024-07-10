@@ -3,6 +3,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/components/data-table' as *;
 
 .#{$iot-prefix}--column-customization-modal {
   .#{$prefix}--modal-header__label {

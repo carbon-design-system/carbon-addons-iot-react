@@ -3,6 +3,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}-table-foot {
   border-top: 2px solid $layer-accent-01;
 

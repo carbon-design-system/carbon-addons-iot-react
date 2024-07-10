@@ -135,7 +135,7 @@ const CodeEditor = ({
   return (
     <div data-testid={testId} className={`${iotPrefix}--code-editor-wrapper`}>
       {hasUpload ? (
-        <>
+        <div className={`${iotPrefix}--code-editor-upload-wrapper`}>
           <Button
             className={classnames(`${iotPrefix}--code-editor-upload`, {
               [`${iotPrefix}--code-editor-upload--light`]: light,
@@ -167,19 +167,21 @@ const CodeEditor = ({
             onChange={handleOnChange}
             disabled={disabled}
           />
-        </>
+        </div>
       ) : null}
       {onCopy && (
-        <CopyButton
-          className={classnames(`${iotPrefix}--code-editor-copy`, {
-            [`${iotPrefix}--code-editor-copy--light`]: light,
-            [`${iotPrefix}--code-editor-copy--disabled-container`]: disabled,
-          })}
-          onClick={handleOnCopy}
-          iconDescription={mergedI18n.copyBtnDescription}
-          feedback={mergedI18n.copyBtnFeedBack}
-          data-testid={`${testId}-copy-button`}
-        />
+        <div className={`${iotPrefix}--code-editor-copy-wrapper`}>
+          <CopyButton
+            className={classnames(`${iotPrefix}--code-editor-copy`, {
+              [`${iotPrefix}--code-editor-copy--light`]: light,
+              [`${iotPrefix}--code-editor-copy--disabled-container`]: disabled,
+            })}
+            onClick={handleOnCopy}
+            iconDescription={mergedI18n.copyBtnDescription}
+            feedback={mergedI18n.copyBtnFeedBack}
+            data-testid={`${testId}-copy-button`}
+          />
+        </div>
       )}
       <Editor
         className={classnames(`${iotPrefix}--code-editor-container`, {

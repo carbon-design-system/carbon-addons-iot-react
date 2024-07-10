@@ -17,16 +17,6 @@ const ButtonKinds = [
   'danger--tertiary',
 ];
 
-const palSizes = ['default', 'field', 'small', 'large', 'extralarge'];
-
-const sizes = {
-  default: 'lg',
-  field: 'md',
-  small: 'sm',
-  large: 'xl',
-  extralarge: '2xl',
-};
-
 const { iotPrefix } = settings;
 const propTypes = {
   /** Show loading spinner, only new prop */
@@ -46,8 +36,6 @@ const propTypes = {
   hasIconOnly: PropTypes.bool,
   /** Toggle selected styling for buttons of kind=icon-selection */
   selected: PropTypes.bool,
-  /** Size of the button */
-  size: PropTypes.oneOf(palSizes),
   // TODO: remove deprecated testID prop in v3
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
@@ -66,7 +54,6 @@ const defaultProps = {
   children: null,
   recommended: false,
   hasIconOnly: false,
-  size: 'default',
   selected: false,
   testId: 'Button',
 };
@@ -79,7 +66,6 @@ const Button = React.forwardRef((props, ref) => {
     className,
     onClick,
     kind,
-    size,
     recommended,
     hasIconOnly,
     selected,
@@ -89,15 +75,12 @@ const Button = React.forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const buttonSize = sizes[size];
-
   return (
     <CarbonButton
       {...other}
       ref={ref}
       // TODO: remove deprecated testID prop in v3
       data-testid={testID || testId}
-      size={buttonSize}
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}
@@ -106,7 +89,6 @@ const Button = React.forwardRef((props, ref) => {
         [`${iotPrefix}--btn-icon-selection--recommended`]:
           kind === 'icon-selection' && !disabled && recommended,
         [`${iotPrefix}--btn-icon-selection--selected`]: kind === 'icon-selection' && selected,
-        [`${iotPrefix}--btn--${buttonSize}`]: buttonSize,
       })}
       disabled={disabled || (loading !== undefined && loading !== false)}
     >

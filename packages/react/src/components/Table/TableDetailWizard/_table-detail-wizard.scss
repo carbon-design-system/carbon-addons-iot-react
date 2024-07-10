@@ -5,6 +5,8 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/utilities/convert';
+@use '@carbon/react/scss/components/data-table' as *;
+
 .#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
   background-color: $background;
   display: flex;

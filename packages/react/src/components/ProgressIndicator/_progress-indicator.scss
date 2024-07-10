@@ -207,7 +207,7 @@
       .#{$iot-prefix}--progress-step-button .#{$iot-prefix}--progress-text {
         &-label,
         &-label--optional {
-          color: $text-disabled;
+          color: $layer-active-01;
           cursor: default;
           box-shadow: none;
         }
