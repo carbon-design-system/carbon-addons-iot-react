@@ -178,7 +178,7 @@
     "@ibm/telemetry-js": "^1.5.0",
     "@monaco-editor/react": "4.4.5",
     "carbon-components": "10.56.0",
-    "carbon-components-react": "7.56.0",
+    "carbon-components-react": "7.59.24",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.5.1",
     "core-js": "3.26.1",
