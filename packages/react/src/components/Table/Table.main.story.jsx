@@ -914,20 +914,16 @@ WithRowNesting.parameters = {
 };
 
 export const WithAggregations = () => {
-  const {
-    selectedTableType,
-    hasAggregations,
-    aggregationLabel,
-    aggregationsColumns,
-  } = getTableKnobs({
-    knobsToCreate: [
-      'selectedTableType',
-      'hasAggregations',
-      'aggregationLabel',
-      'aggregationsColumns',
-    ],
-    getDefaultValue: () => true,
-  });
+  const { selectedTableType, hasAggregations, aggregationLabel, aggregationsColumns } =
+    getTableKnobs({
+      knobsToCreate: [
+        'selectedTableType',
+        'hasAggregations',
+        'aggregationLabel',
+        'aggregationsColumns',
+      ],
+      getDefaultValue: () => true,
+    });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const data = getTableData().slice(0, 10);
@@ -1758,22 +1754,17 @@ WithPinnedColumn.parameters = {
 };
 
 export const WithDataEditing = () => {
-  const {
-    selectedTableType,
-    hasRowActions,
-    hasRowEdit,
-    hasSingleRowEdit,
-    preserveCellWhiteSpace,
-  } = getTableKnobs({
-    knobsToCreate: [
-      'selectedTableType',
-      'hasRowActions',
-      'hasRowEdit',
-      'hasSingleRowEdit',
-      'preserveCellWhiteSpace',
-    ],
-    getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
-  });
+  const { selectedTableType, hasRowActions, hasRowEdit, hasSingleRowEdit, preserveCellWhiteSpace } =
+    getTableKnobs({
+      knobsToCreate: [
+        'selectedTableType',
+        'hasRowActions',
+        'hasRowEdit',
+        'hasSingleRowEdit',
+        'preserveCellWhiteSpace',
+      ],
+      getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
+    });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const editAction = getOverflowEditRowAction();

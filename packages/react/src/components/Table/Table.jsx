@@ -780,9 +780,10 @@ const Table = (props) => {
    * the onToggleAggregations from the actions.toolbar prop.
    */
   const [hideAggregations, setHideAggregations] = useState(!options.hasAggregations);
-  const statefulOnToggleAggregations = useCallback(() => setHideAggregations((prev) => !prev), [
-    setHideAggregations,
-  ]);
+  const statefulOnToggleAggregations = useCallback(
+    () => setHideAggregations((prev) => !prev),
+    [setHideAggregations]
+  );
 
   useEffect(() => {
     if (!actions.toolbar.onToggleAggregations) {

@@ -124,9 +124,10 @@ const PieChartCard = ({
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
-  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
-    content,
-  ]);
+  const contentWithDefaults = useMemo(
+    () => defaultsDeep({}, content, defaultProps.content),
+    [content]
+  );
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const {

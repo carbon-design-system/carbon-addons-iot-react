@@ -33,15 +33,8 @@ class DetailWizardSidebar extends Component {
   state = {};
 
   render = () => {
-    const {
-      currentItemId,
-      setItem,
-      items,
-      showLabels,
-      stepWidth,
-      className,
-      isClickable,
-    } = this.props;
+    const { currentItemId, setItem, items, showLabels, stepWidth, className, isClickable } =
+      this.props;
 
     const sideBarProgressIndicator = (
       <ProgressIndicator

@@ -71,6 +71,7 @@ describe('SelectUsersModal', () => {
     expect(screen.queryAllByRole('button', { name: 'Remove' }).length).toBe(0);
     expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(0);
     fireEvent.click(screen.getByTestId('expand-icon'));
+    console.log(screen.querySelector(`iot--list--content`));
     expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(2);
   });
 

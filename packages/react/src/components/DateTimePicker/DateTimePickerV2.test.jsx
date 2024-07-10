@@ -41,16 +41,18 @@ const i18n = {
   invalidLabel: 'Invalid',
 };
 
-const generateBoundingClientRect = ({ x, y, height = 50, width = 50 }) => () => ({
-  x,
-  y,
-  height,
-  width,
-  top: y,
-  bottom: y + height,
-  left: x,
-  right: x + width,
-});
+const generateBoundingClientRect =
+  ({ x, y, height = 50, width = 50 }) =>
+  () => ({
+    x,
+    y,
+    height,
+    width,
+    top: y,
+    bottom: y + height,
+    left: x,
+    right: x + width,
+  });
 
 describe('DateTimePickerV2', () => {
   beforeEach(() => {

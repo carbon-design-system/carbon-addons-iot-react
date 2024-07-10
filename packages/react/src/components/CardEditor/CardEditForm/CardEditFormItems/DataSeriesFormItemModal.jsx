@@ -267,13 +267,8 @@ const DataSeriesFormItemModal = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
-  const {
-    hasColorDropdown,
-    hasUnit,
-    hasDecimalPlacesDropdown,
-    hasThresholds,
-    hasTooltip,
-  } = options;
+  const { hasColorDropdown, hasUnit, hasDecimalPlacesDropdown, hasThresholds, hasTooltip } =
+    options;
 
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
@@ -579,32 +574,33 @@ const DataSeriesFormItemModal = ({
                   titleText={mergedI18n.dataItemEditorDataItemFilter}
                 />
               </div>
-              {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] && (
-                <div className={`${baseClassName}--input-group--item-end`}>
-                  <Dropdown
-                    id={`${id}_data-filter-value`}
-                    label=""
-                    direction="bottom"
-                    items={availableDimensions[selectedDimensionFilter]?.sort()}
-                    light
-                    itemToString={(item) => item?.toString()}
-                    selectedItem={
-                      editDataItem.dataFilter
-                        ? editDataItem.dataFilter[selectedDimensionFilter]
-                        : undefined
-                    }
-                    onChange={({ selectedItem }) => {
-                      const dataFilter = {
-                        [selectedDimensionFilter]: selectedItem,
-                      };
-                      setEditDataItem({
-                        ...editDataItem,
-                        dataFilter,
-                      });
-                    }}
-                  />
-                </div>
-              )}
+              {!isEmpty(editDataItem.dataFilter) &&
+                availableDimensions[selectedDimensionFilter] && (
+                  <div className={`${baseClassName}--input-group--item-end`}>
+                    <Dropdown
+                      id={`${id}_data-filter-value`}
+                      label=""
+                      direction="bottom"
+                      items={availableDimensions[selectedDimensionFilter]?.sort()}
+                      light
+                      itemToString={(item) => item?.toString()}
+                      selectedItem={
+                        editDataItem.dataFilter
+                          ? editDataItem.dataFilter[selectedDimensionFilter]
+                          : undefined
+                      }
+                      onChange={({ selectedItem }) => {
+                        const dataFilter = {
+                          [selectedDimensionFilter]: selectedItem,
+                        };
+                        setEditDataItem({
+                          ...editDataItem,
+                          dataFilter,
+                        });
+                      }}
+                    />
+                  </div>
+                )}
             </div>
           )}
 
