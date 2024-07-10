@@ -1,24 +1,23 @@
 import * as React from 'react';
-import { Tooltip as CarbonTooltip } from '@carbon/react';
+import {
+  ToggletipLabel,
+  Toggletip as CarbonToggleTip,
+  ToggletipButton,
+  ToggletipContent,
+  ToggletipActions,
+} from '@carbon/react';
 import PropTypes from 'prop-types';
 import { Information } from '@carbon/icons-react';
 
-// will remove this method later
-export const getTooltipMenuOffset = () => {
-  return {
-    top: 0,
-    left: 0,
-  };
-};
-
-export const Tooltip = ({
+export const ToggleTip = ({
   triggerText,
   direction,
   align,
   renderIcon: IconCustomElement,
+  content,
+  action,
   useAutoPositioning,
   showIcon,
-  children,
   ...other
 }) => {
   let newAlign;
@@ -48,41 +47,43 @@ export const Tooltip = ({
   } else {
     newAlign = 'bottom-start';
   }
-  let tooltip = (
-    <CarbonTooltip label={children} align={newAlign} autoAlign={useAutoPositioning} {...other}>
-      <div>{triggerText}</div>
-    </CarbonTooltip>
-  );
-  if (showIcon) {
-    tooltip = (
-      <>
-        <div style={{ marginRight: '0.5rem' }}>{triggerText}</div>
-        <CarbonTooltip label={children} align={newAlign} autoAlign={useAutoPositioning} {...other}>
-          {IconCustomElement ? (
-            <div>
+  return (
+    <>
+      {showIcon ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
+      <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
+        <ToggletipButton>
+          {showIcon ? (
+            IconCustomElement ? (
               <IconCustomElement />
-            </div>
+            ) : (
+              <Information />
+            )
           ) : (
-            <Information />
+            <ToggletipLabel>{triggerText}</ToggletipLabel>
           )}
-        </CarbonTooltip>
-      </>
-    );
-  }
-  return tooltip;
+        </ToggletipButton>
+        <ToggletipContent>
+          {content}
+          <ToggletipActions>{action}</ToggletipActions>
+        </ToggletipContent>
+      </CarbonToggleTip>
+    </>
+  );
 };
 
-Tooltip.propTypes = {
-  ...Tooltip.propTypes,
+ToggleTip.propTypes = {
+  ...ToggleTip.propTypes,
   triggerText: PropTypes.string,
   direction: PropTypes.string,
   renderIcon: PropTypes.node,
+  content: PropTypes.node,
+  action: PropTypes.node,
   useAutoPositioning: PropTypes.bool,
   showIcon: PropTypes.bool,
 };
 
-Tooltip.defaultProps = {
-  ...Tooltip.defaultProps,
+ToggleTip.defaultProps = {
+  ...ToggleTip.defaultProps,
   direction: 'bottom',
   align: 'center',
   triggerText: '',
@@ -90,4 +91,4 @@ Tooltip.defaultProps = {
   showIcon: true,
 };
 
-export default Tooltip;
+export default ToggleTip;

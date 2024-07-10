@@ -13,7 +13,7 @@ import { OverflowMenuVertical } from '@carbon/react/icons';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 
-import { Tooltip } from '.';
+import { ToggleTip } from '.';
 
 const { prefix } = settings;
 const directions = {
@@ -25,25 +25,53 @@ const directions = {
 
 const props = {
   withIcon: () => ({
-    direction: select('Tooltip direction (direction)', directions, 'bottom'),
-    triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
-    tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
+    direction: select('ToggleTip direction (direction)', directions, 'bottom'),
+    triggerText: text('Trigger text (triggerText)', 'ToggleTip label'),
+    tabIndex: number('Tab index (tabIndex in <ToggleTip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     triggerId: 'withIcon',
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
   withoutIcon: () => ({
     showIcon: false,
-    direction: select('Tooltip direction (direction)', directions, 'bottom'),
-    triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
-    tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
+    direction: select('ToggleTip direction (direction)', directions, 'bottom'),
+    triggerText: text('Trigger text (triggerText)', 'ToggleTip label'),
+    tabIndex: number('Tab index (tabIndex in <ToggleTip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     triggerId: 'withoutIcon',
+    content: (
+      <p>
+        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut fsil labore et dolore magna aliqua.
+      </p>
+    ),
+    action: (
+      <>
+        <a href="/" className={`${prefix}--link`}>
+          Learn More
+        </a>
+        <Button size="sm">Create</Button>
+      </>
+    ),
   }),
   customIcon: () => ({
     showIcon: true,
-    direction: select('Tooltip direction (direction)', directions, 'bottom'),
-    triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
-    tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
+    direction: select('ToggleTip direction (direction)', directions, 'bottom'),
+    triggerText: text('Trigger text (triggerText)', 'ToggleTip label'),
+    tabIndex: number('Tab index (tabIndex in <ToggleTip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     triggerId: 'customIcon',
     // eslint-disable-next-line react/display-name
@@ -73,9 +101,9 @@ const props = {
   }),
   customIconOnly: () => ({
     showIcon: true,
-    direction: select('Tooltip direction (direction)', directions, 'bottom'),
+    direction: select('ToggleTip direction (direction)', directions, 'bottom'),
     iconDescription: 'Helpful Information',
-    tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
+    tabIndex: number('Tab index (tabIndex in <ToggleTip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     renderIcon: OverflowMenuVertical,
     triggerId: 'customIconOnly',
@@ -103,33 +131,20 @@ const containerStyles = {
   alignItems: 'center',
 };
 
-Tooltip.displayName = 'Tooltip';
+ToggleTip.displayName = 'ToggleTip';
 
 export default {
-  title: '1 - Watson IoT/Tooltip',
+  title: '1 - Watson IoT/ToggleTip',
   decorators: [withKnobs],
 
   parameters: {
-    component: Tooltip,
+    component: ToggleTip,
   },
 };
 
 export const DefaultBottom = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.withIcon()} tooltipBodyId="tooltip-body">
-      <>
-        <p id="tooltip-body">
-          This is some tooltip text. This box shows the maximum amount of text that should appear
-          inside. If more room is needed please use a modal instead.
-        </p>
-        <div className={`${prefix}--tooltip__footer`}>
-          <a href="/" className={`${prefix}--link`}>
-            Learn More
-          </a>
-          <Button size="sm">Create</Button>
-        </div>
-      </>
-    </Tooltip>
+    <ToggleTip {...props.withIcon()} tooltipBodyId="tooltip-body" />
   </div>
 );
 
@@ -147,20 +162,7 @@ DefaultBottom.parameters = {
 
 export const NoIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.withoutIcon()}>
-      <>
-        <p id="tooltip-body">
-          This is some tooltip text. This box shows the maximum amount of text that should appear
-          inside. If more room is needed please use a modal instead.
-        </p>
-        <div className={`${prefix}--tooltip__footer`}>
-          <a href="/" className={`${prefix}--link`}>
-            Learn More
-          </a>
-          <Button size="sm">Create</Button>
-        </div>
-      </>
-    </Tooltip>
+    <ToggleTip {...props.withoutIcon()} />
   </div>
 );
 
@@ -178,20 +180,7 @@ NoIcon.parameters = {
 
 export const RenderCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.customIcon()}>
-      <>
-        <p id="tooltip-body">
-          This is some tooltip text. This box shows the maximum amount of text that should appear
-          inside. If more room is needed please use a modal instead.
-        </p>
-        <div className={`${prefix}--tooltip__footer`}>
-          <a href="/" className={`${prefix}--link`}>
-            Learn More
-          </a>
-          <Button size="sm">Create</Button>
-        </div>
-      </>
-    </Tooltip>
+    <ToggleTip {...props.customIcon()} />
   </div>
 );
 
@@ -209,20 +198,7 @@ RenderCustomIcon.parameters = {
 
 export const OnlyCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...props.customIconOnly()}>
-      <>
-        <p id="tooltip-body">
-          This is some tooltip text. This box shows the maximum amount of text that should appear
-          inside. If more room is needed please use a modal instead.
-        </p>
-        <div className={`${prefix}--tooltip__footer`}>
-          <a href="/" className={`${prefix}--link`}>
-            Learn More
-          </a>
-          <Button size="sm">Create</Button>
-        </div>
-      </>
-    </Tooltip>
+    <ToggleTip {...props.customIconOnly()} />
   </div>
 );
 
@@ -257,14 +233,13 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="top-left"
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -274,14 +249,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="top-center"
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -291,14 +265,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="top-right"
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -310,14 +283,13 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="left-center"
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -327,14 +299,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="center"
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -344,14 +315,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="right-center"
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
@@ -363,14 +333,13 @@ export const AutoPositioningExample = () => {
             flex: 1,
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="bottom-left"
             tooltipBodyId="tooltip-body"
             direction="left"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -380,14 +349,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="bottom-center"
             tooltipBodyId="tooltip-body"
             direction="top"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
         <div
           style={{
@@ -397,14 +365,13 @@ export const AutoPositioningExample = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip
+          <ToggleTip
             triggerId="bottom-right"
             tooltipBodyId="tooltip-body"
             direction="right"
             useAutoPositioning
-          >
-            <p id="tooltip-body">This is a body.</p>
-          </Tooltip>
+            content={<p id="tooltip-body">This is a body.</p>}
+          />
         </div>
       </div>
     </div>
