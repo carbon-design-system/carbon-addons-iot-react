@@ -267,13 +267,8 @@ const DataSeriesFormItemModal = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
-  const {
-    hasColorDropdown,
-    hasUnit,
-    hasDecimalPlacesDropdown,
-    hasThresholds,
-    hasTooltip,
-  } = options;
+  const { hasColorDropdown, hasUnit, hasDecimalPlacesDropdown, hasThresholds, hasTooltip } =
+    options;
 
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
