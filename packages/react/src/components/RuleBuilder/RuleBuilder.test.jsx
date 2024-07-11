@@ -542,7 +542,7 @@ describe('The RuleBuilder', () => {
       filterTitleText: 'A Test Filter',
     });
 
-    userEvent.click(screen.getByLabelText('first-tag')?.parent.getByTitle('Clear Filter'));
+    userEvent.click(screen.getByLabelText('first-tag'));
 
     userEvent.click(saveButton);
     expect(handleSave).toHaveBeenCalledWith({

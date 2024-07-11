@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
@@ -150,7 +150,7 @@ describe('ComboBox', () => {
     await userEvent.click(screen.getByPlaceholderText('Filter...'));
     await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Home{enter}');
 
-    const close = await screen.findByRole('button', { name: /close/i });
+    const close = await within(screen.getByTestId('combo-tags')).findByRole('button');
     await userEvent.click(close);
 
     expect(tags.childElementCount).toEqual(0);
@@ -170,7 +170,8 @@ describe('ComboBox', () => {
 
     // tab over to tag and hit enter
     userEvent.tab();
-    await userEvent.type(screen.getByRole('button', { name: /close/i }), '{enter}');
+    const close = await within(screen.getByTestId('combo-tags')).findByRole('button');
+    await userEvent.type(close, '{enter}');
 
     expect(tags.childElementCount).toEqual(0);
   });

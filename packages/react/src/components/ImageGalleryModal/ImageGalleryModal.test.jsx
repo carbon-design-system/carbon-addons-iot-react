@@ -111,7 +111,7 @@ describe('ImageGalleryModal', () => {
     expect(listButton).not.toHaveClass(unselectedClass);
   });
 
-  it('toggles view modes', () => {
+  it('toggles view modes', async () => {
     const wideTileClass = `${iotPrefix}--image-tile--wide`;
     render(<ImageGalleryModal content={getTestContent()} {...getActions()} />);
 
@@ -119,9 +119,11 @@ describe('ImageGalleryModal', () => {
     expect(listButton).toHaveClass(unselectedClass);
     expect(screen.getByText('image-b').closest('label')).not.toHaveClass(wideTileClass);
 
-    userEvent.click(listButton);
+    await userEvent.click(listButton);
     expect(screen.getByText('List').parentElement).not.toHaveClass(unselectedClass);
-    expect(screen.getByText('image-b').closest('label')).toHaveClass(wideTileClass);
+    expect(screen.getByText('Grid').parentElement).toHaveClass(unselectedClass);
+
+    expect(screen.getByTestId('image-gallery-modal-b')).toHaveClass(wideTileClass);
   });
 
   it('adds selected image to onSubmit callback', () => {
