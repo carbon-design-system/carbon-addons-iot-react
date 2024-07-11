@@ -23,6 +23,10 @@
     letter-spacing: unset;
   }
 
+  .#{$prefix}--popover-container {
+    width: 100%;
+  }
+
   .#{$prefix}--date-picker--range {
     position: absolute;
   }
@@ -165,7 +169,7 @@
       z-index: var(--zIndex);
       &.#{$iot-prefix}--date-time-picker__menu-expanded {
         display: block;
-        z-index: calc(var(--zIndex) + 20);
+        z-index: 10000 !important;
 
         .#{$prefix}--list__item:before {
           display: none;
