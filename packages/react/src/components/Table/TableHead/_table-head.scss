@@ -27,6 +27,10 @@
     }
   }
 
+  th[aria-sort] {
+    padding-left: 1rem;
+  }
+
   // override sort icons, so they stay in the middle, at xl size, too.
   &--xl {
     .#{$prefix}--table-sort__icon-unsorted,
