@@ -852,7 +852,7 @@ const ImageHotspots = ({
         }
       }}
     >
-      {src && (
+      {src ? (
         <img
           id={id}
           className={`${iotPrefix}--image-card-img`}
@@ -909,7 +909,7 @@ const ImageHotspots = ({
             }
           }}
         />
-      )}
+      ) : null}
       {isHotspotDataLoading ? (
         <InlineLoading
           style={{ position: 'absolute', top: 0 }}
@@ -917,12 +917,12 @@ const ImageHotspots = ({
           status="active"
         />
       ) : null}
-      {!isHotspotDataLoading && !hideHotspots && hotspots && (
+      {!isHotspotDataLoading && !hideHotspots && hotspots ? (
         <div data-testid={`${id}-hotspots-container`} style={hotspotsStyle}>
           {cachedHotspots}
         </div>
-      )}
-      {!hideZoomControls && (
+      ) : null}
+      {!hideZoomControls ? (
         <ImageControls
           i18n={mergedI18n}
           minimap={{ ...minimap, src }}
@@ -972,7 +972,7 @@ const ImageHotspots = ({
             )
           }
         />
-      )}
+      ) : null}
     </div>
   );
 };
