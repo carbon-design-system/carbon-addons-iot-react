@@ -1,8 +1,7 @@
 @use '../../../globals/vars' as *;
 @use '@carbon/react/scss/layout' as *;
 @use 'column-resize' as *;
-@use 'ColumnHeaderRow/column-header-row' as *;
-@use 'FilterHeaderRow/filter-header-row' as *;
+
 @use 'ColumnGrouping/column-grouping' as *;
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
@@ -11,6 +10,10 @@
 @use '@carbon/react/scss/components/button' as *;
 @use '../../../globals/mixins' as *;
 @use '@carbon/react/scss/components/data-table' as *;
+@use 'ColumnHeaderRow/column-header-row' as *;
+@use 'FilterHeaderRow/filter-header-row' as *;
+@use '@carbon/react/scss/components/data-table/sort' as *;
+
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;
@@ -22,6 +25,10 @@
     &.#{$iot-prefix}--table-head--table-header {
       vertical-align: middle;
     }
+  }
+
+  th[aria-sort] {
+    padding-left: 1rem;
   }
 
   // override sort icons, so they stay in the middle, at xl size, too.

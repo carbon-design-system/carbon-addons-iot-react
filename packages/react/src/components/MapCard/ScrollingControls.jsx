@@ -66,7 +66,7 @@ const ScrollingControls = ({
         size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
-        renderIcon={(props) => <ChevronUp size={32} {...props} />}
+        renderIcon={(props) => <ChevronUp size={16} {...props} />}
         iconDescription={scrollUpIconDescriptionText}
         onClick={() => handleScrolling(scrollBy * -1)}
       />
@@ -112,7 +112,7 @@ const ScrollingControls = ({
         size="md"
         hasIconOnly
         tooltipPosition={tooltipPosition}
-        renderIcon={(props) => <ChevronDown size={32} {...props} />}
+        renderIcon={(props) => <ChevronDown size={16} {...props} />}
         iconDescription={scrollDownIconDescriptionText}
         onClick={() => handleScrolling(scrollBy)}
       />

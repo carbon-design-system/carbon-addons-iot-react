@@ -36,7 +36,13 @@
 @use 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker' as *;
 @use 'components/SimpleIconDropdown/simple-icon-dropdown' as *;
 @use 'components/RuleBuilder/rule-builder' as *;
-
+@use 'components/MapCard/legend' as *;
+@use 'components/MapCard/map-card' as *;
+@use 'components/MapCard/scrolling-controls' as *;
+@use 'components/MapCard/zoom-control' as *;
+@use 'components/MapCard/storyFiles/drag-panel.scss' as *;
+@use 'components/MapCard/storyFiles/mapbox-example.scss' as *;
+@use 'components/MapCard/storyFiles/open-layers-example.scss' as *;
 //-------------------------------------
 // carbon-addons-iot-react components
 //-------------------------------------

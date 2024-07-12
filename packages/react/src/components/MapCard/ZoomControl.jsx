@@ -33,11 +33,11 @@ const defaultProps = {
 };
 
 const Zoom = ({ onZoomIn, onZoomOut, i18n, testId, tooltipPosition, smallButtons }) => {
-  const buttonSize = smallButtons ? 'small' : 'field';
+  const buttonSize = smallButtons ? 'sm' : 'md';
   return (
     <div className={`${iotPrefix}--map-zoom`} data-testid={testId}>
       <Button
-        renderIcon={(props) => <ZoomIn size={32} {...props} />}
+        renderIcon={(props) => <ZoomIn size={16} {...props} />}
         hasIconOnly
         kind="ghost"
         size={buttonSize}
@@ -47,7 +47,7 @@ const Zoom = ({ onZoomIn, onZoomOut, i18n, testId, tooltipPosition, smallButtons
         testId={`${testId}-zoom-in`}
       />
       <Button
-        renderIcon={(props) => <ZoomOut size={32} {...props} />}
+        renderIcon={(props) => <ZoomOut size={16} {...props} />}
         hasIconOnly
         kind="ghost"
         size={buttonSize}

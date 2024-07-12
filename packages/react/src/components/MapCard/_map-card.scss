@@ -137,7 +137,7 @@ $cardPadding: $spacing-05;
   }
 
   &-controls-btn {
-    background: #fff;
+    background: #fff !important;
     @include box-shadow();
   }
 
@@ -154,7 +154,7 @@ $cardPadding: $spacing-05;
 
   // Layered controls
   &-controls-layers-trigger {
-    background-color: white;
+    background-color: white !important;
     @include box-shadow();
     margin-bottom: $spacing-05;
     position: absolute;
@@ -222,7 +222,7 @@ $cardPadding: $spacing-05;
   }
 
   &-controls-layers-btn {
-    background-color: white;
+    background-color: white !important;
     &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
       border-right: 1px solid $layer-accent-01;
     }

@@ -1,5 +1,4 @@
 @use '@carbon/react/scss/config' as *;
-@use '@carbon/react/scss/components/data-table' as *;
 @use 'TableHead/table-head' as *;
 @use 'TableFoot/table-foot' as *;
 @use 'TableSkeletonWithHeaders/table-skeleton-with-headers' as *;
@@ -16,6 +15,8 @@
 @use '@carbon/react/scss/layer' as *;
 @use '../../globals/mixins' as *;
 @use '@carbon/react/scss/utilities/convert';
+@use '@carbon/react/scss/components/data-table/sort/data-table-sort' as *;
+@use '@carbon/react/scss/components/data-table' as *;
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;

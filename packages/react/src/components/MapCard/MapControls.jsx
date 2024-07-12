@@ -55,7 +55,7 @@ const MapControls = ({
     setLayersOpen((openState) => !openState);
   };
 
-  const buttonSize = isExpandedMode ? 'field' : 'small';
+  const buttonSize = isExpandedMode ? 'md' : 'sm';
 
   const renderControl = (control, index) => {
     if (control.group) {
