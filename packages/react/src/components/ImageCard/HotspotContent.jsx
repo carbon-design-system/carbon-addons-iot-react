@@ -76,7 +76,11 @@ const HotspotContent = ({
       </h4>
     );
 
-    const titleFixedTextVersion = <h4 title={title}>{title}</h4>;
+    const titleFixedTextVersion = (
+      <h4 title={title} className={`${iotPrefix}--hotspot-content-fixed-title`}>
+        {title}
+      </h4>
+    );
 
     const titleInputVersion = (
       <>
