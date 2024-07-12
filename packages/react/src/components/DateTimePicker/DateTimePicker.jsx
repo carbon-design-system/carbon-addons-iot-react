@@ -678,14 +678,16 @@ const DateTimePicker = ({
         onKeyUp={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], onFieldInteraction)}
         tabIndex={0}
       >
-        <span
-          className={classnames({
-            [`${iotPrefix}--date-time-picker__disabled`]: disabled,
-          })}
-          title={humanValue}
-        >
-          {humanValue}
-        </span>
+        {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) || humanValue ? (
+          <span
+            className={classnames({
+              [`${iotPrefix}--date-time-picker__disabled`]: disabled,
+            })}
+            title={humanValue}
+          >
+            {humanValue}
+          </span>
+        ) : null}
         {invalidState ? (
           <WarningFilled
             data-testid={`${testId}__invalid-icon`}

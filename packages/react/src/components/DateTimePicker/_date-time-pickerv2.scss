@@ -25,6 +25,10 @@
     letter-spacing: unset;
   }
 
+  .#{$prefix}--popover-container {
+    width: 100%;
+  }
+
   // the text version of this
   .#{$iot-prefix}--date-time-picker__box--full {
     background-color: $layer-01;
