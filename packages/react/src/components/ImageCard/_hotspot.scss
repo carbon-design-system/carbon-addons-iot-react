@@ -138,7 +138,7 @@ $selected-border: solid $selected-border-width $border-interactive;
     $negative-margin-to-overide-parent-padding: calc(-1 * (#{$padding}));
     margin: $negative-margin-to-overide-parent-padding;
 
-    .#{$iot-prefix}--hotspot-content-title-input {
+    input.#{$prefix}--text-input {
       padding: 0 calc(#{$padding} + #{$selected-border-width});
       width: calc(
         (var(--width) * 1px) - (#{$selected-border-width} * 2) - (var(--border-width) * 1px * 2)

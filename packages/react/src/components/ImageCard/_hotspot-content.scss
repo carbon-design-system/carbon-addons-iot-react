@@ -13,8 +13,10 @@
     font-size: type-scale(5);
     padding-bottom: $spacing-03;
     color: $layer-01;
-    display: flex;
-    justify-content: center;
+    &.#{$iot-prefix}--hotspot-content-fixed-title {
+      display: flex;
+      justify-content: center;
+    }
   }
   &-description {
     padding-bottom: $spacing-03;
