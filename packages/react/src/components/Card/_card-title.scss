@@ -91,3 +91,17 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
 .#{$iot-prefix}--card-heading-clickable {
   cursor: pointer;
 }
+
+.iot--card--title--text,
+.iot--card--subtitle--text {
+  overflow: visible;
+}
+.iot--card--title--text .cds--toggletip-label {
+  font-weight: 600;
+}
+
+.iot--card--title .cds--toggletip-label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

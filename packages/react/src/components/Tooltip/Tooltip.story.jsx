@@ -56,20 +56,6 @@ const props = {
         </svg>
       </div>
     )),
-    content: (
-      <p>
-        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut fsil labore et dolore magna aliqua.
-      </p>
-    ),
-    action: (
-      <>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </>
-    ),
   }),
   customIconOnly: () => ({
     showIcon: true,
@@ -79,20 +65,6 @@ const props = {
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     renderIcon: OverflowMenuVertical,
     triggerId: 'customIconOnly',
-    content: (
-      <p>
-        Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut fsil labore et dolore magna aliqua.
-      </p>
-    ),
-    action: (
-      <>
-        <a href="/" className={`${prefix}--link`}>
-          Learn More
-        </a>
-        <Button size="sm">Create</Button>
-      </>
-    ),
   }),
 };
 
