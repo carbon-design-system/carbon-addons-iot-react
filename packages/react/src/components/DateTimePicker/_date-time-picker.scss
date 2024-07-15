@@ -6,7 +6,7 @@
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/utilities/_box-shadow' as *;
 @use '@carbon/react/scss/components/button' as *;
-
+@use '@carbon/react/scss/components/date-picker' as *;
 .#{$iot-prefix}--date-time-picker {
   padding: 0 $spacing-05 $spacing-05;
   position: absolute;
@@ -52,6 +52,7 @@
       input {
         min-width: 8.5rem;
         padding-right: $spacing-03;
+        background: $field-02;
       }
     }
   }
@@ -190,8 +191,10 @@
         }
 
         .#{$iot-prefix}--date-time-picker__custom-wrapper {
-          padding-top: 1rem;
+          padding-top: $spacing-05;
           padding-bottom: 2rem;
+          padding-left: $spacing-05;
+          padding-right: $spacing-05;
 
           .#{$prefix}--radio-button-wrapper:not(:last-of-type) {
             margin-right: $spacing-06;
@@ -228,7 +231,7 @@
         }
 
         .#{$iot-prefix}--date-time-picker__listitem {
-          padding: $spacing-04 $spacing-02; //$spacing-baseline
+          padding: $spacing-04 $spacing-04; //$spacing-baseline
           cursor: pointer;
           border-left: 4px solid transparent;
           border-bottom: 1px solid $layer-accent-01;
