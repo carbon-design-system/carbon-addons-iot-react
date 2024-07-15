@@ -264,7 +264,6 @@ export const Playground = () => {
       numberOfRows,
     ]
   );
-
   const onRowLoadMore = (parentId) => {
     action('onRowLoadMore')(parentId);
     setTimeout(() => {
@@ -448,7 +447,7 @@ export const Playground = () => {
           useAutoTableLayoutForResize,
           wrapCellText,
           preserveCellWhiteSpace,
-          // hasRowActions,
+          hasRowActions,
           shouldLazyRender,
           hasRowEdit,
           hasSingleRowEdit,

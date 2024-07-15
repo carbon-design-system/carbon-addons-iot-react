@@ -74,6 +74,7 @@ export const renderBundledIconUsingName = (iconName, label) => {
  * @returns string|Element
  */
 export const renderTableOverflowItemText = ({ action, className }) => {
+  console.log(typeof action.renderIcon);
   return action.renderIcon ? (
     <div className={className} title={action.labelText}>
       {typeof action.renderIcon === 'string' ? (
