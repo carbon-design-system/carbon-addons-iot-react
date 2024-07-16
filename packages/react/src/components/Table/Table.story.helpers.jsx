@@ -488,7 +488,7 @@ export const getTableDataWithEmptySelectFilter = () =>
 
 export const getDrillDownRowAction = () => ({
   id: 'drilldown',
-  renderIcon: <DrillDown size={16} />,
+  renderIcon: DrillDown,
   iconDescription: 'Drill in',
   labelText: 'Drill in to find out more after observing',
 });
