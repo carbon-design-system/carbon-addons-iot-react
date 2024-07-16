@@ -400,8 +400,9 @@ const TableToolbar = ({
             tooltipId={`card-tooltip-${tableId}`}
             triggerText=""
             iconDescription={i18n.toolbarTooltipLabel}
-            content={tooltip}
-          />
+          >
+            {tooltip}
+          </Tooltip>
         </div>
       )}
       {activeBar === 'rowEdit' ? (

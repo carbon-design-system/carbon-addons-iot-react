@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip, DefinitionTooltip } from '@carbon/react';
+import { DefinitionTooltip } from '@carbon/react';
 import warning from 'warning';
 
+import { Tooltip } from '../../Tooltip';
 import { settings } from '../../../constants/Settings';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 
@@ -90,6 +91,7 @@ const TableCellRenderer = ({
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"
         align={tooltipDirection}
+        openOnHover
       >
         {element}
       </DefinitionTooltip>
