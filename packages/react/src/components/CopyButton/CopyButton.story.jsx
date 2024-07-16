@@ -31,7 +31,6 @@ export const Default = () => <CopyButton {...props()} />;
 
 Default.parameters = {
   info: {
-    text:
-      'The copy button can be used when the user needs to copy information, such as a code snippet, to their clipboard.',
+    text: 'The copy button can be used when the user needs to copy information, such as a code snippet, to their clipboard.',
   },
 };

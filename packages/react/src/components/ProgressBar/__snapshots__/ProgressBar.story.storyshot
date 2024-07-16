@@ -36,14 +36,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       <div
         className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
-        <span
+        <div
           className="bx--progress-bar__label"
           id="progress-bar-717"
         >
-          Progress bar label
-        </span>
+          <span
+            className="bx--progress-bar__label-text"
+          >
+            Progress bar label
+          </span>
+        </div>
         <div
           aria-describedby="progress-bar-helper-718"
+          aria-invalid={false}
           aria-labelledby="progress-bar-717"
           aria-valuemax={100}
           aria-valuemin={0}
@@ -133,14 +138,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       <div
         className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
-        <span
+        <div
           className="bx--progress-bar__label"
           id="progress-bar-721"
         >
-          Progress bar label
-        </span>
+          <span
+            className="bx--progress-bar__label-text"
+          >
+            Progress bar label
+          </span>
+        </div>
         <div
           aria-describedby="progress-bar-helper-722"
+          aria-invalid={false}
           aria-labelledby="progress-bar-721"
           aria-valuemax={100}
           aria-valuemin={0}
@@ -205,14 +215,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       <div
         className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
-        <span
+        <div
           className="bx--progress-bar__label"
           id="progress-bar-719"
         >
-          Progress bar label
-        </span>
+          <span
+            className="bx--progress-bar__label-text"
+          >
+            Progress bar label
+          </span>
+        </div>
         <div
           aria-describedby="progress-bar-helper-720"
+          aria-invalid={false}
           aria-labelledby="progress-bar-719"
           aria-valuemax={100}
           aria-valuemin={0}
@@ -298,14 +313,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       <div
         className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
-        <span
+        <div
           className="bx--progress-bar__label"
           id="progress-bar-725"
         >
-          Mon, Oct 5
-        </span>
+          <span
+            className="bx--progress-bar__label-text"
+          >
+            Mon, Oct 5
+          </span>
+        </div>
         <div
           aria-describedby="progress-bar-helper-726"
+          aria-invalid={false}
           aria-labelledby="progress-bar-725"
           aria-valuemax={100}
           aria-valuemin={0}
@@ -370,14 +390,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       <div
         className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
-        <span
+        <div
           className="bx--progress-bar__label"
           id="progress-bar-723"
         >
-          Mon, Oct 5
-        </span>
+          <span
+            className="bx--progress-bar__label-text"
+          >
+            Mon, Oct 5
+          </span>
+        </div>
         <div
           aria-describedby="progress-bar-helper-724"
+          aria-invalid={false}
           aria-labelledby="progress-bar-723"
           aria-valuemax={100}
           aria-valuemin={0}

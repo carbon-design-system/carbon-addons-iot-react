@@ -51,7 +51,7 @@ jobs:
         if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
-          yarn test:ci
+          yarn test:ci --silent
 
       - name: Archive coverage artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'

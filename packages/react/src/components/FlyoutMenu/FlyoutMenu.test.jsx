@@ -8,16 +8,18 @@ import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
 
 const { iotPrefix } = settings;
 
-const generateBoundingClientRect = ({ x, y, height = 50, width = 50 }) => () => ({
-  x,
-  y,
-  height,
-  width,
-  top: y,
-  bottom: y + height,
-  left: x,
-  right: x + width,
-});
+const generateBoundingClientRect =
+  ({ x, y, height = 50, width = 50 }) =>
+  () => ({
+    x,
+    y,
+    height,
+    width,
+    top: y,
+    bottom: y + height,
+    left: x,
+    right: x + width,
+  });
 
 describe('FlyoutMenu', () => {
   it('Renders an open flyout menu with a default footer', () => {

@@ -195,7 +195,7 @@ class IotOverflowMenu extends Component {
   static contextType = PrefixContext;
 
   static defaultProps = {
-    ariaLabel: 'open and close list of options',
+    ariaLabel: 'Open and close list of options',
     children: [],
     className: '',
     direction: DIRECTION_BOTTOM,

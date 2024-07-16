@@ -636,6 +636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </button>
                   <button
+                    aria-controls={null}
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="More actions"
@@ -960,7 +961,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     aria-atomic="true"
-                    aria-labelledby="loading-id-10"
                     aria-live="assertive"
                     className="bx--loading bx--loading--small"
                   >

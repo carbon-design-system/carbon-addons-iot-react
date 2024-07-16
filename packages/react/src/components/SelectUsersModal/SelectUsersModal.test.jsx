@@ -71,7 +71,7 @@ describe('SelectUsersModal', () => {
     expect(screen.queryAllByRole('button', { name: 'Remove' }).length).toBe(0);
     expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(0);
     fireEvent.click(screen.getByTestId('expand-icon'));
-    expect(screen.queryAllByRole('button', { name: 'Add' }).length).toBe(2);
+    expect(screen.getAllByText('Add').length).toBe(2);
   });
 
   it('renders initially selected users', () => {
@@ -96,7 +96,7 @@ describe('SelectUsersModal', () => {
       />
     );
 
-    expect(screen.queryByRole('button', { name: 'Remove' })).toBeTruthy();
+    expect(screen.getByText('Remove')).toBeTruthy();
   });
 
   it('can add and remove users', () => {
@@ -122,14 +122,14 @@ describe('SelectUsersModal', () => {
     const list = screen.getByTestId('select-users__all');
     const selected = screen.getByTestId('select-users__selected');
 
-    let selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
+    let selectedItems = within(selected).queryAllByText('Remove');
     expect(selectedItems).toHaveLength(0);
 
-    const listedItems = within(list).queryAllByRole('button', { name: 'Add' });
+    const listedItems = within(list).queryAllByText('Add');
     expect(listedItems).toHaveLength(2);
 
     fireEvent.click(listedItems[0]);
-    selectedItems = within(selected).queryAllByRole('button', { name: 'Remove' });
+    selectedItems = within(selected).queryAllByText('Remove');
     expect(selectedItems).toHaveLength(1);
 
     fireEvent.click(selectedItems[0]);
@@ -152,10 +152,10 @@ describe('SelectUsersModal', () => {
       />
     );
 
-    let buttons = screen.getAllByRole('img', { label: 'Expand' });
+    let buttons = screen.getAllByTestId('expand-icon');
     fireEvent.click(buttons[0]); // expand category
 
-    buttons = screen.getAllByRole('img', { label: 'Expand' });
+    buttons = screen.getAllByTestId('expand-icon');
     fireEvent.click(buttons[1]);
     fireEvent.click(buttons[2]);
 
@@ -216,10 +216,10 @@ describe('SelectUsersModal', () => {
       />
     );
 
-    let buttons = screen.getAllByRole('img', { label: 'Expand' });
+    let buttons = screen.getAllByTestId('expand-icon');
     fireEvent.click(buttons[0]); // expand category
 
-    buttons = screen.getAllByRole('img', { label: 'Expand' });
+    buttons = screen.getAllByTestId('expand-icon');
     fireEvent.click(buttons[1]);
 
     expect(screen.queryAllByTitle('Onita Nieves')).toHaveLength(2);

@@ -25,11 +25,11 @@
     "access": "public"
   },
   "devDependencies": {
-    "@carbon/charts": "0.41.31",
-    "@carbon/motion": "10.12.0",
-    "@carbon/themes": "10.26.0",
+    "@carbon/charts": "^0.58.2",
+    "@carbon/motion": "^10.29.4",
+    "@carbon/themes": "^10.55.5",
     "ai-apps-monorepo-utils": "^2.154.0-next.20",
-    "carbon-components": "10.47.0",
+    "carbon-components": "^10.58.12",
     "react-grid-layout": "1.2.0",
     "react-resizable": "1.11.0",
     "rimraf": "^5.0.5",

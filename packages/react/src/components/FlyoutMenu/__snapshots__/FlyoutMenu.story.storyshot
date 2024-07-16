@@ -91,7 +91,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             Focus sentinel
           </span>
           <div
-            align="center"
             className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
             data-floating-menu-direction="bottom"
             data-testid="flyout-menu"

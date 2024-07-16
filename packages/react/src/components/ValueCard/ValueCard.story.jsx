@@ -62,8 +62,7 @@ SmallLongNoUnits.storyName = 'with long text, no units, no click handler';
 
 SmallLongNoUnits.parameters = {
   info: {
-    text:
-      'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
+    text: 'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
   },
 };
 

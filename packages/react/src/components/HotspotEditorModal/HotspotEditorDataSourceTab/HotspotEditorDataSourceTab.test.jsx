@@ -247,7 +247,7 @@ describe('HotspotEditorDataSourceTab', () => {
       })
     );
     // save
-    userEvent.click(screen.getAllByRole('button')[11]);
+    userEvent.click(screen.getByRole('button', { name: 'Update' }));
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataItemId: 'temp_last',

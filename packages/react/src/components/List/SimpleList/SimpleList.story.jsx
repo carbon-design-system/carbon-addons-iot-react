@@ -24,47 +24,49 @@ const listItemsWithEmptyRow = getListItems(5).concat({
   content: { value: '' },
 });
 
-const getRowActions = (dir) => () => [
-  <Button
-    key="simple-list-action-edit"
-    renderIcon={Edit16}
-    hasIconOnly
-    kind="ghost"
-    size="small"
-    onClick={() => action('edit')()}
-    iconDescription="Edit"
-    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
-  />,
-  <Button
-    key="simple-list-action-add"
-    renderIcon={Add16}
-    hasIconOnly
-    kind="ghost"
-    size="small"
-    onClick={() => action('add')()}
-    iconDescription="Add"
-    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
-  />,
-  <Button
-    key="simple-list-action-close"
-    renderIcon={Close16}
-    hasIconOnly
-    kind="ghost"
-    size="small"
-    onClick={() => action('close')()}
-    iconDescription="Close"
-    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
-  />,
-];
+const getRowActions = (dir) => () =>
+  [
+    <Button
+      key="simple-list-action-edit"
+      renderIcon={Edit16}
+      hasIconOnly
+      kind="ghost"
+      size="small"
+      onClick={() => action('edit')()}
+      iconDescription="Edit"
+      tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
+    />,
+    <Button
+      key="simple-list-action-add"
+      renderIcon={Add16}
+      hasIconOnly
+      kind="ghost"
+      size="small"
+      onClick={() => action('add')()}
+      iconDescription="Add"
+      tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
+    />,
+    <Button
+      key="simple-list-action-close"
+      renderIcon={Close16}
+      hasIconOnly
+      kind="ghost"
+      size="small"
+      onClick={() => action('close')()}
+      iconDescription="Close"
+      tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
+    />,
+  ];
 
-const getRowActionsOverFlowMenu = (dir) => () => [
-  <OverflowMenu size="sm" flipped={dir !== 'rtl'} key="simple-list-overflow-menu">
-    <OverflowMenuItem itemText="Edit" />
-    <OverflowMenuItem itemText="Add" />
-    <OverflowMenuItem itemText="Delete" />
-    <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
-  </OverflowMenu>,
-];
+const getRowActionsOverFlowMenu = (dir) => () =>
+  [
+    <OverflowMenu size="sm" flipped={dir !== 'rtl'} key="simple-list-overflow-menu">
+      <OverflowMenuItem itemText="Edit" />
+      <OverflowMenuItem itemText="Add" />
+      <OverflowMenuItem itemText="Delete" />
+      <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
+    </OverflowMenu>,
+  ];
 
 export const getListItemsWithActions = (num, dir) =>
   Array(num)

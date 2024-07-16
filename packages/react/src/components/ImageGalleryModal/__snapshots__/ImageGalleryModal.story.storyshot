@@ -6,6 +6,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
 >
   <div>
     <div
+      aria-hidden={false}
       className="bx--modal is-visible iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="image-gallery-modal"
@@ -17,1171 +18,1137 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       open={true}
       role="presentation"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
       <div
         aria-label="New image card"
         aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
-        <div
-          className="bx--modal-header"
+        <button
+          className="bx--visually-hidden"
+          type="button"
         >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
-          >
-            New image card
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Image gallery
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
+          Focus sentinel
+        </button>
         <div
-          className="bx--modal-content"
-          style={
-            Object {
-              "maxHeight": "calc(100vh - 0px)",
-            }
-          }
+          className="bx--modal-container-body"
         >
           <div
-            className="iot--image-gallery-modal__top-section"
+            className="bx--modal-header"
           >
-            <p
-              alt="Select the image that you want to display on this card."
-              className="iot--image-gallery-modal__instruction-text"
+            <h2
+              className="bx--modal-header__label bx--type-delta"
             >
-              Select the image that you want to display on this card.
-            </p>
-            <div
-              className="iot--image-gallery-modal__search-list-view-container"
+              New image card
+            </h2>
+            <h3
+              className="bx--modal-header__heading bx--type-beta"
             >
-              <div
-                aria-labelledby="iot--image-gallery-modal--search-search"
-                className="bx--search bx--search--xl bx--search--light"
-                role="search"
+              Image gallery
+            </h3>
+            <button
+              aria-label="Close"
+              className="bx--modal-close"
+              onClick={[Function]}
+              title="Close"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--modal-close__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div
-                  className="bx--search-magnifier"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                </div>
-                <label
-                  className="bx--label"
-                  htmlFor="iot--image-gallery-modal--search"
-                  id="iot--image-gallery-modal--search-search"
-                >
-                  
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  data-testid="image-gallery-modal-search-input"
-                  id="iot--image-gallery-modal--search"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Search image by file name"
-                  role="searchbox"
-                  type="text"
+                <path
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                className="bx--content-switcher iot--image-gallery-modal__content-switcher"
-                data-testid="image-gallery-modal-content-switcher"
-                onChange={[Function]}
-                role="tablist"
-              >
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                  data-testid="image-gallery-modal-grid-switch"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    className="bx--assistive-text"
-                    onMouseEnter={[Function]}
-                  >
-                    Grid
-                  </div>
-                  <span
-                    className="iot--icon-switch__divider"
-                  />
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Grid"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 4H6A2 2 0 004 6v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0012 4zm0 8H6V6h6zM26 4H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0026 4zm0 8H20V6h6zM12 18H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0012 18zm0 8H6V20h6zM26 18H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0026 18zm0 8H20V20h6z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                  data-testid="image-gallery-modal-list-switch"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    className="bx--assistive-text"
-                    onMouseEnter={[Function]}
-                  >
-                    List
-                  </div>
-                  <span
-                    className="iot--icon-switch__divider"
-                  />
-                  <svg
-                    aria-hidden="true"
-                    aria-label="List"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+              </svg>
+            </button>
           </div>
           <div
-            className="iot--image-gallery-modal__flex-wrapper"
+            className="bx--modal-content"
+            style={
+              Object {
+                "maxHeight": "calc(100vh - 0px)",
+              }
+            }
           >
             <div
-              className="iot--image-gallery-modal__scroll-panel iot--image-gallery-modal__scroll-panel--grid"
+              className="iot--image-gallery-modal__top-section"
             >
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="assemblyline"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-assemblyline"
-                htmlFor="assemblyline"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
+              <p
+                alt="Select the image that you want to display on this card."
+                className="iot--image-gallery-modal__instruction-text"
               >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
+                Select the image that you want to display on this card.
+              </p>
+              <div
+                className="iot--image-gallery-modal__search-list-view-container"
+              >
+                <div
+                  aria-labelledby="iot--image-gallery-modal--search-search"
+                  className="bx--search bx--search--xl bx--search--light"
+                  role="search"
                 >
                   <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-assemblyline-title"
+                    className="bx--search-magnifier"
                   >
-                    <span>
-                      custom title assemblyline that is very long a and must be managed.
+                    <svg
+                      aria-hidden={true}
+                      className="bx--search-magnifier-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                      />
+                    </svg>
+                  </div>
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--image-gallery-modal--search"
+                    id="iot--image-gallery-modal--search-search"
+                  >
+                    
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="bx--search-input"
+                    data-testid="image-gallery-modal-search-input"
+                    id="iot--image-gallery-modal--search"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search image by file name"
+                    role="searchbox"
+                    type="text"
+                  />
+                  <button
+                    aria-label="Clear search input"
+                    className="bx--search-close bx--search-close--hidden"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  className="bx--content-switcher iot--image-gallery-modal__content-switcher"
+                  data-testid="image-gallery-modal-content-switcher"
+                  onChange={[Function]}
+                  role="tablist"
+                >
+                  <button
+                    aria-describedby={null}
+                    aria-pressed={null}
+                    className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="image-gallery-modal-grid-switch"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Grid
+                    </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Grid"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 4H6A2 2 0 004 6v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0012 4zm0 8H6V6h6zM26 4H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0026 4zm0 8H20V6h6zM12 18H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0012 18zm0 8H6V20h6zM26 18H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0026 18zm0 8H20V20h6z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    aria-pressed={null}
+                    className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="image-gallery-modal-list-switch"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      List
+                    </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      aria-label="List"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--image-gallery-modal__flex-wrapper"
+            >
+              <div
+                className="iot--image-gallery-modal__scroll-panel iot--image-gallery-modal__scroll-panel--grid"
+              >
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-assemblyline"
+                  id="assemblyline"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="assemblyline"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-assemblyline-title"
+                    >
+                      <span>
+                        custom title assemblyline that is very long a and must be managed.
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
       ad minim veniam.
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="assemblyline"
-                      data-testid="image-gallery-modal-assemblyline-image"
-                      src="assemblyline.jpg"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-assemblyline-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="assemblyline"
+                        data-testid="image-gallery-modal-assemblyline-image"
+                        src="assemblyline.jpg"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-assemblyline-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="floow_plan"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-floow_plan"
-                htmlFor="floow_plan"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-floow_plan"
+                  id="floow_plan"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-floow_plan-title"
-                  >
-                    <span>
-                      floow_plan
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="floow plan"
-                      data-testid="image-gallery-modal-floow_plan-image"
-                      src="floow_plan.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-floow_plan-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="manufacturing_plant"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-manufacturing_plant"
-                htmlFor="manufacturing_plant"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="floow_plan"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-manufacturing_plant-title"
-                  >
-                    <span>
-                      Manufacturing_plant
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="manufacturing plant"
-                      data-testid="image-gallery-modal-manufacturing_plant-image"
-                      src="Manufacturing_plant.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-manufacturing_plant-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-floow_plan-title"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="robot_arm"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-robot_arm"
-                htmlFor="robot_arm"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-robot_arm-title"
-                  >
-                    <span>
-                      robot_arm
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="robot arm"
-                      data-testid="image-gallery-modal-robot_arm-image"
-                      src="robot_arm.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-robot_arm-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      <span>
+                        floow_plan
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="floow plan"
+                        data-testid="image-gallery-modal-floow_plan-image"
+                        src="floow_plan.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-floow_plan-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="tankmodal"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-tankmodal"
-                htmlFor="tankmodal"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-manufacturing_plant"
+                  id="manufacturing_plant"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-tankmodal-title"
-                  >
-                    <span>
-                      tankmodal
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="tankmodal"
-                      data-testid="image-gallery-modal-tankmodal-image"
-                      src="tankmodal.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-tankmodal-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="turbines"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-turbines"
-                htmlFor="turbines"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="manufacturing_plant"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-turbines-title"
-                  >
-                    <span>
-                      turbines
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="turbines"
-                      data-testid="image-gallery-modal-turbines-image"
-                      src="turbines.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-turbines-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-manufacturing_plant-title"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="extra-wide-image"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-extra-wide-image"
-                htmlFor="extra-wide-image"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-extra-wide-image-title"
-                  >
-                    <span>
-                      extra-wide-image
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="extra wide image"
-                      data-testid="image-gallery-modal-extra-wide-image-image"
-                      src="extra-wide-image.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-extra-wide-image-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      <span>
+                        Manufacturing_plant
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="manufacturing plant"
+                        data-testid="image-gallery-modal-manufacturing_plant-image"
+                        src="Manufacturing_plant.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-manufacturing_plant-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="large"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-large"
-                htmlFor="large"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-robot_arm"
+                  id="robot_arm"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-large-title"
-                  >
-                    <span>
-                      large
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="large image"
-                      data-testid="image-gallery-modal-large-image"
-                      src="large.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-large-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="large_portrait"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-large_portrait"
-                htmlFor="large_portrait"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="robot_arm"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-large_portrait-title"
-                  >
-                    <span>
-                      large_portrait
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="large image portrait"
-                      data-testid="image-gallery-modal-large_portrait-image"
-                      src="large_portrait.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-large_portrait-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-robot_arm-title"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <span>
+                        robot_arm
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="robot arm"
+                        data-testid="image-gallery-modal-robot_arm-image"
+                        src="robot_arm.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-robot_arm-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-tankmodal"
+                  id="tankmodal"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="tankmodal"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-tankmodal-title"
+                    >
+                      <span>
+                        tankmodal
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="tankmodal"
+                        data-testid="image-gallery-modal-tankmodal-image"
+                        src="tankmodal.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-tankmodal-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-turbines"
+                  id="turbines"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="turbines"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-turbines-title"
+                    >
+                      <span>
+                        turbines
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="turbines"
+                        data-testid="image-gallery-modal-turbines-image"
+                        src="turbines.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-turbines-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-extra-wide-image"
+                  id="extra-wide-image"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="extra-wide-image"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-extra-wide-image-title"
+                    >
+                      <span>
+                        extra-wide-image
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="extra wide image"
+                        data-testid="image-gallery-modal-extra-wide-image-image"
+                        src="extra-wide-image.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-extra-wide-image-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-large"
+                  id="large"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="large"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-large-title"
+                    >
+                      <span>
+                        large
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="large image"
+                        data-testid="image-gallery-modal-large-image"
+                        src="large.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-large-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-large_portrait"
+                  id="large_portrait"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="large_portrait"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-large_portrait-title"
+                    >
+                      <span>
+                        large_portrait
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="large image portrait"
+                        data-testid="image-gallery-modal-large_portrait-image"
+                        src="large_portrait.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-large_portrait-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
+          <div
+            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="image-gallery-modal-modal-secondary-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="image-gallery-modal-modal-primary-button"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Select
+            </button>
+          </div>
         </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        <button
+          className="bx--visually-hidden"
+          type="button"
         >
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="image-gallery-modal-modal-secondary-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-            data-testid="image-gallery-modal-modal-primary-button"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Select
-          </button>
-        </div>
+          Focus sentinel
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
     </div>
   </div>
 </div>
@@ -1193,6 +1160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
 >
   <div>
     <div
+      aria-hidden={false}
       className="bx--modal is-visible iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="image-gallery-modal"
@@ -1204,1171 +1172,1137 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       open={true}
       role="presentation"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
       <div
         aria-label="New image card"
         aria-modal="true"
         className="bx--modal-container"
         role="dialog"
       >
-        <div
-          className="bx--modal-header"
+        <button
+          className="bx--visually-hidden"
+          type="button"
         >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
-          >
-            New image card
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Image gallery
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
+          Focus sentinel
+        </button>
         <div
-          className="bx--modal-content"
-          style={
-            Object {
-              "maxHeight": "calc(100vh - 0px)",
-            }
-          }
+          className="bx--modal-container-body"
         >
           <div
-            className="iot--image-gallery-modal__top-section"
+            className="bx--modal-header"
           >
-            <p
-              alt="Select the image that you want to display on this card."
-              className="iot--image-gallery-modal__instruction-text"
+            <h2
+              className="bx--modal-header__label bx--type-delta"
             >
-              Select the image that you want to display on this card.
-            </p>
-            <div
-              className="iot--image-gallery-modal__search-list-view-container"
+              New image card
+            </h2>
+            <h3
+              className="bx--modal-header__heading bx--type-beta"
             >
-              <div
-                aria-labelledby="iot--image-gallery-modal--search-search"
-                className="bx--search bx--search--xl bx--search--light"
-                role="search"
+              Image gallery
+            </h3>
+            <button
+              aria-label="Close"
+              className="bx--modal-close"
+              onClick={[Function]}
+              title="Close"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--modal-close__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div
-                  className="bx--search-magnifier"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                </div>
-                <label
-                  className="bx--label"
-                  htmlFor="iot--image-gallery-modal--search"
-                  id="iot--image-gallery-modal--search-search"
-                >
-                  
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  data-testid="image-gallery-modal-search-input"
-                  id="iot--image-gallery-modal--search"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Search image by file name"
-                  role="searchbox"
-                  type="text"
+                <path
+                  d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                 />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                className="bx--content-switcher iot--image-gallery-modal__content-switcher"
-                data-testid="image-gallery-modal-content-switcher"
-                onChange={[Function]}
-                role="tablist"
-              >
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                  data-testid="image-gallery-modal-grid-switch"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    className="bx--assistive-text"
-                    onMouseEnter={[Function]}
-                  >
-                    Grid
-                  </div>
-                  <span
-                    className="iot--icon-switch__divider"
-                  />
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Grid"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 4H6A2 2 0 004 6v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0012 4zm0 8H6V6h6zM26 4H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0026 4zm0 8H20V6h6zM12 18H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0012 18zm0 8H6V20h6zM26 18H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0026 18zm0 8H20V20h6z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                  data-testid="image-gallery-modal-list-switch"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    className="bx--assistive-text"
-                    onMouseEnter={[Function]}
-                  >
-                    List
-                  </div>
-                  <span
-                    className="iot--icon-switch__divider"
-                  />
-                  <svg
-                    aria-hidden="true"
-                    aria-label="List"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+              </svg>
+            </button>
           </div>
           <div
-            className="iot--image-gallery-modal__flex-wrapper"
+            className="bx--modal-content"
+            style={
+              Object {
+                "maxHeight": "calc(100vh - 0px)",
+              }
+            }
           >
             <div
-              className="iot--image-gallery-modal__scroll-panel iot--image-gallery-modal__scroll-panel--grid"
+              className="iot--image-gallery-modal__top-section"
             >
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="assemblyline"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-assemblyline"
-                htmlFor="assemblyline"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
+              <p
+                alt="Select the image that you want to display on this card."
+                className="iot--image-gallery-modal__instruction-text"
               >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
+                Select the image that you want to display on this card.
+              </p>
+              <div
+                className="iot--image-gallery-modal__search-list-view-container"
+              >
+                <div
+                  aria-labelledby="iot--image-gallery-modal--search-search"
+                  className="bx--search bx--search--xl bx--search--light"
+                  role="search"
                 >
                   <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-assemblyline-title"
+                    className="bx--search-magnifier"
                   >
-                    <span>
-                      custom title assemblyline that is very long a and must be managed.
+                    <svg
+                      aria-hidden={true}
+                      className="bx--search-magnifier-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                      />
+                    </svg>
+                  </div>
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--image-gallery-modal--search"
+                    id="iot--image-gallery-modal--search-search"
+                  >
+                    
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="bx--search-input"
+                    data-testid="image-gallery-modal-search-input"
+                    id="iot--image-gallery-modal--search"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search image by file name"
+                    role="searchbox"
+                    type="text"
+                  />
+                  <button
+                    aria-label="Clear search input"
+                    className="bx--search-close bx--search-close--hidden"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  className="bx--content-switcher iot--image-gallery-modal__content-switcher"
+                  data-testid="image-gallery-modal-content-switcher"
+                  onChange={[Function]}
+                  role="tablist"
+                >
+                  <button
+                    aria-describedby={null}
+                    aria-pressed={null}
+                    className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="image-gallery-modal-grid-switch"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Grid
+                    </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Grid"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 4H6A2 2 0 004 6v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0012 4zm0 8H6V6h6zM26 4H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6A2 2 0 0026 4zm0 8H20V6h6zM12 18H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0012 18zm0 8H6V20h6zM26 18H20a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V20A2 2 0 0026 18zm0 8H20V20h6z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    aria-pressed={null}
+                    className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    data-testid="image-gallery-modal-list-switch"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      List
+                    </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      aria-label="List"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--image-gallery-modal__flex-wrapper"
+            >
+              <div
+                className="iot--image-gallery-modal__scroll-panel iot--image-gallery-modal__scroll-panel--grid"
+              >
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-assemblyline"
+                  id="assemblyline"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="assemblyline"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-assemblyline-title"
+                    >
+                      <span>
+                        custom title assemblyline that is very long a and must be managed.
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
       ad minim veniam.
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="assemblyline"
-                      data-testid="image-gallery-modal-assemblyline-image"
-                      src="assemblyline.jpg"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-assemblyline-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="assemblyline"
+                        data-testid="image-gallery-modal-assemblyline-image"
+                        src="assemblyline.jpg"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-assemblyline-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="floow_plan"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-floow_plan"
-                htmlFor="floow_plan"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-floow_plan"
+                  id="floow_plan"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-floow_plan-title"
-                  >
-                    <span>
-                      floow_plan
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="floow plan"
-                      data-testid="image-gallery-modal-floow_plan-image"
-                      src="floow_plan.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-floow_plan-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="manufacturing_plant"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-manufacturing_plant"
-                htmlFor="manufacturing_plant"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="floow_plan"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-manufacturing_plant-title"
-                  >
-                    <span>
-                      Manufacturing_plant
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="manufacturing plant"
-                      data-testid="image-gallery-modal-manufacturing_plant-image"
-                      src="Manufacturing_plant.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-manufacturing_plant-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-floow_plan-title"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="robot_arm"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-robot_arm"
-                htmlFor="robot_arm"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-robot_arm-title"
-                  >
-                    <span>
-                      robot_arm
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="robot arm"
-                      data-testid="image-gallery-modal-robot_arm-image"
-                      src="robot_arm.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-robot_arm-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      <span>
+                        floow_plan
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="floow plan"
+                        data-testid="image-gallery-modal-floow_plan-image"
+                        src="floow_plan.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-floow_plan-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="tankmodal"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-tankmodal"
-                htmlFor="tankmodal"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-manufacturing_plant"
+                  id="manufacturing_plant"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-tankmodal-title"
-                  >
-                    <span>
-                      tankmodal
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="tankmodal"
-                      data-testid="image-gallery-modal-tankmodal-image"
-                      src="tankmodal.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-tankmodal-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="turbines"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-turbines"
-                htmlFor="turbines"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="manufacturing_plant"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-turbines-title"
-                  >
-                    <span>
-                      turbines
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="turbines"
-                      data-testid="image-gallery-modal-turbines-image"
-                      src="turbines.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-turbines-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-manufacturing_plant-title"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="extra-wide-image"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-extra-wide-image"
-                htmlFor="extra-wide-image"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-extra-wide-image-title"
-                  >
-                    <span>
-                      extra-wide-image
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="extra wide image"
-                      data-testid="image-gallery-modal-extra-wide-image-image"
-                      src="extra-wide-image.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-extra-wide-image-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                      <span>
+                        Manufacturing_plant
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <img
+                        alt="manufacturing plant"
+                        data-testid="image-gallery-modal-manufacturing_plant-image"
+                        src="Manufacturing_plant.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-manufacturing_plant-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="large"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-large"
-                htmlFor="large"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-robot_arm"
+                  id="robot_arm"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-large-title"
-                  >
-                    <span>
-                      large
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="large image"
-                      data-testid="image-gallery-modal-large-image"
-                      src="large.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-large-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        className="bx--assistive-text"
-                        onMouseEnter={[Function]}
-                      >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
-              <input
-                checked={false}
-                className="bx--tile-input"
-                id="large_portrait"
-                onChange={[Function]}
-                tabIndex={-1}
-                title="title"
-                type="checkbox"
-                value="value"
-              />
-              <label
-                className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
-                data-testid="image-gallery-modal-large_portrait"
-                htmlFor="large_portrait"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--tile__checkmark bx--tile__checkmark--persistent"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="robot_arm"
                   >
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  className="bx--tile-content"
-                >
-                  <div
-                    className="iot--image-tile__title"
-                    data-testid="image-gallery-modal-large_portrait-title"
-                  >
-                    <span>
-                      large_portrait
-                    </span>
-                  </div>
-                  <div
-                    className="iot--image-tile__image-container"
-                  >
-                    <img
-                      alt="large image portrait"
-                      data-testid="image-gallery-modal-large_portrait-image"
-                      src="large_portrait.png"
-                    />
-                    <button
-                      aria-describedby={null}
-                      className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                      data-testid="image-gallery-modal-large_portrait-delete-button"
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-robot_arm-title"
                     >
-                      <div
-                        className="bx--assistive-text"
+                      <span>
+                        robot_arm
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="robot arm"
+                        data-testid="image-gallery-modal-robot_arm-image"
+                        src="robot_arm.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-robot_arm-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
                         onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        Delete
-                      </div>
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Delete"
-                        className="bx--btn__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-tankmodal"
+                  id="tankmodal"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="tankmodal"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-tankmodal-title"
+                    >
+                      <span>
+                        tankmodal
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="tankmodal"
+                        data-testid="image-gallery-modal-tankmodal-image"
+                        src="tankmodal.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-tankmodal-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <path
-                          d="M12 12H14V24H12zM18 12H20V24H18z"
-                        />
-                        <path
-                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </span>
-              </label>
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-turbines"
+                  id="turbines"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="turbines"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-turbines-title"
+                    >
+                      <span>
+                        turbines
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="turbines"
+                        data-testid="image-gallery-modal-turbines-image"
+                        src="turbines.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-turbines-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-extra-wide-image"
+                  id="extra-wide-image"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="extra-wide-image"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-extra-wide-image-title"
+                    >
+                      <span>
+                        extra-wide-image
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="extra wide image"
+                        data-testid="image-gallery-modal-extra-wide-image-image"
+                        src="extra-wide-image.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-extra-wide-image-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-large"
+                  id="large"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="large"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-large-title"
+                    >
+                      <span>
+                        large
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="large image"
+                        data-testid="image-gallery-modal-large-image"
+                        src="large.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-large-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div
+                  aria-checked={false}
+                  className="bx--tile bx--tile--selectable bx--tile--light iot--image-tile"
+                  data-testid="image-gallery-modal-large_portrait"
+                  id="large_portrait"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="checkbox"
+                  tabIndex={0}
+                  title="title"
+                  value="value"
+                >
+                  <span
+                    className="bx--tile__checkmark bx--tile__checkmark--persistent"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+                      />
+                    </svg>
+                  </span>
+                  <label
+                    className="bx--tile-content"
+                    htmlFor="large_portrait"
+                  >
+                    <div
+                      className="iot--image-tile__title"
+                      data-testid="image-gallery-modal-large_portrait-title"
+                    >
+                      <span>
+                        large_portrait
+                      </span>
+                    </div>
+                    <div
+                      className="iot--image-tile__image-container"
+                    >
+                      <img
+                        alt="large image portrait"
+                        data-testid="image-gallery-modal-large_portrait-image"
+                        src="large_portrait.png"
+                      />
+                      <button
+                        aria-describedby={null}
+                        className="iot--image-tile__title__delete iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        data-testid="image-gallery-modal-large_portrait-delete-button"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Delete
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Delete"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                          />
+                          <path
+                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
+          <div
+            className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="image-gallery-modal-modal-secondary-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+              data-testid="image-gallery-modal-modal-primary-button"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Select
+            </button>
+          </div>
         </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        <button
+          className="bx--visually-hidden"
+          type="button"
         >
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="image-gallery-modal-modal-secondary-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-            data-testid="image-gallery-modal-modal-primary-button"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Select
-          </button>
-        </div>
+          Focus sentinel
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
     </div>
   </div>
 </div>

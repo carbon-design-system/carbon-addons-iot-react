@@ -95,7 +95,7 @@ describe('ComposedModal', () => {
 
   it('should render a loading message when isFetchingData is true', () => {
     render(<ComposedModal {...modalProps} isFetchingData />);
-    expect(screen.getByLabelText('Active loading indicator')).toBeInTheDocument();
+    expect(screen.getAllByText('Active loading indicator')[0]).toBeInTheDocument();
   });
 
   it('should show a help text if defined', () => {

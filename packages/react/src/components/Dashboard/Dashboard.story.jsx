@@ -571,7 +571,7 @@ export const I18NLabels = () => {
           monthlyLabel: text('monthlyLabel', 'Monthly'),
           overflowMenuDescription: text(
             'overflowMenuDescription',
-            'open and close list of options'
+            'Open and close list of options'
           ),
           // card actions
           expandLabel: text('expandLabel', 'Expand to fullscreen'),
@@ -1437,8 +1437,7 @@ export const WithCustomCards = () => {
                   {
                     id: 'row-9',
                     value: 'Explore entity metrics in the data lake',
-                    link:
-                      'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
+                    link: 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
                     extraContent: (
                       <span>
                         View your device data in the entity view of the main Watson IoT Platform
@@ -1450,8 +1449,7 @@ export const WithCustomCards = () => {
                   {
                     id: 'row-10',
                     value: 'Perform simple calculations on your entity metrics',
-                    link:
-                      'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
+                    link: 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
                     extraContent: (
                       <span>
                         Process your entity metrics by running simple or complex calculations to
@@ -1462,8 +1460,7 @@ export const WithCustomCards = () => {
                   {
                     id: 'row-11',
                     value: 'View entity metrics in a monitoring dashboard',
-                    link:
-                      'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
+                    link: 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
                     extraContent: (
                       <span>
                         Visualize your entity metrics in monitoring dashboards to get an overview of

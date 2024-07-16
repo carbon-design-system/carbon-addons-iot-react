@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { act, render, screen, within } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { Share16, Star16, TrashCan16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
@@ -155,9 +155,7 @@ describe('The RuleBuilder', () => {
 
     expect(screen.getByTestId('rule-builder')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Save' })).toBeInTheDocument();
-    // one for edit modal, read modal, and main page cancel
-    expect(screen.getAllByRole('button', { name: 'Cancel' })).toHaveLength(3);
-    expect(screen.getAllByRole('button', { name: 'Cancel' })[0]).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Preview results' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Apply' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Share' })).toBeInTheDocument();
@@ -544,11 +542,7 @@ describe('The RuleBuilder', () => {
       filterTitleText: 'A Test Filter',
     });
 
-    userEvent.click(
-      within(screen.getByLabelText('Clear Filter first-tag')).getByRole('button', {
-        title: 'Clear Filter',
-      })
-    );
+    userEvent.click(screen.getByLabelText('first-tag'));
 
     userEvent.click(saveButton);
     expect(handleSave).toHaveBeenCalledWith({
