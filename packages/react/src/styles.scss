@@ -33,6 +33,7 @@
 @use 'components/FlyoutMenu/flyout-menu' as *;
 @use 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab' as *;
 @use 'components/HotspotEditorModal/hotspot-editor-modal' as *;
+@use 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab' as *;
 @use 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker' as *;
 @use 'components/SimpleIconDropdown/simple-icon-dropdown' as *;
 @use 'components/RuleBuilder/rule-builder' as *;

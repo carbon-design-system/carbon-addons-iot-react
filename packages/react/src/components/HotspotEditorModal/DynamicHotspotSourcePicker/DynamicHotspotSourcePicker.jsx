@@ -119,7 +119,7 @@ const DynamicHotspotSourcePicker = ({
         })}
         kind="ghost"
         size="sm"
-        renderIcon={(props) => <Erase size={32} {...props} />}
+        renderIcon={(props) => <Erase size={16} {...props} />}
         iconDescription={clearIconDescription}
         tooltipPosition="top"
         tooltipAlignment="end"

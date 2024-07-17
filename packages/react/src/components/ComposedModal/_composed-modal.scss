@@ -16,10 +16,10 @@
     z-index: 10000;
   }
 
-  .#{$prefix}--tooltip {
-    // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
-    z-index: 10000;
-  }
+  // .#{$prefix}--tooltip {
+  //   // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
+  //   z-index: 10000;
+  // }
 
   /* support large modals for ll the sizes */
   &.#{$iot-prefix}--composed-modal--large {

@@ -70,6 +70,10 @@
         width: 8.5rem;
         padding-right: $spacing-07;
       }
+
+      .#{$prefix}--time-picker__error__icon {
+        inset-inline-end: 2rem;
+      }
     }
     .#{$iot-prefix}--time-picker__controls {
       left: 6.7rem;

@@ -249,7 +249,7 @@ const ThresholdsFormItem = ({
               </div>
               <Button
                 hasIconOnly
-                renderIcon={(props) => <TrashCan size={32} {...props} />}
+                renderIcon={(props) => <TrashCan size={24} {...props} />}
                 kind="ghost"
                 onClick={() => {
                   const thresholdIndex = thresholds.findIndex((item) => item.id === threshold.id);
