@@ -158,3 +158,18 @@
     }
   }
 }
+
+.#{$iot-prefix}--icon-dropdown__selection-buttons .#{$prefix}--list-box__menu-item {
+  display: inline-flex;
+  height: -webkit-min-content;
+  height: 48px;
+  width: 48px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.#{$iot-prefix}--icon-dropdown__selection-buttons
+  .#{$prefix}--list-box__menu-item
+  .#{$prefix}--list-box__menu-item__option {
+  border-top-color: transparent;
+}

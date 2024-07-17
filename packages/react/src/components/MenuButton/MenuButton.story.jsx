@@ -21,7 +21,7 @@ export const menuItems = [
     <MenuItemRadioGroup
       label="Shared with"
       items={['None', 'Product Team', 'Organization', 'Company']}
-      initialSelectedItem="None"
+      selectedItem="None"
       onChange={action('Share')}
     />
   </MenuItem>,
