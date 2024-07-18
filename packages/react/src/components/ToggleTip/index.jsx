@@ -11,6 +11,7 @@ import { Information } from '@carbon/icons-react';
 
 export const ToggleTip = ({
   triggerText,
+  triggerBtn,
   direction,
   align,
   renderIcon: IconCustomElement,
@@ -51,17 +52,19 @@ export const ToggleTip = ({
     <>
       {showIcon ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
-        <ToggletipButton>
-          {showIcon ? (
-            IconCustomElement ? (
-              <IconCustomElement />
+        {triggerBtn ?? (
+          <ToggletipButton>
+            {showIcon ? (
+              IconCustomElement ? (
+                <IconCustomElement />
+              ) : (
+                <Information />
+              )
             ) : (
-              <Information />
-            )
-          ) : (
-            <ToggletipLabel>{triggerText}</ToggletipLabel>
-          )}
-        </ToggletipButton>
+              <ToggletipLabel>{triggerText}</ToggletipLabel>
+            )}
+          </ToggletipButton>
+        )}
         <ToggletipContent>
           {content}
           <ToggletipActions>{action}</ToggletipActions>
@@ -74,6 +77,7 @@ export const ToggleTip = ({
 ToggleTip.propTypes = {
   ...ToggleTip.propTypes,
   triggerText: PropTypes.string,
+  triggerBtn: PropTypes.node,
   direction: PropTypes.string,
   renderIcon: PropTypes.node,
   content: PropTypes.node,
