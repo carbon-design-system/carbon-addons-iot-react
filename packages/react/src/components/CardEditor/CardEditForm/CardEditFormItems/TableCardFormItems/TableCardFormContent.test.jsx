@@ -159,7 +159,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('validDataItem')).toBeDefined();
     expect(screen.queryByText('inValidDataItem')).toBeNull();
   });
-  it('selecting dimensions shows clear button', () => {
+  it('selecting dimensions should call onChange', () => {
     const mockOnChange = jest.fn();
     render(<TableCardFormContent {...commonProps} onChange={mockOnChange} />);
     expect(mockOnChange).not.toHaveBeenCalled();
@@ -167,8 +167,6 @@ describe('TableCardFormContent', () => {
     fireEvent.click(screen.getByLabelText(/Select dim/));
     expect(screen.queryByText('manufacturer')).toBeDefined();
     fireEvent.click(screen.queryByText('manufacturer'));
-    // the selection state of the box should be updated
-    expect(screen.getByLabelText('Clear selection')).toBeTruthy();
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,

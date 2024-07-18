@@ -492,6 +492,10 @@ export const formatAttributes = (selectedItems, cardConfig) => {
   return attributes;
 };
 
+export const dimensionFilterFun = (col) =>
+  col.dataItemType === 'DIMENSION' ||
+  (col.destination === 'groupBy' && col.dataSourceId === 'deviceid'); // For manually added deviceId dimension
+
 /**
  * determines how to format the dataSection based on card type
  * @param {array} selectedItems
@@ -527,25 +531,7 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE: {
-      const columns = Array.isArray(content?.columns)
-        ? content.columns.map((column) => {
-            // find if the column is grouped by
-            const groupByColumn = selectedItems.find(
-              (el) => el.dataSourceId === column.dataSourceId
-            );
-            // if data item is already added to table but no destination: groupby, add it
-            if (groupByColumn && column.destination !== 'groupBy') {
-              return { ...column, destination: 'groupBy' };
-            }
-            // if data item is not selected but has destination: groupBy, remove it
-            if (!groupByColumn && column.destination === 'groupBy') {
-              const { destination: _, ...rest } = column;
-              return { ...rest };
-            }
-            // else, nothing to change
-            return column;
-          })
-        : [];
+      const columns = Array.isArray(content?.columns) ? content.columns : [];
 
       // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
       const existingAttributeColumns = columns.filter(
@@ -567,10 +553,10 @@ export const handleDataSeriesChange = (
         sort: 'DESC',
       };
 
-      const existingDimensionColumns = columns.filter((col) => col.dataItemType === 'DIMENSION');
+      const existingDimensionColumns = columns.filter(dimensionFilterFun);
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems.filter((col) => col.dataItemType === 'DIMENSION');
+      const dimensionColumns = selectedItems.filter(dimensionFilterFun);
       const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
 
       // for raw table cards, the dimensions columns go in the attributes section
