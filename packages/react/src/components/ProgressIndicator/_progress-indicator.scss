@@ -21,6 +21,7 @@
       top: convert.to-rem(11px);
       left: $spacing-06;
 
+      /* stylelint-disable scss/at-extend-no-missing-placeholder */
       &--complete {
         @extend .#{$iot-prefix}--progress-step-line;
         background-color: $button-primary;

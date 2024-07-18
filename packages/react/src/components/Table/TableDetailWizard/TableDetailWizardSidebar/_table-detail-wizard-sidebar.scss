@@ -12,6 +12,6 @@
   }
 
   .#{$iot-prefix}--progress-indicator {
-    padding: $spacing-05 $spacing-05 $spacing-05 4rem; /* stylelint-disable-line declaration-property-unit-blacklist */
+    padding: $spacing-05 $spacing-05 $spacing-05 4rem; /* stylelint-disable-line declaration-property-unit-disallowed-list */
   }
 }

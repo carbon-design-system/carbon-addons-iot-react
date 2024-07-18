@@ -31,7 +31,7 @@
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn lint:javascript && yarn lint:stylelint",
     "lint:javascript": "eslint --ext .jsx --ext .js .",
-    "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore --custom-formatter ./config/stylelint/sassMsgFormatter.js",
+    "lint:stylelint": "stylelint './src/**/*.scss' --ignorePath .gitignore  --custom-formatter ./config/stylelint/sassMsgFormatter.js",
     "pre-commit": "yarn svg-convert && yarn lint-staged",
     "pre-push": "yarn reports:clean && yarn test:base && yarn test:e2e && yarn reports",
     "postinstall": "ibmtelemetry --config=telemetry.yml",
@@ -68,7 +68,16 @@
       "stylelint-scss"
     ],
     "rules": {
-      "declaration-property-unit-blacklist": [
+      "no-invalid-position-at-import-rule": [
+        true,
+        {
+          "ignoreAtRules": [
+            "use",
+            "forward"
+          ]
+        }
+      ],
+      "declaration-property-unit-disallowed-list": [
         {
           "font-size": [
             "em",
@@ -92,7 +101,7 @@
           "severity": "error"
         }
       ],
-      "declaration-property-value-blacklist": [
+      "declaration-property-value-disallowed-list": [
         {
           "color": [
             "/^#/",
@@ -324,9 +333,9 @@
     "storybook-addon-rtl": "^1.0.0",
     "storybook-addon-turbo-build": "^1.0.1",
     "style-loader": "^3.0.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-scss": "^3.10.0",
+    "stylelint": "^16.6.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.4.1",
     "webpack": "^5.92.0",
     "webpack-dev-server": "^4.15.0",
     "whatwg-fetch": "^3.0.0"

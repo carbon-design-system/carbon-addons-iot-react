@@ -2,12 +2,10 @@ import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash-es';
 import update from 'immutability-helper';
+import { RadioButton, RadioButtonGroup, Toggle } from '@carbon/react';
 
 import { settings } from '../../../../../constants/Settings';
-import { Toggle } from '@carbon/react';
 import { Dropdown } from '../../../../Dropdown';
-import { RadioButton } from '@carbon/react';
-import { RadioButtonGroup } from '@carbon/react';
 import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;

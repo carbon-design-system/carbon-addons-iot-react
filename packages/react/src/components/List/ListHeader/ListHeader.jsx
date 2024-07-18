@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-
 import { Search } from '@carbon/react';
+
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 

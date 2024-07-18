@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Checkbox, Modal, Search } from '@carbon/react';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
-import { Checkbox } from '@carbon/react';
-import { Modal } from '@carbon/react';
-import { Search } from '@carbon/react';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import { SimplePaginationPropTypes } from '../../SimplePagination/SimplePagination';

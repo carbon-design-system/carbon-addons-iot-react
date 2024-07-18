@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { RadioButtonGroup, RadioButton, FormGroup, TextInput } from '@carbon/react';
 
 import { settings } from '../../../../../constants/Settings';
-import { RadioButtonGroup } from '@carbon/react';
-import { RadioButton } from '@carbon/react';
-import { FormGroup } from '@carbon/react';
-import { TextInput } from '@carbon/react';
 
 const { iotPrefix } = settings;
 

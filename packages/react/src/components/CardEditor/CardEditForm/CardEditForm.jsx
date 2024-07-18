@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { Tabs, Tab } from '@carbon/react';
 
 import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab } from '@carbon/react';
 import {
   DashboardEditorActionsPropTypes,
   DataItemsPropTypes,

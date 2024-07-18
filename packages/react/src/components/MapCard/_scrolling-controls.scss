@@ -2,7 +2,7 @@
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/utilities/box-shadow' as *;
 .#{$iot-prefix}--map-scroll-controls {
   &__container {
     margin-bottom: 1rem;

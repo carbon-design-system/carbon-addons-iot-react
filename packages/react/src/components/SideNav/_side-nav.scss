@@ -156,7 +156,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   &.#{$prefix}--side-nav.#{$prefix}--side-nav--rail:not(.#{$prefix}--side-nav--fixed):hover {
-    // stylelint-disable-next-line declaration-property-unit-blacklist
+    // stylelint-disable-next-line declaration-property-unit-disallowed-list
     transition: width $duration-fast-01 motion(entrance, productive) 300ms;
   }
 }

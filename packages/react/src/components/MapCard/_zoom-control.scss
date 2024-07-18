@@ -1,7 +1,7 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '../../globals/vars' as *;
-@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/utilities/box-shadow' as *;
 .#{$iot-prefix}--map {
   &-zoom {
     position: relative;

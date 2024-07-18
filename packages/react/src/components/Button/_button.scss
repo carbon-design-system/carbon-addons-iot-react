@@ -68,7 +68,7 @@
 [dir='rtl'] {
   .#{$iot-prefix}--btn:not(.#{$prefix}--btn--icon-only) {
     text-align: right;
-    /* stylelint-disable-next-line declaration-property-unit-blacklist, copied from carbon and inverted */
+    /* stylelint-disable-next-line declaration-property-unit-disallowed-list, copied from carbon and inverted */
     padding: 0.875rem 15px 0.875rem 63px;
   }
 
