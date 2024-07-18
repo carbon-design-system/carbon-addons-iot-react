@@ -192,6 +192,55 @@ describe('TableCardFormContent', () => {
       dataSource: { groupBy: ['manufacturer'] },
     });
   });
+  it('un-selecting dimension should call onChange with removed dimension', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemType: 'DIMENSION',
+                destination: 'groupBy',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+          dataSource: { groupBy: ['manufacturer'] },
+        }}
+        onChange={mockOnChange}
+      />
+    );
+    expect(mockOnChange).not.toHaveBeenCalled();
+    // check for the temperature and pressure to be shown under data items
+    fireEvent.click(screen.getByRole('button', { name: /Select dim/ }));
+    expect(screen.queryByText('manufacturer')).toBeDefined();
+    fireEvent.click(screen.queryByText('manufacturer'));
+    // the callback for onChange should be called
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+      dataSource: {},
+    });
+  });
   it('edit mode with dataitems and dimension columns show work correctly', () => {
     render(
       <TableCardFormContent
