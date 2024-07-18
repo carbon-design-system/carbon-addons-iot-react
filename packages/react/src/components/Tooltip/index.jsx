@@ -12,12 +12,12 @@ export const getTooltipMenuOffset = () => {
 };
 
 export const Tooltip = ({
-  triggerText,
-  direction,
-  align,
+  triggerText = '',
+  direction = 'bottom',
+  align = 'center',
   renderIcon: IconCustomElement,
-  useAutoPositioning,
-  showIcon,
+  useAutoPositioning = false,
+  showIcon = true,
   children,
   ...other
 }) => {
@@ -74,20 +74,11 @@ export const Tooltip = ({
 
 Tooltip.propTypes = {
   ...Tooltip.propTypes,
-  triggerText: PropTypes.string,
+  triggerText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   direction: PropTypes.string,
   renderIcon: PropTypes.node,
   useAutoPositioning: PropTypes.bool,
   showIcon: PropTypes.bool,
-};
-
-Tooltip.defaultProps = {
-  ...Tooltip.defaultProps,
-  direction: 'bottom',
-  align: 'center',
-  triggerText: '',
-  useAutoPositioning: false,
-  showIcon: true,
 };
 
 export default Tooltip;

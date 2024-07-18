@@ -233,7 +233,7 @@ const HotspotTextStyleTab = ({
                 data-testid="hotspot-bold"
                 selected={bold}
                 text={boldLabelText}
-                renderIcon={TextBold}
+                renderIcon={() => <TextBold size="16" />}
                 index={0}
                 light={light}
               />
@@ -244,7 +244,7 @@ const HotspotTextStyleTab = ({
                 data-testid="hotspot-italic"
                 selected={italic}
                 text={italicLabelText}
-                renderIcon={TextItalic}
+                renderIcon={() => <TextItalic size="16" />}
                 index={1}
                 light={light}
               />
@@ -255,7 +255,7 @@ const HotspotTextStyleTab = ({
                 data-testid="hotspot-underline"
                 selected={underline}
                 text={underlineLabelText}
-                renderIcon={TextUnderline}
+                renderIcon={() => <TextUnderline size="16" />}
                 index={2}
                 light={light}
               />
@@ -285,7 +285,6 @@ const HotspotTextStyleTab = ({
                 max={maxFontSize}
                 value={fontSize}
                 step={1}
-                light={light}
                 label={fontSizeLabelText}
                 invalidText={fontSizeInvalidText}
                 onChange={(event) => {

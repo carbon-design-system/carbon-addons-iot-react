@@ -7,7 +7,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/utilities/box-shadow' as *;
 $cardPadding: $spacing-05;
 
 .#{$iot-prefix}--map {

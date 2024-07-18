@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ButtonKinds } from '@carbon/react';
-
-import { Link } from '@carbon/react';
+import { ButtonKinds, Link } from '@carbon/react';
 
 import Button from '../Button';
 import { settings } from '../../constants/Settings';

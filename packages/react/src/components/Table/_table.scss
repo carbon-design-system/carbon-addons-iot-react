@@ -11,7 +11,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/utilities/box-shadow' as *;
 @use '@carbon/react/scss/layer' as *;
 @use '../../globals/mixins' as *;
 @use '@carbon/react/scss/utilities/convert';
@@ -109,7 +109,7 @@ html[dir='rtl'] {
     justify-content: center;
     flex-direction: column;
     // 3rem since we can't multiply 1px * 3rem in calc
-    // stylelint-disable-next-line declaration-property-unit-blacklist
+    // stylelint-disable-next-line declaration-property-unit-disallowed-list
     padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
       margin: $spacing-05 $spacing-05 $spacing-05 0;

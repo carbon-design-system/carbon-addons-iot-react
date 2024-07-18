@@ -53,9 +53,14 @@
     flex-direction: column;
     padding: $spacing-05;
 
+    .#{$prefix}--tabs {
+      border-bottom: 2px solid #e0e0e0;
+    }
+
     .#{$prefix}--tab-content {
       flex: 1;
-      padding: 0;
+      padding-top: $spacing-06;
+      padding-right: $spacing-12;
     }
 
     .#{$prefix}--accordion {

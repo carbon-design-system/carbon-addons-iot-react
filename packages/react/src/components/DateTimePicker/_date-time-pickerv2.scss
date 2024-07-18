@@ -5,7 +5,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/components/button' as *;
-
+@use '@carbon/react/scss/components/date-picker' as *;
 // wraps the entire component
 .#{$iot-prefix}--date-time-pickerv2__wrapper {
   width: var(--wrapper-width);
@@ -155,6 +155,8 @@
       width: var(--wrapper-width);
       padding-top: $spacing-05;
       padding-bottom: $spacing-07;
+      padding-left: $spacing-05;
+      padding-right: $spacing-05;
     }
   }
 
@@ -190,6 +192,7 @@
       input {
         min-width: 8.5rem;
         padding-right: 0;
+        background: $field-02;
       }
     }
 
@@ -239,7 +242,7 @@
   }
 
   .#{$iot-prefix}--date-time-picker__listitem {
-    padding: $spacing-04 $spacing-02;
+    padding: $spacing-04 $spacing-04;
     cursor: pointer;
     border-left: 4px solid transparent;
     border-bottom: 1px solid $layer-accent-01;

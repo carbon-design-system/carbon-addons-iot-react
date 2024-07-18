@@ -224,6 +224,7 @@
 
       .page-title-bar--dynamic--during &,
       .page-title-bar--dynamic--after & {
+        /* stylelint-disable scss/operator-no-newline-after */
         transform: translateY(
           calc(
             var(--breadcrumb-scroll-distance) -

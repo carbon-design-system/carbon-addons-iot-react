@@ -5,7 +5,7 @@
 @use '@carbon/react/scss/motion' as *;
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/utilities/_box-shadow' as *;
+@use '@carbon/react/scss/utilities/box-shadow' as *;
 .#{$iot-prefix}--map {
   &-legend {
     max-width: 50%;

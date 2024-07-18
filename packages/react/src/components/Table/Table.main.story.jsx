@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
@@ -264,7 +264,6 @@ export const Playground = () => {
       numberOfRows,
     ]
   );
-
   const onRowLoadMore = (parentId) => {
     action('onRowLoadMore')(parentId);
     setTimeout(() => {
@@ -448,7 +447,7 @@ export const Playground = () => {
           useAutoTableLayoutForResize,
           wrapCellText,
           preserveCellWhiteSpace,
-          // hasRowActions,
+          hasRowActions,
           shouldLazyRender,
           hasRowEdit,
           hasSingleRowEdit,
@@ -1336,66 +1335,74 @@ WithSelectionAndBatchActions.parameters = {
 };
 
 export const WithInlineActions = () => {
-  const { selectedTableType, hasRowActions } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasRowActions'],
-    getDefaultValue: () => true,
-  });
-
-  const rowActions = [
-    objectWithSubstitution('Row actions for row-0 (data[0].rowActions)', [getDrillDownRowAction()]),
-    objectWithSubstitution('Row actions for row-1 (data[1].rowActions)', [
-      getDrillDownRowAction(),
-      getOverflowTextOnlyRowAction(),
-      getHiddenOverflowRowAction(),
-    ]),
-    objectWithSubstitution('Row actions for row-2 (data[2].rowActions)', [
-      getOverflowEditRowAction(),
-      getOverflowAddRowAction(),
-      getOverflowDeleteRowAction(),
-    ]),
-    objectWithSubstitution('Row actions for row-3 (data[3].rowActions)', [
-      getHiddenRowAction(),
-      getHiddenOverflowRowAction(),
-    ]),
-    null,
-    null,
-    null,
-    null,
-    null,
-    objectWithSubstitution('Row actions for row-9 (data[9].rowActions)', [
-      getOverflowEditRowAction(),
-      getOverflowAddRowAction(),
-      getOverflowDeleteRowAction(),
-    ]),
-  ];
-
-  const rowActionsState = object(
-    'State of the row actions (view.table.rowActions)',
-    getRowActionStates()
-  );
-
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const data = getTableData()
-    .slice(0, 10)
-    .map((row, index) => {
-      if (hasRowActions) {
-        return { ...row, rowActions: rowActions[index] ?? [] };
-      }
-      return row;
+  const WithInlineActionsTable = () => {
+    const { selectedTableType, hasRowActions } = getTableKnobs({
+      knobsToCreate: ['selectedTableType', 'hasRowActions'],
+      getDefaultValue: () => true,
     });
-  const columns = getTableColumns();
 
-  return (
-    <MyTable
-      actions={getTableActions()}
-      columns={columns}
-      data={data}
-      options={{
-        hasRowActions,
-      }}
-      view={{ table: { rowActions: rowActionsState } }}
-    />
-  );
+    const rowActions = [
+      objectWithSubstitution('Row actions for row-0 (data[0].rowActions)', [
+        getDrillDownRowAction(),
+      ]),
+      objectWithSubstitution('Row actions for row-1 (data[1].rowActions)', [
+        getDrillDownRowAction(),
+        getOverflowTextOnlyRowAction(),
+        getHiddenOverflowRowAction(),
+      ]),
+      objectWithSubstitution('Row actions for row-2 (data[2].rowActions)', [
+        getOverflowEditRowAction(),
+        getOverflowAddRowAction(),
+        getOverflowDeleteRowAction(),
+      ]),
+      objectWithSubstitution('Row actions for row-3 (data[3].rowActions)', [
+        getHiddenRowAction(),
+        getHiddenOverflowRowAction(),
+      ]),
+      null,
+      null,
+      null,
+      null,
+      null,
+      objectWithSubstitution('Row actions for row-9 (data[9].rowActions)', [
+        getOverflowEditRowAction(),
+        getOverflowAddRowAction(),
+        getOverflowDeleteRowAction(),
+      ]),
+    ];
+
+    const rowActionsState = object(
+      'State of the row actions (view.table.rowActions)',
+      getRowActionStates()
+    );
+
+    // const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+    const MyTable = useMemo(() => {
+      return selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+    }, [selectedTableType]);
+    const data = getTableData()
+      .slice(0, 10)
+      .map((row, index) => {
+        if (hasRowActions) {
+          return { ...row, rowActions: rowActions[index] ?? [] };
+        }
+        return row;
+      });
+    const columns = getTableColumns();
+
+    return (
+      <MyTable
+        // actions={getTableActions()}
+        columns={columns}
+        data={data}
+        options={{
+          hasRowActions,
+        }}
+        view={{ table: { rowActions: rowActionsState } }}
+      />
+    );
+  };
+  return <WithInlineActionsTable />;
 };
 WithInlineActions.storyName = 'With inline actions';
 WithInlineActions.parameters = {

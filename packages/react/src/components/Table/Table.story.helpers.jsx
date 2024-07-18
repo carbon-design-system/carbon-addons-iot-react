@@ -488,14 +488,14 @@ export const getTableDataWithEmptySelectFilter = () =>
 
 export const getDrillDownRowAction = () => ({
   id: 'drilldown',
-  renderIcon: <DrillDown size={16} />,
+  renderIcon: DrillDown,
   iconDescription: 'Drill in',
   labelText: 'Drill in to find out more after observing',
 });
 
 export const getOverflowEditRowAction = () => ({
   id: 'edit',
-  renderIcon: <Edit size={16} />,
+  renderIcon: Edit,
   labelText: 'Edit',
   isOverflow: true,
   iconDescription: 'Edit',
@@ -551,7 +551,6 @@ export const getRowActions = (index) =>
     getOverflowDeleteRowAction(),
     getOverflowTextOnlyRowAction(),
   ].filter((i) => i);
-
 export const addRowAction = (row, hasSingleRowEdit, index) => ({
   ...row,
   rowActions: getRowActions(index).map((rowAction) =>

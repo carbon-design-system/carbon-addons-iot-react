@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { CheckmarkFilled } from '@carbon/react/icons';
-import { settings } from 'carbon-components';
+// import { settings } from 'carbon-components';
 
 import {
   StructuredListWrapper,
@@ -20,7 +20,7 @@ import {
   StructuredListSkeleton,
 } from '.';
 
-const { prefix } = settings;
+const { prefix } = 'cds';
 
 export default {
   title: '3 - Carbon/StructuredList',

@@ -174,6 +174,7 @@ $shadow-blocker-border-width: convert.to-rem(1px);
     &.#{$iot-prefix}--menu-button--flip-y {
       .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--btn--ghost:focus:not(:active) {
         @function calculate-negative-middle($size) {
+          /* stylelint-disable scss/operator-no-newline-after */
           @return calc(
             (((#{$size} - #{$shadow-blocker-height}) * 0.5) + #{$shadow-blocker-border-width}) *
               (-1)
