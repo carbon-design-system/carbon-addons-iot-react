@@ -142,7 +142,7 @@ jobs:
   combine-reports:
     name: Combine Coverage Reports
     runs-on: ubuntu-latest
-    needs: [react-cypress-test, react-jest-test]
+    needs: [react-jest-test] #react-cypress-test
 
     steps:
       - name: Checkout code
@@ -186,7 +186,7 @@ jobs:
         if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
-          yarn reports
+          # yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
