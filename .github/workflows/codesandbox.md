@@ -18,7 +18,7 @@ options: --privileged
           apt-get install -y git/buster-backports
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - uses: dorny/paths-filter3
         id: changes
@@ -31,13 +31,13 @@ options: --privileged
         run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
           node-version: '20.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         if: steps.changes.outputs.react == 'true'
         with:
           path: |
@@ -46,7 +46,7 @@ options: --privileged
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Cache Cypress binary
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         if: steps.changes.outputs.react == 'true'
         with:
           path: ~/.cache/Cypress
