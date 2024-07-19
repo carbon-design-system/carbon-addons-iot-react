@@ -7,7 +7,7 @@ branches: - next
 jobs:
 update-v3:
 runs-on: ubuntu-latest
-steps: - uses: actions/checkout@v2
+steps: - uses: actions/checkout@v3
 with:
 ref: v3
 fetch-depth: 0
