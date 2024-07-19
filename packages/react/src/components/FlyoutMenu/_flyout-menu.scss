@@ -1,3 +1,4 @@
+// @import '~carbon-components/scss/globals/scss/helper-mixins'; // did not find any suitable style path, need to replace
 @use '../../globals/vars' as *;
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/layout' as *;
@@ -7,8 +8,6 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/components/popover' as *;
-
-// @import '~carbon-components/scss/globals/scss/helper-mixins'; // did not find any suitable style path, need to replace
 
 .#{$iot-prefix}--flyout-menu {
   $shadow-plus-padding: 1.4rem;
@@ -110,6 +109,11 @@
         transform: translateY(-100%) translateX(-100%);
         inset-block-start: 0;
         inset-inline-start: 100%;
+        [dir='rtl'] & {
+          transform: translateY(-100%);
+          inset-block-start: 0;
+          inset-inline-start: 0;
+        }
       }
     }
 
@@ -147,6 +151,60 @@
     }
     // Auto align
     &.#{$prefix}--popover--auto-align {
+      [dir='rtl'] & {
+        // Align button trigger when in RTL, since the popover content is aligned via direct style that can't be overritten
+        &.#{$prefix}--popover--bottom-start .#{$prefix}--popover {
+          transform: translateX(var(--cds-popover-offset));
+          .#{$prefix}--popover-content::after {
+            left: unset;
+            right: 0;
+            top: calc(-1 * var(--cds-popover-offset));
+          }
+        }
+        &.#{$prefix}--popover--bottom-end .#{$prefix}--popover {
+          transform: translateX(var(--cds-popover-offset));
+          .#{$prefix}--popover-content::after {
+            left: 0;
+            right: unset;
+            top: calc(-1 * var(--cds-popover-offset));
+          }
+        }
+        &.#{$prefix}--popover--top-start .#{$prefix}--popover {
+          transform: translateX(calc(-1 * var(--cds-popover-offset)));
+          .#{$prefix}--popover-content::after {
+            left: unset;
+            right: 0;
+            bottom: calc(-1 * var(--cds-popover-offset));
+          }
+        }
+        &.#{$prefix}--popover--top-end .#{$prefix}--popover {
+          transform: translateX(calc(-1 * var(--cds-popover-offset)));
+          .#{$prefix}--popover-content::after {
+            left: 0;
+            right: unset;
+            top: unset;
+            bottom: calc(-1 * var(--cds-popover-offset));
+          }
+        }
+        &.#{$prefix}--popover--right-start .#{$prefix}--popover {
+          transform: translateX(calc(-1 * var(--cds-popover-offset)));
+        }
+        &.#{$prefix}--popover--right-end .#{$prefix}--popover {
+          transform: translateX(calc(-1 * var(--cds-popover-offset)));
+          .#{$prefix}--popover-content::after {
+            left: calc(-1 * var(--cds-popover-offset));
+            right: unset;
+            top: unset;
+            bottom: 0;
+          }
+        }
+        &.#{$prefix}--popover--left-start .#{$prefix}--popover {
+          transform: translateX(var(--cds-popover-offset));
+        }
+        &.#{$prefix}--popover--left-end .#{$prefix}--popover {
+          transform: translateX(var(--cds-popover-offset));
+        }
+      }
       &.#{$prefix}--popover--caret.#{$prefix}--popover--open
         > .#{$prefix}--popover
         > .#{$prefix}--popover-content
@@ -243,6 +301,12 @@
       left: 0;
     }
 
+    &.#{$iot-prefix}--flyout-menu--body__bottom-start .#{$prefix}--popover-content::after {
+      left: unset;
+      right: 0;
+      top: -$shadow;
+    }
+
     &.#{$iot-prefix}--flyout-menu--body__bottom-end .#{$prefix}--popover-content::after {
       left: unset;
       right: 0;
@@ -253,6 +317,11 @@
       top: unset;
       bottom: -$shadow;
       left: 0;
+      [dir='rtl'] & {
+        bottom: -$shadow;
+        left: unset;
+        right: 0;
+      }
     }
 
     &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--popover-content::after {
@@ -278,6 +347,10 @@
       .#{$prefix}--popover-content::after {
       top: 0;
       left: -$shadow;
+      [dir='rtl'] & {
+        left: unset;
+        right: -$shadow;
+      }
     }
 
     &.#{$iot-prefix}--flyout-menu--body__right-end:not(.#{$prefix}--popover--auto-align)
@@ -294,12 +367,6 @@
       .#{$prefix}--popover-content::after {
         width: 3rem;
         height: $shadow;
-
-        // spacers between the button and tooltip are just a smidgen
-        // too short in RTL
-        [dir='rtl'] & {
-          width: 3.125rem;
-        }
       }
     }
 
