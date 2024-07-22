@@ -75,7 +75,9 @@ export const Normal = () => <NavigationBar {...navBarProps} />;
 
 Normal.storyName = 'normal';
 
-export const StartWithTab2Selected = () => <NavigationBar {...navBarProps} selected={1} />;
+export const StartWithTab2Selected = () => (
+  <NavigationBar {...navBarProps} defaultSelectedIndex={1} />
+);
 
 StartWithTab2Selected.storyName = 'start with tab 2 selected';
 
