@@ -50,7 +50,7 @@ export const ToggleTip = ({
   }
   return (
     <>
-      {showIcon ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
+      {showIcon && triggerText !== '' ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
         {triggerBtn ?? (
           <ToggletipButton>
