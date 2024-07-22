@@ -492,7 +492,7 @@ export const formatAttributes = (selectedItems, cardConfig) => {
   return attributes;
 };
 
-export const dimensionFilterFun = (col) =>
+export const dimensionFilterFunction = (col) =>
   col.dataItemType === 'DIMENSION' ||
   (col.destination === 'groupBy' && col.dataSourceId === 'deviceid'); // For manually added deviceId dimension
 
@@ -553,10 +553,10 @@ export const handleDataSeriesChange = (
         sort: 'DESC',
       };
 
-      const existingDimensionColumns = columns.filter(dimensionFilterFun);
+      const existingDimensionColumns = columns.filter(dimensionFilterFunction);
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems.filter(dimensionFilterFun);
+      const dimensionColumns = selectedItems.filter(dimensionFilterFunction);
       const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
 
       // for raw table cards, the dimensions columns go in the attributes section

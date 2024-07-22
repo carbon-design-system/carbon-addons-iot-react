@@ -10,7 +10,7 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
   DashboardEditorActionsPropTypes,
-  dimensionFilterFun,
+  dimensionFilterFunction,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -448,16 +448,16 @@ const TableCardFormContent = ({
             items={validDimensions}
             light
             onChange={({ selectedItems }) => {
-              // Add the new dimensions as dimension columns at the beginning of the table
-              const existingDimensionColumns = dataSection.filter(dimensionFilterFun);
+              const existingDimensionColumns = dataSection.filter(dimensionFilterFunction);
               if (existingDimensionColumns.length > selectedItems.length) {
                 const selectedDimensions = selectedItems.map((dimension) => dimension.text);
-                existingDimensionColumns.forEach((dimension) => {
-                  if (!selectedDimensions.includes(dimension.dataSourceId)) {
-                    handleRemoveButton(dimension);
-                  }
-                });
+                handleRemoveButton(
+                  existingDimensionColumns.find(
+                    (dimension) => !selectedDimensions.includes(dimension.dataSourceId)
+                  ) ?? {}
+                );
               } else {
+                // Add the new dimensions as dimension columns at the beginning of the table
                 const newCard = handleDataSeriesChange(
                   selectedItems.map((i) => ({
                     dataItemId: i.id,
@@ -470,7 +470,6 @@ const TableCardFormContent = ({
                   null,
                   null
                 );
-                // setSelectedDataItems(selectedItems.map(({ id }) => id));
                 onChange(newCard);
               }
             }}
