@@ -3,7 +3,17 @@ import { action } from '@storybook/addon-actions';
 import { select, text, boolean, number, withKnobs, optionsKnob } from '@storybook/addon-knobs';
 import { Add, TrashCan, SettingsAdjust, Warning } from '@carbon/react/icons';
 import { spacing05 } from '@carbon/layout';
-import { Tabs, Tab, Search, Select, SelectItem, InlineLoading } from '@carbon/react';
+import {
+  Tabs,
+  Tab,
+  Search,
+  Select,
+  SelectItem,
+  InlineLoading,
+  TabList,
+  TabPanels,
+  TabPanel,
+} from '@carbon/react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
@@ -30,7 +40,7 @@ export const commonPageTitleBarProps = {
       <Button
         className="some-right-content"
         size="md"
-        renderIcon={(props) => <Add size={24} {...props} />}
+        renderIcon={(props) => <Add {...props} />}
         onClick={action('click')}
       >
         Take an action
@@ -195,7 +205,7 @@ export const WithSelect = () => (
       extraContent={
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button
-            renderIcon={(props) => <SettingsAdjust size={24} {...props} />}
+            renderIcon={(props) => <SettingsAdjust {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -210,7 +220,7 @@ export const WithSelect = () => (
             <SelectItem value="option-4" text="Option 4" />
           </Select>
           <Button
-            renderIcon={(props) => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -220,7 +230,7 @@ export const WithSelect = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={(props) => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -257,7 +267,7 @@ export const WithEverything = () => (
       extraContent={
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button
-            renderIcon={(props) => <SettingsAdjust size={24} {...props} />}
+            renderIcon={(props) => <SettingsAdjust {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -274,7 +284,7 @@ export const WithEverything = () => (
             labelText="Search"
           />
           <Button
-            renderIcon={(props) => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -284,7 +294,7 @@ export const WithEverything = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={(props) => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -300,15 +310,22 @@ export const WithEverything = () => (
       }
       content={
         <Tabs style={{ marginLeft: '-16px', marginRight: '-16px' }}>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
+          <TabList>
+            <Tab>Tab 1</Tab>
+            <Tab>Tab 2</Tab>
+            <Tab>Tab 3</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <div>Content for first tab.</div>
+            </TabPanel>
+            <TabPanel>
+              <div>Content for second tab.</div>
+            </TabPanel>
+            <TabPanel>
+              <div>Content for third tab.</div>
+            </TabPanel>
+          </TabPanels>
         </Tabs>
       }
       onEdit={action('edit')}
@@ -396,7 +413,7 @@ export const WithDynamicScrolling = () => (
       extraContent={
         <div style={{ display: 'flex' }}>
           <Button
-            renderIcon={(props) => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -406,7 +423,7 @@ export const WithDynamicScrolling = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={(props) => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -459,7 +476,7 @@ export const WithDynamicScrollingAndTabs = () => (
       extraContent={
         <div style={{ display: 'flex' }}>
           <Button
-            renderIcon={(props) => <Add size={24} {...props} />}
+            renderIcon={(props) => <Add {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -469,7 +486,7 @@ export const WithDynamicScrollingAndTabs = () => (
             tooltipAlignment="center"
           />
           <Button
-            renderIcon={(props) => <TrashCan size={24} {...props} />}
+            renderIcon={(props) => <TrashCan {...props} />}
             onClick={action('click')}
             size="md"
             hasIconOnly
@@ -485,21 +502,28 @@ export const WithDynamicScrollingAndTabs = () => (
       }
       content={
         <Tabs>
-          <Tab label="Tab 1">
-            <div style={{ height: '100rem', marginTop: '-16px' }}>
-              <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div style={{ height: '100rem', marginTop: '-16px' }}>
-              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div style={{ height: '100rem', marginTop: '-16px' }}>
-              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-            </div>
-          </Tab>
+          <TabList>
+            <Tab>Tab 1</Tab>
+            <Tab>Tab 2</Tab>
+            <Tab>Tab 3</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div style={{ height: '100rem', marginTop: '-16px' }}>
+                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+              </div>
+            </TabPanel>
+          </TabPanels>
         </Tabs>
       }
       onEdit={action('edit')}

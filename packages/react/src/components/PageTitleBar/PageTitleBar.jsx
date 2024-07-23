@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { Information, Edit } from '@carbon/react/icons';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from '@carbon/react';
 import { throttle } from 'lodash-es';
+import { rgba } from '@carbon/colors';
+import { g10 } from '@carbon/themes';
 
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
@@ -351,6 +353,14 @@ const PageTitleBar = ({
         '--negative-header-offset': `-${headerOffsetCssVar}`,
         '--scroll-transition-progress':
           headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress,
+        '--page-title-bar-background': rgba(
+          g10.layer01,
+          headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress
+        ),
+        '--page-title-bar-border-bottom-color': rgba(
+          g10.layerAccent01,
+          headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress
+        ),
         ...style,
       }}
     >
