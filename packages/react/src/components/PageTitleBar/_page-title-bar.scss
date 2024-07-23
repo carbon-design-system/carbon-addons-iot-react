@@ -7,8 +7,8 @@
 @use '@carbon/react/scss/type' as *;
 @mixin condensed-style() {
   // @include make-sticky(); //  @include make-sticky();
-  background: rgba($layer-01, var(--scroll-transition-progress));
-  border-bottom: 1px solid rgba($layer-accent-01, var(--scroll-transition-progress));
+  background: var(--page-title-bar-background);
+  border-bottom: 1px solid var(--page-title-bar-border-bottom-color);
   transition: all $duration-fast-02;
 }
 
@@ -144,8 +144,8 @@
       z-index: 1;
       display: grid;
       content: '';
-      background: rgba($layer-01, var(--scroll-transition-progress));
-      border-bottom: 1px solid rgba($layer-accent-01, var(--scroll-transition-progress));
+      background: var(--page-title-bar-background);
+      border-bottom: 1px solid var(--page-title-bar-border-bottom-color);
     }
   }
 
