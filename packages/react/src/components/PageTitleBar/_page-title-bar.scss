@@ -4,11 +4,12 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/motion' as *;
+@use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/type' as *;
 @mixin condensed-style() {
   // @include make-sticky(); //  @include make-sticky();
-  background: var(--page-title-bar-background);
-  border-bottom: 1px solid var(--page-title-bar-border-bottom-color);
+  background: rgba($white-0, var(--scroll-transition-progress));
+  border-bottom: 1px solid rgba($gray-20, var(--scroll-transition-progress));
   transition: all $duration-fast-02;
 }
 
@@ -144,8 +145,8 @@
       z-index: 1;
       display: grid;
       content: '';
-      background: var(--page-title-bar-background);
-      border-bottom: 1px solid var(--page-title-bar-border-bottom-color);
+      background: rgba($white-0, var(--scroll-transition-progress));
+      border-bottom: 1px solid rgba($gray-20, var(--scroll-transition-progress));
     }
   }
 
