@@ -170,6 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -179,6 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -236,7 +238,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__font-size"
@@ -334,6 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-1-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -343,6 +345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -400,7 +403,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__background"
@@ -498,6 +500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-2-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -507,6 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -564,7 +568,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__border"
@@ -856,6 +859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -865,6 +869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -922,7 +927,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__font-size"
@@ -1020,6 +1024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-1-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -1029,6 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -1086,7 +1092,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__background"
@@ -1184,6 +1189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-2-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -1193,6 +1199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -1250,7 +1257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--number__input-wrapper"
               >
                 <input
-                  aria-describedby={null}
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__border"

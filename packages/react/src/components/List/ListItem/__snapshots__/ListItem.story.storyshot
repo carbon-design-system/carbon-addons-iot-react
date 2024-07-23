@@ -190,9 +190,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onKeyPress={[Function]}
           >
             <button
+              aria-controls={null}
               aria-expanded={false}
               aria-haspopup={true}
-              aria-label="open and close list of options"
+              aria-label="Open and close list of options"
               className="bx--overflow-menu bx--overflow-menu--sm"
               data-testid="overflow-menu"
               onClick={[Function]}
@@ -202,7 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               type="button"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 fill="currentColor"
                 focusable="false"
@@ -229,7 +230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   r="2"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </button>

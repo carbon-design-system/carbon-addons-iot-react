@@ -540,6 +540,7 @@ describe('editorUtils', () => {
           dataSourceId: 'manufacturer',
           label: 'Manufacturer',
           dataItemType: 'DIMENSION',
+          destination: 'groupBy',
         },
       ];
       const mockedGroupedbyTableCard = {
@@ -553,12 +554,6 @@ describe('editorUtils', () => {
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
-            },
-            {
-              dataItemId: 'manufacturer',
-              dataSourceId: 'manufacturer',
-              label: 'Manufacturer',
-              dataItemType: 'DIMENSION',
             },
             {
               dataItemId: 'firmware',
@@ -590,22 +585,23 @@ describe('editorUtils', () => {
               sort: 'DESC',
             },
             {
-              dataItemId: 'manufacturer',
-              dataSourceId: 'manufacturer',
-              label: 'Manufacturer',
-              dataItemType: 'DIMENSION',
-              destination: 'groupBy',
-            },
-            {
               dataItemId: 'firmware',
               dataSourceId: 'firmware',
               label: 'Firmware',
               dataItemType: 'DIMENSION',
+              destination: 'groupBy',
+            },
+            {
+              dataItemId: 'manufacturer',
+              dataItemType: 'DIMENSION',
+              dataSourceId: 'manufacturer',
+              destination: 'groupBy',
+              label: 'Manufacturer',
             },
           ],
         },
         dataSource: {
-          groupBy: ['manufacturer'],
+          groupBy: ['firmware', 'manufacturer'],
         },
       });
     });

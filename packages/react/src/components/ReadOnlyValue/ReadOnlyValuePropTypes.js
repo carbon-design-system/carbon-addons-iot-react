@@ -24,6 +24,7 @@ export const ReadOnlyValuePropTypes = {
   isLoading: PropTypes.bool,
   skeletonLoadingValue: skeletonLoadingPropTypes,
   textAreaAttributes: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export const ReadOnlyValueDefaultProps = {

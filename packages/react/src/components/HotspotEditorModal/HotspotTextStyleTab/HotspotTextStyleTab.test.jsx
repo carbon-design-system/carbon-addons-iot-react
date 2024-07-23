@@ -61,7 +61,7 @@ describe('HotspotTextStyleTab', () => {
     expect(screen.getByTestId('hotspot-italic')).toBeDisabled();
     expect(screen.getByTestId('hotspot-underline')).toBeDisabled();
 
-    expect(screen.getByRole('button', { name: 'Font color Select a color' })).toBeDisabled();
+    expect(screen.getByRole('combobox', { name: 'Font color Select a color' })).toBeDisabled();
     expect(screen.getByRole('spinbutton', { name: 'Font Size' })).toBeDisabled();
   });
 

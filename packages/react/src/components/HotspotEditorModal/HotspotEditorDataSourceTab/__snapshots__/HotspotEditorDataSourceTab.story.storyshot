@@ -27,45 +27,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onClick={[Function]}
             onKeyDown={[Function]}
           >
-            <button
-              aria-disabled={false}
-              aria-expanded={false}
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-              className="bx--list-box__field"
-              disabled={false}
-              id="downshift-0-toggle-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button"
+            <div
+              className="bx--list-box__field--wrapper"
             >
-              <span
-                className="bx--list-box__label"
-                id="multiselect-field-label-2"
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                type="button"
               >
-                Select data items
-              </span>
-              <div
-                className="bx--list-box__menu-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  name="chevron--down"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  className="bx--list-box__label"
+                  id="multiselect-field-label-2"
                 >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                  <title />
-                </svg>
-              </div>
-            </button>
+                  Select data items
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+            </div>
             <div
               aria-labelledby="downshift-0-label"
               aria-multiselectable="true"
@@ -135,17 +141,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             onClick={[Function]}
             onKeyDown={[Function]}
           >
-            <button
-              aria-disabled={false}
-              aria-expanded={false}
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-              className="bx--list-box__field"
-              disabled={false}
-              id="downshift-0-toggle-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button"
+            <div
+              className="bx--list-box__field--wrapper"
             >
               <div
                 className="bx--tag bx--tag--filter bx--tag--high-contrast"
@@ -160,9 +157,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   className="bx--tag__close-icon"
                   disabled={false}
                   onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="button"
-                  tabIndex={0}
+                  tabIndex={-1}
                 >
                   <svg
                     aria-hidden={true}
@@ -175,38 +171,53 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                      d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
                     />
                   </svg>
                 </div>
               </div>
-              <span
-                className="bx--list-box__label"
-                id="multiselect-field-label-3"
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                type="button"
               >
-                Select data items
-              </span>
-              <div
-                className="bx--list-box__menu-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  name="chevron--down"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  className="bx--list-box__label"
+                  id="multiselect-field-label-3"
                 >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                  <title />
-                </svg>
-              </div>
-            </button>
+                  Select data items
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+            </div>
             <div
               aria-labelledby="downshift-0-label"
               aria-multiselectable="true"

@@ -22,18 +22,25 @@
   <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
     <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/next" alt="@next npm version release" />
   </a>
+  <br/>
+  <a href="https://carbon-design-system.github.io/carbon-addons-iot-react">
+    <img src="https://img.shields.io/badge/view%20%40next-storybook-ff4785" alt="view @next storybook" />
+  </a>
+  <br/>
   <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/actions?query=workflow%3ABuild+branch%3Amaster">
     <img src="https://img.shields.io/github/workflow/status/carbon-design-system/carbon-addons-iot-react/Build/master" alt="Build Status" />
   </a>
   <a href="https://coveralls.io/github/carbon-design-system/carbon-addons-iot-react?branch=master">
     <img src="https://coveralls.io/repos/github/carbon-design-system/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
   </a>
+  <br/>
   <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="Carbon add-ons for Watson IoT is released under the Apache-2.0 license" />
   </a>
   <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/master/.github/CONTRIBUTING.MD">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
   </a>
+
 </p>
 
 ## Installation
@@ -44,7 +51,7 @@
 <img valign=middle src="https://img.shields.io/badge/view%20%40latest-storybook-ff4785" alt="view @latest storybook" />
 </a>
 
-```
+```bash
 # with npm
 npm install carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 
@@ -54,11 +61,8 @@ yarn add carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 
 **@next pre-releases from
 [`next`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next)**
-&nbsp; - &nbsp; <a href="https://next.carbon-addons-iot-react.com">
-<img valign=middle src="https://img.shields.io/badge/view%20%40next-storybook-ff4785" alt="view @next storybook" />
-</a>
 
-```
+```bash
 # with npm
 npm install carbon-addons-iot-react@next d3@"^7.0.0"
 
@@ -92,7 +96,7 @@ To test drive everything here, use
 will create a new project that is preconfigured with everything you need to
 begin to build an application.
 
-```
+```bash
 npx create-iot-react-app <app-name>
 ```
 
@@ -100,7 +104,7 @@ npx create-iot-react-app <app-name>
 
 What's included
 
-```
+```bash
 carbon-addons-iot-react/
 ├── css
 │   ├── carbon-addons-iot-react.css
@@ -150,7 +154,7 @@ You can find our component test statement
 
 If you are using our project with Jest tests, due to it's dependency on d3, you
 may have to add some mock to your Jest setup script. See this issue for more
-details: https://github.com/facebook/jest/issues/5379
+details: <https://github.com/facebook/jest/issues/5379>
 
 Here's an example setup script, update your jest config to point to a setup
 script: setupFiles: ['setupJest.js'],

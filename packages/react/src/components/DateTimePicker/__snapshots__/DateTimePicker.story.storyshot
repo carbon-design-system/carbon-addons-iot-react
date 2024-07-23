@@ -1728,7 +1728,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           className="bx--number__input-wrapper"
                         >
                           <input
-                            aria-describedby={null}
                             aria-label="Numeric input field with increment and decrement buttons"
                             disabled={false}
                             id="datetimepicker-last-number"

@@ -11,6 +11,7 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
   DashboardEditorActionsPropTypes,
+  dimensionFilterFunction,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -152,7 +153,6 @@ const TableCardFormContent = ({
   const [showEditor, setShowEditor] = useState(false);
   // Need to keep track of the data item that's currently being edited so the detailed modal knows which one to show
   const [editDataItem, setEditDataItem] = useState({});
-  const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
   const dataSection = useMemo(() => {
@@ -186,7 +186,7 @@ const TableCardFormContent = ({
       cardConfig?.dataSource?.groupBy?.map((dataSourceId) => ({
         id: dataSourceId,
         text: dataSourceId,
-      })),
+      })) ?? [],
     [cardConfig]
   );
 
@@ -284,7 +284,6 @@ const TableCardFormContent = ({
       );
 
       setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
-      setRemovedDataItems([...removedDataItems, dataItem]);
 
       // if we no longer have a groupBy, then we can exclude the dataSource from the response
       let updatedDataSource = {};
@@ -311,7 +310,7 @@ const TableCardFormContent = ({
         ...updatedDataSource,
       });
     },
-    [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
+    [cardConfig, dataSection, onChange, setSelectedDataItems]
   );
 
   const handleEditButton = useCallback(
@@ -439,31 +438,40 @@ const TableCardFormContent = ({
         >
           <MultiSelect
             // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+            key={`data-item-select-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
             translateWithId={translateWithId}
             direction="bottom"
             itemToString={(item) => item.id}
-            initialSelectedItems={initialSelectedDimensions}
+            selectedItems={initialSelectedDimensions}
             items={validDimensions}
             light
             onChange={({ selectedItems }) => {
-              // Add the new dimensions as dimension columns at the beginning of the table
-              const newCard = handleDataSeriesChange(
-                selectedItems.map((i) => ({
-                  dataItemId: i.id,
-                  dataSourceId: i.id,
-                  label: i.text,
-                  dataItemType: 'DIMENSION',
-                  destination: 'groupBy',
-                })),
-                cardConfig,
-                null,
-                null
-              );
-              // setSelectedDataItems(selectedItems.map(({ id }) => id));
-              onChange(newCard);
+              const existingDimensionColumns = dataSection.filter(dimensionFilterFunction);
+              if (existingDimensionColumns.length > selectedItems.length) {
+                const selectedDimensions = selectedItems.map((dimension) => dimension.text);
+                handleRemoveButton(
+                  existingDimensionColumns.find(
+                    (dimension) => !selectedDimensions.includes(dimension.dataSourceId)
+                  ) ?? {}
+                );
+              } else {
+                // Add the new dimensions as dimension columns at the beginning of the table
+                const newCard = handleDataSeriesChange(
+                  selectedItems.map((i) => ({
+                    dataItemId: i.id,
+                    dataSourceId: i.id,
+                    label: i.text,
+                    dataItemType: 'DIMENSION',
+                    destination: 'groupBy',
+                  })),
+                  cardConfig,
+                  null,
+                  null
+                );
+                onChange(newCard);
+              }
             }}
             titleText={mergedI18n.dataItemEditorDimensionTitle}
           />

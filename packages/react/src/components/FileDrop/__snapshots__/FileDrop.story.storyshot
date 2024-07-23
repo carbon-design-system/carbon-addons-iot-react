@@ -88,17 +88,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     >
       Any file can be uploaded.  Feel free to upload more than one!
     </p>
-    <label
+    <button
       className="bx--btn bx--btn--secondary bx--btn--md"
       data-testid="file-drop-uploader-button"
-      htmlFor="id12"
+      disabled={false}
+      onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      <span
-        aria-disabled={false}
-        role="button"
-      >
+      Try it out!
+    </button>
+    <label
+      className="bx--visually-hidden"
+      htmlFor="id12"
+    >
+      <span>
         Try it out!
       </span>
     </label>
@@ -109,8 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       id="id12"
       multiple={true}
       onChange={[Function]}
-      onClick={[Function]}
-      tabIndex="-1"
+      tabIndex={-1}
       type="file"
     />
     <div
@@ -141,17 +144,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     >
       Only one file can be uploaded
     </p>
-    <label
+    <button
       className="bx--btn bx--btn--secondary bx--btn--md"
       data-testid="file-drop-uploader-button"
-      htmlFor="id13"
+      disabled={false}
+      onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      <span
-        aria-disabled={false}
-        role="button"
-      >
+      Try it out!
+    </button>
+    <label
+      className="bx--visually-hidden"
+      htmlFor="id13"
+    >
+      <span>
         Try it out!
       </span>
     </label>
@@ -162,8 +169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       id="id13"
       multiple={false}
       onChange={[Function]}
-      onClick={[Function]}
-      tabIndex="-1"
+      tabIndex={-1}
       type="file"
     />
     <div

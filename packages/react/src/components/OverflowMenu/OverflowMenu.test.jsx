@@ -28,7 +28,7 @@ describe('OverflowMenu', () => {
     );
 
     userEvent.click(
-      screen.getByLabelText('open and close list of options', { selector: 'button' })
+      screen.getByLabelText('Open and close list of options', { selector: 'button' })
     );
     userEvent.click(screen.getByText('Option 1'));
     expect(onClick).toHaveBeenCalled();
@@ -77,7 +77,7 @@ describe('IotOverflowMenu', () => {
       </OverflowMenu>
     );
 
-    expect(screen.getByLabelText('open and close list of options')).toBeDefined();
+    expect(screen.getByLabelText('Open and close list of options')).toBeDefined();
     expect(screen.getByTestId(testId).querySelector('svg')).toBeDefined();
   });
 

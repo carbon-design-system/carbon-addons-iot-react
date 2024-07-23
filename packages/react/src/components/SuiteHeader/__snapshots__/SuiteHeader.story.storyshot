@@ -54,13 +54,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-22"
         className="bx--modal-content"
         id="bx--modal-body--modal-22"
       >
@@ -810,13 +809,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-23"
         className="bx--modal-content"
         id="bx--modal-body--modal-23"
       >
@@ -2067,13 +2065,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-20"
         className="bx--modal-content"
         id="bx--modal-body--modal-20"
       >
@@ -2816,13 +2813,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-26"
         className="bx--modal-content"
         id="bx--modal-body--modal-26"
       >
@@ -2921,13 +2917,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-27"
         className="bx--modal-content"
         id="bx--modal-body--modal-27"
       >
@@ -3660,13 +3655,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-21"
         className="bx--modal-content"
         id="bx--modal-body--modal-21"
       >
@@ -4363,7 +4357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
     className="bx--side-nav__overlay"
   />
   <nav
-    aria-hidden={false}
     aria-label="Side navigation"
     className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
     data-testid="suite-header-side-nav"
@@ -4904,7 +4897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
         />
       </svg>
     </button>
@@ -4959,13 +4952,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-24"
         className="bx--modal-content"
         id="bx--modal-body--modal-24"
       >
@@ -5692,13 +5684,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-25"
         className="bx--modal-content"
         id="bx--modal-body--modal-25"
       >
@@ -6300,13 +6291,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-19"
         className="bx--modal-content"
         id="bx--modal-body--modal-19"
       >
@@ -7033,13 +7023,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"
             />
           </svg>
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-18"
         className="bx--modal-content"
         id="bx--modal-body--modal-18"
       >
