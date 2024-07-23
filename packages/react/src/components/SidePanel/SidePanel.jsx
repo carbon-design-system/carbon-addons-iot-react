@@ -201,7 +201,7 @@ const SidePanel = ({
         <Button
           testId={`${testId}-toggle-button`}
           hasIconOnly
-          className={`${baseClass}__toggle-button`}
+          wrapperClasses={`${baseClass}__toggle-button`}
           kind="ghost"
           iconDescription={toggleIcon.label}
           renderIcon={toggleIcon.icon}
@@ -215,12 +215,11 @@ const SidePanel = ({
           <Tooltip
             data-testid={`${testId}-title`}
             ref={titleRef}
-            showIcon={false}
-            triggerClassName={`${baseClass}__title`}
-            triggerText={title}
+            className={`${baseClass}__title`}
             tabIndex={isOpen ? 0 : -1}
+            label={title}
           >
-            {title}
+            <>{title}</>
           </Tooltip>
         ) : title ? (
           <h2 data-testid={`${testId}-title`} ref={titleRef} className={`${baseClass}__title`}>
