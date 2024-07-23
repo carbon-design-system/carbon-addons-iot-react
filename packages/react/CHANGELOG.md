@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.30...v2.154.0-next.31) (2024-07-23)
+
+
+### Bug Fixes
+
+* data table "destination": "groupBy" added to non dimension data item ([#3874](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3874)) ([9bde908](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9bde908473930a5c20443886c408438a6288614f))
+
+
+
+
+
 # [2.154.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.29...v2.154.0-next.30) (2024-07-16)
 
 **Note:** Version bump only for package carbon-addons-iot-react
