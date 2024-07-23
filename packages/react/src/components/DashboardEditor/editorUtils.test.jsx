@@ -11,7 +11,7 @@ import {
   formatSeries,
   formatAttributes,
   handleDataSeriesChange,
-  handleDataItemEdit,
+  handleDefaultDataItemEdit,
   renderDefaultIconByName,
   handleKeyDown,
 } from './editorUtils';
@@ -540,6 +540,7 @@ describe('editorUtils', () => {
           dataSourceId: 'manufacturer',
           label: 'Manufacturer',
           dataItemType: 'DIMENSION',
+          destination: 'groupBy',
         },
       ];
       const mockedGroupedbyTableCard = {
@@ -553,12 +554,6 @@ describe('editorUtils', () => {
               label: 'Timestamp',
               type: 'TIMESTAMP',
               sort: 'DESC',
-            },
-            {
-              dataItemId: 'manufacturer',
-              dataSourceId: 'manufacturer',
-              label: 'Manufacturer',
-              dataItemType: 'DIMENSION',
             },
             {
               dataItemId: 'firmware',
@@ -590,22 +585,23 @@ describe('editorUtils', () => {
               sort: 'DESC',
             },
             {
-              dataItemId: 'manufacturer',
-              dataSourceId: 'manufacturer',
-              label: 'Manufacturer',
-              dataItemType: 'DIMENSION',
-              destination: 'groupBy',
-            },
-            {
               dataItemId: 'firmware',
               dataSourceId: 'firmware',
               label: 'Firmware',
               dataItemType: 'DIMENSION',
+              destination: 'groupBy',
+            },
+            {
+              dataItemId: 'manufacturer',
+              dataItemType: 'DIMENSION',
+              dataSourceId: 'manufacturer',
+              destination: 'groupBy',
+              label: 'Manufacturer',
             },
           ],
         },
         dataSource: {
-          groupBy: ['manufacturer'],
+          groupBy: ['firmware', 'manufacturer'],
         },
       });
     });
@@ -867,31 +863,31 @@ describe('editorUtils', () => {
         type: CARD_TYPES.DONUT,
         content: 'not modified',
       };
-      expect(handleDataItemEdit(null, mockDonutCard, null, null)).toBe(mockDonutCard);
+      expect(handleDefaultDataItemEdit(null, mockDonutCard, null, null)).toBe(mockDonutCard);
 
       const mockCustomCard = {
         type: CARD_TYPES.CUSTOM,
         content: 'not modified',
       };
-      expect(handleDataItemEdit(null, mockCustomCard, null, null)).toBe(mockCustomCard);
+      expect(handleDefaultDataItemEdit(null, mockCustomCard, null, null)).toBe(mockCustomCard);
 
       const mockGaugeCard = {
         type: CARD_TYPES.GAUGE,
         content: 'not modified',
       };
-      expect(handleDataItemEdit(null, mockGaugeCard, null, null)).toBe(mockGaugeCard);
+      expect(handleDefaultDataItemEdit(null, mockGaugeCard, null, null)).toBe(mockGaugeCard);
 
       const mockListCard = {
         type: CARD_TYPES.LIST,
         content: 'not modified',
       };
-      expect(handleDataItemEdit(null, mockListCard, null, null)).toBe(mockListCard);
+      expect(handleDefaultDataItemEdit(null, mockListCard, null, null)).toBe(mockListCard);
 
       const mockPieCard = {
         type: CARD_TYPES.PIE,
         content: 'not modified',
       };
-      expect(handleDataItemEdit(null, mockPieCard, null, null)).toBe(mockPieCard);
+      expect(handleDefaultDataItemEdit(null, mockPieCard, null, null)).toBe(mockPieCard);
     });
 
     it('should correctly format the data in Image Card', () => {
@@ -936,7 +932,7 @@ describe('editorUtils', () => {
           },
         ],
       };
-      const newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
+      const newCard = handleDefaultDataItemEdit(editDataItem, mockImageCard, null, 0);
 
       expect(newCard).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -976,7 +972,12 @@ describe('editorUtils', () => {
 
       // Test without hotspots prop
       delete mockImageCard.content.hotspots;
-      const newCardWithoutHotspots = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
+      const newCardWithoutHotspots = handleDefaultDataItemEdit(
+        editDataItem,
+        mockImageCard,
+        null,
+        0
+      );
 
       expect(newCardWithoutHotspots).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -1022,7 +1023,7 @@ describe('editorUtils', () => {
         unit: 'psi',
       };
       // Notice we're updating the second hotspot!
-      const newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 1);
+      const newCard = handleDefaultDataItemEdit(editDataItem, mockImageCard, null, 1);
 
       // Only the second hotspot should be updated with a new label
       expect(newCard).toEqual({
@@ -1065,7 +1066,7 @@ describe('editorUtils', () => {
         yLabel: 'Y axis',
         unit: 'PSI',
       };
-      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [editDataItem]);
+      const newCard = handleDefaultDataItemEdit(editDataItem, mockTimeSeriesCard, [editDataItem]);
       expect(newCard).toEqual({
         id: 'Standard',
         title: 'timeseries card',
@@ -1092,7 +1093,7 @@ describe('editorUtils', () => {
         unit: 'F',
         label: 'Updated Key 2',
       };
-      const newCard = handleDataItemEdit(editDataItem, mockValueCard);
+      const newCard = handleDefaultDataItemEdit(editDataItem, mockValueCard);
       expect(newCard).toEqual({
         id: 'Standard',
         title: 'value card',
@@ -1123,7 +1124,7 @@ describe('editorUtils', () => {
         unit: 'F',
         label: 'Updated Key 3',
       };
-      expect(handleDataItemEdit(editDataItemNotInContent, mockValueCard)).toEqual({
+      expect(handleDefaultDataItemEdit(editDataItemNotInContent, mockValueCard)).toEqual({
         id: 'Standard',
         title: 'value card',
         type: 'VALUE',

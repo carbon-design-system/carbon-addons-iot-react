@@ -66,7 +66,7 @@ const i18nTest = {
 
 const i18nDefault = defaultProps({}).i18n;
 
-const OVERFLOW_BUTTON_LABEL = 'open and close list of options';
+const OVERFLOW_BUTTON_LABEL = 'Open and close list of options';
 
 describe('Table', () => {
   beforeAll(() => {

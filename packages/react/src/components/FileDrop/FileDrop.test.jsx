@@ -302,19 +302,20 @@ describe('FileDrop', () => {
     expect(screen.queryByText('another-test-image.png')).toBeInTheDocument();
     expect(screen.queryByText('yet-another-test-image.png')).toBeInTheDocument();
     Element.prototype.innerText = 'a-test-image.png';
-    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+
+    fireEvent.keyDown(screen.getByRole('button', { name: /Uploading file/i }), {
       key: 'Enter',
     });
     Element.prototype.innerText = 'another-test-image.png';
-    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+    fireEvent.keyDown(screen.getByRole('button', { name: /Uploading file/i }), {
       key: 'a',
     });
     expect(screen.queryByText('another-test-image.png')).toBeInTheDocument();
-    fireEvent.keyDown(screen.getByRole('button', { name: 'Uploading file' }), {
+    fireEvent.keyDown(screen.getByRole('button', { name: /Uploading file/i }), {
       key: 'Space',
     });
     Element.prototype.innerText = 'yet-another-test-image.png';
-    userEvent.click(screen.getByRole('button', { name: 'Uploading file' }));
+    userEvent.click(screen.getByRole('button', { name: /Uploading file/i }));
     expect(screen.queryByText('a-test-image.png')).not.toBeInTheDocument();
     expect(screen.queryByText('another-test-image.png')).not.toBeInTheDocument();
     expect(screen.queryByText('yet-another-test-image.png')).not.toBeInTheDocument();

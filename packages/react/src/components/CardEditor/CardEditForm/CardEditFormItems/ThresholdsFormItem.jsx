@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Add, TrashCan } from '@carbon/react/icons';
 import { omit, isEmpty } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import { red60 } from '@carbon/colors';
-import { TextInput, NumberInput } from '@carbon/react';
+import { TextInput, NumberInput, RadioButton, RadioButtonGroup } from '@carbon/react';
 
 import { settings } from '../../../../constants/Settings';
 import Button from '../../../Button';
@@ -83,6 +83,7 @@ const propTypes = {
   dataSourceId: PropTypes.string,
   /** callback function to translate common ids */
   translateWithId: PropTypes.func,
+  columnType: PropTypes.oneOf(['LITERAL', 'BOOLEAN', 'TIMESTAMP', 'NUMBER']),
 };
 
 const defaultProps = {
@@ -100,7 +101,13 @@ const defaultProps = {
   colors: validThresholdColors,
   selectedColor: undefined,
   translateWithId: undefined,
+  columnType: undefined,
 };
+
+const booleanTypeOptions = [
+  { label: 'True', value: true },
+  { label: 'False', value: false },
+];
 
 const ThresholdsFormItem = ({
   dataSourceId,
@@ -113,6 +120,7 @@ const ThresholdsFormItem = ({
   onChange,
   i18n,
   translateWithId,
+  columnType,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
@@ -120,6 +128,11 @@ const ThresholdsFormItem = ({
   // initialize thresholds with a unique id
   const [thresholds, setThresholds] = useState(
     thresholdsProp.map((threshold) => ({ ...threshold, id: uuidv4() }))
+  );
+
+  const comparisonItems = useMemo(
+    () => (['BOOLEAN', 'LITERAL'].includes(columnType) ? ['='] : ['>', '<', '=']),
+    [columnType]
   );
 
   return (
@@ -197,8 +210,8 @@ const ThresholdsFormItem = ({
                   direction="bottom"
                   translateWithId={translateWithId}
                   label=""
-                  items={['>', '<', '=']} // current valid comparison operators
-                  selectedItem={threshold.comparison || '>'}
+                  items={comparisonItems} // current valid comparison operators
+                  selectedItem={threshold.comparison || comparisonItems[0]}
                   onChange={({ selectedItem }) => {
                     const updatedThresholds = [...thresholds];
                     updatedThresholds[i] = {
@@ -211,7 +224,8 @@ const ThresholdsFormItem = ({
                 />
               </div>
               <div className={`${baseClassName}--threshold-input-group--item-end`}>
-                {threshold.comparison === '=' ? (
+                {threshold.comparison === '=' &&
+                (!columnType || columnType === 'LITERAL' || columnType === 'TIMESTAMP') ? (
                   <TextInput
                     data-testid={`threshold-${i}-text-input`}
                     id={`${cardConfig.id}_value-card-threshold-value_${i}`}
@@ -227,6 +241,30 @@ const ThresholdsFormItem = ({
                       setThresholds(updatedThresholds);
                     }}
                   />
+                ) : threshold.comparison === '=' && columnType === 'BOOLEAN' ? (
+                  <RadioButtonGroup
+                    id={`thresold-radio-group-${i}-boolean-item`}
+                    name={`thresold-radio-group-${i}-boolean-item`}
+                    onChange={(value) => {
+                      const updatedThresholds = [...thresholds];
+                      updatedThresholds[i] = {
+                        ...updatedThresholds[i],
+                        value,
+                      };
+                      onChange(updatedThresholds.map((item) => omit(item, 'id')));
+                      setThresholds(updatedThresholds);
+                    }}
+                    valueSelected={threshold.value}
+                  >
+                    {booleanTypeOptions.map(({ label, value }, index) => (
+                      <RadioButton
+                        key={`${i}-${index}`}
+                        id={`${i}-${index}`}
+                        labelText={label}
+                        value={value}
+                      />
+                    ))}
+                  </RadioButtonGroup>
                 ) : (
                   <NumberInput
                     id={`${cardConfig.id}_value-card-threshold-value_${i}`}
@@ -272,12 +310,21 @@ const ThresholdsFormItem = ({
         size="sm"
         renderIcon={Add}
         onClick={() => {
-          let newThreshold = {
-            comparison: '>',
-            value: 0,
-            icon: selectedIcon?.name || 'Warning alt',
-            color: selectedColor?.carbonColor || red60,
-          };
+          let newThreshold = ['BOOLEAN', 'LITERAL', 'TIMESTAMP'].includes(columnType)
+            ? {
+                comparison: '=',
+                value: columnType === 'BOOLEAN' ? false : '',
+                color: selectedColor?.carbonColor || red60,
+              }
+            : {
+                comparison: '>',
+                value: 0,
+                color: selectedColor?.carbonColor || red60,
+              };
+          if (selectedIcon?.name) {
+            newThreshold.icon = selectedIcon.name;
+          }
+
           if (dataSourceId) {
             newThreshold = { dataSourceId, ...newThreshold };
           }

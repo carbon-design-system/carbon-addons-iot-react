@@ -1431,7 +1431,7 @@ describe('stateful table with real reducer', () => {
       />
     );
 
-    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[0]);
+    userEvent.click(screen.getAllByRole('button', { name: 'Open and close list of options' })[0]);
     userEvent.click(screen.getByText('Multi-sort'));
     expect(screen.getByText('Select columns to sort')).toBeVisible();
   });
@@ -1664,7 +1664,7 @@ describe('stateful table with real reducer', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: 'Open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
       expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();

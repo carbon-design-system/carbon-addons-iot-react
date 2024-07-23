@@ -203,6 +203,13 @@ const HotspotEditorDataSourceTab = ({
         onChange={onChange}
         i18n={mergedI18n}
         actions={actions}
+        options={{
+          hasColorDropdown: false,
+          hasUnit: true,
+          hasDecimalPlacesDropdown: true,
+          hasThresholds: true,
+          hasTooltip: false,
+        }}
       />
       <div className={`${baseClassName}--input`}>
         <MultiSelect

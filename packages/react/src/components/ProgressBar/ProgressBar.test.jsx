@@ -24,7 +24,9 @@ describe('ProgressBar', () => {
         renderIcon={() => <WarningFilled aria-label="warning filled 16" />}
       />
     );
-    expect(screen.getByText('A progress label')).toHaveClass(`${prefix}--visually-hidden`);
+
+    const labelElement = screen.getByText('A progress label');
+    expect(labelElement.parentElement).toHaveClass(`${prefix}--visually-hidden`);
     expect(screen.queryByLabelText('warning filled 16')).not.toBeInTheDocument();
     expect(screen.getByText('40%')).toBeVisible();
   });
@@ -136,7 +138,8 @@ describe('ProgressBar', () => {
 
   it('should hide the label and value label when hideLabel:true', () => {
     render(<ProgressBar label="A progress label" value={34} hideLabel max={100} />);
-    expect(screen.getByText('A progress label')).toHaveClass(`${prefix}--visually-hidden`);
+    const labelElement = screen.getByText('A progress label');
+    expect(labelElement.parentElement).toHaveClass(`${prefix}--visually-hidden`);
     expect(screen.getByText('34%').parentNode).toHaveClass(`${prefix}--visually-hidden`);
   });
 });

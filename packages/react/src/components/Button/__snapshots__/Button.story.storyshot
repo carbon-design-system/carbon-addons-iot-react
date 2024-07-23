@@ -235,7 +235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       aria-atomic="true"
-      aria-labelledby="loading-id-1"
       aria-live="assertive"
       className="bx--loading bx--loading--small"
     >
@@ -291,7 +290,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   >
     <div
       aria-atomic="true"
-      aria-labelledby="loading-id-2"
       aria-live="assertive"
       className="bx--loading bx--loading--small"
     >

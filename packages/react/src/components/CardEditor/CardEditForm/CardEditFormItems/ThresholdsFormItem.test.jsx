@@ -341,4 +341,15 @@ describe('ThresholdsFormItem', () => {
       },
     ]);
   });
+  it('should render radiobutton group for columnType boolean', () => {
+    render(<ThresholdsFormItem {...commonProps} columnType="BOOLEAN" />);
+
+    fireEvent.click(screen.getByText('Add threshold'));
+
+    const radioButton = screen.getByLabelText('True');
+    fireEvent.click(radioButton);
+    expect(commonProps.onChange).toHaveBeenLastCalledWith([
+      { color: '#da1e28', comparison: '=', value: true },
+    ]);
+  });
 });

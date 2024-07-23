@@ -63,7 +63,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <textarea
-              aria-describedby={null}
               aria-invalid={null}
               className="bx--text-area bx--text-area--light"
               cols={50}
@@ -104,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -113,6 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select an icon"
                 type="button"
               >
@@ -173,6 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-1-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -182,6 +184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -333,7 +336,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <textarea
-              aria-describedby={null}
               aria-invalid={null}
               className="bx--text-area bx--text-area--light"
               cols={50}
@@ -374,6 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -383,6 +386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select an icon"
                 type="button"
               >
@@ -443,6 +447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-1-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -452,6 +457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="Select a color"
                 type="button"
               >
@@ -642,7 +648,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <textarea
-              aria-describedby={null}
               aria-invalid={null}
               className="bx--text-area bx--text-area--light"
               cols={50}
@@ -683,6 +688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-0-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -692,6 +698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title={
                   <div
                     className="iot--dropdown__item"
@@ -800,6 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onKeyDown={[Function]}
             >
               <button
+                aria-controls="downshift-1-menu"
                 aria-disabled={false}
                 aria-expanded={false}
                 aria-haspopup="listbox"
@@ -809,6 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                role="combobox"
                 title="green"
                 type="button"
               >

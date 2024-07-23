@@ -45,14 +45,14 @@ describe('ColorDropdown', () => {
   it('renders default labels', () => {
     render(<ColorDropdown id="myColorDropdown" onChange={() => {}} />);
 
-    expect(within(screen.getByRole('button')).getByText('Select a color')).toBeTruthy();
+    expect(within(screen.getByRole('combobox')).getByText('Select a color')).toBeTruthy();
 
     expect(screen.getByText('Color')).toBeVisible();
   });
 
   it('can be disabled', () => {
     render(<ColorDropdown id="myColorDropdown" disabled onChange={() => {}} />);
-    expect(screen.getByRole('button')).toBeDisabled();
+    expect(screen.getByRole('combobox')).toBeDisabled();
   });
 
   it('renders custom labels', () => {
@@ -62,7 +62,7 @@ describe('ColorDropdown', () => {
       <ColorDropdown id="myColorDropdown" label={label} titleText={titleText} onChange={() => {}} />
     );
 
-    expect(within(screen.getByRole('button')).getByText(label)).toBeTruthy();
+    expect(within(screen.getByRole('combobox')).getByText(label)).toBeTruthy();
     expect(screen.getByText(titleText)).toBeVisible();
   });
 
@@ -75,7 +75,7 @@ describe('ColorDropdown', () => {
         onChange={() => {}}
       />
     );
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('combobox');
     expect(within(button).getByText('green')).toBeVisible();
     expect(within(button).getByTitle(getHexColor('green'))).toHaveClass(
       `${iotPrefix}--color-dropdown__color-sample`
@@ -91,7 +91,7 @@ describe('ColorDropdown', () => {
     expect(within(firstItem).getByText('red')).toBeVisible();
     userEvent.click(firstItem);
 
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('combobox');
     expect(within(button).getByText('red')).toBeVisible();
     const colorSample = within(button).getByTitle(getHexColor('red'));
     expect(colorSample).toHaveClass(`${iotPrefix}--color-dropdown__color-sample`);

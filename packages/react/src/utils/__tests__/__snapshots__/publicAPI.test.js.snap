@@ -13476,6 +13476,9 @@ Map {
       "value": "",
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "isLoading": Object {
         "type": "bool",
       },
@@ -37568,6 +37571,7 @@ Map {
     "propTypes": Object {
       "iconDescription": [Function],
       "invalid": [Function],
+      "name": [Function],
       "status": [Function],
       "tabIndex": [Function],
     },
@@ -37644,7 +37648,6 @@ Map {
       "multiple": false,
       "onAddFiles": [Function],
       "pattern": ".[0-9a-z]+$",
-      "tabIndex": 0,
     },
     "propTypes": Object {
       "accept": [Function],
@@ -37655,6 +37658,7 @@ Map {
       "multiple": [Function],
       "name": [Function],
       "onAddFiles": [Function],
+      "onClick": [Function],
       "pattern": [Function],
       "role": [Function],
       "tabIndex": [Function],
@@ -37741,6 +37745,7 @@ Map {
       "light": [Function],
       "locale": [Function],
       "onChange": [Function],
+      "onInputValueChange": [Function],
       "onMenuChange": [Function],
       "open": [Function],
       "placeholder": [Function],
@@ -38066,6 +38071,7 @@ Map {
         "light": [Function],
         "locale": [Function],
         "onChange": [Function],
+        "onInputValueChange": [Function],
         "onMenuChange": [Function],
         "open": [Function],
         "placeholder": [Function],
@@ -38193,11 +38199,11 @@ Map {
       "_threadCount": 0,
     },
     "defaultProps": Object {
-      "ariaLabel": "open and close list of options",
+      "ariaLabel": "Open and close list of options",
       "direction": "bottom",
       "flipped": false,
       "focusTrap": true,
-      "iconDescription": "open and close list of options",
+      "iconDescription": "Open and close list of options",
       "light": false,
       "menuOffset": [Function],
       "menuOffsetFlip": [Function],
@@ -38605,7 +38611,6 @@ Map {
       "onClick": [Function],
       "onKeyDown": [Function],
       "selected": false,
-      "text": "Provide text",
     },
     "displayName": "Switch",
     "propTypes": Object {
@@ -38682,6 +38687,7 @@ Map {
       "min": [Function],
       "minLabel": [Function],
       "name": [Function],
+      "onBlur": [Function],
       "onChange": [Function],
       "onRelease": [Function],
       "required": [Function],
@@ -39775,8 +39781,7 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "HeaderPanel",
     "propTypes": Object {
-      "aria-label": [Function],
-      "aria-labelledby": [Function],
+      "children": [Function],
       "className": [Function],
       "expanded": [Function],
     },

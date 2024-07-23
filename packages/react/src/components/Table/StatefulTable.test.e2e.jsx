@@ -381,7 +381,7 @@ describe('StatefulTable', () => {
     cy.get('tr').should('have.length', 17);
     cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'bottle toyota bottle 5');
 
-    cy.findAllByLabelText('open and close list of options').eq(2).click();
+    cy.findAllByLabelText('Open and close list of options').eq(2).click();
     cy.findAllByText('Multi-sort').eq(0).click();
     cy.findByRole('button', { name: 'Add column' }).click();
     cy.findByRole('button', { name: 'Sort' }).click();
