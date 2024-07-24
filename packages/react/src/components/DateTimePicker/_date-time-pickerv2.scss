@@ -27,6 +27,7 @@
 
   .#{$prefix}--popover-container {
     width: 100%;
+    height: 48px;
   }
 
   // the text version of this
@@ -51,6 +52,10 @@
     // the whole thing should pickup the hover
     &:hover {
       background-color: inherit;
+    }
+
+    .#{$iot-prefix}--flyout-menu {
+      z-index: 10000 !important;
     }
 
     // hide the shadow around the button for the text version
@@ -118,6 +123,9 @@
 
   .#{$iot-prefix}--date-time-picker__box--light {
     background-color: $field-02;
+    .#{$iot-prefix}--date-time-picker--trigger-button {
+      background-color: transparent;
+    }
   }
 
   .#{$iot-prefix}--date-time-picker__box--disabled {
