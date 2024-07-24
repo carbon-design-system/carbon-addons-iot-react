@@ -2,7 +2,6 @@
 @use '@carbon/react/scss/config' as *;
 /* stylelint-disable-next-line */
 ai-table {
-  // TODO add styling hooks to carbon-components-angular so we can remove aiTableHeadCell
   .table-head-cell-text,
   .table-head-cell-icons {
     top: 0;

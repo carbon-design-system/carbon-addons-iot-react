@@ -2455,16 +2455,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.151.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.8...v2.151.0-next.9) (2022-08-31)
 
-
-### Bug Fixes
-
-* adding angular 12 and 13 to peer dependencies ([76ff324](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/76ff324412f035f5741e2e755d043331dce7412d))
-* **angular:** disable ivy compilation ([1d9969d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d9969d2d59e3c6ac87ee3e769709a4d1073cab9))
-
-
-
-
-
 # [2.151.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.7...v2.151.0-next.8) (2022-08-23)
 
 
@@ -3722,7 +3712,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **empty state:** add directives for empty state sections ([a0ad14d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0ad14d640accd63dd8db190ecc15f7598ad7652))
 * **empty state:** convert action directives to components ([63aa0a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63aa0a31b433ee064904b63b2a3343c9e3eef6b2))
-* **empty-state:** add angular empty state ([ed1ed82](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed1ed8296f1016e789caee38a356af03142fc66d))
 * **table:** add empty state ([9e06356](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9e06356f01e3bcae9f16bcd4edd7682850000dfe))
 * **table:** add helpers for column alignment ([1780147](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1780147a05ee83903e3d0ebec41a4541423df666))
 
@@ -4180,7 +4169,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **rule-builder:** add basic rule builder angular ([feab7fd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/feab7fd5ef9e97b7c3df476f7d440241ecfc28fa))
 * **rule-builder:** add more translations ([cf0c639](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cf0c63999574c5343ce9f7972d6caf9aff49536a))
 * **rule-builder:** add per-column operands and value templates ([d32553f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d32553f954e5b988662745d40d7b4b8daa493ada))
 * **rule-builder:** add translations ([7e79321](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e7932164d4210e4912658def9430a0cd6c289ba))
@@ -4225,14 +4213,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 # [2.147.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.73...v2.147.0-next.74) (2021-12-02)
-
-
-### Bug Fixes
-
-* **table:** segregate angular styles from react table ([eac4cf5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eac4cf5f179c6c46a3c8ed99580452c1be9ae43a))
-
-
-
 
 
 # [2.147.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.72...v2.147.0-next.73) (2021-12-02)
@@ -6912,7 +6892,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **list:** add support for row actions ([57ad775](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57ad7753145739b8cd716bd35565bc9ea2c31128))
 * **list:** add template context for rowActions ([aec82a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aec82a2aa412acfea49724ebb59dffdbc20fbe9e))
 * **list:** change selectedIds expandedIds and indeterminateIds to sets ([4d71656](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d7165630a8cc632c4f1674b5d329b419a93f44e))
-* **list:** start working on angular list component ([923143c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/923143c9e9c615737b17f05045bcfa031a1fa8eb))
 * **list:** update to latest specs ([fc82b50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fc82b50a2af4e452a2cb23d2bc629da4a0f960ec))
 * **list:** update to latest specs ([d791682](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d791682bcc160469d100d09721d2f211d4010f51))
 
@@ -7270,15 +7249,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **datetimepicker:** add hover style and fix bottom border ([773b2a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/773b2a0f915349ff94f8e1b7f1e7a3f53a52f5b0))
 * **datetimepicker:** adjust react styles to better match the design ([eada8c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eada8c3077b9bd57699366c7584de5532454f2dd))
-
-
-### Features
-
-* **datetimepicker:** add angular datetime picker ([6b2b7b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b2b7b00073a7ee7cfb73747ac36965fc25cc49e))
-
-
-
-
 
 # [2.146.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.56...v2.146.0-next.57) (2021-07-14)
 
@@ -7763,15 +7733,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 # [2.146.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.22...v2.146.0-next.23) (2021-06-04)
-
-
-### Features
-
-* **tabs:** add initial implementation of Angular tabs components ([bf1c632](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bf1c632c93e7ac6ab8870143df7e5069d7108710))
-
-
-
-
 
 # [2.146.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.21...v2.146.0-next.22) (2021-06-04)
 
@@ -8642,21 +8603,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [2.145.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.42...v2.145.0-next.43) (2021-04-15)
 
 
-### Features
-
-* **card:** add card implementation for Angular ([cd4667c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd4667c844c07dd1e6e4102181df5dd9c4684be3))
-
-
-
-
-
 # [2.145.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.41...v2.145.0-next.42) (2021-04-15)
 
 **Note:** Version bump only for package ibm-ai-applications
-
-
-
-
 
 # [2.145.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.145.0-next.40...v2.145.0-next.41) (2021-04-15)
 
