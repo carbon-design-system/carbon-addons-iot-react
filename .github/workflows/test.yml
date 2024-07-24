@@ -1,6 +1,6 @@
 name: Test
 
-on: []
+on: [push, pull_request]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -9,6 +9,7 @@ concurrency:
 jobs:
   react-jest-test:
     name: React Jest test
+    if: github.actor != 'carbon-bot'
     runs-on: ubuntu-latest
 
     steps:
@@ -62,7 +63,9 @@ jobs:
 
   react-cypress-test:
     name: React Cypress test
+    if: github.actor != 'carbon-bot'
     runs-on: ubuntu-latest
+
     container:
       image: cypress/browsers:node16.14.0-slim-chrome99-ff97
       options: --privileged
@@ -140,6 +143,7 @@ jobs:
           path: packages/react/cypress/coverage/coverage-final.json
 
   combine-reports:
+    if: github.actor != 'carbon-bot'
     name: Combine Coverage Reports
     runs-on: ubuntu-latest
     needs: [react-cypress-test, react-jest-test]
@@ -198,6 +202,7 @@ jobs:
 
   test-angular:
     name: Test Angular
+    if: github.actor != 'carbon-bot'
     runs-on: ubuntu-latest
 
     steps:
