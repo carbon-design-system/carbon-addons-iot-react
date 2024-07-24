@@ -6,3 +6,10 @@
 
   # Default build command.
   command = "yarn build:storybook"
+
+[build.processing]
+  skip = [
+    "header rules",
+    "pages changed",
+    "redirect rules"
+  ]
