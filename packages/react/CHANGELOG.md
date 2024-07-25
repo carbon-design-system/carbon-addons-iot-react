@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.31...v4.0.0-v4-Carbon11.0) (2024-07-25)
+
+
+### Bug Fixes
+
+* (table) inline action storybook example fixed ([77961dc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/77961dcb749210a2737f0abfd3ce8aab20ce6730))
+* complete for Icon Dropdown ([1781f66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1781f66393df5d14d28eb548f12c5e9e0f1e8721))
+* datepicker exparimental carbon 11 fix ([f8cb2a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f8cb2a11f20729d291e25abb47dbbb05e33f7344))
+* fix tooltip issue on FlyoutMenu ([b9b2a82](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b9b2a824563fc432c35c81cde13d4e7eeee83cd5))
+* fix tooltip issue on table card ([20e6d2e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20e6d2e54ff842587f79ee7575d8031588aa55c9))
+* fix tooltip style issue on date time picker ([6836655](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/683665509126fb3815e5e2f07e0046c1814db788))
+* flyout menu fixes ([c164c65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c164c653671d8f5f8842c03452a2ab90ea2c7bc4))
+* flyout menu in rtl ([21fbc1c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/21fbc1ce6c162960fb8d1ef1f5d214b967e3d2fd))
+* fonts and overflow-menu imports added to styles.scss ([ecbd9b9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ecbd9b9e2e65f6ffd0258995bb6c0a0b73104472))
+* header and overflow-menu styles ([1cc94cc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1cc94ccb68724b70b3c9fc06f6f882b1724327b3))
+* header items and submenu style ([4300924](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/43009248a13177333c4c2714c591274d718de605))
+* header styles ([0406b69](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0406b6909cd1f81ffdb18fb3a411b28f29f0cc3a))
+* hotspot content style ([530c7a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/530c7a0a1b722fdafb17205f54588175d9522642))
+* hotspot text input style fix ([52bf382](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/52bf382925d89f00dfae7aa95f82ead124d07ff8))
+* icon switch rtl style fix ([ed2334a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed2334a9131d323cc839db67384ae1eab4b064e1))
+* icon switch style ([a0c518c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0c518c868d78b9d15ea93b725544e280404d0b9))
+* image hotspots styles ([dc73f20](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dc73f20cdfb652144d4ac98d217b5c85193a398c))
+* mini-units usage removed ([482b8e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/482b8e9691012fa49e4513e1ea6b2dda0580194c))
+* modal carbon 11 upgrade issue fixing ([836c52b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/836c52b00fc918ec5545af83a76348e7561a6fef))
+* modal image gallery delete button issue fixed ([518036e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/518036ee60c3cb47a1c655a27d927f52c1122c3b))
+* moving flyout menu var to be scoped to flyout-menu ([6b9b4c9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b9b4c9f4ae073ba6717ac3f917a06d5c4f2d9ff))
+* multiselect carbon 11 fix ([7699aec](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7699aecfbca3886236cee8e5162c5a8f8fb7572c))
+* navigation bar component ([1499162](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1499162f19fad19e985c5e545ea3815c0c8e2116))
+* page-title-bar ([c0f468c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0f468c3d89b179cf88f822c82ed6dff6b668499))
+* page-title-bar knobs ([2a82d2e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2a82d2e4125ad470a689eb850908abf2c3e22a00))
+* show tooltip on datetimepicker ([c99b51a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c99b51a5a3848b3842ccfdcae0f9baca00d888f4))
+* side-panel ([a3ca6fe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a3ca6fe366e1c5b719bcad95e1f35f3c92bd113b))
+* table carbon 11 css fixing ([b992d8b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b992d8b8320eb3440ce0ba678c25b61063c7d079))
+* table header title spacing issue ([eb58e9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eb58e9bc0064acd4ab72a46babfd92dfe411bf09))
+* table row action issue ([75d5022](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/75d5022f8d708e259e68b3846e03ff22d44a4a8b))
+* table sorting carbon 11 fix ([7aba7a6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7aba7a6f6519f50659a71b3fd35542c9572dc37a))
+* thresold item ([d24aea9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d24aea90cd8bbd6dc22c044f76ebd257c8871ba5))
+
+
+### Features
+
+* add tooltip to the tablecard column ([a7d8d7c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a7d8d7cecb8eaa5e199d56c88b73b13238d560b6))
+* deploy storybook to github page ([df3f40e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df3f40e34b91dbeafe8ca3e8ba154fc22a7332f1))
+* override the default behaviour of handledataitemedit ([85ba9e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85ba9e79d2ea6e3b6c3827e4c67e1026e2df4cb2))
+
+
+
+
+
 # [2.154.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.30...v2.154.0-next.31) (2024-07-23)
 
 
