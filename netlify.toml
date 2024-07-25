@@ -8,8 +8,16 @@
   command = "yarn build:storybook"
 
 [build.processing]
+  skip_processing = true
+
+[context.production.processing]
   skip = [
     "header rules",
     "pages changed",
     "redirect rules"
   ]
+[context.deploy-preview.processing]
+  skip_processing = true
+
+[context.branch-deploy.processing]
+  skip_processing = true
