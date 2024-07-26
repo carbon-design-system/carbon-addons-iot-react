@@ -93,6 +93,7 @@
   max-width: convert.to-rem(425px);
   width: auto;
   z-index: z('overlay');
+  margin: $spacing-05 $spacing-05 $spacing-03 0;
 
   .#{$prefix}--toast-notification__title {
     margin-top: $spacing-04;
@@ -123,7 +124,7 @@
       width: calc(100% - 32px);
       min-height: 40px;
     }
-    p {
+    p:not(.#{$prefix}--skeleton__text) {
       @include type-style('heading-compact-01');
       display: flex;
       align-items: center;
@@ -311,7 +312,8 @@
     }
   }
   a.admin-icon {
-    .#{$prefix}--tooltip__trigger svg {
+    svg {
+      display: flex;
       fill: $layer-01; //$ui-0
     }
   }
@@ -338,8 +340,13 @@
         background-color: unset;
       }
 
-      .#{$prefix}--header__menu-item span {
-        display: flex;
+      .#{$prefix}--header__menu-item {
+        &.#{$prefix}--btn--icon-only > :first-child {
+          margin-block-start: 0;
+        }
+        span {
+          display: flex;
+        }
       }
     }
   }
@@ -349,7 +356,7 @@
     min-height: unset;
   }
 
-  .#{$prefix}--header__menu {
+  .#{$prefix}--header__submenu.#{$prefix}--header-action-btn .#{$prefix}--header__menu {
     div.#{$prefix}--header__menu-item {
       padding: 0;
       border: none;

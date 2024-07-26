@@ -222,7 +222,6 @@ $hoverBgColor: #2c2c2c;
         display: flex;
         align-items: center;
         // color: $shell-header-text-02; //$shell-header-text-02; carbon 11
-        padding: 0 $spacing-05;
         // Used for links that are directly in the menubar to span the full height
         // height: 100%;
         // Text styles
@@ -235,6 +234,9 @@ $hoverBgColor: #2c2c2c;
         transition: background-color $duration-fast-02, border-color $duration-fast-02,
           color $duration-fast-02;
       }
+    }
+    button.#{$prefix}--header__menu-item {
+      padding: 0 $spacing-05;
     }
   }
 }

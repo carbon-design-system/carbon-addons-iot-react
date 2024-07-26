@@ -604,7 +604,7 @@ export const HeaderWithSideNav = () => {
       },
       {
         isEnabled: true,
-        icon: <Group size={24} />,
+        icon: Group,
         metaData: {
           label: 'Members',
           element: 'button',
