@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - next
+      - v4-Carbon11
 
 jobs:
   publish:
