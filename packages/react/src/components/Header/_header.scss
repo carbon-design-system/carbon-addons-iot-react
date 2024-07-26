@@ -235,6 +235,9 @@ $hoverBgColor: #2c2c2c;
           color $duration-fast-02;
       }
     }
+    button.#{$prefix}--header__menu-item {
+      padding: 0 $spacing-05;
+    }
   }
 }
 
