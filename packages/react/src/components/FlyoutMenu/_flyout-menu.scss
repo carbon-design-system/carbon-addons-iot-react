@@ -302,8 +302,7 @@
     }
 
     &.#{$iot-prefix}--flyout-menu--body__bottom-start .#{$prefix}--popover-content::after {
-      left: unset;
-      right: 0;
+      left: 0;
       top: -$shadow;
     }
 
