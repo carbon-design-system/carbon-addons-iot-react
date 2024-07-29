@@ -724,11 +724,7 @@ const DateTimePicker = ({
     setIsExpanded,
   });
 
-  const direction = useAutoPositioning
-    ? offTop
-      ? FlyoutMenuDirection.BottomEnd
-      : FlyoutMenuDirection.TopEnd
-    : FlyoutMenuDirection.BottomEnd;
+  const direction = offTop ? FlyoutMenuDirection.BottomEnd : FlyoutMenuDirection.TopEnd;
 
   const tooltipField = (
     <div
@@ -785,7 +781,7 @@ const DateTimePicker = ({
         customFooter={CustomFooter}
         tooltipFocusTrap={false}
         renderInPortal={renderInPortal}
-        useAutoPositioning={useAutoPositioning}
+        useAutoPositioning={false}
         tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
           [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
         })}
