@@ -4,10 +4,11 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/compat/themes' as compat;
 @use '@carbon/react/scss/themes';
-@use '@carbon/react/scss/theme' with (
+@forward '@carbon/react/scss/theme' with (
   $fallback: compat.$g10,
   $theme: themes.$g10
 );
+@use '@carbon/react/scss/theme';
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/styles/scss/fonts' as *;
 @use 'globals/feature-flags' as *;
