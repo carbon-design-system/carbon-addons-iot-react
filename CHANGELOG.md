@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.3...v4.0.0-v4-Carbon11.4) (2024-07-30)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [4.0.0-v4-Carbon11.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.2...v4.0.0-v4-Carbon11.3) (2024-07-29)
+
+
+### Bug Fixes
+
+* date time picker auto positioning ([f2a4287](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f2a428789eeb131da6105202515976f75e33de57))
+* flyout menu css fix ([198717b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/198717bc43a99544ed74cb04cd4d5da12827b09a))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.1...v4.0.0-v4-Carbon11.2) (2024-07-28)
 
 **Note:** Version bump only for package ibm-ai-applications
