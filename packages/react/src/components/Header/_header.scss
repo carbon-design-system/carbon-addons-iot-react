@@ -194,6 +194,7 @@ $hoverBgColor: #2c2c2c;
       .#{$prefix}--header__menu-item {
         background: none;
         color: $gray-30;
+        padding: 0 $spacing-05;
         &:focus {
           border-color: $white-0;
           color: $gray-10;
@@ -234,9 +235,6 @@ $hoverBgColor: #2c2c2c;
         transition: background-color $duration-fast-02, border-color $duration-fast-02,
           color $duration-fast-02;
       }
-    }
-    button.#{$prefix}--header__menu-item {
-      padding: 0 $spacing-05;
     }
   }
 }
