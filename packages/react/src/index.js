@@ -200,7 +200,6 @@ export {
   Grid,
   Row,
   Column,
-  Icon,
   InlineLoading,
   Link,
   ListItem,
@@ -212,7 +211,6 @@ export {
   InlineNotification,
   NotificationActionButton,
   NotificationButton,
-  NotificationTextDetails,
   NumberInput,
   OrderedList,
   OverflowMenu,
@@ -227,8 +225,6 @@ export {
   RadioButton,
   RadioButtonGroup,
   Search,
-  SearchFilterButton,
-  SearchLayoutButton,
   SecondaryButton,
   Select,
   SelectItem,
@@ -258,16 +254,7 @@ export {
   TimePicker,
   TimePickerSelect,
   Toggle,
-  ToggleSmall,
-  Toolbar,
-  ToolbarItem,
-  ToolbarTitle,
-  ToolbarOption,
-  ToolbarDivider,
-  ToolbarSearch,
   Tooltip,
-  TooltipDefinition,
-  TooltipIcon,
   UnorderedList,
   SkeletonText,
   SkeletonPlaceholder,
@@ -329,16 +316,6 @@ export {
   SideNavMenu,
   SideNavMenuItem,
   SideNavSwitcher,
-  // Experimental components from Carbon
-
-  // eslint-disable-next-line camelcase
-  unstable_Pagination,
-  // eslint-disable-next-line camelcase
-  unstable_PageSelector,
-  // eslint-disable-next-line camelcase
-  unstable_TreeNode,
-  // eslint-disable-next-line camelcase
-  unstable_TreeView,
 } from '@carbon/react';
 
 export {
