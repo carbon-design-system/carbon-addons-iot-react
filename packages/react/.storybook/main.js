@@ -15,18 +15,9 @@ module.exports = {
     'storybook-addon-rtl',
     '@storybook/addon-docs',
     'storybook-addon-turbo-build',
+    '@storybook/addon-webpack5-compiler-babel',
   ],
-  babel: async (options) => {
-    // ensure all plugins are using loose: false (the default)
-    // this avoids an error where plugins from different locations have
-    // different loose modes
-    options.plugins.forEach((plugin) => {
-      if (Array.isArray(plugin) && plugin[1]?.loose) {
-        plugin[1].loose = false;
-      }
-    });
-    return options;
-  },
+
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
@@ -39,6 +30,17 @@ module.exports = {
     // Moment.js is quite large, the locales that they bundle in the core as of v2.18 are ignored to keep our bundle size down.
     // https://webpack.js.org/plugins/ignore-plugin/#example-of-ignoring-moment-locales
     // Corrected IgnorePlugin configuration
+    config.module.rules.push({
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+        },
+      },
+    });
+
     config.plugins.push(
       new webpack.IgnorePlugin({
         resourceRegExp: /^\.\/locale$/,
