@@ -125,7 +125,7 @@ export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWra
 export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
 export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
-
+export { default as TooltipIcon } from './components/TooltipIcon/TooltipIcon';
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
