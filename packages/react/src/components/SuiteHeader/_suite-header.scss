@@ -356,30 +356,32 @@
     min-height: unset;
   }
 
-  .#{$prefix}--header__submenu.#{$prefix}--header-action-btn .#{$prefix}--header__menu {
-    div.#{$prefix}--header__menu-item {
-      padding: 0;
-      border: none;
-      color: $text-secondary;
-      background-color: $background;
+  .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
+    &[aria-expanded='true'] > ul.#{$prefix}--header__menu {
+      div.#{$prefix}--header__menu-item {
+        padding: 0;
+        border: none;
+        color: $text-secondary;
+        background-color: $background;
 
-      &:hover {
-        background-color: inherit;
-        color: inherit;
+        &:hover {
+          background-color: inherit;
+          color: inherit;
+        }
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
       }
 
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-    }
+      a.#{$prefix}--header__menu-item {
+        padding: $spacing-05;
 
-    a.#{$prefix}--header__menu-item {
-      padding: $spacing-05;
-
-      &:hover {
-        color: $text-on-color;
+        &:hover {
+          color: $text-on-color;
+        }
       }
     }
   }

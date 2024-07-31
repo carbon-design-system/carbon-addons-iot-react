@@ -181,7 +181,6 @@ $hoverBgColor: #2c2c2c;
       flex-direction: column;
       background-color: $gray-90;
       box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%);
-      inline-size: 12.5rem;
       inset-block-end: 0;
       inset-inline-start: 0;
       transform: translateY(100%);
@@ -194,7 +193,9 @@ $hoverBgColor: #2c2c2c;
       .#{$prefix}--header__menu-item {
         background: none;
         color: $gray-30;
-        padding: 0 $spacing-05;
+        &:not(cds--header__menu-title) {
+          padding: 0 $spacing-05;
+        }
         &:focus {
           border-color: $white-0;
           color: $gray-10;
