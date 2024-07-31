@@ -683,7 +683,7 @@ const Table = (props) => {
     view.toolbar.activeBar,
     // Remove the icon as it's a React.Element which can not be compared
     view.toolbar.batchActions.map((action) => {
-      const { icon, ...nonElements } = action;
+      const { renderIcon, ...nonElements } = action;
       return nonElements;
     }),
     view.toolbar.initialDefaultSearch,

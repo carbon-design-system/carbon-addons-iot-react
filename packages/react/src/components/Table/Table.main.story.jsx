@@ -72,7 +72,6 @@ import { PIN_COLUMN } from './tableUtilities';
 
 // Dataset used to speed up stories using row edit
 const storyTableData = getTableData();
-
 export default {
   title: '1 - Watson IoT/Table',
   parameters: {
@@ -730,7 +729,7 @@ export const WithSearching = () => {
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const data = getTableData().slice(0, 50);
+  const data = storyTableData;
   const columns = getTableColumns();
 
   const defaultValue = text(
@@ -841,15 +840,17 @@ export const WithRowNesting = () => {
   const initiallyExpandedIds = object('Expanded ids (view.table.expandedIds)', ['row-1']);
   const demoDeepNesting = !hasRowNesting.hasSingleNestedHierarchy;
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const initialData = getTableData()
-    .slice(0, 10)
-    .map((row, index) => {
-      return addChildRows(row, index, demoDeepNesting);
-    })
-    .map((row) => ({
-      ...row,
-      hasLoadMore: demoHasLoadMore,
-    }));
+  const initialData =
+    storyTableData &&
+    storyTableData
+      .slice(0, 10)
+      .map((row, index) => {
+        return addChildRows(row, index, demoDeepNesting);
+      })
+      .map((row) => ({
+        ...row,
+        hasLoadMore: demoHasLoadMore,
+      }));
   const columns = getTableColumns();
   const actions = getTableActions();
 
@@ -891,7 +892,7 @@ export const WithRowNesting = () => {
       data={data}
       options={{
         hasRowNesting,
-        shouldExpandOnRowClick,
+        //   shouldExpandOnRowClick,
         wrapCellText,
       }}
       view={{
