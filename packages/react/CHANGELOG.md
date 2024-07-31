@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.8...v4.0.0-v4-Carbon11.9) (2024-07-31)
+
+
+### Bug Fixes
+
+* table crash issue due to infinite reload ([50d8e10](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/50d8e10942dd9e4128a3fefba8632be00b686876))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.7...v4.0.0-v4-Carbon11.8) (2024-07-31)
 
 **Note:** Version bump only for package carbon-addons-iot-react
