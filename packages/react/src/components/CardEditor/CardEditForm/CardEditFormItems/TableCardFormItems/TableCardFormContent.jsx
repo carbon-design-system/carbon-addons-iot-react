@@ -261,9 +261,9 @@ const TableCardFormContent = ({
       onChange({
         ...card,
         content: {
-          ...card.content,
+          ...omit(card.content, 'thresholds'),
           columns: updatedColumns,
-          thresholds: allThresholds,
+          ...(!isEmpty(allThresholds) ? { thresholds: allThresholds } : {}),
         },
       });
     },
