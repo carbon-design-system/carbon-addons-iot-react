@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
+import { ButtonKinds, Link } from '@carbon/react';
 
 import Button from '../Button';
-import { Link } from '../Link';
 import { settings } from '../../constants/Settings';
 import {
   EmptystateErrorIcon as ErrorImage,

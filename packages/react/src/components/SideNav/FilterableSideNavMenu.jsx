@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useCallback } from 'react';
-import { SideNavMenu } from 'carbon-components-react/es/components/UIShell';
+import { SideNavMenu } from '@carbon/react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

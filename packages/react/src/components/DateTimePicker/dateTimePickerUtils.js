@@ -198,23 +198,26 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
    * and captures it so focus can be restored after the calendar has been re-parented below.
    */
   const handleDatePickerRef = useCallback((node) => {
-    if (document.activeElement?.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
+    if (
+      node !== null &&
+      node.calendar &&
+      !node.calendar.isOpen &&
+      previousActiveElement.current !== document.activeElement
+    ) {
       previousActiveElement.current = document.activeElement;
+      setDatePickerElem(node);
     }
-
-    setDatePickerElem(node);
   }, []);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (datePickerElem) {
-        datePickerElem.cal.open();
+      if (datePickerElem && datePickerElem.calendar) {
+        datePickerElem.calendar.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to re-parent its DOM to our component
 
         if (v2) {
           const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
-          dp.appendChild(datePickerElem.cal.calendarContainer);
+          dp.appendChild(datePickerElem.calendar.calendarContainer);
         } else {
           const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
 
@@ -222,7 +225,7 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
             const dp = document
               .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
               .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-            dp.appendChild(datePickerElem.cal.calendarContainer);
+            dp.appendChild(datePickerElem.calendar.calendarContainer);
           }
         }
 
@@ -469,11 +472,11 @@ export const useRelativeDateTimeValue = ({ defaultInterval, defaultRelativeTo })
   };
 
   // on change functions that trigger a relative value update
-  const onRelativeLastNumberChange = (event) => {
-    const valid = !event.imaginaryTarget.getAttribute('data-invalid');
+  const onRelativeLastNumberChange = (event, { value }) => {
+    const valid = !event.currentTarget.getAttribute('data-invalid');
     setRelativeLastNumberInvalid(!valid);
     if (valid) {
-      changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+      changeRelativePropertyValue('lastNumber', Number(value));
     }
   };
   const onRelativeLastIntervalChange = (event) => {

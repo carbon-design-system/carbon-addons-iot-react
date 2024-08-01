@@ -1,6 +1,6 @@
 import React, { cloneElement, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Close16 } from '@carbon/icons-react';
+import { Close } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -89,7 +89,7 @@ const TearSheet = ({
         <Button
           hasIconOnly
           kind="ghost"
-          renderIcon={Close16}
+          renderIcon={Close}
           iconDescription={i18n.close}
           tooltipAlignment="end"
           tooltipPosition="bottom"

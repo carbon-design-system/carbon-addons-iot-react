@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, InlineNotification, CopyButton } from 'carbon-components-react';
-import { Popup16 } from '@carbon/icons-react';
+import { CodeSnippetSkeleton, InlineNotification, CopyButton } from '@carbon/react';
+import { Popup } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -137,7 +137,7 @@ const CardCodeEditor = ({
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly
-        renderIcon={Popup16}
+        renderIcon={Popup}
         iconDescription={mergedI18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"

@@ -8,7 +8,9 @@ const useHasTextOverflow = (elementRef, text = '') => {
       elementRef.current &&
       (elementRef?.current?.scrollHeight > elementRef?.current?.clientHeight ||
         elementRef?.current?.scrollWidth > elementRef?.current?.clientWidth);
-    setIsOverflowed(overFlowing);
+    if (overFlowing === false || overFlowing === true) {
+      setIsOverflowed(overFlowing);
+    }
     /* disabling to not put the ref in dep array */
     /* eslint-disable react-hooks/exhaustive-deps */
   }, [

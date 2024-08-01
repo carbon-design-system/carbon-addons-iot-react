@@ -1,13 +1,9 @@
 import React, { useRef, useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip } from 'carbon-components-react';
+import { Tooltip } from '@carbon/react';
 import { debounce } from 'lodash-es';
-import {
-  Close16,
-  ChevronLeft16 as OpenLeft,
-  ChevronRight16 as OpenRight,
-} from '@carbon/icons-react';
+import { Close, ChevronLeft as OpenLeft, ChevronRight as OpenRight } from '@carbon/react/icons';
 
 import { settings } from '../../constants/Settings';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
@@ -116,7 +112,7 @@ const SidePanel = ({
   const toggleIcon = useMemo(() => {
     return isOpen
       ? {
-          icon: Close16,
+          icon: Close,
           label: mergedI18n.closeIconLabel,
           tooltipPostion: 'left',
           disabled: isBusy,
@@ -141,7 +137,7 @@ const SidePanel = ({
             kind="ghost"
             renderIcon={e.buttonIcon}
             onClick={e.buttonCallback}
-            size="small"
+            size="sm"
             tabIndex={isOpen ? 0 : -1}
           />
         ))) ||
@@ -205,7 +201,7 @@ const SidePanel = ({
         <Button
           testId={`${testId}-toggle-button`}
           hasIconOnly
-          className={`${baseClass}__toggle-button`}
+          wrapperClasses={`${baseClass}__toggle-button`}
           kind="ghost"
           iconDescription={toggleIcon.label}
           renderIcon={toggleIcon.icon}
@@ -219,12 +215,11 @@ const SidePanel = ({
           <Tooltip
             data-testid={`${testId}-title`}
             ref={titleRef}
-            showIcon={false}
-            triggerClassName={`${baseClass}__title`}
-            triggerText={title}
+            className={`${baseClass}__title`}
             tabIndex={isOpen ? 0 : -1}
+            label={title}
           >
-            {title}
+            <>{title}</>
           </Tooltip>
         ) : title ? (
           <h2 data-testid={`${testId}-title`} ref={titleRef} className={`${baseClass}__title`}>

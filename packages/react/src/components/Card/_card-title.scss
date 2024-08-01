@@ -1,6 +1,10 @@
-@import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '../../globals/vars' as *;
+@use '@carbon/react/scss/layout' as *;
+@use '@carbon/react/scss/type' as *;
+@use '../../globals/mixins' as *;
 $tooltipSize: $spacing-07;
 $lineHeightSize: 1.375em;
 
@@ -47,8 +51,8 @@ $lineHeightSize: 1.375em;
 }
 
 .#{$iot-prefix}--card--title--text {
-  @include type-style('productive-heading-02');
-  color: $text-01;
+  @include type-style('heading-compact-02');
+  color: $text-primary;
   max-width: calc(100% - #{$tooltipSize});
 }
 
@@ -68,7 +72,7 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
 
 .#{$iot-prefix}--card--subtitle--text {
   @include type-style('label-01');
-  color: $text-02;
+  color: $text-secondary;
   font-weight: normal;
   width: 100%;
   max-height: 1.34em;
@@ -86,4 +90,18 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
 
 .#{$iot-prefix}--card-heading-clickable {
   cursor: pointer;
+}
+
+.iot--card--title--text,
+.iot--card--subtitle--text {
+  overflow: visible;
+}
+.iot--card--title--text .cds--toggletip-label {
+  font-weight: 600;
+}
+
+.iot--card--title .cds--toggletip-label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

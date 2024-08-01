@@ -1,8 +1,8 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, CopyButton, Button } from 'carbon-components-react';
+import { CodeSnippetSkeleton, CopyButton, Button } from '@carbon/react';
 import PropTypes from 'prop-types';
-import { Upload16 } from '@carbon/icons-react';
+import { Upload } from '@carbon/react/icons';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -135,7 +135,7 @@ const CodeEditor = ({
   return (
     <div data-testid={testId} className={`${iotPrefix}--code-editor-wrapper`}>
       {hasUpload ? (
-        <>
+        <div className={`${iotPrefix}--code-editor-upload-wrapper`}>
           <Button
             className={classnames(`${iotPrefix}--code-editor-upload`, {
               [`${iotPrefix}--code-editor-upload--light`]: light,
@@ -149,9 +149,9 @@ const CodeEditor = ({
                 inputNode.current.click();
               }
             }}
-            renderIcon={Upload16}
+            renderIcon={Upload}
             kind="ghost"
-            size="field"
+            size="md"
             data-testid={`${testId}-upload-button`}
             disabled={disabled}
           />
@@ -167,19 +167,21 @@ const CodeEditor = ({
             onChange={handleOnChange}
             disabled={disabled}
           />
-        </>
+        </div>
       ) : null}
       {onCopy && (
-        <CopyButton
-          className={classnames(`${iotPrefix}--code-editor-copy`, {
-            [`${iotPrefix}--code-editor-copy--light`]: light,
-            [`${iotPrefix}--code-editor-copy--disabled-container`]: disabled,
-          })}
-          onClick={handleOnCopy}
-          iconDescription={mergedI18n.copyBtnDescription}
-          feedback={mergedI18n.copyBtnFeedBack}
-          data-testid={`${testId}-copy-button`}
-        />
+        <div className={`${iotPrefix}--code-editor-copy-wrapper`}>
+          <CopyButton
+            className={classnames(`${iotPrefix}--code-editor-copy`, {
+              [`${iotPrefix}--code-editor-copy--light`]: light,
+              [`${iotPrefix}--code-editor-copy--disabled-container`]: disabled,
+            })}
+            onClick={handleOnCopy}
+            iconDescription={mergedI18n.copyBtnDescription}
+            feedback={mergedI18n.copyBtnFeedBack}
+            data-testid={`${testId}-copy-button`}
+          />
+        </div>
       )}
       <Editor
         className={classnames(`${iotPrefix}--code-editor-container`, {

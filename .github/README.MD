@@ -47,6 +47,9 @@
 
 **@latest from
 [`master`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/master)**
+&nbsp; - &nbsp; <a href="https://carbon-design-system.github.io/carbon-addons-iot-react">
+<img valign=middle src="https://img.shields.io/badge/view%20%40latest-storybook-ff4785" alt="view @latest storybook" />
+</a>
 
 ```bash
 # with npm

@@ -54,6 +54,7 @@ export default [
         babelHelpers: 'runtime',
       }),
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify(env),
       }),
       json({
@@ -87,7 +88,12 @@ export default [
       postcss({
         extract: 'lib/css/carbon-addons-iot-react.css',
         sourceMap: true,
-        use: ['sass'],
+        use: {
+          sass: {
+            // Include necessary paths for Sass to resolve @use and @import
+            includePaths: ['../../node_modules'],
+          },
+        },
         plugins: [autoprefixer],
       }),
     ],
@@ -107,8 +113,8 @@ export default [
           react: 'React',
           'react-dom': 'ReactDOM',
           '@carbon/icons-react': 'CarbonIconsReact',
-          'carbon-components': 'CarbonComponents',
-          'carbon-components-react': 'CarbonComponentsReact',
+          '@carbon/react': 'CarbonReact',
+          '@carbon/charts': 'CarbonCharts',
           'styled-components': 'styled',
           d3: 'd3',
         },
@@ -119,10 +125,10 @@ export default [
       'react-dom',
       'styled-components',
       'prop-types',
-      'carbon-components-react',
       '@carbon/icons',
+      '@carbon/react',
+      '@carbon/charts',
       '@carbon/icons-react',
-      'carbon-components',
       'd3',
     ],
     plugins: [
