@@ -237,10 +237,11 @@ const TableCardFormContent = ({
           ?.map((column) => column.dataSourceId) || [];
 
       // Consider existing thresholds outside columns and filter existing thresholds from edited column
-      const allThresholds =
-        thresholds
-          ?.filter(({ dataSourceId }) => !columnThresholdDataSource.includes(dataSourceId))
-          ?.map((threshold) => ({ ...threshold })) || [];
+      const allThresholds = isEmpty(columnThresholdDataSource)
+        ? []
+        : thresholds
+            ?.filter(({ dataSourceId }) => !columnThresholdDataSource.includes(dataSourceId))
+            ?.map((threshold) => ({ ...threshold })) || [];
 
       // the table card is looking for the thresholds on the main content object
       const updatedColumns = card?.content?.columns?.map(
@@ -262,7 +263,7 @@ const TableCardFormContent = ({
         content: {
           ...card.content,
           columns: updatedColumns,
-          ...(!isEmpty(allThresholds) ? { thresholds: allThresholds } : {}),
+          thresholds: allThresholds,
         },
       });
     },
