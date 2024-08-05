@@ -168,6 +168,7 @@ $hoverBgColor: #2c2c2c;
     border-color: $white-0;
     box-shadow: none;
     border-width: 1px;
+    background-color: $gray-80;
   }
 
   .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
@@ -257,8 +258,16 @@ $hoverBgColor: #2c2c2c;
 }
 
 .#{$prefix}--header__action {
+  &--active {
+    background-color: $hoverBgColor; // Force dark mode in header even in gray-10 theme
+    border: none;
+  }
   &:hover {
     background-color: $hoverBgColor; // Force dark mode in header even in gray-10 theme
+  }
+
+  &:active {
+    background-color: $gray-80;
   }
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--header__action svg {
     fill: $icon-on-color; // Force dark mode in header even in gray-10 theme
