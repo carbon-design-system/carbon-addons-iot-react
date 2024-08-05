@@ -126,6 +126,7 @@ export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
 export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
 export { default as TooltipIcon } from './components/TooltipIcon/TooltipIcon';
+export { default as TooltipDefinition } from './components/TooltipDefinition/TooltipDefinition';
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
