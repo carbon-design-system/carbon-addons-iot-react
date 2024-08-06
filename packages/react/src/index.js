@@ -212,6 +212,7 @@ export {
   InlineNotification,
   NotificationActionButton,
   NotificationButton,
+  ActionableNotification,
   NumberInput,
   OrderedList,
   OverflowMenu,
