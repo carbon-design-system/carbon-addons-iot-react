@@ -198,6 +198,7 @@ export {
   FormItem,
   FormLabel,
   FluidForm,
+  FlexGrid,
   Grid,
   Row,
   Column,
