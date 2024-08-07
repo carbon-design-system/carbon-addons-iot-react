@@ -109,6 +109,7 @@ const FlyoutMenu = ({
   testId,
   tooltipId,
   tabIndex,
+  className,
   tooltipClassName,
   tooltipContentClassName,
   passive,
@@ -260,6 +261,7 @@ const FlyoutMenu = ({
           [`${iotPrefix}--flyout-menu__light`]: light,
           [`${iotPrefix}--flyout-menu__open`]: isControlledOpen,
           [`${iotPrefix}--flyout-menu__hide-icon-btn-tooltip`]: !iconDescription,
+          [className]: !!className,
         }
       )}
     >
@@ -352,6 +354,11 @@ const propTypes = {
    * Contents to put into the flyout menu.
    */
   children: PropTypes.node,
+
+  /**
+   * Flyout menu wrapper className
+   */
+  className: PropTypes.node,
 
   /**
    * The CSS class names of the flyout menu.
@@ -481,6 +488,7 @@ const defaultProps = {
   triggerId: 'flyout-trigger-id',
   defaultOpen: false,
   children: undefined,
+  className: undefined,
   tooltipClassName: '',
   tooltipContentClassName: '',
   tooltipFocusTrap: true,
