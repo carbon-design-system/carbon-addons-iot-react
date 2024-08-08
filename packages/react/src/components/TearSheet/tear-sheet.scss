@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
 
-  & * :not(.#{$prefix}--popover-content) {
+  & > * {
     max-width: 100%;
   }
 
