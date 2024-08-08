@@ -1,7 +1,13 @@
+/* eslint-disable react/require-default-props */
 import * as React from 'react';
 import { Tooltip as CarbonTooltip } from '@carbon/react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { Information } from '@carbon/icons-react';
+
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 // will remove this method later
 export const getTooltipMenuOffset = () => {
@@ -48,28 +54,29 @@ export const Tooltip = ({
   } else {
     newAlign = 'bottom-start';
   }
-  let tooltip = (
-    <CarbonTooltip label={children} align={newAlign} autoAlign={useAutoPositioning} {...other}>
-      <div>{triggerText}</div>
-    </CarbonTooltip>
-  );
-  if (showIcon) {
-    tooltip = (
-      <>
-        <div style={{ marginRight: '0.5rem' }}>{triggerText}</div>
-        <CarbonTooltip label={children} align={newAlign} autoAlign={useAutoPositioning} {...other}>
-          {IconCustomElement ? (
-            <div>
-              <IconCustomElement />
-            </div>
+
+  return (
+    <div
+      className={classnames(`${iotPrefix}--tooltip`, {
+        [`${iotPrefix}--tooltip--with-label`]: !!(showIcon && triggerText),
+      })}
+    >
+      {showIcon && triggerText ? triggerText : null} {/** Tooltip label + trigger icon */}
+      <CarbonTooltip label={children} align={newAlign} autoAlign={useAutoPositioning} {...other}>
+        <div>
+          {!showIcon ? (
+            // No icon
+            triggerText
+          ) : // Show icon
+          IconCustomElement ? (
+            <IconCustomElement />
           ) : (
             <Information />
           )}
-        </CarbonTooltip>
-      </>
-    );
-  }
-  return tooltip;
+        </div>
+      </CarbonTooltip>
+    </div>
+  );
 };
 
 Tooltip.propTypes = {
