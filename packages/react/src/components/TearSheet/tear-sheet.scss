@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
 
-  & * {
+  & * :not(.#{$prefix}--popover-content) {
     max-width: 100%;
   }
 
@@ -31,7 +31,7 @@
       @include type-style('body-01');
       color: $text-secondary;
     }
-    .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+    .#{$iot-prefix}--tear-sheet--header__close-btn {
       position: absolute;
       top: 0;
       right: 0;

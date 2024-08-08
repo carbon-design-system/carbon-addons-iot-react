@@ -88,6 +88,7 @@ const TearSheet = ({
       >
         <Button
           hasIconOnly
+          wrapperClasses={`${iotPrefix}--tear-sheet--header__close-btn`}
           kind="ghost"
           renderIcon={Close}
           iconDescription={i18n.close}
