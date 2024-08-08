@@ -39,6 +39,7 @@ export { default as TableViewDropdown } from './components/Table/TableViewDropdo
 export { default as IconDropdown } from './components/IconDropdown/IconDropdown';
 export { default as EmptyState } from './components/EmptyState/EmptyState';
 export { default as ImageGalleryModal } from './components/ImageGalleryModal/ImageGalleryModal';
+export { default as Tooltip } from './components/Tooltip';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -260,7 +261,6 @@ export {
   TimePicker,
   TimePickerSelect,
   Toggle,
-  Tooltip,
   UnorderedList,
   SkeletonText,
   SkeletonPlaceholder,
