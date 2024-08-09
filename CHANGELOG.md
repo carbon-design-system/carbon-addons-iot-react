@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.32...v2.154.0-next.33) (2024-08-09)
+
+
+### Bug Fixes
+
+* moving flyout menu var to be scoped to flyout-menu ([#3877](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3877)) ([2e54d53](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e54d538920442943e458d49eed93f0a369b7d1c))
+
+
+
+
+
 # [2.154.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.31...v2.154.0-next.32) (2024-08-01)
 
 
