@@ -40,6 +40,7 @@ export { default as IconDropdown } from './components/IconDropdown/IconDropdown'
 export { default as EmptyState } from './components/EmptyState/EmptyState';
 export { default as ImageGalleryModal } from './components/ImageGalleryModal/ImageGalleryModal';
 export { default as Tooltip } from './components/Tooltip';
+export { default as ToggleTip } from './components/ToggleTip';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
