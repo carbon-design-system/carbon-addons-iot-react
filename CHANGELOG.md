@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.20...v4.0.0-v4-Carbon11.21) (2024-08-12)
+
+
+### Bug Fixes
+
+* tooltip definition open on hover default value change ([5588ab3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5588ab3422a14de4e13c09213a2cb9475e33b9df))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.19...v4.0.0-v4-Carbon11.20) (2024-08-09)
 
 
