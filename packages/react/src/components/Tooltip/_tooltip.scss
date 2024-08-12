@@ -8,7 +8,7 @@
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--tooltip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   @include type-style('legal-01');
   color: $gray-80;
