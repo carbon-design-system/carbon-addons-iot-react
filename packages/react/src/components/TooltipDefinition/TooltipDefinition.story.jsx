@@ -29,7 +29,7 @@ const props = () => ({
     'Tooltip content (tooltipText)',
     'Brief description of the dotted, underlined word above.'
   ),
-  openOnHover: boolean('Open on Hover', false),
+  openOnHover: boolean('Open on Hover', true),
 });
 
 export default {

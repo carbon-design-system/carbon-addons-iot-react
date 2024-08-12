@@ -1,9 +1,16 @@
+/* eslint-disable react/require-default-props */
 import { DefinitionTooltip } from '@carbon/react';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const TooltipDefinition = (props) => {
-  const { direction, align, tooltipText, ...other } = props;
+const TooltipDefinition = ({
+  direction = 'bottom',
+  align = 'start',
+  tooltipText = '',
+  openOnHover = true,
+  children,
+  ...other
+}) => {
   let newAlign;
   // This function is to pass the old direction, align property to the new align property since The align and direction props have been merged into the align prop
   if (direction === 'bottom' && align === 'center') {
@@ -31,13 +38,17 @@ const TooltipDefinition = (props) => {
   } else {
     newAlign = 'bottom-start';
   }
+
   return (
     <DefinitionTooltip
       {...other}
       // The tooltipText prop has been renamed to definition
+      openOnHover={openOnHover}
       definition={tooltipText}
       align={newAlign}
-    />
+    >
+      {children}
+    </DefinitionTooltip>
   );
 };
 
@@ -45,12 +56,8 @@ TooltipDefinition.propTypes = {
   direction: PropTypes.string,
   align: PropTypes.string,
   tooltipText: PropTypes.string,
-};
-
-TooltipDefinition.defaultProps = {
-  direction: 'bottom',
-  align: 'start',
-  tooltipText: '',
+  children: PropTypes.node.isRequired,
+  openOnHover: PropTypes.bool,
 };
 
 export default TooltipDefinition;
