@@ -4,13 +4,12 @@ const useHasTextOverflow = (elementRef, text = '') => {
   const [isOverflowed, setIsOverflowed] = useState(false);
 
   useEffect(() => {
-    const overFlowing =
+    const overFlowing = !!(
       elementRef.current &&
       (elementRef?.current?.scrollHeight > elementRef?.current?.clientHeight ||
-        elementRef?.current?.scrollWidth > elementRef?.current?.clientWidth);
-    if (overFlowing === false || overFlowing === true) {
-      setIsOverflowed(overFlowing);
-    }
+        elementRef?.current?.scrollWidth > elementRef?.current?.clientWidth)
+    );
+    setIsOverflowed(overFlowing);
     /* disabling to not put the ref in dep array */
     /* eslint-disable react-hooks/exhaustive-deps */
   }, [
