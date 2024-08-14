@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.24...v4.0.0-v4-Carbon11.25) (2024-08-14)
+
+
+### Bug Fixes
+
+* card title overflow fix ([69072e6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69072e69c0a8a5fde151a48866dc1ee4f18a5ab8))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.23...v4.0.0-v4-Carbon11.24) (2024-08-13)
 
 
