@@ -17,6 +17,7 @@
 @use '@carbon/react/scss/utilities/convert';
 @use '@carbon/react/scss/components/data-table/sort/data-table-sort' as *;
 @use '@carbon/react/scss/components/data-table' as *;
+@use '@carbon/react/scss/components/data-table/action' as *;
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
