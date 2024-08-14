@@ -9,7 +9,7 @@ $tooltipSize: $spacing-07;
 $lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--title {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   // min-width value is required to ensure flex child with text properly truncates
@@ -27,6 +27,16 @@ $lineHeightSize: 1.375em;
   & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: $spacing-05;
   }
+
+  &--text .#{$prefix}--toggletip-label {
+    @include type-style('heading-compact-02');
+    color: $text-primary;
+  }
+}
+.#{$iot-prefix}--card--subtitle {
+  &--text .#{$prefix}--toggletip-label {
+    @include type-style('label-01');
+  }
 }
 
 .#{$iot-prefix}--card--header--tooltip {
@@ -40,8 +50,17 @@ $lineHeightSize: 1.375em;
 .#{$iot-prefix}--card--title--text,
 .#{$iot-prefix}--card--subtitle--text {
   @include multiline-text-overflow(1, $lineHeightSize);
+  overflow: visible;
   word-break: break-all;
   min-width: 3rem;
+  .#{$prefix}--toggletip-label {
+    overflow: hidden;
+    & > div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }
 
 .#{$iot-prefix}--card--title--text--wrapped {
@@ -90,18 +109,4 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
 
 .#{$iot-prefix}--card-heading-clickable {
   cursor: pointer;
-}
-
-.iot--card--title--text,
-.iot--card--subtitle--text {
-  overflow: visible;
-}
-.iot--card--title--text .cds--toggletip-label {
-  font-weight: 600;
-}
-
-.iot--card--title .cds--toggletip-label {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }

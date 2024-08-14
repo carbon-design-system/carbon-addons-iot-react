@@ -70,7 +70,8 @@ export const CardTitle = (
         menuOffset={calculateMenuOffset}
         direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
-        ref={titleRef}
+        useAutoPositioning
+        toggleTipLabelRef={titleRef}
         showIcon={false}
         className={classnames(
           `${iotPrefix}--card--title--text__overflow`,
@@ -126,7 +127,8 @@ export const CardTitle = (
         menuOffset={calculateMenuOffset}
         direction={adjustedDirection}
         data-testid={`${testId}-subtitle`}
-        ref={subTitleRef}
+        toggleTipLabelRef={subTitleRef}
+        useAutoPositioning
         showIcon={false}
         className={classnames(
           `${iotPrefix}--card--subtitle--text`,
@@ -161,6 +163,7 @@ export const CardTitle = (
         <ToggleTip
           data-testid={`${testId}-tooltip`}
           triggerId={`card-tooltip-trigger-${id}`}
+          useAutoPositioning
           tooltipId={`card-tooltip-${id}`}
           triggerClassName={`${iotPrefix}--card--header--tooltip`}
           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744

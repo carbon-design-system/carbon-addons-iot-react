@@ -19,6 +19,7 @@ export const ToggleTip = ({
   action,
   useAutoPositioning,
   showIcon,
+  toggleTipLabelRef,
   ...other
 }) => {
   let newAlign;
@@ -50,7 +51,11 @@ export const ToggleTip = ({
   }
   return (
     <>
-      {showIcon && triggerText !== '' ? <ToggletipLabel>{triggerText}</ToggletipLabel> : null}
+      {showIcon && triggerText !== '' ? (
+        <ToggletipLabel>
+          <div ref={toggleTipLabelRef}>{triggerText}</div>
+        </ToggletipLabel>
+      ) : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
         {triggerBtn ?? (
           <ToggletipButton>
@@ -61,7 +66,9 @@ export const ToggleTip = ({
                 <Information />
               )
             ) : (
-              <ToggletipLabel>{triggerText}</ToggletipLabel>
+              <ToggletipLabel>
+                <div ref={toggleTipLabelRef}>{triggerText}</div>
+              </ToggletipLabel>
             )}
           </ToggletipButton>
         )}
@@ -84,6 +91,7 @@ ToggleTip.propTypes = {
   action: PropTypes.node,
   useAutoPositioning: PropTypes.bool,
   showIcon: PropTypes.bool,
+  toggleTipLabelRef: PropTypes.shape({ current: PropTypes.node }),
 };
 
 ToggleTip.defaultProps = {
@@ -93,6 +101,7 @@ ToggleTip.defaultProps = {
   triggerText: '',
   useAutoPositioning: false,
   showIcon: true,
+  toggleTipLabelRef: undefined,
 };
 
 export default ToggleTip;
