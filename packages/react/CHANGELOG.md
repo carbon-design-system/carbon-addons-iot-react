@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.33...v2.154.0-next.34) (2024-08-16)
+
+
+### Bug Fixes
+
+* select the inner modal body css ([#3878](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3878)) ([fe6103e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fe6103e998b51327ad989e00831834f0996620f3))
+
+
+
+
+
 # [2.154.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.32...v2.154.0-next.33) (2024-08-09)
 
 
