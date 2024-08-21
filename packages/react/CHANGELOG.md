@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.26...v4.0.0-v4-Carbon11.27) (2024-08-21)
+
+
+### Bug Fixes
+
+* header style fixes ([58e926a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/58e926ac797f9f612305ed647bdf7dbbf76967fc))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.25...v4.0.0-v4-Carbon11.26) (2024-08-14)
 
 
