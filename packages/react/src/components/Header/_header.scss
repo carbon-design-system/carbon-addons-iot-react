@@ -12,8 +12,8 @@ $hoverBgColor: #2c2c2c;
 
 .#{$prefix}--header {
   $actionMenuItemHoverBgColor: #353535;
-  background-color: $layer-selected-inverse; // Force dark mode in header even in gray-10 theme
-  border-block-end: $background-inverse; // Force dark mode in header even in gray-10 theme
+  background-color: $gray-100; // Force dark mode in header even in gray-10 theme
+  border-block-end: 1px solid $gray-80; // Force dark mode in header even in gray-10 theme
   .#{$prefix}--skip-to-content:focus {
     min-width: 240px;
     justify-content: center;
@@ -25,7 +25,7 @@ $hoverBgColor: #2c2c2c;
   }
   a.#{$prefix}--header__name,
   a.#{$prefix}--header__name:hover {
-    color: $field-01; // Force dark mode in header even in gray-10 theme
+    color: $gray-10; // Force dark mode in header even in gray-10 theme
   }
 
   .#{$prefix}--header__menu-trigger > svg {
@@ -171,6 +171,11 @@ $hoverBgColor: #2c2c2c;
     background-color: $gray-80;
   }
 
+  a.#{$prefix}--header__menu-item {
+    background-color: $gray-90;
+    color: $gray-30;
+  }
+
   .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
     .#{$prefix}--popover-container {
       width: 100%;
@@ -192,8 +197,6 @@ $hoverBgColor: #2c2c2c;
         right: auto;
       }
       .#{$prefix}--header__menu-item {
-        background: none;
-        color: $gray-30;
         &:not(cds--header__menu-title) {
           padding: 0 $spacing-05;
         }
@@ -259,8 +262,10 @@ $hoverBgColor: #2c2c2c;
 
 .#{$prefix}--header__action {
   &--active {
-    background-color: $hoverBgColor; // Force dark mode in header even in gray-10 theme
-    border: none;
+    border-right: 1px solid $gray-80; // Force dark mode in header even in gray-10 theme
+    border-bottom: 1px solid $gray-100; // Force dark mode in header even in gray-10 theme
+    border-left: 1px solid $gray-80; // Force dark mode in header even in gray-10 theme
+    background-color: $gray-100;
   }
   &:hover {
     background-color: $hoverBgColor; // Force dark mode in header even in gray-10 theme

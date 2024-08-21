@@ -410,7 +410,7 @@
   }
 
   &--logout {
-    a {
+    a.#{$prefix}--header__menu-item {
       background-color: $button-secondary;
       color: $text-inverse; //$inverse-01
       &:hover {
