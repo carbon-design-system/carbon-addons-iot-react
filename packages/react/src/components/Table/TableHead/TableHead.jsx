@@ -705,7 +705,7 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
-                tooltipDirection={flipTooltipDirection ? 'end' : undefined}
+                tooltipDirection={flipTooltipDirection ? 'bottom-end' : undefined}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
