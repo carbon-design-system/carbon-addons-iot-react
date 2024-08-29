@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.27...v4.0.0-v4-Carbon11.28) (2024-08-29)
+
+
+### Bug Fixes
+
+* table head definition tooltip alignment ([94a0ec3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94a0ec34bac8a68e5aca75d4ee87188d723608a2))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.26...v4.0.0-v4-Carbon11.27) (2024-08-21)
 
 
