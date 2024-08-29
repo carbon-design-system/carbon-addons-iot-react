@@ -331,7 +331,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.10.0",
-    "webpack": "^4.46.0",
+    "webpack": "^5.94.0",
     "webpack-dev-server": "^3.11.3",
     "whatwg-fetch": "^3.0.0"
   },
