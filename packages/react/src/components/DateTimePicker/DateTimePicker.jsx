@@ -27,7 +27,6 @@ import {
   getIntervalValue,
   invalidEndDate,
   invalidStartDate,
-  onDatePickerClose,
   parseValue,
   useAbsoluteDateTimeValue,
   useDateTimePickerFocus,
@@ -904,7 +903,6 @@ const DateTimePicker = ({
                       dateFormat="m/d/Y"
                       ref={pickerRefCallback}
                       onChange={onDatePickerChange}
-                      onClose={onDatePickerClose}
                       value={absoluteValue ? [absoluteValue.startDate, absoluteValue.endDate] : ''}
                       locale={newLocale}
                     >
@@ -1009,7 +1007,13 @@ const DateTimePicker = ({
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
       ref={fieldRef}
     >
-      <Tooltip triggerText={tooltipField} showIcon={false}>
+      <Tooltip
+        triggerText={tooltipField}
+        showIcon={false}
+        className={classnames({
+          [`${iotPrefix}--date-time-picker--hide-tooltip`]: isExpanded,
+        })}
+      >
         {tooltipValue}
       </Tooltip>
       {invalidState ? (
