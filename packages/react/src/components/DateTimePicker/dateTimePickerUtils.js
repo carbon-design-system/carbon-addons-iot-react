@@ -210,7 +210,7 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
   }, []);
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (datePickerElem.calendar && datePickerElem.calendar.isOpen !== undefined) {
+      if (datePickerElem?.calendar && datePickerElem.calendar.isOpen !== undefined) {
         datePickerElem.calendar.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
         // the only way to display the calendar inline is to re-parent its DOM to our component
