@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.29...v4.0.0-v4-Carbon11.30) (2024-08-30)
+
+
+### Bug Fixes
+
+* date time picker util function ([8d0aeba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d0aeba47544cf7ef4ae3423bd3b2e40e5862785))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.28...v4.0.0-v4-Carbon11.29) (2024-08-30)
 
 
