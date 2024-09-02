@@ -219,6 +219,7 @@ const SuiteHeader = ({
           if (sideNavExpandedRef.current) {
             // Only allow toggling off the side nav expanded state
             onClickSideNavExpand(...args);
+            sideNavExpandedRef.current = false;
           }
         },
       });
@@ -645,7 +646,7 @@ const SuiteHeader = ({
                   },
                 ].filter((i) => i)}
                 showCloseIconWhenPanelExpanded
-                isSideNavExpanded={isSideNavExpanded}
+                isSideNavExpanded={sideNavExpandedRef.current}
                 {...otherHeaderProps}
               />
               {sideNavProps ? (
