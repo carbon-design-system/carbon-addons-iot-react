@@ -91,7 +91,7 @@ jobs:
 
       - name: Download all build artifacts
         if: steps.changes.outputs.react == 'true'
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
 
       - name: Link dependencies and build test app
         if: steps.changes.outputs.react == 'true'

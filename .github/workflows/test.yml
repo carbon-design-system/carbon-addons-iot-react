@@ -162,14 +162,14 @@ jobs:
           node-version: '16.x'
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         if: steps.changes.outputs.react == 'true'
         with:
           name: cypress-coverage
           path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/cypress/coverage/
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         if: steps.changes.outputs.react == 'true'
         with:
           name: jest-coverage
