@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const MONACO_DIR = path.join(__dirname, 'node_modules/monaco-editor');
 
 module.exports = {
   framework: {
@@ -47,6 +49,12 @@ module.exports = {
         contextRegExp: /moment$/,
       })
     );
+    config.plugins.push(
+      new MonacoWebpackPlugin({
+        languages: ['typescript', 'javascript', 'css'],
+      })
+    );
+
     config.module.rules.push({
       test: /\.(js|jsx)$/,
       exclude: [
@@ -71,7 +79,7 @@ module.exports = {
     // Define our desired scss/css rule
     config.module.rules.push({
       test: /\.s?css$/,
-      exclude: /coverage/,
+      exclude: [/coverage/, /monaco-editor/],
       sideEffects: true,
       use: [
         // Creates `style` nodes from JS strings
@@ -103,6 +111,18 @@ module.exports = {
           },
         },
       ],
+    });
+
+    config.module.rules.push({
+      test: /\.css$/,
+      include: MONACO_DIR,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    });
+
+    config.module.rules.push({
+      test: /\.ttf$/,
+      use: ['file-loader'],
+      // type: 'asset',
     });
 
     // add the package local node_modules as the first place to look when resolving modules

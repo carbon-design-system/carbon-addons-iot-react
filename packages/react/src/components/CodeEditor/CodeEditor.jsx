@@ -1,5 +1,6 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
-import Editor from '@monaco-editor/react';
+import * as monaco from 'monaco-editor';
+import Editor, { loader } from '@monaco-editor/react';
 import { CodeSnippetSkeleton, CopyButton, Button } from '@carbon/react';
 import PropTypes from 'prop-types';
 import { Upload } from '@carbon/react/icons';
@@ -8,6 +9,8 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 
 const { prefix: carbonPrefix, iotPrefix } = settings;
+
+loader.config({ monaco });
 
 export const updateEditorAttribute = (disabled, editorValue) => {
   const textarea = document.getElementsByClassName('inputarea monaco-mouse-cursor-text')[0];
