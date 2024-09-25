@@ -24,6 +24,7 @@ module.exports = function generateConfig(api) {
       ...(BABEL_ENV === 'production'
         ? ['transform-react-remove-prop-types', { mode: 'unsafe-wrap' }]
         : []),
+      '@babel/plugin-proposal-class-static-block',
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',

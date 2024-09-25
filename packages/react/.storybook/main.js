@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   stories: ['./Welcome.story.jsx', '../src/**/*.story.jsx'],
@@ -34,7 +35,18 @@ module.exports = {
 
     // Moment.js is quite large, the locales that they bundle in the core as of v2.18 are ignored to keep our bundle size down.
     // https://webpack.js.org/plugins/ignore-plugin/#example-of-ignoring-moment-locales
-    config.plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment\/min$/));
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^\.\/locale$/,
+        contextRegExp: /moment$/,
+      })
+    );
+
+    config.plugins.push(
+      new MonacoWebpackPlugin({
+        languages: ['javascript', 'css'],
+      })
+    );
 
     config.module.rules.push({
       test: /\.(js|jsx)$/,
@@ -94,6 +106,21 @@ module.exports = {
       ],
     });
 
+    config.module.rules.push({
+      test: /\.ttf$/,
+      use: ['file-loader'],
+    });
+
+    config.module.rules.push({
+      test: /\.(js|jsx)$/,
+      exclude: { and: [/node_modules/], not: [/monaco-editor/] },
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+        },
+      },
+    });
     // add the package local node_modules as the first place to look when resolving modules
     // more info here: https://webpack.js.org/configuration/resolve/#resolvemodules
     config.resolve.modules = [path.resolve(__dirname, '../node_modules'), 'node_modules'];
