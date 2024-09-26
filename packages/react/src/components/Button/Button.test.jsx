@@ -37,11 +37,11 @@ describe('Button', () => {
   it('loading', () => {
     const wrapper = mount(
       <Button loading {...commonProps}>
-        Click Me2
+        Click Me
       </Button>
     );
     expect(wrapper.find(Loading)).toHaveLength(1);
-    const notLoadingWrapper = mount(<Button {...commonProps}>Click Me2</Button>);
+    const notLoadingWrapper = mount(<Button {...commonProps}>Click Me</Button>);
     expect(notLoadingWrapper.find(Loading)).toHaveLength(0);
   });
   it('should render when kind icon-selection', () => {
