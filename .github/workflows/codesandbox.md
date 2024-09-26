@@ -7,7 +7,7 @@ test-codesandbox:
 name: Test Codesandbox
 runs-on: ubuntu-latest
 container:
-image: cypress/browsers:node16.14.0-slim-chrome99-ff97
+image: cypress/browsers:node-20.17.0-chrome-129.0.6668.70-1-ff-130.0.1-edge-129.0.2792.52-1
 options: --privileged
 
     steps:
@@ -18,9 +18,9 @@ options: --privileged
           apt-get install -y git/buster-backports
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
@@ -31,13 +31,13 @@ options: --privileged
         run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         if: steps.changes.outputs.react == 'true'
         with:
           path: |
@@ -46,7 +46,7 @@ options: --privileged
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Cache Cypress binary
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         if: steps.changes.outputs.react == 'true'
         with:
           path: ~/.cache/Cypress
