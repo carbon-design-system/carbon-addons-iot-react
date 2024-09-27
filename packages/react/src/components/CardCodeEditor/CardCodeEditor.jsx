@@ -61,6 +61,8 @@ const defaultProps = {
     expandBtnLabel: 'Expand',
     modalPrimaryButtonLabel: 'Save',
     modalSecondaryButtonLabel: 'Cancel',
+    copyBtnDescription: 'Copy to clipboard',
+    copyBtnFeedBack: 'Copied!',
   },
   language: 'json',
   initialValue: null,

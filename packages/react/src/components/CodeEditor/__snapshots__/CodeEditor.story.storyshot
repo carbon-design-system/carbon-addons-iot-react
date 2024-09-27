@@ -99,6 +99,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     </button>
     <div
       className="cm-theme iot--code-editor-container iot--code-editor-container--disabled"
+      options={
+        Object {
+          "mode": "css",
+        }
+      }
     />
   </div>
 </div>
