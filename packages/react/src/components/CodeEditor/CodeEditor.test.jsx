@@ -429,7 +429,7 @@ describe('CardEditor - codemirror', () => {
 
     expect(screen.getByDisplayValue('write your code here')).toBeInTheDocument();
 
-    const editor = container.querySelector(`.cm-editor `);
+    const editor = container.querySelector(`.cm-editor`);
 
     fireEvent.change(editor, {
       target: { value: 'new value' },
