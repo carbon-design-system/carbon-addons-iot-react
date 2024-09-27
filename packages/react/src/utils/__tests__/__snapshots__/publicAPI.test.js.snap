@@ -475,6 +475,7 @@ Map {
         ".css",
       ],
       "disabled": false,
+      "editor": "monaco",
       "hasUpload": false,
       "i18n": Object {
         "copyBtnDescription": "Copy content",
@@ -499,6 +500,15 @@ Map {
       },
       "disabled": Object {
         "type": "bool",
+      },
+      "editor": Object {
+        "args": Array [
+          Array [
+            "monaco",
+            "codemirror",
+          ],
+        ],
+        "type": "oneOf",
       },
       "hasUpload": Object {
         "type": "bool",
