@@ -92,8 +92,19 @@ const CodeEditor = ({
   const [codeEditorValue, setCodeEditorValue] = useState(initialValue);
 
   useEffect(() => {
-    updateEditorAttribute(disabled, editorValue);
-  }, [disabled]);
+    if (editor === 'monaco') {
+      updateEditorAttribute(disabled, editorValue);
+    }
+  }, [disabled, editor]);
+
+  const languageCodeMirror =
+    language === 'css'
+      ? [css()]
+      : language === 'javascript'
+      ? [javascript()]
+      : language === 'json'
+      ? [json()]
+      : [javascript()];
 
   /**
    *
@@ -221,10 +232,13 @@ const CodeEditor = ({
           })}
           height="100%"
           value={codeEditorValue}
-          extensions={[javascript(), css(), json()]}
+          extensions={languageCodeMirror}
           onChange={handleEditorChange}
           editable={!disabled}
           theme={disabled ? disabledTheme : 'light'}
+          options={{
+            mode: language,
+          }}
         />
       )}
     </div>
