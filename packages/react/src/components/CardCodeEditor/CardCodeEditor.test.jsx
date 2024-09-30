@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
@@ -162,5 +162,28 @@ describe('CardEditor - codemirror ', () => {
     const copy = container.querySelector(`.${iotPrefix}--code-editor-copy`);
     userEvent.click(copy);
     expect(handleOnCopy).toHaveBeenCalledWith('/* write your code here */');
+  });
+  it('should update code editor content', async () => {
+    const handleOnCopy = jest.fn();
+
+    const { container } = render(
+      <CardCodeEditor
+        onSubmit={isValidCallback}
+        onCopy={handleOnCopy}
+        initialValue="/* write your code here */"
+        onClose={() => {}}
+        editor="codemirror"
+      />
+    );
+
+    expect(screen.getByDisplayValue('/* write your code here */')).toBeInTheDocument();
+
+    const editor = container.querySelector(`.cm-editor`);
+
+    fireEvent.change(editor, {
+      target: { value: 'new value' },
+    });
+
+    expect(screen.getByDisplayValue('new value')).toBeInTheDocument();
   });
 });
