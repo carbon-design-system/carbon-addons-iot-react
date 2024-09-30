@@ -64,15 +64,15 @@ jobs:
     name: React Cypress test
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node-20.17.0-chrome-129.0.6668.70-1-ff-130.0.1-edge-129.0.2792.52-1
+      image: cypress/browsers:node16.14.0-slim-chrome99-ff97
       options: --privileged
 
     steps:
-      # - name: Upgrade git
-      #   run: |
-      #     echo deb "http://archive.debian.org/debian buster-backports main" >> /etc/apt/sources.list
-      #     apt-get update
-      #     apt-get install -y git/buster-backports
+      - name: Upgrade git
+        run: |
+          echo deb "http://archive.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+          apt-get update
+          apt-get install -y git/buster-backports
 
       - name: Checkout code
         uses: actions/checkout@v4
