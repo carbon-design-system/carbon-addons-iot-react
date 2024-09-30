@@ -1,6 +1,5 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
-import Editor from '@monaco-editor/react';
-import { CodeSnippetSkeleton, InlineNotification, CopyButton } from '@carbon/react';
+import React, { useState, useMemo } from 'react';
+import { InlineNotification } from '@carbon/react';
 import { Popup } from '@carbon/react/icons';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -9,6 +8,7 @@ import ComposedModal from '../ComposedModal';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import deprecate from '../../internal/deprecate';
+import CodeEditor from '../CodeEditor/CodeEditor';
 
 const { iotPrefix } = settings;
 
@@ -59,6 +59,8 @@ const defaultProps = {
     expandBtnLabel: 'Expand',
     modalPrimaryButtonLabel: 'Save',
     modalSecondaryButtonLabel: 'Cancel',
+    copyBtnDescription: 'Copy to clipboard',
+    copyBtnFeedBack: 'Copied!',
   },
   language: 'json',
   initialValue: null,
@@ -78,38 +80,18 @@ const CardCodeEditor = ({
   testId,
   ...composedModalProps
 }) => {
-  const editorValue = useRef();
+  const [editorValue, setEditorValue] = useState(initialValue);
   const [isExpanded, setIsExpanded] = useState();
   const [error, setError] = useState(false);
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    editorValue?.current?.layout();
-  }, [isExpanded]);
-
-  /**
-   *
-   * @param {object} editor - instance of the editor
-   * @param {object} _monaco - instance of monaco
-   */
-  // eslint-disable-next-line no-unused-vars
-  const handleEditorDidMount = (editor, _monaco) => {
-    editorValue.current = editor;
-  };
-
   const handleOnSubmit = () => {
-    onSubmit(editorValue?.current?.getValue(), setError);
+    onSubmit(editorValue, setError);
   };
 
   const handleOnExpand = () => {
     setIsExpanded((expandedState) => !expandedState);
-  };
-
-  const handleOnCopy = () => {
-    const value = editorValue?.current?.getValue() || initialValue;
-    return onCopy && onCopy(value);
   };
 
   return (
@@ -155,38 +137,15 @@ const CardCodeEditor = ({
           data-testid={`${testID || testId}-notification`}
         />
       )}
-      <div
-        // TODO: remove deprecated testID in v3.
-        data-testid={testID || testId}
-        className={`${iotPrefix}--editor-copy-wrapper`}
-      >
-        {onCopy && (
-          <CopyButton
-            className={`${iotPrefix}--editor-copy`}
-            onClick={handleOnCopy}
-            iconDescription={mergedI18n.copyBtnDescription}
-            feedback={mergedI18n.copyBtnFeedBack}
-            // TODO: remove deprecated testID in v3.
-            data-testid={`${testID || testId}-copy-button`}
-          />
-        )}
-        <Editor
-          className={`${iotPrefix}--editor-container`}
-          wrapperClassName={`${iotPrefix}--editor-wrapper`}
-          loading={<CodeSnippetSkeleton />}
-          value={initialValue}
-          line={2}
-          language={language}
-          onMount={handleEditorDidMount}
-          options={{
-            minimap: {
-              enabled: false,
-            },
-            autoIndent: true,
-            wordWrap: 'off',
-          }}
-        />
-      </div>
+      <CodeEditor
+        language={language}
+        onCopy={onCopy}
+        initialValue={initialValue}
+        onCodeEditorChange={(value) => setEditorValue(value)}
+        light
+        i18n={mergedI18n}
+        testId={testID || testId}
+      />
     </ComposedModal>
   );
 };
