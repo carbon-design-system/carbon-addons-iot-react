@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
@@ -26,13 +26,13 @@ jobs:
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
           node-version: '16.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         if: steps.changes.outputs.react == 'true'
         with:
           path: |
@@ -57,7 +57,7 @@ jobs:
 
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: packages/react/dist
@@ -69,9 +69,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
@@ -79,10 +79,10 @@ jobs:
               - 'packages/react/**'
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '20.x'
+          node-version: '16.x'
 
       - name: Run cli command to create test app
         if: steps.changes.outputs.react == 'true'
@@ -91,7 +91,7 @@ jobs:
 
       - name: Download all build artifacts
         if: steps.changes.outputs.react == 'true'
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
 
       - name: Link dependencies and build test app
         if: steps.changes.outputs.react == 'true'
