@@ -54,7 +54,6 @@ export default [
         babelHelpers: 'runtime',
       }),
       replace({
-        preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify(env),
       }),
       json({
