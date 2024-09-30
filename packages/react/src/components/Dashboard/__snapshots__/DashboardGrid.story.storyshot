@@ -1719,7 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    1.000.000
+                    1,000,000
                   </span>
                 </div>
                 <div
@@ -1736,7 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    5.000.000
+                    5,000,000
                   </span>
                 </div>
                 <div
@@ -1753,7 +1753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    10.000.000
+                    10,000,000
                   </span>
                 </div>
                 <div
@@ -1770,7 +1770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    50.000.000
+                    50,000,000
                   </span>
                 </div>
                 <div
@@ -1787,7 +1787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    100.000.000
+                    100,000,000
                   </span>
                 </div>
                 <div
@@ -1804,7 +1804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    250.000.000
+                    250,000,000
                   </span>
                 </div>
                 <div
@@ -1821,7 +1821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    500.000.000
+                    500,000,000
                   </span>
                 </div>
                 <div
@@ -1838,7 +1838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="iot--map-legend-keys-value"
                   >
-                    1.000.000.000
+                    1,000,000,000
                   </span>
                 </div>
               </div>
