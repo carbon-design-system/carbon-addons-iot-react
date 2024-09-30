@@ -7,7 +7,7 @@ branches: - next
 jobs:
 update-v3:
 runs-on: ubuntu-latest
-steps: - uses: actions/checkout@v2
+steps: - uses: actions/checkout@v4
 with:
 ref: v3
 fetch-depth: 0
@@ -19,7 +19,7 @@ fetch-depth: 0
           git merge origin/next
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           branch: v3-upgrade
           title: '[v3] Automated merge next into v3-upgrade'
