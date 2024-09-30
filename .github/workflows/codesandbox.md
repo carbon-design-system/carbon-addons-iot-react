@@ -7,7 +7,7 @@ test-codesandbox:
 name: Test Codesandbox
 runs-on: ubuntu-latest
 container:
-image: cypress/browsers:node-20.17.0-chrome-129.0.6668.70-1-ff-130.0.1-edge-129.0.2792.52-1
+image: cypress/browsers:node16.14.0-slim-chrome99-ff97
 options: --privileged
 
     steps:
@@ -34,7 +34,7 @@ options: --privileged
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '20.x'
+          node-version: '16.x'
 
       - name: Cache dependencies
         uses: actions/cache@v4

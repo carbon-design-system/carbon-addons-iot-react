@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '20.x'
+          node-version: '16.x'
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -82,7 +82,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '20.x'
+          node-version: '16.x'
 
       - name: Run cli command to create test app
         if: steps.changes.outputs.react == 'true'
