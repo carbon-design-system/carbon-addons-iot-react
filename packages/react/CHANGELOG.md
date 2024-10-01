@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.34...v2.154.0-next.35) (2024-10-01)
+
+
+### Features
+
+* Support to CodeEditor new lib ([#3887](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3887)) ([4aee867](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4aee867aba203cde305bb99ab1959541fa08be8d))
+
+
+
+
+
 # [2.154.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.33...v2.154.0-next.34) (2024-08-16)
 
 
