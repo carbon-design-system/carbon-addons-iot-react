@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -8,6 +9,7 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from '@rollup/plugin-json';
+import css from 'rollup-plugin-import-css';
 
 const packageJson = require('./package.json');
 
@@ -72,6 +74,7 @@ export default [
         // generate a named export for every property of the JSON object
         namedExports: true, // Default: true
       }),
+      css(),
       ...prodSettings,
     ],
   },
@@ -96,6 +99,7 @@ export default [
         },
         plugins: [autoprefixer],
       }),
+      css(),
     ],
   },
   // Copy all styles to various directories.
@@ -107,6 +111,7 @@ export default [
         file: 'umd/carbon-addons-iot-react.js',
         name: 'CarbonAddonsIoTReact',
         format: 'umd',
+        inlineDynamicImports: true,
         globals: {
           classnames: 'classNames',
           'prop-types': 'PropTypes',
@@ -165,6 +170,7 @@ export default [
         // generate a named export for every property of the JSON object
         namedExports: true, // Default: true
       }),
+      css(),
       copy({
         flatten: false,
         targets: [
