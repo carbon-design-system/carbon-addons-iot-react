@@ -5,9 +5,17 @@
     overflow: hidden;
     min-height: 3.5rem;
     padding-top: $spacing-05;
+    // case it's light and disabled
+    .cm-gutters {
+      background-color: $ui-01;
+    }
   }
   &-container--light {
     background-color: $ui-background;
+    .cm-gutters,
+    .cm-content {
+      background-color: $ui-background;
+    }
   }
   &-container--disabled {
     background-color: $disabled-02;
@@ -16,6 +24,11 @@
       > div > span > * {
         color: $disabled-03;
       }
+    }
+    // case it's light and disabled
+    .cm-gutters,
+    .cm-content {
+      background-color: $disabled-02;
     }
   }
 
