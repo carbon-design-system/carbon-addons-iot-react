@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.33...v4.0.0-v4-Carbon11.34) (2024-10-02)
+
+
+### Features
+
+* Monaco editor load resources from npm ([#3886](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3886)) ([6299902](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6299902869febbecd7b535d2434679e30240258e))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.32...v4.0.0-v4-Carbon11.33) (2024-09-25)
 
 
