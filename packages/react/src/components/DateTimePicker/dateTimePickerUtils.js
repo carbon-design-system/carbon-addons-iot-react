@@ -206,38 +206,31 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (datePickerElem) {
-        datePickerElem.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to re-parent its DOM to our component
+    if (datePickerElem) {
+      // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
+      // the only way to display the calendar inline is to re-parent its DOM to our component
 
-        if (v2) {
-          const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
+      if (v2) {
+        const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
+        dp.appendChild(datePickerElem.cal.calendarContainer);
+      } else {
+        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
+
+        if (typeof wrapper !== 'undefined' && wrapper !== null) {
+          const dp = document
+            .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
+            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
           dp.appendChild(datePickerElem.cal.calendarContainer);
-        } else {
-          const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
-
-          if (typeof wrapper !== 'undefined' && wrapper !== null) {
-            const dp = document
-              .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
-              .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-            dp.appendChild(datePickerElem.cal.calendarContainer);
-          }
-        }
-
-        // if we were focused on the Absolute radio button previously, restore focus to it.
-        /* istanbul ignore if */
-        if (previousActiveElement.current) {
-          previousActiveElement.current.focus();
-          previousActiveElement.current = null;
         }
       }
-    }, 0);
 
-    return () => {
-      clearTimeout(timeout);
-    };
+      // if we were focused on the Absolute radio button previously, restore focus to it.
+      /* istanbul ignore if */
+      if (previousActiveElement.current) {
+        previousActiveElement.current.focus();
+        previousActiveElement.current = null;
+      }
+    }
   }, [datePickerElem, id, v2]);
 
   return [datePickerElem, handleDatePickerRef];
