@@ -27,7 +27,6 @@ module.exports = function generateConfig(api) {
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',
-      '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-syntax-import-meta',
       [
         '@babel/plugin-proposal-decorators',
@@ -40,6 +39,7 @@ module.exports = function generateConfig(api) {
       '@babel/plugin-transform-export-namespace-from',
       '@babel/plugin-proposal-export-default-from',
       '@babel/plugin-transform-logical-assignment-operators',
+      '@babel/plugin-transform-optional-chaining',
       [
         '@babel/plugin-proposal-pipeline-operator',
         {
