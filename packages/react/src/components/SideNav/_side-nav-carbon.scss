@@ -22,6 +22,7 @@
 $small-screen-breakpoint: 65.99em;
 
 .#{$iot-prefix}--side-nav {
+  $shell-side-nav-bg-04: #e5e5e5;
   ///////////////////////////////////////
   // Added here to allow for collapse sidenav
   // with isRail property functionality
@@ -59,7 +60,7 @@ $small-screen-breakpoint: 65.99em;
       [aria-current='page']
     ):hover {
     color: $gray-100;
-    // background-color: $shell-side-nav-bg-04;
+    background-color: $shell-side-nav-bg-04;
   }
 
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link {
@@ -104,7 +105,7 @@ $small-screen-breakpoint: 65.99em;
 
   .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
     @include text-overflow();
-    // color: $shell-side-nav-text-01; // $shell-side-nav-text-01;
+    color: $gray-70; // $shell-side-nav-text-01;
     font-size: convert.to-rem(14px);
     line-height: 1.25rem;
     letter-spacing: 0.1px;
@@ -124,7 +125,7 @@ $small-screen-breakpoint: 65.99em;
   .#{$prefix}--side-nav__link[aria-current='page'],
   .#{$prefix}--side-nav__link--current {
     font-weight: 600;
-    // background-color: $shell-side-nav-bg-04; //$shell-side-nav-bg-04;
+    background-color: $shell-side-nav-bg-04;
   }
 
   .#{$prefix}--side-nav__link[aria-current='page'] .#{$prefix}--side-nav__link-text,
@@ -139,7 +140,7 @@ $small-screen-breakpoint: 65.99em;
     bottom: 0;
     left: 0;
     width: 4px;
-    // background-color: $shell-side-nav-accent-01; // $shell-side-nav-accent-01;
+    background-color: $blue-60; // $shell-side-nav-accent-01;
     content: '';
   }
 

@@ -6,130 +6,142 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/components/button' as *;
 @use '@carbon/react/scss/components/date-picker' as *;
+
 // wraps the entire component
-.#{$iot-prefix}--date-time-pickerv2__wrapper {
-  width: var(--wrapper-width);
-  cursor: pointer;
+.#{$iot-prefix}--date-time-pickerv2 {
+  cursor: not-allowed;
 
-  &:focus {
-    outline: $spacing-01 solid $button-tertiary;
-  }
+  &__wrapper {
+    width: var(--wrapper-width);
+    cursor: pointer;
 
-  &:hover {
-    background-color: $layer-hover-01;
-  }
-
-  .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
-    font-size: 100%;
-    border-bottom: none;
-    letter-spacing: unset;
-  }
-
-  .#{$prefix}--popover-container {
-    width: 100%;
-    height: 48px;
-  }
-
-  // the text version of this
-  .#{$iot-prefix}--date-time-picker__box--full {
-    background-color: $layer-01;
-    color: $gray-100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid $border-strong-01;
-    &::selection {
-      color: none;
-      background: none;
-    }
-    max-height: 48px;
-    height: 48px;
-
-    [dir='rtl'] & {
-      padding-right: $spacing-05;
+    & > .#{$iot-prefix}--tooltip {
+      width: 100%;
+      .#{$iot-prefix}--date-time-picker__box--full {
+        width: 100%;
+      }
     }
 
-    // the whole thing should pickup the hover
+    &:focus {
+      outline: $spacing-01 solid $button-tertiary;
+    }
+
     &:hover {
-      background-color: inherit;
+      background-color: $layer-hover-01;
     }
 
-    .#{$iot-prefix}--flyout-menu {
-      z-index: 10000 !important;
+    .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
+      font-size: 100%;
+      border-bottom: none;
+      letter-spacing: unset;
     }
 
-    // hide the shadow around the button for the text version
-    .#{$iot-prefix}--flyout-menu__open {
-      box-shadow: unset;
+    .#{$prefix}--popover-container {
+      width: 100%;
+      height: 48px;
     }
 
-    // the button should always inherit the background color
-    .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light)
-      .#{$iot-prefix}--flyout-menu--trigger-button {
-      background-color: inherit;
-    }
+    // the text version of this
+    .#{$iot-prefix}--date-time-picker__box--full {
+      background-color: $layer-01;
+      color: $gray-100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $border-strong-01;
+      &::selection {
+        color: none;
+        background: none;
+      }
+      max-height: 48px;
+      height: 48px;
 
-    .#{$iot-prefix}--flyout-menu .#{$prefix}--tooltip__label {
-      outline: none;
-    }
-
-    .#{$iot-prefix}--date-time-picker__field {
-      padding-left: $spacing-05;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      position: relative;
-
-      & span {
-        white-space: nowrap;
+      [dir='rtl'] & {
+        padding-right: $spacing-05;
       }
 
+      // the whole thing should pickup the hover
       &:hover {
-        background-color: $layer-hover-01;
+        background-color: inherit;
       }
 
-      &:focus {
-        outline: 2px solid $blue-60;
-        border-bottom: none;
-      }
-      // tooltip has default left outline
-      .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
-        outline: unset;
+      .#{$iot-prefix}--flyout-menu {
+        z-index: 10000 !important;
       }
 
-      .#{$iot-prefix}--date-time-picker__tooltip-trigger {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        pointer-events: none;
-      }
-
-      .#{$iot-prefix}--date-time-picker__disabled {
-        opacity: 0.5;
-      }
-    }
-
-    .#{$iot-prefix}--flyout-menu--tooltip-anchor {
-      height: unset;
-      position: unset;
-      width: unset;
-
-      .#{$iot-prefix}--flyout-menu--body {
+      // hide the shadow around the button for the text version
+      .#{$iot-prefix}--flyout-menu__open {
         box-shadow: unset;
       }
-    }
-  }
 
-  .#{$iot-prefix}--date-time-picker__box--light {
-    background-color: $field-02;
-    .#{$iot-prefix}--date-time-picker--trigger-button {
-      background-color: transparent;
-    }
-  }
+      // the button should always inherit the background color
+      .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light)
+        .#{$iot-prefix}--flyout-menu--trigger-button {
+        background-color: inherit;
+      }
 
-  .#{$iot-prefix}--date-time-picker__box--disabled {
-    border: none;
+      .#{$iot-prefix}--flyout-menu .#{$prefix}--tooltip__label {
+        outline: none;
+      }
+
+      .#{$iot-prefix}--date-time-picker__field {
+        padding-left: $spacing-05;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+
+        & span {
+          white-space: nowrap;
+        }
+
+        &:hover {
+          background-color: $layer-hover-01;
+        }
+
+        &:focus {
+          outline: 2px solid $blue-60;
+          border-bottom: none;
+        }
+        // tooltip has default left outline
+        .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
+          outline: unset;
+        }
+
+        .#{$iot-prefix}--date-time-picker__tooltip-trigger {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          pointer-events: none;
+        }
+
+        .#{$iot-prefix}--date-time-picker__disabled {
+          opacity: 0.5;
+        }
+      }
+
+      .#{$iot-prefix}--flyout-menu--tooltip-anchor {
+        height: unset;
+        position: unset;
+        width: unset;
+
+        .#{$iot-prefix}--flyout-menu--body {
+          box-shadow: unset;
+        }
+      }
+    }
+
+    .#{$iot-prefix}--date-time-picker__box--light {
+      background-color: $field-02;
+      .#{$iot-prefix}--date-time-picker--trigger-button {
+        background-color: transparent;
+      }
+    }
+
+    .#{$iot-prefix}--date-time-picker__box--disabled {
+      border: none;
+    }
   }
 }
 
@@ -410,8 +422,4 @@ html[dir='rtl'] {
 
 .#{$iot-prefix}--card--toolbar .#{$iot-prefix}--date-time-pickerv2__wrapper:focus {
   outline: none;
-}
-
-.#{$iot-prefix}--date-time-pickerv2 {
-  cursor: not-allowed;
 }

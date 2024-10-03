@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.33...v4.0.0-v4-Carbon11.34) (2024-10-02)
+
+
+### Features
+
+* Monaco editor load resources from npm ([#3886](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3886)) ([6299902](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6299902869febbecd7b535d2434679e30240258e))
+
+
+
+
+
+# [4.0.0-v4-Carbon11.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.32...v4.0.0-v4-Carbon11.33) (2024-09-25)
+
+
+### Bug Fixes
+
+* date time picker v2 style ([6edf30b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6edf30bf33853eb551073bf48b57073f5dd0d3ca))
+
+
+
+
+
+# [4.0.0-v4-Carbon11.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.31...v4.0.0-v4-Carbon11.32) (2024-09-06)
+
+
+### Bug Fixes
+
+* side nav colors added back ([932dc57](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/932dc57d93ab81513e023f6b62a7da3ed8f4814f))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.30...v4.0.0-v4-Carbon11.31) (2024-08-30)
 
 
