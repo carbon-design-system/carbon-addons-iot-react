@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-v4-Carbon11.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.34...v4.0.0-v4-Carbon11.35) (2024-10-03)
+
+
+### Bug Fixes
+
+* **build:** fix in react recursive component not working ([#3888](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3888)) ([4cec39a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cec39a9c04c8c3b07b792bf0a9bea90352e2113))
+
+
+
+
+
 # [4.0.0-v4-Carbon11.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.0.0-v4-Carbon11.33...v4.0.0-v4-Carbon11.34) (2024-10-02)
 
 
