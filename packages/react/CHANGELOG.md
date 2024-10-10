@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.154.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.36...v2.154.0-next.37) (2024-10-10)
+
+
+### Bug Fixes
+
+* adding back style fix that was deleted during merge ([#3889](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3889)) ([9b2bffd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b2bffdb2d50143d7b6a83a30b25952247302c41))
+
+
+
+
+
 # [2.154.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.154.0-next.35...v2.154.0-next.36) (2024-10-02)
 
 
