@@ -5,7 +5,7 @@ import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
 import { Toggle } from '../../../../Toggle';
-import { TextInput } from '../../../../TextInput';
+import { NumberInput } from '../../../../NumberInput';
 import { Dropdown } from '../../../../Dropdown';
 import { RadioButton } from '../../../../RadioButton';
 import { RadioButtonGroup } from '../../../../RadioButtonGroup';
@@ -205,14 +205,17 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
         </>
       ) : null}
       <div className={`${baseClassName}--input`}>
-        <TextInput
+        <NumberInput
           id={`${id}_maximum_data_points`}
-          labelText={mergedI18n.maximumDataPoints}
+          label={mergedI18n.maximumDataPoints}
+          step={10}
+          min={0}
           light
-          type="number"
           onChange={(evt) => {
-            const maximumDataPointsString = evt.target.value;
-            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            const maximumDataPoints = Number.parseInt(
+              evt.imaginaryTarget.value ?? evt.target.value,
+              10
+            );
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, maximumDataPoints },

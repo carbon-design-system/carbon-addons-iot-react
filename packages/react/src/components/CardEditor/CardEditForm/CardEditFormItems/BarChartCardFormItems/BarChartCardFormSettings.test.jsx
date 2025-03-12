@@ -58,8 +58,8 @@ describe('BarChartCardFormSettings', () => {
   });
   it('handles decimal precision onChange', () => {
     render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
-    const decimalPrecisionInput = screen.getByRole('textbox', {
-      name: 'Decimal places',
+    const decimalPrecisionInput = screen.getByRole('spinbutton', {
+      name: 'Decimal precision',
     });
     expect(decimalPrecisionInput).toBeInTheDocument();
     userEvent.type(decimalPrecisionInput, '2');

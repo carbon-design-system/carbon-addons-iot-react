@@ -57,7 +57,7 @@ describe('DataSeriesFormSettings', () => {
 
     expect(mockOnChange).toHaveBeenCalledWith({
       content: {
-        decimalPrecision: '2',
+        decimalPrecision: 2,
         series: [{ color: 'red', dataSourceId: 'temperature', label: 'Temperature' }],
         xLabel: 'Time',
         yLabel: 'Temperature (˚F)',

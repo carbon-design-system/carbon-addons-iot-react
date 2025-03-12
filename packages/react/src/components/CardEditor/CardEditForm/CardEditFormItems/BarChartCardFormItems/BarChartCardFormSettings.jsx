@@ -6,6 +6,7 @@ import { RadioButtonGroup } from '../../../../RadioButtonGroup';
 import { RadioButton } from '../../../../RadioButton';
 import { FormGroup } from '../../../../FormGroup';
 import { TextInput } from '../../../../TextInput';
+import { NumberInput } from '../../../../NumberInput';
 
 const { iotPrefix } = settings;
 
@@ -25,7 +26,7 @@ const propTypes = {
         })
       ),
       layout: PropTypes.string,
-      precision: PropTypes.number,
+      decimalPrecision: PropTypes.number,
       xLabel: PropTypes.string,
       yLabel: PropTypes.string,
       unit: PropTypes.string,
@@ -64,7 +65,7 @@ const defaultProps = {
     decimalPlacesLabel: 'Decimal places',
     showLegendLabel: 'Show legend',
     fontSize: 'Font size',
-    precisionLabel: 'Precision',
+    decimalPrecisionLabel: 'Decimal precision',
     layoutLabel: 'Layout',
     autoLabel: 'Auto',
     horizontal: 'Horizontal',
@@ -142,29 +143,37 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
         />
       </div>
       <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_decimal-places`}
-          labelText={mergedI18n.decimalPlacesLabel}
+        <NumberInput
+          id={`${id}_decimal-precision`}
+          label={mergedI18n.decimalPrecisionLabel}
+          min={0}
           light
           placeholder={mergedI18n.autoLabel}
-          onChange={(evt) =>
+          onChange={(evt) => {
+            const decimalPrecision = Number.parseInt(
+              evt.imaginaryTarget.value ?? evt.target.value,
+              10
+            );
             onChange({
               ...cardConfig,
-              content: { ...cardConfig.content, precision: evt.target.value },
-            })
-          }
-          value={content?.precision}
+              content: { ...cardConfig.content, decimalPrecision },
+            });
+          }}
+          value={content?.decimalPrecision}
         />
       </div>
       <div className={`${baseClassName}--input`}>
-        <TextInput
+        <NumberInput
           id={`${id}_maximum_data_points`}
-          labelText={mergedI18n.maximumDataPoints}
+          label={mergedI18n.maximumDataPoints}
+          step={10}
+          min={0}
           light
-          type="number"
           onChange={(evt) => {
-            const maximumDataPointsString = evt.target.value;
-            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            const maximumDataPoints = Number.parseInt(
+              evt.imaginaryTarget.value ?? evt.target.value,
+              10
+            );
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, maximumDataPoints },

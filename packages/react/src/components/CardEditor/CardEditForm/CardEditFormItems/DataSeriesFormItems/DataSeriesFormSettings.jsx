@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
 import { TextInput } from '../../../../TextInput';
+import { NumberInput } from '../../../../NumberInput';
 import { Toggle } from '../../../../Toggle';
 
 const { iotPrefix } = settings;
@@ -114,32 +115,40 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
         />
       </div>
       <div className={`${baseClassName}--input`}>
-        <TextInput
+        <NumberInput
           id={`${id}_decimal-precision`}
-          labelText={mergedI18n.decimalPrecisionLabel}
+          label={mergedI18n.decimalPrecisionLabel}
+          min={0}
           light
-          type="number"
-          onChange={(evt) =>
+          onChange={(evt) => {
+            const decimalPrecision = Number.parseInt(
+              evt.imaginaryTarget.value ?? evt.target.value,
+              10
+            );
+
             onChange({
               ...cardConfig,
               content: {
                 ...cardConfig.content,
-                decimalPrecision: evt.target.value,
+                decimalPrecision,
               },
-            })
-          }
+            });
+          }}
           value={content?.decimalPrecision}
         />
       </div>
       <div className={`${baseClassName}--input`}>
-        <TextInput
+        <NumberInput
           id={`${id}_maximum_data_points`}
-          labelText={mergedI18n.maximumDataPoints}
+          label={mergedI18n.maximumDataPoints}
+          step={10}
+          min={0}
           light
-          type="number"
           onChange={(evt) => {
-            const maximumDataPointsString = evt.target.value;
-            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            const maximumDataPoints = Number.parseInt(
+              evt.imaginaryTarget.value ?? evt.target.value,
+              10
+            );
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, maximumDataPoints },
