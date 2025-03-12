@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.155.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.155.4...v2.155.5) (2025-03-12)
+
+
+### Bug Fixes
+
+* change text input to number input ([cc0bf70](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cc0bf70266381564ee6bf2e1c349bb174b295ec6))
+
+
+
+
+
 ## [2.155.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.155.3...v2.155.4) (2025-02-20)
 
 
