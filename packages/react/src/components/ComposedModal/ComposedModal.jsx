@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import warning from 'warning';
+import { v4 as uuidv4 } from 'uuid';
 
 import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
@@ -243,6 +244,8 @@ const ComposedModal = ({
       ) : null}
       {error ? (
         <InlineNotification
+          key={uuidv4()} // regenerate the inline notification after they click on close button
+          lowContrast
           title={error}
           subtitle=""
           kind="error"
