@@ -1267,29 +1267,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="table card_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="table card_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="table card_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -4301,29 +4363,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="table card_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="table card_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="table card_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -5223,29 +5347,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="calculated_decimal-precision"
-                >
-                  Decimal precision
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="calculated_decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="calculated_decimal-precision"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={1}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -5254,29 +5440,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="calculated_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="calculated_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="calculated_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -7069,31 +7317,92 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="bar-chart_decimal-places"
-                >
-                  Decimal places
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="bar-chart_decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
-                      id="bar-chart_decimal-places"
+                      id="bar-chart_decimal-precision"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
                       placeholder="Auto"
-                      title="Auto"
-                      type="text"
+                      step={1}
+                      type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -7102,29 +7411,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="bar-chart_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="bar-chart_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="bar-chart_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -8904,29 +9275,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="timeseries_decimal-precision"
-                >
-                  Decimal precision
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="timeseries_decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="timeseries_decimal-precision"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={1}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -8935,29 +9368,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="timeseries_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="timeseries_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="timeseries_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9882,29 +10377,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="timeseries_decimal-precision"
-                >
-                  Decimal precision
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="timeseries_decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="timeseries_decimal-precision"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={1}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9913,29 +10470,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="iot--card-edit-form--input"
             >
               <div
-                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                className="bx--form-item"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="timeseries_maximum_data_points"
-                >
-                  Maximum data points
-                </label>
                 <div
-                  className="bx--text-input__field-outer-wrapper"
+                  className="bx--number bx--number--helpertext bx--number--light"
                 >
+                  <label
+                    className="bx--label"
+                    htmlFor="timeseries_maximum_data_points"
+                  >
+                    Maximum data points
+                  </label>
                   <div
-                    className="bx--text-input__field-wrapper"
-                    data-invalid={null}
+                    className="bx--number__input-wrapper"
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-label={null}
                       disabled={false}
                       id="timeseries_maximum_data_points"
+                      min={0}
                       onChange={[Function]}
-                      onClick={[Function]}
+                      pattern="[0-9]*"
+                      step={10}
                       type="number"
+                      value={0}
                     />
+                    <div
+                      className="bx--number__controls"
+                    >
+                      <button
+                        aria-label="Decrement number"
+                        className="bx--number__control-btn down-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Decrement number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="down-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                      <button
+                        aria-label="Increment number"
+                        className="bx--number__control-btn up-icon"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        title="Increment number"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="up-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        className="bx--number__rule-divider"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
