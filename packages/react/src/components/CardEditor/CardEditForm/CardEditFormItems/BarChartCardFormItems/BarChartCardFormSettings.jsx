@@ -150,10 +150,7 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           light
           placeholder={mergedI18n.autoLabel}
           onChange={(evt) => {
-            const decimalPrecision = Number.parseInt(
-              evt.imaginaryTarget.value ?? evt.target.value,
-              10
-            );
+            const decimalPrecision = Number(evt.imaginaryTarget.value);
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, decimalPrecision },
@@ -170,10 +167,7 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           min={0}
           light
           onChange={(evt) => {
-            const maximumDataPoints = Number.parseInt(
-              evt.imaginaryTarget.value ?? evt.target.value,
-              10
-            );
+            const maximumDataPoints = Number(evt.imaginaryTarget.value);
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, maximumDataPoints },

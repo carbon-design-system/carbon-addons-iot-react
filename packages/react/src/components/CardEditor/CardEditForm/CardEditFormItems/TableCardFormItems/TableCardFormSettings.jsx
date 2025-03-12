@@ -212,10 +212,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
           min={0}
           light
           onChange={(evt) => {
-            const maximumDataPoints = Number.parseInt(
-              evt.imaginaryTarget.value ?? evt.target.value,
-              10
-            );
+            const maximumDataPoints = Number(evt.imaginaryTarget.value);
             onChange({
               ...cardConfig,
               content: { ...cardConfig.content, maximumDataPoints },
