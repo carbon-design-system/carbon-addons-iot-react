@@ -389,6 +389,7 @@ const CardEditor = ({
               />
             ) : null}
             <CardEditForm
+              key={cardConfig.id}
               cardConfig={finalCardToEdit}
               isSummaryDashboard={isSummaryDashboard}
               onChange={onChange}
