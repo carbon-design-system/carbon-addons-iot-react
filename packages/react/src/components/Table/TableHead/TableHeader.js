@@ -87,7 +87,7 @@ const TableHeader = React.forwardRef(function TableHeader(
 
   if (
     normalizedDecorator &&
-    normalizedDecorator['type']['render']?.name === 'AILabel'
+    normalizedDecorator?.type?.render?.name === 'AILabel'
   ) {
     colHasAILabel = true;
     normalizedDecorator = React.cloneElement(
@@ -297,6 +297,8 @@ TableHeader.propTypes = {
   thStyle: PropTypes.object,
 
   testId: PropTypes.string,
+
+  decorator:PropTypes.node
 };
 
 /* istanbul ignore next: ignoring the default onClick */
