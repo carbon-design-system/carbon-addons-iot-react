@@ -199,6 +199,7 @@ export const Playground = () => {
         'hasMultiSelectFilter',
         'hasFilterRowIcon',
         'pinHeaderAndFooter',
+        'aiLabelHeader'
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -295,7 +296,7 @@ export const Playground = () => {
       tooltip: demoColumnTooltips ? `A tooltip for ${column.name}` : undefined,
       align: cellTextAlignment,
       editDataFunction: getEditDataFunction(() => {}),
-      overflowMenuItems: demoColumnOverflowMenuItems ? getSelectDataOptions() : undefined,
+      overflowMenuItems: demoColumnOverflowMenuItems ? getSelectDataOptions() : undefined
     }))
     .map((column) => {
       if (demoRenderDataFunction) return column;

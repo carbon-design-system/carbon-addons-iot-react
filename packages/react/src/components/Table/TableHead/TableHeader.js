@@ -8,7 +8,7 @@
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowUp, ArrowDown, ArrowsVertical as Arrows } from '@carbon/react/icons';
 
 import { settings } from '../../../constants/Settings';
@@ -71,15 +71,47 @@ const TableHeader = React.forwardRef(function TableHeader(
     testId,
     spanGroupRow,
     rowSpan: rowSpanProp,
+    decorator,
     ...rest
   },
   ref
 ) {
+
+
+  const AILableRef = useRef();
+  let colHasAILabel;
+  let normalizedDecorator = React.isValidElement(decorator)
+    ? decorator
+    : null;
+   
+
+  if (
+    normalizedDecorator &&
+    normalizedDecorator['type']['render']?.name === 'AILabel'
+  ) {
+    colHasAILabel = true;
+    normalizedDecorator = React.cloneElement(
+      normalizedDecorator,
+      {
+        ref: AILableRef,
+        className:'ai-label-icon',
+        onClick:(event) => { 
+          event.preventDefault();
+          event.stopPropagation(); 
+        }
+      }
+    );
+  }
+
+
   const rowSpan = rowSpanProp ?? spanGroupRow ? '2' : undefined;
   const headerClassNames = classnames(headerClassName, {
     [`${iotPrefix}--table-header--span-group-row`]: spanGroupRow,
-  });
-
+    [`${prefix}--table-sort__header--ai-label ${prefix}--table-sort__header--decorator`]:
+    colHasAILabel,
+    });
+  
+  
   if (!isSortable) {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
@@ -93,11 +125,20 @@ const TableHeader = React.forwardRef(function TableHeader(
         ref={ref}
         style={thStyle}
       >
+        <div className={`${prefix}--table-header-label-container`}>
         {!hasTooltip ? (
-          <span className={`${prefix}--table-header-label`}>{children}</span>
+          <>
+           <span className={`${prefix}--table-header-label`}>
+            {children}
+             </span>
+             
+          </>
+         
         ) : (
           children
         )}
+        {colHasAILabel ? normalizedDecorator  : ""}
+        </div>
       </th>
     );
   }
@@ -136,12 +177,15 @@ const TableHeader = React.forwardRef(function TableHeader(
       style={thStyle}
       data-testid={testId}
     >
+      
       <ButtonTag {...buttonProps}>
+      
         {!hasTooltip ? (
-          <span className={`${prefix}--table-header-label`}>{children}</span>
+          <span className={`${prefix}--table-header-label`}>{children} </span>
         ) : (
           children
         )}
+        
         {sortDirection === sortStates.ASC ? (
           <ArrowUp
             className={`${prefix}--table-sort__icon`}
@@ -173,7 +217,11 @@ const TableHeader = React.forwardRef(function TableHeader(
             sortStates,
           })}
         />
+       {colHasAILabel ? normalizedDecorator  : ""}
       </ButtonTag>
+     
+      
+      
     </th>
   );
 });

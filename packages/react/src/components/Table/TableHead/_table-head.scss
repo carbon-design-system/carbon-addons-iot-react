@@ -13,7 +13,8 @@
 @use 'ColumnHeaderRow/column-header-row' as *;
 @use 'FilterHeaderRow/filter-header-row' as *;
 @use '@carbon/react/scss/components/data-table/sort' as *;
-
+@use '@carbon/react/scss/components/ai-label' as *;
+@use '@carbon/react/scss/utilities/ai-gradient' as *;
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;
@@ -27,8 +28,29 @@
     }
   }
 
-  th[aria-sort] {
+  th[aria-sort]:not(.cds--table-sort__header--ai-label) {
     padding-left: 1rem;
+  }
+
+  th.#{$prefix}--table-sort__header--ai-label{
+    @include ai-table-gradient();
+  }
+
+  th.#{$prefix}--table-sort__header--ai-label:not(.table-header-sortable){
+    .#{$prefix}--table-header-label-container {
+    display: flex;
+    align-items: center;
+    .cds--table-header-label{
+      margin-right: 1rem;;
+      width: 100%;
+    }
+    }
+    
+  }
+
+  
+  th[aria-sort].#{$prefix}--table-sort__header--ai-label span.#{$prefix}--popover-container {
+    padding-left:  1rem;
   }
 
   // override sort icons, so they stay in the middle, at xl size, too.

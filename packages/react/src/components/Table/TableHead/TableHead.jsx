@@ -687,6 +687,7 @@ const TableHead = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={sortDirection}
               align={align}
+              decorator={matchingColumnMeta?.decorator}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable && !isDisabled,
