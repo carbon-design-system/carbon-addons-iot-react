@@ -14,7 +14,7 @@
 @use 'FilterHeaderRow/filter-header-row' as *;
 @use '@carbon/react/scss/components/data-table/sort' as *;
 @use '@carbon/react/scss/components/ai-label' as *;
-@use '@carbon/react/scss/utilities/ai-gradient' as *;
+@use '@carbon/react/scss/utilities' as *;
 .#{$prefix}--data-table {
   th {
     height: $spacing-09;

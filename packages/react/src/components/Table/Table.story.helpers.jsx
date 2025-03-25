@@ -248,21 +248,6 @@ export const getTableColumns = () => [
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: getSelectDataOptions() },
-  },
-  {
-    id: 'secretField',
-    name: 'Secret Information',
-  },
-  {
-    id: 'status',
-    name: 'Status',
-    renderDataFunction: renderStatusIcon,
-    sortFunction: customColumnSort
-  },
-  {
-    id: 'number',
-    name: 'Number',
-    filter: { placeholderText: 'enter a number' },
     decorator: (
       <AILabel
         className="ai-label-container"
@@ -287,6 +272,23 @@ export const getTableColumns = () => [
         </AILabelContent>
       </AILabel>
     ),
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+
   },
   {
     id: 'boolean',
