@@ -272,7 +272,7 @@ TableHeader.propTypes = {
   thStyle: PropTypes.object,
 
   testId: PropTypes.string,
-  decorator: PropTypes.node.n,
+  decorator: PropTypes.node
 };
 
 /* istanbul ignore next: ignoring the default onClick */
