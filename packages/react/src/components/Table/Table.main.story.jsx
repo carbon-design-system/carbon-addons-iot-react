@@ -198,8 +198,7 @@ export const Playground = () => {
         'hasEmptyFilterOption',
         'hasMultiSelectFilter',
         'hasFilterRowIcon',
-        'pinHeaderAndFooter',
-        'aiLabelHeader'
+        'pinHeaderAndFooter'
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default

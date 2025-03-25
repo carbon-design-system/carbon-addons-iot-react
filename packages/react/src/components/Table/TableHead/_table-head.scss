@@ -29,7 +29,7 @@
   }
 
   th[aria-sort]:not(.cds--table-sort__header--ai-label) {
-    padding-left: 1rem;
+    padding-left: $spacing-05;
   }
 
   th.#{$prefix}--table-sort__header--ai-label{
@@ -41,7 +41,7 @@
     display: flex;
     align-items: center;
     .cds--table-header-label{
-      margin-right: 1rem;;
+      margin-right: $spacing-05;
       width: 100%;
     }
     }
