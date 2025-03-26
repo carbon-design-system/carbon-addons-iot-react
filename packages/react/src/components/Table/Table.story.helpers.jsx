@@ -222,7 +222,6 @@ export const getTableColumns = () => [
     id: 'string',
     name: 'String',
     filter: { placeholderText: 'enter a string' },
-   
   },
 
   {
@@ -242,33 +241,45 @@ export const getTableColumns = () => [
         }
         return columnValue.includes(filterValue);
       },
-    }
-  },
-  {
-    id: 'select',
-    name: 'Select',
-    filter: { placeholderText: 'pick an option', options: getSelectDataOptions() },
+    },
     decorator: (
-      <AILabel
-        className="ai-label-container"
-        autoAlign={false}
-        size='mini'
-        >
+      <AILabel className="ai-label-container" autoAlign={false} size="mini">
         <AILabelContent>
           <div>
             <p className="secondary">AI Explained</p>
             <h1>84%</h1>
             <p className="secondary bold">Confidence score</p>
             <p className="secondary">
-              Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut fsil labore et dolore magna
-              aliqua.
+              Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut fsil labore et dolore magna aliqua.
             </p>
             <hr />
             <p className="secondary">Model type</p>
             <p className="bold">Foundation model</p>
           </div>
-     
+        </AILabelContent>
+      </AILabel>
+    ),
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: getSelectDataOptions() },
+    decorator: (
+      <AILabel className="ai-label-container" autoAlign={false} size="mini">
+        <AILabelContent>
+          <div>
+            <p className="secondary">AI Explained</p>
+            <h1>84%</h1>
+            <p className="secondary bold">Confidence score</p>
+            <p className="secondary">
+              Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut fsil labore et dolore magna aliqua.
+            </p>
+            <hr />
+            <p className="secondary">Model type</p>
+            <p className="bold">Foundation model</p>
+          </div>
         </AILabelContent>
       </AILabel>
     ),
@@ -276,25 +287,22 @@ export const getTableColumns = () => [
   {
     id: 'secretField',
     name: 'Secret Information',
-    
   },
   {
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
-    sortFunction: customColumnSort
+    sortFunction: customColumnSort,
   },
   {
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'enter a number' },
-
   },
   {
     id: 'boolean',
     name: 'Boolean',
     filter: { placeholderText: 'true or false' },
-  
   },
   {
     id: 'node',
@@ -328,7 +336,6 @@ export const getTableColumns = () => [
     },
   },
 ];
-
 
 export const getTableCustomColumns = () => [
   {

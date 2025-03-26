@@ -84,7 +84,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     colHasAILabel = true;
     normalizedDecorator = React.cloneElement(normalizedDecorator, {
       ref: AILableRef,
-      className: 'ai-label-icon',
+      className: '',
       onClick: (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -114,7 +114,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       >
         <div className={`${prefix}--table-header-label-container`}>
           {!hasTooltip ? (
-              <span className={`${prefix}--table-header-label`}>{children}</span>
+            <span className={`${prefix}--table-header-label`}>{children}</span>
           ) : (
             children
           )}
@@ -272,7 +272,7 @@ TableHeader.propTypes = {
   thStyle: PropTypes.object,
 
   testId: PropTypes.string,
-  decorator: PropTypes.node
+  decorator: PropTypes.node,
 };
 
 /* istanbul ignore next: ignoring the default onClick */
@@ -293,6 +293,7 @@ TableHeader.defaultProps = {
   thStyle: {},
   initialWidth: undefined,
   testId: '',
+  decorator: null,
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);
