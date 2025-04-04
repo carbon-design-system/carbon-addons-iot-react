@@ -321,6 +321,7 @@ const TableBodyRow = ({
           matchingColumnMeta && matchingColumnMeta.isSortable && matchingColumnMeta.align === 'end'
             ? matchingColumnMeta.isSortable
             : false;
+
         return !col.isHidden ? (
           <TableCell
             id={`cell-${tableId}-${id}-${col.columnId}`}
@@ -332,6 +333,7 @@ const TableBodyRow = ({
             className={classnames(`data-table-${align}`, {
               [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
               [`${iotPrefix}--table__cell--sortable`]: sortable,
+              [`cds--table-cell--column-slug`]: col.decorator,
             })}
             width={initialColumnWidth}
           >

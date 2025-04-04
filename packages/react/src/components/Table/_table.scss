@@ -18,6 +18,7 @@
 @use '@carbon/react/scss/components/data-table/sort/data-table-sort' as *;
 @use '@carbon/react/scss/components/data-table' as *;
 @use '@carbon/react/scss/components/data-table/action' as *;
+@use '@carbon/react/scss/components/ai-label' as *;
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
@@ -167,7 +168,6 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   padding-left: 1rem;
   border-top: 1px solid $icon-on-color;
   border-bottom: 1px solid $layer-selected-01;
-  background: $icon-on-color;
   color: $text-secondary;
 }
 
