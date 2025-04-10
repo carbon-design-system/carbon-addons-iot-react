@@ -80,7 +80,7 @@ const TableHeader = React.forwardRef(function TableHeader(
   let colHasAILabel;
   let normalizedDecorator = React.isValidElement(decorator) ? decorator : null;
 
-  if (normalizedDecorator && normalizedDecorator?.type?.render?.name === 'AILabel') {
+  if (normalizedDecorator) {
     colHasAILabel = true;
     normalizedDecorator = React.cloneElement(normalizedDecorator, {
       ref: AILableRef,
