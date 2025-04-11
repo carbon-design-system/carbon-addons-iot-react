@@ -2067,7 +2067,7 @@ describe('TableHead', () => {
 
       userEvent.hover(screen.getByText('Column 1'));
       expect(screen.getByText('Column 1').parentElement).toHaveClass(
-        'bx--tooltip--align-end bx--tooltip--visible'
+        'cds--tooltip--align-end bx--tooltip--visible'
       );
     });
   });
