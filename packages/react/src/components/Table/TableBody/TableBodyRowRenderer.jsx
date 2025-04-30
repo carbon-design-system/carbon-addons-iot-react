@@ -333,6 +333,7 @@ const TableBodyRowRenderer = (props) => {
       hasRowNesting={hasRowNesting}
       hasRowSelection={hasRowSelection}
       showExpanderColumn={showExpanderColumn}
+      nestingLevel={nestingLevel}
       columns={columns}
       totalColumns={totalColumns}
       isLoadingMore={loadingMoreIds.includes(row.id)}
@@ -365,7 +366,7 @@ const TableBodyRowRenderer = (props) => {
               {...props}
               key={`load-more-row-${row.id}`}
               row={{ id: row.id, isLoadMoreRow: true }}
-              nestingLevel={nestingLevel}
+              nestingLevel={nestingLevel + 1}
               onStartDrag={onStartDrag}
               onDragLeaveRow={onDragLeaveRow}
               onDragEnterRow={onDragEnterRow}
