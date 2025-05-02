@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TableRow, TableCell } from '@carbon/react';
+import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
 import Button from '../../../Button';
@@ -8,7 +9,7 @@ import SkeletonRow from '../SkeletonRow';
 import { TableColumnsPropTypes } from '../../TablePropTypes';
 import { HtmlElementRefProp } from '../../../../constants/SharedPropTypes';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   /** The unique row id */
@@ -38,6 +39,8 @@ const propTypes = {
   hasRowActions: PropTypes.bool,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /** offset level if row is nested */
+  nestingLevel: PropTypes.number,
   rowVisibilityRef: HtmlElementRefProp,
 };
 
@@ -48,6 +51,7 @@ const defaultProps = {
   hasRowNesting: false,
   hasRowSelection: false,
   showExpanderColumn: false,
+  nestingLevel: 0,
   rowVisibilityRef: undefined,
 };
 
@@ -63,10 +67,21 @@ const TableBodyLoadMoreRow = ({
   hasRowNesting,
   hasRowSelection,
   showExpanderColumn,
+  nestingLevel,
   columns,
   totalColumns,
   isLoadingMore,
 }) => {
+  const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
+  const nestingLevelPixels = nestingLevel * 32;
+
+  // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
+  const nestingOffset = hasRowNesting?.hasSingleNestedHierarchy
+    ? 0
+    : hasRowSelection === 'single'
+    ? nestingLevelPixels - singleSelectionIndicatorWidth
+    : nestingLevelPixels;
+
   return isLoadingMore ? (
     <SkeletonRow
       id={id}
@@ -81,7 +96,18 @@ const TableBodyLoadMoreRow = ({
       showExpanderColumn={showExpanderColumn}
     />
   ) : (
-    <TableRow isSelected={false}>
+    <TableRow
+      isSelected={false}
+      className={classNames(`${iotPrefix}--expandable-tablerow--expanded`, {
+        [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+        [`${iotPrefix}--expandable-tablerow--childless`]: hasRowNesting,
+      })}
+      data-nesting-offset={nestingOffset}
+      style={{
+        '--row-nesting-offset': `${nestingOffset}px`,
+      }}
+    >
+      {(hasRowExpansion || hasRowNesting) && <TableCell className={`${prefix}--table-expand`} />}
       <TableCell
         key={`${tableId}-${id}-row-load-more-cell`}
         colSpan={totalColumns}
@@ -89,7 +115,7 @@ const TableBodyLoadMoreRow = ({
         data-testid={`${testId}-${id}-load-more`}
       >
         <Button
-          className={`${iotPrefix}--load-more-cell--content`}
+          className={`${iotPrefix}--load-more-cell--content ${iotPrefix}--table__cell__offset`}
           onClick={() => onRowLoadMore(id)}
           kind="ghost"
           loading={isLoadingMore}
