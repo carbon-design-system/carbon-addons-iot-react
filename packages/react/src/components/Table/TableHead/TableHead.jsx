@@ -804,7 +804,7 @@ const TableHead = ({
         <FilterHeaderRow
           // TODO: remove deprecated 'testID' in v3
           testId={`${testID || testId}-filter-header-row`}
-          key={!hasFastFilter && JSON.stringify(filters)}
+          key={`${testID || testId}-filter-header-row`}
           columns={columns.map((column) => ({
             ...column.filter,
             id: column.id,
