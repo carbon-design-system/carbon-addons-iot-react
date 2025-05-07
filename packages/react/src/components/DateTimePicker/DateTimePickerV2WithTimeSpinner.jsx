@@ -319,7 +319,7 @@ const CalendarPortal = ({
     const anchor = anchorRef.current; // Reference to the anchor element
     const portal = portalContentRef.current; // Reference to the calendar portal content element
 
-    if (!anchor || !portal) return; // Return early if anchor or portal references are null
+    if (!anchor || !portal) return false; // Return early if anchor or portal references are null
 
     const rect = anchor.getBoundingClientRect(); // Get the bounding client rectangle of the anchor element
     const scrollY = window.scrollY || document.documentElement.scrollTop; // Get the current scroll position vertically
@@ -352,6 +352,8 @@ const CalendarPortal = ({
       const frame = requestAnimationFrame(updatePosition); // Request an animation frame to update the position
       return () => cancelAnimationFrame(frame); // Cancel the animation frame when the component unmounts
     }
+
+    return undefined; 
   }, [isOpen, updatePosition]); // Depend on the isOpen prop to re-run the effect when it changes
 
   useEffect(() => {
