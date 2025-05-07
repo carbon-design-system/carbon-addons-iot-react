@@ -353,7 +353,7 @@ const CalendarPortal = ({
       return () => cancelAnimationFrame(frame); // Cancel the animation frame when the component unmounts
     }
 
-    return undefined; 
+    return undefined;
   }, [isOpen, updatePosition]); // Depend on the isOpen prop to re-run the effect when it changes
 
   useEffect(() => {
