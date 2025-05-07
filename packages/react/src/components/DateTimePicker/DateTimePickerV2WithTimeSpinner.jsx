@@ -344,7 +344,7 @@ const CalendarPortal = ({
     left = Math.max(0, Math.min(left, scrollX + innerWidth - portalWidth)); // Ensure the left position is within the viewport
 
     setPosition({ top, left }); // Update the position state
-    return true ;
+    return true;
   });
 
   useEffect(() => {
