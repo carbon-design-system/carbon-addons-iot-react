@@ -344,6 +344,7 @@ const CalendarPortal = ({
     left = Math.max(0, Math.min(left, scrollX + innerWidth - portalWidth)); // Ensure the left position is within the viewport
 
     setPosition({ top, left }); // Update the position state
+    return true ;
   });
 
   useEffect(() => {
@@ -1376,7 +1377,7 @@ const DateTimePicker = ({
         </>
       ) : null}
 
-      {renderInPortal == true ? (
+      {renderInPortal === true ? (
         <CalendarPortal anchorRef={datePickerRef} isOpen={isExpanded}>
           {datePickerContent}
           {CustomFooter()}
