@@ -349,6 +349,21 @@
   }
 }
 
+.#{$iot-prefix}--in-portal-calender-icon {
+  float: right;
+  padding: $spacing-05;
+}
+
+.datetime-picker-portal {
+  .#{$iot-prefix}--date-time-picker__menu-scroll {
+    padding-bottom: 1rem;
+  }
+
+  .iot--time-picker {
+    max-width: 18.125rem;
+  }
+}
+
 html[dir='rtl'] {
   .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
     .#{$iot-prefix}--date-time-picker__fields-wrapper {
