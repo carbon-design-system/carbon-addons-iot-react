@@ -392,7 +392,6 @@ const CalendarPortal = ({
         left: `${position.left}px`,
         width: `${portalWidth}px`,
         backgroundColor: 'white',
-        boxShadow: '0 2px 8px #000000',
         padding: '10px',
         zIndex: 9999,
         overflowY: 'auto',
