@@ -179,7 +179,7 @@
     "@carbon/icons-react": "^11.53.0",
     "@carbon/layout": "^11.28.0",
     "@carbon/pictograms-react": "^11.69.0",
-    "@carbon/react": "1.78.0",
+    "@carbon/react": "1.81.0",
     "@carbon/telemetry": "^0.1.0",
     "@carbon/themes": "^11.43.0",
     "@codemirror/lang-css": "^6.3.0",
