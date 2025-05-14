@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.12...v4.1.13) (2025-05-14)
+
+
+### Bug Fixes
+
+* add extra prop in table card ([778d2a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/778d2a2dd57eea87af251df1f9fdba934d9fcfae))
+
+
+
+
+
 ## [4.1.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.11...v4.1.12) (2025-05-14)
 
 **Note:** Version bump only for package ibm-ai-applications
