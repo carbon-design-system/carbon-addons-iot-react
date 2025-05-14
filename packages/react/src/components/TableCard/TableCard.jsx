@@ -98,6 +98,7 @@ const TableCard = ({
   renderDateDropdownInPortal,
   withToolbarTooltips,
   defaultDateFormatPattern,
+  extraActions,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -558,6 +559,7 @@ const TableCard = ({
       renderDateDropdownInPortal={renderDateDropdownInPortal}
       locale={locale}
       id={id}
+      extraActions={extraActions}
     />
   );
 
