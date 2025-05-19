@@ -307,7 +307,7 @@ export const defaultProps = {
 const CalendarPortal = ({
   anchorRef, // Reference to the anchor element (e.g., button or input)
   isOpen = false, // Whether the calendar portal is open or not
-  onClose, // Callback function to close the calendar portal
+  onClose = () => {}, // Callback function to close the calendar portal
   children, // The content to be rendered inside the calendar portal
 }) => {
   const portalContentRef = useRef(null); // Reference to the calendar portal content element
