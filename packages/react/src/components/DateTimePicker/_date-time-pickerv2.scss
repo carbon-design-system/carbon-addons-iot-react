@@ -17,6 +17,7 @@
 
     & > .#{$iot-prefix}--tooltip {
       width: 100%;
+
       .#{$iot-prefix}--date-time-picker__box--full {
         width: 100%;
       }
@@ -49,10 +50,12 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid $border-strong-01;
+
       &::selection {
         color: none;
         background: none;
       }
+
       max-height: 48px;
       height: 48px;
 
@@ -102,6 +105,7 @@
           outline: 2px solid $blue-60;
           border-bottom: none;
         }
+
         // tooltip has default left outline
         .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
           outline: unset;
@@ -134,6 +138,7 @@
 
     .#{$iot-prefix}--date-time-picker__box--light {
       background-color: $field-02;
+
       .#{$iot-prefix}--date-time-picker--trigger-button {
         background-color: transparent;
       }
@@ -166,6 +171,10 @@
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--invalid {
   outline: 2px solid $button-danger-primary;
+
+  .#{$iot-prefix}--in-portal-calender-icon {
+    color: $button-danger-primary;
+  }
 }
 
 // open menu content
@@ -226,12 +235,14 @@
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner:first-of-type {
       margin-right: $spacing-05;
     }
+
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner {
       .#{$prefix}--time-picker__input-field {
         width: 8.5rem;
         padding-right: $spacing-07;
       }
     }
+
     .#{$iot-prefix}--time-picker__controls {
       left: 6.7rem;
     }
@@ -340,9 +351,11 @@
     box-shadow: unset;
     height: unset;
   }
+
   &.#{$iot-prefix}--date-time-picker--tooltip .#{$prefix}--popover-content::after {
     height: unset;
   }
+
   // Preserve center alignment for the time picker spinner
   & .#{$prefix}--tooltip__content {
     text-align: unset;
@@ -402,6 +415,7 @@ html[dir='rtl'] {
         padding-left: $spacing-09;
       }
     }
+
     .#{$iot-prefix}--date-time-picker__menu-scroll {
       .#{$iot-prefix}--date-time-picker__listitem {
         border-right: 2px solid transparent;
