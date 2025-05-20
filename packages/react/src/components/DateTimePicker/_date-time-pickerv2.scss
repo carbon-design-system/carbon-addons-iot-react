@@ -166,6 +166,10 @@
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--invalid {
   outline: 2px solid $button-danger-primary;
+
+  .#{$iot-prefix}--in-portal-calender-icon{
+    color: $button-danger-primary;
+  }
 }
 
 // open menu content
