@@ -14,7 +14,7 @@ import {
   ListItem,
   Layer,
 } from '@carbon/react';
-import { Calendar, WarningFilled, ErrorFilled } from '@carbon/react/icons';
+import { Calendar, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
@@ -1047,7 +1047,7 @@ const DateTimePicker = ({
     : FlyoutMenuDirection.BottomEnd;
 
   const splitToken = humanValue?.includes(' hh') ? ' hh' : ' HH';
-  const datePlaceHolder = humanValue?.split(splitToken)[0];    
+  const datePlaceHolder = humanValue?.split(splitToken)[0];
 
   const datePickerContent = (
     <div
