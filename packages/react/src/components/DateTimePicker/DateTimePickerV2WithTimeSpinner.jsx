@@ -1046,6 +1046,9 @@ const DateTimePicker = ({
       : FlyoutMenuDirection.TopEnd
     : FlyoutMenuDirection.BottomEnd;
 
+  const splitToken = humanValue?.includes(' hh') ? ' hh' : ' HH';
+  const datePlaceHolder = humanValue?.split(splitToken)[0];    
+
   const datePickerContent = (
     <div
       ref={dropdownRef}
@@ -1268,6 +1271,9 @@ const DateTimePicker = ({
                       labelText={mergedI18n.startDateLabel}
                       aria-label={mergedI18n.startAriaLabel}
                       id={`${id}-date-picker-input-start`}
+                      invalid={invalidRangeStartDate}
+                      invalidText={mergedI18n.invalidDateText}
+                      placeholder={datePlaceHolder}
                     />
 
                     {datePickerType === 'range' ? (
@@ -1279,18 +1285,6 @@ const DateTimePicker = ({
                     ) : null}
                   </DatePicker>
                 </Layer>
-                {invalidRangeStartDate ? (
-                  <div
-                    className={classnames(`${iotPrefix}--date-time-picker__datepicker--invalid`)}
-                  >
-                    <ErrorFilled />
-                    <p
-                      className={classnames(`${iotPrefix}--date-time-picker__helper-text--invalid`)}
-                    >
-                      {mergedI18n.invalidDateText}
-                    </p>
-                  </div>
-                ) : null}
               </FormGroup>
               {hasTimeInput ? (
                 <FormGroup
