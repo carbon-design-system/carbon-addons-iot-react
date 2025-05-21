@@ -28,10 +28,6 @@
     }
   }
 
-  th[aria-sort]:not(.cds--table-sort__header--ai-label) {
-    padding-left: $spacing-05;
-  }
-
   th.#{$prefix}--table-sort__header--ai-label,
   th.#{$prefix}--table-sort__header--ai-label .cds--table-sort {
     @include ai-table-gradient();
