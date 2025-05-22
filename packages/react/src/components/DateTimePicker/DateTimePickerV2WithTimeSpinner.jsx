@@ -941,6 +941,7 @@ const DateTimePicker = ({
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
           >
             {mergedI18n.backBtnLabel}
+            id={`back-${others.id}`}
           </Button>
         ) : isSingleSelect ? (
           <Button
@@ -948,6 +949,7 @@ const DateTimePicker = ({
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-reset`}
             size="md"
             {...others}
+            id={`clear-${others.id}`}
             onClick={onClearClick}
             onMouseDown={(e) => e.preventDefault()}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onClearClick)}
@@ -961,6 +963,7 @@ const DateTimePicker = ({
             onClick={onCancelClick}
             size="md"
             {...others}
+            id={`cancel-${others.id}`}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
           >
             {mergedI18n.cancelBtnLabel}
@@ -970,6 +973,7 @@ const DateTimePicker = ({
           kind="primary"
           className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
           {...others}
+          id={`apply-${others.id}`}
           onClick={onApplyClick}
           onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
           onMouseDown={(e) => e.preventDefault()}
