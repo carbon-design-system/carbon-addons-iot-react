@@ -20,7 +20,6 @@
 @use '@carbon/react/scss/components/data-table/action' as *;
 @use '@carbon/react/scss/components/ai-label' as *;
 
-
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
@@ -491,27 +490,24 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
-
 .table-header-label {
   &-start {
     .#{$prefix}--table-header-label {
       text-align: start;
-    
     }
   }
 
   &-center {
     .#{$prefix}--table-header-label {
       text-align: center;
-    
-    width: 100%;
+
+      width: 100%;
     }
   }
 
   &-end {
     .#{$prefix}--table-header-label {
       text-align: end;
- 
     }
   }
 }
