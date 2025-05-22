@@ -164,7 +164,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 
 .#{$prefix}--data-table td,
 .#{$prefix}--data-table tbody th {
-  padding-right: 1rem;
+  padding-right: 2rem;
   padding-left: 1rem;
   border-top: 1px solid $icon-on-color;
   border-bottom: 1px solid $layer-selected-01;
@@ -487,5 +487,27 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   th.#{$iot-prefix}--filter-header-row--header.#{$iot-prefix}--tableheader-filter
     .#{$iot-prefix}--filter-header-icon {
     z-index: 2;
+  }
+}
+
+.table-header-label {
+  &-start {
+    .#{$prefix}--table-header-label {
+      text-align: start;
+    }
+  }
+
+  &-center {
+    .#{$prefix}--table-header-label {
+      text-align: center;
+
+      width: 100%;
+    }
+  }
+
+  &-end {
+    .#{$prefix}--table-header-label {
+      text-align: end;
+    }
   }
 }

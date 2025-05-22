@@ -29,7 +29,7 @@
   }
 
   th.#{$prefix}--table-sort__header--ai-label,
-  th.#{$prefix}--table-sort__header--ai-label .cds--table-sort {
+  th.#{$prefix}--table-sort__header--ai-label .#{$prefix}--table-sort {
     @include ai-table-gradient();
   }
 
@@ -38,18 +38,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .cds--table-header-label {
+      #{$prefix}--table-header-label {
         margin-right: $spacing-05;
         width: 100%;
       }
     }
   }
 
-  th[aria-sort].#{$prefix}--table-sort__header--ai-label span.#{$prefix}--popover-container {
+  th[aria-sort] span.#{$prefix}--popover-container {
     padding-left: 1rem;
   }
 
-  th[aria-sort].#{$prefix}--table-sort__header--ai-label .cds--ai-label {
+  th[aria-sort].#{$prefix}--table-sort__header--ai-label #{$prefix}--ai-label {
     padding-right: 1rem;
   }
 
