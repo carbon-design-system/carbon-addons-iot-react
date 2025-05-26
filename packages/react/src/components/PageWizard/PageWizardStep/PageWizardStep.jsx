@@ -112,17 +112,21 @@ const PageWizardStep = ({
         [`${iotPrefix}--page-wizard--content--after-footer`]: !!afterFooterContent,
       })}
     >
-      {beforeFooterContent}
+      <div
+        className={`${iotPrefix}--page-wizard--content--footer ${iotPrefix}--page-wizard--content--footer--before--content`}
+      >
+        {beforeFooterContent}
+      </div>
+
       {!hasPrev ? (
         <Button onClick={onClose} kind="secondary">
           {i18n.cancel}
         </Button>
-      ) : null}
-      {hasPrev ? (
+      ) : (
         <Button onClick={onBack} kind="secondary">
           {i18n.back}
         </Button>
-      ) : null}
+      )}
       {hasNext ? (
         <Button
           onClick={() => {
@@ -144,7 +148,9 @@ const PageWizardStep = ({
         </Button>
       )}
       {afterFooterContent && (
-        <div className={`${iotPrefix}--page-wizard--content--after-footer--content`}>
+        <div
+          className={`${iotPrefix}--page-wizard--content--footer ${iotPrefix}--page-wizard--content--footer--after--content`}
+        >
           {afterFooterContent}
         </div>
       )}

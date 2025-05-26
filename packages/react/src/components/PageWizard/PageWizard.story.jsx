@@ -243,6 +243,32 @@ export const content = [
   </PageWizardStep>,
 ];
 
+const commonProps = {
+  title: 'A cool PageWizard!',
+  description: 'The description from the PageTitleBar',
+  breadcrumb: [
+    <Link to="www.ibm.com">Home</Link>,
+    <Link to="www.ibm.com">Something</Link>,
+    <Link to="www.ibm.com">Something Else</Link>,
+  ],
+};
+
+const customFooterContent = (content) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      fontWeight: 600,
+      fontSize: '1rem',
+      lineHeight: '1.375rem',
+      letterSpacing: 0,
+    }}
+  >
+    <InformationFilled size={20} style={{ marginRight: '0.5rem' }} />
+    {text(content, content)}
+  </div>
+);
+
 export const StepValidationWizard = ({ ...props }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -324,211 +350,183 @@ export default {
 };
 
 export const StatefulExample = () => (
-  <div>
-    <StatefulPageWizard
-      currentStepId="step1"
-      onClose={action('closed', () => {})}
-      onSubmit={action('submit', () => {})}
-      onClearError={action('Clear error', () => {})}
-      onNext={action('next', () => {})}
-      onBack={action('back', () => {})}
-      setStep={action('step clicked', () => {})}
-      isClickable
-    >
-      {content}
-    </StatefulPageWizard>
-  </div>
+  <StatefulPageWizard
+    currentStepId="step1"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onClearError={action('Clear error', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+    setStep={action('step clicked', () => {})}
+    isClickable
+  >
+    {content}
+  </StatefulPageWizard>
 );
 
 StatefulExample.storyName = 'stateful example';
 
 export const StatefulExampleWValidationInPageTitleBar = () => (
-  <div>
-    <PageTitleBar
-      title="A cool PageWizard!"
-      description="The description from the PageTitleBar"
-      breadcrumb={[
-        <Link to="www.ibm.com">Home</Link>,
-        <Link to="www.ibm.com">Something</Link>,
-        <Link to="www.ibm.com">Something Else</Link>,
-      ]}
-      content={<StepValidationWizard stepWidth={number('stepWidth', 6)} />}
-    />
-  </div>
+  <PageTitleBar
+    {...commonProps}
+    content={<StepValidationWizard stepWidth={number('stepWidth', 6)} />}
+  />
 );
 
 StatefulExampleWValidationInPageTitleBar.storyName =
   'stateful example w/ validation in PageTitleBar';
 
 export const WrappedInPageTitleBar = () => (
-  <div>
-    <PageTitleBar
-      title="A cool PageWizard!"
-      description="The description from the PageTitleBar"
-      breadcrumb={[
-        <Link to="www.ibm.com">Home</Link>,
-        <Link to="www.ibm.com">Something</Link>,
-        <Link to="www.ibm.com">Something Else</Link>,
-      ]}
-      content={
-        <PageWizard
-          currentStepId="step1"
-          onClose={action('closed', () => {})}
-          onSubmit={action('submit', () => {})}
-          onClearError={action('Clear error', () => {})}
-          onNext={action('next', () => {})}
-          onBack={action('back', () => {})}
-          setStep={action('step clicked', () => {})}
-          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
-        >
-          {content}
-        </PageWizard>
-      }
-    />
-  </div>
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <PageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onClearError={action('Clear error', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        setStep={action('step clicked', () => {})}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+      >
+        {content}
+      </PageWizard>
+    }
+  />
 );
 
 WrappedInPageTitleBar.storyName = 'wrapped in PageTitleBar';
 
 export const WithHorizontalProgressIndicator = () => (
-  <div>
-    <PageWizard
-      currentStepId="step1"
-      onClose={action('closed', () => {})}
-      onSubmit={action('submit', () => {})}
-      onNext={action('next', () => {})}
-      onBack={action('back', () => {})}
-      setStep={action('step clicked', () => {})}
-      onClearError={action('Clear error', () => {})}
-      isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
-      isClickable
-    >
-      {content}
-    </PageWizard>
-  </div>
+  <PageWizard
+    currentStepId="step1"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+    setStep={action('step clicked', () => {})}
+    onClearError={action('Clear error', () => {})}
+    isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+    isClickable
+  >
+    {content}
+  </PageWizard>
 );
 
 WithHorizontalProgressIndicator.storyName = 'With Horizontal ProgressIndicator';
 
 export const OnlyOneStepInPageTitleBar = () => (
-  <div>
-    <PageTitleBar
-      title="A cool PageWizard!"
-      description="The description from the PageTitleBar"
-      breadcrumb={[
-        <Link to="www.ibm.com">Home</Link>,
-        <Link to="www.ibm.com">Something</Link>,
-        <Link to="www.ibm.com">Something Else</Link>,
-      ]}
-      content={
-        <PageWizard
-          currentStepId="step1"
-          onClose={action('closed', () => {})}
-          onSubmit={action('submit', () => {})}
-          onNext={action('next', () => {})}
-          onBack={action('back', () => {})}
-          onClearError={() => {}}
-          setStep={action('step clicked', () => {})}
-          sendingData={boolean('sendingData', false)}
-          hasStickyFooter={boolean('hasStickyFooter', false)}
-        >
-          {[content[0]]}
-        </PageWizard>
-      }
-    />
-  </div>
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <PageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        onClearError={() => {}}
+        setStep={action('step clicked', () => {})}
+        sendingData={boolean('sendingData', false)}
+        hasStickyFooter={boolean('hasStickyFooter', false)}
+      >
+        {[content[0]]}
+      </PageWizard>
+    }
+  />
 );
 
 OnlyOneStepInPageTitleBar.storyName = 'only one step, in PageTitleBar';
 
 export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
-  <div>
-    <PageTitleBar
-      title="A cool PageWizard!"
-      description="The description from the PageTitleBar"
-      breadcrumb={[
-        <Link to="www.ibm.com">Home</Link>,
-        <Link to="www.ibm.com">Something</Link>,
-        <Link to="www.ibm.com">Something Else</Link>,
-      ]}
-      content={
-        <StepValidationWizard
-          hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
-          isClickable
-          spaceEqually={boolean('spaceEqually', false)}
-          stepWidth={number('stepWidth', 6)}
-        />
-      }
-    />
-  </div>
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <StepValidationWizard
+        hasStickyFooter={boolean('hasStickyFooter', true)}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+        isClickable
+        spaceEqually={boolean('spaceEqually', false)}
+        stepWidth={number('stepWidth', 6)}
+      />
+    }
+  />
 );
 
 WithStickyFooterStatefulExampleWValidationInPageTitleBar.storyName =
   'With Sticky Footer: stateful example w/ validation in PageTitleBar';
 
 export const WithAdditionalFooterContent = () => (
-  <div>
-    <PageTitleBar
-      title="A cool PageWizard!"
-      description="The description from the PageTitleBar"
-      breadcrumb={[
-        <Link to="www.ibm.com">Home</Link>,
-        <Link to="www.ibm.com">Something</Link>,
-        <Link to="www.ibm.com">Something Else</Link>,
-      ]}
-      content={
-        <StepValidationWizard
-          hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
-          beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
-          isClickable
-          afterFooterContent={
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                fontWeight: 600,
-                fontSize: '1rem',
-                lineHeight: '1.375rem',
-                letterSpacing: 0,
-              }}
-            >
-              <InformationFilled size={20} style={{ marginRight: '0.5rem' }} />
-              {text('Additional footer content', 'Additional footer content')}
-            </div>
-          }
-        />
-      }
-    />
-  </div>
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <StepValidationWizard
+        hasStickyFooter={boolean('hasStickyFooter', true)}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+        beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
+        isClickable
+        afterFooterContent={customFooterContent('Additional after footer content')}
+      />
+    }
+  />
 );
 
 WithAdditionalFooterContent.storyName = 'With additional footer content';
 
+export const WithAdditionalBeforeFooterContent = () => (
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <StepValidationWizard
+        hasStickyFooter={boolean('hasStickyFooter', true)}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+        beforeFooterContent={customFooterContent('Additional before footer content')}
+        isClickable
+      />
+    }
+  />
+);
+
+WithAdditionalBeforeFooterContent.storyName = 'With additional before footer content';
+
+export const WithAdditionalAfterFooterContent = () => (
+  <PageTitleBar
+    {...commonProps}
+    content={
+      <StepValidationWizard
+        hasStickyFooter={boolean('hasStickyFooter', true)}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+        isClickable
+        afterFooterContent={customFooterContent('Additional after footer content')}
+      />
+    }
+  />
+);
+
+WithAdditionalAfterFooterContent.storyName = 'With additional after footer content';
+
 export const WI18N = () => (
-  <div>
-    <PageWizard
-      currentStepId="step1"
-      onClose={action('closed', () => {})}
-      onSubmit={action('submit', () => {})}
-      onNext={action('next', () => {})}
-      onBack={action('back', () => {})}
-      onClearError={() => {}}
-      setStep={action('step clicked', () => {})}
-      sendingData={boolean('sendingData', false)}
-      hasStickyFooter={boolean('hasStickyFooter', false)}
-      i18={{
-        close: text('Close label', 'Close'),
-        cancel: text('Cancel label', 'Cancel'),
-        back: text('Back label', 'Back'),
-        next: text('Next label', 'Next'),
-        submit: text('Submit label', 'Submit'),
-      }}
-    >
-      {content}
-    </PageWizard>
-  </div>
+  <PageWizard
+    currentStepId="step1"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+    onClearError={() => {}}
+    setStep={action('step clicked', () => {})}
+    sendingData={boolean('sendingData', false)}
+    hasStickyFooter={boolean('hasStickyFooter', false)}
+    i18={{
+      close: text('Close label', 'Close'),
+      cancel: text('Cancel label', 'Cancel'),
+      back: text('Back label', 'Back'),
+      next: text('Next label', 'Next'),
+      submit: text('Submit label', 'Submit'),
+    }}
+  >
+    {content}
+  </PageWizard>
 );
 
 WI18N.storyName = 'w/ i18n';
