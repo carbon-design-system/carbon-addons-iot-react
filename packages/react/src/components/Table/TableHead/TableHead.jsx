@@ -548,6 +548,7 @@ const TableHead = ({
 
   const visibleColumns = ordering.filter((col) => !col.isHidden);
   const lastVisibleColumn = visibleColumns.slice(-1)[0];
+  const firstVisibleColumn = visibleColumns[0];
   const showColumnGroups = columnGroups.some(({ id }) =>
     visibleColumns.find(({ columnGroupId }) => id === columnGroupId)
   );
@@ -659,6 +660,7 @@ const TableHead = ({
 
           const rightmostColumn = langDir === 'ltr' ? lastVisibleColumn : visibleColumns[0];
           const flipTooltipDirection = rightmostColumn === item;
+          const flipFirstColumnTooltipDirection = firstVisibleColumn === item;
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
@@ -706,7 +708,13 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
-                tooltipDirection={flipTooltipDirection ? 'bottom-end' : undefined}
+                tooltipDirection={
+                  flipTooltipDirection
+                    ? 'bottom-end'
+                    : flipFirstColumnTooltipDirection
+                    ? 'bottom-start'
+                    : undefined
+                }
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
