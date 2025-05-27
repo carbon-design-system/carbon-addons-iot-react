@@ -49,6 +49,10 @@
     padding-left: 1rem;
   }
 
+  th button.#{$prefix}--definition-term {
+    font-weight: 600;
+  }
+
   th[aria-sort].#{$prefix}--table-sort__header--ai-label #{$prefix}--ai-label {
     padding-right: 1rem;
   }
