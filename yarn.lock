@@ -7946,7 +7946,7 @@
     "@codemirror/state" "^6.0.0"
     "@codemirror/view" "^6.0.0"
 
-"@uiw/codemirror-themes@^4.23.3":
+"@uiw/codemirror-themes@4.23.3":
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/@uiw/codemirror-themes/-/codemirror-themes-4.23.3.tgz#5ee8cc289532c7950a725d2eda74d670b693897e"
   integrity sha512-oUq2qoj+hMrR34Xhbp7S1P2elPtySWyzij97IwsZAdGZD/yS+c9+2yRSMYqtaWh7D9M4sJmwgU1lZibmwLZOfQ==
@@ -7955,7 +7955,7 @@
     "@codemirror/state" "^6.0.0"
     "@codemirror/view" "^6.0.0"
 
-"@uiw/react-codemirror@^4.23.3":
+"@uiw/react-codemirror@4.23.3":
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/@uiw/react-codemirror/-/react-codemirror-4.23.3.tgz#2febc96478e206d704a8810306b9beab1ee76af1"
   integrity sha512-TBBLUbeqXmfQSfO+f3rPNOAb+QXbSm7KPB64FHQWLGg2WJNbpOhjLOWMyL+C4ZP3aSCNc2Y5aftEK1vp3wCKTA==
