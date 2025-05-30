@@ -564,12 +564,16 @@ class FilterHeaderRow extends Component {
                 <>
                   <TableToolbarSVGButton
                     testId="filter-row-icon"
-                    className={classnames(`${iotPrefix}--filter-header-icon`, {
-                      [`${iotPrefix}--filter-header-icon--with-border`]:
-                        hasResize && showColumnGroups && !hasRowActions,
-                      [`${iotPrefix}--filter-header-icon--with-margin`]: hasRowActions,
-                    })}
+                    className={classnames(
+                      `${iotPrefix}--filter-header-icon ${iotPrefix}-hide-tooltip-icon`,
+                      {
+                        [`${iotPrefix}--filter-header-icon--with-border`]:
+                          hasResize && showColumnGroups && !hasRowActions,
+                        [`${iotPrefix}--filter-header-icon--with-margin`]: hasRowActions,
+                      }
+                    )}
                     description={filterRowIconDescription}
+                    title={filterRowIconDescription}
                     onClick={onFilterRowIconClick}
                     renderIcon={filterRowIcon}
                     size="field"
