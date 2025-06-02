@@ -13,7 +13,18 @@ import {
 } from '@carbon/react';
 import { pick, sortBy } from 'lodash-es';
 import update from 'immutability-helper';
-import { gray50, red50, green50, blue50 } from '@carbon/colors';
+import {
+  gray50,
+  red50,
+  green50,
+  blue50,
+  cyan50,
+  magenta50,
+  purple50,
+  teal50,
+  yellow50,
+  orange50,
+} from '@carbon/colors';
 import warning from 'warning';
 
 import { HotspotIconPropType, ColorPropType } from '../../constants/SharedPropTypes';
@@ -37,11 +48,17 @@ import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHots
 
 const { iotPrefix, prefix } = settings;
 
-const selectableColors = [
+export const selectableColors = [
   { carbonColor: gray50, name: 'gray' },
   { carbonColor: red50, name: 'red' },
   { carbonColor: green50, name: 'green' },
   { carbonColor: blue50, name: 'blue' },
+  { carbonColor: cyan50, name: 'cyan' },
+  { carbonColor: magenta50, name: 'magenta' },
+  { carbonColor: purple50, name: 'purple' },
+  { carbonColor: teal50, name: 'teal' },
+  { carbonColor: yellow50, name: 'yellow' },
+  { carbonColor: orange50, name: 'orange' },
 ];
 
 const propTypes = {
