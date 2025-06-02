@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { merge } from 'lodash-es';
-import { NumberInput, IconSwitch } from '@carbon/react';
+import { NumberInput, IconSwitch, unstable_FeatureFlags as FeatureFlags } from '@carbon/react';
 import {
   TrashCan,
   InformationFilled,
@@ -15,7 +15,7 @@ import ColorDropdown from '../../ColorDropdown/ColorDropdown';
 import Button from '../../Button/Button';
 import { isNumberValidForMinMax } from '../../../utils/componentUtilityFunctions';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const colorPropType = PropTypes.shape({
   carbonColor: PropTypes.string,
@@ -225,42 +225,45 @@ const HotspotTextStyleTab = ({
             onSubmit={preventFormSubmission}
             className={`${iotPrefix}--hotspot-text-style-tab__form`}
           >
-            <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
-              <IconSwitch
-                disabled={hasNonEditableContent}
-                onClick={() => onChange({ bold: !bold })}
-                data-testid="hotspot-bold"
-                selected={bold}
-                text={boldLabelText}
-                renderIcon={TextBold}
-                index={0}
-                light={light}
-              />
+            <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
+              <div className={`${prefix}--content-switcher ${prefix}--content-switcher--icon-only`}>
+                <FeatureFlags enableV12DynamicFloatingStyles>
+                  <IconSwitch
+                    disabled={hasNonEditableContent}
+                    onClick={() => onChange({ bold: !bold })}
+                    data-testid="hotspot-bold"
+                    selected={bold}
+                    text={boldLabelText}
+                    renderIcon={TextBold}
+                    index={0}
+                    light={light}
+                  />
 
-              <IconSwitch
-                disabled={hasNonEditableContent}
-                name="italic"
-                onClick={() => onChange({ italic: !italic })}
-                data-testid="hotspot-italic"
-                selected={italic}
-                text={italicLabelText}
-                renderIcon={TextItalic}
-                index={1}
-                light={light}
-              />
-              <IconSwitch
-                disabled={hasNonEditableContent}
-                name="underline"
-                onClick={() => onChange({ underline: !underline })}
-                data-testid="hotspot-underline"
-                selected={underline}
-                text={underlineLabelText}
-                renderIcon={TextUnderline}
-                index={2}
-                light={light}
-              />
+                  <IconSwitch
+                    disabled={hasNonEditableContent}
+                    name="italic"
+                    onClick={() => onChange({ italic: !italic })}
+                    data-testid="hotspot-italic"
+                    selected={italic}
+                    text={italicLabelText}
+                    renderIcon={TextItalic}
+                    index={1}
+                    light={light}
+                  />
+                  <IconSwitch
+                    disabled={hasNonEditableContent}
+                    name="underline"
+                    onClick={() => onChange({ underline: !underline })}
+                    data-testid="hotspot-underline"
+                    selected={underline}
+                    text={underlineLabelText}
+                    renderIcon={TextUnderline}
+                    index={2}
+                    light={light}
+                  />
+                </FeatureFlags>
+              </div>
             </div>
-
             <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
               <ColorDropdown
                 disabled={hasNonEditableContent}

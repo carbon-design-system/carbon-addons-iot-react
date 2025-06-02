@@ -2,22 +2,9 @@ import React, { useState } from 'react';
 import { merge } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
-import {
-  purple70,
-  cyan50,
-  teal70,
-  magenta70,
-  red50,
-  red90,
-  green60,
-  blue80,
-  magenta50,
-  purple50,
-  teal50,
-  cyan90,
-} from '@carbon/colors';
 
 import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
+import { selectableColors } from '../HotspotEditorModal';
 
 import HotspotTextStyleTab from './HotspotTextStyleTab';
 import HotspotTextStyleTabREADME from './HotspotTextStyleTabREADME.mdx';
@@ -49,21 +36,6 @@ export default {
   },
 };
 
-const colors = [
-  { carbonColor: purple70, name: 'purple70' },
-  { carbonColor: cyan50, name: 'cyan50' },
-  { carbonColor: teal70, name: 'teal70' },
-  { carbonColor: magenta70, name: 'magenta70' },
-  { carbonColor: red50, name: 'red50' },
-  { carbonColor: red90, name: 'red90' },
-  { carbonColor: green60, name: 'green60' },
-  { carbonColor: blue80, name: 'blue80' },
-  { carbonColor: magenta50, name: 'magenta50' },
-  { carbonColor: purple50, name: 'purple50' },
-  { carbonColor: teal50, name: 'teal50' },
-  { carbonColor: cyan90, name: 'cyan90' },
-];
-
 export const Default = () => {
   const isLight = boolean('light', true);
   const WithState = () => {
@@ -77,9 +49,9 @@ export const Default = () => {
         maxOpacity={100}
         minBorderWidth={0}
         maxBorderWidth={50}
-        fontColors={colors}
-        backgroundColors={colors}
-        borderColors={colors}
+        fontColors={selectableColors}
+        backgroundColors={selectableColors}
+        borderColors={selectableColors}
         formValues={formValues}
         onChange={(change) => {
           setFormValues(merge({}, formValues, change));
@@ -119,9 +91,9 @@ export const UsingHotspotStateHook = () => {
         maxOpacity={100}
         minBorderWidth={0}
         maxBorderWidth={50}
-        fontColors={colors}
-        backgroundColors={colors}
-        borderColors={colors}
+        fontColors={selectableColors}
+        backgroundColors={selectableColors}
+        borderColors={selectableColors}
         formValues={selectedHotspot}
         onChange={updateTextHotspotStyle}
         onDelete={deleteSelectedHotspot}

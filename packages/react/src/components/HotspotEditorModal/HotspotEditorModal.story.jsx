@@ -1,14 +1,14 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
-import { gray50, red50, green50, blue50 } from '@carbon/colors';
+import { gray50, red50, green50 } from '@carbon/colors';
 import { InformationSquareFilled, InformationFilled } from '@carbon/react/icons';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import landscape from './landscape.jpg';
-import HotspotEditorModal from './HotspotEditorModal';
+import HotspotEditorModal, { selectableColors } from './HotspotEditorModal';
 // import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx'; //carbon 11
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
@@ -39,13 +39,6 @@ const selectableIcons = [
     icon: InformationFilled,
     text: 'Information filled',
   },
-];
-
-const selectableColors = [
-  { carbonColor: gray50, name: 'gray' },
-  { carbonColor: red50, name: 'red' },
-  { carbonColor: green50, name: 'green' },
-  { carbonColor: blue50, name: 'blue' },
 ];
 
 const cardConfig = {
