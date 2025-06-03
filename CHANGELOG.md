@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.21...v4.1.22) (2025-06-03)
+
+
+### Bug Fixes
+
+* use content switcher css instead of default child css alone ([16aa942](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/16aa942e5e4f653c5ffd1c55ac1a3ca707a395cb))
+
+
+
+
+
 ## [4.1.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.20...v4.1.21) (2025-06-02)
 
 
