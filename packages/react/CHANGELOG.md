@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.23...v4.1.24) (2025-06-04)
+
+
+### Bug Fixes
+
+* hotspot-content hover box text overflow ([0dd5786](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dd5786d20130229eedf6f7814792c9019061deb))
+
+
+
+
+
 ## [4.1.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.22...v4.1.23) (2025-06-03)
 
 **Note:** Version bump only for package carbon-addons-iot-react
