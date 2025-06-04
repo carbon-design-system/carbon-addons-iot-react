@@ -114,6 +114,32 @@ export const Basic = () => {
                       },
                     ],
                   },
+                  {
+                    dataSourceId: 'temperature',
+                    label: 'Raw_Metric_1_Sum_Min_Constant_times_5',
+                    precision: 2,
+                    thresholds: [
+                      {
+                        comparison: '>',
+                        value: 0,
+                        icon: 'Warning alt',
+                        color: 'red',
+                      },
+                    ],
+                  },
+                  {
+                    dataSourceId: 'temperature',
+                    label: 'Raw Metric 1 Sum Min Constant times 5',
+                    precision: 3,
+                    thresholds: [
+                      {
+                        comparison: '>',
+                        value: 0,
+                        icon: 'Warning alt',
+                        color: 'red',
+                      },
+                    ],
+                  },
                 ],
               },
             },
