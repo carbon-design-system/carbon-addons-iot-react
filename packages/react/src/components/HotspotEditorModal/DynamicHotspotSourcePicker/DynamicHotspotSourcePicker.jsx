@@ -6,7 +6,6 @@ import { IconButton } from '@carbon/react';
 
 import { settings } from '../../../constants/Settings';
 import { Dropdown } from '../../Dropdown';
-import deprecate from '../../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -25,11 +24,6 @@ const propTypes = {
   onYValueChange: PropTypes.func.isRequired,
   selectedSourceIdX: PropTypes.string,
   selectedSourceIdY: PropTypes.string,
-  // eslint-disable-next-line react/require-default-props
-  testID: deprecate(
-    PropTypes.string,
-    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
-  ),
   testId: PropTypes.string,
   i18n: PropTypes.shape({
     clearIconDescription: PropTypes.string,
@@ -67,8 +61,6 @@ const DynamicHotspotSourcePicker = ({
   onYValueChange,
   selectedSourceIdX,
   selectedSourceIdY,
-  // TODO: remove deprecated testID prop in v3.
-  testID,
   testId,
   i18n,
   translateWithId,
@@ -83,10 +75,10 @@ const DynamicHotspotSourcePicker = ({
     yCoordinateDropdownLabelText,
   } = mergedI18n;
   return (
-    <div data-testid={testID || testId} className={classname}>
+    <div data-testid={testId} className={classname}>
       <Dropdown
         key={`${id}-x-coordinate-dropdown-${selectedSourceIdX}`}
-        data-testid={`${testID || testId}-x-coordinate-dropdown`}
+        data-testid={`${testId}-x-coordinate-dropdown`}
         selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdX)}
         id={`${id}-x-coordinate-dropdown`}
         titleText={xCoordinateDropdownTitleText}
@@ -100,7 +92,7 @@ const DynamicHotspotSourcePicker = ({
       />
       <Dropdown
         key={`${id}-y-coordinate-dropdown-${selectedSourceIdY}`}
-        data-testid={`${testID || testId}-y-coordinate-dropdown`}
+        data-testid={`${testId}-y-coordinate-dropdown`}
         selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdY)}
         id={`${id}-y-coordinate-dropdown`}
         titleText={yCoordinateDropdownTitleText}
@@ -113,7 +105,7 @@ const DynamicHotspotSourcePicker = ({
         }}
       />
       <IconButton
-        data-testid={`${testID || testId}-clear-dropdown`}
+        data-testid={`${testId}-clear-dropdown`}
         className={classnames(`${classname}__clear-button`, {
           [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
         })}
