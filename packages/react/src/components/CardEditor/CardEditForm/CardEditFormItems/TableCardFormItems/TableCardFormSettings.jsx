@@ -212,7 +212,10 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
               const maximumDataPoints = Number.parseInt(value, 10);
               onChange({
                 ...cardConfig,
-                content: { ...cardConfig.content, maximumDataPoints },
+                content: {
+                  ...cardConfig.content,
+                  maximumDataPoints: maximumDataPoints < 0 ? 0 : maximumDataPoints,
+                },
               });
             }}
             value={content?.maximumDataPoints}
