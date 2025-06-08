@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.24...v4.1.25) (2025-06-08)
+
+
+### Bug Fixes
+
+* display numeric data for x and y coordinates ([450280b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/450280b037966c113c2e4df0106c7287ea23a7b1))
+* if negetive datapoint set the value to zero ([611d4ae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/611d4ae0c35223c86a16759b4017d3401b62adeb))
+
+
+
+
+
 ## [4.1.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.23...v4.1.24) (2025-06-04)
 
 
