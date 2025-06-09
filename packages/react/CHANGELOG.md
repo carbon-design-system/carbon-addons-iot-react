@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.26...v4.1.27) (2025-06-09)
+
+
+### Bug Fixes
+
+* card tooltip spacing align ([68a0a34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68a0a341fe1a6dab2ca2f1ddc3588ea1051c3253))
+
+
+
+
+
 ## [4.1.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.25...v4.1.26) (2025-06-09)
 
 **Note:** Version bump only for package carbon-addons-iot-react
