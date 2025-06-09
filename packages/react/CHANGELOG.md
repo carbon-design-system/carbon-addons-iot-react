@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.27...v4.1.28) (2025-06-09)
+
+
+### Reverts
+
+* Revert "chore: updated latest carbon react version (#3971)" ([ddeb65c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ddeb65cd56bc5db3aea675e2a7a0d79a42fad98f)), closes [#3971](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3971)
+
+
+
+
+
 ## [4.1.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.26...v4.1.27) (2025-06-09)
 
 
