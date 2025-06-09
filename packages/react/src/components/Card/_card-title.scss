@@ -73,6 +73,7 @@ $lineHeightSize: 1.375em;
   @include type-style('heading-compact-02');
   color: $text-primary;
   max-width: calc(100% - #{$tooltipSize});
+  margin-right: $spacing-05;
 }
 
 // Make this look like the TooltipDefinition with an underline
