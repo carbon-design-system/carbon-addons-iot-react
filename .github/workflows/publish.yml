@@ -6,7 +6,6 @@ on:
       - master
       - next
       - v4-Carbon11
-      - v5
 
 jobs:
   publish:
