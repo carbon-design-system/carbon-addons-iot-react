@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, Toggle, NumberInput, Layer } from '@carbon/react';
+import { omit } from 'lodash-es';
 
 import { settings } from '../../../../../constants/Settings';
 
@@ -118,13 +119,16 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
             id={`${id}_decimal-precision`}
             label={mergedI18n.decimalPrecisionLabel}
             min={0}
+            max={100}
             onChange={(event, { value }) => {
               const decimalPrecision = Number.parseInt(value, 10);
               onChange({
                 ...cardConfig,
                 content: {
-                  ...cardConfig.content,
-                  decimalPrecision,
+                  ...omit(cardConfig.content, 'decimalPrecision'),
+                  ...(Number.isNaN(decimalPrecision) || decimalPrecision < 0
+                    ? {}
+                    : { decimalPrecision }),
                 },
               });
             }}
