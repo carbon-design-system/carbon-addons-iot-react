@@ -170,7 +170,7 @@ const defaultProps = {
   canDropRowIds: [],
 };
 
-const TableBodyRowRenderer = (props) => {
+function TableBodyRowRenderer(props) {
   const {
     actionFailedText,
     actions,
@@ -377,7 +377,7 @@ const TableBodyRowRenderer = (props) => {
           )
         )
     : rowElement;
-};
+}
 
 TableBodyRowRenderer.defaultProps = defaultProps;
 TableBodyRowRenderer.propTypes = propTypes;
