@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.30...v4.1.31) (2025-06-10)
+
+
+### Bug Fixes
+
+* set default precision if negative value is set ([#3978](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3978)) ([9f67ece](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9f67ece3d4ddbd99e6e6d49db8cda8ffecdd8512))
+
+
+
+
+
 ## [4.1.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.28...v4.1.30) (2025-06-10)
 
 **Note:** Version bump only for package ibm-ai-applications
