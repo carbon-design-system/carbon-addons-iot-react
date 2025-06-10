@@ -84,7 +84,7 @@ const propTypes = {
   }),
 };
 
-function Rule({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) {
+const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
   const { id: ruleId, operand, columnId, groupLogic, rules } = rule;
 
   const mergedI18n = React.useMemo(
@@ -300,7 +300,7 @@ function Rule({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) {
       </div>
     </div>
   );
-}
+};
 
 Rule.defaultProps = defaultProps;
 Rule.propTypes = propTypes;
