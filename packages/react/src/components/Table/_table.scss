@@ -169,13 +169,13 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   border-top: 1px solid $icon-on-color;
   border-bottom: 1px solid $layer-selected-01;
   color: $text-secondary;
-  background-color: $icon-on-color;
+  //background-color: $icon-on-color;
 }
 
-.#{$prefix}--data-table td:not(.#{$prefix}--table-cell--column-slug) {
-  background: $icon-on-color;
-  background-color: $icon-on-color;
-}
+// .#{$prefix}--data-table td:not(.#{$prefix}--table-cell--column-slug) {
+//   background: $icon-on-color;
+//   background-color: $icon-on-color;
+// }
 
 .#{$iot-prefix}--table__row--selectable {
   .#{$prefix}--checkbox {
