@@ -195,6 +195,19 @@
       }
     }
 
+    &--overflow {
+      display: block;
+      overflow-x: hidden; // Hide horizontal overflow to support scrollWidth-based breadcrumb truncation
+
+      .#{$prefix}--popover-container {
+        position: absolute; // Add absolute position to prevent tooltip clipping
+      }
+
+      .breadcrumb--overflow:after {
+        margin-left: $spacing-06; // Add margin to avoid overlap with next breadcrumb item
+      }
+    }
+
     .page-title-bar-breadcrumb-current {
       --breadcrumb-scroll-distance: 20px;
       white-space: nowrap;

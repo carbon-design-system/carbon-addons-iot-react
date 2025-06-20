@@ -58,12 +58,19 @@
 }
 
 .breadcrumb--overflow-items {
+  max-height: 75%;
+  overflow-y: scroll;
+
   &.#{$prefix}--overflow-menu-options--open {
     transform: translate(-45%, 1rem);
 
     &:focus {
       outline: none;
     }
+  }
+  .#{$prefix}--overflow-menu-options__option {
+    min-height: $spacing-08;
+    overflow-y: scroll;
   }
   &.#{$prefix}--overflow-menu-options::after,
   &.#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
