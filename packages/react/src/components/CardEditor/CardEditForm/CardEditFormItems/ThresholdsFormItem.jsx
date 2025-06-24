@@ -221,6 +221,7 @@ const ThresholdsFormItem = ({
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
                   }}
+                  autoAlign
                 />
               </div>
               <div className={`${baseClassName}--threshold-input-group--item-end`}>

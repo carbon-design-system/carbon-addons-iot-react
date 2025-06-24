@@ -341,6 +341,7 @@ const DataSeriesFormItemModal = ({
                       )
                     );
                   }}
+                  autoAlign
                 />
               </div>
             ) : (
@@ -383,6 +384,7 @@ const DataSeriesFormItemModal = ({
                       grain: selectedItem.id,
                     });
                   }}
+                  autoAlign
                 />
               </div>
             ) : (
@@ -493,6 +495,7 @@ const DataSeriesFormItemModal = ({
                       setEditDataItem(omit(editDataItem, 'precision'));
                     }
                   }}
+                  autoAlign
                 />
               )}
             </div>
@@ -527,6 +530,7 @@ const DataSeriesFormItemModal = ({
                     }
                   }}
                   titleText={mergedI18n.dataItemEditorDataItemFilter}
+                  autoAlign
                 />
               </div>
 
@@ -554,6 +558,7 @@ const DataSeriesFormItemModal = ({
                           dataFilter,
                         });
                       }}
+                      autoAlign
                     />
                   )}
               </div>
