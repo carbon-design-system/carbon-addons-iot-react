@@ -4,11 +4,11 @@
   </a>
 </p>
 <h1 align="center">
-  Carbon add-ons for Watson IoT
+  Carbon add-ons for IBM Maximo Application Suite - Monitor (IBM Watson IoT)
 </h1>
 
-> Carbon add-ons for Watson IoT is an open-source react component library built
-> by IBM Watson Internet Of Things. With the Carbon Design System and IBM Design
+> Carbon add-ons for IBM Maximo Application Suite - Monitor (Watson IoT) is an open-source react component library built
+> by IBM Maximo Application Suite - Monitor (IBM Watson Internet Of Things). With the Carbon Design System and IBM Design
 > Language as its foundation, the library consists of working code, resources,
 > and a vibrant community of contributors.
 
@@ -33,11 +33,12 @@
 
 </p>
 
-| Branch                                                                                  | Carbon version | Release                                                                                                                                                                           |
-| --------------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`next`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next)     | v11            | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="@latest npm version release" /> </a> |
-| [`2.x.x`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/2.x.x)   | v10            | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/2.x.x" alt="@latest npm version 2.x.x" /> </a>    |
-| [`master`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/master) | v10            | --                                                                                                                                                                                |
+| Branch                                                                                  | Carbon version | MAS versions                    | Release                                                                                                                                                                           |
+| --------------------------------------------------------------------------------------- | -------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`next`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next)     | v11            | 9.2.x                           | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="@latest npm version release" /> </a> |
+| [`4.x.x`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/4.x.x)   | v11            | 9.1.x                           | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/4.x.x" alt="@latest npm version 4.x.x" /> </a>    |
+| [`2.x.x`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/2.x.x)   | v10            | 9.0.x, 8.11.x, 8.10.x and older | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/2.x.x" alt="@latest npm version 2.x.x" /> </a>    |
+| [`master`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/master) | v10            | --                              | --                                                                                                                                                                                |
 
 ## Installation
 

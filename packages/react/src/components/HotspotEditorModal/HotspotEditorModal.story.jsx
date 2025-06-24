@@ -62,18 +62,21 @@ const dataItems = [
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
+    columnType: 'NUMBER',
   },
   {
     dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
+    columnType: 'NUMBER',
   },
   {
     dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
+    columnType: 'NUMBER',
   },
 ];
 

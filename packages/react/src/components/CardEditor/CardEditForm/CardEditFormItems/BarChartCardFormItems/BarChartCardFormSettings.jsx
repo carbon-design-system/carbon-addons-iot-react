@@ -8,6 +8,7 @@ import {
   NumberInput,
   Layer,
 } from '@carbon/react';
+import { omit } from 'lodash-es';
 
 import { settings } from '../../../../../constants/Settings';
 
@@ -151,11 +152,17 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             id={`${id}_decimal-precision`}
             label={mergedI18n.decimalPrecisionLabel}
             min={0}
+            max={100}
             onChange={(event, { value }) => {
               const decimalPrecision = Number.parseInt(value, 10);
               onChange({
                 ...cardConfig,
-                content: { ...cardConfig.content, decimalPrecision },
+                content: {
+                  ...omit(cardConfig.content, 'decimalPrecision'),
+                  ...(Number.isNaN(decimalPrecision) || decimalPrecision < 0
+                    ? {}
+                    : { decimalPrecision }),
+                },
               });
             }}
             value={content?.decimalPrecision}
@@ -173,7 +180,10 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               const maximumDataPoints = Number.parseInt(value, 10);
               onChange({
                 ...cardConfig,
-                content: { ...cardConfig.content, maximumDataPoints },
+                content: {
+                  ...cardConfig.content,
+                  maximumDataPoints: maximumDataPoints < 0 ? 0 : maximumDataPoints,
+                },
               });
             }}
             value={content?.maximumDataPoints}

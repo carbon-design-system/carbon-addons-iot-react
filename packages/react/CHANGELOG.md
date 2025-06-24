@@ -3,6 +3,110 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.2...v5.0.3) (2025-06-16)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [5.0.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.1...v5.0.2) (2025-06-10)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [5.0.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.31...v5.0.1) (2025-06-10)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [4.1.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.30...v4.1.31) (2025-06-10)
+
+
+### Bug Fixes
+
+* set default precision if negative value is set ([#3978](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3978)) ([9f67ece](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9f67ece3d4ddbd99e6e6d49db8cda8ffecdd8512))
+
+
+
+
+
+## [4.1.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.28...v4.1.30) (2025-06-10)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [4.1.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.28...v4.1.29) (2025-06-10)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [4.1.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.27...v4.1.28) (2025-06-09)
+
+
+### Reverts
+
+* Revert "chore: updated latest carbon react version (#3971)" ([ddeb65c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ddeb65cd56bc5db3aea675e2a7a0d79a42fad98f)), closes [#3971](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3971)
+
+
+
+
+
+## [4.1.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.26...v4.1.27) (2025-06-09)
+
+
+### Bug Fixes
+
+* card tooltip spacing align ([68a0a34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68a0a341fe1a6dab2ca2f1ddc3588ea1051c3253))
+
+
+
+
+
+## [4.1.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.25...v4.1.26) (2025-06-09)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [4.1.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.24...v4.1.25) (2025-06-08)
+
+
+### Bug Fixes
+
+* display numeric data for x and y coordinates ([450280b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/450280b037966c113c2e4df0106c7287ea23a7b1))
+* if negetive datapoint set the value to zero ([611d4ae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/611d4ae0c35223c86a16759b4017d3401b62adeb))
+
+
+
+
+
+## [4.1.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.23...v4.1.24) (2025-06-04)
+
+
+### Bug Fixes
+
+* hotspot-content hover box text overflow ([0dd5786](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dd5786d20130229eedf6f7814792c9019061deb))
+
+
+
+
+
 ## [4.1.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.22...v4.1.23) (2025-06-03)
 
 **Note:** Version bump only for package carbon-addons-iot-react

@@ -197,6 +197,7 @@ class RowActionsCell extends React.Component {
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                     selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
                     useAutoPositioning
+                    align="top-right"
                   >
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem

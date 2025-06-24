@@ -110,6 +110,7 @@ const propTypes = {
       dataSourceId: PropTypes.string,
       label: PropTypes.string,
       unit: PropTypes.string,
+      columnType: PropTypes.oneOf(['LITERAL', 'BOOLEAN', 'TIMESTAMP', 'NUMBER']),
     })
   ),
   /** Default border width in px for new text hotspots */
@@ -305,6 +306,7 @@ const HotspotEditorModal = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [getValidDataItems, dataItems] // watching the card config for changes will simply load this too many times
   );
+
   const {
     currentType,
     hotspots,
@@ -484,7 +486,7 @@ const HotspotEditorModal = ({
       <>
         <DynamicHotspotSourcePicker
           i18n={mergedI18n}
-          dataSourceItems={myDataItems}
+          dataSourceItems={myDataItems.filter((dataItem) => dataItem.columnType === 'NUMBER')}
           onXValueChange={(newXSource) => {
             updateDynamicHotspotSourceX(newXSource);
             loadDemoHotspots(newXSource, dynamicHotspotSourceY);
@@ -497,8 +499,6 @@ const HotspotEditorModal = ({
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
           translateWithId={translateWithId}
-          // TODO: pass testId in v3 to override defaults
-          // testId={`${testId}-hotspot-source-picker`}
         />
         {showTooManyHotspotsInfo ? (
           <InlineNotification
