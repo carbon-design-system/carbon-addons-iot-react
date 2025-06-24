@@ -83,7 +83,8 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
-        {size === CARD_SIZES.SMALL ||
+        {size === CARD_SIZES.XSMALL ||
+        size === CARD_SIZES.SMALL ||
         size === CARD_SIZES.SMALLWIDE ||
         size === CARD_SIZES.MEDIUMTHIN
           ? renderDataStateGridIcon()

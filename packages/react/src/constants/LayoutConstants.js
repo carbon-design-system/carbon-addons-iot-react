@@ -9,6 +9,7 @@ export const COLORS = {
 };
 
 export const CARD_SIZES = {
+  XSMALL: 'XSMALL',
   SMALL: 'SMALL',
   SMALLWIDE: 'SMALLWIDE',
   SMALLFULL: 'SMALLFULL',
