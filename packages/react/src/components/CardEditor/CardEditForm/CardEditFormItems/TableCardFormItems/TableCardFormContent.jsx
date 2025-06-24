@@ -375,6 +375,7 @@ const TableCardFormContent = ({
           hasThresholds: true,
           hasTooltip: true,
         }}
+        isLarge
       />
       <ContentFormItemTitle
         title={mergedI18n.tableColumnEditorSectionTitle}

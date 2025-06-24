@@ -466,6 +466,7 @@ const DataSeriesFormItem = ({
           hasThresholds: type === CARD_TYPES.VALUE,
           hasTooltip: type === CARD_TYPES.VALUE,
         }}
+        isLarge
       />
       <ContentFormItemTitle
         title={mergedI18n.dataItemEditorSectionTitle}
