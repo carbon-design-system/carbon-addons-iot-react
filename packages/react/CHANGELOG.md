@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.3...v5.0.4) (2025-06-24)
+
+
+### Bug Fixes
+
+* value card classname override from dashboard grid ([#3969](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3969)) ([3b8836e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b8836e619062f9bc5e5b86fbe7d8527a39610f1))
+
+
+
+
+
 ## [5.0.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.2...v5.0.3) (2025-06-16)
 
 **Note:** Version bump only for package carbon-addons-iot-react
