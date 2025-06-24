@@ -92,6 +92,7 @@ const SimpleIconDropdown = ({
       type="default"
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
+      autoAlign
     />
   );
 };
