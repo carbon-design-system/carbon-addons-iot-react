@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.0...v5.1.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* **xmsall-size:** xsmall support for card and tooltip ([fb9e3cc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fb9e3cce0bc3f9b13de83e4ea18a3ee404733fa4))
+
+
+
+
+
 # [5.1.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.4...v5.1.0) (2025-06-24)
 
 
