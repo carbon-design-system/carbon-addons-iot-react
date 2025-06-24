@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.4...v5.1.0) (2025-06-24)
+
+
+### Features
+
+* add support for large DataItem Edit modal ([#3982](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3982)) ([1bf9585](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1bf9585b824ace7058519b17ec8320b21701c3fb))
+
+
+
+
+
 ## [5.0.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.0.3...v5.0.4) (2025-06-24)
 
 
