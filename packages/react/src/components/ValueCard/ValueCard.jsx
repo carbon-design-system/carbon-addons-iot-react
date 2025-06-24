@@ -38,6 +38,7 @@ const ValueCard = ({
   testID,
   testId,
   onAttributeClick,
+  className,
   ...others
 }) => {
   const availableActions = {
@@ -72,7 +73,7 @@ const ValueCard = ({
       i18n={i18n}
       locale={locale}
       id={id}
-      className={classnames({
+      className={classnames(className, {
         // allows attribute overflow scrolling
         [`${BASE_CLASS_NAME}__horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
         [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
