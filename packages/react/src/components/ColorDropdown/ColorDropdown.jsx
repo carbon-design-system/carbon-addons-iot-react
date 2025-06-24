@@ -146,6 +146,7 @@ const ColorDropdown = ({
       type="default"
       data-testid={testID || testId}
       disabled={disabled}
+      autoAlign
     />
   );
 };
