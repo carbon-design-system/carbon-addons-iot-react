@@ -68,10 +68,11 @@
       outline: none;
     }
   }
+
   .#{$prefix}--overflow-menu-options__option {
     min-height: $spacing-08;
-    overflow-y: scroll;
   }
+
   &.#{$prefix}--overflow-menu-options::after,
   &.#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
     transform: translate(-50%, -8px);
