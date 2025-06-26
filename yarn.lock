@@ -4942,6 +4942,13 @@
   resolved "https://registry.yarnpkg.com/@ibm/telemetry-js/-/telemetry-js-1.6.0.tgz#bab4eaac0d94b9604c120a9e3062ab1b3a1a76f7"
   integrity sha512-XXdsXhoZwKaJ1/24w/uCqx/YeDQeTu8SAl+7bHQxn62yiFUQ6/D20HhpQVdlG9/Jpv3nYJHFiDH0vGkQbXNFWg==
 
+"@internationalized/number@^3.6.3":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@internationalized/number/-/number-3.6.3.tgz#4bba32e90cd8095ae7d252586c661d9c651918b4"
+  integrity sha512-p+Zh1sb6EfrfVaS86jlHGQ9HA66fJhV9x5LiE5vCbZtXEHAuhcmUZUdZ4WrFpUBfNalr2OkAJI5AcKEQF+Lebw==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"
@@ -7175,6 +7182,13 @@
     cosmiconfig "^8.1.3"
     deepmerge "^4.3.1"
     svgo "^3.0.2"
+
+"@swc/helpers@^0.5.0":
+  version "0.5.17"
+  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.17.tgz#5a7be95ac0f0bf186e7e6e890e7a6f6cda6ce971"
+  integrity sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==
+  dependencies:
+    tslib "^2.8.0"
 
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.5"
@@ -10370,16 +10384,17 @@ carbon-components-angular@4.56.2:
     flatpickr "4.6.1"
     tslib "^1.9.0"
 
-carbon-components-react@7.60.1:
-  version "7.60.1"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.1.tgz#a6484e3d03de045e2d50de3e62d65f47842e9953"
-  integrity sha512-qmfxfBLCg16/msP76gJXxq5eJdjo2F47h0s5Ipu6HL4yV3vn4z2Su38GjbhuAmmPZEYo6Cre7v/yXHQCTy0QKQ==
+carbon-components-react@7.60.3:
+  version "7.60.3"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.3.tgz#db51b81d15a7244dc95e2de17f11d01f3e4b25f3"
+  integrity sha512-gxM8OXWvSUJNEgMLR/NcsIwESGd2fP6mmTbefkMtxs+BCZQ3zTVvKydaZJr7/0cr+QiWedB+iWQZSFSMS5xJcA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@carbon/feature-flags" "^0.7.3"
     "@carbon/icons-react" "^10.49.6"
     "@carbon/layout" "^10.37.5"
     "@ibm/telemetry-js" "^1.5.0"
+    "@internationalized/number" "^3.6.3"
     classnames "2.3.1"
     copy-to-clipboard "^3.3.1"
     downshift "5.2.1"
@@ -10405,10 +10420,10 @@ carbon-components@10.56.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@^10.58.12:
-  version "10.58.12"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.12.tgz#f6221c00f08fc1d844c7a5344aa32ef2493d7c14"
-  integrity sha512-Ep1aXo6JUCrI5QA/Wa0EFXdxx5EoJIg84pXExp3ieUO5gi7NaCeMBqjAhI1RHpjAEw8gPTUWzPGKayHU80hJlA==
+carbon-components@10.59.2:
+  version "10.59.2"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.59.2.tgz#9d4400871d9d809dd901f57f3571dbf5920277b9"
+  integrity sha512-apaSI8ce+0IV6BrMSH51yBO/CaeDLjQkBckH/l11X7euNvl58falGcw1S715T4jW5qjpxYcrXAjKVtZHagx2SA==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     flatpickr "4.6.1"
@@ -28746,6 +28761,11 @@ tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.2.tgz#703ac29425e7b37cd6fd456e92404d46d1f3e4ae"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
+
+tslib@^2.8.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
+  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
 tslint@5.15.0:
   version "5.15.0"
