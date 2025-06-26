@@ -9,7 +9,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs';
 
-import { NumberInput, NumberInputSkeleton } from '.';
+import { NumberInput, NumberInputSkeleton, NumberInputV2 } from '.';
 
 const sizes = {
   'Extra large size (xl)': 'xl',
@@ -24,7 +24,7 @@ const props = () => ({
   hideLabel: boolean('No label (hideLabel)', false),
   min: number('Minimum value (min)', 0),
   max: number('Maximum value (max)', 100),
-  value: number('Value (value)', 50),
+  // value: number('Value (value)', 50),
   step: number('Step of up/down arrow (step)', 10),
   size: select('Field size (size)', sizes, undefined) || undefined,
   disabled: boolean('Disabled (disabled)', false),
@@ -64,6 +64,23 @@ export const Default = () => {
   const { numberInputArrowTranslationIds, ...rest } = props();
   return <NumberInput translateWithId={(id) => numberInputArrowTranslationIds[id]} {...rest} />;
 };
+
+export const NumberInputTypeText = () => {
+  const { numberInputArrowTranslationIds } = props();
+  return (
+    <NumberInputV2
+      locale="en-US"
+      type="text"
+      max={10000000}
+      min={-10000000}
+      defaultValue={50}
+      allowEmpty
+      translateWithId={(id) => numberInputArrowTranslationIds[id]}
+    />
+  );
+};
+
+NumberInputTypeText.storyName = 'type text';
 
 export const Skeleton = () => (
   <div
