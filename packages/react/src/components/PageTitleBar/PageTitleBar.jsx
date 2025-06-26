@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import classnames from 'classnames';
 import { Information, Edit } from '@carbon/react/icons';
-import { Breadcrumb, BreadcrumbItem, SkeletonText, Tabs } from '@carbon/react';
+import { BreadcrumbItem, SkeletonText, Tabs } from '@carbon/react';
 import { throttle } from 'lodash-es';
 
 import { ToggleTip } from '../ToggleTip';
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 const { iotPrefix } = settings;
 const HEADER_MODES = {
@@ -43,6 +44,7 @@ const PageTitleBarPropTypes = {
   upperActions: PropTypes.node,
   /** Breadcrumbs to show */
   breadcrumb: PropTypes.arrayOf(PropTypes.node),
+  hasBreadcrumbOverflow: PropTypes.bool,
   /** Should page description be collapsed into tooltip. Should be `true` when using in conjunction with tabs. */
   collapsed: PropTypes.bool,
   /** Is the title editable, will display edit icon with callback */
@@ -93,6 +95,7 @@ const defaultProps = {
   extraContent: undefined,
   upperActions: undefined,
   breadcrumb: null,
+  hasBreadcrumbOverflow: false,
   collapsed: undefined,
   editable: false,
   forceContentOutside: false,
@@ -121,6 +124,7 @@ const PageTitleBar = ({
   extraContent,
   upperActions,
   breadcrumb,
+  hasBreadcrumbOverflow,
   collapsed,
   forceContentOutside,
   headerMode,
@@ -362,8 +366,13 @@ const PageTitleBar = ({
             upperActions ||
             headerMode === HEADER_MODES.DYNAMIC ||
             headerMode === HEADER_MODES.CONDENSED ? (
-              <div className="page-title-bar-breadcrumb breadcrumb--container" ref={breadcrumbRef}>
-                <Breadcrumb>
+              <div
+                className={classnames('page-title-bar-breadcrumb', {
+                  'page-title-bar-breadcrumb--overflow': hasBreadcrumbOverflow,
+                })}
+                ref={breadcrumbRef}
+              >
+                <Breadcrumb hasOverflow={hasBreadcrumbOverflow}>
                   {breadcrumb
                     ? breadcrumb.map((crumb, index) => (
                         <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
