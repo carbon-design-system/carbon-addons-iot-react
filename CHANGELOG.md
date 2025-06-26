@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.1...v5.1.2) (2025-06-26)
+
+
+### Bug Fixes
+
+* **PageTitleBar:** add option for breadcrumb overflow in PageTitleBar ([#3983](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3983)) ([497d456](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/497d45665c9a6c7418c03fffc7c58db9d9d05ee3))
+
+
+
+
+
 ## [5.1.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.0...v5.1.1) (2025-06-24)
 
 
