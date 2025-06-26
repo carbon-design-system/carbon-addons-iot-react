@@ -79,6 +79,29 @@ const breadcrumbKnobOptions = {
 };
 const breadcrumbDefaultValue = pageTitleBarBreadcrumb;
 
+const pageTitleBarBreadcrumbOverflow = [
+  <a href="/">item 1</a>,
+  <a href="/">item 2</a>,
+  <a href="/">item 3</a>,
+  <a href="/">item 4</a>,
+  <a href="/">item 5</a>,
+  <a href="/">item 6</a>,
+  <a href="/">item 7</a>,
+  <a href="/">item 8</a>,
+  <a href="/">item 9</a>,
+  <a href="/">item 10</a>,
+  <a href="/">item 11</a>,
+  <a href="/">item 12</a>,
+  <a href="/">item 13</a>,
+  <a href="/">item 14</a>,
+  <a href="/">item 15</a>,
+  <a href="/">item 16</a>,
+  <a href="/">item 17</a>,
+  <a href="/">item 18</a>,
+  <a href="/">item 19</a>,
+  <a href="/">item 20</a>,
+];
+
 export default {
   title: '1 - Watson IoT/Page header/PageTitleBar',
   decorators: [withKnobs, (storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
@@ -189,6 +212,19 @@ export const WithEditableTitleBar = () => (
 );
 
 WithEditableTitleBar.storyName = 'with editable title bar and subtitle';
+
+export const WithBreadcrumbOverflow = () => (
+  <div style={{ height: '150vh' }}>
+    <PageTitleBar
+      title={text('title', commonPageTitleBarProps.title)}
+      breadcrumb={pageTitleBarBreadcrumbOverflow}
+      hasBreadcrumbOverflow={boolean('hasBreadcrumbOverflow', true)}
+      description={commonPageTitleBarProps.description}
+    />
+  </div>
+);
+
+WithBreadcrumbOverflow.storyName = 'with breadcrumb overflow';
 
 export const WithSelect = () => (
   <div style={{ height: '150vh' }}>
