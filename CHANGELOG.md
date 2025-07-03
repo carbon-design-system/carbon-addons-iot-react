@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.2...v5.1.3) (2025-07-03)
+
+
+### Bug Fixes
+
+* update remove icon for card editor ([#3988](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3988)) ([7f39b02](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f39b027ae96a7f3e4a80e078f87796ad58aad50))
+
+
+
+
+
 ## [5.1.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.1...v5.1.2) (2025-06-26)
 
 
