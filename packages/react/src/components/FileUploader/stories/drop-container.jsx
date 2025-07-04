@@ -7,10 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useId } from 'react';
 import classnames from 'classnames';
-// import { settings } from 'carbon-components';
-import uid from '@carbon/react/es/tools/uniqueId';
 
 import { FileUploaderItem, FileUploaderDropContainer } from '../index';
 import { FormItem } from '../../FormItem';
@@ -20,6 +18,7 @@ import { FormItem } from '../../FormItem';
 const prefix = 'cds';
 
 const ExampleDropContainerApp = (props) => {
+  const id = useId();
   const [files, setFiles] = useState([]);
   const handleDrop = (e) => {
     e.preventDefault();
@@ -101,7 +100,7 @@ const ExampleDropContainerApp = (props) => {
     (evt, { addedFiles }) => {
       evt.stopPropagation();
       const newFiles = addedFiles.map((file) => ({
-        uuid: uid(),
+        uuid: id,
         name: file.name,
         filesize: file.size,
         status: 'uploading',
@@ -118,7 +117,7 @@ const ExampleDropContainerApp = (props) => {
       }
     },
     // eslint-disable-next-line react/prop-types
-    [files, props.multiple]
+    [files, id, props.multiple]
   );
 
   const handleFileUploaderItemClick = useCallback(
@@ -146,7 +145,7 @@ const ExampleDropContainerApp = (props) => {
       <div className={`${prefix}--file-container`} style={{ width: '100%' }}>
         {files.map(({ uuid, name, filesize, status, iconDescription, invalid, ...rest }) => (
           <FileUploaderItem
-            key={uid()}
+            key={id}
             uuid={uuid}
             name={name}
             filesize={filesize}
