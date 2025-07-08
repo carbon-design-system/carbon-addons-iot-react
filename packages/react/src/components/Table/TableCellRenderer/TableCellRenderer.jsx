@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { DefinitionTooltip } from '@carbon/react';
+import { DefinitionTooltip, Tooltip } from '@carbon/react';
 import warning from 'warning';
 
-import { Tooltip } from '../../Tooltip';
 import { settings } from '../../../constants/Settings';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 
@@ -98,9 +97,10 @@ const TableCellRenderer = ({
     ) : (
       <Tooltip
         showIcon={false}
-        triggerText={element}
+        label={element}
         triggerId="table-cell-tooltip-trigger"
         tooltipId="table-cell-tooltip"
+        autoAlign
       >
         {element}
       </Tooltip>
@@ -113,7 +113,8 @@ const TableCellRenderer = ({
     if (canBeTruncated && truncateCellText && allowTooltip && mySpanRef && mySpanRef.current) {
       setUseTooltip(isElementTruncated(mySpanRef.current));
     }
-  }, [mySpanRef, children, wrapText, truncateCellText, allowTooltip]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mySpanRef.current, children, wrapText, truncateCellText, allowTooltip]);
 
   if (__DEV__) {
     const isObject =
