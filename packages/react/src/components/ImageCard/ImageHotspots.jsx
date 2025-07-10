@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from 'react';
+import React, { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { InlineLoading } from '@carbon/react';
 import { omit, isEmpty } from 'lodash-es';
@@ -63,6 +63,10 @@ const propTypes = {
    * Emits position obj {x, y} of hotspot to be added.
    */
   onAddHotspotPosition: PropTypes.func,
+  /** Callback when a hotspot is dragged to new position in isEditable mode
+   * Emits new hotspots and updated position obj {x, y} of hotspot.
+   */
+  onUpdateHotspotPosition: PropTypes.func,
   /** Callback when a hotspot is clicked in isEditable mode, emits position obj {x, y} */
   onSelectHotspot: PropTypes.func,
   /**
@@ -103,6 +107,7 @@ const defaultProps = {
   isHotspotDataLoading: false,
   isEditable: false,
   onAddHotspotPosition: () => {},
+  onUpdateHotspotPosition: () => {},
   onSelectHotspot: () => {},
   onHotspotContentChanged: () => {},
   background: '#eee',
@@ -245,6 +250,7 @@ export const calculateHotspotContainerLayout = (
   let width;
   let height;
   let top;
+  let left;
 
   // CONTAIN
   if (objectFit === 'contain') {
@@ -252,30 +258,35 @@ export const calculateHotspotContainerLayout = (
       width = imageWidth;
       height = imageWidth / imageRatio;
       top = imageScale > 1 ? imageOffsetY : imageObjectFitOffsetY;
+      left = imageScale > 1 ? 0 : (containerWidth - imageWidth) / 2;
     } else if (imageOrientation === 'portrait') {
       width = imageHeight / imageRatio;
       height = imageHeight;
       top = imageOffsetY;
+      left = (containerWidth - width) / 2;
     }
     // FILL
   } else if (objectFit === 'fill') {
     width = imageScale > 1 ? imageWidth : containerWidth;
     height = imageScale > 1 ? imageHeight : containerHeight;
     top = imageOffsetY;
+    left = 0;
     // NO OBJECT FIT
   } else if (!objectFit) {
     if (imageOrientation === 'landscape') {
       width = imageWidth;
       height = imageWidth / imageRatio;
       top = imageOffsetY;
+      left = 0;
     } else if (imageOrientation === 'portrait') {
       width = imageHeight / imageRatio;
       height = imageHeight;
       top = imageOffsetY;
+      left = (containerWidth - width) / 2;
     }
   }
 
-  return { width, height, top };
+  return { width, height, top, left };
 };
 
 export const calculateObjectFitOffset = ({ displayOption, container, image }) => {
@@ -556,6 +567,7 @@ const ImageHotspots = ({
   isEditable,
   isHotspotDataLoading,
   onAddHotspotPosition,
+  onUpdateHotspotPosition,
   onSelectHotspot,
   onHotspotContentChanged,
   zoomMax,
@@ -583,8 +595,41 @@ const ImageHotspots = ({
     hideHotspots: hideHotspotsProp,
     hideMinimap: minimapBehavior !== 'show',
   });
+  // Tracks if a hotspot is being dragged and which one.
+  const [draggingHotspotId, setDraggingHotspotId] = useState(null);
+
+  // Ref for outer container
+  const containerRef = useRef(null);
+  const dragStateRef = useRef({
+    // Flag to indicate if a drag is active
+    isDragging: false,
+    // Stores the starting mouse position of a drag
+    dragStartPosition: { x: 0, y: 0 },
+    // Tracks the current position during a drag
+    currentDargPosition: null,
+    // Stores layout of image and container
+    layout: { rect: null, hotspotLayout: null },
+    // Tracks Scheduled Animation Frames
+    frame: null,
+  });
+
+  // Minimum pixel movement before a drag is initiated
+  const DRAG_THRESHOLD = 5;
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const hotspotsWithId = useMemo(() => {
+    return hotspots.map((hotspot, index) => ({
+      ...hotspot,
+      id: `${hotspot.x}-${hotspot.y}-${index}`,
+    }));
+  }, [hotspots]);
+
+  const [editableHotspots, setEditableHotspots] = useState(hotspotsWithId);
+
+  useEffect(() => {
+    setEditableHotspots(hotspotsWithId);
+  }, [hotspotsWithId]);
 
   const handleCtrlKeyUp = useCallback((event) => {
     // Was the control key unpressed
@@ -698,6 +743,11 @@ const ImageHotspots = ({
 
   const onHotspotClicked = useCallback(
     (evt, position) => {
+      // prevent click behavior after drag
+      if (dragStateRef.current.isDragging) {
+        return;
+      }
+
       // It is possible to receive two events here, one Mouse event and one Pointer event.
       // When used in the ImageHotspots component the Pointer event can somehow be from a
       // previously clicked hotspot. See https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1803
@@ -708,6 +758,102 @@ const ImageHotspots = ({
     },
     [onSelectHotspot, isEditable]
   );
+
+  const handleMouseDownHotspot = useCallback(
+    (e, id1) => {
+      if (!isEditable) return;
+      e.stopPropagation();
+      setDraggingHotspotId(id1);
+      dragStateRef.current.isDragging = true;
+      dragStateRef.current.dragStartPosition = { x: e.clientX, y: e.clientY };
+
+      // Calculate layout once at drag start
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const hotspotLayout = calculateHotspotContainerLayout(image, container, displayOption);
+        dragStateRef.current.layout = { rect, hotspotLayout };
+      }
+    },
+    [container, displayOption, image, isEditable]
+  );
+
+  const handleMouseMoveHotspot = useCallback(
+    (e) => {
+      if (draggingHotspotId !== null && containerRef.current) {
+        const { isDragging, dragStartPosition, layout } = dragStateRef.current;
+
+        const dx = e.clientX - dragStartPosition.x;
+        const dy = e.clientY - dragStartPosition.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance > DRAG_THRESHOLD && isDragging) {
+          const { rect, hotspotLayout } = layout;
+          let x = ((e.clientX - rect.left - hotspotLayout.left) / hotspotLayout.width) * 100;
+          let y = ((e.clientY - rect.top - hotspotLayout.top) / hotspotLayout.height) * 100;
+          // Clamp within image boundaries
+          x = Math.max(0, Math.min(100, x));
+          y = Math.max(0, Math.min(100, y));
+
+          dragStateRef.current.currentDargPosition = { x, y };
+
+          // throttle with requestAnimationFrame
+          if (dragStateRef.current.frame === null) {
+            dragStateRef.current.frame = requestAnimationFrame(() => {
+              setEditableHotspots((prev) =>
+                prev.map((item) =>
+                  item.id === draggingHotspotId
+                    ? {
+                        ...item,
+                        x: dragStateRef.current.currentDargPosition.x,
+                        y: dragStateRef.current.currentDargPosition.y,
+                      }
+                    : item
+                )
+              );
+              dragStateRef.current.frame = null;
+            });
+          }
+        }
+      }
+    },
+    [draggingHotspotId]
+  );
+
+  const handleMouseUpHotspot = useCallback(
+    (e) => {
+      if (draggingHotspotId !== null && dragStateRef.current.isDragging) {
+        e.stopPropagation();
+        const { x, y } = dragStateRef.current.currentDargPosition || {};
+        onUpdateHotspotPosition({ newHotspots: editableHotspots, position: { x, y } });
+        setDraggingHotspotId(null);
+        dragStateRef.current.currentDargPosition = null;
+        dragStateRef.current.isDragging = false;
+      }
+    },
+    [editableHotspots, draggingHotspotId, onUpdateHotspotPosition]
+  );
+
+  useEffect(() => {
+    const dragState = dragStateRef.current;
+    return () => {
+      if (dragState.frame !== null) {
+        cancelAnimationFrame(dragState.frame);
+      }
+    };
+  }, []);
+
+  // Listens to mouse movement for dragging hotspot
+  useEffect(() => {
+    if (!isEditable) return undefined;
+
+    const containerElement = containerRef.current;
+    containerElement.addEventListener('mousemove', handleMouseMoveHotspot);
+    containerElement.addEventListener('mouseup', handleMouseUpHotspot);
+    return () => {
+      containerElement.removeEventListener('mousemove', handleMouseMoveHotspot);
+      containerElement.removeEventListener('mouseup', handleMouseUpHotspot);
+    };
+  }, [draggingHotspotId, handleMouseMoveHotspot, handleMouseUpHotspot, isEditable]);
 
   const getIconRenderFunction = useCallback(() => {
     return (
@@ -733,7 +879,7 @@ const ImageHotspots = ({
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
-      hotspots.map((hotspot, index) => {
+      editableHotspots.map((hotspot, index) => {
         const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find((pos) => x === pos.x && y === pos.y);
         // Determine whether the icon needs to be dynamically overridden by a threshold
@@ -782,11 +928,12 @@ const ImageHotspots = ({
             renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}
             onClick={onHotspotClicked}
+            onMouseDown={(e) => handleMouseDownHotspot(e, hotspot.id)}
           />
         );
       }),
     [
-      hotspots,
+      editableHotspots,
       selectedHotspots,
       locale,
       getIconRenderFunction,
@@ -794,6 +941,7 @@ const ImageHotspots = ({
       onHotspotContentChanged,
       mergedI18n,
       onHotspotClicked,
+      handleMouseDownHotspot,
     ]
   );
 
@@ -851,6 +999,7 @@ const ImageHotspots = ({
           stopDrag(cursor, setCursor);
         }
       }}
+      ref={containerRef}
     >
       {src ? (
         <img

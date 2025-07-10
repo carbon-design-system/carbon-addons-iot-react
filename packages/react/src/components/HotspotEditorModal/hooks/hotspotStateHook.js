@@ -32,6 +32,7 @@ const hotspotActionTypes = {
   hotspotDataSourceChange: 'HOTSPOT_DATA_SOURCE_CHANGE',
   hotspotDataSourceSettingsChange: 'HOTSPOT_DATA_SOURCE_SETTINGS_CHANGE',
   hotspotTooltipChange: 'HOTSPOT_TOOLTIP_CHANGE',
+  hotspotPositionChange: 'HOTSPOT_POSITION_CHANGE',
   hotspotSelect: 'HOTSPOT_SELECT',
   hotspotsAdd: 'HOTSPOTS_ADD',
   textHotspotStyleChange: 'TEXT_HOTSPOT_STYLE_CHANGE',
@@ -119,6 +120,17 @@ function hotspotEditorReducer(state, { type, payload }) {
         : { $merge: payload };
       return getHotspotUpdate(state, mergeSpec);
     }
+    // HOTSPOT POSITION CHANGE
+    case hotspotActionTypes.hotspotPositionChange: {
+      const isPositionAvailable = !state.hotspots.find((hotspot) =>
+        isHotspotMatch(hotspot, payload.position)
+      );
+      return isPositionAvailable
+        ? update(state, {
+            hotspots: { $set: payload.newHotspots },
+          })
+        : state;
+    }
     // HOTSPOTS ADD
     case hotspotActionTypes.hotspotsAdd: {
       const isPositionAvailable = !state.hotspots.find((hotspot) =>
@@ -152,7 +164,7 @@ function hotspotEditorReducer(state, { type, payload }) {
 
       return update(state, {
         selectedHotspot: { $set: hotspot },
-        currentType: { $set: hotspot.type ?? defaultTypeWhenMissing },
+        currentType: { $set: hotspot?.type ?? defaultTypeWhenMissing },
       });
     }
     // TEXT HOTSPOT STYLE CHANGE
@@ -314,6 +326,12 @@ function useHotspotEditorState({ reducer = hotspotEditorReducer, initialState = 
       payload: hotspotContent,
     });
 
+  const updateHotspotPosition = (hotspotPosition) =>
+    dispatch({
+      type: hotspotActionTypes.hotspotPositionChange,
+      payload: hotspotPosition,
+    });
+
   /** Updates the properties of the text hotspot, passes a payload like {color: 'blue'} */
   const updateTextHotspotStyle = (textHotspotStyle) =>
     dispatch({
@@ -397,6 +415,7 @@ function useHotspotEditorState({ reducer = hotspotEditorReducer, initialState = 
     switchCurrentType,
     updateHotspotDataSource,
     updateHotspotTooltip,
+    updateHotspotPosition,
     updateTextHotspotStyle,
     updateTextHotspotContent,
     updateDynamicHotspotSourceX,

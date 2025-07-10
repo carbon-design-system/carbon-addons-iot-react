@@ -323,6 +323,7 @@ const HotspotEditorModal = ({
     switchCurrentType,
     updateHotspotDataSource,
     updateHotspotTooltip,
+    updateHotspotPosition,
     updateTextHotspotStyle,
     updateTextHotspotContent,
     updateDynamicHotspotSourceX,
@@ -649,6 +650,7 @@ const HotspotEditorModal = ({
                 hotspotDefaults,
               });
             }}
+            onUpdateHotspotPosition={updateHotspotPosition}
             onSelectHotspot={setSelectedHotspot}
             selectedHotspots={getSelectedHotspotsList(selectedHotspot, hotspots)}
             src={cardConfig.content.src}
