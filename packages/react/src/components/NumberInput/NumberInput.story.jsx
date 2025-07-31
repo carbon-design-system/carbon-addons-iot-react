@@ -65,6 +65,32 @@ export const Default = () => {
   return <NumberInput translateWithId={(id) => numberInputArrowTranslationIds[id]} {...rest} />;
 };
 
+export const NumberInputTypeText = () => {
+  return (
+    <NumberInput
+      locale="en-US"
+      label={text('Label (label)', 'Number Input label')}
+      hideLabel={boolean('No label (hideLabel)', false)}
+      min={number('Minimum value (min)', 0)}
+      max={number('Maximum value (max)', 100)}
+      step={number('Step of up/down arrow (step)', 10)}
+      defaultValue={50}
+      allowEmpty
+      type="text"
+      placeholder="Enter a number"
+      disabled={boolean('Disabled (disabled)', false)}
+      readOnly={boolean('Read only (readOnly)', false)}
+      invalid={boolean('Show form validation UI (invalid)', false)}
+      invalidText={text('Form validation UI content (invalidText)', 'Number is not valid')}
+      warn={boolean('Show warning state (warn)', false)}
+      warnText={text('Warning state text (warnText)', 'A high threshold may impact performance')}
+      helperText={text('Helper text (helperText)', 'Optional helper text.')}
+    />
+  );
+};
+
+NumberInputTypeText.storyName = 'type text';
+
 export const Skeleton = () => (
   <div
     aria-label="loading number input"
