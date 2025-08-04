@@ -253,6 +253,25 @@ const TableToolbar = ({
   testID,
   testId,
 }) => {
+
+  /** If all option are false then hide entire row for toolbar, without this its allocated height remain and blank space was visible */
+  const allFalse = [
+    hasAdvancedFilter,
+    hasAggregations,
+    hasColumnSelection,
+    hasFilter,
+    hasSearch,
+    hasRowCountInHeader,
+    hasRowEdit,
+    hasUserViewManagement,
+    hasBatchActionToolbar,
+    hasRowSelection
+  ].every(flag => !flag) ;
+
+  if (allFalse) {
+    return null;
+  }
+  
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
 
