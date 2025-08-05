@@ -2000,13 +2000,6 @@
   dependencies:
     "@ibm/telemetry-js" "^1.5.0"
 
-"@carbon/feature-flags@^0.27.0":
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.27.0.tgz#a244cd2b4e865d4da3fb735c1bb1a310a9cb09ea"
-  integrity sha512-YDV3IcQnSxDHHHguJQ3DJd7Vi5OA9NsRg0CicrNX7fKyjHpNpFuLy1yan47LItXY1atw4GP7agpZgSumlUl9UA==
-  dependencies:
-    "@ibm/telemetry-js" "^1.5.0"
-
 "@carbon/feature-flags@^0.29.0":
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.29.0.tgz#92e240e146f7d5cbf6a7531c6e2d3045f38207f9"
@@ -2053,7 +2046,7 @@
     "@ibm/telemetry-js" "^1.5.0"
     prop-types "^15.8.1"
 
-"@carbon/icons-react@^11.62.0":
+"@carbon/icons-react@^11.64.0":
   version "11.64.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.64.0.tgz#b15ada2c559f376dae712349fa0a12adb72d1726"
   integrity sha512-ZWDACXeBpF8LwXUi1lad4FEBKo2C8+1/UOtoPsRLYueij/tXgDn1UoMpzaZxD/CTfo6wSNXldFoKZbzKxi7rAg==
@@ -2069,7 +2062,7 @@
   dependencies:
     "@ibm/telemetry-js" "^1.5.0"
 
-"@carbon/layout@^11.36.0", "@carbon/layout@^11.38.0":
+"@carbon/layout@^11.38.0":
   version "11.38.0"
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-11.38.0.tgz#ff5522c4b440c9f23186c85e1a207b49d25abc48"
   integrity sha512-VoPPfpp/Bom6ZspW4wvXiWFvP9930nTCCfQ8ibKEMZEYxKfzdW6zedLfL/BaNcDD+GlnaPbOJ+la730n9Q6TTQ==
@@ -2092,16 +2085,16 @@
     "@ibm/telemetry-js" "^1.5.0"
     prop-types "^15.8.1"
 
-"@carbon/react@1.86.0":
-  version "1.86.0"
-  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.86.0.tgz#3de655279ee2f27aad3b0b0416b8d8ec7c32d1d1"
-  integrity sha512-a8zGiKDDKwYh1e6Gkk8PppPl3EgbssIdW0kUZFC3nvHDshU/apmQLsExUXcwoh0tvsrnnvX1E7GFYlp2WCWPFA==
+"@carbon/react@1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.88.0.tgz#0db586ddf063534f8812074842e22588d3ef1705"
+  integrity sha512-1YjettqMJo5jdTHmWdOv9D9BmCe4/4pF7WA4CrKGVN/cjz7K5EgtMj0GkB/cZ6yBC+GKPkfBULR8hbIHMlkweQ==
   dependencies:
     "@babel/runtime" "^7.27.3"
-    "@carbon/feature-flags" "^0.27.0"
-    "@carbon/icons-react" "^11.62.0"
-    "@carbon/layout" "^11.36.0"
-    "@carbon/styles" "^1.85.0"
+    "@carbon/feature-flags" "^0.29.0"
+    "@carbon/icons-react" "^11.64.0"
+    "@carbon/layout" "^11.38.0"
+    "@carbon/styles" "^1.87.0"
     "@carbon/utilities" "^0.7.0"
     "@floating-ui/react" "^0.27.4"
     "@ibm/telemetry-js" "^1.5.0"
@@ -2116,7 +2109,7 @@
     tabbable "^6.2.0"
     window-or-global "^1.0.1"
 
-"@carbon/styles@^1.85.0":
+"@carbon/styles@^1.87.0":
   version "1.87.0"
   resolved "https://registry.yarnpkg.com/@carbon/styles/-/styles-1.87.0.tgz#e8d073610d056b4daf3e5999ab243d711dee21ac"
   integrity sha512-3GxG8zhpdS0oOQ7Np0Z/FdEugk7PLbncGgQ7N0XNMd+xWJdOlfrzgy/9mxUc4LOuRWAUq3juTu2CwCKzSirMdQ==
