@@ -10384,10 +10384,10 @@ carbon-components-angular@4.56.2:
     flatpickr "4.6.1"
     tslib "^1.9.0"
 
-carbon-components-react@7.60.3:
-  version "7.60.3"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.3.tgz#db51b81d15a7244dc95e2de17f11d01f3e4b25f3"
-  integrity sha512-gxM8OXWvSUJNEgMLR/NcsIwESGd2fP6mmTbefkMtxs+BCZQ3zTVvKydaZJr7/0cr+QiWedB+iWQZSFSMS5xJcA==
+carbon-components-react@7.60.4:
+  version "7.60.4"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.4.tgz#55ca107f187813d6dc141546731896f864b3fd8b"
+  integrity sha512-F72VyUt11U524AVq5RzOZtyMYzy7VWAwRCs6+X/B36uaCTDWyrSq41x9sgvnADXxsjyOdUpgj4n7bKGfiDE31A==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@carbon/feature-flags" "^0.7.3"
@@ -10424,6 +10424,16 @@ carbon-components@10.59.2:
   version "10.59.2"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.59.2.tgz#9d4400871d9d809dd901f57f3571dbf5920277b9"
   integrity sha512-apaSI8ce+0IV6BrMSH51yBO/CaeDLjQkBckH/l11X7euNvl58falGcw1S715T4jW5qjpxYcrXAjKVtZHagx2SA==
+  dependencies:
+    "@carbon/telemetry" "0.1.0"
+    flatpickr "4.6.1"
+    lodash.debounce "^4.0.8"
+    warning "^3.0.0"
+
+carbon-components@^10.58.12:
+  version "10.58.15"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.58.15.tgz#7a8157be2eca3318d4d1eb89f567d1092533f77b"
+  integrity sha512-w1ubGzeH+HdJotD+B2UgW8hUeTtp1CcXDcki20Il3er6BfLjEhQL5/XlXnJiDzRmB6NgozxOQEbjLPXbZSfiqA==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     flatpickr "4.6.1"
