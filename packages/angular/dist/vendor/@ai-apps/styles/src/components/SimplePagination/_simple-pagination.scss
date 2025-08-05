@@ -1,0 +1,66 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _simple-pagination.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../vendor/carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
+
+.#{$iot-prefix}-simple-pagination-container {
+  display: flex;
+  height: $spacing-09;
+  width: 100%;
+  border: rem(1px) solid $ui-03;
+  background-color: $ui-01;
+}
+
+.#{$iot-prefix}-simple-pagination-page-bar {
+  display: flex;
+  margin-left: auto;
+}
+
+.#{$iot-prefix}-simple-pagination-page-label {
+  padding-right: $spacing-05;
+  padding-left: $spacing-05;
+  font-size: 0.875rem;
+  align-self: center;
+}
+
+.#{$iot-prefix}-addons-simple-pagination-button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.#{$iot-prefix}-addons-simple-pagination-button-disabled {
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: $ui-01;
+  }
+  cursor: not-allowed;
+}
+
+.#{$iot-prefix}-simple-pagination-caret {
+  fill: $icon-01;
+}
+
+.#{$iot-prefix}-simple-pagination-caret-disabled {
+  fill: $disabled-02;
+}

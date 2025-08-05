@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-list.umd.js",
+  "module": "../fesm2015/ai-apps-angular-list.js",
+  "es2015": "../fesm2015/ai-apps-angular-list.js",
+  "esm2015": "../esm2015/list/ai-apps-angular-list.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-list.js",
+  "typings": "ai-apps-angular-list.d.ts",
+  "metadata": "ai-apps-angular-list.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/list"
+}

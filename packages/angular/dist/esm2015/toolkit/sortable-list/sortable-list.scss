@@ -1,0 +1,50 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | sortable-list.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../vendor/@carbon/layout/scss/index';
+@import '../vendor/@carbon/themes/scss/index';
+@import '../vendor/@carbon/colors/scss/index';
+
+ol {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.dropzone {
+  height: carbon--mini-units(5);
+  margin-top: -28px; // px here to keep alignment correct ... we can't just do 20px (40/2) due to border sizing
+  position: absolute;
+  width: 100%;
+  display: none;
+  padding-left: carbon--mini-units(2);
+  padding-right: carbon--mini-units(2);
+}
+
+.dropzone.active .line {
+  width: 100%;
+  border-top: 1px solid $interactive-01;
+  position: relative;
+  top: 24px; // px here as well for alignment
+}
+
+.visible {
+  display: block;
+}

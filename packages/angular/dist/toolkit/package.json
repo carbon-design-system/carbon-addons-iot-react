@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-toolkit.umd.js",
+  "module": "../fesm2015/ai-apps-angular-toolkit.js",
+  "es2015": "../fesm2015/ai-apps-angular-toolkit.js",
+  "esm2015": "../esm2015/toolkit/ai-apps-angular-toolkit.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-toolkit.js",
+  "typings": "ai-apps-angular-toolkit.d.ts",
+  "metadata": "ai-apps-angular-toolkit.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/toolkit"
+}

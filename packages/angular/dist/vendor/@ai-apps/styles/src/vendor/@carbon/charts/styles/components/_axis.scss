@@ -1,0 +1,93 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _axis.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import './../vendor/@carbon/type/scss/type';
+@import './../vendor/@carbon/type/scss/font-face/sans';
+@import './../vendor/@carbon/themes/scss/tokens';
+
+.#{$prefix}--#{$charts-prefix}--axes {
+	overflow: visible;
+
+	g.axis {
+		g.ticks.invisible {
+			visibility: hidden;
+		}
+
+		g.tick-hover rect.axis-holder {
+			fill: transparent;
+			stroke: transparent;
+			stroke-width: 2px;
+		}
+
+		g.tick-hover:hover,
+		g.tick-hover:focus {
+			@if $carbon--theme ==
+				$carbon--theme--g90 or
+				$carbon--theme ==
+				$carbon--theme--g100
+			{
+				rect.axis-holder {
+					fill: white;
+					stroke: white;
+					stroke-width: 2px;
+				}
+
+				text {
+					fill: invert($text-02);
+				}
+			}
+
+			@if $carbon--theme ==
+				$carbon--theme--g10 or
+				$carbon--theme ==
+				$carbon--theme--white
+			{
+				rect.axis-holder {
+					fill: black;
+					stroke: black;
+					stroke-width: 2px;
+				}
+
+				text {
+					fill: white;
+				}
+			}
+		}
+
+		g.tick text {
+			fill: $text-02;
+			font-family: carbon--font-family('sans-condensed');
+		}
+
+		g.tick line {
+			display: none;
+		}
+
+		path.domain {
+			stroke: $ui-04;
+		}
+
+		.axis-title {
+			font-family: carbon--font-family('sans');
+			font-weight: carbon--font-weight('semibold');
+			fill: $text-01;
+		}
+	}
+}

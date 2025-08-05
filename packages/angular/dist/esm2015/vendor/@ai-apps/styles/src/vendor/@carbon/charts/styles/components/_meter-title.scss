@@ -1,0 +1,62 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _meter-title.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$prefix}--#{$charts-prefix}--meter-title {
+	overflow: visible;
+
+	text.meter-title,
+	text.proportional-meter-title,
+	text.proportional-meter-total,
+	text.percent-value {
+		fill: $text-01;
+	}
+
+	g.status-indicator {
+		&.status--danger circle.status {
+			fill: $support-01;
+		}
+
+		&.status--warning {
+			circle.status {
+				fill: $support-03;
+			}
+
+			path.innerFill {
+				fill: $carbon--black-100;
+			}
+		}
+
+		&.status--success circle.status {
+			fill: $support-02;
+		}
+
+		path.innerFill {
+			@if $carbon--theme ==
+				$carbon--theme--g90 or
+				$carbon--theme ==
+				$carbon--theme--g100
+			{
+				fill: $carbon--black-100;
+			} @else {
+				fill: $carbon--white-0;
+			}
+		}
+	}
+}

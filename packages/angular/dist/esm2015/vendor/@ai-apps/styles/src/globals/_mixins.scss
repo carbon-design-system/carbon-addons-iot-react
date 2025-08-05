@@ -1,0 +1,82 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _mixins.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../vendor/carbon-components/scss/globals/scss/mixins';
+@import 'vars';
+
+@mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
+  overflow: hidden;
+
+  // Fallback solution for users where -webkit-line-clamp doesn't work
+  max-height: calc(#{$line-height-rem} * (#{$max-lines} + 0.5));
+  display: block;
+
+  // Use webkit-line-clamp which despite webkit prefix has good browser support
+  display: -webkit-box;
+  -webkit-line-clamp: $max-lines;
+  // Not needed after we upgrade to Prefixer 9.6.1 or higher
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+@mixin disabled-icon-button() {
+  cursor: not-allowed;
+  svg {
+    fill: $disabled;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin content-switcher-border-radius($border-radius, $first-button-side, $last-button-side) {
+  button:first-of-type,
+  button:last-of-type {
+    border-radius: 0;
+  }
+
+  button:first-of-type {
+    border-top-#{$first-button-side}-radius: $border-radius;
+    border-bottom-#{$first-button-side}-radius: $border-radius;
+  }
+  button:last-of-type {
+    border-top-#{$last-button-side}-radius: $border-radius;
+    border-bottom-#{$last-button-side}-radius: $border-radius;
+  }
+}
+
+@mixin list-box-menu-fits-content() {
+  .#{$prefix}--list-box__menu {
+    width: fit-content;
+    min-width: 100%;
+  }
+}
+
+@mixin list-box-menu-flip-horizontal() {
+  .#{$prefix}--list-box__menu {
+    left: unset;
+    right: 0;
+    [dir='rtl'] & {
+      left: 0;
+      right: unset;
+    }
+  }
+}

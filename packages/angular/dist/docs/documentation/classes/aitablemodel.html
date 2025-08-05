@@ -1,0 +1,2357 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AITableModel | @ai-apps/angular</title>
+	<meta name="description" content="Documentation for @ai-apps/angular">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@ai-apps/angular</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@ai-apps/angular</a>
+				</li>
+				<li>
+					<a href="aitablemodel.html">AITableModel</a>
+				</li>
+			</ul>
+			<h1>Class AITableModel</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>TableModel represents a data model for two-dimensional data. It&#39;s used for all things table
+						(table component, table toolbar, pagination, etc)</p>
+					</div>
+					<p>TableModel manages its internal data integrity very well if you use the provided helper
+					functions for modifying rows and columns and assigning header and data in that order.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AITableModel</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">PaginationModel</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="aitablemodel.html#constructor"
+									class="tsd-kind-icon">constructor</a>
+								</li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#_data"
+									class="tsd-kind-icon">_data</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#_totaldatalength"
+									class="tsd-kind-icon">_total<wbr>Data<wbr>Length</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#currentpage"
+									class="tsd-kind-icon">current<wbr>Page</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#datachange"
+									class="tsd-kind-icon">data<wbr>Change</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#header"
+									class="tsd-kind-icon">header</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#isend"
+									class="tsd-kind-icon">is<wbr>End</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#isloading"
+									class="tsd-kind-icon">is<wbr>Loading</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#pagelength"
+									class="tsd-kind-icon">page<wbr>Length</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#rowsclass"
+									class="tsd-kind-icon">rows<wbr>Class</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#rowscontext"
+									class="tsd-kind-icon">rows<wbr>Context</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#rowsexpanded"
+									class="tsd-kind-icon">rows<wbr>Expanded</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#rowsexpandedchange"
+									class="tsd-kind-icon">rows<wbr>Expanded<wbr>Change</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#rowsselected"
+									class="tsd-kind-icon">rows<wbr>Selected</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#rowsselectedchange"
+									class="tsd-kind-icon">rows<wbr>Selected<wbr>Change</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="aitablemodel.html#selectallchange"
+									class="tsd-kind-icon">select<wbr>All<wbr>Change</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#tablemodelcount"
+									class="tsd-kind-icon">table<wbr>Model<wbr>Count</a>
+								</li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aitablemodel.html#count"
+									class="tsd-kind-icon">COUNT</a>
+								</li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="aitablemodel.html#totaldatalength"
+									class="tsd-kind-icon">total<wbr>Data<wbr>Length</a>
+								</li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#actualindextoprojectedindices"
+									class="tsd-kind-icon">actual<wbr>Index<wbr>ToProjected<wbr>Indices</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#addcolumn"
+									class="tsd-kind-icon">add<wbr>Column</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#addrow"
+									class="tsd-kind-icon">add<wbr>Row</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#column"
+									class="tsd-kind-icon">column</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#deletecolumn"
+									class="tsd-kind-icon">delete<wbr>Column</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#deleterow"
+									class="tsd-kind-icon">delete<wbr>Row</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#expandrow"
+									class="tsd-kind-icon">expand<wbr>Row</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#expandedrowindices"
+									class="tsd-kind-icon">expanded<wbr>Row<wbr>Indices</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#expandedrowscount"
+									class="tsd-kind-icon">expanded<wbr>Rows<wbr>Count</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#getclosestheader"
+									class="tsd-kind-icon">get<wbr>Closest<wbr>Header</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#getheaderid"
+									class="tsd-kind-icon">get<wbr>Header<wbr>Id</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#getid"
+									class="tsd-kind-icon">get<wbr>Id</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#getrowcontext"
+									class="tsd-kind-icon">get<wbr>Row<wbr>Context</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#hasexpandablerows"
+									class="tsd-kind-icon">has<wbr>Expandable<wbr>Rows</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#isrowdisabled"
+									class="tsd-kind-icon">is<wbr>Row<wbr>Disabled</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#isrowexpandable"
+									class="tsd-kind-icon">is<wbr>Row<wbr>Expandable</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#isrowexpanded"
+									class="tsd-kind-icon">is<wbr>Row<wbr>Expanded</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#isrowfiltered"
+									class="tsd-kind-icon">is<wbr>Row<wbr>Filtered</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#isrowselected"
+									class="tsd-kind-icon">is<wbr>Row<wbr>Selected</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#movecolumn"
+									class="tsd-kind-icon">move<wbr>Column</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#movemultipletoindex"
+									class="tsd-kind-icon">move<wbr>Multiple<wbr>ToIndex</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#movenested"
+									class="tsd-kind-icon">move<wbr>Nested</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#nestedtotabular"
+									class="tsd-kind-icon">nested<wbr>ToTabular</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#poprowstatefrommodeldata"
+									class="tsd-kind-icon">pop<wbr>Row<wbr>State<wbr>From<wbr>Model<wbr>Data</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#projectedindextoactualindex"
+									class="tsd-kind-icon">projected<wbr>Index<wbr>ToActual<wbr>Index</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#projectedindicestoactualindices"
+									class="tsd-kind-icon">projected<wbr>Indices<wbr>ToActual<wbr>Indices</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#projectedrowlength"
+									class="tsd-kind-icon">projected<wbr>Row<wbr>Length</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#projectedrowlengthsimple"
+									class="tsd-kind-icon">projected<wbr>Row<wbr>Length<wbr>Simple</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#pushrowstatetomodeldata"
+									class="tsd-kind-icon">push<wbr>Row<wbr>State<wbr>ToModel<wbr>Data</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#realcolumnindex"
+									class="tsd-kind-icon">real<wbr>Column<wbr>Index</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#realindex"
+									class="tsd-kind-icon">real<wbr>Index</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#realrowindex"
+									class="tsd-kind-icon">real<wbr>Row<wbr>Index</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#row"
+									class="tsd-kind-icon">row</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#rowmetainfo"
+									class="tsd-kind-icon">row<wbr>Meta<wbr>Info</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#rows"
+									class="tsd-kind-icon">rows</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#selectall"
+									class="tsd-kind-icon">select<wbr>All</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#selectrow"
+									class="tsd-kind-icon">select<wbr>Row</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#selectedrowindices"
+									class="tsd-kind-icon">selected<wbr>Row<wbr>Indices</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#selectedrowscount"
+									class="tsd-kind-icon">selected<wbr>Rows<wbr>Count</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#setdata"
+									class="tsd-kind-icon">set<wbr>Data</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#setheader"
+									class="tsd-kind-icon">set<wbr>Header</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#setitem"
+									class="tsd-kind-icon">set<wbr>Item</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#setitemdata"
+									class="tsd-kind-icon">set<wbr>Item<wbr>Data</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#setrowcontext"
+									class="tsd-kind-icon">set<wbr>Row<wbr>Context</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aitablemodel.html#sort"
+									class="tsd-kind-icon">sort</a>
+								</li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="aitablemodel.html#tabulartonested"
+									class="tsd-kind-icon">tabular<wbr>ToNested</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new AITable<wbr>Model<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aitablemodel.html" class="tsd-signature-type" data-tsd-kind="Class">AITableModel</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L145">packages/angular/src/table/table-model.class.ts:145</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="aitablemodel.html" class="tsd-signature-type" data-tsd-kind="Class">AITableModel</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _data</h3>
+					<div class="tsd-signature tsd-kind-icon">_data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L114">packages/angular/src/table/table-model.class.ts:114</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used in <code>data</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_totaldatalength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _total<wbr>Data<wbr>Length</h3>
+					<div class="tsd-signature tsd-kind-icon">_total<wbr>Data<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L78">packages/angular/src/table/table-model.class.ts:78</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Absolute total number of rows of the table.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentpage" class="tsd-anchor"></a>
+					<h3>current<wbr>Page</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L58">packages/angular/src/table/table-model.class.ts:58</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Tracks the current page.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="datachange" class="tsd-anchor"></a>
+					<h3>data<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">data<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L37">packages/angular/src/table/table-model.class.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="header" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> header</h3>
+					<div class="tsd-signature tsd-kind-icon">header<span class="tsd-signature-symbol">:</span> <a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L119">packages/angular/src/table/table-model.class.ts:119</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains information about the header cells of the table.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isend" class="tsd-anchor"></a>
+					<h3>is<wbr>End</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L68">packages/angular/src/table/table-model.class.ts:68</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set to true when there is no more data to load in the table</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isloading" class="tsd-anchor"></a>
+					<h3>is<wbr>Loading</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L73">packages/angular/src/table/table-model.class.ts:73</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set to true when lazy loading to show loading indicator</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pagelength" class="tsd-anchor"></a>
+					<h3>page<wbr>Length</h3>
+					<div class="tsd-signature tsd-kind-icon">page<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 10</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L63">packages/angular/src/table/table-model.class.ts:63</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Length of page.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rowsclass" class="tsd-anchor"></a>
+					<h3>rows<wbr>Class</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Class<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L53">packages/angular/src/table/table-model.class.ts:53</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains class name(s) of the row.</p>
+						</div>
+						<p>It affects styling of the row to reflect the appended class name(s).</p>
+						<p>It&#39;s empty or undefined by default</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="rowscontext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> rows<wbr>Context</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L145">packages/angular/src/table/table-model.class.ts:145</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains information about the context of the row.</p>
+						</div>
+						<p>It affects styling of the row to reflect the context.</p>
+						<p>string can be one of <code>&quot;success&quot; | &quot;warning&quot; | &quot;info&quot; | &quot;error&quot; | &quot;&quot;</code> and it&#39;s
+						empty or undefined by default</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="rowsexpanded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> rows<wbr>Expanded</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Expanded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L135">packages/angular/src/table/table-model.class.ts:135</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains information about expanded state of rows in the table.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rowsexpandedchange" class="tsd-anchor"></a>
+					<h3>rows<wbr>Expanded<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Expanded<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L39">packages/angular/src/table/table-model.class.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="rowsselected" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> rows<wbr>Selected</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Selected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L130">packages/angular/src/table/table-model.class.ts:130</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Contains information about selection state of rows in the table.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rowsselectedchange" class="tsd-anchor"></a>
+					<h3>rows<wbr>Selected<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">rows<wbr>Selected<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L38">packages/angular/src/table/table-model.class.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="selectallchange" class="tsd-anchor"></a>
+					<h3>select<wbr>All<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">select<wbr>All<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L44">packages/angular/src/table/table-model.class.ts:44</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Gets emitted when <code>selectAll</code> is called. Emits false if all rows are deselected and true if
+							all rows are selected.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="tablemodelcount" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> table<wbr>Model<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">table<wbr>Model<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L125">packages/angular/src/table/table-model.class.ts:125</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The number of models instantiated, this is to make sure each table has a different
+							model count for unique id generation.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="count" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagStatic">Static</span> COUNT</h3>
+					<div class="tsd-signature tsd-kind-icon">COUNT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L35">packages/angular/src/table/table-model.class.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The number of models instantiated, used for (among other things) unique id generation</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="totaldatalength" class="tsd-anchor"></a>
+					<h3>total<wbr>Data<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> totalDataLength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> totalDataLength<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L97">packages/angular/src/table/table-model.class.ts:97</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Total length of data that table has access to, or the amount manually set</p>
+								</div>
+								<p>Example: if you have multiple pages of data that table will display
+								but you&#39;re loading one at a time.</p>
+								<p>Set to <code>null</code> to reset to default behavior.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L89">packages/angular/src/table/table-model.class.ts:89</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Manually set data length in case the data in the table doesn&#39;t
+									correctly reflect all the data that table is to display.</p>
+								</div>
+								<p>Example: if you have multiple pages of data that table will display
+								but you&#39;re loading one at a time.</p>
+								<p>Set to <code>null</code> to reset to default behavior.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="actualindextoprojectedindices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> actual<wbr>Index<wbr>ToProjected<wbr>Indices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">actual<wbr>Index<wbr>ToProjected<wbr>Indices<span class="tsd-signature-symbol">(</span>actualIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L975">packages/angular/src/table/table-model.class.ts:975</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert an actual index to a projected indices array</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>actualIndex: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>index of a column as-is</p>
+									</div>
+								</li>
+								<li>
+									<h5>list: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a row of the header or the body</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addcolumn" class="tsd-anchor"></a>
+					<h3>add<wbr>Column</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Column<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span>, index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L554">packages/angular/src/table/table-model.class.ts:554</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a column to the <code>index</code>th column or appends to table if index not provided.</p>
+								</div>
+								<p>If column is shorter than other columns or not provided, it will be padded with
+								empty <code>TableItem</code> elements.</p>
+								<p>If column is longer than other columns, others will be extended to match so no data is lost.</p>
+								<p>If called on an empty table with no parameters, it creates a 1x1 table.</p>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> column: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addrow" class="tsd-anchor"></a>
+					<h3>add<wbr>Row</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Row<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span>, index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L392">packages/angular/src/table/table-model.class.ts:392</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a row to the <code>index</code>th row or appends to table if index not provided.</p>
+								</div>
+								<p>If row is shorter than other rows or not provided, it will be padded with
+								empty <code>TableItem</code> elements.</p>
+								<p>If row is longer than other rows, others will be extended to match so no data is lost.</p>
+								<p>If called on an empty table with no parameters, it creates a 1x1 table.</p>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> row: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="column" class="tsd-anchor"></a>
+					<h3>column</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">column<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L526">packages/angular/src/table/table-model.class.ts:526</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns <code>index</code>th column of the table.</p>
+								</div>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deletecolumn" class="tsd-anchor"></a>
+					<h3>delete<wbr>Column</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Column<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L622">packages/angular/src/table/table-model.class.ts:622</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Deletes <code>index</code>th column.</p>
+								</div>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleterow" class="tsd-anchor"></a>
+					<h3>delete<wbr>Row</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Row<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L478">packages/angular/src/table/table-model.class.ts:478</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Deletes <code>index</code>th row.</p>
+								</div>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="expandrow" class="tsd-anchor"></a>
+					<h3>expand<wbr>Row</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">expand<wbr>Row<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L874">packages/angular/src/table/table-model.class.ts:874</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Expands/Collapses <code>index</code>th row based on value</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>index of the row to expand or collapse</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>expanded state of the row. <code>true</code> is expanded and <code>false</code> is collapsed</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="expandedrowindices" class="tsd-anchor"></a>
+					<h3>expanded<wbr>Row<wbr>Indices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">expanded<wbr>Row<wbr>Indices<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L332">packages/angular/src/table/table-model.class.ts:332</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>a list of indices of expanded rows</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="expandedrowscount" class="tsd-anchor"></a>
+					<h3>expanded<wbr>Rows<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">expanded<wbr>Rows<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L345">packages/angular/src/table/table-model.class.ts:345</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns how many rows is currently expanded</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclosestheader" class="tsd-anchor"></a>
+					<h3>get<wbr>Closest<wbr>Header</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Closest<wbr>Header<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L278">packages/angular/src/table/table-model.class.ts:278</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Finds closest header by trying the lowest cell in header and then work its way to the left</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>column: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getheaderid" class="tsd-anchor"></a>
+					<h3>get<wbr>Header<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Header<wbr>Id<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HeaderType</span>, colSpan<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L256">packages/angular/src/table/table-model.class.ts:256</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the id of the header. Used to link the cells with headers (or headers with headers)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>column: <span class="tsd-signature-type">HeaderType</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the column to start getting headers for</p>
+									</div>
+								</li>
+								<li>
+									<h5>colSpan: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the number of columns to get headers for (defaults to 1)</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getid" class="tsd-anchor"></a>
+					<h3>get<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Id<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HeaderType</span>, row<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L246">packages/angular/src/table/table-model.class.ts:246</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an id for the given column</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>column: <span class="tsd-signature-type">HeaderType</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the column to generate an id for</p>
+									</div>
+								</li>
+								<li>
+									<h5>row: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the row of the header to generate an id for</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getrowcontext" class="tsd-anchor"></a>
+					<h3>get<wbr>Row<wbr>Context</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Row<wbr>Context<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L511">packages/angular/src/table/table-model.class.ts:511</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hasexpandablerows" class="tsd-anchor"></a>
+					<h3>has<wbr>Expandable<wbr>Rows</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Expandable<wbr>Rows<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L499">packages/angular/src/table/table-model.class.ts:499</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isrowdisabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Row<wbr>Disabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Row<wbr>Disabled<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L863">packages/angular/src/table/table-model.class.ts:863</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if row is disabled or not.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isrowexpandable" class="tsd-anchor"></a>
+					<h3>is<wbr>Row<wbr>Expandable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Row<wbr>Expandable<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L503">packages/angular/src/table/table-model.class.ts:503</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isrowexpanded" class="tsd-anchor"></a>
+					<h3>is<wbr>Row<wbr>Expanded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Row<wbr>Expanded<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L507">packages/angular/src/table/table-model.class.ts:507</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isrowfiltered" class="tsd-anchor"></a>
+					<h3>is<wbr>Row<wbr>Filtered</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Row<wbr>Filtered<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L819">packages/angular/src/table/table-model.class.ts:819</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if row is filtered out.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if any of the filters in header filters out the <code>index</code>th row</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isrowselected" class="tsd-anchor"></a>
+					<h3>is<wbr>Row<wbr>Selected</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Row<wbr>Selected<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L856">packages/angular/src/table/table-model.class.ts:856</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="movecolumn" class="tsd-anchor"></a>
+					<h3>move<wbr>Column</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">move<wbr>Column<span class="tsd-signature-symbol">(</span>indexFrom<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, indexTo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rowIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L736">packages/angular/src/table/table-model.class.ts:736</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Move the column at <code>indexFrom</code> to <code>indexTo</code> of the <code>rowIndex</code> row</p>
+								</div>
+								<p><em>Note: only works with one row headers at the moment</em></p>
+								<p>If headers have merged cells, they should only be merged in a way that a higher row
+								contains all the lower row columns and not vice versa</p>
+								<p>Multiline header example <em>(good)</em>:</p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h12    ||    h13   ||
+									| h21 | h22 | h23 | h24 | h25 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  d  |  e  |
+								|  f  |  g  |  h  |  i  |  j  |</p>
+								<p>Multiline header example <em>(not good)</em>:</p>
+								<p>| h1  |           h2          ||||
+									| h21 | h22 | h23 | h24 | h25 |
+									| h11 |    h12    ||    h13   ||
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  d  |  e  |
+								|  f  |  g  |  h  |  i  |  j  |</p>
+								<a href="#usage-example" id="usage-example" style="color: inherit; text-decoration: none;">
+									<h2>Usage example:</h2>
+								</a>
+								<a href="#moving-h2-in-place-of-h1" id="moving-h2-in-place-of-h1" style="color: inherit; text-decoration: none;">
+									<h3>Moving h2 in place of h1</h3>
+								</a>
+								<p><code>model.moveColumn(1, 0)</code></p>
+								<p><em>Before</em></p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h12    ||    h13   ||
+									| h21 | h22 | h23 | h24 | h25 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  d  |  e  |
+								|  f  |  g  |  h  |  i  |  j  |</p>
+								<p><em>After</em></p>
+								<p>|           h2          | h1  ||||
+									|    h12    ||    h13   | h11 ||
+									| h22 | h23 | h24 | h25 | h21 |
+									|-----|-----|-----|-----|-----|
+									|  b  |  c  |  d  |  e  |  a  |
+								|  g  |  h  |  i  |  j  |  f  |</p>
+								<a href="#moving-h13-in-place-of-h12" id="moving-h13-in-place-of-h12" style="color: inherit; text-decoration: none;">
+									<h3>Moving h13 in place of h12</h3>
+								</a>
+								<p><code>model.moveColumn(2, 1, 1)</code></p>
+								<p><em>Before</em></p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h12    ||    h13   ||
+									| h21 | h22 | h23 | h24 | h25 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  d  |  e  |
+								|  f  |  g  |  h  |  i  |  j  |</p>
+								<p><em>After</em></p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h13    ||    h12   ||
+									| h21 | h24 | h25 | h22 | h23 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  d  |  e  |  b  |  c  |
+								|  f  |  i  |  j  |  g  |  h  |</p>
+								<a href="#moving-h24-in-place-of-h25" id="moving-h24-in-place-of-h25" style="color: inherit; text-decoration: none;">
+									<h3>Moving h24 in place of h25</h3>
+								</a>
+								<p><code>model.moveColumn(3, 4, 2)</code></p>
+								<p><em>Note: while you</em> could <em>move h24 to h22, you shouldn&#39;t because it doesn&#39;t belong under</em>
+								<em>the same subheader.</em></p>
+								<p><em>Before</em></p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h12    ||    h13   ||
+									| h21 | h22 | h23 | h24 | h25 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  d  |  e  |
+								|  f  |  g  |  h  |  i  |  j  |</p>
+								<p><em>After</em></p>
+								<p>| h1  |           h2          ||||
+									| h11 |    h12    ||    h13   ||
+									| h21 | h22 | h23 | h25 | h24 |
+									|-----|-----|-----|-----|-----|
+									|  a  |  b  |  c  |  e  |  d  |
+								|  f  |  g  |  h  |  j  |  i  |</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>indexFrom: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>indexTo: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="movemultipletoindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> move<wbr>Multiple<wbr>ToIndex</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">move<wbr>Multiple<wbr>ToIndex<span class="tsd-signature-symbol">(</span>indices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L1002">packages/angular/src/table/table-model.class.ts:1002</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>indices: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>index: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>list: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="movenested" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> move<wbr>Nested</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">move<wbr>Nested<span class="tsd-signature-symbol">(</span>nested<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, indexFrom<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, indexTo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rowIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, startingChildIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L1118">packages/angular/src/table/table-model.class.ts:1118</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Move <code>nested</code> element at <code>rowIndex</code> with index <code>indexFrom</code> to <code>indexTo</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nested: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>indexFrom: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>indexTo: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+								<li>
+									<h5>startingChildIndex: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="nestedtotabular" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> nested<wbr>ToTabular</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">nested<wbr>ToTabular<span class="tsd-signature-symbol">(</span>nested<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, header<span class="tsd-signature-symbol">?: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, rowIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>header<span class="tsd-signature-symbol">: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L1080">packages/angular/src/table/table-model.class.ts:1080</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nested: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>header: <a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+								<li>
+									<h5>data: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>header<span class="tsd-signature-symbol">: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>header<span class="tsd-signature-symbol">: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="poprowstatefrommodeldata" class="tsd-anchor"></a>
+					<h3>pop<wbr>Row<wbr>State<wbr>From<wbr>Model<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">pop<wbr>Row<wbr>State<wbr>From<wbr>Model<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L804">packages/angular/src/table/table-model.class.ts:804</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Restores <code>rowsSelected</code> from data pushed by <code>pushRowSelectionToModelData()</code></p>
+								</div>
+								<p>Call after sorting data (if you previously pushed to maintain selection order)
+								to make everything right with the world again.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="projectedindextoactualindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> projected<wbr>Index<wbr>ToActual<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">projected<wbr>Index<wbr>ToActual<wbr>Index<span class="tsd-signature-symbol">(</span>projectedIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L955">packages/angular/src/table/table-model.class.ts:955</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a projected index to actual index, where actual index is the index in the list
+									that&#39;s passed in</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>projectedIndex: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>index of a column if none of the cells were merged</p>
+									</div>
+								</li>
+								<li>
+									<h5>list: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a row of the header or the body</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="projectedindicestoactualindices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> projected<wbr>Indices<wbr>ToActual<wbr>Indices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">projected<wbr>Indices<wbr>ToActual<wbr>Indices<span class="tsd-signature-symbol">(</span>projectedIndices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L989">packages/angular/src/table/table-model.class.ts:989</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>projectedIndices: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>list: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="projectedrowlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> projected<wbr>Row<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">projected<wbr>Row<wbr>Length<span class="tsd-signature-symbol">(</span>itemArray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, rowIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, matrix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L926">packages/angular/src/table/table-model.class.ts:926</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemArray: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>TableItem[] | AITableHeaderItem[]</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> rowIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> matrix: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>the number of columns as if now cells were merged</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="projectedrowlengthsimple" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> projected<wbr>Row<wbr>Length<wbr>Simple</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">projected<wbr>Row<wbr>Length<wbr>Simple<span class="tsd-signature-symbol">(</span>itemArray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L918">packages/angular/src/table/table-model.class.ts:918</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemArray: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="pushrowstatetomodeldata" class="tsd-anchor"></a>
+					<h3>push<wbr>Row<wbr>State<wbr>ToModel<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">push<wbr>Row<wbr>State<wbr>ToModel<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L778">packages/angular/src/table/table-model.class.ts:778</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Appends <code>rowsSelected</code> and <code>rowsExpanded</code> info to model data.</p>
+								</div>
+								<p>When sorting rows, do this first so information about row selection
+								gets sorted with the other row info.</p>
+								<p>Call <code>popRowSelectionFromModelData()</code> after sorting to make everything
+								right with the world again.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="realcolumnindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> real<wbr>Column<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">real<wbr>Column<wbr>Index<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L897">packages/angular/src/table/table-model.class.ts:897</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the true index of a column based on it&#39;s relative position.
+										Like in Python, positive numbers start from the top and
+									negative numbers start from the bottom.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="realindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> real<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">real<wbr>Index<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L908">packages/angular/src/table/table-model.class.ts:908</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generic function to calculate the real index of something.
+									Used by <code>realRowIndex()</code> and <code>realColumnIndex()</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="realrowindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> real<wbr>Row<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">real<wbr>Row<wbr>Index<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L886">packages/angular/src/table/table-model.class.ts:886</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the true index of a row based on it&#39;s relative position.
+										Like in Python, positive numbers start from the top and
+									negative numbers start from the bottom.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="row" class="tsd-anchor"></a>
+					<h3>row</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">row<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L364">packages/angular/src/table/table-model.class.ts:364</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns <code>index</code>th row of the table.</p>
+								</div>
+								<p>Negative index starts from the end. -1 being the last element.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="rowmetainfo" class="tsd-anchor"></a>
+					<h3>row<wbr>Meta<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">row<wbr>Meta<wbr>Info<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>expandable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>expanded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>rowClass<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>selected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L489">packages/angular/src/table/table-model.class.ts:489</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>expandable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>expanded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>rowClass<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>selected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>expandable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>expanded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>row<wbr>Class<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>selected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="rows" class="tsd-anchor"></a>
+					<h3>rows</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">rows<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L373">packages/angular/src/table/table-model.class.ts:373</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns all the rows.</p>
+								</div>
+								<p>Use <code>row()</code> instead.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectall" class="tsd-anchor"></a>
+					<h3>select<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>All<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L847">packages/angular/src/table/table-model.class.ts:847</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Selects or deselects all rows in the model</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>state to set all rows to. Defaults to <code>true</code></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectrow" class="tsd-anchor"></a>
+					<h3>select<wbr>Row</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Row<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, emitChange<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L832">packages/angular/src/table/table-model.class.ts:832</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Select/deselect <code>index</code>th row based on value</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>index of the row to select</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>state to set the row to. Defaults to <code>true</code></p>
+									</div>
+								</li>
+								<li>
+									<h5>emitChange: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectedrowindices" class="tsd-anchor"></a>
+					<h3>selected<wbr>Row<wbr>Indices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">selected<wbr>Row<wbr>Indices<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L304">packages/angular/src/table/table-model.class.ts:304</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>a list of indices of selected rows</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectedrowscount" class="tsd-anchor"></a>
+					<h3>selected<wbr>Rows<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">selected<wbr>Rows<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L317">packages/angular/src/table/table-model.class.ts:317</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns how many rows is currently selected</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setdata" class="tsd-anchor"></a>
+					<h3>set<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Data<span class="tsd-signature-symbol">(</span>newData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L156">packages/angular/src/table/table-model.class.ts:156</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets data of the table.</p>
+								</div>
+								<p>Make sure all rows are the same length to keep the column count accurate.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>newData: <span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setheader" class="tsd-anchor"></a>
+					<h3>set<wbr>Header</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Header<span class="tsd-signature-symbol">(</span>newHeader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableHeaderItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TableHeaderItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L207">packages/angular/src/table/table-model.class.ts:207</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets data of the table.</p>
+								</div>
+								<p>Make sure all rows are the same length to keep the column count accurate.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>newHeader: <span class="tsd-signature-type">TableHeaderItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TableHeaderItem</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setitem" class="tsd-anchor"></a>
+					<h3>set<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Item<span class="tsd-signature-symbol">(</span>rowIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, columnIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TableItem</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L230">packages/angular/src/table/table-model.class.ts:230</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>columnIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>item: <span class="tsd-signature-type">TableItem</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setitemdata" class="tsd-anchor"></a>
+					<h3>set<wbr>Item<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Item<wbr>Data<span class="tsd-signature-symbol">(</span>rowIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, columnIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L235">packages/angular/src/table/table-model.class.ts:235</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>columnIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setrowcontext" class="tsd-anchor"></a>
+					<h3>set<wbr>Row<wbr>Context</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Row<wbr>Context<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L515">packages/angular/src/table/table-model.class.ts:515</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>context: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sort" class="tsd-anchor"></a>
+					<h3>sort</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L752">packages/angular/src/table/table-model.class.ts:752</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sorts the data currently present in the model based on <code>compare()</code></p>
+								</div>
+								<p>Direction is set by <code>ascending</code> and <code>descending</code> properties of <code>AITableHeaderItem</code>
+								in <code>index</code>th column.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The column based on which it&#39;s sorting</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="tabulartonested" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> tabular<wbr>ToNested</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">tabular<wbr>ToNested<span class="tsd-signature-symbol">(</span>headerRow<span class="tsd-signature-symbol">?: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span>, availableHeaderItems<span class="tsd-signature-symbol">?: </span><a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, leafIndexRef<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>current<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span>, rowIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/7f6ee30d1/packages/angular/src/table/table-model.class.ts#L1019">packages/angular/src/table/table-model.class.ts:1019</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>headerRow: <a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+								<li>
+									<h5>availableHeaderItems: <a href="aitableheaderitem.html" class="tsd-signature-type" data-tsd-kind="Class">AITableHeaderItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+								<li>
+									<h5>leafIndexRef: <span class="tsd-signature-symbol">{ </span>current<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>current<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>rowIndex: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="aitablemodel.html" class="tsd-kind-icon">AITable<wbr>Model</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="aitablemodel.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#_data" class="tsd-kind-icon">_data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#_totaldatalength" class="tsd-kind-icon">_total<wbr>Data<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#currentpage" class="tsd-kind-icon">current<wbr>Page</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#datachange" class="tsd-kind-icon">data<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#header" class="tsd-kind-icon">header</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#isend" class="tsd-kind-icon">is<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#isloading" class="tsd-kind-icon">is<wbr>Loading</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#pagelength" class="tsd-kind-icon">page<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#rowsclass" class="tsd-kind-icon">rows<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#rowscontext" class="tsd-kind-icon">rows<wbr>Context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#rowsexpanded" class="tsd-kind-icon">rows<wbr>Expanded</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#rowsexpandedchange" class="tsd-kind-icon">rows<wbr>Expanded<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#rowsselected" class="tsd-kind-icon">rows<wbr>Selected</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#rowsselectedchange" class="tsd-kind-icon">rows<wbr>Selected<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="aitablemodel.html#selectallchange" class="tsd-kind-icon">select<wbr>All<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#tablemodelcount" class="tsd-kind-icon">table<wbr>Model<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aitablemodel.html#count" class="tsd-kind-icon">COUNT</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="aitablemodel.html#totaldatalength" class="tsd-kind-icon">total<wbr>Data<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#actualindextoprojectedindices" class="tsd-kind-icon">actual<wbr>Index<wbr>ToProjected<wbr>Indices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#addcolumn" class="tsd-kind-icon">add<wbr>Column</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#addrow" class="tsd-kind-icon">add<wbr>Row</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#column" class="tsd-kind-icon">column</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#deletecolumn" class="tsd-kind-icon">delete<wbr>Column</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#deleterow" class="tsd-kind-icon">delete<wbr>Row</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#expandrow" class="tsd-kind-icon">expand<wbr>Row</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#expandedrowindices" class="tsd-kind-icon">expanded<wbr>Row<wbr>Indices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#expandedrowscount" class="tsd-kind-icon">expanded<wbr>Rows<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#getclosestheader" class="tsd-kind-icon">get<wbr>Closest<wbr>Header</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#getheaderid" class="tsd-kind-icon">get<wbr>Header<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#getid" class="tsd-kind-icon">get<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#getrowcontext" class="tsd-kind-icon">get<wbr>Row<wbr>Context</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#hasexpandablerows" class="tsd-kind-icon">has<wbr>Expandable<wbr>Rows</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#isrowdisabled" class="tsd-kind-icon">is<wbr>Row<wbr>Disabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#isrowexpandable" class="tsd-kind-icon">is<wbr>Row<wbr>Expandable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#isrowexpanded" class="tsd-kind-icon">is<wbr>Row<wbr>Expanded</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#isrowfiltered" class="tsd-kind-icon">is<wbr>Row<wbr>Filtered</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#isrowselected" class="tsd-kind-icon">is<wbr>Row<wbr>Selected</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#movecolumn" class="tsd-kind-icon">move<wbr>Column</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#movemultipletoindex" class="tsd-kind-icon">move<wbr>Multiple<wbr>ToIndex</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#movenested" class="tsd-kind-icon">move<wbr>Nested</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#nestedtotabular" class="tsd-kind-icon">nested<wbr>ToTabular</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#poprowstatefrommodeldata" class="tsd-kind-icon">pop<wbr>Row<wbr>State<wbr>From<wbr>Model<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#projectedindextoactualindex" class="tsd-kind-icon">projected<wbr>Index<wbr>ToActual<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#projectedindicestoactualindices" class="tsd-kind-icon">projected<wbr>Indices<wbr>ToActual<wbr>Indices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#projectedrowlength" class="tsd-kind-icon">projected<wbr>Row<wbr>Length</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#projectedrowlengthsimple" class="tsd-kind-icon">projected<wbr>Row<wbr>Length<wbr>Simple</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#pushrowstatetomodeldata" class="tsd-kind-icon">push<wbr>Row<wbr>State<wbr>ToModel<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#realcolumnindex" class="tsd-kind-icon">real<wbr>Column<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#realindex" class="tsd-kind-icon">real<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#realrowindex" class="tsd-kind-icon">real<wbr>Row<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#row" class="tsd-kind-icon">row</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#rowmetainfo" class="tsd-kind-icon">row<wbr>Meta<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#rows" class="tsd-kind-icon">rows</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#selectall" class="tsd-kind-icon">select<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#selectrow" class="tsd-kind-icon">select<wbr>Row</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#selectedrowindices" class="tsd-kind-icon">selected<wbr>Row<wbr>Indices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#selectedrowscount" class="tsd-kind-icon">selected<wbr>Rows<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#setdata" class="tsd-kind-icon">set<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#setheader" class="tsd-kind-icon">set<wbr>Header</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#setitem" class="tsd-kind-icon">set<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#setitemdata" class="tsd-kind-icon">set<wbr>Item<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#setrowcontext" class="tsd-kind-icon">set<wbr>Row<wbr>Context</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="aitablemodel.html#sort" class="tsd-kind-icon">sort</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="aitablemodel.html#tabulartonested" class="tsd-kind-icon">tabular<wbr>ToNested</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<!-- Google Analytics v4 setup -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWZRNYLBNH"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'G-LWZRNYLBNH');
+</script>
+</body>
+</html>

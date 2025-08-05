@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-tabs.umd.js",
+  "module": "../fesm2015/ai-apps-angular-tabs.js",
+  "es2015": "../fesm2015/ai-apps-angular-tabs.js",
+  "esm2015": "../esm2015/tabs/ai-apps-angular-tabs.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-tabs.js",
+  "typings": "ai-apps-angular-tabs.d.ts",
+  "metadata": "ai-apps-angular-tabs.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/tabs"
+}

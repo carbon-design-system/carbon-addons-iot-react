@@ -1,0 +1,68 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _value-renderer.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../globals/vars';
+
+.#{$iot-prefix}--value-card__value-renderer {
+  &--wrapper {
+    text-overflow: ellipsis;
+    display: flex;
+
+    .#{$iot-prefix}--value-card__attribute-wrapper--horizontal & {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .#{$iot-prefix}--value-card__content-wrapper--vertical & {
+      overflow: hidden;
+    }
+  }
+
+  &--value {
+    @include type-style('productive-heading-06');
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--value-renderer-font-size);
+    color: var(--value-renderer-color);
+    $line-height: calc(var(--value-renderer-font-size) * 1.2);
+    $max-lines: var(--value-renderer-max-lines);
+    line-height: $line-height;
+    @include multiline-text-overflow($max-lines, $line-height);
+    word-break: break-all;
+    /* override default button styles to match span visuals when using a button */
+    &.#{$prefix}--btn {
+      padding: $spacing-01;
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    &--vertical {
+      text-align: left;
+    }
+  }
+
+  &--boolean {
+    text-transform: capitalize;
+  }
+}
+
+html[dir='rtl'] .#{$iot-prefix}--value-card__value-renderer--value.#{$iot-prefix}--btn {
+  padding: $spacing-01;
+}

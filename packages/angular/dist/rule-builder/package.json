@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-rule-builder.umd.js",
+  "module": "../fesm2015/ai-apps-angular-rule-builder.js",
+  "es2015": "../fesm2015/ai-apps-angular-rule-builder.js",
+  "esm2015": "../esm2015/rule-builder/ai-apps-angular-rule-builder.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-rule-builder.js",
+  "typings": "ai-apps-angular-rule-builder.d.ts",
+  "metadata": "ai-apps-angular-rule-builder.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/rule-builder"
+}

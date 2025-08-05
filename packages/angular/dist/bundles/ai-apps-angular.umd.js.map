@@ -1,0 +1,1 @@
+{"version":3,"file":"ai-apps-angular.umd.js","sources":["../../src/ai-apps-angular.ts"],"sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\n\nexport * from './index';\n"],"names":[],"mappings":";;;;;;CAAA;;CAEG;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}

@@ -1,0 +1,77 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _table-detail-wizard.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../../globals/vars';
+@import 'TableDetailWizardHeader/table-detail-wizard-header';
+@import 'TableDetailWizardSidebar/table-detail-wizard-sidebar';
+
+.#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
+  background-color: $ui-background;
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  border: rem(1px) solid #a2a2a28c;
+
+  .#{$prefix}--inline-notification {
+    max-width: none;
+    width: calc(100% - #{$spacing-07});
+    margin: $spacing-05;
+
+    html[dir='rtl'] & {
+      .#{$prefix}--inline-notification__close-button,
+      .#{$prefix}--inline-notification__icon {
+        margin-right: unset;
+      }
+
+      .#{$prefix}--inline-notification__icon {
+        margin-left: $spacing-05;
+      }
+
+      &--error {
+        border-left: unset;
+        border-right: rem(3px) solid $inverse-support-01;
+      }
+    }
+  }
+}
+
+.#{$iot-prefix}--table-detail-wizard--wizard-container {
+  display: flex;
+}
+
+.#{$iot-prefix}--table-detail-wizard--inline-notification {
+  width: 100%;
+}
+
+.#{$iot-prefix}--table-detail-wizard--footer {
+  .#{$prefix}--modal-footer {
+    justify-content: flex-end;
+
+    & > div {
+      width: 100%;
+    }
+  }
+}
+
+.#{$iot-prefix}--table-detail-wizard--content-container {
+  padding-top: rem(30px);
+  padding-right: rem(50px);
+  padding-left: rem(40px);
+}

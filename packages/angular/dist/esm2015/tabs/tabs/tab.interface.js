@@ -1,0 +1,22 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | tab.interface.js
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+export {};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFiLmludGVyZmFjZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy90YWJzL3RhYi5pbnRlcmZhY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IExpc3RJdGVtIH0gZnJvbSAnY2FyYm9uLWNvbXBvbmVudHMtYW5ndWxhcic7XG5cbmV4cG9ydCBpbnRlcmZhY2UgVGFiQWN0aW9uIHtcbiAgdGl0bGU6IHN0cmluZztcbiAgaWNvbj86IHN0cmluZztcbiAgb25DbGljaz86ICh0YWI6IFRhYikgPT4gdm9pZDtcbn1cblxuZXhwb3J0IGludGVyZmFjZSBUYWIge1xuICAvKipcbiAgICogU3RyaW5nIHRpdGxlIGZvciB0aGUgdGFiIGhlYWRlciBhbmQgaXRlbSBpbiB0aGUgdGFiIGRyb3Bkb3duXG4gICAqL1xuICB0aXRsZTogc3RyaW5nO1xuICAvKipcbiAgICogS2V5IHVuaXF1ZSB0byB0aGUgVGFiQ29udHJvbGxlciB0aGF0IGNvbnRhaW5zIHRoaXMgVGFiLFxuICAgKiB1c2VkIHRvIGlkZW50aWZ5IGFuZCBsaW5rIHRoZSB0YWIgaGVhZGVyIGFuZCB0YWIgcGFuZSB0b2dldGhlcixcbiAgICogYW5kIHN5bmNyb25pemUgdGFiIHNlbGVjdGlvblxuICAgKi9cbiAga2V5OiBzdHJpbmc7XG4gIC8qKlxuICAgKiBPcHRpb25hbCB2YWx1ZSB0byBpbmRpY2F0ZSB0aGUgc2VsZWN0aW9uIHN0YXR1cyBvZiB0aGUgVGFiXG4gICAqL1xuICBzZWxlY3RlZD86IGJvb2xlYW47XG4gIGFjdGlvbnM/OiBUYWJBY3Rpb25bXTtcbiAgLyoqXG4gICAqIChPcHRpb25hbCkgQWRkaXRpb25hbCBwcm9wcyB0byBiZSB1c2VkIHdoZW4gY3JlYXRpbmcgZHJvcCBkb3duIGxpc3QgaXRlbXNcbiAgICogZnJvbSB0aGUgYFRhYmAgaXRlbXMgaWYgYGFpLXRhYi1kcm9wZG93bmAgaXMgdXNlZC5cbiAgICovXG4gIGRyb3Bkb3duTGlzdFByb3BzPzogTGlzdEl0ZW07XG4gIC8qKlxuICAgKiB0byBhbGxvdyBleHBhbnNpb24gb2YgdGhlIFRhYiBpbnRlcmZhY2Ugd2l0aCBwcm9wZXJ0aWVzIGFzIG5lZWRlZFxuICAgKi9cbiAgW3Byb3BlcnR5OiBzdHJpbmddOiBhbnk7XG59XG4iXX0=

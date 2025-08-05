@@ -1,0 +1,64 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _mixins.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//----------------------------------------------
+// Inline Notification
+// ---------------------------------------------
+
+/// @access private
+/// @group notification
+@mixin inline-notification--color($color) {
+  border: 1px solid $color;
+  border-left: 6px solid $color;
+
+  .#{$prefix}--inline-notification__icon {
+    fill: $color;
+  }
+}
+
+//----------------------------------------------
+// Toast Notification
+// ---------------------------------------------
+
+/// @access private
+/// @group notification
+@mixin notification--color($color) {
+  border-left: 6px solid $color;
+}
+
+/// @access private
+/// @group notification
+@mixin notification--experimental($color, $background-color) {
+  border-left: 3px solid $color;
+  background: $background-color;
+
+  .#{$prefix}--inline-notification__icon,
+  .#{$prefix}--toast-notification__icon,
+  .#{$prefix}--actionable-notification__icon {
+    fill: $color;
+  }
+}

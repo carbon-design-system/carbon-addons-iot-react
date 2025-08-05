@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-button-menu.umd.js",
+  "module": "../fesm2015/ai-apps-angular-button-menu.js",
+  "es2015": "../fesm2015/ai-apps-angular-button-menu.js",
+  "esm2015": "../esm2015/button-menu/ai-apps-angular-button-menu.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-button-menu.js",
+  "typings": "ai-apps-angular-button-menu.d.ts",
+  "metadata": "ai-apps-angular-button-menu.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/button-menu"
+}

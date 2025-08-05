@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-card.umd.js",
+  "module": "../fesm2015/ai-apps-angular-card.js",
+  "es2015": "../fesm2015/ai-apps-angular-card.js",
+  "esm2015": "../esm2015/card/ai-apps-angular-card.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-card.js",
+  "typings": "ai-apps-angular-card.d.ts",
+  "metadata": "ai-apps-angular-card.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/card"
+}

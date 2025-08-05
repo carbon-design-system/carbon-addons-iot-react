@@ -1,0 +1,71 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _zoom-bar.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$prefix}--#{$charts-prefix}--zoom-bar {
+	rect.zoom-bg {
+		fill: $ui-background;
+		stroke: $ui-01;
+	}
+
+	rect.zoom-slider-bg {
+		fill: $ui-01;
+	}
+
+	rect.zoom-slider-selected-area {
+		fill: $icon-02;
+	}
+
+	path.zoom-bg-baseline {
+		stroke: $ui-04;
+		stroke-width: 2;
+	}
+
+	path.zoom-graph-area {
+		fill: $ui-03;
+		stroke: $ui-04;
+		stroke-width: 1;
+	}
+
+	path.zoom-graph-area-unselected {
+		fill: $ui-01;
+		stroke: none;
+	}
+
+	g.zoom-bar-brush {
+		rect.handle {
+			fill: $icon-02;
+		}
+
+		rect.handle-bar {
+			fill: $ui-02;
+		}
+
+		// clear d3.brush selection style
+		rect.selection {
+			fill: none;
+			stroke: none;
+		}
+	}
+
+	rect[class^='highlight-'] {
+		fill: $magenta-50;
+		stroke: $magenta-50;
+	}
+}

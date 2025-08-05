@@ -1,0 +1,50 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _table-cell-renderer.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
+  // Revert the styles added by the tooltip since we want
+  // normal table cell content style even if a tooltip is triggered.
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  display: inherit;
+  align-items: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bx--tooltip__trigger.bx--tooltip--a11y.#{$iot-prefix}--table__cell-tooltip {
+  @include type-style('productive-heading-01');
+}
+
+.#{$iot-prefix}--table__cell-text--truncate {
+  @include text-overflow();
+  display: block;
+}
+
+.#{$iot-prefix}--table__cell-text--no-wrap {
+  white-space: nowrap;
+}

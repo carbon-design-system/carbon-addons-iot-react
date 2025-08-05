@@ -1,0 +1,65 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _column-header-row.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../../../globals/vars';
+
+.#{$iot-prefix}--column-header-row--select-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.#{$iot-prefix}--column-header-row--table-header {
+  border-top: none;
+
+  .#{$prefix}--form-item {
+    display: table-cell;
+
+    input {
+      min-width: 12.75rem;
+    }
+  }
+
+  .#{$prefix}--table-header-label {
+    flex-wrap: wrap;
+  }
+}
+
+.#{$iot-prefix}--column-header-row--table-row {
+  th {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  td {
+    background-color: inherit;
+    border-left: none;
+    border-width: 0 0 0 4px;
+  }
+
+  &:hover {
+    border: inherit;
+    background-color: inherit;
+    td {
+      background-color: inherit;
+      border-left: none;
+      border-width: 0 0 0 4px;
+    }
+  }
+}

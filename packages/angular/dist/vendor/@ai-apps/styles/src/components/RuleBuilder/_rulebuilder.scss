@@ -1,0 +1,109 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _rulebuilder.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../globals/vars';
+
+.#{$iot-prefix}--rule-builder-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  > div {
+    flex: 1;
+  }
+}
+
+.#{$iot-prefix}--rule-builder-header__dropdown {
+  display: inline-block;
+}
+
+.#{$iot-prefix}--rule-builder-header__buttons {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.#{$iot-prefix}--rule-builder-rule,
+%#{$iot-prefix}--rule-builder-rule {
+  display: grid;
+  align-items: center;
+  column-gap: $spacing-04;
+  padding: $spacing-04 0 0 $spacing-06;
+  grid-template-columns: 1fr 1fr 1fr minmax(145px, 0.5fr);
+  margin-left: $spacing-04;
+  position: relative;
+  &:before {
+    content: ' ';
+    width: 2px;
+    height: 100%;
+    background-color: $blue-70;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:last-child {
+    &:before {
+      height: 60%;
+    }
+  }
+
+  &:after {
+    content: ' ';
+    width: $spacing-06;
+    height: 2px;
+    background-color: $blue-70;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  html[dir='rtl'] & {
+    margin-right: $spacing-04;
+    padding: $spacing-04 $spacing-06 0 0;
+
+    &:before,
+    &:after {
+      right: 0;
+    }
+  }
+}
+
+.#{$iot-prefix}--rule-builder-rule--group {
+  @extend %#{$iot-prefix}--rule-builder-rule;
+  grid-template-columns: repeat(1, 1fr);
+
+  &:last-child {
+    &:before {
+      height: $spacing-07;
+    }
+  }
+
+  &:after {
+    top: $spacing-07;
+    transform: translateY(0);
+  }
+}
+
+.#{$iot-prefix}--rule-builder-rule__actions {
+  justify-self: end;
+}

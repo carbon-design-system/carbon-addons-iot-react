@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-empty-state.umd.js",
+  "module": "../fesm2015/ai-apps-angular-empty-state.js",
+  "es2015": "../fesm2015/ai-apps-angular-empty-state.js",
+  "esm2015": "../esm2015/empty-state/ai-apps-angular-empty-state.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-empty-state.js",
+  "typings": "ai-apps-angular-empty-state.d.ts",
+  "metadata": "ai-apps-angular-empty-state.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/empty-state"
+}

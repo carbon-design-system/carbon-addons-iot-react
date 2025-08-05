@@ -1,0 +1,43 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _vars.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../vendor/carbon-components/scss/globals/scss/vars';
+
+/// Instead of extending existing carbon-classes we should create new ones when possible.
+/// Use the iotPrefix instead of the carbon prefix to show that the class
+/// contains iot specific properties.
+/// E.g. instead of adding more properties to the carbon class ".bx--btn"
+/// we use a new class ".iot--btn" to hold those iot specific properties.
+///
+/// @access public
+/// @type String
+/// @example .iot--btn
+$iot-prefix: 'iot';
+
+/// @access public
+/// @type Number
+/// @example 700px
+$two-pane: 700px;
+$three-pane: 1000px;
+
+/// @access public
+/// @type Number
+/// @example 0.5rem
+$typography-01: 0.875rem;

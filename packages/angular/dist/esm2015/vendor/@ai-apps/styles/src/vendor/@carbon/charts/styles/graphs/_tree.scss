@@ -1,0 +1,63 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _tree.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$prefix}--#{$charts-prefix}--chart-wrapper
+	.#{$prefix}--#{$charts-prefix}--tree {
+	g.links {
+		fill: none;
+		stroke: $ui-04;
+		stroke-opacity: 0.4;
+		stroke-width: 1.5;
+	}
+
+	g.clickable {
+		cursor: pointer;
+
+		&:hover {
+			text {
+				font-weight: carbon--font-weight('semibold');
+			}
+
+			circle {
+				fill: $text-01;
+				@include default_transition;
+			}
+		}
+	}
+
+	circle {
+		&.parent {
+			fill: $text-02;
+		}
+
+		&.child {
+			fill: $ui-04;
+		}
+	}
+
+	text {
+		fill: $text-01;
+
+		&.text-stroke {
+			stroke: $inverse-01;
+			stroke-width: 2px;
+		}
+	}
+}

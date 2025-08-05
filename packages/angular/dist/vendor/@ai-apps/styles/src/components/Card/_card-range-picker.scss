@@ -1,0 +1,65 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _card-range-picker.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../globals/vars';
+
+.#{$iot-prefix}--card--toolbar-date-range-wrapper {
+  align-items: center;
+  background: transparent;
+  border: none;
+  display: flex;
+  outline: 2px solid transparent;
+}
+
+.#{$iot-prefix}--card--toolbar-timerange-label {
+  white-space: nowrap;
+  min-height: $carbon--spacing-09;
+  min-width: $carbon--spacing-09;
+  padding: $carbon--spacing-05 $carbon--spacing-03;
+  font-size: 0.875rem;
+  font-weight: normal;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.#{$iot-prefix}--card--toolbar-date-range-wrapper
+  > .#{$iot-prefix}--card--toolbar-date-range-action {
+  &:active,
+  &:focus {
+    outline: 2px solid $focus;
+    outline-offset: -2px;
+  }
+  &:hover {
+    background: $hover-ui;
+  }
+}
+
+.#{$iot-prefix}--card--overflow {
+  width: auto;
+  &.#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
+    width: 3rem; // since the button is wider, the overlay needs to be wider to match
+  }
+}
+
+.#{$iot-prefix}--card--overflow-menuitem-active:not(:hover) {
+  background-color: $active-ui;
+}

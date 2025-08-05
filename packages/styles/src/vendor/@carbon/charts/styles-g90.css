@@ -1,0 +1,4901 @@
+.bx--cc--chart-wrapper .fill-1-1-1 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-1-1-1.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-1-1-1 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-1-1-1.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-1-1-1 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-1-1-1 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-1-2-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-1-2-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-1-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-1-2-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-1-2-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-1-2-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-1-3-1 {
+  fill: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-1-3-1.hovered {
+  fill: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-1-3-1 {
+  background-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .background-1-3-1.hovered {
+  background-color: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-1-3-1 {
+  stroke: #33b1ff;
+}
+.bx--cc--chart-wrapper .stop-color-1-3-1 {
+  stop-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-1-4-1 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-1-4-1.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-1-4-1 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-1-4-1.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-1-4-1 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-1-4-1 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-2-1-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-2-1-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-2-1-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-1-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-2-1-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-2-1-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-2-1-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-2-1-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-1-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-2-1-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-2-2-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-2-2-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-2-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-2-2-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-2-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-2-2-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-2-2-2 {
+  fill: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-2-2-2.hovered {
+  fill: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-2-2 {
+  background-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .background-2-2-2.hovered {
+  background-color: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-2-2 {
+  stroke: #ff7eb6;
+}
+.bx--cc--chart-wrapper .stop-color-2-2-2 {
+  stop-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-2-3-1 {
+  fill: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-2-3-1.hovered {
+  fill: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-3-1 {
+  background-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .background-2-3-1.hovered {
+  background-color: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-3-1 {
+  stroke: #ff7eb6;
+}
+.bx--cc--chart-wrapper .stop-color-2-3-1 {
+  stop-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-2-3-2 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-2-3-2.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-3-2 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-2-3-2.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-3-2 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-2-3-2 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-2-4-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-2-4-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-4-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-2-4-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-4-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-2-4-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-2-4-2 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-2-4-2.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-4-2 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-2-4-2.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-4-2 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-2-4-2 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-2-5-1 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-2-5-1.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-5-1 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-2-5-1.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-5-1 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-2-5-1 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-2-5-2 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-2-5-2.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-2-5-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-2-5-2.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-2-5-2 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-2-5-2 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-3-1-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-3-1-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-3-1-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-1-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-3-1-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-3-1-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-3-1-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-3-1-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-1-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-3-1-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-3-1-3 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-3-1-3.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-3-1-3.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-1-3 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-3-1-3 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-3-2-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-3-2-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-2-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-3-2-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-2-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-3-2-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-3-2-2 {
+  fill: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-3-2-2.hovered {
+  fill: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-2-2 {
+  background-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .background-3-2-2.hovered {
+  background-color: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-2-2 {
+  stroke: #ff7eb6;
+}
+.bx--cc--chart-wrapper .stop-color-3-2-2 {
+  stop-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-3-2-3 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-3-2-3.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-2-3 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-3-2-3.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-2-3 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-3-2-3 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-3-3-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-3-3-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-3-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-3-3-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-3-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-3-3-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-3-3-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-3-3-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-3-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-3-3-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-3-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-3-3-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-3-3-3 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-3-3-3.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-3-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-3-3-3.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-3-3 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-3-3-3 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-3-4-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-3-4-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-4-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-3-4-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-4-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-3-4-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-3-4-2 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-3-4-2.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-4-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-3-4-2.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-4-2 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-3-4-2 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-3-4-3 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-3-4-3.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-4-3 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-3-4-3.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-4-3 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-3-4-3 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-3-5-1 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-3-5-1.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-5-1 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-3-5-1.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-5-1 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-3-5-1 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-3-5-2 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-3-5-2.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-5-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-3-5-2.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-5-2 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-3-5-2 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-3-5-3 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-3-5-3.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-3-5-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-3-5-3.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-3-5-3 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-3-5-3 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-4-1-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-4-1-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-4-1-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-1-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-4-1-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-4-1-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-4-1-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-4-1-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-1-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-4-1-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-4-1-3 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-4-1-3.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-4-1-3.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-1-3 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-4-1-3 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-4-1-4 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-4-1-4.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-1-4 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-4-1-4.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-1-4 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-4-1-4 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-4-2-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-4-2-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-4-2-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-2-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-4-2-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-4-2-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-4-2-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-2-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-4-2-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-2-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-4-2-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-4-2-3 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-4-2-3.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-2-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-4-2-3.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-2-3 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-4-2-3 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-4-2-4 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-4-2-4.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-2-4 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-4-2-4.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-2-4 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-4-2-4 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-4-3-1 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-4-3-1.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-3-1 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-4-3-1.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-3-1 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-4-3-1 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-4-3-2 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-4-3-2.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-3-2 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-4-3-2.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-3-2 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-4-3-2 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-4-3-3 {
+  fill: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-4-3-3.hovered {
+  fill: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-3-3 {
+  background-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .background-4-3-3.hovered {
+  background-color: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-3-3 {
+  stroke: #33b1ff;
+}
+.bx--cc--chart-wrapper .stop-color-4-3-3 {
+  stop-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-4-3-4 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-4-3-4.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-4-3-4 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-4-3-4.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-4-3-4 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-4-3-4 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-5-1-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-5-1-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-5-1-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-1-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-5-1-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-5-1-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-5-1-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-5-1-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-1-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-5-1-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-5-1-3 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-5-1-3.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-5-1-3.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-1-3 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-5-1-3 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-5-1-4 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-5-1-4.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-1-4 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-5-1-4.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-1-4 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-5-1-4 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-5-1-5 {
+  fill: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-5-1-5.hovered {
+  fill: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-1-5 {
+  background-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .background-5-1-5.hovered {
+  background-color: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-1-5 {
+  stroke: #ff7eb6;
+}
+.bx--cc--chart-wrapper .stop-color-5-1-5 {
+  stop-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-5-2-1 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-5-2-1.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-5-2-1.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-2-1 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-5-2-1 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-5-2-2 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-5-2-2.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-2-2 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-5-2-2.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-2-2 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-5-2-2 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-5-2-3 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-5-2-3.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-2-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-5-2-3.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-2-3 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-5-2-3 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-5-2-4 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-5-2-4.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-2-4 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-5-2-4.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-2-4 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-5-2-4 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-5-2-5 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-5-2-5.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-5-2-5 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-5-2-5.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-5-2-5 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-5-2-5 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-14-1-1 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-14-1-1.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-14-1-1.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-1 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-1 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-14-1-2 {
+  fill: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-2.hovered {
+  fill: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-2 {
+  background-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .background-14-1-2.hovered {
+  background-color: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-2 {
+  stroke: #33b1ff;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-2 {
+  stop-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-3 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-14-1-3.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-3 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-14-1-3.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-3 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-3 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-14-1-4 {
+  fill: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-14-1-4.hovered {
+  fill: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-4 {
+  background-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .background-14-1-4.hovered {
+  background-color: #ff5aa2;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-4 {
+  stroke: #ff7eb6;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-4 {
+  stop-color: #ff7eb6;
+}
+.bx--cc--chart-wrapper .fill-14-1-5 {
+  fill: #fa4d56;
+}
+.bx--cc--chart-wrapper .fill-14-1-5.hovered {
+  fill: #f92a35;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-5 {
+  background-color: #fa4d56;
+}
+.bx--cc--chart-wrapper .background-14-1-5.hovered {
+  background-color: #f92a35;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-5 {
+  stroke: #fa4d56;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-5 {
+  stop-color: #fa4d56;
+}
+.bx--cc--chart-wrapper .fill-14-1-6 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-14-1-6.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-6 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-14-1-6.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-6 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-6 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-14-1-7 {
+  fill: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-14-1-7.hovered {
+  fill: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-7 {
+  background-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .background-14-1-7.hovered {
+  background-color: #52d575;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-7 {
+  stroke: #6fdc8c;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-7 {
+  stop-color: #6fdc8c;
+}
+.bx--cc--chart-wrapper .fill-14-1-8 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-8.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-8 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-14-1-8.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-8 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-8 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-9 {
+  fill: #d02670;
+}
+.bx--cc--chart-wrapper .fill-14-1-9.hovered {
+  fill: #b22060;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-9 {
+  background-color: #d02670;
+}
+.bx--cc--chart-wrapper .background-14-1-9.hovered {
+  background-color: #b22060;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-9 {
+  stroke: #d02670;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-9 {
+  stop-color: #d02670;
+}
+.bx--cc--chart-wrapper .fill-14-1-10 {
+  fill: #d2a106;
+}
+.bx--cc--chart-wrapper .fill-14-1-10.hovered {
+  fill: #af8605;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-10 {
+  background-color: #d2a106;
+}
+.bx--cc--chart-wrapper .background-14-1-10.hovered {
+  background-color: #af8605;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-10 {
+  stroke: #d2a106;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-10 {
+  stop-color: #d2a106;
+}
+.bx--cc--chart-wrapper .fill-14-1-11 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-14-1-11.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-11 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-14-1-11.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-11 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-11 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-14-1-12 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-12.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-12 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-14-1-12.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-12 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-12 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-14-1-13 {
+  fill: #ba4e00;
+}
+.bx--cc--chart-wrapper .fill-14-1-13.hovered {
+  fill: #963f00;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-13 {
+  background-color: #ba4e00;
+}
+.bx--cc--chart-wrapper .background-14-1-13.hovered {
+  background-color: #963f00;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-13 {
+  stroke: #ba4e00;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-13 {
+  stop-color: #ba4e00;
+}
+.bx--cc--chart-wrapper .fill-14-1-14 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-14-1-14.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-14-1-14 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-14-1-14.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-14-1-14 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-14-1-14 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-1 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-1.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-1 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-mono-1-1.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-1 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-1 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-2 {
+  fill: #f6f2ff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-2.hovered {
+  fill: #ddceff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-2 {
+  background-color: #f6f2ff;
+}
+.bx--cc--chart-wrapper .background-mono-1-2.hovered {
+  background-color: #ddceff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-2 {
+  stroke: #f6f2ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-2 {
+  stop-color: #f6f2ff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-3 {
+  fill: #e8daff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-3.hovered {
+  fill: #d2b6ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-3 {
+  background-color: #e8daff;
+}
+.bx--cc--chart-wrapper .background-mono-1-3.hovered {
+  background-color: #d2b6ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-3 {
+  stroke: #e8daff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-3 {
+  stop-color: #e8daff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-4 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-4.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-4 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-mono-1-4.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-4 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-4 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-5 {
+  fill: #be95ff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-5.hovered {
+  fill: #a871ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-5 {
+  background-color: #be95ff;
+}
+.bx--cc--chart-wrapper .background-mono-1-5.hovered {
+  background-color: #a871ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-5 {
+  stroke: #be95ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-5 {
+  stop-color: #be95ff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-6 {
+  fill: #a56eff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-6.hovered {
+  fill: #8f4aff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-6 {
+  background-color: #a56eff;
+}
+.bx--cc--chart-wrapper .background-mono-1-6.hovered {
+  background-color: #8f4aff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-6 {
+  stroke: #a56eff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-6 {
+  stop-color: #a56eff;
+}
+.bx--cc--chart-wrapper .fill-mono-1-7 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-mono-1-7.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-7 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-mono-1-7.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-7 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-7 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-mono-1-8 {
+  fill: #6929c4;
+}
+.bx--cc--chart-wrapper .fill-mono-1-8.hovered {
+  fill: #5923a6;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-8 {
+  background-color: #6929c4;
+}
+.bx--cc--chart-wrapper .background-mono-1-8.hovered {
+  background-color: #5923a6;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-8 {
+  stroke: #6929c4;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-8 {
+  stop-color: #6929c4;
+}
+.bx--cc--chart-wrapper .fill-mono-1-9 {
+  fill: #491d8b;
+}
+.bx--cc--chart-wrapper .fill-mono-1-9.hovered {
+  fill: #39176d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-9 {
+  background-color: #491d8b;
+}
+.bx--cc--chart-wrapper .background-mono-1-9.hovered {
+  background-color: #39176d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-9 {
+  stroke: #491d8b;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-9 {
+  stop-color: #491d8b;
+}
+.bx--cc--chart-wrapper .fill-mono-1-10 {
+  fill: #31135e;
+}
+.bx--cc--chart-wrapper .fill-mono-1-10.hovered {
+  fill: #220d40;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-10 {
+  background-color: #31135e;
+}
+.bx--cc--chart-wrapper .background-mono-1-10.hovered {
+  background-color: #220d40;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-10 {
+  stroke: #31135e;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-10 {
+  stop-color: #31135e;
+}
+.bx--cc--chart-wrapper .fill-mono-1-11 {
+  fill: #1c0f30;
+}
+.bx--cc--chart-wrapper .fill-mono-1-11.hovered {
+  fill: #0c0715;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-1-11 {
+  background-color: #1c0f30;
+}
+.bx--cc--chart-wrapper .background-mono-1-11.hovered {
+  background-color: #0c0715;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-1-11 {
+  stroke: #1c0f30;
+}
+.bx--cc--chart-wrapper .stop-color-mono-1-11 {
+  stop-color: #1c0f30;
+}
+.bx--cc--chart-wrapper .fill-mono-2-1 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-1.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-1 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-mono-2-1.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-1 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-1 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-2 {
+  fill: #edf5ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-2.hovered {
+  fill: #c9e1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-2 {
+  background-color: #edf5ff;
+}
+.bx--cc--chart-wrapper .background-mono-2-2.hovered {
+  background-color: #c9e1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-2 {
+  stroke: #edf5ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-2 {
+  stop-color: #edf5ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-3 {
+  fill: #d0e2ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-3.hovered {
+  fill: #acccff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-3 {
+  background-color: #d0e2ff;
+}
+.bx--cc--chart-wrapper .background-mono-2-3.hovered {
+  background-color: #acccff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-3 {
+  stroke: #d0e2ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-3 {
+  stop-color: #d0e2ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-4 {
+  fill: #a6c8ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-4.hovered {
+  fill: #82b2ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-4 {
+  background-color: #a6c8ff;
+}
+.bx--cc--chart-wrapper .background-mono-2-4.hovered {
+  background-color: #82b2ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-4 {
+  stroke: #a6c8ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-4 {
+  stop-color: #a6c8ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-5 {
+  fill: #78a9ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-5.hovered {
+  fill: #5492ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-5 {
+  background-color: #78a9ff;
+}
+.bx--cc--chart-wrapper .background-mono-2-5.hovered {
+  background-color: #5492ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-5 {
+  stroke: #78a9ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-5 {
+  stop-color: #78a9ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-6 {
+  fill: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-6.hovered {
+  fill: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-6 {
+  background-color: #4589ff;
+}
+.bx--cc--chart-wrapper .background-mono-2-6.hovered {
+  background-color: #2172ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-6 {
+  stroke: #4589ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-6 {
+  stop-color: #4589ff;
+}
+.bx--cc--chart-wrapper .fill-mono-2-7 {
+  fill: #0f62fe;
+}
+.bx--cc--chart-wrapper .fill-mono-2-7.hovered {
+  fill: #0151e8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-7 {
+  background-color: #0f62fe;
+}
+.bx--cc--chart-wrapper .background-mono-2-7.hovered {
+  background-color: #0151e8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-7 {
+  stroke: #0f62fe;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-7 {
+  stop-color: #0f62fe;
+}
+.bx--cc--chart-wrapper .fill-mono-2-8 {
+  fill: #0043ce;
+}
+.bx--cc--chart-wrapper .fill-mono-2-8.hovered {
+  fill: #0037aa;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-8 {
+  background-color: #0043ce;
+}
+.bx--cc--chart-wrapper .background-mono-2-8.hovered {
+  background-color: #0037aa;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-8 {
+  stroke: #0043ce;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-8 {
+  stop-color: #0043ce;
+}
+.bx--cc--chart-wrapper .fill-mono-2-9 {
+  fill: #002d9c;
+}
+.bx--cc--chart-wrapper .fill-mono-2-9.hovered {
+  fill: #002378;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-9 {
+  background-color: #002d9c;
+}
+.bx--cc--chart-wrapper .background-mono-2-9.hovered {
+  background-color: #002378;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-9 {
+  stroke: #002d9c;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-9 {
+  stop-color: #002d9c;
+}
+.bx--cc--chart-wrapper .fill-mono-2-10 {
+  fill: #001d6c;
+}
+.bx--cc--chart-wrapper .fill-mono-2-10.hovered {
+  fill: #001348;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-10 {
+  background-color: #001d6c;
+}
+.bx--cc--chart-wrapper .background-mono-2-10.hovered {
+  background-color: #001348;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-10 {
+  stroke: #001d6c;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-10 {
+  stop-color: #001d6c;
+}
+.bx--cc--chart-wrapper .fill-mono-2-11 {
+  fill: #001141;
+}
+.bx--cc--chart-wrapper .fill-mono-2-11.hovered {
+  fill: #00081d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-2-11 {
+  background-color: #001141;
+}
+.bx--cc--chart-wrapper .background-mono-2-11.hovered {
+  background-color: #00081d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-2-11 {
+  stroke: #001141;
+}
+.bx--cc--chart-wrapper .stop-color-mono-2-11 {
+  stop-color: #001141;
+}
+.bx--cc--chart-wrapper .fill-mono-3-1 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-1.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-1 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-mono-3-1.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-1 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-1 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-2 {
+  fill: #e5f6ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-2.hovered {
+  fill: #c1eaff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-2 {
+  background-color: #e5f6ff;
+}
+.bx--cc--chart-wrapper .background-mono-3-2.hovered {
+  background-color: #c1eaff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-2 {
+  stroke: #e5f6ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-2 {
+  stop-color: #e5f6ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-3 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-3.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-mono-3-3.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-3 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-3 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-4 {
+  fill: #82cfff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-4.hovered {
+  fill: #5ec1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-4 {
+  background-color: #82cfff;
+}
+.bx--cc--chart-wrapper .background-mono-3-4.hovered {
+  background-color: #5ec1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-4 {
+  stroke: #82cfff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-4 {
+  stop-color: #82cfff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-5 {
+  fill: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-5.hovered {
+  fill: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-5 {
+  background-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .background-mono-3-5.hovered {
+  background-color: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-5 {
+  stroke: #33b1ff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-5 {
+  stop-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-mono-3-6 {
+  fill: #1192e8;
+}
+.bx--cc--chart-wrapper .fill-mono-3-6.hovered {
+  fill: #0f7dc7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-6 {
+  background-color: #1192e8;
+}
+.bx--cc--chart-wrapper .background-mono-3-6.hovered {
+  background-color: #0f7dc7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-6 {
+  stroke: #1192e8;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-6 {
+  stop-color: #1192e8;
+}
+.bx--cc--chart-wrapper .fill-mono-3-7 {
+  fill: #0072c3;
+}
+.bx--cc--chart-wrapper .fill-mono-3-7.hovered {
+  fill: #005d9f;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-7 {
+  background-color: #0072c3;
+}
+.bx--cc--chart-wrapper .background-mono-3-7.hovered {
+  background-color: #005d9f;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-7 {
+  stroke: #0072c3;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-7 {
+  stop-color: #0072c3;
+}
+.bx--cc--chart-wrapper .fill-mono-3-8 {
+  fill: #00539a;
+}
+.bx--cc--chart-wrapper .fill-mono-3-8.hovered {
+  fill: #004076;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-8 {
+  background-color: #00539a;
+}
+.bx--cc--chart-wrapper .background-mono-3-8.hovered {
+  background-color: #004076;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-8 {
+  stroke: #00539a;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-8 {
+  stop-color: #00539a;
+}
+.bx--cc--chart-wrapper .fill-mono-3-9 {
+  fill: #003a6d;
+}
+.bx--cc--chart-wrapper .fill-mono-3-9.hovered {
+  fill: #002749;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-9 {
+  background-color: #003a6d;
+}
+.bx--cc--chart-wrapper .background-mono-3-9.hovered {
+  background-color: #002749;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-9 {
+  stroke: #003a6d;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-9 {
+  stop-color: #003a6d;
+}
+.bx--cc--chart-wrapper .fill-mono-3-10 {
+  fill: #012749;
+}
+.bx--cc--chart-wrapper .fill-mono-3-10.hovered {
+  fill: #011426;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-10 {
+  background-color: #012749;
+}
+.bx--cc--chart-wrapper .background-mono-3-10.hovered {
+  background-color: #011426;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-10 {
+  stroke: #012749;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-10 {
+  stop-color: #012749;
+}
+.bx--cc--chart-wrapper .fill-mono-3-11 {
+  fill: #061727;
+}
+.bx--cc--chart-wrapper .fill-mono-3-11.hovered {
+  fill: #010508;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-3-11 {
+  background-color: #061727;
+}
+.bx--cc--chart-wrapper .background-mono-3-11.hovered {
+  background-color: #010508;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-3-11 {
+  stroke: #061727;
+}
+.bx--cc--chart-wrapper .stop-color-mono-3-11 {
+  stop-color: #061727;
+}
+.bx--cc--chart-wrapper .fill-mono-4-1 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-4-1.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-1 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-mono-4-1.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-1 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-1 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-mono-4-2 {
+  fill: #d9fbfb;
+}
+.bx--cc--chart-wrapper .fill-mono-4-2.hovered {
+  fill: #b9f8f8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-2 {
+  background-color: #d9fbfb;
+}
+.bx--cc--chart-wrapper .background-mono-4-2.hovered {
+  background-color: #b9f8f8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-2 {
+  stroke: #d9fbfb;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-2 {
+  stop-color: #d9fbfb;
+}
+.bx--cc--chart-wrapper .fill-mono-4-3 {
+  fill: #9ef0f0;
+}
+.bx--cc--chart-wrapper .fill-mono-4-3.hovered {
+  fill: #7febeb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-3 {
+  background-color: #9ef0f0;
+}
+.bx--cc--chart-wrapper .background-mono-4-3.hovered {
+  background-color: #7febeb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-3 {
+  stroke: #9ef0f0;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-3 {
+  stop-color: #9ef0f0;
+}
+.bx--cc--chart-wrapper .fill-mono-4-4 {
+  fill: #3ddbd9;
+}
+.bx--cc--chart-wrapper .fill-mono-4-4.hovered {
+  fill: #26cecc;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-4 {
+  background-color: #3ddbd9;
+}
+.bx--cc--chart-wrapper .background-mono-4-4.hovered {
+  background-color: #26cecc;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-4 {
+  stroke: #3ddbd9;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-4 {
+  stop-color: #3ddbd9;
+}
+.bx--cc--chart-wrapper .fill-mono-4-5 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-mono-4-5.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-5 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-mono-4-5.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-5 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-5 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-mono-4-6 {
+  fill: #009d9a;
+}
+.bx--cc--chart-wrapper .fill-mono-4-6.hovered {
+  fill: #007977;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-6 {
+  background-color: #009d9a;
+}
+.bx--cc--chart-wrapper .background-mono-4-6.hovered {
+  background-color: #007977;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-6 {
+  stroke: #009d9a;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-6 {
+  stop-color: #009d9a;
+}
+.bx--cc--chart-wrapper .fill-mono-4-7 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-mono-4-7.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-7 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-mono-4-7.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-7 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-7 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-mono-4-8 {
+  fill: #005d5d;
+}
+.bx--cc--chart-wrapper .fill-mono-4-8.hovered {
+  fill: #003939;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-8 {
+  background-color: #005d5d;
+}
+.bx--cc--chart-wrapper .background-mono-4-8.hovered {
+  background-color: #003939;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-8 {
+  stroke: #005d5d;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-8 {
+  stop-color: #005d5d;
+}
+.bx--cc--chart-wrapper .fill-mono-4-9 {
+  fill: #004144;
+}
+.bx--cc--chart-wrapper .fill-mono-4-9.hovered {
+  fill: #001f20;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-9 {
+  background-color: #004144;
+}
+.bx--cc--chart-wrapper .background-mono-4-9.hovered {
+  background-color: #001f20;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-9 {
+  stroke: #004144;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-9 {
+  stop-color: #004144;
+}
+.bx--cc--chart-wrapper .fill-mono-4-10 {
+  fill: #022b30;
+}
+.bx--cc--chart-wrapper .fill-mono-4-10.hovered {
+  fill: #010c0e;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-10 {
+  background-color: #022b30;
+}
+.bx--cc--chart-wrapper .background-mono-4-10.hovered {
+  background-color: #010c0e;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-10 {
+  stroke: #022b30;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-10 {
+  stop-color: #022b30;
+}
+.bx--cc--chart-wrapper .fill-mono-4-11 {
+  fill: #081a1c;
+}
+.bx--cc--chart-wrapper .fill-mono-4-11.hovered {
+  fill: black;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-mono-4-11 {
+  background-color: #081a1c;
+}
+.bx--cc--chart-wrapper .background-mono-4-11.hovered {
+  background-color: black;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-mono-4-11 {
+  stroke: #081a1c;
+}
+.bx--cc--chart-wrapper .stop-color-mono-4-11 {
+  stop-color: #081a1c;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-1 {
+  fill: #750e13;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-1.hovered {
+  fill: #550a0e;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-1 {
+  background-color: #750e13;
+}
+.bx--cc--chart-wrapper .background-diverge-1-1.hovered {
+  background-color: #550a0e;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-1 {
+  stroke: #750e13;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-1 {
+  stop-color: #750e13;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-2 {
+  fill: #a2191f;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-2.hovered {
+  fill: #831419;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-2 {
+  background-color: #a2191f;
+}
+.bx--cc--chart-wrapper .background-diverge-1-2.hovered {
+  background-color: #831419;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-2 {
+  stroke: #a2191f;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-2 {
+  stop-color: #a2191f;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-3 {
+  fill: #da1e28;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-3.hovered {
+  fill: #bb1a22;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-3 {
+  background-color: #da1e28;
+}
+.bx--cc--chart-wrapper .background-diverge-1-3.hovered {
+  background-color: #bb1a22;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-3 {
+  stroke: #da1e28;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-3 {
+  stop-color: #da1e28;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-4 {
+  fill: #fa4d56;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-4.hovered {
+  fill: #f92a35;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-4 {
+  background-color: #fa4d56;
+}
+.bx--cc--chart-wrapper .background-diverge-1-4.hovered {
+  background-color: #f92a35;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-4 {
+  stroke: #fa4d56;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-4 {
+  stop-color: #fa4d56;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-5 {
+  fill: #ff8389;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-5.hovered {
+  fill: #ff5f67;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-5 {
+  background-color: #ff8389;
+}
+.bx--cc--chart-wrapper .background-diverge-1-5.hovered {
+  background-color: #ff5f67;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-5 {
+  stroke: #ff8389;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-5 {
+  stop-color: #ff8389;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-6 {
+  fill: #ffb3b8;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-6.hovered {
+  fill: #ff8f97;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-6 {
+  background-color: #ffb3b8;
+}
+.bx--cc--chart-wrapper .background-diverge-1-6.hovered {
+  background-color: #ff8f97;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-6 {
+  stroke: #ffb3b8;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-6 {
+  stop-color: #ffb3b8;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-7 {
+  fill: #ffd7d9;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-7.hovered {
+  fill: #ffb3b7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-7 {
+  background-color: #ffd7d9;
+}
+.bx--cc--chart-wrapper .background-diverge-1-7.hovered {
+  background-color: #ffb3b7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-7 {
+  stroke: #ffd7d9;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-7 {
+  stop-color: #ffd7d9;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-8 {
+  fill: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-8.hovered {
+  fill: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-8 {
+  background-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .background-diverge-1-8.hovered {
+  background-color: #ffcdcd;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-8 {
+  stroke: #fff1f1;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-8 {
+  stop-color: #fff1f1;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-9 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-9.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-9 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-diverge-1-9.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-9 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-9 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-10 {
+  fill: #e5f6ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-10.hovered {
+  fill: #c1eaff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-10 {
+  background-color: #e5f6ff;
+}
+.bx--cc--chart-wrapper .background-diverge-1-10.hovered {
+  background-color: #c1eaff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-10 {
+  stroke: #e5f6ff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-10 {
+  stop-color: #e5f6ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-11 {
+  fill: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-11.hovered {
+  fill: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-11 {
+  background-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .background-diverge-1-11.hovered {
+  background-color: #96d9ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-11 {
+  stroke: #bae6ff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-11 {
+  stop-color: #bae6ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-12 {
+  fill: #82cfff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-12.hovered {
+  fill: #5ec1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-12 {
+  background-color: #82cfff;
+}
+.bx--cc--chart-wrapper .background-diverge-1-12.hovered {
+  background-color: #5ec1ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-12 {
+  stroke: #82cfff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-12 {
+  stop-color: #82cfff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-13 {
+  fill: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-13.hovered {
+  fill: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-13 {
+  background-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .background-diverge-1-13.hovered {
+  background-color: #0fa3ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-13 {
+  stroke: #33b1ff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-13 {
+  stop-color: #33b1ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-14 {
+  fill: #1192e8;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-14.hovered {
+  fill: #0f7dc7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-14 {
+  background-color: #1192e8;
+}
+.bx--cc--chart-wrapper .background-diverge-1-14.hovered {
+  background-color: #0f7dc7;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-14 {
+  stroke: #1192e8;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-14 {
+  stop-color: #1192e8;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-15 {
+  fill: #0072c3;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-15.hovered {
+  fill: #005d9f;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-15 {
+  background-color: #0072c3;
+}
+.bx--cc--chart-wrapper .background-diverge-1-15.hovered {
+  background-color: #005d9f;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-15 {
+  stroke: #0072c3;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-15 {
+  stop-color: #0072c3;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-16 {
+  fill: #00539a;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-16.hovered {
+  fill: #004076;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-16 {
+  background-color: #00539a;
+}
+.bx--cc--chart-wrapper .background-diverge-1-16.hovered {
+  background-color: #004076;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-16 {
+  stroke: #00539a;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-16 {
+  stop-color: #00539a;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-17 {
+  fill: #003a6d;
+}
+.bx--cc--chart-wrapper .fill-diverge-1-17.hovered {
+  fill: #002749;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-1-17 {
+  background-color: #003a6d;
+}
+.bx--cc--chart-wrapper .background-diverge-1-17.hovered {
+  background-color: #002749;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-1-17 {
+  stroke: #003a6d;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-1-17 {
+  stop-color: #003a6d;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-1 {
+  fill: #491d8b;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-1.hovered {
+  fill: #39176d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-1 {
+  background-color: #491d8b;
+}
+.bx--cc--chart-wrapper .background-diverge-2-1.hovered {
+  background-color: #39176d;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-1 {
+  stroke: #491d8b;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-1 {
+  stop-color: #491d8b;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-2 {
+  fill: #6929c4;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-2.hovered {
+  fill: #5923a6;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-2 {
+  background-color: #6929c4;
+}
+.bx--cc--chart-wrapper .background-diverge-2-2.hovered {
+  background-color: #5923a6;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-2 {
+  stroke: #6929c4;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-2 {
+  stop-color: #6929c4;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-3 {
+  fill: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-3.hovered {
+  fill: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-3 {
+  background-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .background-diverge-2-3.hovered {
+  background-color: #751cfb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-3 {
+  stroke: #8a3ffc;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-3 {
+  stop-color: #8a3ffc;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-4 {
+  fill: #a56eff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-4.hovered {
+  fill: #8f4aff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-4 {
+  background-color: #a56eff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-4.hovered {
+  background-color: #8f4aff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-4 {
+  stroke: #a56eff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-4 {
+  stop-color: #a56eff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-5 {
+  fill: #be95ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-5.hovered {
+  fill: #a871ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-5 {
+  background-color: #be95ff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-5.hovered {
+  background-color: #a871ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-5 {
+  stroke: #be95ff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-5 {
+  stop-color: #be95ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-6 {
+  fill: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-6.hovered {
+  fill: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-6 {
+  background-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-6.hovered {
+  background-color: #bd97ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-6 {
+  stroke: #d4bbff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-6 {
+  stop-color: #d4bbff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-7 {
+  fill: #e8daff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-7.hovered {
+  fill: #d2b6ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-7 {
+  background-color: #e8daff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-7.hovered {
+  background-color: #d2b6ff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-7 {
+  stroke: #e8daff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-7 {
+  stop-color: #e8daff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-8 {
+  fill: #f6f2ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-8.hovered {
+  fill: #ddceff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-8 {
+  background-color: #f6f2ff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-8.hovered {
+  background-color: #ddceff;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-8 {
+  stroke: #f6f2ff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-8 {
+  stop-color: #f6f2ff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-9 {
+  fill: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-9.hovered {
+  fill: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-9 {
+  background-color: #ffffff;
+}
+.bx--cc--chart-wrapper .background-diverge-2-9.hovered {
+  background-color: #ededed;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-9 {
+  stroke: #ffffff;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-9 {
+  stop-color: #ffffff;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-10 {
+  fill: #d9fbfb;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-10.hovered {
+  fill: #b9f8f8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-10 {
+  background-color: #d9fbfb;
+}
+.bx--cc--chart-wrapper .background-diverge-2-10.hovered {
+  background-color: #b9f8f8;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-10 {
+  stroke: #d9fbfb;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-10 {
+  stop-color: #d9fbfb;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-11 {
+  fill: #9ef0f0;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-11.hovered {
+  fill: #7febeb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-11 {
+  background-color: #9ef0f0;
+}
+.bx--cc--chart-wrapper .background-diverge-2-11.hovered {
+  background-color: #7febeb;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-11 {
+  stroke: #9ef0f0;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-11 {
+  stop-color: #9ef0f0;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-12 {
+  fill: #3ddbd9;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-12.hovered {
+  fill: #26cecc;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-12 {
+  background-color: #3ddbd9;
+}
+.bx--cc--chart-wrapper .background-diverge-2-12.hovered {
+  background-color: #26cecc;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-12 {
+  stroke: #3ddbd9;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-12 {
+  stop-color: #3ddbd9;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-13 {
+  fill: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-13.hovered {
+  fill: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-13 {
+  background-color: #08bdba;
+}
+.bx--cc--chart-wrapper .background-diverge-2-13.hovered {
+  background-color: #079b98;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-13 {
+  stroke: #08bdba;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-13 {
+  stop-color: #08bdba;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-14 {
+  fill: #009d9a;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-14.hovered {
+  fill: #007977;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-14 {
+  background-color: #009d9a;
+}
+.bx--cc--chart-wrapper .background-diverge-2-14.hovered {
+  background-color: #007977;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-14 {
+  stroke: #009d9a;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-14 {
+  stop-color: #009d9a;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-15 {
+  fill: #007d79;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-15.hovered {
+  fill: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-15 {
+  background-color: #007d79;
+}
+.bx--cc--chart-wrapper .background-diverge-2-15.hovered {
+  background-color: #005956;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-15 {
+  stroke: #007d79;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-15 {
+  stop-color: #007d79;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-16 {
+  fill: #005d5d;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-16.hovered {
+  fill: #003939;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-16 {
+  background-color: #005d5d;
+}
+.bx--cc--chart-wrapper .background-diverge-2-16.hovered {
+  background-color: #003939;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-16 {
+  stroke: #005d5d;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-16 {
+  stop-color: #005d5d;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-17 {
+  fill: #004144;
+}
+.bx--cc--chart-wrapper .fill-diverge-2-17.hovered {
+  fill: #001f20;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .background-diverge-2-17 {
+  background-color: #004144;
+}
+.bx--cc--chart-wrapper .background-diverge-2-17.hovered {
+  background-color: #001f20;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .stroke-diverge-2-17 {
+  stroke: #004144;
+}
+.bx--cc--chart-wrapper .stop-color-diverge-2-17 {
+  stop-color: #004144;
+}
+
+.bx--cc--tooltip .tooltip-1-1-1 {
+  background-color: #d4bbff;
+}
+.bx--cc--tooltip .tooltip-1-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-1-3-1 {
+  background-color: #33b1ff;
+}
+.bx--cc--tooltip .tooltip-1-4-1 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-2-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-2-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-2-2-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-2-2-2 {
+  background-color: #ff7eb6;
+}
+.bx--cc--tooltip .tooltip-2-3-1 {
+  background-color: #ff7eb6;
+}
+.bx--cc--tooltip .tooltip-2-3-2 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-2-4-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-2-4-2 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-2-5-1 {
+  background-color: #007d79;
+}
+.bx--cc--tooltip .tooltip-2-5-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-3-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-3-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-3-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-3-2-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-3-2-2 {
+  background-color: #ff7eb6;
+}
+.bx--cc--tooltip .tooltip-3-2-3 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-3-3-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-3-3-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-3-3-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--tooltip .tooltip-3-4-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-3-4-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-3-4-3 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-3-5-1 {
+  background-color: #007d79;
+}
+.bx--cc--tooltip .tooltip-3-5-2 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-3-5-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-4-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-4-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-4-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-4-1-4 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-4-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-4-2-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-4-2-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--tooltip .tooltip-4-2-4 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-4-3-1 {
+  background-color: #007d79;
+}
+.bx--cc--tooltip .tooltip-4-3-2 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-4-3-3 {
+  background-color: #33b1ff;
+}
+.bx--cc--tooltip .tooltip-4-3-4 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-5-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-5-1-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-5-1-3 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-5-1-4 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-5-1-5 {
+  background-color: #ff7eb6;
+}
+.bx--cc--tooltip .tooltip-5-2-1 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-5-2-2 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-5-2-3 {
+  background-color: #d4bbff;
+}
+.bx--cc--tooltip .tooltip-5-2-4 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-5-2-5 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-14-1-1 {
+  background-color: #8a3ffc;
+}
+.bx--cc--tooltip .tooltip-14-1-2 {
+  background-color: #33b1ff;
+}
+.bx--cc--tooltip .tooltip-14-1-3 {
+  background-color: #007d79;
+}
+.bx--cc--tooltip .tooltip-14-1-4 {
+  background-color: #ff7eb6;
+}
+.bx--cc--tooltip .tooltip-14-1-5 {
+  background-color: #fa4d56;
+}
+.bx--cc--tooltip .tooltip-14-1-6 {
+  background-color: #fff1f1;
+}
+.bx--cc--tooltip .tooltip-14-1-7 {
+  background-color: #6fdc8c;
+}
+.bx--cc--tooltip .tooltip-14-1-8 {
+  background-color: #4589ff;
+}
+.bx--cc--tooltip .tooltip-14-1-9 {
+  background-color: #d02670;
+}
+.bx--cc--tooltip .tooltip-14-1-10 {
+  background-color: #d2a106;
+}
+.bx--cc--tooltip .tooltip-14-1-11 {
+  background-color: #08bdba;
+}
+.bx--cc--tooltip .tooltip-14-1-12 {
+  background-color: #bae6ff;
+}
+.bx--cc--tooltip .tooltip-14-1-13 {
+  background-color: #ba4e00;
+}
+.bx--cc--tooltip .tooltip-14-1-14 {
+  background-color: #d4bbff;
+}
+
+.bx--cc--legend .additional > .icon .area-1 {
+  fill: #262626;
+  stroke: #6f6f6f;
+}
+.bx--cc--legend .additional > .icon .area-2 {
+  fill: #393939;
+  stroke: #6f6f6f;
+}
+.bx--cc--legend .additional > .icon .area-3 {
+  fill: #525252;
+  stroke: #6f6f6f;
+}
+.bx--cc--legend .additional > .icon .quartile-wrapper {
+  fill: #393939;
+  stroke: #6f6f6f;
+}
+.bx--cc--legend .additional > .icon .quartile-line {
+  fill: #fff;
+}
+
+.bx--cc--axes {
+  overflow: visible;
+}
+.bx--cc--axes g.axis g.ticks.invisible {
+  visibility: hidden;
+}
+.bx--cc--axes g.axis g.tick-hover rect.axis-holder {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2px;
+}
+.bx--cc--axes g.axis g.tick-hover:hover rect.axis-holder,
+.bx--cc--axes g.axis g.tick-hover:focus rect.axis-holder {
+  fill: white;
+  stroke: white;
+  stroke-width: 2px;
+}
+.bx--cc--axes g.axis g.tick-hover:hover text,
+.bx--cc--axes g.axis g.tick-hover:focus text {
+  fill: #393939;
+}
+.bx--cc--axes g.axis g.tick text {
+  fill: #c6c6c6;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+}
+.bx--cc--axes g.axis g.tick line {
+  display: none;
+}
+.bx--cc--axes g.axis path.domain {
+  stroke: #8d8d8d;
+}
+.bx--cc--axes g.axis .axis-title {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  fill: #f4f4f4;
+}
+
+.bx--cc--chart-wrapper g.callouts {
+  stroke: #c6c6c6;
+}
+
+.bx--cc--grid-brush g.grid-brush rect.selection {
+  fill: none;
+  fill-opacity: 0;
+  stroke: none;
+}
+
+.bx--cc--grid-brush rect.frontSelection {
+  fill: #525252;
+  fill-opacity: 0.3;
+  stroke: #ffffff;
+}
+
+.bx--cc--grid rect.chart-grid-backdrop {
+  fill: #161616;
+}
+.bx--cc--grid rect.chart-grid-backdrop.stroked {
+  stroke: #525252;
+}
+.bx--cc--grid rect.stroke {
+  stroke: #525252;
+}
+.bx--cc--grid g.x.grid g.tick line,
+.bx--cc--grid g.y.grid g.tick line {
+  pointer-events: none;
+  stroke-width: 1px;
+  stroke: #525252;
+}
+.bx--cc--grid g.x.grid g.tick.active line,
+.bx--cc--grid g.y.grid g.tick.active line {
+  stroke-dasharray: 2px;
+  stroke: #ffffff;
+}
+
+.bx--cc--ruler line.ruler-line,
+.bx--cc--ruler-binned line.ruler-line {
+  stroke: #ffffff;
+  stroke-width: 1px;
+  stroke-dasharray: 2;
+  pointer-events: none;
+}
+
+.bx--cc--skeleton rect.chart-skeleton-backdrop {
+  fill: #161616;
+}
+.bx--cc--skeleton .shimmer-effect-lines {
+  stroke-width: 1px;
+}
+.bx--cc--skeleton .shimmer-effect-sparkline {
+  stroke-width: 0px;
+}
+.bx--cc--skeleton .empty-state-lines {
+  stroke-width: 1px;
+  stroke: #525252;
+}
+.bx--cc--skeleton .shimmer-lines .stop-bg-shimmer {
+  stop-color: #525252;
+}
+.bx--cc--skeleton .shimmer-lines .stop-shimmer {
+  stop-color: #ffffff;
+}
+.bx--cc--skeleton .empty-state-areas {
+  fill: rgba(127, 127, 127, 0.1);
+}
+.bx--cc--skeleton .shimmer-areas .stop-bg-shimmer {
+  stop-color: rgba(127, 127, 127, 0.1);
+}
+.bx--cc--skeleton .shimmer-areas .stop-shimmer {
+  stop-color: rgba(255, 255, 255, 0.15);
+}
+
+.bx--cc--skeleton-lines rect.chart-skeleton-backdrop {
+  fill: #161616;
+}
+.bx--cc--skeleton-lines .shimmer-effect-lines {
+  stroke-width: 1px;
+}
+.bx--cc--skeleton-lines .shimmer-effect-sparkline {
+  stroke-width: 0px;
+}
+.bx--cc--skeleton-lines .empty-state-lines {
+  stroke-width: 1px;
+  stroke: #525252;
+}
+.bx--cc--skeleton-lines .shimmer-lines .stop-bg-shimmer {
+  stop-color: #525252;
+}
+.bx--cc--skeleton-lines .shimmer-lines .stop-shimmer {
+  stop-color: #ffffff;
+}
+
+.bx--cc--zero-line line.domain {
+  stroke: #8d8d8d;
+}
+
+.bx--cc--layout-row {
+  display: flex;
+  flex-direction: row;
+}
+.bx--cc--layout-column {
+  display: flex;
+  flex-direction: column;
+}
+.bx--cc--layout-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bx--cc--layout-column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.bx--cc--layout-alignitems-center {
+  align-items: center;
+}
+
+.bx--cc--chart-wrapper .layout-child {
+  overflow: visible;
+}
+
+.bx--cc--chart-wrapper svg.layout-svg-wrapper {
+  height: inherit;
+  width: inherit;
+  overflow: visible;
+}
+
+div.bx--cc--legend {
+  display: flex;
+  user-select: none;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+div.bx--cc--legend[data-name=legend-items] {
+  width: 100%;
+  margin: -5px;
+}
+div.bx--cc--legend div.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+div.bx--cc--legend div.legend-item div.checkbox {
+  width: 13px;
+  height: 13px;
+  margin-right: 4px;
+  border-radius: 2px;
+  border: solid 1px #262626;
+  box-shadow: 0 0 0 2px transparent;
+}
+@media (forced-colors: active) {
+  div.bx--cc--legend div.legend-item div.checkbox {
+    forced-color-adjust: none;
+  }
+}
+div.bx--cc--legend div.legend-item div.checkbox:not(.active) {
+  border-color: #c6c6c6;
+  background: #262626;
+}
+div.bx--cc--legend div.legend-item div.checkbox svg {
+  display: none;
+  vertical-align: text-top;
+  fill: #262626;
+  stroke: #262626;
+}
+div.bx--cc--legend div.legend-item.additional svg.icon {
+  margin-right: 4px;
+}
+div.bx--cc--legend div.legend-item p {
+  font-size: 12px;
+  fill: #c6c6c6;
+  line-height: 1rem;
+}
+div.bx--cc--legend.center-aligned {
+  justify-content: center;
+}
+div.bx--cc--legend.right-aligned {
+  justify-content: flex-end;
+}
+div.bx--cc--legend.has-deactivated-items div.legend-item div.checkbox svg {
+  display: block;
+}
+div.bx--cc--legend.vertical {
+  margin: -5px;
+  flex-direction: column;
+}
+div.bx--cc--legend.vertical div.legend-item {
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+div.bx--cc--legend.clickable div.legend-item:not(.additional):hover {
+  cursor: pointer;
+}
+div.bx--cc--legend.clickable div.legend-item:not(.additional):hover div.checkbox {
+  border: solid 1px #262626;
+  box-shadow: 0 0 0 2px #0f62fe;
+}
+div.bx--cc--legend.clickable div.legend-item:not(.additional):hover div.checkbox:not(.active) {
+  border-color: #c6c6c6;
+}
+
+.bx--chart-holder .bx--modal.is-visible {
+  z-index: 99999;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-header__label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-header__heading {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-content {
+  padding: 0;
+  margin-bottom: 0;
+  color-scheme: dark;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-content table {
+  position: relative;
+  border-collapse: collapse;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-content table th {
+  position: sticky;
+  top: 0;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-footer {
+  background-color: transparent;
+}
+.bx--chart-holder .bx--modal .bx--modal-container .bx--modal-footer .bx--cc-modal-footer-spacer {
+  width: 50%;
+}
+
+.bx--cc--title p.title {
+  color: #f4f4f4;
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 15px;
+}
+
+.layout-child.title {
+  height: unset !important;
+  overflow: hidden;
+}
+
+.bx--cc--meter-title {
+  overflow: visible;
+}
+.bx--cc--meter-title text.meter-title,
+.bx--cc--meter-title text.proportional-meter-title,
+.bx--cc--meter-title text.proportional-meter-total,
+.bx--cc--meter-title text.percent-value {
+  fill: #f4f4f4;
+}
+.bx--cc--meter-title g.status-indicator.status--danger circle.status {
+  fill: #ff8389;
+}
+.bx--cc--meter-title g.status-indicator.status--warning circle.status {
+  fill: #f1c21b;
+}
+.bx--cc--meter-title g.status-indicator.status--warning path.innerFill {
+  fill: #000000;
+}
+.bx--cc--meter-title g.status-indicator.status--success circle.status {
+  fill: #42be65;
+}
+.bx--cc--meter-title g.status-indicator path.innerFill {
+  fill: #000000;
+}
+
+.bx--chart-holder .bx--overflow-menu,
+.bx--chart-holder .bx--overflow-menu__trigger {
+  width: 2rem;
+  height: 2rem;
+}
+.bx--chart-holder .bx--cc--toolbar {
+  display: flex;
+}
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled,
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled button {
+  cursor: not-allowed;
+}
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled:hover,
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled button:hover {
+  background-color: transparent;
+}
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled button:focus {
+  outline: none;
+}
+.bx--chart-holder .bx--cc--toolbar div.toolbar-control.disabled svg {
+  fill: #a8a8a8;
+}
+.bx--chart-holder .bx--cc--toolbar .bx--overflow-menu--flip {
+  right: 0;
+  left: unset;
+}
+.bx--chart-holder .bx--cc--toolbar .bx--overflow-menu--flip.is-open {
+  display: table;
+}
+.bx--chart-holder .bx--cc--toolbar .bx--overflow-menu--flip ul {
+  margin: 0;
+  padding: 0;
+}
+.bx--chart-holder .bx--cc--toolbar .bx--loading__background {
+  fill: transparent;
+}
+.bx--chart-holder .bx--cc--toolbar .bx--loading__stroke {
+  stroke-dashoffset: 99;
+  fill: transparent;
+}
+
+.bx--cc--tooltip {
+  background-color: #525252;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+  display: inline;
+  visibility: visible;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  word-wrap: break-word;
+  z-index: 1059;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  transition: visibility 0s linear 0.1s, opacity 0.1s;
+}
+.bx--cc--tooltip.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0s, opacity 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+}
+.bx--cc--tooltip .content-box {
+  color: #f4f4f4;
+}
+.bx--cc--tooltip .content-box .title-tooltip {
+  width: auto;
+  padding: 4px;
+  min-width: 20px;
+  max-width: 270px;
+}
+.bx--cc--tooltip .content-box .title-tooltip p {
+  margin: 2px;
+  font-size: 12px;
+  line-height: 1rem;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip {
+  display: flex;
+  padding: 4px;
+  flex-flow: row nowrap;
+  width: auto;
+  min-width: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip div.label {
+  display: flex;
+  flex: 1;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip div.label p {
+  flex: 1;
+  padding-right: 8px;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip div.label span.label-icon svg {
+  height: 12px;
+  padding-top: 3px;
+  vertical-align: top;
+  padding-left: 4px;
+  width: auto;
+  fill: white;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip.bold {
+  font-weight: 600;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 16px;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.bx--cc--tooltip .content-box .datapoint-tooltip p.value {
+  width: auto;
+  margin-left: 6px;
+}
+.bx--cc--tooltip .content-box ul.multi-tooltip {
+  margin: 0;
+  padding: 0;
+}
+.bx--cc--tooltip .content-box ul.multi-tooltip li {
+  list-style: none;
+  position: relative;
+}
+.bx--cc--tooltip .content-box ul.multi-tooltip li:not(:last-child) {
+  border-bottom: 1px solid #393939;
+}
+.bx--cc--tooltip .tooltip-color {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+}
+@media (forced-colors: active) {
+  .bx--cc--tooltip .tooltip-color {
+    forced-color-adjust: none;
+  }
+}
+.bx--cc--tooltip .tooltip-color + div.label p {
+  margin-left: 4px;
+}
+
+.bx--cc--threshold line.threshold-line {
+  stroke: #fa4d56;
+  stroke-width: 1;
+  stroke-dasharray: 4;
+  cursor: pointer;
+  pointer-events: none;
+}
+.bx--cc--threshold line.threshold-line.active {
+  stroke-width: 2;
+}
+.bx--cc--threshold rect.threshold-hoverable-area {
+  height: 20px;
+  transform: translate(0, -10px);
+  cursor: pointer;
+  fill: transparent;
+}
+.bx--cc--threshold rect.threshold-hoverable-area.rotate {
+  transform: rotate(90deg) translate(0, -10px);
+}
+
+.bx--cc--threshold--label {
+  background-color: #fa4d56;
+  pointer-events: none;
+  transition: opacity 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+  display: inline;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  word-wrap: break-word;
+  z-index: 1059;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  color: #f4f4f4;
+  line-height: 16px;
+  font-size: 12px;
+  padding: 4px;
+  min-width: 20px;
+}
+.bx--cc--threshold--label.hidden {
+  opacity: 0;
+  transition: opacity 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+}
+
+.bx--cc--zoom-bar rect.zoom-bg {
+  fill: #262626;
+  stroke: #393939;
+}
+.bx--cc--zoom-bar rect.zoom-slider-bg {
+  fill: #393939;
+}
+.bx--cc--zoom-bar rect.zoom-slider-selected-area {
+  fill: #c6c6c6;
+}
+.bx--cc--zoom-bar path.zoom-bg-baseline {
+  stroke: #8d8d8d;
+  stroke-width: 2;
+}
+.bx--cc--zoom-bar path.zoom-graph-area {
+  fill: #525252;
+  stroke: #8d8d8d;
+  stroke-width: 1;
+}
+.bx--cc--zoom-bar path.zoom-graph-area-unselected {
+  fill: #393939;
+  stroke: none;
+}
+.bx--cc--zoom-bar g.zoom-bar-brush rect.handle {
+  fill: #c6c6c6;
+}
+.bx--cc--zoom-bar g.zoom-bar-brush rect.handle-bar {
+  fill: #525252;
+}
+.bx--cc--zoom-bar g.zoom-bar-brush rect.selection {
+  fill: none;
+  stroke: none;
+}
+.bx--cc--zoom-bar rect[class^=highlight-] {
+  fill: #ee5396;
+  stroke: #ee5396;
+}
+
+.bx--cc--highlight rect.highlight-bar {
+  pointer-events: none;
+  fill: #ee5396;
+  stroke: #ee5396;
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  20% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  28% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  51% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  58% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  82% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  83% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  96% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+.bx--cc--card-node {
+  display: flex;
+  position: relative;
+  background-color: #393939;
+  z-index: 1;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.5rem;
+  border-left: 0.25rem solid #f4f4f4;
+}
+
+.bx--cc--card-node--a,
+.bx--cc--card-node--button {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bx--cc--card-node--button {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.bx--cc--card-node--a:focus,
+.bx--cc--card-node--a:hover,
+.bx--cc--card-node--button:focus,
+.bx--cc--card-node--button:hover {
+  background-color: #4c4c4c;
+}
+
+.bx--cc--card-node--a:focus,
+.bx--cc--card-node--button:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+@media screen and (prefers-contrast) {
+  .bx--cc--card-node--a:focus,
+.bx--cc--card-node--button:focus {
+    outline-style: dotted;
+  }
+}
+
+.bx--cc--card-node--stacked::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  border-top: 0.125rem solid #525252;
+  border-right: 0.125rem solid #525252;
+  pointer-events: none;
+  left: 0.3125rem;
+  bottom: 0.3125rem;
+}
+.bx--cc--card-node--stacked::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  border-top: 0.125rem solid #525252;
+  border-right: 0.125rem solid #525252;
+  pointer-events: none;
+  left: 0.6875rem;
+  bottom: 0.6875rem;
+}
+
+.bx--cc--card-node__column {
+  padding: 0 0.5rem;
+}
+
+.bx--cc--card-node__column--farside {
+  margin-left: auto;
+}
+
+.bx--cc--card-node__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.28572;
+  letter-spacing: 0.16px;
+  margin: 0;
+}
+
+.bx--cc--card-node__subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.28572;
+  letter-spacing: 0.16px;
+  margin: 0;
+}
+
+.bx--cc--card-node__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33333;
+  letter-spacing: 0.32px;
+  color: #c6c6c6;
+  padding-top: 1.5rem;
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  20% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  28% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  51% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  58% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  82% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  83% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  96% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+.bx--cc--shape-node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #393939;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bx--cc--shape-node--circle {
+  border-radius: 100%;
+}
+
+.bx--cc--shape-node--square {
+  border-radius: 0;
+}
+
+.bx--cc--shape-node--rounded-square {
+  border-radius: 0.5rem;
+}
+
+.bx--cc--shape-node--a,
+.bx--cc--shape-node--button {
+  border: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bx--cc--shape-node--button {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.bx--cc--shape-node--a:focus,
+.bx--cc--shape-node--a:hover,
+.bx--cc--shape-node--button:focus,
+.bx--cc--shape-node--button:hover {
+  background-color: #4c4c4c;
+}
+.bx--cc--shape-node--a:focus .bx--cc--shape-node__title,
+.bx--cc--shape-node--a:focus .bx--cc--shape-node__subtitle,
+.bx--cc--shape-node--a:hover .bx--cc--shape-node__title,
+.bx--cc--shape-node--a:hover .bx--cc--shape-node__subtitle,
+.bx--cc--shape-node--button:focus .bx--cc--shape-node__title,
+.bx--cc--shape-node--button:focus .bx--cc--shape-node__subtitle,
+.bx--cc--shape-node--button:hover .bx--cc--shape-node__title,
+.bx--cc--shape-node--button:hover .bx--cc--shape-node__subtitle {
+  font-weight: 600;
+}
+
+.bx--cc--shape-node--a:focus:focus,
+.bx--cc--shape-node--button:focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.bx--cc--shape-node__body {
+  position: absolute;
+  top: calc(100% + 0.125rem);
+  text-align: center;
+}
+
+.bx--cc--shape-node__subtitle {
+  padding-bottom: 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.28572;
+  letter-spacing: 0.16px;
+  color: #f4f4f4;
+}
+
+.bx--cc--shape-node__icon {
+  display: flex;
+}
+
+.bx--cc--shape-node__title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.28572;
+  letter-spacing: 0.16px;
+  color: #f4f4f4;
+  padding-top: 0.125rem;
+  margin-bottom: 1px;
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  20% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  28% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  51% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  58% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  82% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  83% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  96% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+.bx--cc--edge {
+  fill: transparent;
+}
+
+.bx--cc--edge__container {
+  stroke-width: 1.5rem;
+  stroke: transparent;
+  stroke-dasharray: none;
+}
+
+.bx--cc--edge__inner {
+  stroke-width: 0.0625rem;
+  stroke: #8d8d8d;
+}
+
+.bx--cc--edge__outer {
+  stroke-width: 0.15625rem;
+  stroke: transparent;
+}
+
+.bx--cc--edge:hover .bx--cc--edge__inner {
+  stroke-width: 0.15625rem;
+}
+
+.bx--cc--edge--dash-sm {
+  stroke-dasharray: 2 4;
+}
+
+.bx--cc--edge--dash-md {
+  stroke-dasharray: 4 4;
+}
+
+.bx--cc--edge--dash-lg {
+  stroke-dasharray: 8 4;
+}
+
+.bx--cc--edge--dash-xl {
+  stroke-dasharray: 16 4;
+}
+
+.bx--cc--edge--tunnel .bx--cc--edge__outer {
+  stroke: #525252;
+  stroke-width: 0.375rem;
+}
+
+.bx--cc--edge--double .bx--cc--edge__inner {
+  stroke: #262626;
+}
+.bx--cc--edge--double .bx--cc--edge__outer {
+  stroke: #f4f4f4;
+  stroke-width: 0.28125rem;
+}
+
+.bx--cc--marker {
+  fill: #f4f4f4;
+}
+
+svg.bx--cc--color-legend {
+  display: flex;
+  user-select: none;
+}
+svg.bx--cc--color-legend g.legend-title text {
+  color: white;
+}
+
+.bx--cc--area path.area,
+.bx--cc--area-stacked path.area {
+  pointer-events: none;
+}
+
+.bx--cc--bubble circle.dot.hovered {
+  fill-opacity: 1;
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+}
+.bx--cc--bubble circle.dot.unfilled {
+  fill: #393939;
+}
+.bx--cc--bubble g.lines path.line {
+  mix-blend-mode: multiply;
+}
+
+.bx--cc--bullet path.range-box {
+  pointer-events: none;
+}
+.bx--cc--bullet path.range-box.order-1 {
+  fill: #262626;
+  stroke: #6f6f6f;
+}
+.bx--cc--bullet path.range-box.order-2 {
+  fill: #393939;
+  stroke: #6f6f6f;
+}
+.bx--cc--bullet path.range-box.order-3 {
+  fill: #525252;
+  stroke: #6f6f6f;
+}
+.bx--cc--bullet path.marker,
+.bx--cc--bullet path.quartile {
+  pointer-events: none;
+  stroke-width: 1.5px;
+  stroke: #fff;
+}
+.bx--cc--bullet path.quartile.over-bar {
+  stroke: #000;
+}
+
+.bx--cc--donut {
+  overflow: visible;
+}
+
+.bx--cc--line path.line {
+  pointer-events: none;
+  fill: none;
+  stroke-width: 1.5;
+}
+.bx--cc--line path.line.sparkline-loading {
+  animation: shimmer 2.5s infinite linear;
+}
+@keyframes shimmer {
+  0% {
+    stroke: #525252;
+  }
+  20% {
+    stroke: #ffffff;
+    opacity: 0.5;
+  }
+  100% {
+    stroke: #525252;
+  }
+}
+
+.bx--cc--scatter circle.dot.hovered {
+  fill-opacity: 1;
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+}
+.bx--cc--scatter circle.dot.unfilled {
+  fill: #393939;
+  stroke-width: 1.5;
+}
+.bx--cc--scatter circle.dot.threshold-anomaly {
+  stroke-width: 3;
+}
+.bx--cc--scatter g.lines path.line {
+  mix-blend-mode: multiply;
+}
+
+.bx--cc--meter rect.container {
+  fill: #393939;
+}
+.bx--cc--meter line.rangeIndicator {
+  stroke: #a8a8a8;
+  stroke-width: 1px;
+  stroke: #6f6f6f;
+}
+.bx--cc--meter rect.value.status--danger {
+  fill: #ff8389;
+}
+.bx--cc--meter rect.value.status--warning {
+  fill: #f1c21b;
+  stroke-width: 1px;
+  stroke: #b28600;
+  stroke: none;
+}
+.bx--cc--meter rect.value.status--success {
+  fill: #42be65;
+}
+.bx--cc--meter line.peak {
+  stroke: #f4f4f4;
+  stroke-width: 2px;
+}
+
+.bx--cc--scatter-stacked circle.dot.unfilled {
+  fill: #393939;
+  stroke-width: 1.5;
+}
+.bx--cc--scatter-stacked circle.dot.threshold-anomaly {
+  stroke-width: 3;
+}
+
+.bx--cc--radar .blobs path {
+  stroke-width: 1.5px;
+}
+.bx--cc--radar .y-axes path,
+.bx--cc--radar .x-axes line {
+  stroke-width: 1px;
+  stroke: #525252;
+}
+.bx--cc--radar .x-axes line.hovered {
+  stroke: #ffffff;
+}
+
+.bx--cc--chart-wrapper .bx--cc--tree g.links {
+  fill: none;
+  stroke: #8d8d8d;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5;
+}
+.bx--cc--chart-wrapper .bx--cc--tree g.clickable {
+  cursor: pointer;
+}
+.bx--cc--chart-wrapper .bx--cc--tree g.clickable:hover text {
+  font-weight: 600;
+}
+.bx--cc--chart-wrapper .bx--cc--tree g.clickable:hover circle {
+  fill: #f4f4f4;
+  transition: all 0.1s ease-out;
+}
+.bx--cc--chart-wrapper .bx--cc--tree circle.parent {
+  fill: #c6c6c6;
+}
+.bx--cc--chart-wrapper .bx--cc--tree circle.child {
+  fill: #8d8d8d;
+}
+.bx--cc--chart-wrapper .bx--cc--tree text {
+  fill: #f4f4f4;
+}
+.bx--cc--chart-wrapper .bx--cc--tree text.text-stroke {
+  stroke: #161616;
+  stroke-width: 2px;
+}
+
+.bx--cc--treemap text {
+  pointer-events: none;
+}
+
+.bx--cc--gauge {
+  overflow: visible;
+}
+.bx--cc--gauge path.arc-background {
+  fill: #393939;
+}
+.bx--cc--gauge .gauge-delta-arrow.status--danger {
+  fill: #ff8389;
+}
+.bx--cc--gauge .gauge-delta-arrow.status--warning {
+  fill: #f1c21b;
+}
+.bx--cc--gauge .gauge-delta-arrow.status--success {
+  fill: #42be65;
+}
+
+.bx--cc--pie {
+  overflow: visible;
+}
+
+.bx--cc--lollipop line.line {
+  pointer-events: none;
+}
+.bx--cc--lollipop circle.dot {
+  stroke-width: 1.5;
+}
+
+.bx--cc--circle-pack circle.node {
+  stroke-width: 1.5px;
+}
+.bx--cc--circle-pack circle.node.hovered {
+  fill-opacity: 1;
+}
+.bx--cc--circle-pack circle.node.non-focal {
+  fill: #6f6f6f;
+  fill-opacity: 30%;
+  stroke: #6f6f6f;
+}
+.bx--cc--circle-pack circle.node.clickable {
+  cursor: zoom-in;
+}
+
+.bx--cc--chart-wrapper.zoomed-in {
+  cursor: zoom-out;
+}
+.bx--cc--chart-wrapper.zoomed-in .bx--cc--circle-pack circle.node.hovered-child {
+  stroke: 1.5px solid initial;
+}
+.bx--cc--chart-wrapper.zoomed-in .bx--cc--circle-pack circle.node.clickable {
+  cursor: zoom-out;
+}
+
+.bx--cc--wordcloud text.word.light {
+  font-weight: 300;
+}
+
+.bx--cc--alluvial rect.node,
+.bx--cc--alluvial rect.node-text-bg {
+  fill: white;
+}
+.bx--cc--alluvial text.node-text {
+  fill: black;
+}
+
+.bx--cc--heatmap g.highlighter-hidden {
+  visibility: hidden;
+}
+.bx--cc--heatmap g.cell-highlight line {
+  stroke: white;
+  stroke-width: 1px;
+}
+.bx--cc--heatmap g.cell-2 line {
+  stroke: white;
+  stroke-width: 2px !important;
+}
+.bx--cc--heatmap g.multi-cell line {
+  stroke: white;
+  stroke-width: 2px;
+}
+.bx--cc--heatmap rect.pattern-fill {
+  fill: #8d8d8d;
+}
+.bx--cc--heatmap g.shadows line.top {
+  filter: drop-shadow(0px -3px 2px black);
+}
+.bx--cc--heatmap g.shadows line.down {
+  filter: drop-shadow(0px 3px 2px black);
+}
+.bx--cc--heatmap g.shadows line.left {
+  filter: drop-shadow(-3px 0px 2px black);
+}
+.bx--cc--heatmap g.shadows line.right {
+  filter: drop-shadow(3px 0px 2px black);
+}
+.bx--cc--heatmap rect.null-state {
+  stroke: transparent !important;
+}
+.bx--cc--heatmap rect.heat {
+  stroke-width: 0px;
+}
+.bx--cc--heatmap rect.heat {
+  stroke: #262626;
+}
+.bx--cc--heatmap rect.null-state {
+  fill: #393939;
+}
+.bx--cc--heatmap rect.null-state {
+  fill: #161616;
+}
+
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRcdvfo.woff) format("woff");
+}
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZP.woff) format("woff");
+}
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJcdvfo.woff) format("woff");
+}
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFscg.woff) format("woff");
+}
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdHeEw.woff) format("woff");
+}
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFscg.woff) format("woff");
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRce_fuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRccvfuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRcdffuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRceffuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRcePfuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light Italic"), local("IBMPlexSans-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmvIRcdvfuJGl18Q.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuGqZJW9XjDlN8.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuE6ZJW9XjDlN8.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuFKZJW9XjDlN8.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuGKZJW9XjDlN8.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuGaZJW9XjDlN8.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZJW9XjDg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJce_fuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJccvfuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJcdffuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJceffuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJcePfuJGl18QRY.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold Italic"), local("IBMPlexSans-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX7KVElMYYaJe8bpLHnCwDKhdTmyIJcdvfuJGl18Q.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIxsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIVsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIJsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AI5sdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AI9sdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdP3pBms.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdzeFaxOedfTDw.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdXeFaxOedfTDw.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdLeFaxOedfTDw.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhd7eFaxOedfTDw.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhd_eFaxOedfTDw.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIxsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIVsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIJsdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AI5sdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AI9sdP3pBmtF8A.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: auto;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light Italic"), local("IBMPlexSansCond-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8AfppYA.woff) format("woff");
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed Italic"), local("IBMPlexSansCond-Italic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYasyKg.woff) format("woff");
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold Italic"), local("IBMPlexSansCond-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8HPvpYA.woff) format("woff");
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light"), local("IBMPlexSansCond-Light"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4C6ovo.woff) format("woff");
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed"), local("IBMPlexSansCond"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHbat.woff) format("woff");
+}
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold"), local("IBMPlexSansCond-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527Ivo.woff) format("woff");
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light Italic"), local("IBMPlexSansCond-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8AfplYstEzi6D11GTg.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light Italic"), local("IBMPlexSansCond-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8AfplYotEzi6D11GTg.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light Italic"), local("IBMPlexSansCond-LightItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8AfplYQtEzi6D10.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed Italic"), local("IBMPlexSansCond-Italic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KPLgKkPHhKABg.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed Italic"), local("IBMPlexSansCond-Italic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgKkPHhKABg.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed Italic"), local("IBMPlexSansCond-Italic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgKkPHhI.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold Italic"), local("IBMPlexSansCond-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8HPvlYstEzi6D11GTg.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold Italic"), local("IBMPlexSansCond-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8HPvlYotEzi6D11GTg.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: italic;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold Italic"), local("IBMPlexSansCond-SemiBoldItalic"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8HPvlYQtEzi6D10.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light"), local("IBMPlexSansCond-Light"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4C6rvjpYYnFBq4P1w.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light"), local("IBMPlexSansCond-Light"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4C6rvipYYnFBq4P1w.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IBM Plex Sans Condensed Light"), local("IBMPlexSansCond-Light"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4C6rvspYYnFBq4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed"), local("IBMPlexSansCond"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYamyK7Bh4sNLhM.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed"), local("IBMPlexSansCond"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7Bh4sNLhM.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans Condensed"), local("IBMPlexSansCond"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK7Bh4sN.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold"), local("IBMPlexSansCond-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvjpYYnFBq4P1w.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold"), local("IBMPlexSansCond-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYYnFBq4P1w.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans Condensed SemiBold"), local("IBMPlexSansCond-SemiBold"), url(https://fonts.gstatic.com/s/ibmplexsanscondensed/v6/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYYnFBq4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.bx--cc--chart-wrapper {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+}
+.bx--cc--chart-wrapper p {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c6c6c6;
+}
+.bx--cc--chart-wrapper text {
+  font-size: 12px;
+  font-weight: 400;
+  fill: #c6c6c6;
+}
+.bx--cc--chart-wrapper g.gauge-numbers text.gauge-value-number {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+}
+.bx--cc--chart-wrapper text.meter-title,
+.bx--cc--chart-wrapper text.percent-value {
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.bx--cc--chart-wrapper text.meter-title {
+  font-weight: 600;
+}
+
+.bx--chart-holder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bx--chart-holder.filled, .bx--chart-holder.fullscreen {
+  background-color: #262626;
+}
+.bx--chart-holder.filled .bx--cc--chart-wrapper, .bx--chart-holder.fullscreen .bx--cc--chart-wrapper {
+  background-color: #262626;
+}
+.bx--chart-holder .DONT_STYLE_ME_css_styles_verifier {
+  overflow: hidden;
+  opacity: 0;
+}
+
+.bx--chart-holder.fullscreen,
+.bx--chart-holder:-webkit-full-screen {
+  /* !important is used here to get closer to
+  a truly fullscreen experience */
+  width: 100% !important;
+  height: 100% !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  padding: 2em;
+}
+
+.bx--cc--chart-wrapper {
+  overflow: visible;
+}
+
+/*# sourceMappingURL=styles-g90.css.map */

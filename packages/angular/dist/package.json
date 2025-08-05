@@ -1,0 +1,39 @@
+{
+  "name": "@ai-apps/angular",
+  "version": "0.0.0",
+  "description": "AI Applications PAL in Angular",
+  "main": "bundles/ai-apps-angular.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/carbon-components-angular.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "author": "IBM",
+  "peerDependencies": {
+    "@angular/common": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "carbon-components": "^10.0.0",
+    "carbon-components-angular": "^4.0.0"
+  },
+  "dependencies": {
+    "@ai-apps/styles": "^2.145.0-next.16",
+    "@carbon/icons": "10.20.0",
+    "@carbon/telemetry": "0.0.0-alpha.6",
+    "date-fns": "2.22.1",
+    "flatpickr": "4.6.1",
+    "tslib": "^2.0.0"
+  },
+  "module": "fesm2015/ai-apps-angular.js",
+  "es2015": "fesm2015/ai-apps-angular.js",
+  "esm2015": "esm2015/ai-apps-angular.js",
+  "fesm2015": "fesm2015/ai-apps-angular.js",
+  "typings": "ai-apps-angular.d.ts",
+  "metadata": "ai-apps-angular.metadata.json",
+  "sideEffects": false,
+  "scripts": {
+    "postinstall": "carbon-telemetry collect --install"
+  }
+}

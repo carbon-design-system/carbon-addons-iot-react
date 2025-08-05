@@ -1,0 +1,63 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _hotspot-editor-tooltip-tab.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../../globals/vars';
+@import '../mixins';
+
+.#{$iot-prefix}--hotspot-editor-tooltip-tab {
+  background-color: $ui-01;
+  padding: $spacing-03 0;
+}
+
+.#{$iot-prefix}--hotspot-editor--tooltip-form {
+  @include vertical-form();
+}
+
+.#{$iot-prefix}--icon-color-container {
+  $dropdown-spacer: 2rem;
+
+  display: flex;
+  & > * {
+    flex-grow: 1;
+  }
+
+  .#{$iot-prefix}--dropdown__label > svg {
+    min-width: 24px;
+    width: 24px;
+    fill: var(--icon-fill-color);
+  }
+
+  .#{$prefix}--dropdown__wrapper:nth-of-type(1) {
+    margin-right: $dropdown-spacer;
+  }
+
+  .#{$prefix}--dropdown__wrapper {
+    width: calc(50% - 1rem);
+  }
+}
+
+.#{$iot-prefix}--hotspot-editor-tooltip-tab__delete-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.#{$iot-prefix}--hotspot-editor--tooltip-info-message {
+  @include info-message();
+}

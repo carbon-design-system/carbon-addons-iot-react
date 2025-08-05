@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-date-time-picker.umd.js",
+  "module": "../fesm2015/ai-apps-angular-date-time-picker.js",
+  "es2015": "../fesm2015/ai-apps-angular-date-time-picker.js",
+  "esm2015": "../esm2015/date-time-picker/ai-apps-angular-date-time-picker.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-date-time-picker.js",
+  "typings": "ai-apps-angular-date-time-picker.d.ts",
+  "metadata": "ai-apps-angular-date-time-picker.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/date-time-picker"
+}

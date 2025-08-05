@@ -1,0 +1,101 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _page-wizard.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../vendor/carbon-components/scss/globals/scss/vars';
+@import '../../vendor/carbon-components/scss/globals/scss/typography';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--page-wizard {
+  display: flex;
+
+  &__sticky {
+    padding-bottom: $layout-06;
+  }
+
+  &--progress {
+    &--vertical {
+      padding-right: $spacing-05;
+      flex: 0 0 12rem;
+    }
+
+    &--horizontal {
+      padding-bottom: $spacing-05;
+    }
+
+    .#{$prefix}--progress--vertical {
+      li {
+        min-height: 4.5rem;
+      }
+    }
+  }
+
+  &--step {
+    padding-bottom: $spacing-07;
+    @include type-style('body-long-01');
+
+    &--title {
+      @include type-style('productive-heading-02');
+      margin-bottom: $spacing-03;
+    }
+    &--description {
+      margin-bottom: $spacing-04;
+      max-width: 40rem;
+    }
+    &--extra-content {
+      display: none; /* TODO: render as sidebar */
+    }
+  }
+
+  &--content {
+    flex: 1;
+
+    &--actions {
+      padding-top: $spacing-07;
+
+      .#{$prefix}--btn {
+        margin-right: $spacing-05;
+      }
+    }
+
+    &--actions--sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $ui-01;
+      padding: $spacing-05 $spacing-07;
+      border-top: rem(1px) solid $ui-03;
+      .#{$prefix}--btn {
+        margin-right: $spacing-05;
+      }
+    }
+
+    &--after-footer {
+      display: flex;
+
+      &--content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

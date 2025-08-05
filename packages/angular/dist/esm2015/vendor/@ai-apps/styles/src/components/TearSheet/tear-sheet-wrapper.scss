@@ -1,0 +1,73 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | tear-sheet-wrapper.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$iot-prefix}--tear-sheet-wrapper {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  transition: all $duration--slow-01 motion(standard, expressive) $duration--slow-01;
+
+  &--container {
+    position: absolute;
+    background: none;
+    left: 50%;
+    top: 5.5rem;
+    transform: translate(-50%, 100vh);
+    transition: all $duration--slow-01 motion(standard, expressive);
+    height: calc(100vh - 5.5rem);
+    width: calc(100% - 8rem);
+    opacity: 1;
+    margin: 0 auto;
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:not(.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden) {
+      transform: translate(-50%, 0);
+    }
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible &__is-hidden {
+      filter: brightness(75%);
+      transform: translate(-50%, 100vh);
+      width: calc(100% - 9.5rem);
+      & * {
+        transition: all $duration--slow-01 motion(standard, expressive);
+      }
+    }
+
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden,
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden
+      + .#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
+      transform: translate(-50%, -0.75rem);
+    }
+  }
+
+  &.#{$iot-prefix}--tear-sheet-wrapper__is-visible {
+    background-color: $overlay-01;
+    z-index: 5999;
+    transition: opacity $duration--slow-01 motion(standard, expressive),
+      background-color $duration--slow-02 motion(standard, productive);
+    opacity: 1;
+  }
+}

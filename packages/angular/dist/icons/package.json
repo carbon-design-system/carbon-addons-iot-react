@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-icons.umd.js",
+  "module": "../fesm2015/ai-apps-angular-icons.js",
+  "es2015": "../fesm2015/ai-apps-angular-icons.js",
+  "esm2015": "../esm2015/icons/ai-apps-angular-icons.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-icons.js",
+  "typings": "ai-apps-angular-icons.d.ts",
+  "metadata": "ai-apps-angular-icons.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/icons"
+}

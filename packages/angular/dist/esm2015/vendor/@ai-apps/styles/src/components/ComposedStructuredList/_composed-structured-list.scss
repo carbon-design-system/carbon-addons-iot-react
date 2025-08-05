@@ -1,0 +1,52 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _composed-structured-list.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../vendor/carbon-components/scss/globals/scss/vars';
+
+.#{$iot-prefix}--composed-structured-list {
+  &__wrapper {
+    width: inherit;
+  }
+
+  &__empty-content {
+    background-color: $ui-01;
+    text-align: center;
+    color: $text-03;
+    // stylelint-disable-next-line declaration-property-unit-blacklist
+    font-size: 14px;
+    padding-top: 90px;
+    padding-bottom: 115px;
+    font-weight: regular;
+    caption-side: bottom;
+    display: table-caption;
+  }
+
+  &__loading {
+    padding-top: $spacing-05;
+  }
+
+  &__list-cell {
+    min-width: var(--width);
+    max-width: var(--width);
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+}

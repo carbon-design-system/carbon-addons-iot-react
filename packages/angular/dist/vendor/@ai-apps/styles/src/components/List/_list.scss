@@ -1,0 +1,102 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _list.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../globals/vars';
+
+.#{$iot-prefix}--list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  max-height: 100%;
+  &--header {
+    flex: 0;
+  }
+  &--content {
+    background: $ui-01;
+    flex: 1;
+    overflow-y: auto;
+
+    &__full-height {
+      overflow-y: unset;
+    }
+  }
+
+  &__full-height {
+    height: 100%;
+  }
+
+  &--page {
+    position: relative;
+    div[class^='SimplePagination__StyledContainer'] {
+      border-top: $ui-03;
+      background: $ui-01;
+      height: rem(40px);
+      border: none;
+    }
+    div > span {
+      padding-left: $spacing-05;
+      margin-right: auto;
+    }
+  }
+
+  &--empty-state {
+    padding: $spacing-05 0 $spacing-05;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    &__full-height {
+      height: 100%;
+      padding: 0;
+    }
+
+    svg {
+      margin-bottom: $spacing-06;
+    }
+
+    .explore-button {
+      margin-top: $spacing-06;
+    }
+  }
+}
+
+.#{$iot-prefix}--list--skeleton {
+  margin: $spacing-03 0 $spacing-03 $spacing-05;
+}
+
+.#{$iot-prefix}--load-more-row {
+  justify-content: center;
+  cursor: pointer;
+  min-width: 100%;
+  border: none;
+  background: $ui-01;
+  &--content {
+    color: $interactive-01;
+  }
+  .#{prefix}--loading__stroke {
+    stroke: $interactive-01;
+  }
+  &.#{$prefix}--btn--disabled,
+  .#{$prefix}--btn--disabled:focus,
+  .#{$prefix}--btn--disabled:hover {
+    border-bottom: 1px solid $decorative-01;
+  }
+}

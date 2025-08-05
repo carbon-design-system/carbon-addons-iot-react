@@ -1,0 +1,91 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _data-table-skeleton.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+@import '../../globals/scss/vars';
+
+@include exports('data-table-skeleton') {
+  .#{$prefix}--data-table.#{$prefix}--skeleton {
+    th {
+      padding-left: 1rem;
+      vertical-align: middle;
+    }
+
+    th span,
+    td span {
+      @include skeleton;
+
+      display: block;
+
+      width: rem(64px);
+      height: rem(16px);
+    }
+
+    tr:hover {
+      td {
+        border-color: $border-subtle;
+        background: transparent;
+
+        &:first-of-type,
+        &:last-of-type {
+          border-color: $border-subtle;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--data-table.#{$prefix}--skeleton .#{$prefix}--table-sort-v2 {
+    pointer-events: none;
+  }
+
+  .#{$prefix}--data-table.#{$prefix}--skeleton th span {
+    background: $skeleton-element;
+  }
+
+  .#{$prefix}--data-table.#{$prefix}--skeleton th span::before {
+    background: $skeleton-background;
+  }
+
+  .#{$prefix}--data-table-container.#{$prefix}--skeleton
+    .#{$prefix}--data-table-header__title {
+    @include skeleton;
+
+    width: rem(120px);
+    height: rem(24px);
+  }
+
+  .#{$prefix}--data-table-container.#{$prefix}--skeleton
+    .#{$prefix}--data-table-header__description {
+    @include skeleton;
+
+    width: rem(160px);
+    height: rem(16px);
+
+    margin-top: $spacing-03;
+  }
+}

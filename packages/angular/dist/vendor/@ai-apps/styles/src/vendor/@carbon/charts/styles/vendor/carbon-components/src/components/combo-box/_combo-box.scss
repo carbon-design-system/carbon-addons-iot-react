@@ -1,0 +1,73 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _combo-box.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// ComboBox
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+@import '../list-box/list-box';
+@import '../../globals/scss/css--reset';
+
+/// Combo box styles
+/// @access private
+/// @group combo-box
+@mixin combo-box {
+  .#{$prefix}--combo-box:hover {
+    background-color: $field-01;
+  }
+
+  .#{$prefix}--combo-box.#{$prefix}--list-box--light:hover {
+    background-color: $field-02;
+  }
+
+  .#{$prefix}--combo-box .#{$prefix}--text-input::-ms-clear {
+    display: none;
+  }
+
+  .#{$prefix}--combo-box.#{$prefix}--list-box--expanded
+    .#{$prefix}--text-input {
+    border-bottom-color: $ui-03;
+  }
+
+  .#{$prefix}--combo-box .#{$prefix}--list-box__field,
+  .#{$prefix}--combo-box.#{$prefix}--list-box[data-invalid]
+    .#{$prefix}--list-box__field,
+  .#{$prefix}--combo-box.#{$prefix}--list-box--warning
+    .#{$prefix}--list-box__field,
+  .#{$prefix}--combo-box.#{$prefix}--list-box--disabled.#{$prefix}--list-box[data-invalid]
+    .#{$prefix}--list-box__field,
+  .#{$prefix}--combo-box.#{$prefix}--list-box--disabled.#{$prefix}--list-box--warning
+    .#{$prefix}--list-box__field {
+    padding: 0;
+  }
+}
+
+@include exports('combo-box') {
+  @include combo-box;
+}

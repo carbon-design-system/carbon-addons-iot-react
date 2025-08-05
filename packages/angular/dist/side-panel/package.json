@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-side-panel.umd.js",
+  "module": "../fesm2015/ai-apps-angular-side-panel.js",
+  "es2015": "../fesm2015/ai-apps-angular-side-panel.js",
+  "esm2015": "../esm2015/side-panel/ai-apps-angular-side-panel.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-side-panel.js",
+  "typings": "ai-apps-angular-side-panel.d.ts",
+  "metadata": "ai-apps-angular-side-panel.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/side-panel"
+}

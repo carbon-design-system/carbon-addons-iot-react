@@ -1,0 +1,65 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _meter.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$prefix}--#{$charts-prefix}--meter {
+	rect.container {
+		fill: $ui-01;
+	}
+
+	line.rangeIndicator {
+		stroke: $carbon--gray-40;
+		stroke-width: 1px;
+		@if $carbon--theme ==
+			$carbon--theme--g90 or
+			$carbon--theme ==
+			$carbon--theme--g100
+		{
+			stroke: $carbon--gray-60;
+		}
+	}
+
+	rect.value {
+		&.status--danger {
+			fill: $support-01;
+		}
+
+		&.status--warning {
+			fill: $support-03;
+			stroke-width: 1px;
+			stroke: $carbon-dataviz-alert;
+			@if $carbon--theme ==
+				$carbon--theme--g90 or
+				$carbon--theme ==
+				$carbon--theme--g100
+			{
+				stroke: none;
+			}
+		}
+
+		&.status--success {
+			fill: $support-02;
+		}
+	}
+
+	line.peak {
+		stroke: $ui-05;
+		stroke-width: 2px;
+	}
+}

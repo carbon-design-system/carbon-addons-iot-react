@@ -1,0 +1,46 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _mixins.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+// @access public
+// @content Includes a block of styles for sticky data tables that sets table max-width, max-height and column min-width
+// @example - @include sticky-header($max-height: to-rem(900px), $min-width: to-rem(30px));
+// @param {value} $max-width [100%] - sets the max-width of the data table parent container
+// @param {value} $max-height [to-rem(300px)] - sets the max-height of the data table
+// @param {value} $min-width [to-rem(100px)] - sets the min-width of th's and td's so their sizes align
+@mixin sticky-header(
+  $min-width: false,
+  $max-width: 100%,
+  $max-height: to-rem(300px)
+) {
+  .#{$prefix}--data-table--max-width {
+    max-width: $max-width;
+  }
+
+  .#{$prefix}--data-table--sticky-header {
+    max-height: $max-height;
+
+    @if $min-width {
+      th:not(.#{$prefix}--table-column-checkbox):not(.#{$prefix}--table-column-menu):not(.#{$prefix}--table-expand):not(.#{$prefix}--table-column-icon),
+      td:not(.#{$prefix}--table-column-checkbox):not(.#{$prefix}--table-column-menu):not(.#{$prefix}--table-expand):not(.#{$prefix}--table-column-icon) {
+        min-width: $min-width;
+      }
+    }
+  }
+}

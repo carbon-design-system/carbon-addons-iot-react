@@ -1,0 +1,68 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _card-editor.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.#{$iot-prefix}--card-editor {
+  height: 100%;
+  width: 16rem;
+  display: flex;
+  background: $ui-01;
+  flex-direction: column;
+  border-left: 1px solid $ui-03;
+  &--header {
+    flex: 0 0 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-02;
+    border-bottom: 1px solid $ui-03;
+    h5 {
+      padding: 0 $spacing-03;
+    }
+  }
+
+  &--footer {
+    border-top: solid 1px $ui-03;
+    & > button {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &--content {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+
+    .#{$iot-prefix}--list-item {
+      height: $spacing-09;
+    }
+  }
+
+  &--header--title {
+    @include type-style('productive-heading-02');
+    padding-left: $spacing-03;
+    width: 100%;
+  }
+}
+
+.#{$iot-prefix}--card-gallery-list__icon > svg {
+  height: 34px;
+  width: 40px;
+}

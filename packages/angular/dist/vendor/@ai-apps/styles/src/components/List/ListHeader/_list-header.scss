@@ -1,0 +1,66 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _list-header.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--list-header {
+  display: flex;
+  align-items: center;
+  background: $ui-01;
+  padding: $spacing-04;
+  border-bottom: 1px solid $ui-03;
+  height: rem(56px);
+  &--title {
+    @include type-style('productive-heading-02');
+    flex: 1;
+  }
+
+  &--btn-container {
+    display: flex;
+    padding: $spacing-03;
+    align-items: center;
+    & > * {
+      margin-left: $spacing-05;
+    }
+  }
+
+  &--search {
+    padding: 0 $spacing-05;
+    height: rem(56px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: $ui-01;
+    & > div {
+      flex: 1;
+    }
+  }
+
+  &--search__expanded {
+    background: $ui-01;
+    width: 80%;
+    left: 1.5rem;
+    position: absolute;
+  }
+
+  &--add {
+    padding: $spacing-03;
+  }
+}

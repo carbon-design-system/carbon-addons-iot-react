@@ -1,0 +1,74 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _skeleton.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+$lines-bg-color: $ui-03;
+$lines-shimmer-color: $carbon--white-0;
+$areas-bg-color: rgba(127, 127, 127, 0.1);
+$areas-shimmer-color: rgba($carbon--white-0, 0.15);
+
+.#{$prefix}--#{$charts-prefix}--skeleton {
+	// lines
+	rect.chart-skeleton-backdrop {
+		@if $carbon--theme == $carbon--theme--g10 {
+			fill: $ui-01;
+		} @else if $carbon--theme == $carbon--theme--g90 {
+			fill: $carbon--gray-100;
+		} @else {
+			fill: $ui-background;
+		}
+	}
+
+	.shimmer-effect-lines {
+		stroke-width: 1px;
+	}
+
+	.shimmer-effect-sparkline {
+		stroke-width: 0px;
+	}
+
+	.empty-state-lines {
+		stroke-width: 1px;
+		stroke: $lines-bg-color;
+	}
+
+	.shimmer-lines {
+		.stop-bg-shimmer {
+			stop-color: $lines-bg-color;
+		}
+
+		.stop-shimmer {
+			stop-color: $lines-shimmer-color;
+		}
+	}
+
+	.empty-state-areas {
+		fill: $areas-bg-color;
+	}
+
+	.shimmer-areas {
+		.stop-bg-shimmer {
+			stop-color: $areas-bg-color;
+		}
+
+		.stop-shimmer {
+			stop-color: $areas-shimmer-color;
+		}
+	}
+}

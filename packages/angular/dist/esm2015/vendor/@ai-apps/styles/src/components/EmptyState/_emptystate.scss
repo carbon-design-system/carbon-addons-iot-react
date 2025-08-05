@@ -1,0 +1,62 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _emptystate.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../globals/vars';
+@import '../../globals/spacing';
+@import '../../globals/typography';
+
+.#{$iot-prefix}--empty-state {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100%;
+  padding: $spacing-09;
+  &--icon {
+    margin-bottom: $spacing-05;
+    height: 80px;
+    width: auto;
+  }
+
+  &--content {
+    max-width: 30rem;
+    overflow-wrap: break-word;
+  }
+
+  &--title {
+    @include type-style('productive-heading-03');
+    color: $text-01;
+    margin-bottom: $spacing-03;
+  }
+
+  &--text {
+    color: $text-01;
+    @include type-style('body-short-01');
+  }
+
+  &--action {
+    margin-top: $spacing-05;
+  }
+
+  &--link {
+    margin-top: $spacing-05;
+    @include type-style('body-short-01');
+    color: $interactive-01;
+  }
+}

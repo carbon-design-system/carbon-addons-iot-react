@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/ai-apps-angular-icon-content-switcher.umd.js",
+  "module": "../fesm2015/ai-apps-angular-icon-content-switcher.js",
+  "es2015": "../fesm2015/ai-apps-angular-icon-content-switcher.js",
+  "esm2015": "../esm2015/icon-content-switcher/ai-apps-angular-icon-content-switcher.js",
+  "fesm2015": "../fesm2015/ai-apps-angular-icon-content-switcher.js",
+  "typings": "ai-apps-angular-icon-content-switcher.d.ts",
+  "metadata": "ai-apps-angular-icon-content-switcher.metadata.json",
+  "sideEffects": false,
+  "name": "@ai-apps/angular/icon-content-switcher"
+}

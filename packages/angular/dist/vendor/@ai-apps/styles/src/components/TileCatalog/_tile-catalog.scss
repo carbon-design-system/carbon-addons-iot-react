@@ -1,0 +1,70 @@
+/**
+ *
+ * @ai-apps/angular v2.155.1 | _tile-catalog.scss
+ *
+ * Copyright 2014, 2025 IBM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+@import '../../vendor/carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--tile-catalog {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.#{$iot-prefix}--tile-catalog--header {
+  background: $ui-02;
+
+  display: flex;
+  height: 3rem;
+
+  .bx--toolbar-action:active:not([disabled]) {
+    outline-color: transparent;
+  }
+
+  .bx--toolbar-search-container-expandable {
+    max-width: 40%;
+    padding: 0;
+    width: auto;
+  }
+
+  .bx--search-input:focus {
+    width: 100%;
+  }
+}
+
+.#{$iot-prefix}--tile-catalog--empty-tile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  > * {
+    padding-bottom: $spacing-03;
+  }
+}
+
+html[dir='rtl'] {
+  .#{$prefix}--tile--selectable {
+    padding-left: $spacing-09;
+    padding-right: $spacing-05;
+  }
+
+  .#{$prefix}--tile__checkmark {
+    right: initial;
+    left: $spacing-05;
+  }
+}
