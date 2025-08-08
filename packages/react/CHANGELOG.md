@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.6...v5.1.7) (2025-08-08)
+
+
+### Bug Fixes
+
+* **tablecellrenderer:** fix text truncate and tooltip with WrapCellText ([#3991](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3991)) ([ae6358b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae6358bf3e90ac40bbe7226a8deeaa8dffbaf93f))
+
+
+
+
+
 ## [5.1.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.5...v5.1.6) (2025-08-05)
 
 **Note:** Version bump only for package carbon-addons-iot-react
