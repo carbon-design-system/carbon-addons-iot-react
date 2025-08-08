@@ -350,3 +350,52 @@ export const TableLegacyColumnManagement = () => {
 };
 
 TableLegacyColumnManagement.storyName = 'With legacy column management';
+
+export const WithWrapCellText = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const tableContainerWidth = select('Table container width', ['none', '300px', '800px'], 'none');
+
+  const wrapCellText = select(
+    'WrapCellText',
+    ['always', 'never', 'auto', 'alwaysTruncate', 'expand'],
+    'auto'
+  );
+
+  const ordering = object('Ordering (view.table.ordering)', [
+    { columnId: 'string' },
+    { columnId: 'date' },
+    { columnId: 'select' },
+    { columnId: 'secretField' },
+  ]);
+
+  const columns = [
+    { id: 'string', name: 'String', width: '100px' },
+    { id: 'date', name: 'Date', width: '250px' },
+    { id: 'select', name: 'Select', width: '100px' },
+    { id: 'secretField', name: 'Secret Information', width: '300px' },
+  ];
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <div style={{ width: tableContainerWidth }}>
+      <MyTable
+        id="table"
+        columns={columns}
+        data={tableData.slice(0, 10)}
+        options={{
+          wrapCellText,
+        }}
+        view={{
+          table: { ordering },
+        }}
+        actions={{
+          table: {
+            onColumnResize: action('onColumnResize'),
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+WithWrapCellText.storyName = 'With Wrap Cell Text';
