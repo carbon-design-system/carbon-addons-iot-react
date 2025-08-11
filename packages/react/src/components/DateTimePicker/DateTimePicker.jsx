@@ -13,7 +13,7 @@ import {
   OrderedList,
   ListItem,
   Layer,
-} from '@carbon/react';
+} from '@carbon/react'; // solve error
 import { Calendar, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
