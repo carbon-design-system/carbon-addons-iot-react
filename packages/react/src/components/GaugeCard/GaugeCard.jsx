@@ -67,6 +67,7 @@ const GaugeCard = ({
   // TODO: remove deprecated testID in v3.
   testID,
   testId,
+  padding,
   ...others
 }) => {
   const [loadedState, setLoadedState] = useState(false);
@@ -83,9 +84,9 @@ const GaugeCard = ({
     ? {}
     : {
         paddingTop: 0,
-        paddingRight: CARD_CONTENT_PADDING,
-        paddingBottom: CARD_CONTENT_PADDING,
-        paddingLeft: CARD_CONTENT_PADDING,
+        paddingRight: padding ? CARD_CONTENT_PADDING : 0,
+        paddingBottom: padding ? CARD_CONTENT_PADDING : 0,
+        paddingLeft: padding ? CARD_CONTENT_PADDING : 0,
         rowGap: size === CARD_SIZES.SMALL ? 0 : '1rem',
       };
 
@@ -207,6 +208,7 @@ GaugeCard.defaultProps = {
       },
     ],
   },
+  padding: true,
   values: {},
 };
 
