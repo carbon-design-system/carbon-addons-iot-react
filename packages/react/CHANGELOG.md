@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.7...v5.1.8) (2025-08-13)
+
+
+### Bug Fixes
+
+* gauge card added padding prop to manage padding ([d2289a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d2289a7d58f18388a063ff93c62a540abe3a9235))
+
+
+
+
+
 ## [5.1.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.6...v5.1.7) (2025-08-08)
 
 
