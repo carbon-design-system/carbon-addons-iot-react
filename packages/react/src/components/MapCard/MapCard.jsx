@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import classnames from 'classnames';
 import { Maximize, Close } from '@carbon/react/icons';
-import { useLangDirection } from 'use-lang-direction';
 
+import { useLangDirection } from '../../utils/useLangDirection';
 import Button from '../Button';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';

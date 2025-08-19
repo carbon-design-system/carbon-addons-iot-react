@@ -9,9 +9,9 @@ import {
   OverflowMenuItem,
 } from '@carbon/react';
 import classnames from 'classnames';
-import { useLangDirection } from 'use-lang-direction';
 import { isNil, pick } from 'lodash-es';
 
+import { useLangDirection } from '../../../utils/useLangDirection';
 import { Tooltip } from '../../Tooltip';
 import { OverflowMenu } from '../../OverflowMenu';
 import Button from '../../Button';
