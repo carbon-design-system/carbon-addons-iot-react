@@ -3,8 +3,8 @@ import { HeaderGlobalBar, OverflowMenuItem } from '@carbon/react';
 import PropTypes from 'prop-types';
 import { Close, OverflowMenuVertical } from '@carbon/react/icons';
 import ReactDOM from 'react-dom';
-import { useLangDirection } from 'use-lang-direction';
 
+import { useLangDirection } from '../../utils/useLangDirection';
 import { OverflowMenu } from '../OverflowMenu';
 import { settings } from '../../constants/Settings';
 

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useLangDirection } from 'use-lang-direction';
+
+import { useLangDirection } from '../utils/useLangDirection';
 
 /**
  * constant override to fix the calculated result returned from getMenuOffset in carbon
