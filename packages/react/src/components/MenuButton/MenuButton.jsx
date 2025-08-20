@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Menu } from '@carbon/react';
 import { ChevronDown, ChevronUp } from '@carbon/react/icons';
 import classnames from 'classnames';
-import { useLangDirection } from 'use-lang-direction';
 
+import { useLangDirection } from '../../utils/useLangDirection';
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
 

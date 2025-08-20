@@ -18,8 +18,8 @@ import { Calendar, WarningFilled } from '@carbon/react/icons';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
-import { useLangDirection } from 'use-lang-direction';
 
+import { useLangDirection } from '../../utils/useLangDirection';
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import TimePickerDropdown from '../TimePicker/TimePickerDropdown';
 import { settings } from '../../constants/Settings';
