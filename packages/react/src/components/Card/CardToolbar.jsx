@@ -8,8 +8,8 @@ import {
   unstable_FeatureFlags as FeatureFlags,
 } from '@carbon/react';
 import classnames from 'classnames';
-import { useLangDirection } from 'use-lang-direction';
 
+import { useLangDirection } from '../../utils/useLangDirection';
 import { settings } from '../../constants/Settings';
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';

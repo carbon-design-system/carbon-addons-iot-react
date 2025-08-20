@@ -1455,7 +1455,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.24.7"
 
-"@babel/plugin-transform-runtime@^7.16.0", "@babel/plugin-transform-runtime@^7.17.0", "@babel/plugin-transform-runtime@^7.24.7":
+"@babel/plugin-transform-runtime@^7.16.0", "@babel/plugin-transform-runtime@^7.24.7":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.24.7.tgz#00a5bfaf8c43cf5c8703a8a6e82b59d9c58f38ca"
   integrity sha512-YqXjrk4C+a1kZjewqt+Mmu2UuV1s07y8kqcUf4qYLnoqemhR4gRQikhdAhSVJioMjVTu6Mo6pAbaypEA3jY6fw==
@@ -20957,13 +20957,6 @@ use-isomorphic-layout-effect@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz#497cefb13d863d687b08477d9e5a164ad8c1a6fb"
   integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
-
-use-lang-direction@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/use-lang-direction/-/use-lang-direction-0.2.0.tgz#6e3aaf997d904fcdacefd1cdbf7d40c3187b5ede"
-  integrity sha512-Wibllnif/Ib985B5ZiXHF4fjKBU/G8iHplbnkqJW19qT0v1l8WAD0Ejlw1a5KdzR1K8q7xYcQBYv7Q+ut0hOEA==
-  dependencies:
-    "@babel/plugin-transform-runtime" "^7.17.0"
 
 use-resize-observer@^8.0.0:
   version "8.0.0"
