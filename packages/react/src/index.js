@@ -70,6 +70,7 @@ export { default as uiresources } from './components/SuiteHeader/util/uiresource
 export { default as cacheduiresources } from './components/SuiteHeader/util/cacheduiresources';
 export { default as Walkme } from './components/Walkme/Walkme';
 export { default as ReadOnlyValue } from './components/ReadOnlyValue/ReadOnlyValue';
+export { useLangDirection } from './utils/useLangDirection';
 
 // Dashboard
 export { default as Dashboard } from './components/Dashboard/Dashboard';
