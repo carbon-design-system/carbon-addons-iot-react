@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.10...v5.1.11) (2025-08-21)
+
+
+### Bug Fixes
+
+* dashboard grid rtl support ([3f1fa8c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3f1fa8cacbbc4f45c2aa55260932be650375fc90))
+
+
+
+
+
 ## [5.1.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.9...v5.1.10) (2025-08-20)
 
 
