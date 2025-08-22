@@ -214,8 +214,8 @@
     "d3": "^7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@carbon/charts": "1.23.10",
-    "@carbon/charts-react": "1.23.10",
+    "@carbon/charts": ">=1.23.10 <2",
+    "@carbon/charts-react": ">=1.23.10 <2",
     "@carbon/react": "1.88.0"
   },
   "devDependencies": {
@@ -235,8 +235,8 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-flow": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
-    "@carbon/charts": "1.23.10",
-    "@carbon/charts-react": "1.23.10",
+    "@carbon/charts": "1.23.17",
+    "@carbon/charts-react": "1.23.17",
     "@carbon/react": "1.88.0",
     "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
