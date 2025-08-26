@@ -209,13 +209,13 @@
     "react-dom": "^18.2.0",
     "@carbon/charts": ">=1.23.10 <2",
     "@carbon/charts-react": ">=1.23.10 <2",
-    "@carbon/colors": "11.34.0",
-    "@carbon/icons-react": "11.61.0",
-    "@carbon/layout": "11.35.0",
-    "@carbon/pictograms-react": "11.69.0",
-    "@carbon/react": "1.88.0",
-    "@carbon/telemetry": "^0.1.0",
-    "@carbon/themes": "11.54.0"
+    "@carbon/colors": ">=11 <12",
+    "@carbon/icons-react": ">=11 <12",
+    "@carbon/layout": ">=11 <12",
+    "@carbon/pictograms-react": ">=11 <12",
+    "@carbon/react": ">=1.88.0 <2",
+    "@carbon/themes": ">=11 <12",
+    "@carbon/telemetry": "^0.1.0"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^1.8.1",
