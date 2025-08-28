@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {
@@ -406,6 +406,7 @@ const CalendarPortal = ({
     const ro = new ResizeObserver(onRescroll);
     if (portalContentRef.current) ro.observe(portalContentRef.current);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       window.removeEventListener('resize', onRescroll);
       window.removeEventListener('scroll', onRescroll, { capture: true });
@@ -429,6 +430,7 @@ const CalendarPortal = ({
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
+    // eslint-disable-next-line consistent-return
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen, onClose, anchorRef]);
 
