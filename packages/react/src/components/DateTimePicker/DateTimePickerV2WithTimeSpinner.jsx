@@ -310,101 +310,157 @@ const CalendarPortal = ({
   onClose = () => {}, // Callback function to close the calendar portal
   children, // The content to be rendered inside the calendar portal
 }) => {
-  const portalContentRef = useRef(null); // Reference to the calendar portal content element
-  const [position, setPosition] = useState({ top: 0, left: 0 }); // State to store the position of the calendar portal
+  const [container, setContainer] = React.useState(null);
+  const portalContentRef = React.useRef(null);
+  const [position, setPosition] = React.useState({ top: 0, left: 0 });
+  const portalWidth = 316;
 
-  const portalWidth = 316; // Width of the calendar portal
+  // Decide container once the anchor exists (modal or body)
+  React.useEffect(() => {
+    const anchor = anchorRef?.current;
+    if (!anchor) {
+      setContainer(document.body);
+      return;
+    }
+    const modal = anchor.closest('.cds--modal-container');
+    setContainer(modal || document.body);
+  }, [anchorRef, isOpen]);
 
-  const updatePosition = useCallback(() => {
-    const anchor = anchorRef.current; // Reference to the anchor element
-    const portal = portalContentRef.current; // Reference to the calendar portal content element
+  const updatePosition = React.useCallback(() => {
+    const anchor = anchorRef.current;
+    const portal = portalContentRef.current;
+    const cont = container;
+    if (!anchor || !portal || !cont) return false;
 
-    if (!anchor || !portal) return false; // Return early if anchor or portal references are null
+    const rect = anchor.getBoundingClientRect();
+    const { innerWidth, innerHeight } = window;
+    const portalHeight = portal.offsetHeight;
+    const inModal = cont !== document.body;
 
-    const rect = anchor.getBoundingClientRect(); // Get the bounding client rectangle of the anchor element
-    const scrollY = window.scrollY || document.documentElement.scrollTop; // Get the current scroll position vertically
-    const scrollX = window.scrollX || document.documentElement.scrollLeft; // Get the current scroll position horizontally
-    const { innerWidth, innerHeight } = window; // Get the inner width and height of the window
+    let top;
+    let left;
 
-    const portalHeight = portal.offsetHeight; // Get the height of the calendar portal content element
+    if (inModal) {
+      // ----- inside modal: absolute, relative to modal rect -----
+      const modalRect = cont.getBoundingClientRect();
 
-    const topSpace = rect.top; // Top space available above the anchor element
-    const bottomSpace = innerHeight - rect.bottom; // Bottom space available below the anchor element
+      const topSpace = rect.top - modalRect.top;
+      const bottomSpace = modalRect.bottom - rect.bottom;
+      const fitsBelow = bottomSpace >= portalHeight;
+      const fitsAbove = topSpace >= portalHeight;
 
-    const fitsBelow = bottomSpace >= portalHeight; // Check if the calendar portal fits below the anchor element
-    const fitsAbove = topSpace >= portalHeight; // Check if the calendar portal fits above the anchor element
+      top = fitsBelow
+        ? rect.bottom - modalRect.top
+        : fitsAbove
+        ? rect.top - portalHeight - modalRect.top
+        : rect.bottom - portalHeight - modalRect.top;
 
-    const top = fitsBelow
-      ? rect.bottom + scrollY
-      : fitsAbove
-      ? rect.top + scrollY - portalHeight
-      : Math.max(scrollY, scrollY + rect.bottom - portalHeight); // Calculate the top position of the calendar portal
+      left = rect.right - portalWidth - modalRect.left;
 
-    let left = rect.right - portalWidth + scrollX; // Calculate the left position of the calendar portal
-    left = Math.max(0, Math.min(left, scrollX + innerWidth - portalWidth)); // Ensure the left position is within the viewport
+      // clamp within modal width
+      const modalWidth = cont.clientWidth;
+      left = Math.max(0, Math.min(left, modalWidth - portalWidth));
+    } else {
+      // ----- in body: FIXED, relative to viewport (no scroll offsets) -----
+      const topSpace = rect.top;
+      const bottomSpace = innerHeight - rect.bottom;
+      const fitsBelow = bottomSpace >= portalHeight;
+      const fitsAbove = topSpace >= portalHeight;
 
-    setPosition({ top, left }); // Update the position state
-    return true;
-  });
+      top = fitsBelow
+        ? rect.bottom
+        : fitsAbove
+        ? rect.top - portalHeight
+        : Math.max(0, innerHeight - portalHeight);
 
-  useEffect(() => {
-    if (isOpen) {
-      const frame = requestAnimationFrame(updatePosition); // Request an animation frame to update the position
-      return () => cancelAnimationFrame(frame); // Cancel the animation frame when the component unmounts
+      left = rect.right - portalWidth;
+      left = Math.max(0, Math.min(left, innerWidth - portalWidth));
     }
 
-    return undefined;
-  }, [isOpen, updatePosition]); // Depend on the isOpen prop to re-run the effect when it changes
+    setPosition((prev) => (prev.top === top && prev.left === left ? prev : { top, left }));
+    return true;
+  }, [anchorRef, container]);
 
-  useEffect(() => {
+  // Run after open + after content lays out
+  React.useLayoutEffect(() => {
+    if (!isOpen) return;
+    updatePosition();
+  }, [isOpen, updatePosition]);
+
+  // Reposition on resize/scroll. In modal, listen to modal scroller too.
+  React.useEffect(() => {
+    if (!isOpen || !container) return;
+
+    const inModal = container !== document.body;
+    const modalScroller = inModal
+      ? container.querySelector('.cds--modal-content') || container
+      : null;
+
+    const onRescroll = () => updatePosition();
+
+    window.addEventListener('resize', onRescroll);
+    window.addEventListener('scroll', onRescroll, { capture: true });
+    if (modalScroller) modalScroller.addEventListener('scroll', onRescroll, { capture: true });
+
+    // If the calendar's size changes (months switch), keep it stuck to the anchor
+    const ro = new ResizeObserver(onRescroll);
+    if (portalContentRef.current) ro.observe(portalContentRef.current);
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      window.removeEventListener('resize', onRescroll);
+      window.removeEventListener('scroll', onRescroll, { capture: true });
+      if (modalScroller) modalScroller.removeEventListener('scroll', onRescroll, { capture: true });
+      ro.disconnect();
+    };
+  }, [isOpen, container, updatePosition]);
+
+  // Close on outside click
+  React.useEffect(() => {
+    if (!isOpen) return;
     const handleClickOutside = (e) => {
-      const anchor = anchorRef.current; // Reference to the anchor element
+      const anchor = anchorRef.current;
       if (
         portalContentRef.current &&
         !portalContentRef.current.contains(e.target) &&
         anchor &&
         !anchor.contains(e.target)
       ) {
-        onClose(); // Call the onClose callback when clicking outside the calendar portal
+        onClose();
       }
     };
+    document.addEventListener('mousedown', handleClickOutside);
+    // eslint-disable-next-line consistent-return
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen, onClose, anchorRef]);
 
-    window.addEventListener('scroll', updatePosition, true); // Listen for scroll events and update the position
-    window.addEventListener('resize', updatePosition); // Listen for resize events and update the position
-    document.addEventListener('mousedown', handleClickOutside); // Listen for mousedown events and handle click outside the calendar portal
+  if (!isOpen || !container) return null;
 
-    return () => {
-      window.removeEventListener('scroll', updatePosition, true); // Remove the scroll event listener
-      window.removeEventListener('resize', updatePosition); // Remove the resize event listener
-      document.removeEventListener('mousedown', handleClickOutside); // Remove the click outside event listener
-    };
-  }, [anchorRef, onClose, updatePosition]); // Depend on the anchorRef and onClose props to re-run the effect when they change
-
-  if (!isOpen) return null; // Return null if the calendar portal is not open
+  const inModal = container !== document.body;
+  const stylePosition = inModal ? 'absolute' : 'fixed';
 
   return ReactDOM.createPortal(
     <div
       ref={portalContentRef}
       className="datetime-picker-portal"
       style={{
-        position: 'absolute',
-        top: `${position.top}px`,
-        left: `${position.left}px`,
-        width: `${portalWidth}px`,
+        position: stylePosition,
+        top: position.top,
+        left: position.left,
+        width: portalWidth,
         backgroundColor: 'white',
-        padding: '10px',
+        padding: 10,
         zIndex: 9999,
         overflowY: 'auto',
         overflowX: 'hidden',
-        maxHeight: '400px',
+        maxHeight: 400,
       }}
     >
       {children}
     </div>,
-    document.body // Attach the calendar portal to the document body
+    container
   );
 };
-
 const DateTimePicker = ({
   testId,
   defaultValue,
