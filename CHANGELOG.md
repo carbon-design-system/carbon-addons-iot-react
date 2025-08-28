@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.38...v4.1.39) (2025-08-28)
+
+
+### Bug Fixes
+
+* **xsmall-size:** xsmall support for card and tooltip backport ([#4011](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4011)) ([376f075](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/376f075fa2b6b3900c1b93f94ab54ae4a9d322ee))
+
+
+
+
+
 ## [4.1.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.37...v4.1.38) (2025-08-20)
 
 **Note:** Version bump only for package ibm-ai-applications
