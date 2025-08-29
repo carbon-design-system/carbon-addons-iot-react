@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.12...v5.2.0) (2025-08-29)
+
+
+### Bug Fixes
+
+* added extra header to the card ([e26ab5f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e26ab5f255e86a440d922ee714f3fd217403325d))
+
+
+### Features
+
+* added extra header to the card ([82f5c2d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82f5c2d6d99495f70b4449e036c14cda00c250d1))
+
+
+
+
+
 ## [5.1.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.1.11...v5.1.12) (2025-08-28)
 
 **Note:** Version bump only for package ibm-ai-applications
