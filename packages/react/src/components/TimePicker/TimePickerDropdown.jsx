@@ -631,6 +631,7 @@ const defaultSpinnerProps = {
 
 export const TimePickerSpinner = React.forwardRef(
   ({ onChange, position, value, testId, style, is24hours, amString, pmString }, ref) => {
+    const [container, setContainer] = useState(null);
     const currentTime = dayjs().format(AVAILABLE_FORMATS);
 
     const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
@@ -660,6 +661,12 @@ export const TimePickerSpinner = React.forwardRef(
     const thirdSpinnerRef = useRef();
 
     const numberOfSpinners = is24hours ? 2 : 3;
+
+    useEffect(() => {
+      const active = document.activeElement; // currently focused element
+      const nearestModal = active?.closest('.cds--modal');
+      setContainer(nearestModal || document.body);
+    }, []);
 
     useEffect(() => {
       setSelected([firstVal, secondVal, thirdVal]);
@@ -772,6 +779,7 @@ export const TimePickerSpinner = React.forwardRef(
 
     const dropdown = (
       <div
+        ref={ref}
         data-testid={testId}
         className={classnames(`${iotPrefix}--time-picker-spinner`, {
           [`${iotPrefix}--time-picker-spinner--24h`]: is24hours,
@@ -787,7 +795,9 @@ export const TimePickerSpinner = React.forwardRef(
         {is24hours ? null : listSpinner3}
       </div>
     );
-    return ReactDOM.createPortal(dropdown, document.body);
+
+    if (!container) return null;
+    return ReactDOM.createPortal(dropdown, container);
   }
 );
 
