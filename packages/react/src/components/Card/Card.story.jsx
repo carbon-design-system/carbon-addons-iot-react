@@ -92,7 +92,7 @@ const CardStoryStateManager = ({ children }) => {
 export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
-
+  const extraHeader = <Button>extra button</Button>;
   return (
     <div
       style={{
@@ -124,6 +124,7 @@ export const Basic = () => {
             ['default', 'none'],
             'default'
           )}
+          extraHeader={extraHeader}
         />
       </CardStoryStateManager>
     </div>
