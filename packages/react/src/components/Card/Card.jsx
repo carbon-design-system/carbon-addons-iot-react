@@ -320,6 +320,7 @@ const Card = (props) => {
     type,
     data,
     content,
+    extraHeaderContent,
     ...others
   } = props;
 
@@ -518,6 +519,7 @@ const Card = (props) => {
             testId={`${testID || testId}`}
           />
           {cardToolbar}
+          {extraHeaderContent}
         </CardHeader>
       )}
       <CardContent
