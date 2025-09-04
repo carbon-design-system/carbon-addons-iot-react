@@ -207,8 +207,8 @@
     "d3": "^7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@carbon/charts": "^1.23.10",
-    "@carbon/charts-react": "^1.23.10",
+    "@carbon/charts": "^1.23.17",
+    "@carbon/charts-react": "^1.23.17",
     "@carbon/colors": "^11.34.0",
     "@carbon/icons-react": "^11.61.0",
     "@carbon/layout": "^11.35.0",
@@ -353,7 +353,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "5.1.11",
+  "version": "5.2.0",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
