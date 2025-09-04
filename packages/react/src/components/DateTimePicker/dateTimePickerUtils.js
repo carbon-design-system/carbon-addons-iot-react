@@ -211,6 +211,7 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
       // the only way to display the calendar inline is to re-parent its DOM to our component
 
       if (v2) {
+        datePickerElem.cal.open();
         const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
         dp.appendChild(datePickerElem.cal.calendarContainer);
       } else {
