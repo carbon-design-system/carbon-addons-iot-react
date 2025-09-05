@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { delay, isNil } from 'lodash-es';
-import { sortStates } from '@carbon/react/sorting';
+import { sortStates } from '@carbon/react';
 import fileDownload from 'js-file-download';
 import warning from 'warning';
 import { firstBy } from 'thenby';
