@@ -4,10 +4,6 @@
 @use '@carbon/react/scss/config' as *;
 @use '@carbon/react/scss/compat/themes' as compat;
 @use '@carbon/react/scss/themes';
-@forward '@carbon/react/scss/theme' with (
-  $fallback: compat.$g10,
-  $theme: themes.$g10
-);
 @use '@carbon/react/scss/theme';
 @use '@carbon/react/scss/type' as *;
 @use 'globals/feature-flags' as *;
@@ -170,7 +166,7 @@
 @use 'components/OverflowMenu/overflow-menu' as *;
 
 :root {
-  @include theme.theme();
+  @include theme.theme(themes.$g10);
 }
 
 /// If true, includes font face mixins in `_css--font-face.scss` depending on the `css--plex` feature flag
