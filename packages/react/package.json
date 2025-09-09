@@ -204,9 +204,6 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "d3": "^7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@carbon/charts": "^1.23.17",
     "@carbon/charts-react": "^1.23.17",
     "@carbon/colors": "^11.34.0",
@@ -214,8 +211,11 @@
     "@carbon/layout": "^11.35.0",
     "@carbon/pictograms-react": "^11.69.0",
     "@carbon/react": "^1.88.0",
+    "@carbon/telemetry": "^0.1.0",
     "@carbon/themes": "^11.54.0",
-    "@carbon/telemetry": "^0.1.0"
+    "d3": "^7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^1.8.1",
@@ -353,7 +353,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "5.2.0",
+  "version": "5.2.1",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
