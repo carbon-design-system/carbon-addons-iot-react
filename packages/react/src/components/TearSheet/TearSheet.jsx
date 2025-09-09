@@ -1,4 +1,4 @@
-import React, { cloneElement, useMemo } from 'react';
+import React, { cloneElement, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Close } from '@carbon/react/icons';
 import classnames from 'classnames';
@@ -33,6 +33,7 @@ const propTypes = {
   }),
   children: PropTypes.node,
   testId: PropTypes.string,
+  shouldPreventClose: PropTypes.func,
 };
 
 const defaultProps = {
@@ -51,6 +52,7 @@ const defaultProps = {
   children: undefined,
   // TODO: set default testId in v3.
   testId: '',
+  shouldPreventClose: () => new Promise((res) => res(false)),
 };
 
 const TearSheet = ({
@@ -66,15 +68,18 @@ const TearSheet = ({
   i18n,
   children,
   testId,
+  shouldPreventClose,
 }) => {
-  const onCloseButton = () => {
+  const onCloseButton = useCallback(async () => {
+    const preventClose = await shouldPreventClose();
     if (onClose) {
       onClose();
-      goToPreviousSheet();
-    } else {
+    }
+    if (!preventClose) {
       goToPreviousSheet();
     }
-  };
+  }, [shouldPreventClose, onClose, goToPreviousSheet]);
+
   return (
     <div
       // TODO: use only testId in v3.
