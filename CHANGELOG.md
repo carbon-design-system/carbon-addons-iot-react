@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.2.1...v5.2.2) (2025-09-11)
+
+
+### Bug Fixes
+
+* **tearsheet:** prevent close when shouldPreventClose is true ([5c19f64](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5c19f64457ff0875f68835d8513899e22664151a))
+* **tearsheet:** wrapped both onClose and goToPrevious sheet ([d0a1168](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d0a116836cb399dd638795e88ce25bf37be6fb10))
+
+
+
+
+
 ## [5.2.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.2.0...v5.2.1) (2025-09-09)
 
 **Note:** Version bump only for package ibm-ai-applications
