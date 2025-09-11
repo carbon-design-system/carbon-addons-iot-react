@@ -273,6 +273,7 @@ const SideNav = ({
         title={link.linkContent}
         testId={`${testId}-menu-${index}`}
         className={`${iotPrefix}--side-nav__item--depth-${level}`}
+        {...(link.metaData ?? {})}
       >
         {children}
       </FilterableSideNavMenu>
