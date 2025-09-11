@@ -55,6 +55,7 @@ package-lock.json
 results
 
 .vscode
+.vscode/settings.json
 
 # Cypress artifacts
 packages/react/cypress/videos/
