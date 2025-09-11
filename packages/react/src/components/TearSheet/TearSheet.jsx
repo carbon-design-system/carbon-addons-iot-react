@@ -72,10 +72,10 @@ const TearSheet = ({
 }) => {
   const onCloseButton = useCallback(async () => {
     const preventClose = await shouldPreventClose();
-    if (onClose) {
-      onClose();
-    }
     if (!preventClose) {
+      if (onClose) {
+        onClose();
+      }
       goToPreviousSheet();
     }
   }, [shouldPreventClose, onClose, goToPreviousSheet]);
