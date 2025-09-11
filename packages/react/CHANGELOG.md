@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.40...v4.1.41) (2025-09-11)
+
+
+### Bug Fixes
+
+* adding link metadata to side nav filterable menus ([#4021](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4021)) ([d7db620](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7db6203a63fc48935b4eda2918c152d8dde1e23))
+
+
+
+
+
 ## [4.1.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.1.39...v4.1.40) (2025-08-28)
 
 **Note:** Version bump only for package carbon-addons-iot-react
