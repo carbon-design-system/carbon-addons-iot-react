@@ -118,7 +118,14 @@ export const ValueContentPropTypes = {
    * the original value and expects a value to be returned that will be rendered on the value card.
    * customerFormatter(defaultFormattedValue, originalValue)
    */
+  /** @deprecated use `formatter` */
   customFormatter: PropTypes.func,
+  /**
+   * formatter(originalValue, ctx) => ReactNode|string
+   * Called before default formatting. If it returns a non-nullish value, that is rendered.
+   * ctx: { locale, attribute, secondary?: boolean, isNumberValueCompact, fontSize }
+   */
+  formatter: PropTypes.func,
   /** optional custom font size for the displayed value */
   fontSize: PropTypes.number,
   /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
