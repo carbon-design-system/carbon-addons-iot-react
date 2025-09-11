@@ -54,8 +54,7 @@ package-lock.json
 .npmrc
 results
 
-.vscode
-.vscode/settings.json
+.vscode/*
 
 # Cypress artifacts
 packages/react/cypress/videos/
