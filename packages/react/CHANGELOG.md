@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.2.3...v5.3.0) (2025-09-15)
+
+
+### Features
+
+* **sidenav:** onFilterItems prop and getTabIndexBasedOnSearch added  ([#4023](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4023)) ([8568583](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8568583f45aadf24c3b301a9d75fffec9c087bfd))
+
+
+
+
+
 ## [5.2.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.2.2...v5.2.3) (2025-09-11)
 
 **Note:** Version bump only for package carbon-addons-iot-react
