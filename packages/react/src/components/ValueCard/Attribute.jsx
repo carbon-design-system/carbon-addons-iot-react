@@ -34,6 +34,7 @@ const propTypes = {
     tooltip: PropTypes.string,
   }).isRequired,
   customFormatter: PropTypes.func,
+  formatter: PropTypes.func,
   isEditable: PropTypes.bool,
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   locale: PropTypes.string,
@@ -65,6 +66,7 @@ const defaultProps = {
   secondaryValue: null,
   locale: 'en',
   customFormatter: null,
+  formatter: null,
   isEditable: false,
   testId: 'attribute',
   onValueClick: null,
@@ -80,6 +82,7 @@ const Attribute = ({
   attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel, tooltip },
   attributeCount,
   customFormatter,
+  formatter,
   isEditable,
   layout,
   locale,
@@ -140,7 +143,7 @@ const Attribute = ({
           precision={precision}
           color={valueColor}
           locale={locale}
-          customFormatter={customFormatter}
+          formatter={formatter ?? customFormatter}
           fontSize={fontSize}
           isNumberValueCompact={isNumberValueCompact}
           testId={`${testId}-value`}

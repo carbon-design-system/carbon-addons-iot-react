@@ -17,6 +17,7 @@ const propTypes = {
   color: PropTypes.string,
   locale: PropTypes.string,
   customFormatter: PropTypes.func,
+  formatter: PropTypes.func,
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
@@ -33,6 +34,7 @@ const defaultProps = {
   color: null,
   locale: 'en',
   customFormatter: null,
+  formatter: null,
   testId: 'value',
   onClick: null,
   measurementUnitLabel: null,
@@ -50,6 +52,7 @@ const ValueRenderer = ({
   color,
   locale,
   customFormatter,
+  formatter,
   fontSize,
   isNumberValueCompact,
   testId,
@@ -57,20 +60,41 @@ const ValueRenderer = ({
   dataSourceId,
   measurementUnitLabel,
 }) => {
-  let renderValue = value;
-  if (typeof value === 'boolean') {
-    renderValue = (
-      <span
-        data-testid={`${testId}-boolean`}
-        className={`${BASE_CLASS_NAME}__value-renderer--boolean`}
-      >
-        {value.toString()}
-      </span>
-    );
-  } else if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
-  } else if (isNil(value)) {
-    renderValue = PREVIEW_DATA;
+  const ctx = {
+    locale,
+    precision,
+    unit: measurementUnitLabel,
+    isNumberValueCompact,
+    layout,
+    dataSourceId
+  }
+  let renderValue;
+  if(typeof formatter === "function"){
+    try {
+      const out = formatter(value, ctx);
+      if (out!==null && out !== undefined) {
+        renderValue = out;
+      } 
+    } catch (e) {
+      // ignore and fall through to defaults
+    }
+  }
+  if (renderValue === undefined) {
+    renderValue = value;
+    if (typeof value === 'boolean') {
+      renderValue = (
+        <span
+          data-testid={`${testId}-boolean`}
+          className={`${BASE_CLASS_NAME}__value-renderer--boolean`}
+        >
+          {value.toString()}
+        </span>
+      );
+    } else if (typeof value === 'number') {
+        renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
+    } else if (isNil(value)) {
+        renderValue = PREVIEW_DATA;
+    }
   }
 
   renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
