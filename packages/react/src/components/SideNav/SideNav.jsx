@@ -8,7 +8,7 @@ import {
   // SideNavSwitcher,
 } from '@carbon/react';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import { partition } from 'lodash-es';
 
@@ -172,6 +172,7 @@ export const SideNavPropTypes = {
   }),
 
   testId: PropTypes.string,
+  onFilterItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -190,6 +191,7 @@ const defaultProps = {
   },
   testId: 'side-nav',
   recentLinks: [],
+  onFilterItems: () => {},
 };
 
 /**
@@ -223,6 +225,7 @@ const SideNav = ({
   i18n,
   testId,
   recentLinks,
+  onFilterItems,
   ...props
 }) => {
   /**
@@ -236,6 +239,10 @@ const SideNav = ({
   const renderLinkMenu = (link, index, level = 0, searchValue) => {
     const isFiltering = searchValue !== undefined;
     let parentActive = false;
+    const tabIndex =
+      searchValue && link.metaData?.getTabIndexBasedOnSearch
+        ? link.metaData.getTabIndexBasedOnSearch(link, index)
+        : link.metaData?.tabIndex;
     const children = link.childContent.map((childLink, childIndex) => {
       if (isAnyChildActive(childLink)) {
         parentActive = true;
@@ -250,7 +257,6 @@ const SideNav = ({
         ? handleSpecificKeyDown(['Escape'], (evt) => evt.stopPropagation())
         : undefined;
       const content = searchValue ? markText(childLink.content, searchValue) : childLink.content;
-
       return (
         <SideNavMenuItem
           onKeyDown={onKeyDown}
@@ -273,7 +279,12 @@ const SideNav = ({
         title={link.linkContent}
         testId={`${testId}-menu-${index}`}
         className={`${iotPrefix}--side-nav__item--depth-${level}`}
-        {...(link.metaData ?? {})}
+        {...(link.metaData
+          ? {
+              ...link.metaData,
+              tabIndex,
+            }
+          : {})}
       >
         {children}
       </FilterableSideNavMenu>
@@ -293,7 +304,10 @@ const SideNav = ({
 
         const isFiltering = searchValue !== undefined;
         const content = searchValue ? markText(link.linkContent, searchValue) : link.linkContent;
-
+        const tabIndex =
+          searchValue && link.metaData?.getTabIndexBasedOnSearch
+            ? link.metaData.getTabIndexBasedOnSearch(link, index)
+            : link.metaData?.tabIndex;
         return (
           <SideNavLink
             key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
@@ -306,7 +320,12 @@ const SideNav = ({
             className={classnames(link.metaData.className, {
               [`${iotPrefix}--side-nav__item--is-filtering`]: isFiltering,
             })}
-            {...link.metaData}
+            {...(link.metaData
+              ? {
+                  ...link.metaData,
+                  tabIndex,
+                }
+              : {})}
           >
             {content}
           </SideNavLink>
@@ -332,6 +351,10 @@ const SideNav = ({
       : filterableLinks;
     setRenderedFilterableLinks(renderLinks(linksToRender, newSearchValue));
   };
+
+  useEffect(() => {
+    onFilterItems(renderedFilterableLinks);
+  }, [onFilterItems, renderedFilterableLinks]);
 
   const search = hasSearch
     ? [
