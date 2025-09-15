@@ -240,9 +240,9 @@ const SideNav = ({
     const isFiltering = searchValue !== undefined;
     let parentActive = false;
     const tabIndex =
-      searchValue && link.metaData.getTabIndexBasedOnSearch
+      searchValue && link.metaData?.getTabIndexBasedOnSearch
         ? link.metaData.getTabIndexBasedOnSearch(link, index)
-        : link.metaData.tabIndex;
+        : link.metaData?.tabIndex;
     const children = link.childContent.map((childLink, childIndex) => {
       if (isAnyChildActive(childLink)) {
         parentActive = true;
@@ -305,9 +305,9 @@ const SideNav = ({
         const isFiltering = searchValue !== undefined;
         const content = searchValue ? markText(link.linkContent, searchValue) : link.linkContent;
         const tabIndex =
-          searchValue && link.metaData.getTabIndexBasedOnSearch
+          searchValue && link.metaData?.getTabIndexBasedOnSearch
             ? link.metaData.getTabIndexBasedOnSearch(link, index)
-            : link.metaData.tabIndex;
+            : link.metaData?.tabIndex;
         return (
           <SideNavLink
             key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
