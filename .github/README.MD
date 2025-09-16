@@ -33,6 +33,9 @@
 
 </p>
 
+Having Trouble with Version 5.x.x? [next](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/README.md)
+
+
 | Branch                                                                                  | Carbon version | MAS versions                    | Release                                                                                                                                                                           |
 | --------------------------------------------------------------------------------------- | -------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`next`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next)     | v11            | 9.2.x                           | <a href="https://www.npmjs.com/package/carbon-addons-iot-react"> <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="@latest npm version release" /> </a> |
