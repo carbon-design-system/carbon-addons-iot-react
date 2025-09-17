@@ -90,7 +90,9 @@ const ValueCard = ({
         content={content}
         locale={locale}
         title={title}
-        formatter={formatter ?? customFormatter}
+        // Prefer new formatter. Fall back to legacy customFormatter.
+        formatter={formatter}
+        customFormatter={customFormatter}
         testId={testID || testId}
         onAttributeClick={onAttributeClick}
         size={newSize}

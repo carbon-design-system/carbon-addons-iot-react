@@ -143,7 +143,9 @@ const Attribute = ({
           precision={precision}
           color={valueColor}
           locale={locale}
-          formatter={formatter ?? customFormatter}
+          // Prefer new formatter. Fall back to legacy customFormatter.
+          formatter={formatter}
+          customFormatter={customFormatter}
           fontSize={fontSize}
           isNumberValueCompact={isNumberValueCompact}
           testId={`${testId}-value`}

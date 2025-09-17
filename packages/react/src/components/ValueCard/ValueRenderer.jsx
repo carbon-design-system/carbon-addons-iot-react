@@ -66,15 +66,16 @@ const ValueRenderer = ({
     unit: measurementUnitLabel,
     isNumberValueCompact,
     layout,
-    dataSourceId
-  }
+    dataSourceId,
+  };
   let renderValue;
-  if(typeof formatter === "function"){
+  // Feed the value and context into the formatter function, if it exists.
+  if (typeof formatter === 'function') {
     try {
       const out = formatter(value, ctx);
-      if (out!==null && out !== undefined) {
+      if (out !== null && out !== undefined) {
         renderValue = out;
-      } 
+      }
     } catch (e) {
       // ignore and fall through to defaults
     }
@@ -91,9 +92,9 @@ const ValueRenderer = ({
         </span>
       );
     } else if (typeof value === 'number') {
-        renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
+      renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
     } else if (isNil(value)) {
-        renderValue = PREVIEW_DATA;
+      renderValue = PREVIEW_DATA;
     }
   }
 

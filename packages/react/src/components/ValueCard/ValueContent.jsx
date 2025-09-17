@@ -80,8 +80,9 @@ const ValueContent = ({
                 value: determineValue(attribute.secondaryValue.dataSourceId, values),
               }
             }
-            //Prefer new formatter. Fall back to legacy customFormatter.
-            formatter={formatter ?? customFormatter}
+            // Prefer new formatter. Fall back to legacy customFormatter.
+            formatter={formatter}
+            customFormatter={customFormatter}
             fontSize={fontSize}
             isNumberValueCompact={isNumberValueCompact}
             testId={`${testId}-attribute-${index}`}
