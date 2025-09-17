@@ -69,7 +69,8 @@ const ValueRenderer = ({
     dataSourceId,
   };
   let renderValue;
-  let formattedError = false;
+  let formatterNullish = false;
+  let formatterError = false;
   // Feed the value and context into the formatter function, if it exists.
   if (typeof formatter === 'function') {
     try {
@@ -77,10 +78,12 @@ const ValueRenderer = ({
       // Catches null and undefined values from formatter, but allows (0, '', false)
       if (out !== null && out !== undefined) {
         renderValue = out;
+      } else {
+        formatterNullish = true;
       }
     } catch (e) {
       // Turns on the flag, to keep a global reference of the error occuring.
-      formattedError = true;
+      formatterError = true;
     }
   }
   if (renderValue === undefined) {
@@ -102,7 +105,7 @@ const ValueRenderer = ({
   }
 
   // If customFormatter was defined and either... formatter was not passed or there was an error with the formatter function, fall back to customFormatter logic.
-  if (typeof customFormatter === 'function' && (!formatter || formattedError)) {
+  if (typeof customFormatter === 'function' && (!formatter || formatterError || formatterNullish)) {
     renderValue = customFormatter(renderValue, value);
   }
 
