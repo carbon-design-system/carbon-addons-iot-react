@@ -69,15 +69,18 @@ const ValueRenderer = ({
     dataSourceId,
   };
   let renderValue;
+  let formattedError = false;
   // Feed the value and context into the formatter function, if it exists.
   if (typeof formatter === 'function') {
     try {
       const out = formatter(value, ctx);
+      // Catches null and undefined values from formatter, but allows (0, '', false)
       if (out !== null && out !== undefined) {
         renderValue = out;
       }
     } catch (e) {
-      // ignore and fall through to defaults
+      // Turns on the flag, to keep a global reference of the error occuring.
+      formattedError = true;
     }
   }
   if (renderValue === undefined) {
@@ -98,7 +101,10 @@ const ValueRenderer = ({
     }
   }
 
-  renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
+  // If customFormatter was defined and either... formatter was not passed or there was an error with the formatter function, fall back to customFormatter logic.
+  if (typeof customFormatter === 'function' && (!formatter || formattedError)) {
+    renderValue = customFormatter(renderValue, value);
+  }
 
   const commonProps = {
     'data-testid': testId,
