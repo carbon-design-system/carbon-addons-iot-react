@@ -429,6 +429,11 @@ html[dir='rtl'] {
       }
     }
   }
+
+  .#{$prefix}--date-picker-container .#{$prefix}--label,
+  .#{$prefix}--date-picker-container .#{$prefix}--form-requirement {
+    direction: rtl;
+  }
 }
 
 .#{$iot-prefix}--card--toolbar .#{$iot-prefix}--date-time-pickerv2__wrapper:focus {
