@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Edit, MisuseOutline } from '@carbon/react/icons';
+import { Add, Edit, MisuseOutline } from '@carbon/react/icons';
 import { omit, isEmpty } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
@@ -108,6 +108,7 @@ const propTypes = {
     closeMenuText: PropTypes.string,
     incrementNumberText: PropTypes.string,
     decrementNumberText: PropTypes.string,
+    hierarchyDataItemSectionTitle: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   actions: DashboardEditorActionsPropTypes,
@@ -147,6 +148,7 @@ const defaultProps = {
     closeMenuText: 'Close menu',
     incrementNumberText: 'Increment number',
     decrementNumberText: 'Decrement number',
+    hierarchyDataItemSectionTitle: 'Hierarchy Data Item',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -257,7 +259,11 @@ const DataSeriesFormItem = ({
   translateWithId,
   actions,
 }) => {
-  const { onEditDataItem } = actions;
+  const {
+    onEditDataItem,
+    onAddHierarchyDataItems,
+    dataSeriesFormActions: { hasHierarchyDataItemsEnabled },
+  } = actions;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
@@ -273,6 +279,12 @@ const DataSeriesFormItem = ({
     cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
+
+  // determine if hierarchy data items are available
+  const isHierarchyDataItemsEnabled = useMemo(
+    () => hasHierarchyDataItemsEnabled && hasHierarchyDataItemsEnabled(cardConfig),
+    [cardConfig, hasHierarchyDataItemsEnabled]
+  );
 
   const removedItemsCountRef = useRef(0);
 
@@ -326,6 +338,42 @@ const DataSeriesFormItem = ({
       }
     },
     [cardConfig, dataSection, onChange, setSelectedDataItems, validDataItems]
+  );
+
+  const handleHierarchyDataItemChange = useCallback(
+    (selectedItem) => {
+      if (selectedItem && !isEmpty(selectedItem.dataItemId)) {
+        const selectedItems = [
+          ...dataSection,
+          {
+            ...selectedItem,
+            // create a unique dataSourceId if it's going into attributes
+            // if it's going into the groupBy section then just use the dataItem ID
+            dataSourceId:
+              selectedItem?.destination === 'groupBy'
+                ? selectedItem.dataItemId
+                : `${selectedItem.dataItemId}_${uuidv4()}`,
+          },
+        ];
+        // need to remove the category if the card is a stacked timeseries bar
+        const card =
+          cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+          cardConfig.content.timeDataSourceId &&
+          selectedItems.length > 1
+            ? omit(cardConfig, 'content.categoryDataSourceId')
+            : cardConfig;
+        const newCard = handleDataSeriesChange(
+          selectedItems,
+          card,
+          setEditDataSeries,
+          undefined,
+          removedItemsCountRef
+        );
+        setSelectedDataItems(selectedItems.map(({ dataSourceId }) => dataSourceId));
+        onChange(newCard);
+      }
+    },
+    [cardConfig, dataSection, onChange, setSelectedDataItems]
   );
 
   const handleEditButton = useCallback(
@@ -387,171 +435,215 @@ const DataSeriesFormItem = ({
     [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
   );
 
-  const dataItemListItems = useMemo(
-    () =>
-      dataSection?.map((dataItem, i) => {
-        const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
-        const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
-        return {
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label || dataItem.dataItemId,
-            icon:
-              cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
-                <div
-                  className={`${baseClassName}--data-item-list--item-color-icon`}
-                  style={{
-                    '--icon-color-option': iconColorOption,
-                  }}
-                />
-              ) : null,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}_edit`}
-                renderIcon={Edit}
-                hasIconOnly
-                kind="ghost"
-                size="sm"
-                onClick={() => handleEditButton(dataItem, i)}
-                iconDescription={mergedI18n.edit}
-                tooltipPosition="left"
-                tooltipAlignment="center"
-              />,
-              <Button
-                key={`data-item-${dataItem.dataSourceId}_remove`}
-                renderIcon={MisuseOutline}
-                hasIconOnly
-                kind="ghost"
-                size="sm"
-                onClick={() => handleRemoveButton(dataItem)}
-                iconDescription={mergedI18n.remove}
-                tooltipPosition="left"
-                tooltipAlignment="center"
-              />,
-            ],
-          },
-        };
-      }),
+  const generateListItems = useCallback(
+    (data, isHierarchy = false) =>
+      data
+        ?.filter((dataItem) =>
+          isHierarchyDataItemsEnabled ? Boolean(dataItem.resourceData?.uuid) === isHierarchy : true
+        )
+        .map((dataItem, i) => {
+          const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
+          const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
+          return {
+            id: dataItem.dataSourceId,
+            content: {
+              value: dataItem.label || dataItem.dataItemId,
+              icon:
+                cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
+                  <div
+                    className={`${baseClassName}--data-item-list--item-color-icon`}
+                    style={{
+                      '--icon-color-option': iconColorOption,
+                    }}
+                  />
+                ) : null,
+              rowActions: () => [
+                <Button
+                  key={`data-item-${dataItem.dataSourceId}_edit`}
+                  renderIcon={Edit}
+                  hasIconOnly
+                  kind="ghost"
+                  size="sm"
+                  onClick={() => handleEditButton(dataItem, i)}
+                  iconDescription={mergedI18n.edit}
+                  tooltipPosition="left"
+                  tooltipAlignment="center"
+                />,
+                <Button
+                  key={`data-item-${dataItem.dataSourceId}_remove`}
+                  renderIcon={MisuseOutline}
+                  hasIconOnly
+                  kind="ghost"
+                  size="sm"
+                  onClick={() => handleRemoveButton(dataItem)}
+                  iconDescription={mergedI18n.remove}
+                  tooltipPosition="left"
+                  tooltipAlignment="center"
+                />,
+              ],
+            },
+          };
+        }) || [],
     [
       cardConfig.type,
-      dataSection,
       handleEditButton,
       handleRemoveButton,
+      isHierarchyDataItemsEnabled,
       mergedI18n.edit,
       mergedI18n.remove,
     ]
   );
 
-  return !isEmpty(validDataItems) ? (
-    <>
-      <DataSeriesFormItemModal
-        cardConfig={cardConfig}
-        isSummaryDashboard={isSummaryDashboard}
-        showEditor={showEditor}
-        setShowEditor={setShowEditor}
-        editDataSeries={editDataSeries}
-        setEditDataSeries={setEditDataSeries}
-        editDataItem={editDataItem}
-        setEditDataItem={setEditDataItem}
-        validDataItems={validDataItems}
-        availableDimensions={availableDimensions}
-        dataSection={dataSection}
-        onChange={onChange}
-        i18n={mergedI18n}
-        actions={actions}
-        options={{
-          hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
-          hasUnit: type === CARD_TYPES.VALUE,
-          hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
-          hasThresholds: type === CARD_TYPES.VALUE,
-          hasTooltip: type === CARD_TYPES.VALUE,
-        }}
-        isLarge
-      />
-      <ContentFormItemTitle
-        title={mergedI18n.dataItemEditorSectionTitle}
-        // Specific to each card type
-        tooltip={{ ...cardSpecificTooltip }}
-      />
-      {cardConfig.type === CARD_TYPES.BAR && (
-        <BarChartDataSeriesContent
-          cardConfig={cardConfig}
-          onChange={onChange}
-          availableDimensions={availableDimensions}
-          i18n={mergedI18n}
-          translateWithId={translateWithId}
-        />
-      )}
-      <div className={`${baseClassName}--input`}>
-        {canMultiSelectDataItems ? (
-          <ComboBox
-            // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-${hash(validDataItems)}-selected_card-id-${cardConfig.id}`}
-            data-testid="editor--data-series--combobox"
-            id={`${cardConfig.id}_dataSourceIds-combobox`}
-            items={formatDataItemsForDropdown(validDataItems)}
-            itemToString={(item) => item?.text}
-            titleText={mergedI18n.dataItemEditorDataItemTitle}
-            addToList={false}
-            translateWithId={translateWithId}
-            shouldFilterItem={({ item, inputValue }) => {
-              return (
-                isEmpty(inputValue) ||
-                item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
-              );
-            }}
-            placeholder={mergedI18n.filter}
-            // clears out the input field after each selection
-            selectedItem={{ id: '', text: '' }}
-            onChange={handleSimpleDataSeriesChange}
-            light
-          />
-        ) : (
-          // Can't select more than one dataItem
-          <Dropdown
-            id={`${cardConfig.id}_dataSourceId`}
-            direction="bottom"
-            label={mergedI18n.selectDataItem}
-            light
-            translateWithId={translateWithId}
-            title={mergedI18n.selectDataItem}
-            titleText={mergedI18n.dataItem}
-            items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
-            selectedItem={
-              !isEmpty(cardConfig.content?.series) ? cardConfig.content?.series[0].dataItemId : null
-            }
-            onChange={({ selectedItem }) => {
-              const itemWithMetaData = validDataItems?.find(
-                ({ dataSourceId }) => dataSourceId === selectedItem
-              );
-              const newCard = handleDataSeriesChange(
-                [
-                  {
-                    id: selectedItem,
-                    ...(itemWithMetaData && { ...itemWithMetaData }),
-                    dataSourceId: `${selectedItem}_${uuidv4()}`,
-                  },
-                ],
-                cardConfig,
-                setEditDataSeries
-              );
-              setSelectedDataItems([selectedItem]);
-              onChange(newCard);
-            }}
-          />
-        )}
-      </div>
+  const dataItemListItems = useMemo(
+    () => generateListItems(dataSection),
+    [dataSection, generateListItems]
+  );
 
-      <List
-        className={`${baseClassName}--data-item-list`}
-        key={`data-item-list${selectedDataItems.length}`}
-        // need to force an empty "empty state"
-        emptyState={<div />}
-        title=""
-        items={dataItemListItems}
-      />
+  const hierarchyDataItemListItems = useMemo(
+    () => generateListItems(dataSection, true),
+    [dataSection, generateListItems]
+  );
+
+  return (
+    <>
+      {!isEmpty(validDataItems) && (
+        <>
+          <DataSeriesFormItemModal
+            cardConfig={cardConfig}
+            isSummaryDashboard={isSummaryDashboard}
+            showEditor={showEditor}
+            setShowEditor={setShowEditor}
+            editDataSeries={editDataSeries}
+            setEditDataSeries={setEditDataSeries}
+            editDataItem={editDataItem}
+            setEditDataItem={setEditDataItem}
+            validDataItems={validDataItems}
+            availableDimensions={availableDimensions}
+            dataSection={dataSection}
+            onChange={onChange}
+            i18n={mergedI18n}
+            actions={actions}
+            options={{
+              hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
+              hasUnit: type === CARD_TYPES.VALUE,
+              hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
+              hasThresholds: type === CARD_TYPES.VALUE,
+              hasTooltip: type === CARD_TYPES.VALUE,
+            }}
+            isLarge
+          />
+          <ContentFormItemTitle
+            title={mergedI18n.dataItemEditorSectionTitle}
+            // Specific to each card type
+            tooltip={{ ...cardSpecificTooltip }}
+          />
+          {cardConfig.type === CARD_TYPES.BAR && (
+            <BarChartDataSeriesContent
+              cardConfig={cardConfig}
+              onChange={onChange}
+              availableDimensions={availableDimensions}
+              i18n={mergedI18n}
+              translateWithId={translateWithId}
+            />
+          )}
+          <div className={`${baseClassName}--input`}>
+            {canMultiSelectDataItems ? (
+              <ComboBox
+                // need to re-gen if selected card changes or if a dataItem is removed from the list
+                key={`data-item-select-${hash(validDataItems)}-selected_card-id-${cardConfig.id}`}
+                data-testid="editor--data-series--combobox"
+                id={`${cardConfig.id}_dataSourceIds-combobox`}
+                items={formatDataItemsForDropdown(validDataItems)}
+                itemToString={(item) => item?.text}
+                titleText={mergedI18n.dataItemEditorDataItemTitle}
+                addToList={false}
+                translateWithId={translateWithId}
+                shouldFilterItem={({ item, inputValue }) => {
+                  return (
+                    isEmpty(inputValue) ||
+                    item?.text?.toLowerCase()?.includes(inputValue?.toLowerCase())
+                  );
+                }}
+                placeholder={mergedI18n.filter}
+                // clears out the input field after each selection
+                selectedItem={{ id: '', text: '' }}
+                onChange={handleSimpleDataSeriesChange}
+                light
+              />
+            ) : (
+              // Can't select more than one dataItem
+              <Dropdown
+                id={`${cardConfig.id}_dataSourceId`}
+                direction="bottom"
+                label={mergedI18n.selectDataItem}
+                light
+                translateWithId={translateWithId}
+                title={mergedI18n.selectDataItem}
+                titleText={mergedI18n.dataItem}
+                items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
+                selectedItem={
+                  !isEmpty(cardConfig.content?.series)
+                    ? cardConfig.content?.series[0].dataItemId
+                    : null
+                }
+                onChange={({ selectedItem }) => {
+                  const itemWithMetaData = validDataItems?.find(
+                    ({ dataSourceId }) => dataSourceId === selectedItem
+                  );
+                  const newCard = handleDataSeriesChange(
+                    [
+                      {
+                        id: selectedItem,
+                        ...(itemWithMetaData && { ...itemWithMetaData }),
+                        dataSourceId: `${selectedItem}_${uuidv4()}`,
+                      },
+                    ],
+                    cardConfig,
+                    setEditDataSeries
+                  );
+                  setSelectedDataItems([selectedItem]);
+                  onChange(newCard);
+                }}
+              />
+            )}
+          </div>
+
+          <List
+            className={`${baseClassName}--data-item-list`}
+            key={`data-item-list${selectedDataItems.length}`}
+            // need to force an empty "empty state"
+            emptyState={<div />}
+            title=""
+            items={dataItemListItems}
+          />
+        </>
+      )}
+
+      {isHierarchyDataItemsEnabled && (
+        <>
+          <ContentFormItemTitle title={mergedI18n.hierarchyDataItemSectionTitle} />
+
+          <Button
+            kind="ghost"
+            renderIcon={Add}
+            size="md"
+            onClick={() => onAddHierarchyDataItems(handleHierarchyDataItemChange)}
+          >
+            Add Hierarchy Data Item
+          </Button>
+
+          <List
+            className={`${baseClassName}--data-item-list`}
+            key={`hierarchy-data-item-list${selectedDataItems.length}`}
+            // need to force an empty "empty state"
+            emptyState={<div />}
+            title=""
+            items={hierarchyDataItemListItems}
+          />
+        </>
+      )}
     </>
-  ) : null;
+  );
 };
 DataSeriesFormItem.defaultProps = defaultProps;
 DataSeriesFormItem.propTypes = propTypes;
