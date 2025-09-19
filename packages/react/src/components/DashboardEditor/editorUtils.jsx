@@ -692,6 +692,11 @@ export const DashboardEditorActionsPropTypes = PropTypes.shape({
     ]
    */
   onEditDataItem: PropTypes.func,
+  /** Call back function for on click of add hierarchy data items button, returns a selcted dataSource
+   * onAddHierarchyDataItems(handleHierarchyDataItemChange: callback function to handle hierarchy data items change)
+   * return: void
+   */
+  onAddHierarchyDataItems: PropTypes.func,
   /** Form actions for dataSeries modal */
   dataSeriesFormActions: PropTypes.shape({
     /** callback function to determine aggregation dropdown visibility
@@ -709,6 +714,11 @@ export const DashboardEditorActionsPropTypes = PropTypes.shape({
      * return {boolean} : true or false
      */
     hasDataFilterDropdown: PropTypes.func,
+    /** callback function to determine hierarchyDataItems dropdown visibility
+     * hasHierarchyDataItemsEnabled(cardProps: card properties)
+     * return {boolean} : true or false
+     */
+    hasHierarchyDataItemsEnabled: PropTypes.func,
   }),
 });
 
@@ -717,9 +727,11 @@ const noop = () => {};
 
 export const defaultDashboardEditorActionsProps = {
   onEditDataItem: noop,
+  onAddHierarchyDataItems: noop,
   dataSeriesFormActions: {
     hasAggregationsDropDown: noop,
     hasGrainsDropDown: noop,
     hasDataFilterDropdown: noop,
+    hasHierarchyDataItemsEnabled: noop,
   },
 };
