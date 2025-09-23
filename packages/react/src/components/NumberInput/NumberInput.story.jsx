@@ -8,6 +8,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs';
+import { validateNumberSeparators } from 'carbon-components-react/lib/components/NumberInputV2/NumberInputV2';
 
 import { NumberInput, NumberInputSkeleton, NumberInputV2 } from '.';
 
@@ -81,6 +82,25 @@ export const NumberInputTypeText = () => {
 };
 
 NumberInputTypeText.storyName = 'type text';
+
+export const NumberInputcustomValidation = () => {
+  const { numberInputArrowTranslationIds } = props();
+  return (
+    <NumberInputV2
+      locale="en-US"
+      type="text"
+      max={10000000}
+      min={-10000000}
+      validate={validateNumberSeparators}
+      defaultValue={50}
+      invalidText={text('Form validation UI content (invalidText)', 'Number is not valid')}
+      allowEmpty
+      translateWithId={(id) => numberInputArrowTranslationIds[id]}
+    />
+  );
+};
+
+NumberInputcustomValidation.storyName = 'with validate method';
 
 export const Skeleton = () => (
   <div

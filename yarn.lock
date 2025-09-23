@@ -10384,10 +10384,10 @@ carbon-components-angular@4.56.2:
     flatpickr "4.6.1"
     tslib "^1.9.0"
 
-carbon-components-react@7.60.4:
-  version "7.60.4"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.4.tgz#55ca107f187813d6dc141546731896f864b3fd8b"
-  integrity sha512-F72VyUt11U524AVq5RzOZtyMYzy7VWAwRCs6+X/B36uaCTDWyrSq41x9sgvnADXxsjyOdUpgj4n7bKGfiDE31A==
+carbon-components-react@7.60.5:
+  version "7.60.5"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.60.5.tgz#c0799629422e5b506c09fdb4f3dc660c9890d5c4"
+  integrity sha512-oIuWkGSme4oNxYPhrSxopiaM0Fv2G9g/ZPSyOmFofFy8wpRUtBmCmKpyrDF6L5DsGGpleAsN7o+V8xqP1vegrw==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@carbon/feature-flags" "^0.7.3"
