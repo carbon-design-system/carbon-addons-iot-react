@@ -17,6 +17,7 @@ const propTypes = {
   color: PropTypes.string,
   locale: PropTypes.string,
   customFormatter: PropTypes.func,
+  formatter: PropTypes.func,
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
@@ -33,6 +34,7 @@ const defaultProps = {
   color: null,
   locale: 'en',
   customFormatter: null,
+  formatter: null,
   testId: 'value',
   onClick: null,
   measurementUnitLabel: null,
@@ -50,6 +52,7 @@ const ValueRenderer = ({
   color,
   locale,
   customFormatter,
+  formatter,
   fontSize,
   isNumberValueCompact,
   testId,
@@ -57,23 +60,54 @@ const ValueRenderer = ({
   dataSourceId,
   measurementUnitLabel,
 }) => {
-  let renderValue = value;
-  if (typeof value === 'boolean') {
-    renderValue = (
-      <span
-        data-testid={`${testId}-boolean`}
-        className={`${BASE_CLASS_NAME}__value-renderer--boolean`}
-      >
-        {value.toString()}
-      </span>
-    );
-  } else if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
-  } else if (isNil(value)) {
-    renderValue = PREVIEW_DATA;
+  const ctx = {
+    locale,
+    precision,
+    unit: measurementUnitLabel,
+    isNumberValueCompact,
+    layout,
+    dataSourceId,
+  };
+  let renderValue;
+  let formatterNullish = false;
+  let formatterError = false;
+  // Feed the value and context into the formatter function, if it exists.
+  if (typeof formatter === 'function') {
+    try {
+      const out = formatter(value, ctx);
+      // Catches null and undefined values from formatter, but allows (0, '', false)
+      if (out !== null && out !== undefined) {
+        renderValue = out;
+      } else {
+        formatterNullish = true;
+      }
+    } catch (e) {
+      // Turns on the flag, to keep a global reference of the error occuring.
+      formatterError = true;
+    }
+  }
+  if (renderValue === undefined) {
+    renderValue = value;
+    if (typeof value === 'boolean') {
+      renderValue = (
+        <span
+          data-testid={`${testId}-boolean`}
+          className={`${BASE_CLASS_NAME}__value-renderer--boolean`}
+        >
+          {value.toString()}
+        </span>
+      );
+    } else if (typeof value === 'number') {
+      renderValue = formatNumberWithPrecision(value, precision, locale, isNumberValueCompact);
+    } else if (isNil(value)) {
+      renderValue = PREVIEW_DATA;
+    }
   }
 
-  renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
+  // If customFormatter was defined and either... formatter was not passed or there was an error with the formatter function, fall back to customFormatter logic.
+  if (typeof customFormatter === 'function' && (!formatter || formatterError || formatterNullish)) {
+    renderValue = customFormatter(renderValue, value);
+  }
 
   const commonProps = {
     'data-testid': testId,

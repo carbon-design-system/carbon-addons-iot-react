@@ -32,6 +32,7 @@ const ValueCard = ({
   id,
   locale,
   customFormatter,
+  formatter,
   children,
   fontSize,
   isNumberValueCompact,
@@ -89,6 +90,8 @@ const ValueCard = ({
         content={content}
         locale={locale}
         title={title}
+        // Prefer new formatter. Fall back to legacy customFormatter.
+        formatter={formatter}
         customFormatter={customFormatter}
         testId={testID || testId}
         onAttributeClick={onAttributeClick}
@@ -116,6 +119,7 @@ ValueCard.defaultProps = {
   fontSize: DEFAULT_FONT_SIZE,
   cardVariables: null,
   customFormatter: null,
+  formatter: null,
   isNumberValueCompact: false,
   // TODO: fix this default in V3, so that cards are unique not inherited from the base Card
   testId: 'Card',

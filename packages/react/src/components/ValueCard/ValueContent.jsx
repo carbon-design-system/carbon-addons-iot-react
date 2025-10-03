@@ -29,6 +29,7 @@ const defaultProps = {
   values: null,
   fontSize: DEFAULT_FONT_SIZE,
   customFormatter: null,
+  formatter: null,
   isNumberValueCompact: false,
   testId: 'ValueContent',
   onAttributeClick: null,
@@ -45,6 +46,7 @@ const ValueContent = ({
   locale,
   isEditable,
   customFormatter,
+  formatter,
   fontSize,
   isNumberValueCompact,
   testId,
@@ -78,6 +80,8 @@ const ValueContent = ({
                 value: determineValue(attribute.secondaryValue.dataSourceId, values),
               }
             }
+            // Prefer new formatter. Fall back to legacy customFormatter.
+            formatter={formatter}
             customFormatter={customFormatter}
             fontSize={fontSize}
             isNumberValueCompact={isNumberValueCompact}
