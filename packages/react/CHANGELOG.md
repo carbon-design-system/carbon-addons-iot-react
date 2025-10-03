@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.3.1...v5.4.0) (2025-10-03)
+
+
+### Features
+
+* **ValueCard:** Allow a "formatter" to be passed ([#4025](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4025)) ([110d17d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/110d17d4b8e759319579a35e64051bdadcc38371))
+
+
+
+
+
 ## [5.3.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.3.0...v5.3.1) (2025-09-18)
 
 **Note:** Version bump only for package carbon-addons-iot-react
