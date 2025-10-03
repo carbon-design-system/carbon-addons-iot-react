@@ -109,6 +109,7 @@ const propTypes = {
     incrementNumberText: PropTypes.string,
     decrementNumberText: PropTypes.string,
     hierarchyDataItemSectionTitle: PropTypes.string,
+    addHierarchyDataItemLabel: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   actions: DashboardEditorActionsPropTypes,
@@ -149,6 +150,7 @@ const defaultProps = {
     incrementNumberText: 'Increment number',
     decrementNumberText: 'Decrement number',
     hierarchyDataItemSectionTitle: 'Hierarchy Data Item',
+    addHierarchyDataItemLabel: 'Add Hierarchy Data Item',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -343,18 +345,16 @@ const DataSeriesFormItem = ({
   const handleHierarchyDataItemChange = useCallback(
     (selectedItem) => {
       if (selectedItem && !isEmpty(selectedItem.dataItemId)) {
-        const selectedItems = [
-          ...dataSection,
-          {
-            ...selectedItem,
-            // create a unique dataSourceId if it's going into attributes
-            // if it's going into the groupBy section then just use the dataItem ID
-            dataSourceId:
-              selectedItem?.destination === 'groupBy'
-                ? selectedItem.dataItemId
-                : `${selectedItem.dataItemId}_${uuidv4()}`,
-          },
-        ];
+        const selectedItems = canMultiSelectDataItems ? [...dataSection] : [];
+        selectedItems.push({
+          ...selectedItem,
+          // create a unique dataSourceId if it's going into attributes
+          // if it's going into the groupBy section then just use the dataItem ID
+          dataSourceId:
+            selectedItem?.destination === 'groupBy'
+              ? selectedItem.dataItemId
+              : `${selectedItem.dataItemId}_${uuidv4()}`,
+        });
         // need to remove the category if the card is a stacked timeseries bar
         const card =
           cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
@@ -373,7 +373,7 @@ const DataSeriesFormItem = ({
         onChange(newCard);
       }
     },
-    [cardConfig, dataSection, onChange, setSelectedDataItems]
+    [canMultiSelectDataItems, cardConfig, dataSection, onChange, setSelectedDataItems]
   );
 
   const handleEditButton = useCallback(
@@ -506,32 +506,34 @@ const DataSeriesFormItem = ({
 
   return (
     <>
+      {(!isEmpty(validDataItems) || isHierarchyDataItemsEnabled) && (
+        <DataSeriesFormItemModal
+          cardConfig={cardConfig}
+          isSummaryDashboard={isSummaryDashboard}
+          showEditor={showEditor}
+          setShowEditor={setShowEditor}
+          editDataSeries={editDataSeries}
+          setEditDataSeries={setEditDataSeries}
+          editDataItem={editDataItem}
+          setEditDataItem={setEditDataItem}
+          validDataItems={validDataItems}
+          availableDimensions={availableDimensions}
+          dataSection={dataSection}
+          onChange={onChange}
+          i18n={mergedI18n}
+          actions={actions}
+          options={{
+            hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
+            hasUnit: type === CARD_TYPES.VALUE,
+            hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
+            hasThresholds: type === CARD_TYPES.VALUE,
+            hasTooltip: type === CARD_TYPES.VALUE,
+          }}
+          isLarge
+        />
+      )}
       {!isEmpty(validDataItems) && (
         <>
-          <DataSeriesFormItemModal
-            cardConfig={cardConfig}
-            isSummaryDashboard={isSummaryDashboard}
-            showEditor={showEditor}
-            setShowEditor={setShowEditor}
-            editDataSeries={editDataSeries}
-            setEditDataSeries={setEditDataSeries}
-            editDataItem={editDataItem}
-            setEditDataItem={setEditDataItem}
-            validDataItems={validDataItems}
-            availableDimensions={availableDimensions}
-            dataSection={dataSection}
-            onChange={onChange}
-            i18n={mergedI18n}
-            actions={actions}
-            options={{
-              hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
-              hasUnit: type === CARD_TYPES.VALUE,
-              hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
-              hasThresholds: type === CARD_TYPES.VALUE,
-              hasTooltip: type === CARD_TYPES.VALUE,
-            }}
-            isLarge
-          />
           <ContentFormItemTitle
             title={mergedI18n.dataItemEditorSectionTitle}
             // Specific to each card type
@@ -582,7 +584,7 @@ const DataSeriesFormItem = ({
                 titleText={mergedI18n.dataItem}
                 items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
                 selectedItem={
-                  !isEmpty(cardConfig.content?.series)
+                  !isEmpty(dataItemListItems) && !isEmpty(cardConfig.content?.series)
                     ? cardConfig.content?.series[0].dataItemId
                     : null
                 }
@@ -629,7 +631,7 @@ const DataSeriesFormItem = ({
             size="md"
             onClick={() => onAddHierarchyDataItems(handleHierarchyDataItemChange)}
           >
-            Add Hierarchy Data Item
+            {mergedI18n.addHierarchyDataItemLabel}
           </Button>
 
           <List
