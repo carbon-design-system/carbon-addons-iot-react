@@ -65,6 +65,7 @@
     right: 0.5rem;
     transform: translateY(0.875rem);
     width: 1rem;
+    margin-right: 0.2rem;
 
     &:focus {
       border-color: $focus;
@@ -300,6 +301,20 @@
   &--PM {
     li:last-of-type {
       transform: translateY(2.5rem);
+    }
+  }
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--time-picker {
+    &__icon {
+      left: 0.75rem;
+      right: unset;
+    }
+
+    input {
+      padding-right: 1rem;
+      padding-left: 2rem;
     }
   }
 }
