@@ -629,7 +629,7 @@ const DataSeriesFormItem = ({
             kind="ghost"
             renderIcon={Add}
             size="md"
-            onClick={() => onAddHierarchyDataItems(handleHierarchyDataItemChange)}
+            onClick={() => onAddHierarchyDataItems(cardConfig, handleHierarchyDataItemChange)}
           >
             {mergedI18n.addHierarchyDataItemLabel}
           </Button>

@@ -1533,7 +1533,8 @@ export const withHierarchyDataItems = () => {
   });
   const actions = {
     ...commonActions,
-    onAddHierarchyDataItems: (cb) => cb(hierarchyDataItems),
+    onAddHierarchyDataItems: (cardConfig, handleHierarchyDataItemChange) =>
+      handleHierarchyDataItemChange(hierarchyDataItems),
     dataSeriesFormActions: {
       ...commonActions.dataSeriesFormActions,
       hasHierarchyDataItemsEnabled: (card) =>

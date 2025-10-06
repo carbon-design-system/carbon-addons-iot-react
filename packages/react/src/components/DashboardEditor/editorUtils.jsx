@@ -693,7 +693,7 @@ export const DashboardEditorActionsPropTypes = PropTypes.shape({
    */
   onEditDataItem: PropTypes.func,
   /** Call back function for on click of add hierarchy data items button, returns a selcted dataSource
-   * onAddHierarchyDataItems(handleHierarchyDataItemChange: callback function to handle hierarchy data items change)
+   * onAddHierarchyDataItems(cardProps: card properties, handleHierarchyDataItemChange: callback function to handle hierarchy data items change)
    * return: void
    */
   onAddHierarchyDataItems: PropTypes.func,
