@@ -439,7 +439,9 @@ const DataSeriesFormItem = ({
     (data, isHierarchy = false) =>
       data
         ?.filter((dataItem) =>
-          isHierarchyDataItemsEnabled ? Boolean(dataItem.resourceData?.uuid) === isHierarchy : true
+          !isHierarchyDataItemsEnabled
+            ? true
+            : dataItem.hasOwnProperty('resourceData') === isHierarchy
         )
         .map((dataItem, i) => {
           const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
