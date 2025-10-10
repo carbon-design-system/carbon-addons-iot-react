@@ -1521,16 +1521,26 @@ export const withGetDefaultCard = () => {
 withGetDefaultCard.storyName = 'With get default card';
 
 export const withHierarchyDataItems = () => {
-  const hierarchyDataItems = object('hierarchyDataItems', {
-    dataItemId: 'speed',
-    // eslint-disable-next-line no-plusplus
-    label: `speed:Device`,
-    resourceData: {
-      type: 'DEVICE',
-      uuid: '12345',
-      deviceTypeUUId: '7890',
+  const hierarchyDataItems = object('hierarchyDataItems', [
+    {
+      dataItemId: 'speed',
+      label: `speed:Device1`,
+      resourceData: {
+        type: 'DEVICE',
+        uuid: '12345',
+        deviceTypeUUId: '7890',
+      },
     },
-  });
+    {
+      dataItemId: 'pressure',
+      label: `pressure:Asset1`,
+      resourceData: {
+        type: 'ASSET',
+        uuid: '2',
+        siteUUId: '1',
+      },
+    },
+  ]);
   const actions = {
     ...commonActions,
     onAddHierarchyDataItems: (cardConfig, handleHierarchyDataItemChange) =>
