@@ -438,11 +438,7 @@ const DataSeriesFormItem = ({
   const generateListItems = useCallback(
     (data, isHierarchy = false) =>
       data
-        ?.filter((dataItem) =>
-          !isHierarchyDataItemsEnabled
-            ? true
-            : dataItem.hasOwnProperty('resourceData') === isHierarchy
-        )
+        ?.filter((dataItem) => dataItem.hasOwnProperty('resourceData') === isHierarchy)
         .map((dataItem, i) => {
           const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
           const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
@@ -486,14 +482,7 @@ const DataSeriesFormItem = ({
             },
           };
         }) || [],
-    [
-      cardConfig.type,
-      handleEditButton,
-      handleRemoveButton,
-      isHierarchyDataItemsEnabled,
-      mergedI18n.edit,
-      mergedI18n.remove,
-    ]
+    [cardConfig.type, handleEditButton, handleRemoveButton, mergedI18n.edit, mergedI18n.remove]
   );
 
   const dataItemListItems = useMemo(
