@@ -1548,7 +1548,10 @@ export const withHierarchyDataItems = () => {
     dataSeriesFormActions: {
       ...commonActions.dataSeriesFormActions,
       hasHierarchyDataItemsEnabled: (card) =>
-        card.type === CARD_TYPES.TIMESERIES || card.type === CARD_TYPES.BAR,
+        card.type === CARD_TYPES.TIMESERIES ||
+        card.type === CARD_TYPES.BAR ||
+        card.type === CARD_TYPES.VALUE ||
+        card.type === CARD_TYPES.TABLE,
     },
   };
 
