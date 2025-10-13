@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Add, Edit, MisuseOutline } from '@carbon/react/icons';
+import { Edit, MisuseOutline } from '@carbon/react/icons';
 import { omit, isEmpty } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
@@ -20,6 +20,9 @@ import { Dropdown } from '../../../../Dropdown';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';
+import HierarchyDataFormItems, {
+  isHierarchyDataItem,
+} from '../HierarchyDataFormItems/HierarchyDataFormItems';
 
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
@@ -108,8 +111,6 @@ const propTypes = {
     closeMenuText: PropTypes.string,
     incrementNumberText: PropTypes.string,
     decrementNumberText: PropTypes.string,
-    hierarchyDataItemSectionTitle: PropTypes.string,
-    addHierarchyDataItemLabel: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   actions: DashboardEditorActionsPropTypes,
@@ -149,8 +150,6 @@ const defaultProps = {
     closeMenuText: 'Close menu',
     incrementNumberText: 'Increment number',
     decrementNumberText: 'Decrement number',
-    hierarchyDataItemSectionTitle: 'Hierarchy Data Item',
-    addHierarchyDataItemLabel: 'Add Hierarchy Data Item',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -261,11 +260,7 @@ const DataSeriesFormItem = ({
   translateWithId,
   actions,
 }) => {
-  const {
-    onEditDataItem,
-    onAddHierarchyDataItems,
-    dataSeriesFormActions: { hasHierarchyDataItemsEnabled },
-  } = actions;
+  const { onEditDataItem } = actions;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
@@ -281,12 +276,6 @@ const DataSeriesFormItem = ({
     cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
-
-  // determine if hierarchy data items are available
-  const isHierarchyDataItemsEnabled = useMemo(
-    () => hasHierarchyDataItemsEnabled && hasHierarchyDataItemsEnabled(cardConfig),
-    [cardConfig, hasHierarchyDataItemsEnabled]
-  );
 
   const removedItemsCountRef = useRef(0);
 
@@ -438,7 +427,7 @@ const DataSeriesFormItem = ({
   const generateListItems = useCallback(
     (data, isHierarchy = false) =>
       data
-        ?.filter((dataItem) => dataItem.hasOwnProperty('resourceData') === isHierarchy)
+        ?.filter((dataItem) => isHierarchyDataItem(dataItem) === isHierarchy)
         .map((dataItem, i) => {
           const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
           const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
@@ -497,32 +486,30 @@ const DataSeriesFormItem = ({
 
   return (
     <>
-      {(!isEmpty(validDataItems) || isHierarchyDataItemsEnabled) && (
-        <DataSeriesFormItemModal
-          cardConfig={cardConfig}
-          isSummaryDashboard={isSummaryDashboard}
-          showEditor={showEditor}
-          setShowEditor={setShowEditor}
-          editDataSeries={editDataSeries}
-          setEditDataSeries={setEditDataSeries}
-          editDataItem={editDataItem}
-          setEditDataItem={setEditDataItem}
-          validDataItems={validDataItems}
-          availableDimensions={availableDimensions}
-          dataSection={dataSection}
-          onChange={onChange}
-          i18n={mergedI18n}
-          actions={actions}
-          options={{
-            hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
-            hasUnit: type === CARD_TYPES.VALUE,
-            hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
-            hasThresholds: type === CARD_TYPES.VALUE,
-            hasTooltip: type === CARD_TYPES.VALUE,
-          }}
-          isLarge
-        />
-      )}
+      <DataSeriesFormItemModal
+        cardConfig={cardConfig}
+        isSummaryDashboard={isSummaryDashboard}
+        showEditor={showEditor}
+        setShowEditor={setShowEditor}
+        editDataSeries={editDataSeries}
+        setEditDataSeries={setEditDataSeries}
+        editDataItem={editDataItem}
+        setEditDataItem={setEditDataItem}
+        validDataItems={validDataItems}
+        availableDimensions={availableDimensions}
+        dataSection={dataSection}
+        onChange={onChange}
+        i18n={mergedI18n}
+        actions={actions}
+        options={{
+          hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,
+          hasUnit: type === CARD_TYPES.VALUE,
+          hasDecimalPlacesDropdown: type === CARD_TYPES.VALUE,
+          hasThresholds: type === CARD_TYPES.VALUE,
+          hasTooltip: type === CARD_TYPES.VALUE,
+        }}
+        isLarge
+      />
       {!isEmpty(validDataItems) && (
         <>
           <ContentFormItemTitle
@@ -612,29 +599,14 @@ const DataSeriesFormItem = ({
         </>
       )}
 
-      {isHierarchyDataItemsEnabled && (
-        <>
-          <ContentFormItemTitle title={mergedI18n.hierarchyDataItemSectionTitle} />
-
-          <Button
-            kind="ghost"
-            renderIcon={Add}
-            size="md"
-            onClick={() => onAddHierarchyDataItems(cardConfig, handleHierarchyDataItemChange)}
-          >
-            {mergedI18n.addHierarchyDataItemLabel}
-          </Button>
-
-          <List
-            className={`${baseClassName}--data-item-list`}
-            key={`hierarchy-data-item-list${selectedDataItems.length}`}
-            // need to force an empty "empty state"
-            emptyState={<div />}
-            title=""
-            items={hierarchyDataItemListItems}
-          />
-        </>
-      )}
+      <HierarchyDataFormItems
+        listClassName={`${baseClassName}--data-item-list`}
+        cardConfig={cardConfig}
+        hierarchyDataItemListItems={hierarchyDataItemListItems}
+        handleHierarchyDataItemChange={handleHierarchyDataItemChange}
+        i18n={i18n}
+        actions={actions}
+      />
     </>
   );
 };
