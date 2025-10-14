@@ -1,8 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Edit } from '@carbon/react/icons';
 import { MultiSelect } from '@carbon/react';
 import { isEmpty } from 'lodash-es';
+import { v4 as uuidv4 } from 'uuid';
+import { MisuseOutline } from '@carbon/icons-react';
 
 import DataSeriesFormItemModal from '../../CardEditor/CardEditForm/CardEditFormItems/DataSeriesFormItemModal';
 import List from '../../List/List';
@@ -13,6 +15,9 @@ import {
   DashboardEditorActionsPropTypes,
   defaultDashboardEditorActionsProps,
 } from '../../DashboardEditor/editorUtils';
+import HierarchyDataFormItems, {
+  isHierarchyDataItem,
+} from '../../CardEditor/CardEditForm/CardEditFormItems/HierarchyDataFormItems/HierarchyDataFormItems';
 
 const { iotPrefix } = settings;
 
@@ -47,7 +52,8 @@ const propTypes = {
   i18n: PropTypes.shape({
     selectDataItemsText: PropTypes.string,
     dataItemText: PropTypes.string,
-    editText: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemCustomLabel: PropTypes.string,
     dataItemEditorDataItemUnit: PropTypes.string,
@@ -85,7 +91,8 @@ const defaultProps = {
   i18n: {
     selectDataItemsText: 'Select data items',
     dataItemText: 'Data items',
-    editText: 'Edit',
+    edit: 'Edit',
+    remove: 'Remove',
     dataItemEditorDataItemTitle: 'Data items',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
@@ -102,10 +109,12 @@ const defaultProps = {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId, label }) => ({
-    id: dataSourceId,
-    label,
-  }));
+  dataItems
+    ?.filter((dataItem) => !isHierarchyDataItem(dataItem)) // filter hierarchy data items
+    ?.map(({ dataSourceId, label }) => ({
+      id: dataSourceId,
+      label,
+    }));
 
 const HotspotEditorDataSourceTab = ({
   hotspot,
@@ -127,7 +136,6 @@ const HotspotEditorDataSourceTab = ({
   const selectedItemsArray = hotspot.content?.attributes || [];
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-  const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
   const { onEditDataItem } = actions;
 
   const handleSelectionChange = ({ selectedItems }) => {
@@ -135,7 +143,7 @@ const HotspotEditorDataSourceTab = ({
     // loop through  selected Items and find their selectedItemsArray object or the dataItem object with same id
     selectedItems.forEach((item) => {
       const containedItem = selectedItemsArray.find(
-        (selectedItem) => selectedItem.dataItemId === item.id
+        (selectedItem) => selectedItem.dataSourceId === item.id
       );
       const containedDataItem = dataItems.find(
         (selectedItem) => selectedItem.dataItemId === item.id
@@ -146,17 +154,37 @@ const HotspotEditorDataSourceTab = ({
         newArray.push(containedDataItem);
       }
     });
+
+    // Add existing hierarchy data items
+    newArray.push(...selectedItemsArray.filter((item) => isHierarchyDataItem(item)));
+
     onChange({ attributes: newArray });
   };
 
+  const handleHierarchyDataItemChange = useCallback(
+    (items) => {
+      const updatedItems = items?.map((item) => ({
+        ...item,
+        // create a unique dataSourceId
+        dataSourceId: `${item.dataItemId}_${uuidv4()}`,
+      }));
+
+      const selectedItems = [...selectedItemsArray, ...updatedItems];
+
+      onChange({ attributes: selectedItems });
+    },
+    [onChange, selectedItemsArray]
+  );
+
   // MultiSelect
-  // For the initial selection to work the objects in prop "initialSelectedItems"
+  // For the initial selection to work the objects in prop "selectedItemsArray"
   // must be identical to the objects in prop "items". It is not enough that the
   // ids are the same. Therefore, we must adjust the labels in "items" if they have
-  // been modified in the "initialSelectedItems".
+  // been modified in the "selectedItemsArray".
   const multiSelectItems = formatDataItemsForDropdown(dataItems).map((item) => ({
     ...item,
-    label: initialSelectedItems.find((selected) => selected.id === item.id)?.label ?? item.label,
+    label:
+      selectedItemsArray.find((selected) => selected.dataSourceId === item.id)?.label ?? item.label,
   }));
 
   const handleEditButton = useCallback(
@@ -180,6 +208,64 @@ const HotspotEditorDataSourceTab = ({
       setShowEditor(true);
     },
     [cardConfig, onEditDataItem, dataItems]
+  );
+
+  const handleRemoveButton = useCallback(
+    (selectedItem) => {
+      const newArray = selectedItemsArray.filter(
+        (item) => item.dataSourceId !== selectedItem.dataSourceId
+      );
+
+      onChange({ attributes: newArray });
+    },
+    [selectedItemsArray, onChange]
+  );
+
+  const generateListItems = useCallback(
+    (data, isHierarchy = false) =>
+      data
+        ?.filter((dataItem) => isHierarchyDataItem(dataItem) === isHierarchy)
+        ?.map((dataItem) => ({
+          id: dataItem.dataSourceId,
+          content: {
+            value: dataItem.label,
+            rowActions: () => [
+              <Button
+                key={`data-item-${dataItem.dataSourceId}`}
+                renderIcon={Edit}
+                hasIconOnly
+                kind="ghost"
+                size="sm"
+                onClick={() => handleEditButton(dataItem)}
+                iconDescription={mergedI18n.edit}
+                tooltipPosition="left"
+                tooltipAlignment="center"
+              />,
+              <Button
+                key={`data-item-${dataItem.dataSourceId}_remove`}
+                renderIcon={MisuseOutline}
+                hasIconOnly
+                kind="ghost"
+                size="sm"
+                onClick={() => handleRemoveButton(dataItem)}
+                iconDescription={mergedI18n.remove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
+              />,
+            ],
+          },
+        })),
+    [handleEditButton, handleRemoveButton, mergedI18n.edit, mergedI18n.remove]
+  );
+
+  const dataListItems = useMemo(
+    () => generateListItems(selectedItemsArray),
+    [selectedItemsArray, generateListItems]
+  );
+
+  const hierarchyDataListItems = useMemo(
+    () => generateListItems(selectedItemsArray, true),
+    [selectedItemsArray, generateListItems]
   );
 
   return (
@@ -211,7 +297,7 @@ const HotspotEditorDataSourceTab = ({
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItemsText}
           direction="bottom"
-          initialSelectedItems={initialSelectedItems}
+          selectedItems={formatDataItemsForDropdown(selectedItemsArray)}
           items={multiSelectItems}
           light
           onChange={handleSelectionChange}
@@ -225,23 +311,14 @@ const HotspotEditorDataSourceTab = ({
         emptyState={<div />}
         testId={`${testId}-data-source-list`}
         title=""
-        items={selectedItemsArray?.map((dataItem) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit}
-                hasIconOnly
-                kind="ghost"
-                size="sm"
-                onClick={() => handleEditButton(dataItem)}
-                iconDescription={mergedI18n.editText}
-              />,
-            ],
-          },
-        }))}
+        items={dataListItems}
+      />
+      <HierarchyDataFormItems
+        cardConfig={cardConfig}
+        hierarchyDataItemListItems={hierarchyDataListItems}
+        handleHierarchyDataItemChange={handleHierarchyDataItemChange}
+        i18n={i18n}
+        actions={actions}
       />
     </div>
   );
