@@ -1204,7 +1204,6 @@ export const I18N = () => (
       yCoordinateDropdownLabelText: 'yCoordinateDropdownLabelText',
       selectDataItemsText: 'selectDataItemsText',
       dataItemText: 'dataItemText',
-      editText: 'editText',
       // Hotspot Text Style Tab fields
       textTypeStyleInfoText: 'textTypeStyleInfoText',
       fontColorLabelText: 'fontColorLabelText',
@@ -1547,11 +1546,16 @@ export const withHierarchyDataItems = () => {
       handleHierarchyDataItemChange(hierarchyDataItems),
     dataSeriesFormActions: {
       ...commonActions.dataSeriesFormActions,
-      hasHierarchyDataItemsEnabled: (card) =>
-        card.type === CARD_TYPES.TIMESERIES ||
-        card.type === CARD_TYPES.BAR ||
-        card.type === CARD_TYPES.VALUE ||
-        card.type === CARD_TYPES.TABLE,
+      hasHierarchyDataItemsEnabled: (card) => {
+        const allowCardTypes = [
+          CARD_TYPES.TIMESERIES,
+          CARD_TYPES.BAR,
+          CARD_TYPES.VALUE,
+          CARD_TYPES.TABLE,
+          CARD_TYPES.IMAGE,
+        ];
+        return allowCardTypes.includes(card.type);
+      },
     },
   };
 
