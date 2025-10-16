@@ -218,8 +218,7 @@ const TableCardFormContent = ({
         ...item,
         // create a unique dataSourceId if it's going into attributes
         // if it's going into the groupBy section then just use the dataItem ID
-        dataSourceId:
-          item?.destination === 'groupBy' ? item.dataItemId : `${item.dataItemId}_${uuidv4()}`,
+        dataSourceId: `${item.dataItemId}_${uuidv4()}`,
       }));
       const selectedItems = [...dataSection, ...updatedItems];
 
