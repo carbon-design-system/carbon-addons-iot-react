@@ -337,24 +337,16 @@ const DataSeriesFormItem = ({
         ...item,
         // create a unique dataSourceId if it's going into attributes
         // if it's going into the groupBy section then just use the dataItem ID
-        dataSourceId:
-          item?.destination === 'groupBy' ? item.dataItemId : `${item.dataItemId}_${uuidv4()}`,
+        dataSourceId: `${item.dataItemId}_${uuidv4()}`,
       }));
 
       const selectedItems = canMultiSelectDataItems
         ? [...dataSection, ...updatedItems]
         : [updatedItems[0]];
 
-      // need to remove the category if the card is a stacked timeseries bar
-      const card =
-        cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
-        cardConfig.content.timeDataSourceId &&
-        selectedItems.length > 1
-          ? omit(cardConfig, 'content.categoryDataSourceId')
-          : cardConfig;
       const newCard = handleDataSeriesChange(
         selectedItems,
-        card,
+        cardConfig,
         setEditDataSeries,
         undefined,
         removedItemsCountRef
