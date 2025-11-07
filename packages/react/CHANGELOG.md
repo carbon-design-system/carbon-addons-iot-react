@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.2...v5.4.3) (2025-11-07)
+
+
+### Bug Fixes
+
+* **dashbordeditorheader:** fix switcher icon buttons in dashboardeditorheader ([#4034](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4034)) ([1fdf6ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1fdf6ba735fc0f98c652a6e235c1e3b7a02063dc))
+
+
+
+
+
 ## [5.4.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.1...v5.4.2) (2025-10-29)
 
 **Note:** Version bump only for package carbon-addons-iot-react
