@@ -72,7 +72,7 @@
       margin-left: 0;
     }
 
-    .#{$prefix}--btn--primary:not(.#{$prefix}--content-switcher-btn) {
+    .#{$prefix}--btn--primary {
       margin-left: $spacing-03;
       [dir='rtl'] & {
         margin-left: unset;
