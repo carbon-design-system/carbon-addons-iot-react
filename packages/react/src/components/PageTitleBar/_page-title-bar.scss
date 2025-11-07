@@ -67,6 +67,11 @@
       padding-left: $spacing-07;
     }
 
+    .#{$prefix}--content-switcher-btn,
+    .#{$prefix}--content-switcher .#{$prefix}--btn--primary {
+      margin-left: 0;
+    }
+
     .#{$prefix}--btn--primary {
       margin-left: $spacing-03;
       [dir='rtl'] & {
