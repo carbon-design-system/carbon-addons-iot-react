@@ -9,13 +9,12 @@ import {
   Laptop,
   Screen,
 } from '@carbon/react/icons';
-import { FileUploaderButton, ContentSwitcher, TextInput, Tooltip } from '@carbon/react';
+import { FileUploaderButton, ContentSwitcher, TextInput, Tooltip, IconSwitch } from '@carbon/react';
 import { isEmpty } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import PageTitleBar from '../../PageTitleBar';
-import IconSwitch from '../../IconSwitch/IconSwitch';
 
 const { iotPrefix } = settings;
 
