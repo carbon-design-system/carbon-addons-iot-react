@@ -73,7 +73,12 @@ const ValueContent = ({
             isEditable={isEditable}
             title={title}
             renderIconByName={others.renderIconByName}
-            value={determineValue(attribute.dataSourceId, values, attribute.dataFilter)}
+            value={determineValue(
+              attribute.dataSourceId,
+              values,
+              attribute.dataFilter,
+              attribute.disableDataFilter
+            )}
             secondaryValue={
               attribute.secondaryValue && {
                 ...attribute.secondaryValue,
