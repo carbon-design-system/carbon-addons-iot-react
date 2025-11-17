@@ -7,6 +7,7 @@
 @use '@carbon/react/scss/components/button' as *;
 @use '@carbon/react/scss/utilities/convert';
 @use '@carbon/react/scss/utilities/z-index' as *;
+
 .#{$iot-prefix}--suite-header-profile {
   background-color: $layer-selected-inverse;
   color: $text-inverse; //$inverse-01
