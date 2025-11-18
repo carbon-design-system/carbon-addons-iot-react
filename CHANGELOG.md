@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.3...v5.4.4) (2025-11-18)
+
+
+### Bug Fixes
+
+* adding missing z-index imports ([#4039](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4039)) ([e4ff9bd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e4ff9bd7b00751eadcde047780a0bb29294fedd8))
+
+
+
+
+
 ## [5.4.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.2...v5.4.3) (2025-11-07)
 
 
