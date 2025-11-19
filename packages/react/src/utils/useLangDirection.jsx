@@ -13,6 +13,7 @@ import { useEffect, useState, useRef } from 'react';
  */
 export function useLangDirection() {
   const isServerSide = useRef(typeof window === 'undefined' || typeof document === 'undefined');
+  const observer = useRef(null);
 
   // Lazy initialize direction
   const [direction, setDirection] = useState(() => {
@@ -24,7 +25,6 @@ export function useLangDirection() {
     // Set initial direction
     return element.getAttribute('dir') || 'ltr';
   });
-  const observer = useRef(null);
 
   useEffect(() => {
     // Return early if in server environment
