@@ -12,23 +12,27 @@ import { useEffect, useState, useRef } from 'react';
  * @returns {string} The current language direction ('ltr' or 'rtl')
  */
 export function useLangDirection() {
-  // Create state and refs first to avoid conditional hook calls
-  const [direction, setDirection] = useState(null);
+  const { current: isServerSide } = useRef(
+    typeof window === 'undefined' || typeof document === 'undefined'
+  );
+
+  // Target the HTML element
+  const element = document.getElementsByTagName('html')[0];
+  // Lazy initialize direction
+  const [direction, setDirection] = useState(() => {
+    if (isServerSide) {
+      return null;
+    }
+    // Set initial direction
+    return element.getAttribute('dir') || 'ltr';
+  });
   const observer = useRef(null);
-  const isServerSide = useRef(typeof window === 'undefined' || typeof document === 'undefined');
 
   useEffect(() => {
     // Return early if in server environment
-    if (isServerSide.current) {
+    if (isServerSide) {
       return;
     }
-
-    // Target the HTML element
-    const element = document.getElementsByTagName('html')[0];
-
-    // Set initial direction
-    setDirection(element.getAttribute('dir') || 'ltr');
-
     // Callback function to execute when mutations are observed
     const callback = (mutationsList) => {
       // Use traditional for loop for better compatibility
@@ -71,7 +75,7 @@ export function useLangDirection() {
         observer.current.disconnect();
       }
     };
-  }, []); // No dependencies needed as element is constant
+  }, [element, isServerSide]); // No dependencies needed as element is constant
 
   // Return the current direction, defaulting to 'ltr' if not set or in server environment
   return isServerSide.current ? 'ltr' : direction || 'ltr';
