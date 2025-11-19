@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.4...v5.4.5) (2025-11-19)
+
+
+### Bug Fixes
+
+* useLangDirection improvements ([#4043](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4043)) ([89c9621](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89c9621c51520f59e4418b79c0c03b061c378c3e))
+
+
+
+
+
 ## [5.4.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.3...v5.4.4) (2025-11-18)
 
 
