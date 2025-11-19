@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Column, Filter, Download, Edit, OverflowMenuVertical } from '@carbon/react/icons';
 import {
@@ -255,127 +255,6 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
-  const batchActionsRef = useRef(null);
-  const previousFocusedElement = useRef(null);
-  const toolbarContentRef = useRef(null);
-  const batchOverflowMenuRef = useRef(null);
-  const [isBatchOverflowOpen, setIsBatchOverflowOpen] = React.useState(false);
-
-  // Function to restore focus to the previous element
-  const restoreFocus = () => {
-    if (previousFocusedElement.current) {
-      previousFocusedElement.current.focus();
-      previousFocusedElement.current = null;
-    }
-  };
-
-  // Handle focus management when batch actions appear/disappear
-  useEffect(() => {
-    if (shouldShowBatchActions && batchActionsRef.current) {
-      // Store the currently focused element before switching to batch actions
-      previousFocusedElement.current = document.activeElement;
-
-      // Hide toolbar content from screen readers when batch actions are visible
-      if (toolbarContentRef.current) {
-        toolbarContentRef.current.setAttribute('aria-hidden', 'true');
-      }
-
-      // Find the first focusable element in batch actions
-      const focusable = batchActionsRef.current.querySelector(
-        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-      );
-
-      if (focusable) {
-        focusable.focus();
-      }
-    } else if (!shouldShowBatchActions) {
-      // Remove aria-hidden immediately when batch actions are hidden
-      if (toolbarContentRef.current) {
-        toolbarContentRef.current.removeAttribute('aria-hidden');
-      }
-
-      // Restore focus when batch actions are hidden
-      if (previousFocusedElement.current) {
-        // Use setTimeout to ensure the DOM has updated before restoring focus
-        setTimeout(() => {
-          if (previousFocusedElement.current) {
-            // Check if the previous element is still in the document and focusable
-            if (document.contains(previousFocusedElement.current)) {
-              previousFocusedElement.current.focus();
-            } else if (toolbarContentRef.current) {
-              // If previous element is no longer available, focus the first focusable element in toolbar
-              const firstFocusable = toolbarContentRef.current.querySelector(
-                'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-              );
-              if (firstFocusable) {
-                firstFocusable.focus();
-              }
-            }
-            previousFocusedElement.current = null;
-          }
-        }, 0);
-      }
-    }
-  }, [shouldShowBatchActions]);
-
-  // Handle keyboard navigation for batch overflow menu
-  useEffect(() => {
-    if (!isBatchOverflowOpen || !shouldShowBatchActions) return undefined;
-
-    const handleKeyDown = (e) => {
-      // Only handle Shift+Tab
-      if (!e.shiftKey || e.key !== 'Tab') return;
-
-      // Check if the active element is within a menu
-      const { activeElement } = document;
-
-      // Multiple ways to detect if we're in an overflow menu
-      const isInOverflowMenu =
-        // Check role
-        activeElement?.getAttribute('role') === 'menuitem' ||
-        activeElement?.closest('[role="menuitem"]') !== null ||
-        activeElement?.closest('[role="menu"]') !== null ||
-        // Check Carbon classes
-        activeElement?.closest('.cds--overflow-menu-options') !== null ||
-        activeElement?.closest('.cds--overflow-menu-options__option') !== null ||
-        activeElement?.classList?.contains('cds--overflow-menu-options__option') ||
-        // Check for batch actions overflow menu specifically
-        activeElement?.closest(`.${iotPrefix}--table-overflow-batch-actions`) !== null ||
-        // Check our test IDs
-        activeElement?.closest(
-          `[data-testid^="${testID || testId}-batch-actions-overflow-menu-item"]`
-        ) !== null;
-
-      if (!isInOverflowMenu) {
-        return;
-      }
-
-      // Prevent the default tab behavior
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-
-      // Close the menu
-      setIsBatchOverflowOpen(false);
-
-      // Return focus to the overflow button
-      setTimeout(() => {
-        if (batchOverflowMenuRef.current) {
-          const overflowButton = batchOverflowMenuRef.current.querySelector('button');
-          if (overflowButton) {
-            overflowButton.focus();
-          }
-        }
-      }, 100);
-    };
-
-    // Add event listener with capture phase to intercept before default behavior
-    document.addEventListener('keydown', handleKeyDown, true);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown, true);
-    };
-  }, [isBatchOverflowOpen, shouldShowBatchActions, testID, testId]);
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -398,6 +277,73 @@ const TableToolbar = ({
   const visibleToolbarActions = actions.filter(
     (action) => !action.isOverflow && action.hidden !== true
   );
+
+  // Extract TableViewDropdown from customToolbarContent
+  const { tableViewDropdown, otherToolbarContent } = useMemo(() => {
+    if (!customToolbarContent) {
+      return { tableViewDropdown: null, otherToolbarContent: null };
+    }
+
+    // Helper function to check if a child is TableViewDropdown
+    const isTableViewDropdown = (child) => {
+      if (!child) return false;
+
+      // Check by key (most reliable for wrapped components)
+      if (child.key && typeof child.key === 'string' && child.key.includes('table-view-dropdown')) {
+        return true;
+      }
+
+      // Check by type properties
+      if (child.type) {
+        // Check by displayName
+        if (child.type.displayName === 'TableViewDropdown') return true;
+
+        // Check by function name
+        if (child.type.name === 'TableViewDropdown') return true;
+      }
+
+      // Check by props (TableViewDropdown has specific props like 'views', 'selectedViewId')
+      if (
+        child.props &&
+        (child.props.views !== undefined ||
+          child.props.selectedViewId !== undefined ||
+          child.props.selectedViewEdited !== undefined)
+      ) {
+        return true;
+      }
+
+      return false;
+    };
+
+    // Extract children from Fragment if present
+    let contentToProcess = customToolbarContent;
+
+    // Check if it's a Fragment (React.Fragment has type as Symbol or Fragment)
+    if (customToolbarContent.type === React.Fragment && customToolbarContent.props?.children) {
+      contentToProcess = customToolbarContent.props.children;
+    }
+
+    // Convert to array (handles both single element and multiple children)
+    const contentArray = React.Children.toArray(contentToProcess);
+
+    // Always check the first element
+    const firstElement = contentArray[0];
+
+    if (isTableViewDropdown(firstElement)) {
+      // First element is TableViewDropdown - extract it, rest is other content
+      const remainingContent = contentArray.slice(1);
+      return {
+        tableViewDropdown: firstElement,
+        otherToolbarContent: remainingContent.length > 0 ? remainingContent : null,
+      };
+    }
+
+    // First element is not TableViewDropdown - all content is other content
+    return {
+      tableViewDropdown: null,
+      otherToolbarContent: contentArray.length > 0 ? contentArray : null,
+    };
+  }, [customToolbarContent]);
 
   const visibleBatchActions = batchActions.filter(
     (action) => !action.isOverflow && action.hidden !== true
@@ -449,19 +395,13 @@ const TableToolbar = ({
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
       aria-label={i18n.toolbarLabelAria}
     >
+     
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
       ) : !hasBatchActionToolbar && shouldShowBatchActions ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-        <label
-          className={`${iotPrefix}--table-toolbar-secondary-title`}
-          aria-live="polite"
-          aria-atomic="true"
-          role="status"
-        >
-          {totalSelectedText}
-        </label>
+        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
       ) : null}
       {
         // Deprecated in favor of secondaryTitle for a more general use-case
@@ -488,11 +428,11 @@ const TableToolbar = ({
         <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
       ) : (
         <TableToolbarContent
-          ref={toolbarContentRef}
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-content`}
           className={`${iotPrefix}--table-toolbar-content`}
         >
+          {tableViewDropdown || null}
           {hasSearch ? (
             <TableToolbarSearch
               tableId={tableId}
@@ -642,14 +582,6 @@ const TableToolbar = ({
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
               onOpen={() => setIsOpen(true)}
               onClose={() => setIsOpen(false)}
-              onKeyDown={(e) => {
-                // Handle Shift+Tab to keep focus within toolbar
-                if (e.shiftKey && e.key === 'Tab' && isOpen) {
-                  e.preventDefault();
-                  setIsOpen(false);
-                  // Focus will naturally return to the overflow menu button
-                }
-              }}
               withCarbonTooltip
               tooltipPosition="bottom"
             >
@@ -678,24 +610,17 @@ const TableToolbar = ({
             </OverflowMenu>
           ) : null}
           {
-            // Default card header actions should be to the right of the table-specific actions
-            customToolbarContent || null
+            // Render other custom toolbar content
+            otherToolbarContent || null
           }
         </TableToolbarContent>
       )}
-      {hasBatchActionToolbar ? (
+       {hasBatchActionToolbar ? (
         <TableBatchActions
-          ref={batchActionsRef}
-          role="region"
-          aria-live="polite"
-          aria-label={totalSelectedText}
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-batch-actions`}
           className={`${iotPrefix}--table-batch-actions`}
-          onCancel={() => {
-            if (onCancelBatchAction) onCancelBatchAction();
-            restoreFocus();
-          }}
+          onCancel={onCancelBatchAction}
           shouldShowBatchActions={shouldShowBatchActions}
           totalSelected={totalSelected}
           translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
@@ -704,10 +629,7 @@ const TableToolbar = ({
             visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
               <TableBatchAction
                 key={id}
-                onClick={() => {
-                  onApplyBatchAction(id);
-                  restoreFocus();
-                }}
+                onClick={() => onApplyBatchAction(id)}
                 tabIndex={shouldShowBatchActions ? 0 : -1}
                 disabled={!shouldShowBatchActions || disabled}
                 {...others}
@@ -716,112 +638,47 @@ const TableToolbar = ({
               </TableBatchAction>
             ))}
           {hasVisibleOverflowBatchActions ? (
-            <div
-              role="presentation"
-              ref={batchOverflowMenuRef}
-              onKeyDown={(e) => {
-                if (!shouldShowBatchActions) return;
-
-                // Handle Shift+Tab from within the batch overflow menu
-                if (e.shiftKey && e.key === 'Tab') {
-                  const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
-                    '[role="menuitem"]:not([disabled])'
-                  );
-                  const firstMenuItem = menuItems?.[0];
-
-                  // If we're on the first menu item, move focus to previous batch action
-                  if (firstMenuItem && document.activeElement === firstMenuItem) {
-                    e.preventDefault();
-                    // Find previous focusable element in batch actions
-                    if (batchActionsRef.current) {
-                      const focusableElements = batchActionsRef.current.querySelectorAll(
-                        'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-                      );
-                      const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
-                      const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
-                      const prevElement = focusableElements[currentIndex - 1];
-
-                      if (prevElement) {
-                        prevElement.focus();
-                      }
-                    }
-                  }
-                }
-                // Handle Tab from the last menu item
-                else if (e.key === 'Tab' && !e.shiftKey) {
-                  const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
-                    '[role="menuitem"]:not([disabled])'
-                  );
-                  const lastMenuItem = menuItems?.[menuItems.length - 1];
-
-                  // If we're on the last menu item, move to Clear selections button
-                  if (lastMenuItem && document.activeElement === lastMenuItem) {
-                    e.preventDefault();
-                    // Find the Clear selections button or next focusable element
-                    if (batchActionsRef.current) {
-                      const focusableElements = batchActionsRef.current.querySelectorAll(
-                        'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-                      );
-                      const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
-                      const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
-                      const nextElement = focusableElements[currentIndex + 1];
-
-                      if (nextElement) {
-                        nextElement.focus();
-                      }
-                    }
-                  }
-                }
-              }}
+            <OverflowMenu
+              data-testid={`${testID || testId}-batch-actions-overflow-menu`}
+              className={`${iotPrefix}--table-overflow-batch-actions`}
+              flipped={langDir === 'ltr'}
+              direction="bottom"
+              onClick={(e) => e.stopPropagation()}
+              renderIcon={(props) => <OverflowMenuVertical size={16} {...props} />}
+              tabIndex={shouldShowBatchActions ? 0 : -1}
+              size="md"
+              menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+              withCarbonTooltip
+              tooltipPosition="bottom"
+              buttonLabel={i18n.batchActionsOverflowMenuText}
             >
-              <OverflowMenu
-                data-testid={`${testID || testId}-batch-actions-overflow-menu`}
-                className={`${iotPrefix}--table-overflow-batch-actions`}
-                flipped={langDir === 'ltr'}
-                direction="bottom"
-                onClick={(e) => e.stopPropagation()}
-                renderIcon={(props) => <OverflowMenuVertical size={16} {...props} />}
-                tabIndex={shouldShowBatchActions ? 0 : -1}
-                size="md"
-                menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
-                withCarbonTooltip
-                tooltipPosition="bottom"
-                buttonLabel={i18n.batchActionsOverflowMenuText}
-                open={isBatchOverflowOpen}
-                onOpen={() => setIsBatchOverflowOpen(true)}
-                onClose={() => setIsBatchOverflowOpen(false)}
-              >
-                {visibleOverflowBatchActions.map(
-                  ({
-                    id,
-                    labelText,
-                    disabled,
-                    hasDivider,
-                    isDelete,
-                    renderIcon,
-                    iconDescription,
-                  }) => (
-                    <OverflowMenuItem
-                      data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
-                      itemText={renderTableOverflowItemText({
-                        action: { renderIcon, labelText: labelText || iconDescription },
-                        className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
-                      })}
-                      disabled={!shouldShowBatchActions || disabled}
-                      onClick={() => {
-                        onApplyBatchAction(id);
-                        restoreFocus();
-                      }}
-                      key={`table-batch-actions-overflow-menu-${id}`}
-                      requireTitle={!renderIcon}
-                      hasDivider={hasDivider}
-                      isDelete={isDelete}
-                      aria-label={labelText}
-                    />
-                  )
-                )}
-              </OverflowMenu>
-            </div>
+              {visibleOverflowBatchActions.map(
+                ({
+                  id,
+                  labelText,
+                  disabled,
+                  hasDivider,
+                  isDelete,
+                  renderIcon,
+                  iconDescription,
+                }) => (
+                  <OverflowMenuItem
+                    data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
+                    itemText={renderTableOverflowItemText({
+                      action: { renderIcon, labelText: labelText || iconDescription },
+                      className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+                    })}
+                    disabled={!shouldShowBatchActions || disabled}
+                    onClick={() => onApplyBatchAction(id)}
+                    key={`table-batch-actions-overflow-menu-${id}`}
+                    requireTitle={!renderIcon}
+                    hasDivider={hasDivider}
+                    isDelete={isDelete}
+                    aria-label={labelText}
+                  />
+                )
+              )}
+            </OverflowMenu>
           ) : null}
         </TableBatchActions>
       ) : null}
