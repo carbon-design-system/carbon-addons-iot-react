@@ -62,6 +62,10 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   will-change: transform;
 }
 
+.#{$prefix}--batch-actions.#{$prefix}--batch-actions--active.iot--table-batch-actions{
+  z-index: 2;
+}
+
 .#{$iot-prefix}--table-toolbar-content {
   flex: 1;
   font-size: 0.875rem;
@@ -166,15 +170,11 @@ html[dir='rtl'] {
   }
 }
 
-.#{$iot-prefix}--table-overflow-batch-actions {
+.#{$prefix}--table-toolbar .#{$prefix}--tooltip-trigger__wrapper .#{$iot-prefix}--table-overflow-batch-actions {
   &.#{$prefix}--overflow-menu--open,
   &.#{$prefix}--overflow-menu--open:hover,
-  &:hover {
-    // background-color: $hover-primary;//$$hover-primary;
-  }
-
   &:focus {
-    outline: 2px solid $layer-01;
+    outline: $spacing-01 solid $layer-01;
     outline-offset: -($spacing-01);
   }
 
