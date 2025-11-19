@@ -1,0 +1,23 @@
+@use '@carbon/react/scss/components/popover' as *;
+@use '@carbon/react/scss/config' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '../../globals/vars' as *;
+
+// Definition Tooltip styles
+.#{$prefix}--popover-container .#{$prefix}--definition-term {
+  margin-inline-start: 0;
+}
+.#{$prefix}--popover-container .#{$prefix}--definition-term > span:first-child {
+  padding-inline-start: 0;
+}
+.#{$prefix}--popover-container .#{$prefix}--definition-term > span.cds--popover-container {
+  padding: 0;
+}
+
+// .#{$prefix}--definition-term > span:last-child {
+//      padding-inline-start: 0rem;
+
+// }

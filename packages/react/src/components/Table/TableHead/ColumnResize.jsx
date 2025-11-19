@@ -18,8 +18,7 @@ const propTypes = {
   ordering: PropTypes.arrayOf(PropTypes.object).isRequired,
   paddingExtra: PropTypes.number.isRequired,
   preserveColumnWidths: PropTypes.bool.isRequired,
-  showExpanderColumn: PropTypes.bool.isRequired,
-  resizeColumnText: PropTypes.string,
+  showExpanderColumn: PropTypes.bool.isRequired
 };
 
 const defaultProps = {
@@ -95,14 +94,14 @@ const ColumnResize = React.forwardRef((props, ref) => {
     ordering,
     paddingExtra,
     showExpanderColumn,
-    preserveColumnWidths,
-    resizeColumnText,
+    preserveColumnWidths
   } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
   const [myColumn, setMyColumn] = useState();
   const [affectedSiblingColumn, setAffectedSiblingColumn] = useState();
+  const [currentWidth, setCurrentWidth] = useState(0);
 
   const setAffectedColumns = () => {
     const myCol = currentColumnWidths[columnId];
@@ -116,6 +115,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
       showExpanderColumn,
     });
     setAffectedSiblingColumn(siblingColumn);
+    setCurrentWidth(myCol?.width || 0);
   };
 
   const onMouseDown = (e) => {
@@ -156,6 +156,54 @@ const ColumnResize = React.forwardRef((props, ref) => {
     }
   };
 
+  const onKeyDown = (e) => {
+    // Handle keyboard resize with arrow keys
+    const step = e.shiftKey ? 10 : 1; // Shift key for larger steps
+
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault();
+
+      if (!myColumn || !affectedSiblingColumn) {
+        setAffectedColumns();
+        return;
+      }
+
+      const isRTL = document.dir === 'rtl';
+      // In RTL, arrow keys should work in reverse: left increases, right decreases
+      const direction = e.key === 'ArrowLeft' ? (isRTL ? 1 : -1) : isRTL ? -1 : 1;
+
+      const currentColWidth = currentWidth || myColumn.width;
+      const changeAmount = direction * step;
+      const newWidth = currentColWidth + changeAmount;
+
+      const bounds = getColumnDragBounds({
+        myColumn: { ...myColumn, width: currentColWidth },
+        affectedSiblingColumn,
+        paddingExtra,
+        preserveColumnWidths,
+      });
+
+      // Check if new width is within bounds
+      if (newWidth >= bounds.minWidth && (preserveColumnWidths || newWidth <= bounds.right)) {
+        setCurrentWidth(newWidth);
+
+        // For keyboard resize, directly set the column widths without using getUpdatedColumnWidths
+        // to avoid the complex RTL position calculations meant for mouse dragging
+        const updatedColumns = [{ id: myColumn.id, width: newWidth }];
+
+        if (!affectedSiblingColumn.isExpanderColumn && !preserveColumnWidths) {
+          const newAffectedSiblingColumnWidth = affectedSiblingColumn.width - changeAmount;
+          updatedColumns.push({
+            id: affectedSiblingColumn.id,
+            width: newAffectedSiblingColumnWidth,
+          });
+        }
+
+        props.onResize(updatedColumns);
+      }
+    }
+  };
+
   // We extend this instance with mouse move/up event forward functions which the parent
   // component must call using forward referencing. We do this since the mouse move/up
   // logic belongs to this component, but the events have to be captured by the parent
@@ -174,14 +222,14 @@ const ColumnResize = React.forwardRef((props, ref) => {
     },
   }));
 
+ 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
-      role="button"
-      tabIndex="0"
-      aria-label={resizeColumnText}
+      role=""
+      tabIndex={0}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
+      onKeyDown={onKeyDown}
       style={{
         width: dragHandleWidth,
         left: leftPosition || (document.dir === 'rtl' ? 0 : 'auto'),
