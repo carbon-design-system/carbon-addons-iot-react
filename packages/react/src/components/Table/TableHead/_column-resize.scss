@@ -14,6 +14,11 @@
   &:hover {
     background-color: $layer-selected-inverse;
   }
+  &:focus {
+    background-color: $layer-selected-inverse;
+    outline: $spacing-01 solid $focus;
+    outline-offset: -$spacing-01;
+  }
 }
 
 .#{$iot-prefix}--column-resize-handle--dragging {
