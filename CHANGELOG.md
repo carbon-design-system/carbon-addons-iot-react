@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.5...v5.5.0) (2025-11-21)
+
+
+### Features
+
+* **maxuif-2998:** add Full option to External Content card in Dashboard ([bb573b4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb573b4c713c7b0100fbb9b7129460009c723ae7))
+
+
+
+
+
 ## [5.4.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.4...v5.4.5) (2025-11-19)
 
 
