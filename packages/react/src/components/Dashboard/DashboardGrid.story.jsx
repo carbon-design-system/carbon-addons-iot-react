@@ -287,6 +287,17 @@ export const DashboardAllCardSizes = () => {
         delete: true,
       }}
     />,
+    <Card
+      titleTextTooltip={titleTextTooltip}
+      title="Full"
+      id="Full"
+      key="Full"
+      size={CARD_SIZES.FULL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+    />,
   ];
   return (
     <Fragment>
