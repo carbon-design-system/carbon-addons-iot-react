@@ -5,6 +5,7 @@ import { Popover, PopoverContent } from '@carbon/react';
 
 import { match, keys } from '../../internal/keyboard';
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -182,11 +183,6 @@ DefinitionTooltip.propTypes = {
   definition: PropTypes.node.isRequired,
 
   /**
-   * Alternative to definition prop for tooltip content
-   */
-  tooltipText: PropTypes.node,
-
-  /**
    * Provide a value that will be assigned as the id of the tooltip
    */
   id: PropTypes.string,
@@ -215,10 +211,10 @@ DefinitionTooltip.defaultProps = {
   autoAlign: false,
   className: undefined,
   defaultOpen: false,
-  tooltipText: '',
   id: undefined,
   openOnHover: false,
   renderTrigger: undefined,
+  tooltipText: undefined,
   triggerClassName: undefined,
 };
 

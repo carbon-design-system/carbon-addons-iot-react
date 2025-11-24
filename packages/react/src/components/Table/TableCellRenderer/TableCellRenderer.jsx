@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip } from '@carbon/react';
+import { Popover, Tooltip } from '@carbon/react';
 import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
@@ -92,7 +92,6 @@ const TableCellRenderer = ({
         id="table-header-tooltip"
         align={tooltipDirection}
         openOnHover
-        tooltipText={tooltip}
         as="a"
       >
         {element}

@@ -62,7 +62,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   will-change: transform;
 }
 
-.#{$prefix}--batch-actions.#{$prefix}--batch-actions--active.iot--table-batch-actions{
+.#{$prefix}--batch-actions.#{$prefix}--batch-actions--active.iot--table-batch-actions {
   z-index: 2;
 }
 
@@ -170,7 +170,9 @@ html[dir='rtl'] {
   }
 }
 
-.#{$prefix}--table-toolbar .#{$prefix}--tooltip-trigger__wrapper .#{$iot-prefix}--table-overflow-batch-actions {
+.#{$prefix}--table-toolbar
+  .#{$prefix}--tooltip-trigger__wrapper
+  .#{$iot-prefix}--table-overflow-batch-actions {
   &.#{$prefix}--overflow-menu--open,
   &.#{$prefix}--overflow-menu--open:hover,
   &:focus {
