@@ -172,8 +172,8 @@ const ColumnResize = React.forwardRef((props, ref) => {
 
       const isRTL = document.dir === 'rtl';
       // In RTL, arrow keys should work in reverse: left increases, right decreases
-      const direction = e.key === 'ArrowLeft' ? (isRTL ? 1 : -1) : (isRTL ? -1 : 1);
-      
+      const direction = e.key === 'ArrowLeft' ? (isRTL ? 1 : -1) : isRTL ? -1 : 1;
+
       const currentColWidth = currentWidth || myColumn.width;
       const changeAmount = direction * step;
       const newWidth = currentColWidth + changeAmount;
@@ -197,7 +197,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
           const newAffectedSiblingColumnWidth = affectedSiblingColumn.width - changeAmount;
           updatedColumns.push({
             id: affectedSiblingColumn.id,
-            width: newAffectedSiblingColumnWidth
+            width: newAffectedSiblingColumnWidth,
           });
         }
 
