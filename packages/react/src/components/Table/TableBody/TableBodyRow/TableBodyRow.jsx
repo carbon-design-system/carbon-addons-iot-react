@@ -413,7 +413,6 @@ const TableBodyRow = ({
         },
   };
 
-  let a = values;
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
