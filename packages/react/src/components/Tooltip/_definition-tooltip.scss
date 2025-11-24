@@ -8,17 +8,20 @@
 
 // Definition Tooltip styles
 .#{$prefix}--popover-container .#{$prefix}--definition-term {
-    margin-inline-start: 0;
+  margin-inline-start: 0;
+  text-decoration: none;
+  .#{$iot-prefix}--table__cell-text--truncate {
+    overflow: hidden;
+  }
 }
-.#{$prefix}--popover-container .#{$prefix}--definition-term > span:first-child { 
-   padding-inline-start: 0;
+.#{$prefix}--popover-container .#{$prefix}--definition-term > span:first-child {
+  padding-inline-start: 0;
 }
-.#{$prefix}--popover-container .#{$prefix}--definition-term > span.cds--popover-container { 
-     padding: 0;
+.#{$prefix}--popover-container .#{$prefix}--definition-term > span.cds--popover-container {
+  padding: 0;
 }
 
-// .#{$prefix}--definition-term > span:last-child { 
+// .#{$prefix}--definition-term > span:last-child {
 //      padding-inline-start: 0rem;
-  
-// }
 
+// }

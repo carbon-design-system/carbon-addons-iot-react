@@ -328,7 +328,6 @@ const TableToolbar = ({
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
       aria-label={i18n.toolbarLabelAria}
     >
-     
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
@@ -547,7 +546,7 @@ const TableToolbar = ({
           }
         </TableToolbarContent>
       )}
-       {hasBatchActionToolbar ? (
+      {hasBatchActionToolbar ? (
         <TableBatchActions
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-batch-actions`}
