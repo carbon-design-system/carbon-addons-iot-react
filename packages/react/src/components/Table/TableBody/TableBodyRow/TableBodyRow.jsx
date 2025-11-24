@@ -423,6 +423,7 @@ const TableBodyRow = ({
             [`${iotPrefix}--expandable-tablerow--childless`]:
               hasRowNesting && nestingChildCount === 0,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
+            // eslint-disable-next-line no-underscore-dangle
             [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
           })}
           ariaLabel={clickToCollapseAria}
@@ -462,6 +463,7 @@ const TableBodyRow = ({
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
+              // eslint-disable-next-line no-underscore-dangle
               [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
             })}
             {...dragEnterLeaveHandlers}
@@ -484,7 +486,8 @@ const TableBodyRow = ({
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
           [`${iotPrefix}--table__row--dragging`]: isDragRow,
-          [`${iotPrefix}--table__row--softdeleted`]: 1==1 //values?._deleted,
+          // eslint-disable-next-line no-underscore-dangle
+          [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -522,6 +525,7 @@ const TableBodyRow = ({
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
         [`${iotPrefix}--table__row--background`]: isSelected,
+        // eslint-disable-next-line no-underscore-dangle
         [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
       })}
       key={id}
@@ -545,6 +549,7 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
+        // eslint-disable-next-line no-underscore-dangle
         [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
       })}
       key={id}
