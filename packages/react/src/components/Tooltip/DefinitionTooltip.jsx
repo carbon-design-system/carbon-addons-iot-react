@@ -2,11 +2,11 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Popover, PopoverContent } from '@carbon/react';
+
 import { match, keys } from '../../internal/keyboard';
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
 
-const { iotPrefix, prefix: carbonPrefix } = settings;
+const { prefix: carbonPrefix } = settings;
 
 const DefinitionTooltip = ({
   align = 'bottom',
@@ -19,11 +19,13 @@ const DefinitionTooltip = ({
   openOnHover,
   tooltipText,
   triggerClassName,
+  as = 'button', // NEW: Element type or custom component
+  renderTrigger, // NEW: Custom render function (alternative)
   ...rest
 }) => {
   const [isOpen, setOpen] = useState(defaultOpen);
   const prefix = carbonPrefix || 'cds';
-  
+
   // Generate a unique ID if not provided
   const tooltipId = id || `definition-tooltip-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -32,6 +34,62 @@ const DefinitionTooltip = ({
       event.stopPropagation();
       setOpen(false);
     }
+  }
+
+  // Common trigger props
+  const triggerProps = {
+    className: cx(`${prefix}--definition-term`, triggerClassName),
+    'aria-controls': tooltipId,
+    'aria-describedby': tooltipId,
+    'aria-expanded': isOpen,
+    tabIndex: 0,
+    onBlur: () => {
+      setOpen(false);
+    },
+    onMouseDown: (event) => {
+      // We use onMouseDown rather than onClick to make sure this triggers
+      // before onFocus.
+      if (event.button === 0) {
+        // Prevent default for anchor tags
+        if (as === 'a' || (typeof as === 'string' && as.toLowerCase() === 'a')) {
+          event.preventDefault();
+        }
+        setOpen(!isOpen);
+      }
+    },
+    onKeyDown,
+    ...rest,
+  };
+
+  // Add onClick for anchor tags
+  if (as === 'a' || (typeof as === 'string' && as.toLowerCase() === 'a')) {
+    triggerProps.onClick = (event) => {
+      event.preventDefault();
+      setOpen(!isOpen);
+    };
+    // Add href for anchor tags if not provided
+    if (!rest.href) {
+      triggerProps.href = '#';
+    }
+  }
+
+  // Add type for button
+  if (as === 'button' || (typeof as === 'string' && as.toLowerCase() === 'button')) {
+    triggerProps.type = rest.type || 'button';
+  }
+
+  // Determine the trigger element
+  let TriggerElement;
+
+  if (renderTrigger) {
+    // Option 1: Custom render function
+    TriggerElement = () => renderTrigger(triggerProps, children, isOpen, setOpen);
+  } else if (typeof as === 'string') {
+    // Option 2: HTML element string ('button', 'a', 'span', etc.)
+    TriggerElement = () => React.createElement(as, triggerProps, children);
+  } else {
+    // Option 3: Custom React component
+    TriggerElement = () => React.createElement(as, triggerProps, children);
   }
 
   return (
@@ -52,36 +110,10 @@ const DefinitionTooltip = ({
       onFocus={() => {
         setOpen(true);
       }}
-      open={isOpen}>
-      <a
-        {...rest}
-        href="#"
-        tabIndex={0}
-        className={cx(`${prefix}--definition-term`, triggerClassName)}
-        aria-controls={tooltipId}
-        aria-describedby={tooltipId}
-        aria-expanded={isOpen}
-        onBlur={() => {
-          setOpen(false);
-        }}
-        onClick={(event) => {
-          event.preventDefault();
-          setOpen(!isOpen);
-        }}
-        onMouseDown={(event) => {
-          // We use onMouseDown rather than onClick to make sure this triggers
-          // before onFocus.
-          if (event.button === 0) {
-            event.preventDefault();
-            setOpen(!isOpen);
-          }
-        }}
-        onKeyDown={onKeyDown}>
-        {children}
-      </a>
-      <PopoverContent
-        className={`${prefix}--definition-tooltip`}
-        id={tooltipId}>
+      open={isOpen}
+    >
+      <TriggerElement />
+      <PopoverContent className={`${prefix}--definition-tooltip`} id={tooltipId}>
         {tooltipText ?? definition}
       </PopoverContent>
     </Popover>
@@ -94,22 +126,17 @@ DefinitionTooltip.propTypes = {
    */
   align: PropTypes.oneOf([
     'top',
-    'top-left', // deprecated use top-start instead
-    'top-right', // deprecated use top-end instead
-
+    'top-left',
+    'top-right',
     'bottom',
-    'bottom-left', // deprecated use bottom-start instead
-    'bottom-right', // deprecated use bottom-end instead
-
+    'bottom-left',
+    'bottom-right',
     'left',
-    'left-bottom', // deprecated use left-end instead
-    'left-top', // deprecated use left-start instead
-
+    'left-bottom',
+    'left-top',
     'right',
-    'right-bottom', // deprecated use right-end instead
-    'right-top', // deprecated use right-start instead
-
-    // new values to match floating-ui
+    'right-bottom',
+    'right-top',
     'top-start',
     'top-end',
     'bottom-start',
@@ -125,6 +152,12 @@ DefinitionTooltip.propTypes = {
    * subject to future changes. Requires React v17+
    */
   autoAlign: PropTypes.bool,
+
+  /**
+   * The element type or custom component to render as the trigger.
+   * Can be 'button', 'a', 'span', or a custom React component.
+   */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
 
   /**
    * The `children` prop will be used as the value that is being defined
@@ -149,6 +182,11 @@ DefinitionTooltip.propTypes = {
   definition: PropTypes.node.isRequired,
 
   /**
+   * Alternative to definition prop for tooltip content
+   */
+  tooltipText: PropTypes.node,
+
+  /**
    * Provide a value that will be assigned as the id of the tooltip
    */
   id: PropTypes.string,
@@ -159,14 +197,11 @@ DefinitionTooltip.propTypes = {
   openOnHover: PropTypes.bool,
 
   /**
-   * @deprecated Please use the `definition` prop instead.
-   *
-   * Provide the text that will be displayed in the tooltip when it is rendered.
+   * Custom render function for the trigger element.
+   * Receives (props, children, isOpen, setOpen) as arguments.
+   * If provided, this takes precedence over the `as` prop.
    */
-  tooltipText: deprecate(
-    PropTypes.node,
-    'The tooltipText prop has been deprecated. Please use the `definition` prop instead.'
-  ),
+  renderTrigger: PropTypes.func,
 
   /**
    * The CSS class name of the trigger element
@@ -176,12 +211,14 @@ DefinitionTooltip.propTypes = {
 
 DefinitionTooltip.defaultProps = {
   align: 'bottom',
+  as: 'button',
   autoAlign: false,
   className: undefined,
   defaultOpen: false,
+  tooltipText: '',
   id: undefined,
   openOnHover: false,
-  tooltipText: undefined,
+  renderTrigger: undefined,
   triggerClassName: undefined,
 };
 

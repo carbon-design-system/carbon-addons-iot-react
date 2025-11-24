@@ -19,11 +19,6 @@ const propTypes = {
   paddingExtra: PropTypes.number.isRequired,
   preserveColumnWidths: PropTypes.bool.isRequired,
   showExpanderColumn: PropTypes.bool.isRequired,
-  resizeColumnText: PropTypes.string,
-};
-
-const defaultProps = {
-  resizeColumnText: 'Resize column',
 };
 
 const dragHandleWidth = 4;
@@ -96,7 +91,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
     paddingExtra,
     showExpanderColumn,
     preserveColumnWidths,
-    resizeColumnText,
   } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
@@ -224,21 +218,13 @@ const ColumnResize = React.forwardRef((props, ref) => {
     },
   }));
 
-  const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
-  const maxWidth = preserveColumnWidths
-    ? 1000
-    : (myColumn?.width || 0) + (affectedSiblingColumn?.width || 0);
-  const currentValue = currentWidth || myColumn?.width || minWidth;
-
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
+      role="separator"
+      aria-orientation="vertical"
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
-      //role="separator"
-      //aria-label={resizeColumnText}
-      //aria-orientation="vertical"
-      // aria-valuemin={minWidth}
-      // aria-valuemax={maxWidth}
-      //aria-valuenow={Math.round(currentValue)}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
       onKeyDown={onKeyDown}
@@ -254,6 +240,5 @@ const ColumnResize = React.forwardRef((props, ref) => {
 });
 
 ColumnResize.propTypes = propTypes;
-ColumnResize.defaultProps = defaultProps;
 
 export default ColumnResize;
