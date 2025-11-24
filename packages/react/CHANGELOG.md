@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.5...v5.5.0) (2025-11-21)
+
+
+### Features
+
+* **maxuif-2998:** add Full option to External Content card in Dashboard ([bb573b4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb573b4c713c7b0100fbb9b7129460009c723ae7))
+
+
+
+
+
+## [5.4.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.4...v5.4.5) (2025-11-19)
+
+
+### Bug Fixes
+
+* useLangDirection improvements ([#4043](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4043)) ([89c9621](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89c9621c51520f59e4418b79c0c03b061c378c3e))
+
+
+
+
+
+## [5.4.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.3...v5.4.4) (2025-11-18)
+
+
+### Bug Fixes
+
+* adding missing z-index imports ([#4039](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4039)) ([e4ff9bd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e4ff9bd7b00751eadcde047780a0bb29294fedd8))
+
+
+
+
+
 ## [5.4.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.4.2...v5.4.3) (2025-11-07)
 
 

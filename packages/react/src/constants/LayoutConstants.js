@@ -22,6 +22,7 @@ export const CARD_SIZES = {
   LARGE: 'LARGE',
   LARGETHICK: 'LARGETHICK',
   LARGEWIDE: 'LARGEWIDE',
+  FULL: 'FULL',
 };
 
 export const LEGACY_CARD_SIZES = {
@@ -254,6 +255,14 @@ export const CARD_DIMENSIONS = {
     md: { w: 8, h: 4 },
     sm: { w: 8, h: 4 },
     xs: { w: 4, h: 4 },
+  },
+  FULL: {
+    max: { w: 16, h: 11 },
+    xl: { w: 16, h: 11 },
+    lg: { w: 16, h: 11 },
+    md: { w: 8, h: 11 },
+    sm: { w: 8, h: 11 },
+    xs: { w: 4, h: 11 },
   },
 };
 

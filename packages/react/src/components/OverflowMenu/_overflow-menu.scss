@@ -32,3 +32,11 @@ button.#{$iot-prefix}--overflow-menu-icon {
   width: unset;
   font-size: 0.875rem;
 }
+
+.#{$prefix}--overflow-menu-options {
+  inline-size: 14rem;
+}
+
+.#{$prefix}--overflow-menu-options__btn {
+  max-inline-size: 14.25rem;
+}
