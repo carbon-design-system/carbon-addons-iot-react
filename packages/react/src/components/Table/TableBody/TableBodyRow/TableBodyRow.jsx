@@ -413,6 +413,7 @@ const TableBodyRow = ({
         },
   };
 
+  let a = values;
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
@@ -423,6 +424,7 @@ const TableBodyRow = ({
             [`${iotPrefix}--expandable-tablerow--childless`]:
               hasRowNesting && nestingChildCount === 0,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
+            [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
           })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -461,6 +463,7 @@ const TableBodyRow = ({
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
+              [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
             })}
             {...dragEnterLeaveHandlers}
           >
@@ -482,6 +485,7 @@ const TableBodyRow = ({
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
           [`${iotPrefix}--table__row--dragging`]: isDragRow,
+          [`${iotPrefix}--table__row--softdeleted`]: 1==1 //values?._deleted,
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -519,6 +523,7 @@ const TableBodyRow = ({
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
         [`${iotPrefix}--table__row--background`]: isSelected,
+        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
       })}
       key={id}
       onClick={() => {
@@ -541,6 +546,7 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
+        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
       })}
       key={id}
       onClick={() => {
