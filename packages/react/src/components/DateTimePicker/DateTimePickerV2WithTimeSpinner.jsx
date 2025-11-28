@@ -495,7 +495,6 @@ const DateTimePicker = ({
   closeOnSelect,
   ...others
 }) => {
-  console.log(renderInPortal);
   const id = useRef(others.id || uuidv4()).current;
 
   React.useEffect(() => {
@@ -1117,6 +1116,7 @@ const DateTimePicker = ({
   const datePlaceHolder = humanValue?.split(splitToken)[0];
 
   const datePickerContent = (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
       ref={dropdownRef}
       className={`${iotPrefix}--date-time-picker__menu-scroll`}
@@ -1129,8 +1129,7 @@ const DateTimePicker = ({
           (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
           (!hasTimeInput ? timeInputHeight : 0),
       }}
-      role="region"
-      aria-label={mergedI18n.datePickerContent}
+      role="presentation"
       onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       tabIndex="-1"
