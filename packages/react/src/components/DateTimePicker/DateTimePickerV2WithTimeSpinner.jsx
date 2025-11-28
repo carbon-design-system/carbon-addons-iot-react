@@ -1129,7 +1129,8 @@ const DateTimePicker = ({
           (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
           (!hasTimeInput ? timeInputHeight : 0),
       }}
-      role="presentation"
+      role="region"
+      aria-label={mergedI18n.datePickerContent}
       onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       tabIndex="-1"
