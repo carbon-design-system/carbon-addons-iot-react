@@ -1317,10 +1317,7 @@ const DateTimePicker = ({
             </>
           ) : (
             <div data-testid={`${testId}-datepicker`}>
-              <FormGroup
-                legendText={mergedI18n.startDateLabel}
-                className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-              >
+              <FormGroup className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
                 <Layer>
                   <DatePicker
                     datePickerType={datePickerType}
@@ -1350,7 +1347,6 @@ const DateTimePicker = ({
                     {datePickerType === 'range' ? (
                       <DatePickerInput
                         labelText={mergedI18n.endDateLabel}
-                        aria-label={mergedI18n.endAriaLabel}
                         id={`${id}-date-picker-input-end`}
                       />
                     ) : null}
@@ -1358,14 +1354,7 @@ const DateTimePicker = ({
                 </Layer>
               </FormGroup>
               {hasTimeInput ? (
-                <FormGroup
-                  legendText={
-                    isSingleSelect
-                      ? mergedI18n.startTimeLabel
-                      : `${mergedI18n.startTimeLabel} ${mergedI18n.toLabel} ${mergedI18n.endTimeLabel}`
-                  }
-                  className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                >
+                <FormGroup className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
                   <Layer>
                     <TimePickerDropdown
                       className={`${iotPrefix}--time-picker-dropdown`}
