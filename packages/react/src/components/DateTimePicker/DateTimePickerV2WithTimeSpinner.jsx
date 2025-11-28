@@ -291,6 +291,9 @@ export const defaultProps = {
     invalidDateText: 'Date is required',
     amString: 'AM',
     pmString: 'PM',
+    buttonActions: 'Button actions',
+    datePickerContent: 'Date picker content',
+    datePickerReference: 'Date picker reference',
   },
   light: false,
   locale: 'en',
@@ -988,58 +991,60 @@ const DateTimePicker = ({
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
     return (
-      <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
-        {isCustomRange && !isSingleSelect && !hideBackButton ? (
+      <div role="region" aria-label={mergedI18n.buttonActions}>
+        <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
+          {isCustomRange && !isSingleSelect && !hideBackButton ? (
+            <Button
+              kind="secondary"
+              className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
+              size="md"
+              {...others}
+              onClick={toggleIsCustomRange}
+              onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+            >
+              {mergedI18n.backBtnLabel}
+              id={`back-${others.id}`}
+            </Button>
+          ) : isSingleSelect ? (
+            <Button
+              kind="secondary"
+              className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-reset`}
+              size="md"
+              {...others}
+              id={`clear-${others.id}`}
+              onClick={onClearClick}
+              onMouseDown={(e) => e.preventDefault()}
+              onKeyUp={handleSpecificKeyDown(['Enter', ' '], onClearClick)}
+            >
+              {mergedI18n.resetBtnLabel}
+            </Button>
+          ) : (
+            <Button
+              kind="secondary"
+              className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
+              onClick={onCancelClick}
+              size="md"
+              {...others}
+              id={`cancel-${others.id}`}
+              onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
+            >
+              {mergedI18n.cancelBtnLabel}
+            </Button>
+          )}
           <Button
-            kind="secondary"
-            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
-            size="md"
+            kind="primary"
+            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
             {...others}
-            onClick={toggleIsCustomRange}
-            onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
-          >
-            {mergedI18n.backBtnLabel}
-            id={`back-${others.id}`}
-          </Button>
-        ) : isSingleSelect ? (
-          <Button
-            kind="secondary"
-            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-reset`}
-            size="md"
-            {...others}
-            id={`clear-${others.id}`}
-            onClick={onClearClick}
+            id={`apply-${others.id}`}
+            onClick={onApplyClick}
+            onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
             onMouseDown={(e) => e.preventDefault()}
-            onKeyUp={handleSpecificKeyDown(['Enter', ' '], onClearClick)}
-          >
-            {mergedI18n.resetBtnLabel}
-          </Button>
-        ) : (
-          <Button
-            kind="secondary"
-            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
-            onClick={onCancelClick}
             size="md"
-            {...others}
-            id={`cancel-${others.id}`}
-            onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
+            disabled={customRangeKind === PICKER_KINDS.SINGLE ? false : disableApply}
           >
-            {mergedI18n.cancelBtnLabel}
+            {mergedI18n.applyBtnLabel}
           </Button>
-        )}
-        <Button
-          kind="primary"
-          className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
-          {...others}
-          id={`apply-${others.id}`}
-          onClick={onApplyClick}
-          onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
-          onMouseDown={(e) => e.preventDefault()}
-          size="md"
-          disabled={customRangeKind === PICKER_KINDS.SINGLE ? false : disableApply}
-        >
-          {mergedI18n.applyBtnLabel}
-        </Button>
+        </div>
       </div>
     );
   };
@@ -1124,7 +1129,8 @@ const DateTimePicker = ({
           (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
           (!hasTimeInput ? timeInputHeight : 0),
       }}
-      role="presentation"
+      role="region"
+      aria-label={mergedI18n.datePickerContent}
       onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
       tabIndex="-1"
@@ -1311,7 +1317,10 @@ const DateTimePicker = ({
             </>
           ) : (
             <div data-testid={`${testId}-datepicker`}>
-              <FormGroup className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
+              <FormGroup
+                legendText={mergedI18n.startDateLabel}
+                className={`${iotPrefix}--date-time-picker__menu-formgroup`}
+              >
                 <Layer>
                   <DatePicker
                     datePickerType={datePickerType}
@@ -1331,7 +1340,7 @@ const DateTimePicker = ({
                   >
                     <DatePickerInput
                       labelText={mergedI18n.startDateLabel}
-                      aria-label={mergedI18n.startAriaLabel}
+                      aria-label={mergedI18n.startDateLabel}
                       id={`${id}-date-picker-input-start`}
                       invalid={invalidRangeStartDate}
                       invalidText={mergedI18n.invalidDateText}
@@ -1350,7 +1359,11 @@ const DateTimePicker = ({
               </FormGroup>
               {hasTimeInput ? (
                 <FormGroup
-                  legendText=""
+                  legendText={
+                    isSingleSelect
+                      ? mergedI18n.startTimeLabel
+                      : `${mergedI18n.startTimeLabel} ${mergedI18n.toLabel} ${mergedI18n.endTimeLabel}`
+                  }
                   className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                 >
                   <Layer>
@@ -1484,34 +1497,36 @@ const DateTimePicker = ({
 
   return (
     <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
-      <div
-        ref={datePickerRef}
-        data-testid={testId}
-        id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
-        className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
-          [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
-          [`${iotPrefix}--date-time-pickerv2__wrapper--invalid`]: invalidState,
-        })}
-        style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
-        role="button"
-        onClick={onFieldClick}
-        onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], (event) => {
-          // the onApplyClick event gets blocked when called via the keyboard from the flyout menu's
-          // custom footer. This is a catch to ensure the onApplyCLick is called correctly for preset
-          // ranges via the keyboard.
-          if (
-            (event.key === 'Enter' || event.key === ' ') &&
-            event.target.classList.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`) &&
-            !isCustomRange
-          ) {
-            onApplyClick();
-          }
+      <div role="region" aria-label={mergedI18n.datePickerReference}>
+        <div
+          ref={datePickerRef}
+          data-testid={testId}
+          id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
+          className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
+            [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
+            [`${iotPrefix}--date-time-pickerv2__wrapper--invalid`]: invalidState,
+          })}
+          style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
+          role="button"
+          onClick={onFieldClick}
+          onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], (event) => {
+            // the onApplyClick event gets blocked when called via the keyboard from the flyout menu's
+            // custom footer. This is a catch to ensure the onApplyCLick is called correctly for preset
+            // ranges via the keyboard.
+            if (
+              (event.key === 'Enter' || event.key === ' ') &&
+              event.target.classList.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`) &&
+              !isCustomRange
+            ) {
+              onApplyClick();
+            }
 
-          onFieldInteraction(event);
-        })}
-        tabIndex={0}
-      >
-        {tooltipField}
+            onFieldInteraction(event);
+          })}
+          tabIndex={0}
+        >
+          {tooltipField}
+        </div>
       </div>
       {invalidState && !hasIconOnly ? (
         <p
