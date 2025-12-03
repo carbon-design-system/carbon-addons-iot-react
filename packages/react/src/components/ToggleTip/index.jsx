@@ -58,7 +58,7 @@ export const ToggleTip = ({
           <div ref={toggleTipLabelRef}>{triggerText}</div>
         </ToggletipLabel>
       ) : null}
-      <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...rest}>
+      <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
         {triggerBtn ?? (
           <ToggletipButton aria-label={ariaLabel} aria-labelledby={ariaLabelledBy}>
             {showIcon ? (

@@ -68,7 +68,7 @@ const GaugeCard = ({
   testID,
   testId,
   padding,
-  ...rest
+  ...others
 }) => {
   const [loadedState, setLoadedState] = useState(false);
   useEffect(() => {
@@ -93,7 +93,7 @@ const GaugeCard = ({
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
-    <main id="main-content">
+    <section id="main-content" aria-label="region">
       <Card
         id={id}
         className={`${iotPrefix}--gauge-card`}
@@ -103,7 +103,7 @@ const GaugeCard = ({
         aria-label={`${title}`}
         // TODO: remove deprecated testID in v3.
         testId={testID || testId}
-        {...rest}
+        {...others}
         tooltip={`${title}`}
         isLoading={isLoading}
       >
@@ -182,7 +182,7 @@ const GaugeCard = ({
             })}
         </div>
       </Card>
-    </main>
+    </section>
   );
 };
 

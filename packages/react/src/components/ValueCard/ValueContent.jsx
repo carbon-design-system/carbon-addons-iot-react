@@ -57,7 +57,7 @@ const ValueContent = ({
   const attributeCount = content.attributes.length;
 
   return (
-    <main id="main-content">
+    <section id="main-content" aria-label="value content">
       <div
         className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
           [`${BASE_CLASS_NAME}__content-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
@@ -101,7 +101,7 @@ const ValueContent = ({
           />
         )}
       </div>
-    </main>
+    </section>
   );
 };
 
