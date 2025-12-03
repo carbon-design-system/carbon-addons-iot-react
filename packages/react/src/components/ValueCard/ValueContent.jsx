@@ -57,47 +57,51 @@ const ValueContent = ({
   const attributeCount = content.attributes.length;
 
   return (
-    <div
-      className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
-        [`${BASE_CLASS_NAME}__content-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
-      })}
-    >
-      {!dataState ? (
-        content.attributes.map((attribute, index) => (
-          <Attribute
-            key={`fragment-${attribute.dataSourceId}-${JSON.stringify(attribute.dataFilter || {})}`}
-            attribute={attribute}
-            attributeCount={attributeCount}
-            layout={layout}
-            locale={locale}
-            isEditable={isEditable}
-            title={title}
-            renderIconByName={others.renderIconByName}
-            value={determineValue(attribute.dataSourceId, values, attribute.dataFilter)}
-            secondaryValue={
-              attribute.secondaryValue && {
-                ...attribute.secondaryValue,
-                value: determineValue(attribute.secondaryValue.dataSourceId, values),
+    <main id="main-content">
+      <div
+        className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
+          [`${BASE_CLASS_NAME}__content-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+        })}
+      >
+        {!dataState ? (
+          content.attributes.map((attribute, index) => (
+            <Attribute
+              key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
+                attribute.dataFilter || {}
+              )}`}
+              attribute={attribute}
+              attributeCount={attributeCount}
+              layout={layout}
+              locale={locale}
+              isEditable={isEditable}
+              title={title}
+              renderIconByName={others.renderIconByName}
+              value={determineValue(attribute.dataSourceId, values, attribute.dataFilter)}
+              secondaryValue={
+                attribute.secondaryValue && {
+                  ...attribute.secondaryValue,
+                  value: determineValue(attribute.secondaryValue.dataSourceId, values),
+                }
               }
-            }
-            // Prefer new formatter. Fall back to legacy customFormatter.
-            formatter={formatter}
-            customFormatter={customFormatter}
-            fontSize={fontSize}
-            isNumberValueCompact={isNumberValueCompact}
-            testId={`${testId}-attribute-${index}`}
-            onValueClick={onAttributeClick}
+              // Prefer new formatter. Fall back to legacy customFormatter.
+              formatter={formatter}
+              customFormatter={customFormatter}
+              fontSize={fontSize}
+              isNumberValueCompact={isNumberValueCompact}
+              testId={`${testId}-attribute-${index}`}
+              onValueClick={onAttributeClick}
+            />
+          ))
+        ) : (
+          <DataStateRenderer
+            dataState={dataState}
+            size={size}
+            id={id}
+            testId={`${testId}-data-state`}
           />
-        ))
-      ) : (
-        <DataStateRenderer
-          dataState={dataState}
-          size={size}
-          id={id}
-          testId={`${testId}-data-state`}
-        />
-      )}
-    </div>
+        )}
+      </div>
+    </main>
   );
 };
 

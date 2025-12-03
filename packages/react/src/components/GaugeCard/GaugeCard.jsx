@@ -68,7 +68,7 @@ const GaugeCard = ({
   testID,
   testId,
   padding,
-  ...others
+  ...rest
 }) => {
   const [loadedState, setLoadedState] = useState(false);
   useEffect(() => {
@@ -93,93 +93,96 @@ const GaugeCard = ({
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
-    <Card
-      id={id}
-      className={`${iotPrefix}--gauge-card`}
-      title={title}
-      size={size}
-      resizeHandles={resizeHandles}
-      // TODO: remove deprecated testID in v3.
-      testId={testID || testId}
-      {...others}
-      tooltip={tooltip}
-      isLoading={isLoading}
-    >
-      <div className={classnames(`${iotPrefix}--gauge-container`, className)} style={myStyles}>
-        {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
-        {!dataState &&
-          gauges.map((gauge, i) => {
-            const { color } = getColor(gauge, values[gauge.dataSourceId]);
-            const valueLength =
-              values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
-            return (
-              <Fragment key={`${iotPrefix}-gauge-${i}`}>
-                <svg
-                  aria-labelledby="gauge-label"
-                  className={classnames(
-                    `${iotPrefix}--gauge`,
-                    { [`${iotPrefix}--gauge__loaded`]: loadedState },
-                    className
-                  )}
-                  percent="0"
-                  style={{
-                    '--gauge-value': values[gauge.dataSourceId] || 0,
-                    '--gauge-max-value': gauge.maximumValue,
-                    '--gauge-colors': color,
-                    '--gauge-bg': gauge.backgroundColor,
-                    '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
-                    '--stroke-dash-array': circum,
-                    '--gauge-size': `${gaugeSize}px`,
-                    '--gauge-trend-color': gauge.trend.color,
-                  }}
-                >
-                  <circle
-                    className={`${iotPrefix}--gauge-bg`}
-                    cx={gaugeSize / 2}
-                    cy={gaugeSize / 2}
-                    r={radius}
-                  />
-                  <circle
-                    className={`${iotPrefix}--gauge-fg`}
-                    cx={gaugeSize / 2}
-                    cy={gaugeSize / 2}
-                    r={radius}
-                  />
-                  <text
-                    id="gauge-label"
+    <main id="main-content">
+      <Card
+        id={id}
+        className={`${iotPrefix}--gauge-card`}
+        title={title}
+        size={size}
+        resizeHandles={resizeHandles}
+        aria-label={`${title}`}
+        // TODO: remove deprecated testID in v3.
+        testId={testID || testId}
+        {...rest}
+        tooltip={`${title}`}
+        isLoading={isLoading}
+      >
+        <div className={classnames(`${iotPrefix}--gauge-container`, className)} style={myStyles}>
+          {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
+          {!dataState &&
+            gauges.map((gauge, i) => {
+              const { color } = getColor(gauge, values[gauge.dataSourceId]);
+              const valueLength =
+                values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
+              return (
+                <Fragment key={`${iotPrefix}-gauge-${i}`}>
+                  <svg
+                    aria-labelledby="gauge-label"
                     className={classnames(
-                      `${iotPrefix}--gauge-value`,
-                      `${iotPrefix}--gauge-value__centered`,
-                      { [`${iotPrefix}--gauge-value-sm`]: valueLength === 4 },
-                      { [`${iotPrefix}--gauge-value-md`]: valueLength === 3 },
-                      { [`${iotPrefix}--gauge-value-lg`]: valueLength <= 2 }
+                      `${iotPrefix}--gauge`,
+                      { [`${iotPrefix}--gauge__loaded`]: loadedState },
+                      className
                     )}
-                    x={gaugeSize / 2}
-                    y={gaugeSize / 2 + STROKE_SIZE}
-                    textAnchor="middle"
+                    percent="0"
+                    style={{
+                      '--gauge-value': values[gauge.dataSourceId] || 0,
+                      '--gauge-max-value': gauge.maximumValue,
+                      '--gauge-colors': color,
+                      '--gauge-bg': gauge.backgroundColor,
+                      '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
+                      '--stroke-dash-array': circum,
+                      '--gauge-size': `${gaugeSize}px`,
+                      '--gauge-trend-color': gauge.trend.color,
+                    }}
                   >
-                    <tspan>{values[gauge.dataSourceId]}</tspan>
-                    <tspan>{gauge.units}</tspan>
-                  </text>
-                </svg>
-                {values[gauge.trend.dataSourceId] && (
-                  <div
-                    className={classnames(`${iotPrefix}--gauge-trend`, {
-                      [`${iotPrefix}--gauge-trend__up`]: gauge.trend.trend === 'up',
-                      [`${iotPrefix}--gauge-trend__down`]: gauge.trend.trend === 'down',
-                    })}
-                    key={`${gauge.trend.dataSourceId}-${i}`}
-                  >
-                    <p style={{ '--gauge-trend-color': gauge.trend.color }}>
-                      {values[gauge.trend.dataSourceId]}
-                    </p>
-                  </div>
-                )}
-              </Fragment>
-            );
-          })}
-      </div>
-    </Card>
+                    <circle
+                      className={`${iotPrefix}--gauge-bg`}
+                      cx={gaugeSize / 2}
+                      cy={gaugeSize / 2}
+                      r={radius}
+                    />
+                    <circle
+                      className={`${iotPrefix}--gauge-fg`}
+                      cx={gaugeSize / 2}
+                      cy={gaugeSize / 2}
+                      r={radius}
+                    />
+                    <text
+                      id="gauge-label"
+                      className={classnames(
+                        `${iotPrefix}--gauge-value`,
+                        `${iotPrefix}--gauge-value__centered`,
+                        { [`${iotPrefix}--gauge-value-sm`]: valueLength === 4 },
+                        { [`${iotPrefix}--gauge-value-md`]: valueLength === 3 },
+                        { [`${iotPrefix}--gauge-value-lg`]: valueLength <= 2 }
+                      )}
+                      x={gaugeSize / 2}
+                      y={gaugeSize / 2 + STROKE_SIZE}
+                      textAnchor="middle"
+                    >
+                      <tspan>{values[gauge.dataSourceId]}</tspan>
+                      <tspan>{gauge.units}</tspan>
+                    </text>
+                  </svg>
+                  {values[gauge.trend.dataSourceId] && (
+                    <div
+                      className={classnames(`${iotPrefix}--gauge-trend`, {
+                        [`${iotPrefix}--gauge-trend__up`]: gauge.trend.trend === 'up',
+                        [`${iotPrefix}--gauge-trend__down`]: gauge.trend.trend === 'down',
+                      })}
+                      key={`${gauge.trend.dataSourceId}-${i}`}
+                    >
+                      <p style={{ '--gauge-trend-color': gauge.trend.color }}>
+                        {values[gauge.trend.dataSourceId]}
+                      </p>
+                    </div>
+                  )}
+                </Fragment>
+              );
+            })}
+        </div>
+      </Card>
+    </main>
   );
 };
 
