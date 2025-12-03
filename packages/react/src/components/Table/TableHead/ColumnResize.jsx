@@ -221,13 +221,8 @@ const ColumnResize = React.forwardRef((props, ref) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
-      role="separator"
-      aria-orientation="vertical"
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={0}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
-      onKeyDown={onKeyDown}
       style={{
         width: dragHandleWidth,
         left: leftPosition || (document.dir === 'rtl' ? 0 : 'auto'),
