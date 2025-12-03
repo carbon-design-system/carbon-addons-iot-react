@@ -193,7 +193,7 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                     // compact or xs rows need the `sm` overflow menu, everything else is default (md)
-                    size={['compact', 'md'].includes(size) ? 'sm' : 'md'}
+                    size={['compact', 'sx'].includes(size) ? 'sm' : 'md'}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                     selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
                     useAutoPositioning
