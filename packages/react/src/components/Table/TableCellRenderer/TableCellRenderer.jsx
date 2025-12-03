@@ -92,6 +92,7 @@ const TableCellRenderer = ({
         id="table-header-tooltip"
         align={tooltipDirection}
         openOnHover
+        tooltipText={tooltip}
         as="a"
       >
         {element}
