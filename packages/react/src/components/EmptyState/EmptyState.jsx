@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -70,16 +72,10 @@ const props = {
   size: PropTypes.oneOf([DEFAULT_SIZE, SMALL_SIZE]),
   /** Arrangement of the empty state */
   arrangement: PropTypes.oneOf(['stacked', 'inline']),
-};
-
-const defaultProps = {
-  action: null,
-  secondaryAction: null,
-  icon: '',
-  className: '',
-  testId: 'EmptyState',
-  size: 'default',
-  arrangement: 'stacked',
+  /** aria-labe to be passed to the empty state icon */
+  iconAriaLabel: PropTypes.string,
+  /** aria-hidden to be passed to the empty state icon */
+  iconAriaHidden: PropTypes.bool,
 };
 
 /**
@@ -88,15 +84,17 @@ const defaultProps = {
  */
 const EmptyState = ({
   title,
-  icon,
+  icon = '',
   body,
-  action,
-  secondaryAction,
-  className,
-  testId,
+  action = null,
+  secondaryAction = null,
+  className = '',
+  testId = 'EmptyState',
   testID,
-  size,
-  arrangement,
+  size = 'default',
+  arrangement = 'stacked',
+  iconAriaLabel,
+  iconAriaHidden,
 }) => {
   const isSmall = size === SMALL_SIZE;
   return (
@@ -119,6 +117,8 @@ const EmptyState = ({
             }),
             alt: '',
             'data-testid': `${testID || testId}-icon`,
+            'aria-label': iconAriaLabel,
+            'aria-hidden': iconAriaHidden,
             ...(isSmall && smallIconProps),
           })}
         <h3
@@ -170,6 +170,5 @@ const EmptyState = ({
 };
 
 EmptyState.propTypes = props;
-EmptyState.defaultProps = defaultProps;
 
 export default EmptyState;
