@@ -97,7 +97,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
   const [myColumn, setMyColumn] = useState();
   const [affectedSiblingColumn, setAffectedSiblingColumn] = useState();
- 
 
   const setAffectedColumns = () => {
     const myCol = currentColumnWidths[columnId];
@@ -150,8 +149,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
       setLeftPosition(0);
     }
   };
-
-
 
   // We extend this instance with mouse move/up event forward functions which the parent
   // component must call using forward referencing. We do this since the mouse move/up
