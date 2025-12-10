@@ -22,8 +22,6 @@ export const ToggleTip = ({
   toggleTipLabelRef,
   ...other
 }) => {
-  // Extract aria props so they go to the BUTTON, not CarbonToggleTip
-  const { 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = other;
   let newAlign;
   // This function is to pass the old direction, align property to the new align property since The align and direction props have been merged into the align prop
   if (direction === 'bottom' && align === 'center') {
@@ -55,9 +53,7 @@ export const ToggleTip = ({
     <>
       {showIcon && triggerText !== '' ? (
         <ToggletipLabel>
-          <div id="toggle-tip-label" ref={toggleTipLabelRef}>
-            {triggerText}
-          </div>
+          <div id="toggle-tip-label" ref={toggleTipLabelRef}>{triggerText}</div>
         </ToggletipLabel>
       ) : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
@@ -71,9 +67,7 @@ export const ToggleTip = ({
               )
             ) : (
               <ToggletipLabel>
-                <div id="toggle-tip-label" ref={toggleTipLabelRef}>
-                  {triggerText}
-                </div>
+                <div id="toggle-tip-label" ref={toggleTipLabelRef}>{triggerText}</div>
               </ToggletipLabel>
             )}
           </ToggletipButton>
