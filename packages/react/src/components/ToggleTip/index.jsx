@@ -55,12 +55,14 @@ export const ToggleTip = ({
     <>
       {showIcon && triggerText !== '' ? (
         <ToggletipLabel>
-          <div ref={toggleTipLabelRef}>{triggerText}</div>
+          <div id="toggle-tip-label" ref={toggleTipLabelRef}>
+            {triggerText}
+          </div>
         </ToggletipLabel>
       ) : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
         {triggerBtn ?? (
-          <ToggletipButton aria-label={ariaLabel} aria-labelledby={ariaLabelledBy}>
+          <ToggletipButton aria-labelledby="toggle-tip-label">
             {showIcon ? (
               IconCustomElement ? (
                 <IconCustomElement />
@@ -69,7 +71,9 @@ export const ToggleTip = ({
               )
             ) : (
               <ToggletipLabel>
-                <div ref={toggleTipLabelRef}>{triggerText}</div>
+                <div id="toggle-tip-label" ref={toggleTipLabelRef}>
+                  {triggerText}
+                </div>
               </ToggletipLabel>
             )}
           </ToggletipButton>
