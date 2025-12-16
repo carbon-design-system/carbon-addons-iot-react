@@ -62,7 +62,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   will-change: transform;
 }
 
-.#{$prefix}--batch-actions.#{$prefix}--batch-actions--active.iot--table-batch-actions {
+.#{$prefix}--batch-actions.#{$prefix}--batch-actions--active.#{$iot-prefix}--table-batch-actions {
   z-index: 2;
 }
 
