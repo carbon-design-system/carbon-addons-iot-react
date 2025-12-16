@@ -251,13 +251,12 @@
   }
 
   .#{$prefix}--table-sort {
-    // padding-left: 0;
-    padding-inline-start: 1rem;
+    padding-inline-start: $spacing-05;
 
     .#{$prefix}--table-header-label,
     .#{$prefix}--tooltip--definition {
-      padding-left: 0;
-      padding-right: 0;
+      padding-inline-start: 0;
+      padding-inline-end: 0;
       text-decoration: none;
 
       [dir='rtl'] & {
