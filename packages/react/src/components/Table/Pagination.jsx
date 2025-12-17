@@ -37,6 +37,7 @@ const SizedPagination = ({
           [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
           [`${iotPrefix}--pagination--narrow`]: width > 500 && width < 608,
           [`${iotPrefix}--pagination--compact`]: width < 500,
+          [`${iotPrefix}--pagination--hide-goto-page`]: rest.maxPagesConditionalStyle,
         })}
         style={{
           '--pagination-text-display': width < 500 ? 'none' : 'flex',
