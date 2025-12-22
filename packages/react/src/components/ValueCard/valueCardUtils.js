@@ -16,11 +16,9 @@ export const DEFAULT_FONT_SIZE = 42;
  * @param {Array<Object>} values
  * @param {Object} dataFilter
  */
-export const determineValue = (dataSourceId, values, dataFilter = {}, disableDataFilter = false) =>
+export const determineValue = (dataSourceId, values, dataFilter = {}) =>
   Array.isArray(values)
-    ? !disableDataFilter
-      ? filter(values, dataFilter)[0] && filter(values, dataFilter)[0][dataSourceId]
-      : values[0] && values[0][dataSourceId]
+    ? filter(values, dataFilter)[0] && filter(values, dataFilter)[0][dataSourceId]
     : values && values[dataSourceId];
 
 /**
