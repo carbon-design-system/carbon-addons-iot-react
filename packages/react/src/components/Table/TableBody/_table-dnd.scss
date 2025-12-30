@@ -21,6 +21,11 @@
   inset-inline-start: var(--row-nesting-offset);
 }
 
+// Override IconButton hover background for drag handle tooltip wrapper
+.#{$iot-prefix}--table-drag-handle .draggble-icon-wrapper:hover {
+  background-color: transparent;
+}
+
 .#{$prefix}--data-table .#{$iot-prefix}--table-grab-handle-cell {
   // remove padding so that the handle can fill the whole cell. Visually it's smaller, but the
   // draggable region will be large.

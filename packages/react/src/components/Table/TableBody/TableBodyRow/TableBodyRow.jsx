@@ -44,6 +44,8 @@ const propTypes = {
   clickToExpandAria: PropTypes.string,
   /** internationalized label  */
   clickToCollapseAria: PropTypes.string,
+  /** I18N label for drag handle tooltip */
+  dragHandleTooltip: PropTypes.string,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
@@ -145,6 +147,8 @@ const propTypes = {
   isDraggable: PropTypes.bool,
   /** If this row is being dragged. */
   isDragRow: PropTypes.bool,
+  /** If a drag operation is currently in progress. */
+  isDragging: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
 };
@@ -157,6 +161,7 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
   clickToCollapseAria: 'Click to collapse.',
+  dragHandleTooltip: 'Click and drag to new location',
   rowActions: null,
   rowDetails: null,
   nestingLevel: 0,
@@ -184,6 +189,7 @@ const defaultProps = {
   onDragLeaveRow: null,
   isDraggable: false,
   isDragRow: false,
+  isDragging: false,
 };
 
 const TableBodyRow = ({
@@ -213,6 +219,7 @@ const TableBodyRow = ({
   overflowMenuAria,
   clickToExpandAria,
   clickToCollapseAria,
+  dragHandleTooltip,
   inProgressText,
   actionFailedText,
   learnMoreText,
@@ -236,6 +243,7 @@ const TableBodyRow = ({
   onDragLeaveRow,
   isDragRow,
   isDraggable,
+  isDragging,
   hasDragAndDrop,
   hideDragHandles,
 }) => {
@@ -298,7 +306,12 @@ const TableBodyRow = ({
   const dragHandleCell = !hasDragAndDrop ? null : (
     <TableCell className={`${iotPrefix}--table-grab-handle-cell`}>
       {!isDraggable || hideDragHandles ? null : (
-        <TableDragHandle onStartDrag={onStartDrag} rowId={id} />
+        <TableDragHandle
+          onStartDrag={onStartDrag}
+          rowId={id}
+          isDragging={isDragging}
+          tooltipText={dragHandleTooltip}
+        />
       )}
     </TableCell>
   );

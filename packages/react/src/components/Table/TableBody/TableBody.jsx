@@ -43,6 +43,8 @@ const propTypes = {
   dismissText: PropTypes.string,
   /** I18N label for load more */
   loadMoreText: PropTypes.string,
+  /** I18N label for drag handle tooltip */
+  dragHandleTooltip: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -148,6 +150,7 @@ const defaultProps = {
   inProgressText: 'In progress',
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
+  dragHandleTooltip: 'Click and drag to new location',
   size: undefined,
   hasDragAndDrop: false,
   hasBreadcrumbDrop: false,
@@ -173,6 +176,7 @@ const TableBody = ({
   dismissText,
   actionFailedText,
   loadMoreText,
+  dragHandleTooltip,
   totalColumns,
   actions,
   rowActionsState,
@@ -316,6 +320,7 @@ const TableBody = ({
             clickToExpandAria={clickToExpandAria}
             columns={columns}
             dismissText={dismissText}
+            dragHandleTooltip={dragHandleTooltip}
             expandedIds={expandedIds}
             expandedRows={expandedRows}
             hasRowActions={hasRowActions}
@@ -325,6 +330,7 @@ const TableBody = ({
             useRadioButtonSingleSelect={useRadioButtonSingleSelect}
             indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
             inProgressText={inProgressText}
+            isDragging={isDragging}
             langDir={langDir}
             learnMoreText={learnMoreText}
             loadingMoreIds={loadingMoreIds}
