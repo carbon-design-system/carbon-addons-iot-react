@@ -5,6 +5,7 @@
       "packages/*"
     ]
   },
+  "packageManager": "yarn@1.22.22",
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",

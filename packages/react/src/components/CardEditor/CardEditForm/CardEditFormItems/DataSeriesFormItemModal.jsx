@@ -547,7 +547,7 @@ const DataSeriesFormItemModal = ({
               </div>
 
               <div className={`${baseClassName}--input-group--item`}>
-                {!isEmpty(editDataItem.dataFilter) && availableDimensionsItems.length > 0 && (
+                {!isEmpty(editDataItem.dataFilter) && availableDimensionsItems?.length > 0 && (
                   <Dropdown
                     id={`${id}_data-filter-value`}
                     label=""
