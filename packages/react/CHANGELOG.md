@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.5.2...v5.6.0) (2026-01-01)
+
+
+### Features
+
+* add disableDataFilter option to timeseries and value card ([#4053](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4053)) ([54330be](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/54330beac3016e531cf5fe163d0dc93692fda005))
+
+
+
+
+
 ## [5.5.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.5.1...v5.5.2) (2025-12-09)
 
 
