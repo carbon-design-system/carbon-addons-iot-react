@@ -301,21 +301,9 @@ const DataSeriesFormItemModal = ({
   const initialAggregation = matchedDataItem?.aggregationMethod;
   const initialGrain = matchedDataItem?.grain;
 
-  const selectedDimensionFilter = useMemo(
-    () => (editDataItem.dataFilter ? Object.keys(editDataItem.dataFilter)[0] : ''),
-    [editDataItem.dataFilter]
-  );
-
-  const availableDimensionsItems = useMemo(
-    () =>
-      (selectedDimensionFilter &&
-        availableDimensions[selectedDimensionFilter]?.sort().map((item) => ({
-          id: item,
-          text: item.toString(),
-        }))) ||
-      [],
-    [availableDimensions, selectedDimensionFilter]
-  );
+  const selectedDimensionFilter = editDataItem.dataFilter
+    ? Object.keys(editDataItem.dataFilter)[0]
+    : '';
 
   const DataEditorContent = useMemo(
     () => (
@@ -547,29 +535,32 @@ const DataSeriesFormItemModal = ({
               </div>
 
               <div className={`${baseClassName}--input-group--item`}>
-                {!isEmpty(editDataItem.dataFilter) && availableDimensionsItems?.length > 0 && (
-                  <Dropdown
-                    id={`${id}_data-filter-value`}
-                    label=""
-                    direction="bottom"
-                    items={availableDimensionsItems}
-                    light
-                    itemToString={(item) => (item ? item.text : '')}
-                    selectedItem={availableDimensionsItems.find(
-                      (item) => item.id === editDataItem.dataFilter?.[selectedDimensionFilter]
-                    )}
-                    onChange={({ selectedItem }) => {
-                      const dataFilter = {
-                        [selectedDimensionFilter]: selectedItem?.id,
-                      };
-                      setEditDataItem({
-                        ...editDataItem,
-                        dataFilter,
-                      });
-                    }}
-                    autoAlign
-                  />
-                )}
+                {!isEmpty(editDataItem.dataFilter) &&
+                  availableDimensions[selectedDimensionFilter] && (
+                    <Dropdown
+                      id={`${id}_data-filter-value`}
+                      label=""
+                      direction="bottom"
+                      items={availableDimensions[selectedDimensionFilter]?.sort()}
+                      light
+                      itemToString={(item) => item?.toString()}
+                      selectedItem={
+                        editDataItem.dataFilter
+                          ? editDataItem.dataFilter[selectedDimensionFilter]
+                          : undefined
+                      }
+                      onChange={({ selectedItem }) => {
+                        const dataFilter = {
+                          [selectedDimensionFilter]: selectedItem,
+                        };
+                        setEditDataItem({
+                          ...editDataItem,
+                          dataFilter,
+                        });
+                      }}
+                      autoAlign
+                    />
+                  )}
               </div>
             </div>
           )}
@@ -597,7 +588,6 @@ const DataSeriesFormItemModal = ({
     ),
     [
       availableDimensions,
-      availableDimensionsItems,
       availableGrains,
       baseClassName,
       cardConfig,
