@@ -39,7 +39,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Build
         run: yarn build
