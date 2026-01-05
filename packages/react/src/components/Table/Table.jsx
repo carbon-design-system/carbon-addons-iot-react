@@ -416,6 +416,8 @@ const propTypes = {
   error: PropTypes.string,
 
   testId: PropTypes.string,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 export const defaultProps = (baseProps) => ({
@@ -619,6 +621,7 @@ export const defaultProps = (baseProps) => ({
   testId: null,
   enablePercentageColumnWidth: false,
   emptyStateIcon: '',
+  deletedAttribute: undefined,
 });
 
 const Table = (props) => {
@@ -646,6 +649,7 @@ const Table = (props) => {
     size,
     zIndex,
     emptyStateIcon,
+    deletedAttribute,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -1242,6 +1246,7 @@ const Table = (props) => {
                 showExpanderColumn={showExpanderColumn}
                 size={size}
                 pinColumn={options.pinColumn}
+                deletedAttribute={deletedAttribute}
               />
             ) : (
               <EmptyTable
