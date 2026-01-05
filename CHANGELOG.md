@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.0...v5.6.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* revert yarn version changes ([#4055](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4055)) ([f3e4c6c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3e4c6ca234fcb3dd76615e9505c30ca0818a21f))
+
+
+
+
+
 # [5.6.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.5.2...v5.6.0) (2026-01-01)
 
 
