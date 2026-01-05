@@ -56,6 +56,10 @@ const propTypes = {
   isBusy: PropTypes.bool,
   /** should the footer primary button be disabled */
   isPrimaryButtonDisabled: PropTypes.bool,
+  /** Custom width in pixels for the side panel (e.g., 400, '400px', or '25rem') */
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /** Custom background color for the side panel (e.g., '#f4f4f4', 'gray', or any valid CSS color) */
+  backgroundColor: PropTypes.string,
 };
 
 const defaultProps = {
@@ -79,6 +83,8 @@ const defaultProps = {
   onSecondaryButtonClick: undefined,
   isBusy: false,
   isPrimaryButtonDisabled: false,
+  width: undefined,
+  backgroundColor: undefined,
 };
 
 const baseClass = `${iotPrefix}--sidepanel`;
@@ -103,6 +109,8 @@ const SidePanel = ({
   style,
   isBusy,
   isPrimaryButtonDisabled,
+  width,
+  backgroundColor,
 }) => {
   const titleRef = useRef();
   const subtitleRef = useRef();
@@ -189,6 +197,20 @@ const SidePanel = ({
     }
     return `${str.substring(0, length)}...`;
   };
+  const panelWidth = useMemo(() => {
+    if (width !== undefined) {
+      return typeof width === 'number' ? `${width}px` : width;
+    }
+    return undefined;
+  }, [width]);
+
+  const panelStyle = useMemo(() => {
+    return {
+      ...style,
+      ...(panelWidth && { width: panelWidth }),
+      ...(backgroundColor && { backgroundColor }),
+    };
+  }, [style, panelWidth, backgroundColor]);
 
   return (
     <div
@@ -202,7 +224,7 @@ const SidePanel = ({
         [`${baseClass}--slide-over`]: type === 'over',
         [`${baseClass}--condensed`]: isCondensed || isScrolled,
       })}
-      style={style}
+      style={panelStyle}
     >
       {onToggle && (isOpen || type === 'inline') ? (
         <Button
