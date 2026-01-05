@@ -1,7 +1,7 @@
 import { Draggable } from '@carbon/react/icons';
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import { IconButton } from '@carbon/react';
+import { Tooltip } from '@carbon/react';
 
 import { settings } from '../../../../constants/Settings';
 
@@ -22,17 +22,12 @@ const propTypes = {
   /**
    * If a drag operation is currently in progress. When true, the tooltip is hidden.
    */
-  isDragging: PropTypes.bool,
+  isDragging: PropTypes.bool.isRequired,
 
   /**
    * Tooltip text to display on hover.
    */
-  tooltipText: PropTypes.string,
-};
-
-const defaultProps = {
-  isDragging: false,
-  tooltipText: 'Click and drag to new location',
+  tooltipText: PropTypes.string.isRequired,
 };
 
 /**
@@ -60,21 +55,14 @@ const TableDragHandle = forwardRef(function TableDragHandle(
         </div>
       ) : (
         // When not dragging, render with tooltip
-        <IconButton
-          className="draggble-icon-wrapper"
-          kind="ghost"
-          size="sm"
-          label={tooltipText}
-          align="right"
-        >
+        <Tooltip label={tooltipText} autoAlign>
           <Draggable />
-        </IconButton>
+        </Tooltip>
       )}
     </div>
   );
 });
 
 TableDragHandle.propTypes = propTypes;
-TableDragHandle.defaultProps = defaultProps;
 
 export { TableDragHandle };
