@@ -151,6 +151,8 @@ const propTypes = {
   isDragging: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 const defaultProps = {
@@ -190,6 +192,7 @@ const defaultProps = {
   isDraggable: false,
   isDragRow: false,
   isDragging: false,
+  deletedAttribute: '_deleted',
 };
 
 const TableBodyRow = ({
@@ -246,6 +249,7 @@ const TableBodyRow = ({
   isDragging,
   hasDragAndDrop,
   hideDragHandles,
+  deletedAttribute,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -436,8 +440,7 @@ const TableBodyRow = ({
             [`${iotPrefix}--expandable-tablerow--childless`]:
               hasRowNesting && nestingChildCount === 0,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
-            // eslint-disable-next-line no-underscore-dangle
-            [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+            [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
           })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -476,8 +479,7 @@ const TableBodyRow = ({
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
-              // eslint-disable-next-line no-underscore-dangle
-              [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+              [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
             })}
             {...dragEnterLeaveHandlers}
           >
@@ -499,8 +501,7 @@ const TableBodyRow = ({
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
           [`${iotPrefix}--table__row--dragging`]: isDragRow,
-          // eslint-disable-next-line no-underscore-dangle
-          [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+          [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -538,8 +539,7 @@ const TableBodyRow = ({
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
         [`${iotPrefix}--table__row--background`]: isSelected,
-        // eslint-disable-next-line no-underscore-dangle
-        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+        [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
       })}
       key={id}
       onClick={() => {
@@ -562,8 +562,7 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
-        // eslint-disable-next-line no-underscore-dangle
-        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+        [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
       })}
       key={id}
       onClick={() => {

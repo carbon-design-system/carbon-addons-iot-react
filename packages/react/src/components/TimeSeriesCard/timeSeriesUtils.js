@@ -219,10 +219,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   // Series is the different groups of datasets
   // ensure is actually is an array since proptypes allow for an object, too.
   const seriesArray = Array.isArray(series) ? series : [series];
-  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+  seriesArray.forEach(({ dataSourceId, dataFilter = {}, label, disableDataFilter = false }) => {
     timestamps.forEach((timestamp) => {
       // First filter based on on the dataFilter
-      const filteredData = filter(values, dataFilter);
+      const filteredData = !disableDataFilter ? filter(values, dataFilter) : values;
       if (!isEmpty(filteredData)) {
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData

@@ -116,6 +116,8 @@ const propTypes = {
   zIndex: PropTypes.number,
   /** column to pin in the table */
   pinColumn: PinColumnPropTypes,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 const defaultProps = {
@@ -157,6 +159,7 @@ const defaultProps = {
   hideDragHandles: false,
   zIndex: 0,
   pinColumn: PIN_COLUMN.NONE,
+  deletedAttribute: '_deleted',
 };
 
 const TableBody = ({
@@ -205,6 +208,7 @@ const TableBody = ({
   hideDragHandles,
   zIndex,
   pinColumn,
+  deletedAttribute,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -362,6 +366,7 @@ const TableBody = ({
             onDragLeaveRow={isDragging ? handleLeaveRow : null}
             dragRowIds={dragRowIds}
             canDropRowIds={canDropRowIds}
+            deletedAttribute={deletedAttribute}
           />
         ))}
       </CarbonTableBody>

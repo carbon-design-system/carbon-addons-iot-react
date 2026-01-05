@@ -126,6 +126,8 @@ const propTypes = {
   onDragEnterRow: PropTypes.func,
   /** Callback for when a row is left during a drag. This is null when there is not drag. */
   onDragLeaveRow: PropTypes.func,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 const defaultProps = {
@@ -174,6 +176,7 @@ const defaultProps = {
   onDragLeaveRow: null,
   dragRowIds: [],
   canDropRowIds: [],
+  deletedAttribute: '_deleted',
 };
 
 function TableBodyRowRenderer(props) {
@@ -228,6 +231,7 @@ function TableBodyRowRenderer(props) {
     onDragEnterRow,
     canDropRowIds,
     dragRowIds,
+    deletedAttribute,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -328,6 +332,7 @@ function TableBodyRowRenderer(props) {
       showExpanderColumn={showExpanderColumn}
       size={size}
       isLastChild={isLastChild}
+      deletedAttribute={deletedAttribute}
     />
   ) : (
     <TableBodyLoadMoreRow
