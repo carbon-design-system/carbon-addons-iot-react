@@ -45,20 +45,24 @@ fi
 test -n "$NPM_TOKEN" || (echo "NPM_TOKEN is missing" && exit 1)
 npm config set registry https://registry.npmjs.org/
 npm config set //registry.npmjs.org/:_authToken="$NPM_TOKEN" -q
-npm whoami --registry https://registry.npmjs.org/ || exit 1
+# npm whoami --registry https://registry.npmjs.org/ || exit 1
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the relase with --conventional-graduate
+  # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag stable --yes
+  # publish the carbon-addons-iot-react package using npm directly
+  cd packages/react
+  npm publish --tag stable
+  cd ../..
 fi
 
 if [[ $GITHUB_REF =~ "next" ]]; then
-  # graduate the relase with --conventional-graduate
+  # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag latest --yes
+  # publish the carbon-addons-iot-react package using npm directly
+  cd packages/react
+  npm publish --tag latest
+  cd ../..
 fi
 
 # just to be sure we exit cleanly
