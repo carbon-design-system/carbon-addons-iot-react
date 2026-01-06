@@ -49,7 +49,8 @@ if [[ $GITHUB_REF =~ "master" ]]; then
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
   # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
-  npm publish --tag stable --provenance --access public
+  npm config set registry https://registry.npmjs.org/
+  npm publish --tag stable --provenance --access public --registry https://registry.npmjs.org/
   cd ../..
 fi
 
@@ -58,7 +59,8 @@ if [[ $GITHUB_REF =~ "next" ]]; then
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
   # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
-  npm publish --tag latest --provenance --access public
+  npm config set registry https://registry.npmjs.org/
+  npm publish --tag latest --provenance --access public --registry https://registry.npmjs.org/
   cd ../..
 fi
 
