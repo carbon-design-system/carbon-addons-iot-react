@@ -42,7 +42,10 @@ if [[ $GITHUB_REF =~ "next" ]]; then
 fi
 
 # authenticate with the npm registry
-npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+test -n "$NPM_TOKEN" || (echo "NPM_TOKEN is missing" && exit 1)
+npm config set registry https://registry.npmjs.org/
+npm config set //registry.npmjs.org/:_authToken="$NPM_TOKEN" -q
+npm whoami --registry https://registry.npmjs.org/ || exit 1
 
 if [[ $GITHUB_REF =~ "master" ]]; then
   # graduate the relase with --conventional-graduate
