@@ -41,27 +41,24 @@ if [[ $GITHUB_REF =~ "next" ]]; then
   fi
 fi
 
-# authenticate with the npm registry
-test -n "$NPM_TOKEN" || (echo "NPM_TOKEN is missing" && exit 1)
+# Set npm registry (authentication will be handled via OIDC/provenance)
 npm config set registry https://registry.npmjs.org/
-npm config set //registry.npmjs.org/:_authToken="$NPM_TOKEN" -q
-# npm whoami --registry https://registry.npmjs.org/ || exit 1
 
 if [[ $GITHUB_REF =~ "master" ]]; then
   # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the carbon-addons-iot-react package using npm directly
+  # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
-  npm publish --tag stable
+  npm publish --tag stable --provenance --access public
   cd ../..
 fi
 
 if [[ $GITHUB_REF =~ "next" ]]; then
   # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the carbon-addons-iot-react package using npm directly
+  # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
-  npm publish --tag latest
+  npm publish --tag latest --provenance --access public
   cd ../..
 fi
 
