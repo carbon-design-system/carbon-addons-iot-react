@@ -50,7 +50,7 @@ if [[ $GITHUB_REF =~ "master" ]]; then
   # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
   npm config set registry https://registry.npmjs.org/
-  npm publish --tag stable --provenance --access public --registry https://registry.npmjs.org/
+  npm publish --tag stable --provenance --access public --registry https://registry.npmjs.org/ --workspaces=false
   cd ../..
 fi
 
@@ -60,7 +60,7 @@ if [[ $GITHUB_REF =~ "next" ]]; then
   # publish the carbon-addons-iot-react package using npm directly with provenance
   cd packages/react
   npm config set registry https://registry.npmjs.org/
-  npm publish --tag latest --provenance --access public --registry https://registry.npmjs.org/
+  npm publish --tag latest --provenance --access public --registry https://registry.npmjs.org/ --workspaces=false
   cd ../..
 fi
 
