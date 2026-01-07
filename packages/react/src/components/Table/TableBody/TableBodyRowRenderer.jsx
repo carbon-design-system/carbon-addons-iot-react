@@ -41,6 +41,10 @@ const propTypes = {
   dismissText: PropTypes.string,
   /** I18N label for load more */
   loadMoreText: PropTypes.string,
+  /** I18N label for drag handle tooltip */
+  dragHandleTooltip: PropTypes.string,
+  /** If a drag is currently in progress */
+  isDragging: PropTypes.bool,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -132,6 +136,7 @@ const defaultProps = {
   clickToExpandAria: 'Click to expand.',
   columns: [],
   dismissText: 'Dismiss',
+  dragHandleTooltip: 'Click and drag to new location',
   expandedIds: [],
   expandedRows: [],
   hasRowActions: false,
@@ -141,6 +146,7 @@ const defaultProps = {
   useRadioButtonSingleSelect: false,
   indeterminateSelectionIds: [],
   inProgressText: 'In progress',
+  isDragging: false,
   langDir: 'ltr',
   learnMoreText: 'Learn more',
   loadingMoreIds: [],
@@ -181,6 +187,7 @@ function TableBodyRowRenderer(props) {
     clickToExpandAria,
     columns,
     dismissText,
+    dragHandleTooltip,
     expandedIds,
     expandedRows,
     hasRowActions,
@@ -190,6 +197,7 @@ function TableBodyRowRenderer(props) {
     useRadioButtonSingleSelect,
     indeterminateSelectionIds,
     inProgressText,
+    isDragging,
     langDir,
     learnMoreText,
     loadingMoreIds,
@@ -263,6 +271,8 @@ function TableBodyRowRenderer(props) {
       onDragEnterRow={canDrop ? onDragEnterRow : null}
       onDragLeaveRow={canDrop ? onDragLeaveRow : null}
       isDragRow={dragRowIds.indexOf(row.id) !== -1}
+      isDragging={isDragging}
+      dragHandleTooltip={dragHandleTooltip}
       langDir={langDir}
       key={row.id}
       isExpanded={isRowExpanded}

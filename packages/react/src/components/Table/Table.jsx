@@ -600,6 +600,7 @@ export const defaultProps = (baseProps) => ({
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
     multiSortDragHandle: 'Drag handle',
+    dragHandleTooltip: 'Click and drag to new location',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
@@ -1209,7 +1210,8 @@ const Table = (props) => {
                   'learnMoreText',
                   'dismissText',
                   'selectRowAria',
-                  'loadMoreText'
+                  'loadMoreText',
+                  'dragHandleTooltip'
                 )}
                 totalColumns={totalColumns}
                 {...pick(
