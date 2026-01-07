@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.1...v4.3.2) (2026-01-07)
+
+
+### Bug Fixes
+
+* enable OIDC publishing ([61c5d00](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/61c5d00fd1c521a28e9a2610227f87ed7d1be1cc))
+
+
+
+
+
 ## [4.3.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.0...v4.3.1) (2026-01-05)
 
 **Note:** Version bump only for package carbon-addons-iot-react
