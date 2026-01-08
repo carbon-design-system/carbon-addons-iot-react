@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Edit, Information, SendAlt } from '@carbon/react/icons';
 
@@ -67,17 +67,21 @@ const InPage = ({
   onSecondaryButtonClick,
   isBusy,
   isPrimaryButtonDisabled,
+  width,
+  backgroundColor,
 }) => {
   // Padding would normally be done in app scss file off of classes
+  const panelWidth = width || 320;
+  const paddingValue = panelWidth + 16;
   let padding;
   if (type === 'over') {
     padding = '1rem 1rem 1rem 1rem';
   } else if (isOpen === true) {
     if (direction === 'right') {
-      padding = '1rem 336px 1rem 1rem';
+      padding = `1rem ${paddingValue}px 1rem 1rem`;
     } else {
       // direction is left
-      padding = '1rem 1rem 1rem 336px';
+      padding = `1rem 1rem 1rem ${paddingValue}px`;
     }
   } else if (type === 'inline' && direction === 'right') {
     padding = '1rem 4rem 1rem 1rem';
@@ -135,6 +139,8 @@ const InPage = ({
         onSecondaryButtonClick={options.onSecondaryButtonClick}
         isBusy={isBusy}
         isPrimaryButtonDisabled={isPrimaryButtonDisabled}
+        width={width}
+        backgroundColor={backgroundColor}
       >
         <Content />
       </SidePanel>
@@ -188,6 +194,34 @@ export const Default = () => (
     )}
     isBusy={boolean('isBusy', false)}
     isPrimaryButtonDisabled={boolean('Footer primary button disabled', false)}
+    width={number('Width (px)', undefined, {
+      range: true,
+      min: 200,
+      max: 800,
+      step: 10,
+    })}
+    backgroundColor={select(
+      'Background Color',
+      {
+        'Default (White)': '',
+        'Light Gray': '#f4f4f4',
+        Gray: '#e0e0e0',
+        'Dark Gray': '#d0d0d0',
+        'Carbon Layer 01': '#f4f4f4',
+        'Carbon Layer 02': '#ffffff',
+        'Warm Gray': '#e8e8e8',
+        'Cool Gray': '#dfe3e6',
+        'Blue Gray': '#d8dce6',
+        Beige: '#f5f5dc',
+        'Light Blue': '#e3f2fd',
+        'Light Green': '#e8f5e9',
+        'Light Yellow': '#fffde7',
+        'Light Pink': '#fce4ec',
+        'Light Purple': '#f3e5f5',
+        'Light Orange': '#fff3e0',
+      },
+      ''
+    )}
   >
     <Content />
   </SidePanel>
@@ -218,6 +252,34 @@ export const InPageExample = () => (
     onSecondaryButtonClick={select('Secondary footer button', ['yes', 'no'], 'yes')}
     isBusy={boolean('isBusy', false)}
     isPrimaryButtonDisabled={boolean('Footer primary button disabled', false)}
+    width={number('Width (px)', undefined, {
+      range: true,
+      min: 200,
+      max: 800,
+      step: 10,
+    })}
+    backgroundColor={select(
+      'Background Color',
+      {
+        'Default (White)': '',
+        'Light Gray': '#f4f4f4',
+        Gray: '#e0e0e0',
+        'Dark Gray': '#d0d0d0',
+        'Carbon Layer 01': '#f4f4f4',
+        'Carbon Layer 02': '#ffffff',
+        'Warm Gray': '#e8e8e8',
+        'Cool Gray': '#dfe3e6',
+        'Blue Gray': '#d8dce6',
+        Beige: '#f5f5dc',
+        'Light Blue': '#e3f2fd',
+        'Light Green': '#e8f5e9',
+        'Light Yellow': '#fffde7',
+        'Light Pink': '#fce4ec',
+        'Light Purple': '#f3e5f5',
+        'Light Orange': '#fff3e0',
+      },
+      ''
+    )}
   />
 );
 

@@ -41,21 +41,35 @@ if [[ $GITHUB_REF =~ "next" ]]; then
   fi
 fi
 
-# authenticate with the npm registry
-npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+# Set npm registry (authentication will be handled via OIDC/provenance)
+npm config set registry https://registry.npmjs.org/
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the relase with --conventional-graduate
+  # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag stable --yes
+
+  # Only publish if lerna created a new version (check if there's a new git tag)
+  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
+    echo "New version detected, publishing..."
+    # publish the carbon-addons-iot-react package using npm directly with provenance
+    (cd packages/react && npm publish --tag stable --provenance --access public --registry https://registry.npmjs.org/)
+  else
+    echo "No new version created, skipping publish"
+  fi
 fi
 
 if [[ $GITHUB_REF =~ "next" ]]; then
-  # graduate the relase with --conventional-graduate
+  # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag latest --yes
+
+  # Only publish if lerna created a new version (check if there's a new git tag)
+  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
+    echo "New version detected, publishing..."
+    # publish the carbon-addons-iot-react package using npm directly with provenance
+    (cd packages/react && npm publish --tag latest --provenance --access public --registry https://registry.npmjs.org/)
+  else
+    echo "No new version created, skipping publish"
+  fi
 fi
 
 # just to be sure we exit cleanly

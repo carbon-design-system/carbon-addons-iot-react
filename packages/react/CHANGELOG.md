@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.3...v5.6.4) (2026-01-07)
+
+
+### Bug Fixes
+
+* add tooltip to drag handler #MAXUIF-3526 ([#4054](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4054)) ([69f6fed](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69f6fed77aec8574ef902d39665038c19b5cffe4)), closes [#MAXUIF-3526](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/MAXUIF-3526)
+
+
+
+
+
+## [5.6.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.2...v5.6.3) (2026-01-06)
+
+
+### Bug Fixes
+
+* testing OIDC publishing ([76a4600](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/76a4600f9637db27db1900329ab2cafeedf3b73f))
+
+
+
+
+
+## [5.6.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.1...v5.6.2) (2026-01-05)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [5.6.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.0...v5.6.1) (2026-01-05)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [5.6.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.5.2...v5.6.0) (2026-01-01)
 
 

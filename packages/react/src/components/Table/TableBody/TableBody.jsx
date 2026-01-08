@@ -43,6 +43,8 @@ const propTypes = {
   dismissText: PropTypes.string,
   /** I18N label for load more */
   loadMoreText: PropTypes.string,
+  /** I18N label for drag handle tooltip */
+  dragHandleTooltip: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -114,6 +116,8 @@ const propTypes = {
   zIndex: PropTypes.number,
   /** column to pin in the table */
   pinColumn: PinColumnPropTypes,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 const defaultProps = {
@@ -148,12 +152,14 @@ const defaultProps = {
   inProgressText: 'In progress',
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
+  dragHandleTooltip: 'Click and drag to new location',
   size: undefined,
   hasDragAndDrop: false,
   hasBreadcrumbDrop: false,
   hideDragHandles: false,
   zIndex: 0,
   pinColumn: PIN_COLUMN.NONE,
+  deletedAttribute: '_deleted',
 };
 
 const TableBody = ({
@@ -173,6 +179,7 @@ const TableBody = ({
   dismissText,
   actionFailedText,
   loadMoreText,
+  dragHandleTooltip,
   totalColumns,
   actions,
   rowActionsState,
@@ -201,6 +208,7 @@ const TableBody = ({
   hideDragHandles,
   zIndex,
   pinColumn,
+  deletedAttribute,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -316,6 +324,7 @@ const TableBody = ({
             clickToExpandAria={clickToExpandAria}
             columns={columns}
             dismissText={dismissText}
+            dragHandleTooltip={dragHandleTooltip}
             expandedIds={expandedIds}
             expandedRows={expandedRows}
             hasRowActions={hasRowActions}
@@ -325,6 +334,7 @@ const TableBody = ({
             useRadioButtonSingleSelect={useRadioButtonSingleSelect}
             indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
             inProgressText={inProgressText}
+            isDragging={isDragging}
             langDir={langDir}
             learnMoreText={learnMoreText}
             loadingMoreIds={loadingMoreIds}
@@ -356,6 +366,7 @@ const TableBody = ({
             onDragLeaveRow={isDragging ? handleLeaveRow : null}
             dragRowIds={dragRowIds}
             canDropRowIds={canDropRowIds}
+            deletedAttribute={deletedAttribute}
           />
         ))}
       </CarbonTableBody>
