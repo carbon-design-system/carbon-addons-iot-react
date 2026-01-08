@@ -44,6 +44,8 @@ const propTypes = {
   clickToExpandAria: PropTypes.string,
   /** internationalized label  */
   clickToCollapseAria: PropTypes.string,
+  /** I18N label for drag handle tooltip */
+  dragHandleTooltip: PropTypes.string,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
@@ -145,8 +147,12 @@ const propTypes = {
   isDraggable: PropTypes.bool,
   /** If this row is being dragged. */
   isDragRow: PropTypes.bool,
+  /** If a drag operation is currently in progress. */
+  isDragging: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 const defaultProps = {
@@ -157,6 +163,7 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
   clickToCollapseAria: 'Click to collapse.',
+  dragHandleTooltip: 'Click and drag to new location',
   rowActions: null,
   rowDetails: null,
   nestingLevel: 0,
@@ -184,6 +191,8 @@ const defaultProps = {
   onDragLeaveRow: null,
   isDraggable: false,
   isDragRow: false,
+  isDragging: false,
+  deletedAttribute: '_deleted',
 };
 
 const TableBodyRow = ({
@@ -213,6 +222,7 @@ const TableBodyRow = ({
   overflowMenuAria,
   clickToExpandAria,
   clickToCollapseAria,
+  dragHandleTooltip,
   inProgressText,
   actionFailedText,
   learnMoreText,
@@ -236,8 +246,10 @@ const TableBodyRow = ({
   onDragLeaveRow,
   isDragRow,
   isDraggable,
+  isDragging,
   hasDragAndDrop,
   hideDragHandles,
+  deletedAttribute,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -298,7 +310,12 @@ const TableBodyRow = ({
   const dragHandleCell = !hasDragAndDrop ? null : (
     <TableCell className={`${iotPrefix}--table-grab-handle-cell`}>
       {!isDraggable || hideDragHandles ? null : (
-        <TableDragHandle onStartDrag={onStartDrag} rowId={id} />
+        <TableDragHandle
+          onStartDrag={onStartDrag}
+          rowId={id}
+          isDragging={isDragging}
+          tooltipText={dragHandleTooltip}
+        />
       )}
     </TableCell>
   );
@@ -423,8 +440,7 @@ const TableBodyRow = ({
             [`${iotPrefix}--expandable-tablerow--childless`]:
               hasRowNesting && nestingChildCount === 0,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
-            // eslint-disable-next-line no-underscore-dangle
-            [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+            [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
           })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -463,8 +479,7 @@ const TableBodyRow = ({
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
-              // eslint-disable-next-line no-underscore-dangle
-              [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+              [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
             })}
             {...dragEnterLeaveHandlers}
           >
@@ -486,8 +501,7 @@ const TableBodyRow = ({
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
           [`${iotPrefix}--table__row--dragging`]: isDragRow,
-          // eslint-disable-next-line no-underscore-dangle
-          [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+          [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -525,8 +539,7 @@ const TableBodyRow = ({
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
         [`${iotPrefix}--table__row--background`]: isSelected,
-        // eslint-disable-next-line no-underscore-dangle
-        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+        [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
       })}
       key={id}
       onClick={() => {
@@ -549,8 +562,7 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
-        // eslint-disable-next-line no-underscore-dangle
-        [`${iotPrefix}--table__row--softdeleted`]: values?._deleted,
+        [`${iotPrefix}--table__row--softdeleted`]: values?.[deletedAttribute],
       })}
       key={id}
       onClick={() => {

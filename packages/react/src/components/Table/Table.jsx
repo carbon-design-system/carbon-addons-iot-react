@@ -416,6 +416,8 @@ const propTypes = {
   error: PropTypes.string,
 
   testId: PropTypes.string,
+  /** Attribute name to identify deleted rows */
+  deletedAttribute: PropTypes.string,
 };
 
 export const defaultProps = (baseProps) => ({
@@ -598,6 +600,7 @@ export const defaultProps = (baseProps) => ({
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
     multiSortDragHandle: 'Drag handle',
+    dragHandleTooltip: 'Click and drag to new location',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
@@ -619,6 +622,7 @@ export const defaultProps = (baseProps) => ({
   testId: null,
   enablePercentageColumnWidth: false,
   emptyStateIcon: '',
+  deletedAttribute: undefined,
 });
 
 const Table = (props) => {
@@ -646,6 +650,7 @@ const Table = (props) => {
     size,
     zIndex,
     emptyStateIcon,
+    deletedAttribute,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -1205,7 +1210,8 @@ const Table = (props) => {
                   'learnMoreText',
                   'dismissText',
                   'selectRowAria',
-                  'loadMoreText'
+                  'loadMoreText',
+                  'dragHandleTooltip'
                 )}
                 totalColumns={totalColumns}
                 {...pick(
@@ -1242,6 +1248,7 @@ const Table = (props) => {
                 showExpanderColumn={showExpanderColumn}
                 size={size}
                 pinColumn={options.pinColumn}
+                deletedAttribute={deletedAttribute}
               />
             ) : (
               <EmptyTable

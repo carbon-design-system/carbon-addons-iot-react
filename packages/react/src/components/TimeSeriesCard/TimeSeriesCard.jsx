@@ -47,6 +47,8 @@ const TimeSeriesDatasetPropTypes = PropTypes.shape({
   dataSourceId: PropTypes.string.isRequired,
   /** optional filter to apply to this particular line */
   dataFilter: PropTypes.objectOf(PropTypes.any),
+  /** optional param to disable DataFilter */
+  disableDataFilter: PropTypes.bool,
   /** optional param to set the colors */
   color: PropTypes.string,
 });
