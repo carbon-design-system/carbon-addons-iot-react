@@ -278,6 +278,73 @@ const TableToolbar = ({
     (action) => !action.isOverflow && action.hidden !== true
   );
 
+  // Extract TableViewDropdown from customToolbarContent
+  const { tableViewDropdown, otherToolbarContent } = useMemo(() => {
+    if (!customToolbarContent) {
+      return { tableViewDropdown: null, otherToolbarContent: null };
+    }
+
+    // Helper function to check if a child is TableViewDropdown
+    const isTableViewDropdown = (child) => {
+      if (!child) return false;
+
+      // Check by key (most reliable for wrapped components)
+      if (child.key && typeof child.key === 'string' && child.key.includes('table-view-dropdown')) {
+        return true;
+      }
+
+      // Check by type properties
+      if (child.type) {
+        // Check by displayName
+        if (child.type.displayName === 'TableViewDropdown') return true;
+
+        // Check by function name
+        if (child.type.name === 'TableViewDropdown') return true;
+      }
+
+      // Check by props (TableViewDropdown has specific props like 'views', 'selectedViewId')
+      if (
+        child.props &&
+        (child.props.views !== undefined ||
+          child.props.selectedViewId !== undefined ||
+          child.props.selectedViewEdited !== undefined)
+      ) {
+        return true;
+      }
+
+      return false;
+    };
+
+    // Extract children from Fragment if present
+    let contentToProcess = customToolbarContent;
+
+    // Check if it's a Fragment (React.Fragment has type as Symbol or Fragment)
+    if (customToolbarContent.type === React.Fragment && customToolbarContent.props?.children) {
+      contentToProcess = customToolbarContent.props.children;
+    }
+
+    // Convert to array (handles both single element and multiple children)
+    const contentArray = React.Children.toArray(contentToProcess);
+
+    // Always check the first element
+    const firstElement = contentArray[0];
+
+    if (isTableViewDropdown(firstElement)) {
+      // First element is TableViewDropdown - extract it, rest is other content
+      const remainingContent = contentArray.slice(1);
+      return {
+        tableViewDropdown: firstElement,
+        otherToolbarContent: remainingContent.length > 0 ? remainingContent : null,
+      };
+    }
+
+    // First element is not TableViewDropdown - all content is other content
+    return {
+      tableViewDropdown: null,
+      otherToolbarContent: contentArray.length > 0 ? contentArray : null,
+    };
+  }, [customToolbarContent]);
+
   const visibleBatchActions = batchActions.filter(
     (action) => !action.isOverflow && action.hidden !== true
   );
@@ -431,6 +498,7 @@ const TableToolbar = ({
           data-testid={`${testID || testId}-content`}
           className={`${iotPrefix}--table-toolbar-content`}
         >
+          {tableViewDropdown || null}
           {hasSearch ? (
             <TableToolbarSearch
               tableId={tableId}
@@ -608,8 +676,8 @@ const TableToolbar = ({
             </OverflowMenu>
           ) : null}
           {
-            // Default card header actions should be to the right of the table-specific actions
-            customToolbarContent || null
+            // Render other custom toolbar content
+            otherToolbarContent || null
           }
         </TableToolbarContent>
       )}
