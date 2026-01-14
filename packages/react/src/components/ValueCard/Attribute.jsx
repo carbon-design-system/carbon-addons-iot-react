@@ -32,6 +32,8 @@ const propTypes = {
       })
     ),
     tooltip: PropTypes.string,
+    // Position of threshold icon: 'label' (inline with label) or 'unit' (above unit)
+    thresholdsIconPosition: PropTypes.oneOf(['label', 'unit']),
   }).isRequired,
   customFormatter: PropTypes.func,
   formatter: PropTypes.func,
@@ -79,7 +81,16 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel, tooltip },
+  attribute: {
+    label,
+    unit,
+    thresholds,
+    precision,
+    dataSourceId,
+    measurementUnitLabel,
+    tooltip,
+    thresholdsIconPosition = 'unit', // Default to 'unit' for backward compatibility
+  },
   attributeCount,
   customFormatter,
   formatter,
@@ -104,6 +115,29 @@ const Attribute = ({
 
   // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
+
+  // Render threshold icon component
+  const renderThresholdIcon = () => {
+    if (!matchingThreshold?.icon) return null;
+
+    return (
+      <CardIcon
+        fill={matchingThreshold.color}
+        color={matchingThreshold.color}
+        width={16}
+        height={16}
+        title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+        renderIconByName={renderIconByName}
+        icon={matchingThreshold.icon}
+        testId={`${testId}-threshold-icon`}
+        className={classnames({
+          [`${BEM_BASE}-threshold-icon`]: thresholdsIconPosition === 'unit',
+          [`${BEM_BASE}-label-icon`]: thresholdsIconPosition === 'label',
+        })}
+      />
+    );
+  };
+
   return (
     <div
       className={classnames(`${BEM_BASE}-wrapper`, {
@@ -114,19 +148,13 @@ const Attribute = ({
         '--value-card-attribute-width': `${attributeWidthPercentage}%`,
       }}
     >
-      <div className={`${BEM_BASE}-label`}>
-        {matchingThreshold?.icon ? (
-          <CardIcon
-            fill={matchingThreshold.color}
-            color={matchingThreshold.color}
-            width={16}
-            height={16}
-            title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-            renderIconByName={renderIconByName}
-            icon={matchingThreshold.icon}
-            testId={`${testId}-threshold-icon`}
-          />
-        ) : null}
+      <div
+        className={classnames(`${BEM_BASE}-label`, {
+          [`${BEM_BASE}-label--with-icon`]:
+            thresholdsIconPosition === 'label' && matchingThreshold?.icon,
+        })}
+      >
+        {thresholdsIconPosition === 'label' && renderThresholdIcon()}
         {tooltip ? (
           <Tooltip direction="right" showIcon={false} triggerText={label}>
             <p>{tooltip}</p>
@@ -150,10 +178,12 @@ const Attribute = ({
           isNumberValueCompact={isNumberValueCompact}
           testId={`${testId}-value`}
           dataSourceId={dataSourceId}
-          measurementUnitLabel={measurementUnitLabel}
           onClick={onValueClick}
         />
-        <UnitRenderer unit={unit} testId={`${testId}-unit`} />
+        <div className={`${BEM_BASE}-unit-with-icon`}>
+          {thresholdsIconPosition === 'unit' && renderThresholdIcon()}
+          <UnitRenderer unit={measurementUnitLabel || unit} testId={`${testId}-unit`} />
+        </div>
       </div>
       {!isNil(secondaryValue) ? (
         <div

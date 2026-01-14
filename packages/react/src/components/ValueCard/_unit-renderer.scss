@@ -3,7 +3,8 @@
 @use '@carbon/react/scss/type' as *;
 .#{$iot-prefix}--value-card__attribute-unit {
   @include type-style('heading-03');
-  padding-left: $spacing-02;
-  padding-bottom: $spacing-02;
+  display: inline-block;
+  padding-left: 0;
   white-space: nowrap;
+  min-height: 1.25rem; // Maintain height even when empty to keep icon position stable
 }
