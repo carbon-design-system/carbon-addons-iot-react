@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from '@carbon/react';
 
+import { useLangDirection } from '../../../../utils/useLangDirection';
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -37,6 +38,9 @@ const TableDragHandle = forwardRef(function TableDragHandle(
   { onStartDrag, rowId, isDragging, tooltipText },
   ref
 ) {
+  const langDir = useLangDirection();
+  const tooltipPosition = langDir === 'ltr' ? 'right-start' : 'left-end';
+
   return (
     <div
       className={`${iotPrefix}--table-drag-handle`}
@@ -55,7 +59,7 @@ const TableDragHandle = forwardRef(function TableDragHandle(
         </div>
       ) : (
         // When not dragging, render with tooltip
-        <Tooltip label={tooltipText} autoAlign>
+        <Tooltip label={tooltipText} align={tooltipPosition}>
           <Draggable />
         </Tooltip>
       )}
