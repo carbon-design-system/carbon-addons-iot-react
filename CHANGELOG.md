@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.6...v5.6.7) (2026-01-15)
+
+
+### Bug Fixes
+
+* Adjust the tooltip position according to lang direction #MAXUIF-3526  ([#4065](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4065)) ([78cfb93](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/78cfb933e8dbd518e1578fda46721ae9f85b9fe7)), closes [#MAXUIF-3526](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/MAXUIF-3526)
+
+
+
+
+
 ## [5.6.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.6.5...v5.6.6) (2026-01-14)
 
 **Note:** Version bump only for package ibm-ai-applications
