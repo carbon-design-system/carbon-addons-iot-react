@@ -151,8 +151,12 @@ export const WithLinkAndMeasurementUnit = () => {
             {
               dataSourceId: 'peakUsage',
               label: text('content.attributes[0].label', 'Peak usage'),
-              tooltip: text('content.attributes[0].tooltip', 'Peak usage tooltip'),
               measurementUnitLabel: text('content.attributes[0].measurementUnitLabel', 'AppPoints'),
+              thresholdsIconPosition: select(
+                'content.attributes[0].thresholdsIconPosition',
+                ['label', 'unit'],
+                'unit'
+              ),
               thresholds: [
                 {
                   comparison: '>',
@@ -321,6 +325,116 @@ export const SmallWideThresholdsString = () => {
 };
 
 SmallWideThresholdsString.storyName = 'with thresholds (string)';
+export const WithIconPositions = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
+        margin: '5px',
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Threshold Icon Positions')}
+        id="thresholdsIconPositionCard"
+        renderIconByName={(name, props = {}) =>
+          name === 'checkmark' ? (
+            <Checkmark {...props}>
+              <title>{props.title}</title>
+            </Checkmark>
+          ) : name === 'warning' ? (
+            <WarningFilled {...props}>
+              <title>{props.title}</title>
+            </WarningFilled>
+          ) : (
+            <span>Unknown</span>
+          )
+        }
+        content={{
+          attributes: [
+            {
+              dataSourceId: 'pumpsStopped',
+              label: 'Pumps Currently Stopped',
+              thresholdsIconPosition: select(
+                'content.attributes[0].thresholdsIconPosition',
+                ['label', 'unit'],
+                'label'
+              ),
+              thresholds: [
+                {
+                  comparison: '<',
+                  value: 20,
+                  icon: 'checkmark',
+                  color: 'green',
+                },
+              ],
+            },
+            {
+              dataSourceId: 'temperature',
+              label: 'Temperature',
+              unit: '°C',
+              thresholdsIconPosition: select(
+                'content.attributes[1].thresholdsIconPosition',
+                ['label', 'unit'],
+                'unit'
+              ),
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 80,
+                  icon: 'warning',
+                  color: '#f1c21b',
+                },
+              ],
+            },
+            {
+              dataSourceId: 'pressure',
+              label: 'Pressure',
+              unit: 'PSI',
+              thresholdsIconPosition: select(
+                'content.attributes[2].thresholdsIconPosition',
+                ['label', 'unit'],
+                'label'
+              ),
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 100,
+                  icon: 'warning',
+                  color: 'red',
+                },
+              ],
+            },
+          ],
+        }}
+        breakpoint={breakpoint}
+        size={size}
+        values={{
+          pumpsStopped: number('values.pumpsStopped', 1),
+          temperature: number('values.temperature', 85),
+          pressure: number('values.pressure', 120),
+        }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
+      />
+    </div>
+  );
+};
+
+WithIconPositions.storyName = 'with configurable icon positions (label vs unit)';
+
+WithIconPositions.parameters = {
+  info: {
+    text: `This story demonstrates the new thresholdsIconPosition property that allows you to control where threshold icons appear:
+    - 'label': Icon appears inline with the attribute label (original behavior)
+    - 'unit': Icon appears above the unit text (current default behavior)
+    
+    Each attribute can have its own thresholdsIconPosition setting, allowing for flexible layouts within the same card.`,
+  },
+};
 
 export const MediumThin3 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);

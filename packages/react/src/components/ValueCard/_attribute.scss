@@ -11,6 +11,29 @@
   align-items: baseline;
   padding-right: $spacing-05;
 
+  &-unit-with-icon {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: $spacing-02;
+    min-height: 1.25rem; // Match unit font size to maintain consistent height
+  }
+
+  &-threshold-icon {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    z-index: 1;
+  }
+
+  &-label-icon {
+    display: inline-flex;
+    margin-right: $spacing-02;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
   &-wrapper {
     width: var(--value-card-attribute-width);
 
@@ -52,6 +75,12 @@
 
     & > svg {
       margin-right: $spacing-02;
+    }
+
+    &--with-icon {
+      display: flex;
+      align-items: center;
+      gap: $spacing-02;
     }
   }
 
