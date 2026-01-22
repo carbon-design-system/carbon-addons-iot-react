@@ -266,13 +266,14 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     font-weight: bold;
     position: relative;
 
+    // The divider starts after the expand column and extends to the right
     &::before {
       content: '';
       position: absolute;
       top: -1px;
       left: 0;
       height: calc(100% + 1px);
-      width: $spacing-09;
+      width: $spacing-09; // matches the expand column width
       background-color: $layer-01;
       border-right: solid 1px $layer-01;
     }
