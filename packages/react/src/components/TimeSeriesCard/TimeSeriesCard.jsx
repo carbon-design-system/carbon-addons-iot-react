@@ -363,12 +363,11 @@ const TimeSeriesCard = ({
   const isChartDataEmpty = isEmpty(chartData);
 
   const { tableData, columnNames } = useMemo(() => {
-    let maxColumnNames = [];
+    const columnNamesSet = new Set();
 
     const tableValues = valueSort.map((value, index) => {
-      const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
-      maxColumnNames =
-        currentValueColumns.length > maxColumnNames.length ? currentValueColumns : maxColumnNames;
+      Object.keys(omit(value, timeDataSourceId)).forEach((key) => columnNamesSet.add(key));
+
       return {
         id: `dataindex-${index}`,
         values: {
@@ -378,7 +377,7 @@ const TimeSeriesCard = ({
         isSelectable: false,
       };
     });
-    return { tableData: tableValues, columnNames: maxColumnNames };
+    return { tableData: tableValues, columnNames: Array.from(columnNamesSet) };
   }, [defaultDateFormatPattern, timeDataSourceId, valueSort]);
 
   // In expanded mode we show the data underneath the linechart in a table so need to build the columns
