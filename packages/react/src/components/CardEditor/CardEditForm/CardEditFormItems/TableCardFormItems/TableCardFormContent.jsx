@@ -20,6 +20,9 @@ import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
 import { formatDataItemsForDropdown } from '../DataSeriesFormItems/DataSeriesFormContent';
+import HierarchyDataFormItems, {
+  isHierarchyDataItem,
+} from '../HierarchyDataFormItems/HierarchyDataFormItems';
 
 const { iotPrefix } = settings;
 
@@ -209,6 +212,23 @@ const TableCardFormContent = ({
     }
   };
 
+  const handleHierarchyDataItemChange = useCallback(
+    (items) => {
+      const updatedItems = items.map((item) => ({
+        ...item,
+        // create a unique dataSourceId if it's going into attributes
+        // if it's going into the groupBy section then just use the dataItem ID
+        dataSourceId: `${item.dataItemId}_${uuidv4()}`,
+      }));
+      const selectedItems = [...dataSection, ...updatedItems];
+
+      const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null);
+      setSelectedDataItems(selectedItems.map(({ text }) => text));
+      onChange(newCard);
+    },
+    [cardConfig, dataSection, onChange, setSelectedDataItems]
+  );
+
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
     (card) => {
@@ -319,40 +339,52 @@ const TableCardFormContent = ({
     [cardConfig, onEditDataItem, validDataItems]
   );
 
+  const generateListItems = useCallback(
+    (data, isHierarchy = false) =>
+      data
+        ?.filter((dataItem) => isHierarchyDataItem(dataItem) === isHierarchy)
+        ?.map((dataItem) => ({
+          id: dataItem.dataSourceId,
+          content: {
+            value: dataItem.label || dataItem.dataItemId,
+            icon: null,
+            rowActions: () => [
+              <Button
+                key={`data-item-${dataItem.dataSourceId}`}
+                renderIcon={Edit}
+                hasIconOnly
+                kind="ghost"
+                size="sm"
+                onClick={() => handleEditButton(dataItem)}
+                iconDescription={mergedI18n.edit}
+                tooltipPosition="left"
+                tooltipAlignment="center"
+              />,
+              <Button
+                key={`data-item-${dataItem.dataSourceId}_remove`}
+                renderIcon={MisuseOutline}
+                hasIconOnly
+                kind="ghost"
+                size="sm"
+                onClick={() => handleRemoveButton(dataItem)}
+                iconDescription={mergedI18n.remove}
+                tooltipPosition="left"
+                tooltipAlignment="center"
+              />,
+            ],
+          },
+        })),
+    [handleEditButton, handleRemoveButton, mergedI18n.edit, mergedI18n.remove]
+  );
+
   const dataListItems = useMemo(
-    () =>
-      dataSection?.map((dataItem) => ({
-        id: dataItem.dataSourceId,
-        content: {
-          value: dataItem.label || dataItem.dataItemId,
-          icon: null,
-          rowActions: () => [
-            <Button
-              key={`data-item-${dataItem.dataSourceId}`}
-              renderIcon={Edit}
-              hasIconOnly
-              kind="ghost"
-              size="sm"
-              onClick={() => handleEditButton(dataItem)}
-              iconDescription={mergedI18n.edit}
-              tooltipPosition="left"
-              tooltipAlignment="center"
-            />,
-            <Button
-              key={`data-item-${dataItem.dataSourceId}_remove`}
-              renderIcon={MisuseOutline}
-              hasIconOnly
-              kind="ghost"
-              size="sm"
-              onClick={() => handleRemoveButton(dataItem)}
-              iconDescription={mergedI18n.remove}
-              tooltipPosition="left"
-              tooltipAlignment="center"
-            />,
-          ],
-        },
-      })),
-    [dataSection, handleEditButton, handleRemoveButton, mergedI18n.edit, mergedI18n.remove]
+    () => generateListItems(dataSection),
+    [dataSection, generateListItems]
+  );
+
+  const hierarchyDataListItems = useMemo(
+    () => generateListItems(dataSection, true),
+    [dataSection, generateListItems]
   );
 
   return (
@@ -414,7 +446,7 @@ const TableCardFormContent = ({
         />
       </div>
 
-      {!isEmpty(validDimensions) ? (
+      {!isEmpty(validDimensions) && (
         <div
           className={`${baseClassName}--input`} // Dimensions selector
         >
@@ -458,7 +490,7 @@ const TableCardFormContent = ({
             titleText={mergedI18n.dataItemEditorDimensionTitle}
           />
         </div>
-      ) : null}
+      )}
       <List
         // Lists the selected dataItem columns in the bottom section and allow additional configuration
         key={`data-item-list${selectedDataItems.length}`}
@@ -466,6 +498,14 @@ const TableCardFormContent = ({
         emptyState={<div />}
         title=""
         items={dataListItems}
+      />
+
+      <HierarchyDataFormItems
+        cardConfig={cardConfig}
+        hierarchyDataItemListItems={hierarchyDataListItems}
+        handleHierarchyDataItemChange={handleHierarchyDataItemChange}
+        i18n={i18n}
+        actions={actions}
       />
     </div>
   );

@@ -1204,7 +1204,6 @@ export const I18N = () => (
       yCoordinateDropdownLabelText: 'yCoordinateDropdownLabelText',
       selectDataItemsText: 'selectDataItemsText',
       dataItemText: 'dataItemText',
-      editText: 'editText',
       // Hotspot Text Style Tab fields
       textTypeStyleInfoText: 'textTypeStyleInfoText',
       fontColorLabelText: 'fontColorLabelText',
@@ -1519,3 +1518,89 @@ export const withGetDefaultCard = () => {
 };
 
 withGetDefaultCard.storyName = 'With get default card';
+
+export const withHierarchyDataItems = () => {
+  const hierarchyDataItems = object('hierarchyDataItems', [
+    {
+      dataItemId: 'speed',
+      label: `speed:Device1`,
+      resourceData: {
+        type: 'DEVICE',
+        uuid: '12345',
+        deviceTypeUUId: '7890',
+      },
+    },
+    {
+      dataItemId: 'pressure',
+      label: `pressure:Asset1`,
+      resourceData: {
+        type: 'ASSET',
+        uuid: '2',
+        siteUUId: '1',
+      },
+    },
+  ]);
+  const actions = {
+    ...commonActions,
+    onAddHierarchyDataItems: (cardConfig, handleHierarchyDataItemChange) =>
+      handleHierarchyDataItemChange(hierarchyDataItems),
+    dataSeriesFormActions: {
+      ...commonActions.dataSeriesFormActions,
+      hasHierarchyDataItemsEnabled: (card) => {
+        const allowCardTypes = [
+          CARD_TYPES.TIMESERIES,
+          CARD_TYPES.BAR,
+          CARD_TYPES.VALUE,
+          CARD_TYPES.TABLE,
+          CARD_TYPES.IMAGE,
+        ];
+        return allowCardTypes.includes(card.type);
+      },
+    },
+  };
+
+  return (
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      i18n={{
+        headerEditTitleButton: 'Edit title updated',
+      }}
+      onAddImage={action('onAddImage')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      actions={actions}
+      onImageDelete={action('onImageDelete')}
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+        'CUSTOM',
+      ])}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+      onCardSelect={action('onCardSelect')}
+    />
+  );
+};
+
+withHierarchyDataItems.storyName = 'with hierarchy data items';
