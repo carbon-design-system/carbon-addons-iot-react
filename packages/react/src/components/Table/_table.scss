@@ -169,6 +169,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   border-top: 1px solid $icon-on-color;
   border-bottom: 1px solid $layer-selected-01;
   color: $text-secondary;
+  background-color: $layer;
 }
 
 .#{$iot-prefix}--table__row--selectable {
@@ -449,10 +450,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   &--select#{&}--expand {
     @include pin-nth-column(3) {
       z-index: 1;
-      left: convert.to-rem(92px);
+      left: convert.to-rem(88px);
       [dir='rtl'] & {
         left: unset;
-        right: convert.to-rem(92px);
+        right: convert.to-rem(88px);
       }
     }
     @include disable-nth-col-border(1);
