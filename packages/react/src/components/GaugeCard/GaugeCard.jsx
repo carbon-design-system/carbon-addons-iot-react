@@ -99,10 +99,11 @@ const GaugeCard = ({
       title={title}
       size={size}
       resizeHandles={resizeHandles}
+      aria-label={`${title}`}
       // TODO: remove deprecated testID in v3.
       testId={testID || testId}
       {...others}
-      tooltip={tooltip}
+      tooltip={`${title}`}
       isLoading={isLoading}
     >
       <div className={classnames(`${iotPrefix}--gauge-container`, className)} style={myStyles}>
