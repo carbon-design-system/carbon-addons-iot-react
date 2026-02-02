@@ -275,13 +275,11 @@ const ThresholdsFormItem = ({
                     invalid={false} // don't allow invalid state
                     value={threshold.value?.toString() || 0}
                     onChange={(event, { value }) => {
+                      const parsedValue = Number(value ?? event.imaginaryTarget.value);
                       const updatedThresholds = [...thresholds];
                       updatedThresholds[i] = {
                         ...updatedThresholds[i],
-                        value:
-                          Number(value ?? event.imaginaryTarget.value) ||
-                          value ||
-                          event.imaginaryTarget.value,
+                        value: parsedValue,
                       };
                       onChange(updatedThresholds.map((item) => omit(item, 'id')));
                       setThresholds(updatedThresholds);
