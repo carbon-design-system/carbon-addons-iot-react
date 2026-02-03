@@ -242,6 +242,7 @@ export const formatChartData = (
           series.forEach((dataset) => {
             // if value is null, don't add it to the formatted chartData
             if (
+              !isNil(value[dataset.dataSourceId]) &&
               (!isNil(value[categoryDataSourceId]) || !isNil(dataset.label)) &&
               (timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
                 ? !isNil(value[timeDataSourceId])

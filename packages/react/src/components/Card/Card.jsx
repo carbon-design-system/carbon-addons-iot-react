@@ -68,9 +68,9 @@ const CardWrapper = React.forwardRef(
     return (
       <div
         ref={ref}
-        role="presentation"
         data-testid={testID || testId}
         id={id}
+        role="presentation"
         style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}

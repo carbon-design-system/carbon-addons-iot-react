@@ -58,7 +58,7 @@ export const ToggleTip = ({
       ) : null}
       <CarbonToggleTip align={newAlign} autoAlign={useAutoPositioning} {...other}>
         {triggerBtn ?? (
-          <ToggletipButton>
+          <ToggletipButton aria-label={triggerText}>
             {showIcon ? (
               IconCustomElement ? (
                 <IconCustomElement />
