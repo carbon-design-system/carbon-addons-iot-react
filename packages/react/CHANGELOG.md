@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.2...v5.7.3) (2026-01-30)
+
+
+### Bug Fixes
+
+* addressed review comments ([f47ceb5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f47ceb5395657adbe6639ebac629bc74cbd08d13))
+* removed section and updated the fix ([94e01ab](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94e01abe017de27e90cf78b3c3dbfe799cd106a0))
+* removed unused variables ([1366108](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/136610822a18767be0739703e4f90e67a1b86ab5))
+* reverted removed code ([980a198](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/980a198618c0bc202145f44cd7e3b3af91a63672))
+* updated the fix for access related issue for dashboad component ([9c87cc4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9c87cc4bf9f602e64110c13faf57e758c0454e05))
+* updated the fix for access related issue for gauge card ([ce9ec3d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ce9ec3d84be82a3d071e3433454b3a08b8d3da8a))
+* updated the fix for access related issues in dashboard component ([6b8b494](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b8b494aabc2f5f44b1654495872d35a29cf54f9))
+* updated the fix for commit failed issue ([e3eea24](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e3eea24da905c9237c5c4b2caef773e3562ad8db))
+* updated the format to resolve yarn lint issue ([a5f06a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5f06a7edba13ff552b5af9d2355fa41cedb94ac))
+
+
+
+
+
 ## [5.7.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.1...v5.7.2) (2026-01-28)
 
 **Note:** Version bump only for package carbon-addons-iot-react
