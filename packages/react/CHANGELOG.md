@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.3...v5.7.4) (2026-02-03)
+
+
+### Bug Fixes
+
+* added divider for expanded rows ([#4068](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4068)) ([43c8b09](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/43c8b09f2d32878b30b790670039b911a54c6878))
+
+
+
+
+
 ## [5.7.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.2...v5.7.3) (2026-01-30)
 
 
