@@ -15,10 +15,12 @@ loader.config({ monaco });
 export const updateEditorAttribute = (disabled, editorValue) => {
   const textarea = document.getElementsByClassName('inputarea monaco-mouse-cursor-text')[0];
 
-  if (disabled && !!editorValue.current) {
-    textarea.setAttribute('disabled', '');
-  } else if (textarea?.hasAttribute('disabled')) {
-    textarea.removeAttribute('disabled');
+  if (textarea) {
+    if (disabled && !!editorValue.current) {
+      textarea.setAttribute('disabled', '');
+    } else if (textarea?.hasAttribute('disabled')) {
+      textarea.removeAttribute('disabled');
+    }
   }
 };
 
