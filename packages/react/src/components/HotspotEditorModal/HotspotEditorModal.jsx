@@ -392,7 +392,10 @@ const HotspotEditorModal = ({
     }
 
     const hotspotsWithoutExampleValues = filteredHotspots.map((hotspot) =>
-      update(hotspot, { content: { $unset: ['values'] } })
+      update(hotspot, {
+        $unset: ['id'], // Remove the internal id added for drag tracking
+        content: { $unset: ['values'] },
+      })
     );
 
     const updatedCardConfig = update(cardConfig, {

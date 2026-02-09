@@ -761,7 +761,11 @@ const ImageHotspots = ({
 
   const handleMouseDownHotspot = useCallback(
     (e, id1) => {
-      if (!isEditable) return;
+      const hotspot = editableHotspots.find((h) => h.id === id1);
+      if (!isEditable || hotspot?.type === 'dynamic') {
+        return;
+      }
+
       e.stopPropagation();
       setDraggingHotspotId(id1);
       dragStateRef.current.isDragging = true;
@@ -774,7 +778,7 @@ const ImageHotspots = ({
         dragStateRef.current.layout = { rect, hotspotLayout };
       }
     },
-    [container, displayOption, image, isEditable]
+    [container, displayOption, image, isEditable, editableHotspots]
   );
 
   const handleMouseMoveHotspot = useCallback(

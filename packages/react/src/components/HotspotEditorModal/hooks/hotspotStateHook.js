@@ -125,11 +125,17 @@ function hotspotEditorReducer(state, { type, payload }) {
       const isPositionAvailable = !state.hotspots.find((hotspot) =>
         isHotspotMatch(hotspot, payload.position)
       );
-      return isPositionAvailable
-        ? update(state, {
-            hotspots: { $set: payload.newHotspots },
-          })
-        : state;
+      if (isPositionAvailable) {
+        // Find the updated hotspot in the new hotspots array to maintain selection
+        const updatedSelectedHotspot = payload.newHotspots.find((hotspot) =>
+          isHotspotMatch(hotspot, payload.position)
+        );
+        return update(state, {
+          hotspots: { $set: payload.newHotspots },
+          selectedHotspot: { $set: updatedSelectedHotspot },
+        });
+      }
+      return state;
     }
     // HOTSPOTS ADD
     case hotspotActionTypes.hotspotsAdd: {
