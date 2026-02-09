@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.5...v5.7.6) (2026-02-09)
+
+
+### Bug Fixes
+
+* remove X of Y pages when the dropdown is active PAL ([#4072](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4072)) ([a70000e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a70000ef7d9599f7985e226b10961d4925157a5e))
+
+
+
+
+
 ## [5.7.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.4...v5.7.5) (2026-02-06)
 
 **Note:** Version bump only for package carbon-addons-iot-react
