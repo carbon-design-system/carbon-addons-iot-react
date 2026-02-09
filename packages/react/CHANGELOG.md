@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.8.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.6...v5.8.0) (2026-02-09)
+
+
+### Features
+
+* pagination fixes of maxPages ([#4052](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4052)) ([29da4d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29da4d947fa5ded64284dac347df628004d54fdc))
+
+
+
+
+
 ## [5.7.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.5...v5.7.6) (2026-02-09)
 
 
