@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.0...v5.8.1) (2026-02-12)
+
+
+### Bug Fixes
+
+* **valuecard:** maxuif-3647 secondary value text outside card ([#4077](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4077)) ([28393ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28393baae4ec7fbe69d4f34d0749d6c0f6fef08c))
+
+
+
+
+
 # [5.8.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.6...v5.8.0) (2026-02-09)
 
 
