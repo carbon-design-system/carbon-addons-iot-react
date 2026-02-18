@@ -274,12 +274,11 @@ const ThresholdsFormItem = ({
                     translateWithId={translateWithId}
                     invalid={false} // don't allow invalid state
                     value={threshold.value?.toString() || 0}
-                    onChange={(event, { value }) => {
-                      const parsedValue = Number(value ?? event.imaginaryTarget.value);
+                    onChange={({ value }) => {
                       const updatedThresholds = [...thresholds];
                       updatedThresholds[i] = {
                         ...updatedThresholds[i],
-                        value: parsedValue,
+                        value,
                       };
                       onChange(updatedThresholds.map((item) => omit(item, 'id')));
                       setThresholds(updatedThresholds);
