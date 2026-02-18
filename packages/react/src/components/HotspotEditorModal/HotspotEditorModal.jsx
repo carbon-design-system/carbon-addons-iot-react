@@ -323,6 +323,7 @@ const HotspotEditorModal = ({
     switchCurrentType,
     updateHotspotDataSource,
     updateHotspotTooltip,
+    updateHotspotPosition,
     updateTextHotspotStyle,
     updateTextHotspotContent,
     updateDynamicHotspotSourceX,
@@ -391,7 +392,10 @@ const HotspotEditorModal = ({
     }
 
     const hotspotsWithoutExampleValues = filteredHotspots.map((hotspot) =>
-      update(hotspot, { content: { $unset: ['values'] } })
+      update(hotspot, {
+        $unset: ['id'], // Remove the internal id added for drag tracking
+        content: { $unset: ['values'] },
+      })
     );
 
     const updatedCardConfig = update(cardConfig, {
@@ -649,6 +653,7 @@ const HotspotEditorModal = ({
                 hotspotDefaults,
               });
             }}
+            onUpdateHotspotPosition={updateHotspotPosition}
             onSelectHotspot={setSelectedHotspot}
             selectedHotspots={getSelectedHotspotsList(selectedHotspot, hotspots)}
             src={cardConfig.content.src}
