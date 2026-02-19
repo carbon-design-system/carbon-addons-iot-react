@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.2...v5.8.3) (2026-02-19)
+
+
+### Bug Fixes
+
+* thresold value breaks if value is equal to zero ([#4075](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4075)) ([9ad8087](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ad808780754b874cee5b91b5ad1141e569fcae4))
+
+
+
+
+
 ## [5.8.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.1...v5.8.2) (2026-02-18)
 
 **Note:** Version bump only for package carbon-addons-iot-react
