@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.1...v5.8.2) (2026-02-18)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [5.8.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.0...v5.8.1) (2026-02-12)
+
+
+### Bug Fixes
+
+* **valuecard:** maxuif-3647 secondary value text outside card ([#4077](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4077)) ([28393ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28393baae4ec7fbe69d4f34d0749d6c0f6fef08c))
+
+
+
+
+
+# [5.8.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.6...v5.8.0) (2026-02-09)
+
+
+### Features
+
+* pagination fixes of maxPages ([#4052](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4052)) ([29da4d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29da4d947fa5ded64284dac347df628004d54fdc))
+
+
+
+
+
+## [5.7.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.5...v5.7.6) (2026-02-09)
+
+
+### Bug Fixes
+
+* remove X of Y pages when the dropdown is active PAL ([#4072](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4072)) ([a70000e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a70000ef7d9599f7985e226b10961d4925157a5e))
+
+
+
+
+
+## [5.7.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.4...v5.7.5) (2026-02-06)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [5.7.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.3...v5.7.4) (2026-02-03)
+
+
+### Bug Fixes
+
+* added divider for expanded rows ([#4068](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4068)) ([43c8b09](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/43c8b09f2d32878b30b790670039b911a54c6878))
+
+
+
+
+
 ## [5.7.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.7.2...v5.7.3) (2026-01-30)
 
 

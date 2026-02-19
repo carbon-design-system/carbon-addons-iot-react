@@ -795,7 +795,7 @@ export const WithRowExpansion = () => {
 
   return (
     <>
-      <style>{`.iot--expanded-tablerow td[colspan="10"] { padding: 2rem !important;}`}</style>
+      <style>{`.iot--expanded-tablerow td[colspan="10"] { padding: 2rem !important; padding-left:4rem !important;}`}</style>
       <MyTable
         actions={getTableActions()}
         columns={columns}

@@ -249,7 +249,7 @@ export const defaultI18NPropTypes = {
   pageNumberAria: 'Page Number',
   itemsPerPage: 'Items per page:',
   itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
-  pageRange: (current, total) => `${current} of ${total} pages`,
+  pageRange: (current, total) => `of ${total} pages`,
   /** table body */
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand content',

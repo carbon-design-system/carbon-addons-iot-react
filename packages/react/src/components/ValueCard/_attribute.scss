@@ -6,7 +6,7 @@
 .#{$iot-prefix}--value-card__attribute {
   display: flex;
   // need a set height to determine truncation vs wrapping. This is the max font size allowed
-  height: 54px;
+  height: 44px;
   // line up the value and unit
   align-items: baseline;
   padding-right: $spacing-05;

@@ -186,8 +186,8 @@
     "immutability-helper": "^3.1.1",
     "js-file-download": "^0.4.12",
     "lodash-es": "^4.17.21",
-    "monaco-editor": "^0.52.0",
-    "monaco-editor-webpack-plugin": "^7.1.0",
+    "monaco-editor": "^0.54.0",
+    "monaco-editor-webpack-plugin": "^7.1.1",
     "object-hash": "^3.0.0",
     "prop-types": "^15.8.1",
     "react-dnd": "14.0.2",
@@ -353,7 +353,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "5.7.3",
+  "version": "5.8.2",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",

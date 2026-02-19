@@ -192,6 +192,8 @@ const HotspotContent = ({
                         : 1, // otherwise 1 spot if precision isn't set
                       locale
                     )
+                  : typeof value === 'boolean'
+                  ? String(value)
                   : value}
                 {unit && value !== '--' && (
                   <span className={`${iotPrefix}--hotspot-content-unit`}>{unit}</span>
