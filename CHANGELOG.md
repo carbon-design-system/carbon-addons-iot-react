@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.5...v4.3.6) (2026-02-23)
+
+
+### Bug Fixes
+
+* thresold value breaks if value is equal to zero 4.x.x ([#4076](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4076)) ([3c09e61](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3c09e6164a8ec0d3ad2be61c7fe7d74f848981e6))
+
+
+
+
+
 ## [4.3.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.4...v4.3.5) (2026-02-06)
 
 **Note:** Version bump only for package ibm-ai-applications
