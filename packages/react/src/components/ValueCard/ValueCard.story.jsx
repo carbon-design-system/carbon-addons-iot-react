@@ -155,7 +155,7 @@ export const WithLinkAndMeasurementUnit = () => {
               thresholdsIconPosition: select(
                 'content.attributes[0].thresholdsIconPosition',
                 ['label', 'unit'],
-                'unit'
+                'label'
               ),
               thresholds: [
                 {
