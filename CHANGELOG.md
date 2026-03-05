@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.3...v5.9.0) (2026-03-05)
+
+
+### Features
+
+* update default thresholds icon position for value card ([#4078](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4078)) ([40a2332](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/40a2332dc45dc0b1e96d1106c78c53218ff8e831))
+
+
+
+
+
 ## [5.8.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.8.2...v5.8.3) (2026-02-19)
 
 
