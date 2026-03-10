@@ -128,6 +128,8 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     editDataItems: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
   /** Id that can be used for testing */
@@ -163,6 +165,7 @@ const defaultProps = {
       'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
     modalIconDescription: 'Close',
   },
+  shouldUseTranslatedLabels: false,
   getValidDimensions: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
@@ -308,6 +311,7 @@ const CardEditor = ({
   onRenderCardEditForm,
   icons,
   i18n,
+  shouldUseTranslatedLabels,
   currentBreakpoint,
   testId,
   dataSeriesItemLinks,
@@ -398,6 +402,7 @@ const CardEditor = ({
               getValidTimeRanges={getValidTimeRanges}
               availableDimensions={availableDimensions}
               i18n={mergedI18n}
+              shouldUseTranslatedLabels={shouldUseTranslatedLabels}
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}

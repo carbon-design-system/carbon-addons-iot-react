@@ -49,6 +49,8 @@ const propTypes = {
     modalHelpText: PropTypes.string,
     modalIconDescription: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -112,6 +114,7 @@ const defaultProps = {
       'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
     modalIconDescription: 'Close',
   },
+  shouldUseTranslatedLabels: false,
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
@@ -154,6 +157,7 @@ const CardEditForm = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  shouldUseTranslatedLabels,
   actions,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -173,6 +177,7 @@ const CardEditForm = ({
             onChange={onChange}
             isSummaryDashboard={isSummaryDashboard}
             i18n={mergedI18n}
+            shouldUseTranslatedLabels={shouldUseTranslatedLabels}
             dataItems={dataItems}
             availableDimensions={availableDimensions}
             getValidDataItems={getValidDataItems}
