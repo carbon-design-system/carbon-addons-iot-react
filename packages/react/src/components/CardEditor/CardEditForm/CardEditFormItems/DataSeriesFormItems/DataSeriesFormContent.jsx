@@ -19,6 +19,7 @@ import { Dropdown } from '../../../../Dropdown';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';
+import { getTranslatedLabel } from '../../../../../utils/cardUtilityFunctions';
 
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
@@ -111,6 +112,8 @@ const propTypes = {
     incrementNumberText: PropTypes.string,
     decrementNumberText: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   translateWithId: PropTypes.func.isRequired,
   actions: DashboardEditorActionsPropTypes,
 };
@@ -150,6 +153,7 @@ const defaultProps = {
     incrementNumberText: 'Increment number',
     decrementNumberText: 'Decrement number',
   },
+  shouldUseTranslatedLabels: false,
   getValidDataItems: null,
   dataItems: [],
   selectedDataItems: [],
@@ -262,6 +266,7 @@ const DataSeriesFormItem = ({
   selectedTimeRange,
   availableDimensions,
   i18n,
+  shouldUseTranslatedLabels,
   dataSeriesItemLinks,
   translateWithId,
   actions,
@@ -404,7 +409,11 @@ const DataSeriesFormItem = ({
         return {
           id: dataItem.dataSourceId,
           content: {
-            value: dataItem.label || dataItem.dataItemId,
+            value: getTranslatedLabel(
+              dataItem.label || dataItem.dataItemId,
+              shouldUseTranslatedLabels,
+              i18n
+            ),
             icon:
               cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
                 <div
@@ -446,8 +455,10 @@ const DataSeriesFormItem = ({
       dataSection,
       handleEditButton,
       handleRemoveButton,
+      i18n,
       mergedI18n.edit,
       mergedI18n.remove,
+      shouldUseTranslatedLabels,
     ]
   );
 
@@ -467,6 +478,7 @@ const DataSeriesFormItem = ({
         dataSection={dataSection}
         onChange={onChange}
         i18n={mergedI18n}
+        shouldUseTranslatedLabels={shouldUseTranslatedLabels}
         actions={actions}
         options={{
           hasColorDropdown: type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR,

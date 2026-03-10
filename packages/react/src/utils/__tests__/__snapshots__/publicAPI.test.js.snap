@@ -14658,6 +14658,7 @@ Map {
       "renderCardPreview": [Function],
       "renderHeader": null,
       "renderIconByName": [Function],
+      "shouldUseTranslatedLabels": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -15310,6 +15311,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "shouldUseTranslatedLabels": Object {
+        "type": "bool",
+      },
       "supportedCardTypes": Object {
         "args": Array [
           Object {
@@ -15405,6 +15409,7 @@ Map {
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
+      "shouldUseTranslatedLabels": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -15646,6 +15651,9 @@ Map {
       },
       "onValidateCardJson": Object {
         "type": "func",
+      },
+      "shouldUseTranslatedLabels": Object {
+        "type": "bool",
       },
       "supportedCardTypes": Object {
         "args": Array [
@@ -16196,6 +16204,7 @@ Map {
         "xl": 144,
         "xs": 144,
       },
+      "shouldUseTranslatedLabels": false,
       "size": "MEDIUM",
       "subtitle": undefined,
       "tabIndex": undefined,
@@ -18462,6 +18471,7 @@ Map {
       "isNumberValueCompact": false,
       "locale": "en",
       "onAttributeClick": null,
+      "shouldUseTranslatedLabels": false,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -23258,6 +23268,9 @@ Map {
         ],
         "type": "shape",
       },
+      "shouldUseTranslatedLabels": Object {
+        "type": "bool",
+      },
       "showOverflow": [Function],
       "size": Object {
         "args": Array [
@@ -24785,6 +24798,7 @@ Map {
       "layout": "VERTICAL",
       "locale": "en",
       "onAttributeClick": null,
+      "shouldUseTranslatedLabels": false,
       "size": "MEDIUM",
       "testId": "ValueContent",
       "title": "",
@@ -24998,6 +25012,9 @@ Map {
       },
       "onAttributeClick": Object {
         "type": "func",
+      },
+      "shouldUseTranslatedLabels": Object {
+        "type": "bool",
       },
       "title": Object {
         "type": "string",

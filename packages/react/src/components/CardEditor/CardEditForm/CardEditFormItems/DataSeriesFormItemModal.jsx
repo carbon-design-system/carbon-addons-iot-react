@@ -31,6 +31,7 @@ import {
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
 import Button from '../../../Button';
+import { getTranslatedLabel } from '../../../../utils/cardUtilityFunctions';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -144,6 +145,8 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   actions: DashboardEditorActionsPropTypes,
   /**
    * Used to override the default behaviour of handleDataItemEdit. if we dont pass any function then it uses handleDefaultDataItemEdit function by default
@@ -198,6 +201,7 @@ const defaultProps = {
     secondaryButtonLabelText: 'Cancel',
     decimalPlacesLabel: 'Decimal places',
   },
+  shouldUseTranslatedLabels: false,
   editDataSeries: [],
   showEditor: false,
   setShowEditor: null,
@@ -256,6 +260,7 @@ const DataSeriesFormItemModal = ({
   availableDimensions,
   onChange,
   i18n,
+  shouldUseTranslatedLabels,
   isLarge,
   testId,
   actions: {
@@ -441,7 +446,7 @@ const DataSeriesFormItemModal = ({
                   label: evt.target.value,
                 })
               }
-              value={editDataItem.label}
+              value={getTranslatedLabel(editDataItem.label, shouldUseTranslatedLabels, i18n)}
               helperText={mergedI18n.dataItemEditorDataItemHelperText(
                 mergedI18n.dataItemSource,
                 editDataItem.dataItemId
@@ -637,6 +642,7 @@ const DataSeriesFormItemModal = ({
       hasThresholds,
       hasTooltip,
       hasUnit,
+      i18n,
       id,
       initialAggregation,
       initialGrain,
@@ -646,6 +652,7 @@ const DataSeriesFormItemModal = ({
       onAddAggregations,
       selectedDimensionFilter,
       setEditDataItem,
+      shouldUseTranslatedLabels,
       testId,
       type,
     ]

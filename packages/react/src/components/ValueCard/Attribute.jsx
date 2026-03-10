@@ -10,6 +10,7 @@ import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
 import useMatchingThreshold from '../../hooks/useMatchingThreshold';
 import { Link } from '../Link';
+import { getTranslatedLabel } from '../../utils/cardUtilityFunctions';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -37,7 +38,9 @@ const propTypes = {
   isEditable: PropTypes.bool,
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   locale: PropTypes.string,
-
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
+  i18n: PropTypes.objectOf(PropTypes.any),
   renderIconByName: PropTypes.func,
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
@@ -66,6 +69,8 @@ const defaultProps = {
   locale: 'en',
   customFormatter: null,
   isEditable: false,
+  shouldUseTranslatedLabels: false,
+  i18n: {},
   testId: 'attribute',
   onValueClick: null,
 };
@@ -83,6 +88,8 @@ const Attribute = ({
   isEditable,
   layout,
   locale,
+  shouldUseTranslatedLabels,
+  i18n,
   renderIconByName,
   secondaryValue,
   value,
@@ -101,6 +108,9 @@ const Attribute = ({
 
   // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
+
+  // Get translated label if shouldUseTranslatedLabels is true
+  const displayLabel = getTranslatedLabel(label, shouldUseTranslatedLabels, i18n);
 
   return (
     <div
@@ -127,10 +137,10 @@ const Attribute = ({
         ) : null}
         {tooltip ? (
           <TooltipDefinition direction="right" tooltipText={tooltip}>
-            {label}
+            {displayLabel}
           </TooltipDefinition>
         ) : (
-          <span data-testid={`${testId}-threshold-label`}>{label}</span>
+          <span data-testid={`${testId}-threshold-label`}>{displayLabel}</span>
         )}
       </div>
 

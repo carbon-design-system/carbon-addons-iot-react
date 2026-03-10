@@ -16,6 +16,8 @@ const propTypes = {
   layout: PropTypes.oneOf(['HORIZONTAL', 'VERTICAL']),
   locale: PropTypes.string,
   isEditable: PropTypes.bool,
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   ...ValueContentPropTypes,
 };
 
@@ -25,6 +27,7 @@ const defaultProps = {
   layout: 'VERTICAL',
   locale: 'en',
   isEditable: false,
+  shouldUseTranslatedLabels: false,
   dataState: null,
   values: null,
   fontSize: DEFAULT_FONT_SIZE,
@@ -44,6 +47,7 @@ const ValueContent = ({
   dataState,
   locale,
   isEditable,
+  shouldUseTranslatedLabels,
   customFormatter,
   fontSize,
   isNumberValueCompact,
@@ -70,6 +74,8 @@ const ValueContent = ({
             locale={locale}
             isEditable={isEditable}
             title={title}
+            shouldUseTranslatedLabels={shouldUseTranslatedLabels}
+            i18n={others.i18n}
             renderIconByName={others.renderIconByName}
             value={determineValue(attribute.dataSourceId, values, attribute.dataFilter)}
             secondaryValue={
