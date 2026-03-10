@@ -11,6 +11,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import { Dropdown } from '../../Dropdown';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
+import { getTranslatedLabel } from '../../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -75,6 +76,8 @@ const propTypes = {
     thisQuarterLabel: PropTypes.string,
     thisYearLabel: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
    * getValidTimeRanges(card, selectedDataItems)
@@ -109,6 +112,7 @@ const defaultProps = {
     thisQuarterLabel: 'This quarter',
     thisYearLabel: 'This year',
   },
+  shouldUseTranslatedLabels: false,
   selectedDataItems: [],
   getValidTimeRanges: null,
   currentBreakpoint: 'xl',
@@ -143,6 +147,7 @@ const CommonCardEditFormFields = ({
   cardConfig,
   onChange,
   i18n,
+  shouldUseTranslatedLabels,
   getValidTimeRanges,
   currentBreakpoint,
   selectedDataItems,
@@ -171,7 +176,7 @@ const CommonCardEditFormFields = ({
           labelText={mergedI18n.cardTitle}
           light
           onChange={(evt) => onChange({ ...cardConfig, title: evt.target.value })}
-          value={title}
+          value={getTranslatedLabel(title, shouldUseTranslatedLabels, mergedI18n)}
         />
       </div>
       <div className={`${baseClassName}--input`}>
