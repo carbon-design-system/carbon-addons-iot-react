@@ -75,6 +75,7 @@ const DashboardEditorCardRenderer = React.memo(
     baseClassName,
     renderCardPreview,
     style,
+    shouldUseTranslatedLabels,
     ...cardConfig
   }) => {
     // We have to keep track of our dynamic hotspots here
@@ -117,6 +118,7 @@ const DashboardEditorCardRenderer = React.memo(
         key: cardConfig.id,
         tooltip: cardConfig.description,
         i18n,
+        shouldUseTranslatedLabels,
         availableActions,
         onCardAction: handleOnCardAction,
         renderIconByName,
@@ -144,6 +146,7 @@ const DashboardEditorCardRenderer = React.memo(
         onShowImageGallery,
         onValidateUploadedImage,
         renderIconByName,
+        shouldUseTranslatedLabels,
         style,
       ]
     );

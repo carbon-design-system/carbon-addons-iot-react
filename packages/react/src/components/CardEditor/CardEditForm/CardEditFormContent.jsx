@@ -80,6 +80,8 @@ const propTypes = {
     thisQuarterLabel: PropTypes.string,
     thisYearLabel: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
    * getValidTimeRanges(card, selectedDataItems)
@@ -117,6 +119,7 @@ const propTypes = {
 const defaultProps = {
   cardConfig: {},
   i18n: {},
+  shouldUseTranslatedLabels: false,
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
@@ -146,6 +149,7 @@ const CardEditFormContent = ({
   isSummaryDashboard,
   onChange,
   i18n,
+  shouldUseTranslatedLabels,
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
@@ -174,6 +178,7 @@ const CardEditFormContent = ({
         key={`${cardConfig.id}-common`} // fix because I need to regenerate the form state when switching between cards
         onChange={onChange}
         i18n={mergedI18n}
+        shouldUseTranslatedLabels={shouldUseTranslatedLabels}
         getValidTimeRanges={getValidTimeRanges}
         currentBreakpoint={currentBreakpoint}
         selectedDataItems={selectedDataItems}
@@ -227,6 +232,7 @@ const CardEditFormContent = ({
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          shouldUseTranslatedLabels={shouldUseTranslatedLabels}
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
           actions={actions}

@@ -9,6 +9,7 @@ import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutC
 import DashboardGrid from '../Dashboard/DashboardGrid';
 import CardEditor from '../CardEditor/CardEditor';
 import ImageGalleryModal, { ImagePropTypes } from '../ImageGalleryModal/ImageGalleryModal';
+import { getTranslatedLabel } from '../../utils/cardUtilityFunctions';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import DashboardEditorCardRenderer from './DashboardEditorCardRenderer';
@@ -293,6 +294,8 @@ const propTypes = {
 
     editDataItems: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   /** locale data */
   locale: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
@@ -382,6 +385,7 @@ const defaultProps = {
     saveTitleButton: 'Save title',
     editDataItems: 'Edit data items',
   },
+  shouldUseTranslatedLabels: false,
   locale: 'en',
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
@@ -434,6 +438,7 @@ const DashboardEditor = ({
   isSummaryDashboard,
   isLoading,
   i18n,
+  shouldUseTranslatedLabels,
   locale,
   dataSeriesItemLinks,
   isTitleEditable,
@@ -696,7 +701,9 @@ const DashboardEditor = ({
           renderHeader()
         ) : (
           <DashboardEditorHeader
-            title={dashboardJson?.title || title}
+            title={
+              getTranslatedLabel(dashboardJson?.title, shouldUseTranslatedLabels, i18n) || title
+            }
             breadcrumbs={headerBreadcrumbs}
             onImport={onImport}
             onExport={() => onExport(dashboardJson, imagesToUpload)}
@@ -799,6 +806,7 @@ const DashboardEditor = ({
                         key={cardConfig.id}
                         isResizable={isCardResizable}
                         i18n={mergedI18n}
+                        shouldUseTranslatedLabels={shouldUseTranslatedLabels}
                         isSelected={isSelected}
                         availableDimensions={availableDimensions}
                         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
@@ -849,6 +857,7 @@ const DashboardEditor = ({
             getValidDimensions={getValidDimensions}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
+            shouldUseTranslatedLabels={shouldUseTranslatedLabels}
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
