@@ -53,7 +53,7 @@ jobs:
           cd packages/react
           yarn build
           mkdir -p dist
-          cp -rf package.json umd scss lib es css ./dist
+          cp -rf package.json yarn.lock umd scss lib es css ./dist
 
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
