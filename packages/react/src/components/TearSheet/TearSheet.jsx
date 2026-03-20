@@ -34,6 +34,7 @@ const propTypes = {
   children: PropTypes.node,
   testId: PropTypes.string,
   shouldPreventClose: PropTypes.func,
+  role: PropTypes.string,
 };
 
 const defaultProps = {
@@ -53,6 +54,7 @@ const defaultProps = {
   // TODO: set default testId in v3.
   testId: '',
   shouldPreventClose: () => new Promise((res) => res(false)),
+  role: undefined,
 };
 
 const TearSheet = ({
@@ -69,6 +71,7 @@ const TearSheet = ({
   children,
   testId,
   shouldPreventClose,
+  role,
 }) => {
   const onCloseButton = useCallback(async () => {
     const preventClose = await shouldPreventClose();
@@ -85,6 +88,7 @@ const TearSheet = ({
       // TODO: use only testId in v3.
       data-testid={testId || `${iotPrefix}--tear-sheet-${idx}`}
       className={classnames(`${iotPrefix}--tear-sheet`, className)}
+      role={role}
     >
       <div
         className={classnames(`${iotPrefix}--tear-sheet--header`, {
