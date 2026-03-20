@@ -34,6 +34,7 @@ const propTypes = {
   children: PropTypes.node,
   testId: PropTypes.string,
   shouldPreventClose: PropTypes.func,
+  // eslint-disable-next-line react/require-default-props
   role: PropTypes.string,
 };
 
@@ -54,7 +55,6 @@ const defaultProps = {
   // TODO: set default testId in v3.
   testId: '',
   shouldPreventClose: () => new Promise((res) => res(false)),
-  role: '',
 };
 
 const TearSheet = ({
@@ -88,7 +88,7 @@ const TearSheet = ({
       // TODO: use only testId in v3.
       data-testid={testId || `${iotPrefix}--tear-sheet-${idx}`}
       className={classnames(`${iotPrefix}--tear-sheet`, className)}
-      role={role || undefined}
+      role={role}
     >
       <div
         className={classnames(`${iotPrefix}--tear-sheet--header`, {
