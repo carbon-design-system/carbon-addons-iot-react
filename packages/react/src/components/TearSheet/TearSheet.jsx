@@ -34,7 +34,6 @@ const propTypes = {
   children: PropTypes.node,
   testId: PropTypes.string,
   shouldPreventClose: PropTypes.func,
-  // eslint-disable-next-line react/require-default-props
   role: PropTypes.string,
 };
 
@@ -55,6 +54,7 @@ const defaultProps = {
   // TODO: set default testId in v3.
   testId: '',
   shouldPreventClose: () => new Promise((res) => res(false)),
+  role: undefined,
 };
 
 const TearSheet = ({
