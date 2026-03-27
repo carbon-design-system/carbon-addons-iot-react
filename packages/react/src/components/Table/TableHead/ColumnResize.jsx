@@ -111,8 +111,37 @@ const ColumnResize = React.forwardRef((props, ref) => {
     });
     setAffectedSiblingColumn(siblingColumn);
   };
+  const handleKeyDown = (e) => {
+    const myCol = currentColumnWidths[columnId];
+    const currentWidth = parseInt(myCol.width, 10) || 0;
 
+    const increment = 20;
+    const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
+
+    if (e.key === 'ArrowRight') {
+      const newWidth = currentWidth + increment;
+
+      props.onResize([
+        {
+          id: columnId,
+          width: newWidth,
+        },
+      ]);
+    }
+
+    if (e.key === 'ArrowLeft') {
+      const newWidth = Math.max(minWidth, currentWidth - increment);
+
+      props.onResize([
+        {
+          id: columnId,
+          width: newWidth,
+        },
+      ]);
+    }
+  };
   const onMouseDown = (e) => {
+    e.currentTarget.focus();
     const startingX = e.target.offsetLeft - e.clientX;
     setStartX(startingX);
     setLeftPosition(e.target.offsetLeft);
@@ -129,9 +158,9 @@ const ColumnResize = React.forwardRef((props, ref) => {
         paddingExtra,
         preserveColumnWidths,
       });
-      if (mousePosition > bounds.left && mousePosition < bounds.right) {
-        setLeftPosition(mousePosition);
-      }
+      // if (mousePosition > bounds.left && mousePosition < bounds.right) {
+      setLeftPosition(mousePosition);
+      // }
     }
   };
 
@@ -171,6 +200,8 @@ const ColumnResize = React.forwardRef((props, ref) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
       style={{
