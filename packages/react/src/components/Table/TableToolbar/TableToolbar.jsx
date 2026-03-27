@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Column, Filter, Download, Edit, OverflowMenuVertical } from '@carbon/react/icons';
 import {
@@ -255,6 +255,48 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
+  const batchActionsRef = useRef(null);
+  const previousFocusedElement = useRef(null);
+  const toolbarContentRef = useRef(null);
+
+  // Function to restore focus to the previous element
+  const restoreFocus = () => {
+    if (previousFocusedElement.current) {
+      previousFocusedElement.current.focus();
+      previousFocusedElement.current = null;
+    }
+  };
+
+  // Handle focus management when batch actions appear/disappear
+  useEffect(() => {
+    if (shouldShowBatchActions && batchActionsRef.current) {
+      // Store the currently focused element before switching to batch actions
+      previousFocusedElement.current = document.activeElement;
+
+      // Find the first focusable element in batch actions
+      const focusable = batchActionsRef.current.querySelector(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+      );
+
+      if (focusable) {
+        focusable.focus();
+      }
+    } else if (!shouldShowBatchActions && previousFocusedElement.current) {
+      // Restore focus when batch actions are hidden
+      restoreFocus();
+    }
+  }, [shouldShowBatchActions]);
+
+  // Hide toolbar content from screen readers when batch actions are visible
+  useEffect(() => {
+    if (toolbarContentRef.current) {
+      if (shouldShowBatchActions) {
+        toolbarContentRef.current.setAttribute('aria-hidden', 'true');
+      } else {
+        toolbarContentRef.current.removeAttribute('aria-hidden');
+      }
+    }
+  }, [shouldShowBatchActions]);
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -333,7 +375,14 @@ const TableToolbar = ({
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
       ) : !hasBatchActionToolbar && shouldShowBatchActions ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
+        <label
+          className={`${iotPrefix}--table-toolbar-secondary-title`}
+          aria-live="polite"
+          aria-atomic="true"
+          role="status"
+        >
+          {totalSelectedText}
+        </label>
       ) : null}
       {
         // Deprecated in favor of secondaryTitle for a more general use-case
@@ -360,6 +409,7 @@ const TableToolbar = ({
         <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
       ) : (
         <TableToolbarContent
+          ref={toolbarContentRef}
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-content`}
           className={`${iotPrefix}--table-toolbar-content`}
@@ -548,10 +598,17 @@ const TableToolbar = ({
       )}
       {hasBatchActionToolbar ? (
         <TableBatchActions
+          ref={batchActionsRef}
+          role="region"
+          aria-live="polite"
+          aria-label={totalSelectedText}
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-batch-actions`}
           className={`${iotPrefix}--table-batch-actions`}
-          onCancel={onCancelBatchAction}
+          onCancel={() => {
+            onCancelBatchAction?.();
+            restoreFocus();
+          }}
           shouldShowBatchActions={shouldShowBatchActions}
           totalSelected={totalSelected}
           translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
@@ -560,7 +617,10 @@ const TableToolbar = ({
             visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
               <TableBatchAction
                 key={id}
-                onClick={() => onApplyBatchAction(id)}
+                onClick={() => {
+                  onApplyBatchAction(id);
+                  restoreFocus();
+                }}
                 tabIndex={shouldShowBatchActions ? 0 : -1}
                 disabled={!shouldShowBatchActions || disabled}
                 {...others}
@@ -600,7 +660,10 @@ const TableToolbar = ({
                       className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
                     })}
                     disabled={!shouldShowBatchActions || disabled}
-                    onClick={() => onApplyBatchAction(id)}
+                    onClick={() => {
+                      onApplyBatchAction(id);
+                      restoreFocus();
+                    }}
                     key={`table-batch-actions-overflow-menu-${id}`}
                     requireTitle={!renderIcon}
                     hasDivider={hasDivider}
