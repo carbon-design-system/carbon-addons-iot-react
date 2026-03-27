@@ -269,6 +269,13 @@ const TableBodyRow = ({
         key={`${id}-row-selection-cell`}
         onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => {
+          if (isSelectable !== false && (e.key === ' ' || e.key === 'Enter')) {
+            e.preventDefault();
+            e.stopPropagation();
+            onRowSelected(id, !isSelected);
+          }
+        }}
       >
         <span
           className={`${iotPrefix}--table__cell__offset`}
