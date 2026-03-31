@@ -125,6 +125,7 @@ const Attribute = ({
 
   // Get translated label if shouldUseTranslatedLabels is true
   const displayLabel = getTranslatedLabel(label, shouldUseTranslatedLabels, i18n);
+  const displayUnitLabel = getTranslatedLabel(unit, shouldUseTranslatedLabels, i18n);
 
   // Render threshold icon component
   const renderThresholdIcon = () => {
@@ -192,7 +193,7 @@ const Attribute = ({
         />
         <div className={`${BEM_BASE}-unit-with-icon`}>
           {thresholdsIconPosition === 'unit' && renderThresholdIcon()}
-          <UnitRenderer unit={measurementUnitLabel || unit} testId={`${testId}-unit`} />
+          <UnitRenderer unit={measurementUnitLabel || displayUnitLabel} testId={`${testId}-unit`} />
         </div>
       </div>
       {!isNil(secondaryValue) ? (
