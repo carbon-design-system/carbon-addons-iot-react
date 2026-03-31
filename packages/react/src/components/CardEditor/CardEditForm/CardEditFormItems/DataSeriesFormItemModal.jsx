@@ -510,7 +510,7 @@ const DataSeriesFormItemModal = ({
                       unit: evt.target.value,
                     })
                   }
-                  value={editDataItem.unit}
+                  value={getTranslatedLabel(editDataItem.unit, shouldUseTranslatedLabels, i18n)}
                 />
               </div>
             )}
