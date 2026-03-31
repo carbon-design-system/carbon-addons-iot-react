@@ -299,7 +299,7 @@ const Card = (props) => {
     error,
     hideHeader,
     id,
-    tooltip,
+    tooltip: tooltipProp,
     titleTextTooltip,
     timeRange,
     timeRangeOptions,
@@ -331,6 +331,7 @@ const Card = (props) => {
 
   // Get translated title if shouldUseTranslatedLabels is true
   const title = getTranslatedLabel(titleProp, shouldUseTranslatedLabels, i18n);
+  const tooltip = getTranslatedLabel(tooltipProp, shouldUseTranslatedLabels, i18n);
 
   // TODO: remove once final version of range prop is supported
   useEffect(() => {

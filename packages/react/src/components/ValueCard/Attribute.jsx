@@ -111,6 +111,7 @@ const Attribute = ({
 
   // Get translated label if shouldUseTranslatedLabels is true
   const displayLabel = getTranslatedLabel(label, shouldUseTranslatedLabels, i18n);
+  const displayUnitLabel = getTranslatedLabel(unit, shouldUseTranslatedLabels, i18n);
 
   return (
     <div
@@ -159,7 +160,7 @@ const Attribute = ({
           measurementUnitLabel={measurementUnitLabel}
           onClick={onValueClick}
         />
-        <UnitRenderer unit={unit} testId={`${testId}-unit`} />
+        <UnitRenderer unit={displayUnitLabel} testId={`${testId}-unit`} />
       </div>
       {!isNil(secondaryValue) ? (
         <div
