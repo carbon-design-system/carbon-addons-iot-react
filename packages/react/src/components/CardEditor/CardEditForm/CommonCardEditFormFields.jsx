@@ -185,7 +185,7 @@ const CommonCardEditFormFields = ({
           labelText={mergedI18n.description}
           light
           onChange={(evt) => onChange({ ...cardConfig, description: evt.target.value })}
-          value={description}
+          value={getTranslatedLabel(description, shouldUseTranslatedLabels, mergedI18n)}
         />
       </div>
       <div className={`${baseClassName}--input`}>
