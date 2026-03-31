@@ -234,6 +234,8 @@ export const TableCardPropTypes = {
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
   }),
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),

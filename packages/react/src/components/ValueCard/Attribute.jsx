@@ -10,6 +10,7 @@ import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
 import useMatchingThreshold from '../../hooks/useMatchingThreshold';
 import { Tooltip } from '../Tooltip/index';
+import { getTranslatedLabel } from '../../utils/cardUtilityFunctions';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -40,7 +41,9 @@ const propTypes = {
   isEditable: PropTypes.bool,
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   locale: PropTypes.string,
-
+  /** whether to use translated labels in cards */
+  shouldUseTranslatedLabels: PropTypes.bool,
+  i18n: PropTypes.objectOf(PropTypes.any),
   renderIconByName: PropTypes.func,
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
@@ -70,6 +73,8 @@ const defaultProps = {
   customFormatter: null,
   formatter: null,
   isEditable: false,
+  shouldUseTranslatedLabels: false,
+  i18n: {},
   testId: 'attribute',
   onValueClick: null,
 };
@@ -97,6 +102,8 @@ const Attribute = ({
   isEditable,
   layout,
   locale,
+  shouldUseTranslatedLabels,
+  i18n,
   renderIconByName,
   secondaryValue,
   value,
@@ -115,6 +122,9 @@ const Attribute = ({
 
   // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
+
+  // Get translated label if shouldUseTranslatedLabels is true
+  const displayLabel = getTranslatedLabel(label, shouldUseTranslatedLabels, i18n);
 
   // Render threshold icon component
   const renderThresholdIcon = () => {
@@ -156,11 +166,11 @@ const Attribute = ({
       >
         {thresholdsIconPosition === 'label' && renderThresholdIcon()}
         {tooltip ? (
-          <Tooltip direction="right" showIcon={false} triggerText={label}>
+          <Tooltip direction="right" showIcon={false} triggerText={displayLabel}>
             <p>{tooltip}</p>
           </Tooltip>
         ) : (
-          <span data-testid={`${testId}-threshold-label`}>{label}</span>
+          <span data-testid={`${testId}-threshold-label`}>{displayLabel}</span>
         )}
       </div>
 
