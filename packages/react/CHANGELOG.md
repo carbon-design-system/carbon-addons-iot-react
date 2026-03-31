@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.6...v4.4.0) (2026-03-31)
+
+
+### Features
+
+* add optional translation support for card labels and titles - 4.x.x ([#4081](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4081)) ([dc52aab](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dc52aab4f31d88ff2da91078666364a49214fa50))
+
+
+
+
+
 ## [4.3.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.3.5...v4.3.6) (2026-02-23)
 
 
