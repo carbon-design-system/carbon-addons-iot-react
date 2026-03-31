@@ -21,7 +21,11 @@ import {
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
-import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  useCardResizing,
+  getTranslatedLabel,
+} from '../../utils/cardUtilityFunctions';
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 import EmptyState from '../EmptyState/EmptyState';
@@ -273,6 +277,7 @@ export const defaultProps = {
   type: null,
   data: null,
   content: null,
+  shouldUseTranslatedLabels: false,
 };
 
 /** Dumb component that renders the card basics */
@@ -280,7 +285,7 @@ const Card = (props) => {
   const {
     size,
     children,
-    title,
+    title: titleProp,
     subtitle: subtitleProp,
     hasTitleWrap,
     layout,
@@ -294,7 +299,7 @@ const Card = (props) => {
     error,
     hideHeader,
     id,
-    tooltip,
+    tooltip: tooltipProp,
     titleTextTooltip,
     timeRange,
     timeRangeOptions,
@@ -320,8 +325,13 @@ const Card = (props) => {
     type,
     data,
     content,
+    shouldUseTranslatedLabels,
     ...others
   } = props;
+
+  // Get translated title if shouldUseTranslatedLabels is true
+  const title = getTranslatedLabel(titleProp, shouldUseTranslatedLabels, i18n);
+  const tooltip = getTranslatedLabel(tooltipProp, shouldUseTranslatedLabels, i18n);
 
   // TODO: remove once final version of range prop is supported
   useEffect(() => {

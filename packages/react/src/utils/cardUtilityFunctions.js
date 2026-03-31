@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import warning from 'warning';
-import { isNil, mapValues } from 'lodash-es';
+import { isEmpty, isNil, mapValues } from 'lodash-es';
 
 import { BAR_CHART_TYPES, CARD_SIZES, CARD_TYPES } from '../constants/LayoutConstants';
 
@@ -552,3 +552,17 @@ export const isTimeBasedCard = (card) =>
     card.content?.columns?.find((column) => column.type === 'TIMESTAMP')) ||
   (card.content?.type === BAR_CHART_TYPES.SIMPLE && card.content?.timeDataSourceId) ||
   (card.content?.type === BAR_CHART_TYPES.STACKED && card.content?.timeDataSourceId);
+
+/**
+ * Get translated label or title from i18n object, fallback to original if not found
+ * @param {string} label - The label or title key to translate
+ * @param {boolean} shouldUseTranslatedLabels - Flag to determine if translation should be used
+ * @param {Object} i18n - The i18n object containing translations
+ * @returns {string} - The translated label or original label if translation not found
+ */
+export const getTranslatedLabel = (label, shouldUseTranslatedLabels, i18n) => {
+  if (!isEmpty(label) && shouldUseTranslatedLabels && i18n && i18n[label]) {
+    return i18n[label];
+  }
+  return label;
+};

@@ -39,6 +39,7 @@ const ValueCard = ({
   testId,
   onAttributeClick,
   className,
+  shouldUseTranslatedLabels,
   ...others
 }) => {
   const availableActions = {
@@ -71,6 +72,7 @@ const ValueCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       i18n={i18n}
+      shouldUseTranslatedLabels={shouldUseTranslatedLabels}
       locale={locale}
       id={id}
       className={classnames(className, {
@@ -97,6 +99,8 @@ const ValueCard = ({
         isEditable={isEditable}
         fontSize={fontSize}
         isNumberValueCompact={isNumberValueCompact}
+        i18n={i18n}
+        shouldUseTranslatedLabels={shouldUseTranslatedLabels}
         {...others}
       />
 
@@ -120,6 +124,7 @@ ValueCard.defaultProps = {
   // TODO: fix this default in V3, so that cards are unique not inherited from the base Card
   testId: 'Card',
   onAttributeClick: null,
+  shouldUseTranslatedLabels: false,
 };
 
 export default ValueCard;
