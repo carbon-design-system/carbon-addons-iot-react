@@ -320,7 +320,9 @@ const TableToolbar = ({
 
   // Handle keyboard navigation for batch overflow menu
   useEffect(() => {
-    if (!isBatchOverflowOpen || !shouldShowBatchActions) return;
+    if (!isBatchOverflowOpen || !shouldShowBatchActions) {
+      return undefined;
+    }
 
     const handleKeyDown = (e) => {
       // Only handle Shift+Tab
@@ -761,7 +763,9 @@ const TableToolbar = ({
           data-testid={`${testID || testId}-batch-actions`}
           className={`${iotPrefix}--table-batch-actions`}
           onCancel={() => {
-            onCancelBatchAction?.();
+            if (onCancelBatchAction) {
+              onCancelBatchAction();
+            }
             restoreFocus();
           }}
           shouldShowBatchActions={shouldShowBatchActions}
@@ -785,6 +789,7 @@ const TableToolbar = ({
             ))}
           {hasVisibleOverflowBatchActions ? (
             <div
+              role="presentation"
               ref={batchOverflowMenuRef}
               onKeyDown={(e) => {
                 if (!shouldShowBatchActions) return;
