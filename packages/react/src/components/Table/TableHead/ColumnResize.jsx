@@ -152,12 +152,13 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const onMouseMove = (e) => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const bounds = getColumnDragBounds({
-        myColumn,
-        affectedSiblingColumn,
-        paddingExtra,
-        preserveColumnWidths,
-      });
+      // Bounds checking is commented out but kept for future reference
+      // const bounds = getColumnDragBounds({
+      //   myColumn,
+      //   affectedSiblingColumn,
+      //   paddingExtra,
+      //   preserveColumnWidths,
+      // });
       // if (mousePosition > bounds.left && mousePosition < bounds.right) {
       setLeftPosition(mousePosition);
       // }
@@ -198,8 +199,9 @@ const ColumnResize = React.forwardRef((props, ref) => {
   }));
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
+      role="button"
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={(e) => e.stopPropagation()}
