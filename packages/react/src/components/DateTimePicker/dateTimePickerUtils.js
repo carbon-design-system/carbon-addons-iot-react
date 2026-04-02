@@ -53,7 +53,7 @@ export const format12hourTo24hour = (time12hour) => {
  * @param {Object} value - the absolute time selection
  * @returns {Object} a human readable value and a furtherly augmented value object
  */
-export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
+export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput, timeZone) => {
   let readableValue = '';
 
   if (!timeRange) {
@@ -79,12 +79,12 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
 
   switch (kind) {
     case PICKER_KINDS.RELATIVE: {
-      let endDate = dayjs();
+      let endDate = dayjs.tz();
       if (value.relativeToWhen !== '') {
         endDate =
           value.relativeToWhen === RELATIVE_VALUES.YESTERDAY
-            ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
-            : dayjs();
+            ? dayjs.tz().subtract(1, INTERVAL_VALUES.DAYS)
+            : dayjs.tz();
         // wait to parse it until fully typed
         if (value.relativeToTime.length === 5) {
           endDate = endDate.hour(Number(value.relativeToTime.split(':')[0]));
@@ -102,48 +102,64 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
         }
         returnValue.relative.start = new Date(startDate.valueOf());
         returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          endDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startDate.format(dateTimeMask)} ${toLabel} ${endDate.format(
+          dateTimeMask
+        )}`;
       }
       break;
     }
     case PICKER_KINDS.ABSOLUTE: {
-      let startDate = dayjs(value.start ?? value.startDate);
-      if (value.startTime) {
-        const formatedStartTime = is24hours(dateTimeMask)
-          ? value.startTime
-          : format12hourTo24hour(value.startTime);
-        startDate = startDate.hours(formatedStartTime.split(':')[0]);
-        startDate = startDate.minutes(formatedStartTime.split(':')[1]);
-      }
-      if (!returnValue.absolute) {
-        returnValue.absolute = {};
-      }
+      if (value.start ?? value.startDate) {
+        let startDate =
+          value.start instanceof Date
+            ? dayjs(value.start).tz(timeZone, true) // Date from picker - preserve local time
+            : value.start
+            ? dayjs.tz(value.start) // Timestamp - convert from UTC
+            : dayjs.tz(value.startDate, 'MM/DD/YYYY', timeZone); // String - parse with format
 
-      returnValue.absolute.start = new Date(startDate.valueOf());
-
-      const startTimeValue = value.startTime
-        ? `${dayjs(startDate).format(dateTimeMask)}`
-        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
-      if (value.end ?? value.endDate) {
-        let endDate = dayjs(value.end ?? value.endDate);
-        if (value.endTime) {
-          const formatedEndTime = is24hours(dateTimeMask)
-            ? value.endTime
-            : format12hourTo24hour(value.endTime);
-          endDate = endDate.hours(formatedEndTime.split(':')[0]);
-          endDate = endDate.minutes(formatedEndTime.split(':')[1]);
+        if (value.startTime && value.startTime.includes(':')) {
+          const formatedStartTime = is24hours(dateTimeMask)
+            ? value.startTime
+            : format12hourTo24hour(value.startTime);
+          startDate = startDate.hours(formatedStartTime.split(':')[0]);
+          startDate = startDate.minutes(formatedStartTime.split(':')[1]);
         }
 
-        const endTimeValue = value.endTime
-          ? `${dayjs(endDate).format(dateTimeMask)}`
-          : `${dayjs(endDate).format(dateTimeMask)}`.split(' ')[0];
+        if (!returnValue.absolute) {
+          returnValue.absolute = {};
+        }
 
-        returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${startTimeValue} ${toLabel} ${endTimeValue}`;
-      } else {
-        readableValue = `${startTimeValue} ${toLabel} ${startTimeValue}`;
+        returnValue.absolute.start = startDate.valueOf();
+
+        const startTimeValue = value.startTime
+          ? `${startDate.format(dateTimeMask)}`
+          : `${startDate.format(dateTimeMask)}`.split(' ')[0];
+
+        if (value.end ?? value.endDate) {
+          let endDate =
+            value.end instanceof Date
+              ? dayjs(value.end).tz(timeZone, true)
+              : value.end
+              ? dayjs(value.end).tz(timeZone)
+              : dayjs.tz(value.endDate, 'MM/DD/YYYY', timeZone);
+
+          if (value.endTime && value.endTime.includes(':')) {
+            const formatedEndTime = is24hours(dateTimeMask)
+              ? value.endTime
+              : format12hourTo24hour(value.endTime);
+            endDate = endDate.hours(formatedEndTime.split(':')[0]);
+            endDate = endDate.minutes(formatedEndTime.split(':')[1]);
+          }
+
+          const endTimeValue = value.endTime
+            ? `${endDate.format(dateTimeMask)}`
+            : `${endDate.format(dateTimeMask)}`.split(' ')[0];
+
+          returnValue.absolute.end = endDate.valueOf();
+          readableValue = `${startTimeValue} ${toLabel} ${endTimeValue}`;
+        } else {
+          readableValue = `${startTimeValue} ${toLabel} ${startTimeValue}`;
+        }
       }
       break;
     }
@@ -665,7 +681,7 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
 export const getIntervalValue = ({ currentValue, mergedI18n, dateTimeMask, humanValue }) => {
   if (currentValue) {
     if (currentValue.kind === PICKER_KINDS.PRESET) {
-      return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
+      return `${dayjs.tz().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
         mergedI18n.toNowLabel
       }`;
     }

@@ -255,7 +255,7 @@ export const formatChartData = (
                 // grouped charts can't be time-based
                 ...(timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
                   ? {
-                      date: new Date(value[timeDataSourceId]), // timestamp
+                      date: dayjs.tz(value[timeDataSourceId]).toDate(),
                       key: value[timeDataSourceId],
                     }
                   : { key: value[categoryDataSourceId] }),
@@ -292,12 +292,11 @@ export const formatChartData = (
         dataset.forEach((value) => {
           // if value is null, don't add it to the formatted chartData
           if (!isNil(value[series[0].dataSourceId])) {
-            const dataDate = new Date(value[timeDataSourceId]);
             data.push({
               // Use the label if one exists
               group: series[0].label ? series[0].label : series[0].dataSourceId, // bar this data belongs to
               value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
-              date: dataDate, // timestamp
+              date: dayjs.tz(value[timeDataSourceId]).toDate(),
             });
           }
         });
@@ -448,7 +447,7 @@ export const handleTooltip = (
             <p class='label'>
               ${(showTimeInGMT // show timestamp in gmt or local time
                 ? dayjs.utc(timestamp)
-                : dayjs(timestamp)
+                : dayjs.tz(timestamp)
               ).format(tooltipDateFormatPattern)}</p>
           </li>`
       : '';

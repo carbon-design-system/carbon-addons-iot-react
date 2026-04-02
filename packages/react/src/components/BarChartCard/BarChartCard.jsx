@@ -58,6 +58,7 @@ const defaultProps = {
     series: [],
   },
   locale: 'en',
+  timeZone: undefined,
   showTimeInGMT: false,
   tooltipDateFormatPattern: DAYJS_INPUT_FORMATS.SECONDS,
   values: null,
@@ -72,6 +73,7 @@ const BarChartCard = ({
   values: initialValues,
   availableDimensions,
   locale,
+  timeZone,
   i18n,
   isExpanded,
   isLazyLoading,
@@ -91,6 +93,8 @@ const BarChartCard = ({
   defaultDateFormatPattern,
   ...others
 }) => {
+  const effectiveTimezone = timeZone || dayjs.tz.guess();
+  dayjs.tz.setDefault(effectiveTimezone);
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
   const contentWithDefaults = useMemo(
     () => defaultsDeep({}, content, defaultProps.content),
@@ -419,6 +423,7 @@ const BarChartCard = ({
       resizeHandles={resizeHandles}
       timeRange={timeRange}
       locale={locale}
+      timeZone={effectiveTimezone}
       // TODO: remove deprecated testID in v3.
       testId={testID || testId}
       {...others}

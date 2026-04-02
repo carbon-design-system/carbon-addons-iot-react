@@ -138,6 +138,8 @@ const TimeSeriesCardPropTypes = {
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
   /** Region for value and text formatting */
   locale: PropTypes.string,
+  /** IANA timezone string to set as default timezone for dayjs */
+  timeZone: PropTypes.string,
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
   size: (props, propName, componentName) => {
@@ -187,6 +189,7 @@ const defaultProps = {
   },
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
+  timeZone: undefined,
   content: {
     series: [],
     timeDataSourceId: 'timestamp',
@@ -218,6 +221,7 @@ const TimeSeriesCard = ({
   isResizable,
   values: initialValues,
   locale,
+  timeZone,
   i18n,
   isExpanded,
   timeRange,
@@ -233,6 +237,9 @@ const TimeSeriesCard = ({
   defaultDateFormatPattern,
   ...others
 }) => {
+  const effectiveTimezone = timeZone || dayjs.tz.guess();
+  dayjs.tz.setDefault(effectiveTimezone);
+  dayjs.locale(locale);
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
   const contentWithDefaults = useMemo(
     () => defaultsDeep({}, content, defaultProps.content),
@@ -263,8 +270,6 @@ const TimeSeriesCard = ({
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
   const chartRef = useRef(null);
   const previousTick = useRef();
-  dayjs.locale(locale);
-
   // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
   const objectAgnosticSeries = JSON.stringify(series);
   const objectAgnosticThresholds = JSON.stringify(thresholds);
@@ -563,6 +568,7 @@ const TimeSeriesCard = ({
       timeRange={timeRange}
       {...others}
       locale={locale}
+      timeZone={effectiveTimezone}
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
