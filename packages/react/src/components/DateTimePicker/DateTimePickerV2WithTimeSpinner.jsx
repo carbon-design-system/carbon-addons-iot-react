@@ -492,7 +492,6 @@ const DateTimePicker = ({
   closeOnSelect,
   ...others
 }) => {
-  console.log(renderInPortal);
   const id = useRef(others.id || uuidv4()).current;
 
   React.useEffect(() => {

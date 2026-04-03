@@ -19,11 +19,6 @@ const propTypes = {
   paddingExtra: PropTypes.number.isRequired,
   preserveColumnWidths: PropTypes.bool.isRequired,
   showExpanderColumn: PropTypes.bool.isRequired,
-  resizeColumnText: PropTypes.string,
-};
-
-const defaultProps = {
-  resizeColumnText: 'Resize column',
 };
 
 const dragHandleWidth = 4;
@@ -96,7 +91,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
     paddingExtra,
     showExpanderColumn,
     preserveColumnWidths,
-    resizeColumnText,
   } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
@@ -117,8 +111,37 @@ const ColumnResize = React.forwardRef((props, ref) => {
     });
     setAffectedSiblingColumn(siblingColumn);
   };
+  const handleKeyDown = (e) => {
+    const myCol = currentColumnWidths[columnId];
+    const currentWidth = parseInt(myCol.width, 10) || 0;
 
+    const increment = 20;
+    const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
+
+    if (e.key === 'ArrowRight') {
+      const newWidth = currentWidth + increment;
+
+      props.onResize([
+        {
+          id: columnId,
+          width: newWidth,
+        },
+      ]);
+    }
+
+    if (e.key === 'ArrowLeft') {
+      const newWidth = Math.max(minWidth, currentWidth - increment);
+
+      props.onResize([
+        {
+          id: columnId,
+          width: newWidth,
+        },
+      ]);
+    }
+  };
   const onMouseDown = (e) => {
+    e.currentTarget.focus();
     const startingX = e.target.offsetLeft - e.clientX;
     setStartX(startingX);
     setLeftPosition(e.target.offsetLeft);
@@ -129,15 +152,16 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const onMouseMove = (e) => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const bounds = getColumnDragBounds({
-        myColumn,
-        affectedSiblingColumn,
-        paddingExtra,
-        preserveColumnWidths,
-      });
-      if (mousePosition > bounds.left && mousePosition < bounds.right) {
-        setLeftPosition(mousePosition);
-      }
+      // Bounds checking is commented out but kept for future reference
+      // const bounds = getColumnDragBounds({
+      //   myColumn,
+      //   affectedSiblingColumn,
+      //   paddingExtra,
+      //   preserveColumnWidths,
+      // });
+      // if (mousePosition > bounds.left && mousePosition < bounds.right) {
+      setLeftPosition(mousePosition);
+      // }
     }
   };
 
@@ -175,11 +199,11 @@ const ColumnResize = React.forwardRef((props, ref) => {
   }));
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       role="button"
-      tabIndex="0"
-      aria-label={resizeColumnText}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(e) => onMouseDown(e)}
       style={{
@@ -194,6 +218,5 @@ const ColumnResize = React.forwardRef((props, ref) => {
 });
 
 ColumnResize.propTypes = propTypes;
-ColumnResize.defaultProps = defaultProps;
 
 export default ColumnResize;
