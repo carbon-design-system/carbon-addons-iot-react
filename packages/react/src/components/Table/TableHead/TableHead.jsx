@@ -610,6 +610,61 @@ const TableHead = ({
               indeterminate={isSelectAllIndeterminate}
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
+              onKeyDown={(event) => {
+                // Handle Shift+Tab to ensure proper focus flow to toolbar/batch actions
+                if (event.shiftKey && event.key === 'Tab') {
+                  // Prevent default to manually manage focus
+                  event.preventDefault();
+
+                  // Find the table container
+                  const tableContainer = event.target.closest(`.${iotPrefix}--table-container`);
+                  if (tableContainer) {
+                    // Try to find batch actions first (when rows are selected)
+                    const batchActions = tableContainer.querySelector(
+                      `.${iotPrefix}--table-batch-actions`
+                    );
+
+                    if (batchActions) {
+                      // Find all focusable elements in batch actions
+                      const focusableElements = batchActions.querySelectorAll(
+                        'button:not([disabled]):not([tabindex="-1"])'
+                      );
+                      // Focus the last focusable element (Clear selections button)
+                      if (focusableElements.length > 0) {
+                        focusableElements[focusableElements.length - 1].focus();
+                        return;
+                      }
+                    }
+
+                    // If no batch actions, find toolbar content
+                    const toolbarContent = tableContainer.querySelector(
+                      `.${iotPrefix}--table-toolbar-content`
+                    );
+
+                    if (toolbarContent) {
+                      // Find all focusable elements in toolbar
+                      const focusableElements = toolbarContent.querySelectorAll(
+                        'button:not([disabled]):not([tabindex="-1"]), input:not([disabled]):not([tabindex="-1"]), [tabindex="0"]'
+                      );
+                      // Focus the last focusable element
+                      if (focusableElements.length > 0) {
+                        focusableElements[focusableElements.length - 1].focus();
+                        return;
+                      }
+                    }
+                  }
+
+                  // Fallback: allow default browser behavior
+                  // Re-trigger the event without preventDefault
+                  const newEvent = new KeyboardEvent('keydown', {
+                    key: 'Tab',
+                    shiftKey: true,
+                    bubbles: true,
+                    cancelable: true,
+                  });
+                  event.target.dispatchEvent(newEvent);
+                }
+              }}
             />
           </TableHeader>
         ) : hasRowSelection === 'single' && useRadioButtonSingleSelect ? (
