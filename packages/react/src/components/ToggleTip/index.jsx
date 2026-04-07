@@ -20,6 +20,7 @@ export const ToggleTip = ({
   useAutoPositioning,
   showIcon,
   toggleTipLabelRef,
+  triggerClassName, // Extract but don't use - Carbon Toggletip doesn't support this prop
   ...other
 }) => {
   let newAlign;

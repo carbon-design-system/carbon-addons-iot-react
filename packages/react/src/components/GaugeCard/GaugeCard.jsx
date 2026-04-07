@@ -55,6 +55,7 @@ const GaugeCard = ({
   id,
   title,
   tooltip,
+  titleTextTooltip,
   content: { gauges },
   values,
   data,
@@ -103,7 +104,8 @@ const GaugeCard = ({
       // TODO: remove deprecated testID in v3.
       testId={testID || testId}
       {...others}
-      tooltip={`${title}`}
+      tooltip={tooltip || (!titleTextTooltip ? `${title}` : undefined)}
+      titleTextTooltip={titleTextTooltip}
       isLoading={isLoading}
     >
       <div className={classnames(`${iotPrefix}--gauge-container`, className)} style={myStyles}>
