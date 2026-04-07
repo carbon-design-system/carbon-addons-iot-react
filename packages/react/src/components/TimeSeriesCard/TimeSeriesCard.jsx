@@ -138,8 +138,6 @@ const TimeSeriesCardPropTypes = {
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
   /** Region for value and text formatting */
   locale: PropTypes.string,
-  /** IANA timezone string to set as default timezone for dayjs */
-  timeZone: PropTypes.string,
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
   size: (props, propName, componentName) => {
