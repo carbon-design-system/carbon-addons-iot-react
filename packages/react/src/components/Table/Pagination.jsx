@@ -20,6 +20,7 @@ const SizedPagination = ({
   disabled,
   testId,
   size,
+  maxPagesConditionalStyle,
   ...rest
 }) => {
   const [{ width }, paginationRef] = useSizeObserver({ initialWidth: 500 });
@@ -37,7 +38,7 @@ const SizedPagination = ({
           [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
           [`${iotPrefix}--pagination--narrow`]: width > 500 && width < 608,
           [`${iotPrefix}--pagination--compact`]: width < 500,
-          [`${iotPrefix}--pagination--hide-goto-page`]: rest.maxPagesConditionalStyle,
+          [`${iotPrefix}--pagination--hide-goto-page`]: maxPagesConditionalStyle,
         })}
         style={{
           '--pagination-text-display': width < 500 ? 'none' : 'flex',
@@ -58,6 +59,8 @@ SizedPagination.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
 
   testId: PropTypes.string,
+
+  maxPagesConditionalStyle: PropTypes.bool,
 };
 
 SizedPagination.defaultProps = {
@@ -66,6 +69,7 @@ SizedPagination.defaultProps = {
   disabled: false,
   testId: 'sized-pagination',
   size: 'lg',
+  maxPagesConditionalStyle: false,
 };
 
 export default SizedPagination;
