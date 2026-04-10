@@ -10,6 +10,7 @@ import {
   getUpdatedCardSize,
   handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
+import dayjs from '../../utils/dayjs';
 
 import { BASE_CLASS_NAME, DEFAULT_FONT_SIZE, determineLayout } from './valueCardUtils';
 import ValueContent from './ValueContent';
@@ -31,6 +32,7 @@ const ValueCard = ({
   dataState,
   id,
   locale,
+  timeZone,
   customFormatter,
   children,
   fontSize,
@@ -42,6 +44,8 @@ const ValueCard = ({
   shouldUseTranslatedLabels,
   ...others
 }) => {
+  const effectiveTimezone = timeZone || dayjs.tz.guess();
+  dayjs.tz.setDefault(effectiveTimezone);
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -74,6 +78,7 @@ const ValueCard = ({
       i18n={i18n}
       shouldUseTranslatedLabels={shouldUseTranslatedLabels}
       locale={locale}
+      timeZone={effectiveTimezone}
       id={id}
       className={classnames(className, {
         // allows attribute overflow scrolling
