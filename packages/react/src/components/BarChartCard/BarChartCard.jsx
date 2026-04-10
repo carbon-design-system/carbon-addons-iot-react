@@ -355,7 +355,14 @@ const BarChartCard = ({
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
         customHTML: (...args) =>
-          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern, locale),
+          handleTooltip(
+            ...args,
+            timeDataSourceId,
+            showTimeInGMT,
+            tooltipDateFormatPattern,
+            locale,
+            effectiveTimezone
+          ),
         groupLabel: mergedI18n.tooltipGroupLabel,
         totalLabel: mergedI18n.tooltipTotalLabel,
       },
@@ -399,12 +406,15 @@ const BarChartCard = ({
       colors,
       mergedI18n.tooltipGroupLabel,
       mergedI18n.tooltipTotalLabel,
-      zoomBar,
+      zoomBar.enabled,
+      zoomBar.initialZoomDomain,
+      zoomBar.view,
       size,
       isExpanded,
       locale,
       showTimeInGMT,
       tooltipDateFormatPattern,
+      effectiveTimezone,
     ]
   );
 

@@ -375,7 +375,7 @@ const TimeSeriesCard = ({
         id: `dataindex-${index}`,
         values: {
           ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-          [timeDataSourceId]: dayjs(value[timeDataSourceId]).format(defaultDateFormatPattern),
+          [timeDataSourceId]: dayjs.tz(value[timeDataSourceId]).format(defaultDateFormatPattern),
         },
         isSelectable: false,
       };

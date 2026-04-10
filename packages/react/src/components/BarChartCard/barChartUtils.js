@@ -420,6 +420,7 @@ export const formatColors = (series, datasetNames, isDashboardPreview, type) => 
  * @param {string} timeDatasourceId time-based attribute
  * @param {bool} showTimeInGMT
  * @param {string} tooltipDataFormatPattern
+ * @param {string} timezone
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -428,7 +429,8 @@ export const handleTooltip = (
   timeDataSourceId,
   showTimeInGMT,
   tooltipDateFormatPattern = DAYJS_INPUT_FORMATS.SECONDS,
-  locale
+  locale,
+  timezone
 ) => {
   dayjs.locale(locale);
   const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
@@ -445,10 +447,9 @@ export const handleTooltip = (
     const dateLabel = timestamp
       ? `<li class='datapoint-tooltip'>
             <p class='label'>
-              ${(showTimeInGMT // show timestamp in gmt or local time
-                ? dayjs.utc(timestamp)
-                : dayjs.tz(timestamp)
-              ).format(tooltipDateFormatPattern)}</p>
+              ${(showTimeInGMT ? dayjs.utc(timestamp) : dayjs(timestamp).tz(timezone)).format(
+                tooltipDateFormatPattern
+              )}</p>
           </li>`
       : '';
 
@@ -522,6 +523,8 @@ export const generateTableColumns = (
  * @param {string} type of chart i.e. simple, grouped, stacked
  * @param {Array<Object>} values values before they are formatted for charting
  * @param {Array<Object>} chartData values after they are formatted for charting
+ * @param {string} defaultDateFormatPattern date format pattern
+ * @param {string} timezone timezone to use for formatting dates
  */
 export const formatTableData = (
   timeDataSourceId,
@@ -550,8 +553,8 @@ export const formatTableData = (
           id: `dataindex-${index}`,
           values: {
             ...barTimeValue,
-            // format the date locally
-            [timeDataSourceId]: dayjs(timestamp).format(defaultDateFormatPattern),
+            // format the date locally with timezone
+            [timeDataSourceId]: dayjs.tz(timestamp).format(defaultDateFormatPattern),
           },
           isSelectable: false,
         });

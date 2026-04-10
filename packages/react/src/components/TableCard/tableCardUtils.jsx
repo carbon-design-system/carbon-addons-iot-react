@@ -47,7 +47,7 @@ export const createColumnsWithFormattedLinks = (
               const variableValue =
                 // format the TIMESTAMP type columns
                 matchingColumn?.type === 'TIMESTAMP'
-                  ? dayjs(row[variable]).format(defaultDateFormatPattern)
+                  ? dayjs.tz(row[variable]).format(defaultDateFormatPattern)
                   : row[variable];
               // encode value so the URL can be valid
               const encodedValue =
@@ -133,7 +133,7 @@ export const determineFilterFunction = (
     ...(column.type === 'TIMESTAMP'
       ? {
           filterFunction: (cellValue, filterValue) => {
-            const dateString = dayjs(cellValue).format(defaultDateFormatPattern);
+            const dateString = dayjs.tz(cellValue).format(defaultDateFormatPattern);
             return dateString.includes(filterValue);
           },
         }
