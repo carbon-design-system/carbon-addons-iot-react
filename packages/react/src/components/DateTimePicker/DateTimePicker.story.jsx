@@ -238,7 +238,7 @@ export const LightVersion = () => {
 
 LightVersion.storyName = 'Light version';
 
-export const LocaleAndTimezone = () => {
+export const Locale = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
   return (
     <div
@@ -250,27 +250,10 @@ export const LocaleAndTimezone = () => {
       <DateTimePicker
         id="datetimepicker25"
         dateTimeMask={text('dateTimeMask', 'L HH:mm')}
-        locale={select('locale', ['en', 'fr', 'ja', 'de', 'es'], 'fr')}
-        timeZone={select(
-          'timeZone',
-          [
-            'America/Chicago',
-            'America/Los_Angeles',
-            'Europe/London',
-            'Europe/Paris',
-            'Asia/Tokyo',
-            'Asia/Kolkata',
-            'Australia/Sydney',
-          ],
-          'Europe/Paris'
-        )}
+        locale={select('locale', ['en', 'fr', 'ja'], 'fr')}
         defaultValue={defaultAbsoluteValue}
         hasTimeInput={boolean('hasTimeInput', true)}
-        onApply={action('onApply')}
-        onCancel={action('onCancel')}
       />
     </div>
   );
 };
-
-LocaleAndTimezone.storyName = 'Locale and timezone';

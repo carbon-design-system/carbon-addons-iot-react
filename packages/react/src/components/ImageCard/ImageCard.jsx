@@ -8,7 +8,6 @@ import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { validThresholdIcons, validHotspotIcons } from '../DashboardEditor/editorUtils';
 import { settings } from '../../constants/Settings';
-import dayjs from '../../utils/dayjs';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
@@ -34,7 +33,6 @@ const defaultProps = {
       `This file is not one of the accepted file types, ${accept.join(', ')}`,
   },
   locale: 'en',
-  timeZone: undefined,
   content: {},
   maxFileSizeInBytes: 1048576,
   accept: null,
@@ -95,11 +93,8 @@ const ImageCard = ({
   // TODO: remove deprecated testID prop in v3.
   testID,
   testId,
-  timeZone,
   ...others
 }) => {
-  const effectiveTimezone = timeZone || dayjs.tz.guess();
-  dayjs.tz.setDefault(effectiveTimezone);
   const [imgContent, setImgContent] = useState(content);
   const hotspots = values ? values.hotspots || [] : [];
 
@@ -156,7 +151,6 @@ const ImageCard = ({
       // TODO: remove deprecated testID prop in v3.
       testId={testID || testId}
       locale={locale}
-      timeZone={effectiveTimezone}
       {...others}
       error={error}
       i18n={mergedI18n}

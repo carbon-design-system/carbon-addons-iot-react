@@ -16,7 +16,6 @@ import { CardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import { getResizeHandles } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
-import dayjs from '../../utils/dayjs';
 
 const ListCard = ({
   id,
@@ -32,11 +31,8 @@ const ListCard = ({
   children,
   testID,
   testId,
-  timeZone,
   ...others
 }) => {
-  const effectiveTimezone = timeZone || dayjs.tz.guess();
-  dayjs.tz.setDefault(effectiveTimezone);
   const handleScroll = (e) => {
     const element = e.target;
     //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
@@ -61,7 +57,6 @@ const ListCard = ({
       resizeHandles={resizeHandles}
       // TODO: remove deprecated 'testID' in v3.
       testId={testID || testId}
-      timeZone={effectiveTimezone}
       {...others}
     >
       <div

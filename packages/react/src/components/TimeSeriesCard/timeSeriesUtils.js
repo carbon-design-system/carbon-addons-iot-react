@@ -141,7 +141,7 @@ export const formatGraphTick = (
   shouldDisplayGMT
 ) => {
   dayjs.locale(locale);
-  const currentTimestamp = shouldDisplayGMT ? dayjs.utc(timestamp) : dayjs.tz(timestamp);
+  const currentTimestamp = shouldDisplayGMT ? dayjs.utc(timestamp) : dayjs(timestamp);
 
   const sameDay = dayjs(previousTickTimestamp).isSame(currentTimestamp, 'day');
   const sameMonth = dayjs(previousTickTimestamp).isSame(currentTimestamp, 'month');
@@ -234,7 +234,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
             // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
             if (!isNil(dataItem[dataSourceId])) {
               data.push({
-                date: dayjs.tz(dataItem[timeDataSourceId]).toDate(),
+                date:
+                  dataItem[timeDataSourceId] instanceof Date
+                    ? dataItem[timeDataSourceId]
+                    : new Date(dataItem[timeDataSourceId]),
                 value: dataItem[dataSourceId],
                 group: label,
                 dataSourceId,

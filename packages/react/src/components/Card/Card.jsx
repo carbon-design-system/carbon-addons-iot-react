@@ -29,7 +29,7 @@ import {
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 import EmptyState from '../EmptyState/EmptyState';
-import dayjs, { DAYJS_INPUT_FORMATS } from '../../utils/dayjs';
+import { DAYJS_INPUT_FORMATS } from '../../utils/dayjs';
 
 import CardTypeContent from './CardTypeContent';
 import CardToolbar from './CardToolbar';
@@ -326,12 +326,10 @@ const Card = (props) => {
     data,
     content,
     extraHeaderContent,
-    timeZone,
     shouldUseTranslatedLabels,
     ...others
   } = props;
-  const effectiveTimezone = timeZone || dayjs.tz.guess();
-  dayjs.tz.setDefault(effectiveTimezone);
+
   // Get translated title if shouldUseTranslatedLabels is true
   const title = getTranslatedLabel(titleProp, shouldUseTranslatedLabels, i18n);
   const tooltip = getTranslatedLabel(tooltipProp, shouldUseTranslatedLabels, i18n);
@@ -393,25 +391,13 @@ const Card = (props) => {
     }
 
     if (mergedAvailableActions.range === 'full' || mergedAvailableActions.range === 'iconOnly') {
-      const { readableValue } = parseValue(
-        timeRange,
-        dateTimeMask,
-        strings.toLabel,
-        true,
-        effectiveTimezone
-      );
+      const { readableValue } = parseValue(timeRange, dateTimeMask, strings.toLabel);
+
       return readableValue;
     }
 
     return undefined;
-  }, [
-    dateTimeMask,
-    mergedAvailableActions.range,
-    strings.toLabel,
-    subtitleProp,
-    timeRange,
-    effectiveTimezone,
-  ]);
+  }, [dateTimeMask, mergedAvailableActions.range, strings.toLabel, subtitleProp, timeRange]);
 
   const [subtitle, setSubtitle] = useState(getTheSubtitle);
 
@@ -481,7 +467,6 @@ const Card = (props) => {
       isExpanded={isExpanded}
       timeRange={timeRange}
       locale={others.locale}
-      timeZone={effectiveTimezone}
       timeRangeOptions={timeRangeOptions}
       onCardAction={cachedOnCardAction}
       // TODO: remove deprecated testID prop in v3

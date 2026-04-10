@@ -509,7 +509,7 @@ export const handleTooltip = (
     ? `<li class='datapoint-tooltip'>
         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
           ? dayjs.utc(timeStamp)
-          : dayjs.tz(timeStamp)
+          : dayjs(timeStamp)
         ).format(tooltipDateFormatPattern)}</p>
       </li>`
     : '';

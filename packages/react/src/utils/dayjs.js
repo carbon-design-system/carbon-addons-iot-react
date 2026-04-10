@@ -5,7 +5,6 @@ const utc = require('dayjs/plugin/utc');
 const pluralGetSet = require('dayjs/plugin/pluralGetSet');
 const timezone = require('dayjs/plugin/timezone');
 const localeData = require('dayjs/plugin/localeData');
-const customParseFormat = require('dayjs/plugin/customParseFormat');
 
 const dayjs = originalDayJS;
 dayjs.extend(localizedFormat); // gives the 'L' formatting ability for .format
@@ -13,7 +12,6 @@ dayjs.extend(utc); // gives .utc() and .local()
 dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability
 dayjs.extend(timezone); // timezone support
 dayjs.extend(localeData); // gives local specific data
-dayjs.extend(customParseFormat);
 
 /* eslint-disable global-require */
 const locales = {
@@ -170,37 +168,6 @@ loadLocales();
 export const DAYJS_INPUT_FORMATS = {
   SECONDS: 'L HH:mm:ss',
   RANGE: 'L HH:mm',
-};
-
-export const formats = [
-  // ISO Variations (Most common for APIs)
-  'YYYY-MM-DDTHH:mm:ssZ',
-  'YYYY-MM-DDTHH:mm:ss.SSSZ',
-  'YYYY-MM-DDTHH:mm:ss',
-  'YYYY-MM-DD HH:mm:ss',
-  'YYYY-MM-DD HH:mm',
-
-  // US / Common UI Variations
-  'MM/DD/YYYY HH:mm:ss',
-  'MM/DD/YYYY HH:mm',
-  'MM-DD-YYYY HH:mm:ss',
-  'MM-DD-YYYY HH:mm',
-
-  // 12-Hour Variations (If users can type AM/PM)
-  'MM/DD/YYYY hh:mm A',
-  'YYYY-MM-DD hh:mm A',
-
-  // Date Only Fallbacks
-  'YYYY-MM-DD',
-  'MM/DD/YYYY',
-  'MM-DD-YYYY',
-  'L', // Localized format (uses the loaded Day.js locale)
-];
-
-export const detectDateTimeFormat = (dateTimeString) => {
-  if (!dateTimeString?.trim()) return null;
-
-  return formats.find((format) => dayjs(dateTimeString, format, true).isValid());
 };
 
 export default dayjs;
