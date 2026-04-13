@@ -21,7 +21,7 @@ import warning from 'warning';
 import { useLangDirection } from '../../utils/useLangDirection';
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
-import dayjs, { DAYJS_INPUT_FORMATS } from '../../utils/dayjs';
+import dayjs, { DAYJS_INPUT_FORMATS, detectDateTimeFormat } from '../../utils/dayjs';
 import {
   PICKER_KINDS,
   PRESET_VALUES,
@@ -164,6 +164,8 @@ const propTypes = {
   light: PropTypes.bool,
   /** The language locale used to format the days of the week, months, and numbers. */
   locale: PropTypes.string,
+  /** IANA timezone string to set as default timezone for dayjs */
+  timeZone: PropTypes.string,
   /** Unique id of the component */
   id: PropTypes.string,
   /** Optionally renders only an icon rather than displaying the current selected time */
@@ -262,6 +264,7 @@ const defaultProps = {
   },
   light: false,
   locale: 'en',
+  timeZone: undefined,
   id: undefined,
   hasIconOnly: false,
   menuOffset: undefined,
@@ -290,6 +293,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
+  timeZone,
   hasIconOnly,
   menuOffset,
   renderInPortal,
@@ -298,6 +302,9 @@ const DateTimePicker = ({
   buttonProps,
   ...others
 }) => {
+  const effectiveTimezone = timeZone || dayjs.tz.guess();
+  dayjs.tz.setDefault(effectiveTimezone);
+  dayjs.locale(locale);
   const id = useRef(others.id || uuidv4()).current;
   React.useEffect(() => {
     if (__DEV__) {
@@ -429,7 +436,13 @@ const DateTimePicker = ({
       value.kind = PICKER_KINDS.PRESET;
     }
     setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
+    const parsedValue = parseValue(
+      value,
+      dateTimeMask,
+      mergedI18n.toLabel,
+      hasTimeInput,
+      effectiveTimezone
+    );
     setHumanValue(parsedValue.readableValue);
 
     return {
@@ -498,15 +511,21 @@ const DateTimePicker = ({
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
-          absolute.start = dayjs(`${absolute.startDate} ${absolute.startTime}`).valueOf();
+          const startDateTime = `${absolute.startDate} ${absolute.startTime}`;
+          absolute.start = dayjs
+            .tz(startDateTime, detectDateTimeFormat(startDateTime), effectiveTimezone)
+            .valueOf();
         }
         if (!absolute.hasOwnProperty('end')) {
-          absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
+          const endDateTime = `${absolute.endDate} ${absolute.endTime}`;
+          absolute.end = dayjs
+            .tz(endDateTime, detectDateTimeFormat(endDateTime), effectiveTimezone)
+            .valueOf();
         }
-        absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
-        absolute.startTime = dayjs(absolute.start).format('HH:mm');
-        absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
-        absolute.endTime = dayjs(absolute.end).format('HH:mm');
+        absolute.startDate = dayjs.tz(absolute.start).format('MM/DD/YYYY');
+        absolute.startTime = dayjs.tz(absolute.start).format('HH:mm');
+        absolute.endDate = dayjs.tz(absolute.end).format('MM/DD/YYYY');
+        absolute.endTime = dayjs.tz(absolute.end).format('HH:mm');
         setAbsoluteValue(absolute);
       }
     } else {
@@ -562,7 +581,8 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid ||
       absoluteEndTimeInvalid ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === '') ||
+      !absoluteValue.startDate ||
+      !absoluteValue.endDate ||
       (hasTimeInput ? !absoluteValue.startTime || !absoluteValue.endTime : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;

@@ -35,6 +35,7 @@ const { iotPrefix } = settings;
 const defaultProps = {
   size: CARD_SIZES.LARGE,
   locale: 'en',
+  timeZone: undefined,
   values: [],
   filters: [],
   i18n: {
@@ -88,6 +89,7 @@ const TableCard = ({
   i18n,
   tooltip,
   locale,
+  timeZone,
   timeRange,
   timeRangeOptions,
   availableActions,
@@ -102,8 +104,8 @@ const TableCard = ({
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-
-  // Set the locale
+  const effectiveTimezone = timeZone || dayjs.tz.guess();
+  dayjs.tz.setDefault(effectiveTimezone);
   dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   // Need to skip the linkTemplate variable for now because we will handle it at render time per row
@@ -308,7 +310,7 @@ const TableCard = ({
       Object.keys(values).forEach((column) => {
         if (!isEditable && filteredTimestampColumns.includes(column)) {
           values[column] = values[column]
-            ? dayjs(values[column]).format(defaultDateFormatPattern)
+            ? dayjs.tz(values[column]).format(defaultDateFormatPattern)
             : '';
         }
       });
@@ -558,6 +560,7 @@ const TableCard = ({
       timeRangeOptions={timeRangeOptions}
       renderDateDropdownInPortal={renderDateDropdownInPortal}
       locale={locale}
+      timeZone={effectiveTimezone}
       id={id}
       extraActions={extraActions}
     />
@@ -576,6 +579,7 @@ const TableCard = ({
       isExpanded={isExpanded}
       i18n={mergedI18n}
       locale={locale}
+      timeZone={effectiveTimezone}
       resizeHandles={resizeHandles}
       hideHeader
       className={classnames(`${iotPrefix}--table-card`, className, {

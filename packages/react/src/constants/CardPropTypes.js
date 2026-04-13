@@ -950,6 +950,8 @@ export const CardPropTypes = {
   testId: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
   locale: PropTypes.string,
+  /** IANA timezone string to set as default timezone for dayjs */
+  timeZone: PropTypes.string,
   /** a way to pass down dashboard grid resize handles, only used by other card types */
   resizeHandles: PropTypes.array,
   /** Optional callback function that is passed an onChange function and the original cardConfig object.

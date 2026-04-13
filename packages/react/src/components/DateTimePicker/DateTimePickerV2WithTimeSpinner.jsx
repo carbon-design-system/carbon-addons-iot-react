@@ -886,8 +886,8 @@ const DateTimePicker = ({
           ...value.absolute,
           humanValue,
           tooltipValue,
-          ISOStart: value.absolute.start?.toISOString(),
-          ISOEnd: value.absolute.end?.toISOString(),
+          ISOStart: value.absolute.start ? new Date(value.absolute.start).toISOString() : undefined,
+          ISOEnd: value.absolute.end ? new Date(value.absolute.end).toISOString() : undefined,
         };
         break;
       case PICKER_KINDS.SINGLE:

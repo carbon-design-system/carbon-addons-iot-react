@@ -137,6 +137,7 @@ const CardToolbar = ({
   extraActions,
   renderDateDropdownInPortal,
   id,
+  timeZone,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const langDir = useLangDirection();
@@ -278,6 +279,7 @@ const CardToolbar = ({
               i18n={mergedI18n}
               dateTimeMask={dateTimeMask}
               locale={locale}
+              timeZone={timeZone}
               hasIconOnly
               presets={Object.entries(timeRangeOptions).reduce(
                 (acc, [timeRangeOptionKey, timeRangeOption]) => {
