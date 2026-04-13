@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.10.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.5...v5.10.6) (2026-04-13)
+
+
+### Bug Fixes
+
+* barchart dependency ([#4094](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4094)) ([91073f4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91073f470deafe72af1cccd5e1925411be56764c))
+
+
+
+
+
 ## [5.10.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.4...v5.10.5) (2026-04-10)
 
 **Note:** Version bump only for package ibm-ai-applications
