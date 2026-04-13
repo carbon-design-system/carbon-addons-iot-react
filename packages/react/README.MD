@@ -122,9 +122,13 @@ Compiled CSS files are provided for ease of use getting started.
 A sass entrypoint is available at `scss/styles.scss` for use in your project.
 
 Using sass files (instead of the compiled .css) infers usage of a SCSS
-pre-processor. All Sass files use the `*.scss` file extension. For transpiling
+pre-processor. 
+
+All Sass files use the `*.scss` file extension. For transpiling
 Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader
-or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor
+or gulp-sass. 
+
+Make sure your build process uses autoprefixer to ensure vendor
 prefixes are automatically added to your output CSS.
 
 Feedback and improvement requests regarding this configuration would be
