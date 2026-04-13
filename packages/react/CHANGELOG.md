@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.4.1...v4.5.0) (2026-04-13)
+
+
+### Features
+
+* add timezone support in datetimepicker and cards ([#4096](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4096)) ([b95790e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b95790e64f5afaef0871777adca75b30b7422101))
+
+
+
+
+
 ## [4.4.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v4.4.0...v4.4.1) (2026-03-31)
 
 
