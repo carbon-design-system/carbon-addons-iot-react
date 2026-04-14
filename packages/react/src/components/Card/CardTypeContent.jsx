@@ -40,9 +40,11 @@ const CardTypeContent = ({ testId, isExpanded, type, data, content }) => {
 
   const options = getChartOptions(type, data.length > 1, contentWithDefaults);
 
+  const listClientHeight = listRef.current?.clientHeight;
+
   useEffect(() => {
-    setListHeight(listRef.current?.clientHeight);
-  }, [listRef.current?.clientHeight]);
+    setListHeight(listClientHeight);
+  }, [listClientHeight]);
 
   const Chart =
     type === CARD_TYPES.METER_CHART
