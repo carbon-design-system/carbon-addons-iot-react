@@ -7,6 +7,9 @@
 @use '@carbon/react/scss/colors' as *;
 @use '../../globals/vars' as *;
 
+// Import DefinitionTooltip styles
+@use './definition-tooltip';
+
 .#{$iot-prefix}--tooltip {
   display: inline-flex;
   align-items: center;

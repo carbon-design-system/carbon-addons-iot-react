@@ -88,4 +88,5 @@ Tooltip.propTypes = {
   showIcon: PropTypes.bool,
 };
 
+export { DefinitionTooltip } from './DefinitionTooltip';
 export default Tooltip;

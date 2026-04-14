@@ -10,9 +10,13 @@
   height: 100%;
   z-index: 1;
   position: absolute;
-  outline: none;
   &:hover {
     background-color: $layer-selected-inverse;
+  }
+  &:focus {
+    background-color: $layer-selected-inverse;
+    outline: $spacing-01 solid $focus;
+    outline-offset: -$spacing-01;
   }
 }
 
@@ -21,7 +25,7 @@
 }
 
 .#{$iot-prefix}--table-expand-resize {
-  width: '40px';
+  width: 40px;
 }
 
 html:not([dir]) .#{$iot-prefix}--column-resize-handle {

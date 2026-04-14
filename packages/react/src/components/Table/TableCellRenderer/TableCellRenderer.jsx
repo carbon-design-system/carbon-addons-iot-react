@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { DefinitionTooltip, Tooltip } from '@carbon/react';
+import { Tooltip } from '@carbon/react';
 import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
+import { DefinitionTooltip } from '../../Tooltip';
 
 const { iotPrefix } = settings;
 
@@ -91,6 +92,8 @@ const TableCellRenderer = ({
         id="table-header-tooltip"
         align={tooltipDirection}
         openOnHover
+        tooltipText={tooltip}
+        as="a"
       >
         {element}
       </DefinitionTooltip>
