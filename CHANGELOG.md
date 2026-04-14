@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.10.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.6...v5.10.7) (2026-04-14)
+
+
+### Bug Fixes
+
+* MAXUIF-3549- [table] Accessibility issues - Part-2  ([#4099](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4099)) ([0b5f930](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0b5f930bf8ea7bb9c72e8410add049fa2b885a3c))
+
+
+
+
+
 ## [5.10.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.5...v5.10.6) (2026-04-13)
 
 
