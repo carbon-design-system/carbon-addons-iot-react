@@ -283,15 +283,16 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 
 .#{$iot-prefix}--expandable-tablerow {
   cursor: pointer;
+
   td {
     div .#{$prefix}--btn--ghost:hover {
       background: $layer-accent-01;
     }
 
-    div .#{$prefix}--overflow-menu.cds--btn--ghost:hover{
-     background-color: $layer
+    div .#{$prefix}--overflow-menu.cds--btn--ghost:hover {
+      background-color: $layerl;
     }
-}
+  }
 }
 
 .#{$iot-prefix}--expandable-tablerow--indented {
