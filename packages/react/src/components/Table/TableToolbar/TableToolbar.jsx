@@ -890,7 +890,8 @@ const TableToolbar = ({
                         const focusableElements = batchActionsRef.current.querySelectorAll(
                           'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
                         );
-                        const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
+                        const overflowButton =
+                          batchOverflowMenuRef.current?.querySelector('button');
                         const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
                         const prevElement = focusableElements[currentIndex - 1];
 
@@ -915,7 +916,8 @@ const TableToolbar = ({
                         const focusableElements = batchActionsRef.current.querySelectorAll(
                           'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
                         );
-                        const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
+                        const overflowButton =
+                          batchOverflowMenuRef.current?.querySelector('button');
                         const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
                         const nextElement = focusableElements[currentIndex + 1];
 

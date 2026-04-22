@@ -162,7 +162,6 @@ const useResponsiveInlineCount = ({
 
     const calculateInlineCount = () => {
       const container = containerRef.current;
-      const overflowTrigger = overflowTriggerRef.current;
 
       if (!container || !items.length) {
         setInlineCount(items.length);
