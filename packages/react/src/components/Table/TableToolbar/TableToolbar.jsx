@@ -499,10 +499,6 @@ const TableToolbar = ({
     layoutRef: tableToolbarRef,
     excludedWidthSelector: batchActionExcludedWidthSelectors,
   });
-  const visibleBatchActions =
-    responsiveBatchActionCount === null
-      ? visibleBatchActionCandidates
-      : visibleBatchActionCandidates.slice(0, responsiveBatchActionCount);
 
   const visibleOverflowBatchActions = [
     ...visibleBatchActionCandidates.slice(
