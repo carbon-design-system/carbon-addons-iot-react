@@ -32,6 +32,7 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 import useDynamicOverflowMenuItems from '../../../hooks/useDynamicOverflowMenuItems';
+import useResponsiveInlineCount from '../../../hooks/useResponsiveInlineCount';
 import { renderTableOverflowItemText } from '../tableUtilities';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
@@ -255,10 +256,13 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
+  const tableToolbarRef = useRef(null);
   const batchActionsRef = useRef(null);
   const previousFocusedElement = useRef(null);
   const toolbarContentRef = useRef(null);
   const batchOverflowMenuRef = useRef(null);
+  const batchActionsVisibleRef = useRef(null);
+  const batchActionsLayoutRef = useRef(null);
   const [isBatchOverflowOpen, setIsBatchOverflowOpen] = React.useState(false);
 
   // Function to restore focus to the previous element
@@ -468,16 +472,53 @@ const TableToolbar = ({
     };
   }, [customToolbarContent]);
 
-  const visibleBatchActions = batchActions.filter(
-    (action) => !action.isOverflow && action.hidden !== true
+  const visibleBatchActionCandidates = useMemo(
+    () => batchActions.filter((action) => !action.isOverflow && action.hidden !== true),
+    [batchActions]
   );
 
-  const visibleOverflowBatchActions = batchActions.filter(
-    (action) => action.isOverflow && action.hidden !== true
+  const staticOverflowBatchActions = useMemo(
+    () => batchActions.filter((action) => action.isOverflow && action.hidden !== true),
+    [batchActions]
   );
+
+  const batchActionExcludedWidthSelectors = useMemo(
+    () => ['.cds--batch-summary', '.cds--batch-summary__cancel'],
+    []
+  );
+
+  const responsiveBatchActionCount = useResponsiveInlineCount({
+    enabled:
+      hasBatchActionToolbar &&
+      (visibleBatchActionCandidates.length > 0 || staticOverflowBatchActions.length > 0),
+    items: visibleBatchActionCandidates,
+    containerRef: batchActionsVisibleRef,
+    overflowTriggerRef: batchOverflowMenuRef,
+    itemSelector: '[data-batch-action-visible="true"]',
+    staticOverflowCount: staticOverflowBatchActions.length,
+    layoutRef: tableToolbarRef,
+    excludedWidthSelector: batchActionExcludedWidthSelectors,
+  });
+  const visibleBatchActions =
+    responsiveBatchActionCount === null
+      ? visibleBatchActionCandidates
+      : visibleBatchActionCandidates.slice(0, responsiveBatchActionCount);
+
+  const visibleOverflowBatchActions = [
+    ...visibleBatchActionCandidates.slice(
+      responsiveBatchActionCount ?? visibleBatchActionCandidates.length
+    ),
+    ...staticOverflowBatchActions,
+  ];
 
   const hasVisibleBatchActions = visibleBatchActions.length > 0;
   const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
+  const hasStaticOverflowBatchActions = staticOverflowBatchActions.length > 0;
+  const shouldRenderBatchOverflowTrigger =
+    hasStaticOverflowBatchActions ||
+    (responsiveBatchActionCount !== null &&
+      responsiveBatchActionCount < visibleBatchActionCandidates.length) ||
+    hasVisibleOverflowBatchActions;
 
   const totalSelectedText = useMemo(() => {
     if (totalSelected > 1) {
@@ -513,6 +554,7 @@ const TableToolbar = ({
 
   return (
     <CarbonTableToolbar
+      ref={tableToolbarRef}
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
@@ -755,13 +797,23 @@ const TableToolbar = ({
       )}
       {hasBatchActionToolbar ? (
         <TableBatchActions
-          ref={batchActionsRef}
+          ref={(node) => {
+            batchActionsRef.current = node;
+            batchActionsLayoutRef.current = node;
+          }}
           role="region"
           aria-live="polite"
           aria-label={totalSelectedText}
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-batch-actions`}
+          id={`${tableId}-batch-actions-root`}
           className={`${iotPrefix}--table-batch-actions`}
+          style={{
+            width: '100%',
+            maxWidth: '100%',
+            minWidth: 0,
+            overflow: 'hidden',
+          }}
           onCancel={() => {
             if (onCancelBatchAction) {
               onCancelBatchAction();
@@ -772,129 +824,164 @@ const TableToolbar = ({
           totalSelected={totalSelected}
           translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
         >
-          {hasVisibleBatchActions &&
-            visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
-              <TableBatchAction
-                key={id}
-                onClick={() => {
-                  onApplyBatchAction(id);
-                  restoreFocus();
+          <div
+            id={`${tableId}-batch-actions-visible`}
+            ref={batchActionsVisibleRef}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              minWidth: 0,
+              flex: '1 1 auto',
+              overflow: 'visible',
+            }}
+          >
+            {visibleBatchActionCandidates.map(({ id, labelText, disabled, ...others }, index) => {
+              const isVisibleInline =
+                responsiveBatchActionCount === null || index < responsiveBatchActionCount;
+
+              return (
+                <TableBatchAction
+                  key={id}
+                  id={`${tableId}-batch-action-${id}`}
+                  data-batch-action-visible="true"
+                  onClick={() => {
+                    onApplyBatchAction(id);
+                    restoreFocus();
+                  }}
+                  tabIndex={isVisibleInline && shouldShowBatchActions ? 0 : -1}
+                  disabled={!shouldShowBatchActions || disabled}
+                  {...others}
+                  aria-hidden={!isVisibleInline}
+                  style={
+                    isVisibleInline
+                      ? {
+                          flex: '0 0 auto',
+                        }
+                      : {
+                          flex: '0 0 auto',
+                          position: 'absolute',
+                          visibility: 'hidden',
+                          pointerEvents: 'none',
+                        }
+                  }
+                >
+                  {labelText}
+                </TableBatchAction>
+              );
+            })}
+            {shouldRenderBatchOverflowTrigger ? (
+              <div
+                id={`${tableId}-batch-actions-overflow-trigger`}
+                role="presentation"
+                ref={batchOverflowMenuRef}
+                data-batch-overflow-visible="true"
+                style={{ display: 'inline-flex', flexShrink: 0 }}
+                onKeyDown={(e) => {
+                  if (!shouldShowBatchActions) return;
+
+                  // Handle Shift+Tab from within the batch overflow menu
+                  if (e.shiftKey && e.key === 'Tab') {
+                    const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
+                      '[role="menuitem"]:not([disabled])'
+                    );
+                    const firstMenuItem = menuItems?.[0];
+
+                    // If we're on the first menu item, move focus to previous batch action
+                    if (firstMenuItem && document.activeElement === firstMenuItem) {
+                      e.preventDefault();
+                      // Find previous focusable element in batch actions
+                      if (batchActionsRef.current) {
+                        const focusableElements = batchActionsRef.current.querySelectorAll(
+                          'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+                        );
+                        const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
+                        const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
+                        const prevElement = focusableElements[currentIndex - 1];
+
+                        if (prevElement) {
+                          prevElement.focus();
+                        }
+                      }
+                    }
+                  }
+                  // Handle Tab from the last menu item
+                  else if (e.key === 'Tab' && !e.shiftKey) {
+                    const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
+                      '[role="menuitem"]:not([disabled])'
+                    );
+                    const lastMenuItem = menuItems?.[menuItems.length - 1];
+
+                    // If we're on the last menu item, move to Clear selections button
+                    if (lastMenuItem && document.activeElement === lastMenuItem) {
+                      e.preventDefault();
+                      // Find the Clear selections button or next focusable element
+                      if (batchActionsRef.current) {
+                        const focusableElements = batchActionsRef.current.querySelectorAll(
+                          'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+                        );
+                        const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
+                        const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
+                        const nextElement = focusableElements[currentIndex + 1];
+
+                        if (nextElement) {
+                          nextElement.focus();
+                        }
+                      }
+                    }
+                  }
                 }}
-                tabIndex={shouldShowBatchActions ? 0 : -1}
-                disabled={!shouldShowBatchActions || disabled}
-                {...others}
               >
-                {labelText}
-              </TableBatchAction>
-            ))}
-          {hasVisibleOverflowBatchActions ? (
-            <div
-              role="presentation"
-              ref={batchOverflowMenuRef}
-              onKeyDown={(e) => {
-                if (!shouldShowBatchActions) return;
-
-                // Handle Shift+Tab from within the batch overflow menu
-                if (e.shiftKey && e.key === 'Tab') {
-                  const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
-                    '[role="menuitem"]:not([disabled])'
-                  );
-                  const firstMenuItem = menuItems?.[0];
-
-                  // If we're on the first menu item, move focus to previous batch action
-                  if (firstMenuItem && document.activeElement === firstMenuItem) {
-                    e.preventDefault();
-                    // Find previous focusable element in batch actions
-                    if (batchActionsRef.current) {
-                      const focusableElements = batchActionsRef.current.querySelectorAll(
-                        'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-                      );
-                      const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
-                      const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
-                      const prevElement = focusableElements[currentIndex - 1];
-
-                      if (prevElement) {
-                        prevElement.focus();
-                      }
-                    }
-                  }
-                }
-                // Handle Tab from the last menu item
-                else if (e.key === 'Tab' && !e.shiftKey) {
-                  const menuItems = batchOverflowMenuRef.current?.querySelectorAll(
-                    '[role="menuitem"]:not([disabled])'
-                  );
-                  const lastMenuItem = menuItems?.[menuItems.length - 1];
-
-                  // If we're on the last menu item, move to Clear selections button
-                  if (lastMenuItem && document.activeElement === lastMenuItem) {
-                    e.preventDefault();
-                    // Find the Clear selections button or next focusable element
-                    if (batchActionsRef.current) {
-                      const focusableElements = batchActionsRef.current.querySelectorAll(
-                        'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-                      );
-                      const overflowButton = batchOverflowMenuRef.current?.querySelector('button');
-                      const currentIndex = Array.from(focusableElements).indexOf(overflowButton);
-                      const nextElement = focusableElements[currentIndex + 1];
-
-                      if (nextElement) {
-                        nextElement.focus();
-                      }
-                    }
-                  }
-                }
-              }}
-            >
-              <OverflowMenu
-                data-testid={`${testID || testId}-batch-actions-overflow-menu`}
-                className={`${iotPrefix}--table-overflow-batch-actions`}
-                flipped={langDir === 'ltr'}
-                direction="bottom"
-                onClick={(e) => e.stopPropagation()}
-                renderIcon={(props) => <OverflowMenuVertical size={16} {...props} />}
-                tabIndex={shouldShowBatchActions ? 0 : -1}
-                size="md"
-                menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
-                withCarbonTooltip
-                tooltipPosition="bottom"
-                buttonLabel={i18n.batchActionsOverflowMenuText}
-                open={isBatchOverflowOpen}
-                onOpen={() => setIsBatchOverflowOpen(true)}
-                onClose={() => setIsBatchOverflowOpen(false)}
-              >
-                {visibleOverflowBatchActions.map(
-                  ({
-                    id,
-                    labelText,
-                    disabled,
-                    hasDivider,
-                    isDelete,
-                    renderIcon,
-                    iconDescription,
-                  }) => (
-                    <OverflowMenuItem
-                      data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
-                      itemText={renderTableOverflowItemText({
-                        action: { renderIcon, labelText: labelText || iconDescription },
-                        className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
-                      })}
-                      disabled={!shouldShowBatchActions || disabled}
-                      onClick={() => {
-                        onApplyBatchAction(id);
-                        restoreFocus();
-                      }}
-                      key={`table-batch-actions-overflow-menu-${id}`}
-                      requireTitle={!renderIcon}
-                      hasDivider={hasDivider}
-                      isDelete={isDelete}
-                      aria-label={labelText}
-                    />
-                  )
-                )}
-              </OverflowMenu>
-            </div>
-          ) : null}
+                <OverflowMenu
+                  data-testid={`${testID || testId}-batch-actions-overflow-menu`}
+                  className={`${iotPrefix}--table-overflow-batch-actions`}
+                  flipped={langDir === 'ltr'}
+                  direction="bottom"
+                  onClick={(e) => e.stopPropagation()}
+                  renderIcon={(props) => <OverflowMenuVertical size={16} {...props} />}
+                  tabIndex={shouldShowBatchActions ? 0 : -1}
+                  size="md"
+                  menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+                  withCarbonTooltip
+                  tooltipPosition="bottom"
+                  buttonLabel={i18n.batchActionsOverflowMenuText}
+                  open={isBatchOverflowOpen}
+                  onOpen={() => setIsBatchOverflowOpen(true)}
+                  onClose={() => setIsBatchOverflowOpen(false)}
+                >
+                  {visibleOverflowBatchActions.map(
+                    ({
+                      id,
+                      labelText,
+                      disabled,
+                      hasDivider,
+                      isDelete,
+                      renderIcon,
+                      iconDescription,
+                    }) => (
+                      <OverflowMenuItem
+                        data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
+                        itemText={renderTableOverflowItemText({
+                          action: { renderIcon, labelText: labelText || iconDescription },
+                          className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+                        })}
+                        disabled={!shouldShowBatchActions || disabled}
+                        onClick={() => {
+                          onApplyBatchAction(id);
+                          restoreFocus();
+                        }}
+                        key={`table-batch-actions-overflow-menu-${id}`}
+                        requireTitle={!renderIcon}
+                        hasDivider={hasDivider}
+                        isDelete={isDelete}
+                        aria-label={labelText}
+                      />
+                    )
+                  )}
+                </OverflowMenu>
+              </div>
+            ) : null}
+          </div>
         </TableBatchActions>
       ) : null}
     </CarbonTableToolbar>
