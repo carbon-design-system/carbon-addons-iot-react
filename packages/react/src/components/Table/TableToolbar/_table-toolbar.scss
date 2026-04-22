@@ -96,6 +96,13 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$iot-prefix}--table-batch-actions {
   z-index: 3;
+  min-width: 0;
+
+  .#{$prefix}--action-list {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
 
   & + .#{$prefix}--toolbar-action {
     padding: 0;
