@@ -511,7 +511,6 @@ const TableToolbar = ({
     ...staticOverflowBatchActions,
   ];
 
-  const hasVisibleBatchActions = visibleBatchActions.length > 0;
   const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
   const hasStaticOverflowBatchActions = staticOverflowBatchActions.length > 0;
   const shouldRenderBatchOverflowTrigger =
