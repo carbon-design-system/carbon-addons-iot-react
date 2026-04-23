@@ -41,6 +41,9 @@ import TableToolbarSearch from './TableToolbarSearch';
 
 const { iotPrefix } = settings;
 
+const FOCUSABLE_ELEMENTS_SELECTOR =
+  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
+
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -285,9 +288,7 @@ const TableToolbar = ({
       }
 
       // Find the first focusable element in batch actions
-      const focusable = batchActionsRef.current.querySelector(
-        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
-      );
+      const focusable = batchActionsRef.current.querySelector(FOCUSABLE_ELEMENTS_SELECTOR);
 
       if (focusable) {
         focusable.focus();
@@ -309,7 +310,7 @@ const TableToolbar = ({
             } else if (toolbarContentRef.current) {
               // If previous element is no longer available, focus the first focusable element in toolbar
               const firstFocusable = toolbarContentRef.current.querySelector(
-                'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+                FOCUSABLE_ELEMENTS_SELECTOR
               );
               if (firstFocusable) {
                 firstFocusable.focus();
@@ -888,7 +889,7 @@ const TableToolbar = ({
                       // Find previous focusable element in batch actions
                       if (batchActionsRef.current) {
                         const focusableElements = batchActionsRef.current.querySelectorAll(
-                          'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+                          FOCUSABLE_ELEMENTS_SELECTOR
                         );
                         const overflowButton =
                           batchOverflowMenuRef.current?.querySelector('button');
@@ -914,7 +915,7 @@ const TableToolbar = ({
                       // Find the Clear selections button or next focusable element
                       if (batchActionsRef.current) {
                         const focusableElements = batchActionsRef.current.querySelectorAll(
-                          'button:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+                          FOCUSABLE_ELEMENTS_SELECTOR
                         );
                         const overflowButton =
                           batchOverflowMenuRef.current?.querySelector('button');
