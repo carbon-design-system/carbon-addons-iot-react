@@ -200,7 +200,7 @@
     "thenby": "^1.3.4",
     "use-deep-compare-effect": "^1.2.0",
     "use-resize-observer": "^8.0.0",
-    "uuid": "^9.0.1",
+    "uuid": "^14.0.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
