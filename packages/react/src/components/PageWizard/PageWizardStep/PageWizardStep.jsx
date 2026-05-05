@@ -135,6 +135,7 @@ const PageWizardStep = ({
             }
           }}
           disabled={nextDisabled}
+          loading={sendingData}
         >
           {i18n.next}
         </Button>
