@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.11.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.11...v5.11.0) (2026-05-07)
+
+
+### Features
+
+* hide title funcanlity added ([bd84799](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bd84799c1c31d619d3c9aca651cf8173a9806b72))
+
+
+
+
+
 ## [5.10.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.10...v5.10.11) (2026-04-30)
 
 **Note:** Version bump only for package ibm-ai-applications
