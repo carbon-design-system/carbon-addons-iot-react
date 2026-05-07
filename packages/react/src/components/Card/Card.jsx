@@ -201,6 +201,7 @@ export const defaultProps = {
   hasTitleWrap: false,
   toolbar: undefined,
   hideHeader: false,
+  hideTitle: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,
@@ -298,6 +299,7 @@ const Card = (props) => {
     resizeHandles: wrappingCardResizeHandles,
     error,
     hideHeader,
+    hideTitle,
     id,
     tooltip: tooltipProp,
     titleTextTooltip,
@@ -526,7 +528,7 @@ const Card = (props) => {
         [`${iotPrefix}--card--resizing`]: isResizing,
       })}
     >
-      {!hideHeader && (
+      {!hideHeader && !hideTitle && (
         <CardHeader
           // TODO: remove deprecated testID prop in v3
           testId={`${testID || testId}-header`}
@@ -556,6 +558,8 @@ const Card = (props) => {
         noPadding={padding === 'none'}
         hasFooter={!!CardFooter}
       >
+        {hideTitle && cardToolbar}
+        {hideTitle && extraHeaderContent}
         {!isVisible && isLazyLoading ? ( // if not visible don't show anything
           ''
         ) : isLoading ? (

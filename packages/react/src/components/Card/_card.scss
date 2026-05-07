@@ -79,6 +79,13 @@ $duration-fast-02: 110ms;
   padding-bottom: 0;
 }
 
+.#{$iot-prefix}--card--content > .#{$iot-prefix}--card--toolbar:first-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
 .#{$iot-prefix}--card--content--expanded {
   overflow-y: auto;
 }

@@ -259,6 +259,13 @@ export const BasicWithRenderProp = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        hideHeader={boolean('hideHeader', true)}
+        hideTitle={boolean('hideTitle', false)}
+        padding={select(
+          'Apply padding to the card content or not (padding)',
+          ['default', 'none'],
+          'default'
+        )}
         footerContent={() => (
           <Button size="md" kind="ghost">
             Footer Content

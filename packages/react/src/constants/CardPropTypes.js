@@ -852,6 +852,8 @@ export const CardPropTypes = {
   renderExpandIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   /** should hide the header */
   hideHeader: PropTypes.bool,
+  /** should hide only the card title but keep the toolbar visible. Also disables card content padding. */
+  hideTitle: PropTypes.bool,
   /** sets the CardWrapper CSS overflow to visible */
   showOverflow: deprecate(
     PropTypes.bool,
