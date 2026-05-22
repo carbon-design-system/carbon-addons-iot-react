@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
 import { matches } from '@carbon/react/es/internal/keyboard/match';
 import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
+import * as Pictograms from '@carbon/pictograms-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -30,6 +31,8 @@ const ProgressStep = ({
   mainStep,
   subStep,
   spaceEqually,
+  pictogramName,
+  hasPictogram,
 }) => {
   const accessible = isClickable && !disabled && !current;
 
@@ -142,8 +145,18 @@ const ProgressStep = ({
     const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
     const type = mainStep ? 'main' : 'sub';
 
+    // get pictogram component from name passed in items array via pictogramName property
+    const PictogramComponent = pictogramName?.length ? Pictograms[pictogramName] : null;
     return (
       <>
+        {
+          // reserve space in all steps if even one pictogram is showing to align all the steps correctly
+          hasPictogram && (
+            <div className={`${iotPrefix}--progress-step-pictogram`}>
+              {PictogramComponent && <PictogramComponent />}
+            </div>
+          )
+        }
         <button
           className={buttonClasses}
           type="button"
@@ -201,6 +214,8 @@ ProgressStep.propTypes = {
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
   spaceEqually: PropTypes.bool,
+  pictogramName: PropTypes.string,
+  hasPictogram: PropTypes.bool,
 };
 
 ProgressStep.defaultProps = {
@@ -222,6 +237,8 @@ ProgressStep.defaultProps = {
   subStep: false,
   onClick: null,
   spaceEqually: false,
+  pictogramName: null,
+  hasPictogram: false,
 };
 
 const ProgressIndicator = ({
@@ -293,11 +310,26 @@ const ProgressIndicator = ({
     [className]: className,
   });
 
+  // check if any pictogram is to be shown, this will modify styling of all the steps
+  const hasPictogram = newItems.some(
+    ({ pictogramName }) => pictogramName?.length && typeof Pictograms[pictogramName] !== 'undefined'
+  );
+
   return newItems.length > 1 ? (
     <ul className={classes} data-testid={testId}>
       {newItems.map(
         (
-          { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
+          {
+            id,
+            label,
+            secondaryLabel,
+            description,
+            disabled,
+            invalid,
+            stepNumber,
+            level,
+            pictogramName,
+          },
           index
         ) => (
           <ProgressStep
@@ -321,6 +353,8 @@ const ProgressIndicator = ({
             invalid={invalid}
             isClickable={isClickable}
             spaceEqually={spaceEqually}
+            pictogramName={pictogramName}
+            hasPictogram={hasPictogram}
           />
         )
       )}
@@ -338,6 +372,7 @@ ProgressIndicator.propTypes = {
       description: PropTypes.string,
       disabled: PropTypes.bool,
       invalid: PropTypes.bool,
+      pictogramName: PropTypes.string,
     })
   ),
   currentItemId: IDPropTypes,
