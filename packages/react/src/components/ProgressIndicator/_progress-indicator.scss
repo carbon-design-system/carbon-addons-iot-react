@@ -12,7 +12,11 @@
 
   .#{$iot-prefix}--progress-step {
     width: 8rem;
-    height: convert.to-rem(68px);
+    height: 4.25rem;
+    // increase height as pictogram will be above text
+    &.#{$iot-prefix}--progress-step--pictogram {
+      height: 7.25rem;
+    }
     &-line {
       position: absolute;
       width: calc(100% - #{$spacing-06});
@@ -261,9 +265,15 @@
       // align vertically
       display: flex;
       gap: $spacing-03;
-      .#{$iot-prefix}--progress-step-pictogram {
+      .#{$iot-prefix}--progress-step--pictogram-item {
         margin-top: -6px;
         margin-bottom: 0;
+      }
+
+      // increase width as pictogram will be beside text
+      &.#{$iot-prefix}--progress-step--pictogram {
+        width: 11rem;
+        height: 4.25rem;
       }
 
       &-button {
@@ -340,7 +350,7 @@
   }
 
   // reserve permanent space so all steps align
-  .#{$iot-prefix}--progress-step-pictogram {
+  .#{$iot-prefix}--progress-step--pictogram-item {
     width: $spacing-09;
     height: $spacing-09;
     margin-bottom: $spacing-03;

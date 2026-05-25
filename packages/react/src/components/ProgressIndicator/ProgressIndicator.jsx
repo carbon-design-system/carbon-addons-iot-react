@@ -152,7 +152,7 @@ const ProgressStep = ({
         {
           // reserve space in all steps if even one pictogram is showing to align all the steps correctly
           hasPictogram && (
-            <div className={`${iotPrefix}--progress-step-pictogram`}>
+            <div className={`${iotPrefix}--progress-step--pictogram-item`}>
               {PictogramComponent && <PictogramComponent />}
             </div>
           )
@@ -185,6 +185,7 @@ const ProgressStep = ({
     [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
     [`${iotPrefix}--progress-step--disabled`]: disabled,
     [`${iotPrefix}--progress-step--invalid`]: invalid,
+    [`${iotPrefix}--progress-step--pictogram`]: hasPictogram,
   });
 
   return (

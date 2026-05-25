@@ -258,3 +258,19 @@ export const StatefulWithPictograms = () => (
 );
 
 StatefulWithPictograms.storyName = 'stateful with pictograms';
+
+export const PresentationVerticalWithPictograms = () => (
+  <ProgressIndicator
+    items={itemsWithPictograms}
+    currentItemId={select(
+      'id',
+      items.map((item) => item.id),
+      items[1].id
+    )}
+    showLabels={boolean('showlabels', true)}
+    isClickable={boolean('isClickable', true)}
+    isVerticalMode={boolean('isVerticalMode', true)}
+  />
+);
+
+PresentationVerticalWithPictograms.storyName = 'presentation vertical with pictograms';

@@ -146,31 +146,35 @@ const PageWizard = ({
    */
   const newItemsArray = () => {
     const array = [];
-    steps.forEach(({ id, label, secondaryLabel, description, subStep, disabled, invalid }) => {
-      if (!subStep) {
-        array.push({
-          ...(id && { id }),
-          ...(label && { label }),
-          ...(secondaryLabel && { secondaryLabel }),
-          ...(description && { description }),
-          ...(disabled && { disabled }),
-          ...(invalid && { invalid }),
-        });
-      } else {
-        const lastMainStep = array[array.length - 1];
-        if (!('children' in lastMainStep)) {
-          lastMainStep.children = [];
+    steps.forEach(
+      ({ id, label, secondaryLabel, description, subStep, disabled, invalid, pictogramName }) => {
+        if (!subStep) {
+          array.push({
+            ...(id && { id }),
+            ...(label && { label }),
+            ...(secondaryLabel && { secondaryLabel }),
+            ...(description && { description }),
+            ...(disabled && { disabled }),
+            ...(invalid && { invalid }),
+            ...(pictogramName && { pictogramName }),
+          });
+        } else {
+          const lastMainStep = array[array.length - 1];
+          if (!('children' in lastMainStep)) {
+            lastMainStep.children = [];
+          }
+          lastMainStep.children.push({
+            ...(id && { id }),
+            ...(label && { label }),
+            ...(secondaryLabel && { secondaryLabel }),
+            ...(description && { description }),
+            ...(disabled && { disabled }),
+            ...(invalid && { invalid }),
+            ...(pictogramName && { pictogramName }),
+          });
         }
-        lastMainStep.children.push({
-          ...(id && { id }),
-          ...(label && { label }),
-          ...(secondaryLabel && { secondaryLabel }),
-          ...(description && { description }),
-          ...(disabled && { disabled }),
-          ...(invalid && { invalid }),
-        });
       }
-    });
+    );
     return array;
   };
 
