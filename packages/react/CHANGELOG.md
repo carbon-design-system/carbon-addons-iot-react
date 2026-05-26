@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.12.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.11.0...v5.12.0) (2026-05-26)
+
+
+### Features
+
+* add loading indicator for next button in pagewizardsteps ([#4106](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4106)) ([c257ab6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c257ab66522b649f382ffbd2687039f876c11460))
+
+
+
+
+
 # [5.11.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.10.11...v5.11.0) (2026-05-07)
 
 
