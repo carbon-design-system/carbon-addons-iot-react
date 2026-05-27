@@ -204,3 +204,73 @@ CarbonDefaultProgressIndicator.parameters = {
     text: `The default Carbon Progress Indicator component.`,
   },
 };
+
+const itemsWithPictograms = [
+  {
+    id: 'step1',
+    label: 'First step is very, very long',
+    secondaryLabel: 'Optional label is very, very long',
+    description: 'This is displayed when step icon is hovered',
+    pictogramName: 'Bee',
+  },
+  {
+    id: 'step2',
+    label: 'Second Step',
+    secondaryLabel: 'Optional label',
+    children: [
+      { id: 'step2_substep1', label: 'Sub Step 1' },
+      {
+        id: 'step2_substep2',
+        label: 'Sub Step 2',
+        secondaryLabel: 'Optional label',
+        pictogramName: 'Bee',
+      },
+      { id: 'step2_substep3', label: 'Sub Step 3', invalid: true },
+      {
+        id: 'step2_substep4',
+        label: 'Sub Step 4',
+        invalid: true,
+        disabled: true,
+      },
+    ],
+    pictogramName: 'Archive',
+  },
+  {
+    id: 'step3',
+    label: 'Third Step',
+    secondaryLabel: 'Optional label',
+    disabled: true,
+    pictogramName: 'Ai',
+  },
+  { id: 'step4', label: 'Fourth Step', invalid: true, pictogramName: 'Devops' },
+  { id: 'step5', label: 'Fifth Step' },
+];
+
+export const StatefulWithPictograms = () => (
+  <ProgressIndicator
+    items={itemsWithPictograms}
+    currentItemId="step2_substep2"
+    stepWidth={number('stepWidth', 6)}
+    showLabels={boolean('showlabels', true)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+StatefulWithPictograms.storyName = 'stateful with pictograms';
+
+export const PresentationVerticalWithPictograms = () => (
+  <ProgressIndicator
+    items={itemsWithPictograms}
+    currentItemId={select(
+      'id',
+      items.map((item) => item.id),
+      items[1].id
+    )}
+    showLabels={boolean('showlabels', true)}
+    isClickable={boolean('isClickable', true)}
+    isVerticalMode={boolean('isVerticalMode', true)}
+  />
+);
+
+PresentationVerticalWithPictograms.storyName = 'presentation vertical with pictograms';

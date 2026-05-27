@@ -71,4 +71,17 @@ describe('ProgressIndicator', () => {
       expect(eachli).toHaveStyle(`flex-grow: 1`);
     });
   });
+
+  it('should add pictogram in steps ', () => {
+    const mockItems1 = mockItems.map((d, i) => (i % 2 === 0 ? { ...d, pictogramName: 'BEE' } : d));
+    render(<ProgressIndicator items={mockItems1} />);
+    screen.getAllByRole('listitem').forEach((eachli, i) => {
+      const el = eachli.querySelector(`${iotPrefix}--progress-step--pictogram-item`);
+      if (i % 2 === 0) {
+        expect(el).toBeDefined();
+      } else {
+        expect(el).toBeUndefined();
+      }
+    });
+  });
 });
