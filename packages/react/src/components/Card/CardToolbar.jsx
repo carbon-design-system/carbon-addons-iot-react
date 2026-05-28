@@ -189,8 +189,8 @@ const CardToolbar = ({
         <OverflowMenu
           menuOptionsClass={`${iotPrefix}--card--toolbar__overflow-menu`}
           flipped={overflowMenuPosition}
-          title={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
           iconDescription={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
+          autoAlign
           {...(extraActions.icon ? { renderIcon: extraActions.icon } : {})}
         >
           {extraActions.children.map((child, i) =>
@@ -229,8 +229,8 @@ const CardToolbar = ({
       {(availableActions.clone || availableActions.delete) && (
         <OverflowMenu
           flipped={overflowMenuPosition}
-          title={mergedI18n.overflowMenuDescription}
           iconDescription={mergedI18n.overflowMenuDescription}
+          autoAlign
         >
           {availableActions.clone && (
             <OverflowMenuItem
