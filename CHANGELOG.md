@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.13.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.12.0...v5.13.0) (2026-05-28)
+
+
+### Bug Fixes
+
+* remove `title` + add `autoAlign` to `CardToolbar` `OverflowMenu` ([#4108](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4108)) ([5cb9bc8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5cb9bc80b8553df264df089f0ad0e1c8772aa91d))
+* update page wizard ([00566cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/00566cde3a79880ba61c7e329923d7ea7f5ef6ff))
+
+
+### Features
+
+* **progres-indicator:** add optional pictogram on each step ([054b0ce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/054b0ce7d47a5ec3c44f879ec35e666b226122ac))
+
+
+
+
+
 # [5.12.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.11.0...v5.12.0) (2026-05-26)
 
 
