@@ -15,7 +15,7 @@ import PageWizardStepTitle from './PageWizardStep/PageWizardStepTitle';
 import PageWizardStepExtraContent from './PageWizardStep/PageWizardStepExtraContent';
 import StatefulPageWizard from './StatefulPageWizard';
 
-export const content = (pictograms = []) => [
+export const content = (pictograms = [], isComplete) => [
   <PageWizardStep
     id="step1"
     label="First Step"
@@ -27,6 +27,7 @@ export const content = (pictograms = []) => [
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
     pictogramName={pictograms.shift()}
+    isComplete={isComplete}
   >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -625,3 +626,36 @@ export const WithHorizontalProgressIndicatorWithPictograms = () => (
 
 WithHorizontalProgressIndicatorWithPictograms.storyName =
   'With Horizontal ProgressIndicator with pictograms';
+
+export const StatefulWithSkippableStepsComp = () => {
+  let t = 1;
+  const [isComplete, setIsComplete] = useState(false);
+  return (
+    <>
+      <p>First step will dynamically flip completeness every 3rd click</p>
+      <br />
+      <br />
+      <StatefulPageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onClearError={action('Clear error', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        setStep={() => {
+          t += 1;
+          if (t % 3 === 0) {
+            setIsComplete(!isComplete);
+          }
+          console.log('t', t, isComplete);
+        }}
+        isClickable
+      >
+        {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'], isComplete)}
+      </StatefulPageWizard>
+    </>
+  );
+};
+export const StatefulWithSkippableSteps = () => <StatefulWithSkippableStepsComp />;
+
+StatefulWithSkippableSteps.storyName = 'stateful with skippable steps';
