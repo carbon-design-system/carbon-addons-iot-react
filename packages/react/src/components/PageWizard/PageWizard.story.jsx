@@ -627,7 +627,7 @@ export const WithHorizontalProgressIndicatorWithPictograms = () => (
 WithHorizontalProgressIndicatorWithPictograms.storyName =
   'With Horizontal ProgressIndicator with pictograms';
 
-export const StatefulWithSkippableStepsComp = () => {
+const StatefulWithSkippableStepsComp = () => {
   let t = 1;
   const [isComplete, setIsComplete] = useState(false);
   return (
