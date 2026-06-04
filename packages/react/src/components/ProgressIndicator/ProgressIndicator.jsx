@@ -330,6 +330,7 @@ const ProgressIndicator = ({
             stepNumber,
             level,
             pictogramName,
+            isComplete,
           },
           index
         ) => (
@@ -340,8 +341,9 @@ const ProgressIndicator = ({
             secondaryLabel={secondaryLabel}
             description={description || label}
             current={currentStep === id}
-            complete={getCurrentIndex() > index}
-            incomplete={getCurrentIndex() < index}
+            // user can mark complete/incomplete based on it's own criteria
+            complete={typeof isComplete === 'boolean' ? isComplete : getCurrentIndex() > index}
+            incomplete={typeof isComplete === 'boolean' ? !isComplete : getCurrentIndex() < index}
             mainStep={level === 0}
             subStep={level > 0}
             onClick={handleChange}

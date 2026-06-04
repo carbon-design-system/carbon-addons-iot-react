@@ -147,7 +147,17 @@ const PageWizard = ({
   const newItemsArray = () => {
     const array = [];
     steps.forEach(
-      ({ id, label, secondaryLabel, description, subStep, disabled, invalid, pictogramName }) => {
+      ({
+        id,
+        label,
+        secondaryLabel,
+        description,
+        subStep,
+        disabled,
+        invalid,
+        pictogramName,
+        isComplete,
+      }) => {
         if (!subStep) {
           array.push({
             ...(id && { id }),
@@ -157,6 +167,7 @@ const PageWizard = ({
             ...(disabled && { disabled }),
             ...(invalid && { invalid }),
             ...(pictogramName && { pictogramName }),
+            isComplete,
           });
         } else {
           const lastMainStep = array[array.length - 1];
@@ -171,6 +182,7 @@ const PageWizard = ({
             ...(disabled && { disabled }),
             ...(invalid && { invalid }),
             ...(pictogramName && { pictogramName }),
+            isComplete,
           });
         }
       }

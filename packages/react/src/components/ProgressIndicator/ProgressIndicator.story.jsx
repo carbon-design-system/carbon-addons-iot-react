@@ -274,3 +274,23 @@ export const PresentationVerticalWithPictograms = () => (
 );
 
 PresentationVerticalWithPictograms.storyName = 'presentation vertical with pictograms';
+
+export const StatefulWithSkip = () => (
+  <ProgressIndicator
+    items={[
+      {
+        ...items[0],
+        isComplete: false,
+        label: 'First step, skippable',
+      },
+      ...items.slice(1),
+    ]}
+    currentItemId="step2_substep2"
+    stepWidth={number('stepWidth', 6)}
+    showLabels={boolean('showlabels', true)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+StatefulWithSkip.storyName = 'stateful with skippable step';
