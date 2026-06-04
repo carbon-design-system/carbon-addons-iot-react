@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.13.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.13.0...v5.13.1) (2026-06-04)
+
+
+### Bug Fixes
+
+* **progress-indicator:** add ability to skip steps without completing it ([#4109](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4109)) ([f7a4b4a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7a4b4a6eec75016968934b7cf17685c21b812f1))
+
+
+
+
+
 # [5.13.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.12.0...v5.13.0) (2026-05-28)
 
 
