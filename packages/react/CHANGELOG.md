@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.14.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.13.1...v5.14.0) (2026-06-05)
+
+
+### Features
+
+* **button:** add tertiary--light kind of dark bg ([#4110](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4110)) ([ec6831d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ec6831dd86f2065d10bb4eaa93037baef2e31ddd))
+
+
+
+
+
 ## [5.13.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.13.0...v5.13.1) (2026-06-04)
 
 
