@@ -29,6 +29,7 @@ const kinds = {
   'Primary button (primary)': 'primary',
   'Secondary button (secondary)': 'secondary',
   'Tertiary button (tertiary)': 'tertiary',
+  'Tertiary Light button (tertiary--light)': 'tertiary--light',
   'Danger button (danger)': 'danger',
   'Danger ghost button (danger--ghost)': 'danger--ghost',
   'Danger tertiary button (danger--tertiary)': 'danger--tertiary',
@@ -64,6 +65,7 @@ const props = {
           'Primary button (primary)': 'primary',
           'Secondary button (secondary)': 'secondary',
           'Tertiary button (tertiary)': 'tertiary',
+          'Tertiary Light button (tertiary--light)': 'tertiary--light',
           'Ghost button (ghost)': 'ghost',
         },
         'primary'
@@ -168,6 +170,10 @@ export const _Default = () => {
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
+        background: regularProps.kind === 'tertiary--light' ? 'black' : 'white',
+        width: '100%',
+        height: '100%',
+        padding: '1rem',
       }}
     >
       <Button {...regularProps} className="some-class">
@@ -218,9 +224,19 @@ _Default.parameters = {
   },
 };
 
-export const IconOnlyButtons = () => (
-  <Button {...props.iconOnly()} hasIconOnly /> // eslint-disable-line react/destructuring-assignment
-);
+export const IconOnlyButtons = () => {
+  const iconOnly = props.iconOnly(); // eslint-disable-line react/destructuring-assignment
+  return (
+    <div
+      style={{
+        background: iconOnly.kind === 'tertiary--light' ? 'black' : 'white',
+        padding: '1rem',
+      }}
+    >
+      <Button {...iconOnly} hasIconOnly />
+    </div>
+  );
+};
 
 IconOnlyButtons.storyName = 'Icon-only buttons';
 
