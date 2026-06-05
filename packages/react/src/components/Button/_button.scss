@@ -5,6 +5,7 @@
 @use '@carbon/react/scss/components/button' as *;
 @use '@carbon/react/scss/utilities/convert';
 @use '../../globals/vars' as *;
+@use '@carbon/styles/scss/components/button/mixins' as *;
 
 .#{$iot-prefix}--btn {
   .#{$prefix}--loading {
@@ -93,5 +94,22 @@
 
   .#{$prefix}--btn-set .#{$prefix}--btn:last-of-type:not(:focus) {
     box-shadow: convert.to-rem(1px) 0 0 0 $button-separator;
+  }
+}
+
+// light colored button, to be used on dark backgrounds
+.cds--btn--tertiary--light {
+  @include button-theme(transparent, $white, $white, $background-hover, $white, $background-active);
+
+  &:focus {
+    border-color: $white;
+    box-shadow: inset 0 0 0 $button-outline-width $white,
+      inset 0 0 0 $button-border-width $background-active;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $background-active;
+    border-color: $white;
   }
 }

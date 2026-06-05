@@ -10,6 +10,7 @@ const ButtonKinds = [
   'primary',
   'secondary',
   'tertiary',
+  'tertiary--light',
   'ghost',
   'danger',
   'danger--primary',
