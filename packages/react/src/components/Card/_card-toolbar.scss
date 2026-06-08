@@ -88,3 +88,7 @@
     outline-offset: -2px;
   }
 }
+
+.#{$iot-prefix}--card--dark .#{$iot-prefix}--card--toolbar button.#{$prefix}--overflow-menu svg {
+  fill: white;
+}

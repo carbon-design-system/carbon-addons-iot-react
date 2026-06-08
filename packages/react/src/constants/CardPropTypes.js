@@ -993,4 +993,8 @@ export const CardPropTypes = {
   /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
   renderDateDropdownInPortal: PropTypes.bool,
   extraHeaderContent: PropTypes.element,
+  /** CSS gradient value to apply as the card background. */
+  backgroundGradient: PropTypes.string,
+  /** Enable dark mode styling for the card */
+  dark: PropTypes.bool,
 };
