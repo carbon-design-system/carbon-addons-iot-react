@@ -280,7 +280,7 @@ export const defaultProps = {
   data: null,
   content: null,
   shouldUseTranslatedLabels: false,
-  backgroundGradient: undefined,
+  backgroundGradient: null,
 };
 
 /** Dumb component that renders the card basics */
