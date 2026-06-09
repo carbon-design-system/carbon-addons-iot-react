@@ -262,7 +262,7 @@ export const BasicWithRenderProp = () => {
         hideHeader={boolean('hideHeader', true)}
         hideTitle={boolean('hideTitle', false)}
         backgroundGradient={text('backgroundGradient', null)}
-        dark={boolean('dark', false)}
+        theme={select('theme', ['light', 'dark'], 'light')}
         padding={select(
           'Apply padding to the card content or not (padding)',
           ['default', 'none'],

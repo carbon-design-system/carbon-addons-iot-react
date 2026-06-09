@@ -210,7 +210,7 @@ export const defaultProps = {
   isExpanded: false,
   /** performance option: only render the content of the card to the ReactDOM if the card is visible on screen */
   isLazyLoading: false,
-  dark: false,
+  theme: 'light',
   /** For now we will hide the per card actions when we're editing */
   availableActions: {
     edit: false,
@@ -333,7 +333,7 @@ const Card = (props) => {
     timeZone,
     shouldUseTranslatedLabels,
     backgroundGradient,
-    dark,
+    theme,
     ...others
   } = props;
   const effectiveTimezone = timeZone || dayjs.tz.guess();
@@ -531,7 +531,7 @@ const Card = (props) => {
       }
       className={classnames(`${iotPrefix}--card`, className, {
         [`${iotPrefix}--card--resizing`]: isResizing,
-        [`${iotPrefix}--card--dark`]: dark,
+        [`${iotPrefix}--card--dark`]: theme === 'dark',
       })}
     >
       {!hideHeader && !hideTitle && (

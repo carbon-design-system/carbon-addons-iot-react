@@ -995,6 +995,6 @@ export const CardPropTypes = {
   extraHeaderContent: PropTypes.element,
   /** CSS gradient value to apply as the card background. */
   backgroundGradient: PropTypes.string,
-  /** Enable dark mode styling for the card */
-  dark: PropTypes.bool,
+  /** Theme for the card. Can be 'light' or 'dark' */
+  theme: PropTypes.oneOf(['light', 'dark']),
 };
