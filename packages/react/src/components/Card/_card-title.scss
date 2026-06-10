@@ -111,3 +111,14 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
 .#{$iot-prefix}--card-heading-clickable {
   cursor: pointer;
 }
+
+// Dark mode styles - make title and subtitle white
+.#{$iot-prefix}--card--dark {
+  .#{$iot-prefix}--card--title--text {
+    color: $text-on-color;
+  }
+
+  .#{$iot-prefix}--card--subtitle--text {
+    color: $text-on-color;
+  }
+}

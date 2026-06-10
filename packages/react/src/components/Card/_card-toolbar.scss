@@ -88,3 +88,15 @@
     outline-offset: -2px;
   }
 }
+
+.#{$iot-prefix}--card--dark .#{$iot-prefix}--card--toolbar button.#{$prefix}--overflow-menu svg {
+  fill: white;
+}
+
+// When overflow menu is open in dark mode, icon should be black (background becomes white)
+.#{$iot-prefix}--card--dark
+  .#{$iot-prefix}--card--toolbar
+  button.#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open
+  svg {
+  fill: $icon-primary;
+}
