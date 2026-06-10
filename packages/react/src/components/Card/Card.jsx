@@ -529,9 +529,8 @@ const Card = (props) => {
               ...(backgroundGradient && { background: backgroundGradient }),
             }
       }
-      className={classnames(`${iotPrefix}--card`, className, {
+      className={classnames(`${iotPrefix}--card`, `${iotPrefix}--card--${theme}`, className, {
         [`${iotPrefix}--card--resizing`]: isResizing,
-        [`${iotPrefix}--card--dark`]: theme === 'dark',
       })}
     >
       {!hideHeader && !hideTitle && (
