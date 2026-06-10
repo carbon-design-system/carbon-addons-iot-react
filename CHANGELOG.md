@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.15.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.14.0...v5.15.0) (2026-06-10)
+
+
+### Features
+
+* gradient background added in card ([#4111](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4111)) ([9556d2f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9556d2f90ecdfa76abf4b0da8e0f692e90576142))
+
+
+
+
+
 # [5.14.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.13.1...v5.14.0) (2026-06-05)
 
 
