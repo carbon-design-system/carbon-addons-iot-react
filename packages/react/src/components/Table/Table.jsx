@@ -1334,9 +1334,9 @@ const Table = (props) => {
           testId={`${id || testId}-table-pagination`}
           size={paginationProps.size}
           maxPagesConditionalStyle={
-            Math.ceil(maxPages * paginationProps.pageSize) < paginationProps.totalItems ? false :
-            paginationProps.totalItems > Math.ceil(maxPages * paginationProps.pageSize) 
-
+            Math.ceil(maxPages * paginationProps.pageSize) < paginationProps.totalItems
+              ? false
+              : paginationProps.totalItems > Math.ceil(maxPages * paginationProps.pageSize)
           }
         />
       ) : null}
