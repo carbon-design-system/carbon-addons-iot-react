@@ -426,6 +426,26 @@ export const WithHorizontalProgressIndicator = () => (
 
 WithHorizontalProgressIndicator.storyName = 'With Horizontal ProgressIndicator';
 
+export const WithHorizontalProgressIndicatorAndHighlightedConnectorLines = () => (
+  <PageWizard
+    currentStepId="step1"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+    setStep={action('step clicked', () => {})}
+    onClearError={action('Clear error', () => {})}
+    isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+    highlightConnectorLinesToShowProgress={boolean('highlightConnectorLinesToShowProgress', true)}
+    isClickable
+  >
+    {content()}
+  </PageWizard>
+);
+
+WithHorizontalProgressIndicatorAndHighlightedConnectorLines.storyName =
+  'With Horizontal ProgressIndicator and highlighted connector lines';
+
 export const OnlyOneStepInPageTitleBar = () => (
   <PageTitleBar
     {...commonProps}

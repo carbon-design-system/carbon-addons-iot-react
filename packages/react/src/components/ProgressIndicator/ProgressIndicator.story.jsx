@@ -69,6 +69,21 @@ export const Stateful = () => (
 
 Stateful.storyName = 'stateful';
 
+
+export const StatefulWithHighlightedConnectorLines = () => (
+  <ProgressIndicator
+    items={items}
+    currentItemId="step2_substep2"
+    stepWidth={number('stepWidth', 6)}
+    showLabels={boolean('showlabels', true)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+    highlightConnectorLinesToShowProgress={boolean('highlightConnectorLinesToShowProgress', true)}
+  />
+);
+
+StatefulWithHighlightedConnectorLines.storyName = 'stateful with highlighted connector lines';
+
 export const Presentation = () => {
   const spaceEquallyFlag = boolean('spaceEqually', false);
   return (

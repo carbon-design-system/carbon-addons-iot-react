@@ -33,6 +33,7 @@ const ProgressStep = ({
   spaceEqually,
   pictogramName,
   hasPictogram,
+  highlightConnectorLinesToShowProgress,
 }) => {
   const accessible = isClickable && !disabled && !current;
 
@@ -103,10 +104,10 @@ const ProgressStep = ({
 
   const StepLine = () => {
     const classes = classnames({
-      [`${iotPrefix}--progress-step-line`]: !complete && !subStep,
-      [`${iotPrefix}--progress-step-line--sub`]: !complete && subStep,
-      [`${iotPrefix}--progress-step-line--complete`]: complete && !subStep,
-      [`${iotPrefix}--progress-step-line--sub-complete`]: complete && subStep,
+      [`${iotPrefix}--progress-step-line`]: !complete && !subStep && !highlightConnectorLinesToShowProgress,
+      [`${iotPrefix}--progress-step-line--sub`]: !complete && subStep && !highlightConnectorLinesToShowProgress,
+      [`${iotPrefix}--progress-step-line--complete`]: !subStep && (complete || highlightConnectorLinesToShowProgress),
+      [`${iotPrefix}--progress-step-line--sub-complete`]: subStep && (complete || highlightConnectorLinesToShowProgress),
     });
 
     return !lastItem ? <div className={classes} /> : null;
@@ -217,6 +218,8 @@ ProgressStep.propTypes = {
   spaceEqually: PropTypes.bool,
   pictogramName: PropTypes.string,
   hasPictogram: PropTypes.bool,
+  /** When true, all connector lines are highlighted blue to show progress */
+  highlightConnectorLinesToShowProgress: PropTypes.bool,
 };
 
 ProgressStep.defaultProps = {
@@ -240,6 +243,8 @@ ProgressStep.defaultProps = {
   spaceEqually: false,
   pictogramName: null,
   hasPictogram: false,
+  /** default false, all connector lines are highlighted grey to show progress */
+  highlightConnectorLinesToShowProgress: false,
 };
 
 const ProgressIndicator = ({
@@ -253,6 +258,7 @@ const ProgressIndicator = ({
   onClickItem,
   testId,
   spaceEqually,
+  highlightConnectorLinesToShowProgress,
 }) => {
   const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
 
@@ -358,6 +364,7 @@ const ProgressIndicator = ({
             spaceEqually={spaceEqually}
             pictogramName={pictogramName}
             hasPictogram={hasPictogram}
+            highlightConnectorLinesToShowProgress={highlightConnectorLinesToShowProgress}
           />
         )
       )}
@@ -387,6 +394,8 @@ ProgressIndicator.propTypes = {
   testId: PropTypes.string,
   /** Specify whether the progress steps should be split equally in size in the div */
   spaceEqually: PropTypes.bool,
+    /** When true, all connector lines are highlighted blue to show progress */
+  highlightConnectorLinesToShowProgress: PropTypes.bool,
 };
 
 ProgressIndicator.defaultProps = {
@@ -400,6 +409,8 @@ ProgressIndicator.defaultProps = {
   onClickItem: null,
   testId: `${iotPrefix}--progress-indicator-testid`,
   spaceEqually: false,
+  /** default false, all connector lines are highlighted grey to show progress */
+  highlightConnectorLinesToShowProgress: false,
 };
 
 export default ProgressIndicator;
