@@ -38,6 +38,7 @@ import {
   tableRowLoadMore,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
+import { fillArrWithRowIds } from '../../utils/tableReducer';
 
 const callbackParent = (callback, ...args) => callback && callback(...args);
 
@@ -278,7 +279,14 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onSelectAll: (isSelected) => {
         dispatch(tableRowSelectAll(isSelected));
-        callbackParent(onSelectAll, isSelected);
+        
+        // Pass newSelectedIds to callback for searching and filtering scenarios
+        // This allows consumers to know which rows are actually selected based on current filters
+        const newSelectedIds = [];
+        if (isSelected) {
+          filteredData.forEach((row) => fillArrWithRowIds(row, newSelectedIds));
+        }
+        callbackParent(onSelectAll, isSelected, newSelectedIds);
       },
       onRowExpanded: (rowId, isExpanded) => {
         const expansionOptions =
