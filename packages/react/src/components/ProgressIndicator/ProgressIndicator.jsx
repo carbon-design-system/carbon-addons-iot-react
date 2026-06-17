@@ -104,10 +104,14 @@ const ProgressStep = ({
 
   const StepLine = () => {
     const classes = classnames({
-      [`${iotPrefix}--progress-step-line`]: !complete && !subStep && !highlightConnectorLinesToShowProgress,
-      [`${iotPrefix}--progress-step-line--sub`]: !complete && subStep && !highlightConnectorLinesToShowProgress,
-      [`${iotPrefix}--progress-step-line--complete`]: !subStep && (complete || highlightConnectorLinesToShowProgress),
-      [`${iotPrefix}--progress-step-line--sub-complete`]: subStep && (complete || highlightConnectorLinesToShowProgress),
+      [`${iotPrefix}--progress-step-line`]:
+        !subStep && !(complete && highlightConnectorLinesToShowProgress),
+      [`${iotPrefix}--progress-step-line--sub`]:
+        subStep && !(complete && highlightConnectorLinesToShowProgress),
+      [`${iotPrefix}--progress-step-line--complete`]:
+        !subStep && complete && highlightConnectorLinesToShowProgress,
+      [`${iotPrefix}--progress-step-line--sub-complete`]:
+        subStep && complete && highlightConnectorLinesToShowProgress,
     });
 
     return !lastItem ? <div className={classes} /> : null;
@@ -244,7 +248,7 @@ ProgressStep.defaultProps = {
   pictogramName: null,
   hasPictogram: false,
   /** default false, all connector lines are highlighted grey to show progress */
-  highlightConnectorLinesToShowProgress: false,
+  highlightConnectorLinesToShowProgress: true,
 };
 
 const ProgressIndicator = ({
@@ -394,7 +398,7 @@ ProgressIndicator.propTypes = {
   testId: PropTypes.string,
   /** Specify whether the progress steps should be split equally in size in the div */
   spaceEqually: PropTypes.bool,
-    /** When true, all connector lines are highlighted blue to show progress */
+  /** When true, all connector lines are highlighted blue to show progress */
   highlightConnectorLinesToShowProgress: PropTypes.bool,
 };
 
@@ -410,7 +414,7 @@ ProgressIndicator.defaultProps = {
   testId: `${iotPrefix}--progress-indicator-testid`,
   spaceEqually: false,
   /** default false, all connector lines are highlighted grey to show progress */
-  highlightConnectorLinesToShowProgress: false,
+  highlightConnectorLinesToShowProgress: true,
 };
 
 export default ProgressIndicator;

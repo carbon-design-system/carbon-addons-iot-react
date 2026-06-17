@@ -89,7 +89,7 @@ export const defaultProps = {
   testId: 'page-wizard',
   spaceEqually: false,
   stepWidth: null,
-  highlightConnectorLinesToShowProgress: false,
+  highlightConnectorLinesToShowProgress: true,
 };
 
 const PageWizard = ({
