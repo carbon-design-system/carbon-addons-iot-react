@@ -103,15 +103,13 @@ const ProgressStep = ({
   };
 
   const StepLine = () => {
+    const showComplete = complete && highlightConnectorLinesToShowProgress;
+
     const classes = classnames({
-      [`${iotPrefix}--progress-step-line`]:
-        !subStep && !(complete && highlightConnectorLinesToShowProgress),
-      [`${iotPrefix}--progress-step-line--sub`]:
-        subStep && !(complete && highlightConnectorLinesToShowProgress),
-      [`${iotPrefix}--progress-step-line--complete`]:
-        !subStep && complete && highlightConnectorLinesToShowProgress,
-      [`${iotPrefix}--progress-step-line--sub-complete`]:
-        subStep && complete && highlightConnectorLinesToShowProgress,
+      [`${iotPrefix}--progress-step-line`]: !subStep && !showComplete,
+      [`${iotPrefix}--progress-step-line--sub`]: subStep && !showComplete,
+      [`${iotPrefix}--progress-step-line--complete`]: !subStep && showComplete,
+      [`${iotPrefix}--progress-step-line--sub-complete`]: subStep && showComplete,
     });
 
     return !lastItem ? <div className={classes} /> : null;
