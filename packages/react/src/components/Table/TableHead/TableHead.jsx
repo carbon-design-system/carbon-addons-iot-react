@@ -302,22 +302,30 @@ const TableHead = ({
 
   const onManualColumnResize = (modifiedColumnWidths) => {
     if (percentageMode) {
-      const modifiedColumns = [...columns];
-      Object.keys(modifiedColumns).forEach((key) => {
-        if (modifiedColumns[key].hasOwnProperty('width')) {
-          delete modifiedColumns[key].width;
-        }
+      // Measure current rendered widths BEFORE switching to pixel mode
+      // This prevents unused space by preserving actual column widths
+      const measuredWidths = measureColumnWidths();
+
+      // Convert measured widths directly to column format with pixel values
+      // This preserves the actual rendered widths instead of using defaults
+      const columnsWithMeasuredWidths = columns.map((col) => {
+        const measured = measuredWidths.find((m) => m.id === col.id);
+        return {
+          ...col,
+          width: measured ? `${measured.width}px` : col.width,
+        };
       });
 
-      // while Resizing setting all column width to default DEFAULT_COLUMN_WIDTH 150px
-      const columnPropInlcudingWidths = addMissingColumnWidths({
+      // Create width map from columns with measured values, then apply user's resize
+      const newColumnWidths = createNewWidthsMap(
         ordering,
-        columns: modifiedColumns,
-        currentColumnWidths: {},
-      });
+        columnsWithMeasuredWidths,
+        modifiedColumnWidths
+      );
 
-      const newColumnWidths = createNewWidthsMap(ordering, columnPropInlcudingWidths);
-      setCurrentColumnWidths(newColumnWidths);
+      // Update both state and notify parent component
+      // This ensures horizontal scrollbar appears if total width exceeds container
+      updateColumnWidths(newColumnWidths);
       setPercentageMode(false);
     } else {
       const newColumnWidths = createNewWidthsMap(
