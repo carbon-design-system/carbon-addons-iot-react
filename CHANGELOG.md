@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.16.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.15.2...v5.16.0) (2026-06-22)
+
+
+### Features
+
+* add highlightConnectorLinesToShowProgress option for step connector highlighting ([#4114](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4114)) ([108e14e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/108e14e77e57c1468b9c48ebc29149f3d6678952))
+
+
+
+
+
 ## [5.15.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.15.1...v5.15.2) (2026-06-18)
 
 **Note:** Version bump only for package ibm-ai-applications
