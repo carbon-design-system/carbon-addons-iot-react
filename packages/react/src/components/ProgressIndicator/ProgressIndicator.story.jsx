@@ -290,6 +290,7 @@ export const StatefulWithSkip = () => (
     showLabels={boolean('showlabels', true)}
     isVerticalMode={boolean('isVerticalMode', false)}
     isClickable={boolean('isClickable', true)}
+    highlightConnectorLinesToShowProgress={boolean('highlightConnectorLinesToShowProgress', true)}
   />
 );
 

@@ -61,6 +61,8 @@ export const PageWizardPropTypes = {
   /** Specify whether the progress steps should be split equally in size in the div */
   spaceEqually: PropTypes.bool,
   stepWidth: PropTypes.number,
+  /** When true, all connector lines are highlighted blue to show progress */
+  highlightConnectorLinesToShowProgress: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -87,6 +89,7 @@ export const defaultProps = {
   testId: 'page-wizard',
   spaceEqually: false,
   stepWidth: null,
+  highlightConnectorLinesToShowProgress: true,
 };
 
 const PageWizard = ({
@@ -111,6 +114,7 @@ const PageWizard = ({
   testId,
   spaceEqually,
   stepWidth,
+  highlightConnectorLinesToShowProgress,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, (step) => step.props);
@@ -215,6 +219,7 @@ const PageWizard = ({
             isClickable={isClickable}
             spaceEqually={spaceEqually}
             stepWidth={stepWidth}
+            highlightConnectorLinesToShowProgress={highlightConnectorLinesToShowProgress}
             // TODO: pass down the testId in v3 instead of falling back to the
             // default.
             // testId={`${testId}-progress-indicator`}

@@ -650,6 +650,10 @@ const StatefulWithSkippableStepsComp = () => {
           console.log('t', t, isComplete);
         }}
         isClickable
+        highlightConnectorLinesToShowProgress={boolean(
+          'highlightConnectorLinesToShowProgress',
+          true
+        )}
       >
         {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'], isComplete)}
       </StatefulPageWizard>
