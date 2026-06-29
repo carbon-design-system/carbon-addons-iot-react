@@ -2,6 +2,8 @@ import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { merge, get } from 'lodash-es';
 
+import { fillArrWithRowIds } from '../../utils/tableReducer';
+
 import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
 import {
@@ -38,7 +40,6 @@ import {
   tableRowLoadMore,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
-import { fillArrWithRowIds } from '../../utils/tableReducer';
 
 const callbackParent = (callback, ...args) => callback && callback(...args);
 
@@ -279,7 +280,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onSelectAll: (isSelected) => {
         dispatch(tableRowSelectAll(isSelected));
-        
+
         // Pass newSelectedIds to callback for searching and filtering scenarios
         // This allows consumers to know which rows are actually selected based on current filters
         const newSelectedIds = [];
