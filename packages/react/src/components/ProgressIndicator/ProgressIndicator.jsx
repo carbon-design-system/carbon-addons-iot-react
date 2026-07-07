@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
 import { matches } from '@carbon/react/es/internal/keyboard/match';
-import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
+import {
+  CheckmarkOutline,
+  CheckmarkFilled,
+  Warning,
+  RadioButton,
+  CircleFilled,
+} from '@carbon/react/icons';
 import * as Pictograms from '@carbon/pictograms-react';
 
 import { settings } from '../../constants/Settings';
@@ -67,7 +73,9 @@ const ProgressStep = ({
     let value;
 
     if (mainStep) {
-      if (completed) {
+      if (completed && current) {
+        value = <CheckmarkFilled size={24} />;
+      } else if (completed) {
         value = <CheckmarkOutline size={24} />;
       } else if (invalid) {
         value = <Warning size={24} />;
@@ -85,6 +93,8 @@ const ProgressStep = ({
           value = <RadioButton size={24}>{number}</RadioButton>;
         }
       }
+    } else if (completed && current) {
+      value = <CheckmarkFilled />;
     } else if (completed) {
       value = <CheckmarkOutline />;
     } else if (invalid) {
@@ -185,6 +195,7 @@ const ProgressStep = ({
     [`${iotPrefix}--progress-step`]: true,
     [`${iotPrefix}--progress-step--current`]: current && !disabled,
     [`${iotPrefix}--progress-step--complete`]: complete && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--current-complete`]: current && complete && !disabled && !invalid,
     [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
     [`${iotPrefix}--progress-step--disabled`]: disabled,
     [`${iotPrefix}--progress-step--invalid`]: invalid,

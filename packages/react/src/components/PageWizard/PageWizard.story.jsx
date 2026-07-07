@@ -629,7 +629,7 @@ WithHorizontalProgressIndicatorWithPictograms.storyName =
 
 const StatefulWithSkippableStepsComp = () => {
   let t = 1;
-  const [isComplete, setIsComplete] = useState(false);
+  const [isComplete, setIsComplete] = useState(true);
   return (
     <>
       <p>First step will dynamically flip completeness every 3rd click</p>
@@ -654,6 +654,7 @@ const StatefulWithSkippableStepsComp = () => {
           'highlightConnectorLinesToShowProgress',
           true
         )}
+        isComplete={isComplete}
       >
         {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'], isComplete)}
       </StatefulPageWizard>

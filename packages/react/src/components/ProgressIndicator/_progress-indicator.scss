@@ -156,6 +156,9 @@
             }
           }
         }
+        .#{$iot-prefix}--progress-step--pictogram-item svg {
+          fill: $button-primary;
+        }
       }
       .#{$iot-prefix}--progress-text-label {
         &:focus {
@@ -173,8 +176,19 @@
     }
 
     &--complete {
-      svg {
-        fill: $button-primary;
+      .#{$iot-prefix}--progress-step-button--main-step,
+      .#{$iot-prefix}--progress-step-button--sub-step {
+        svg {
+          fill: $button-primary;
+        }
+      }
+    }
+
+    &--current-complete {
+      .#{$iot-prefix}--progress-step-icon {
+        display: inline-flex;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px $background, 0 0 0 4px $button-primary;
       }
     }
 
