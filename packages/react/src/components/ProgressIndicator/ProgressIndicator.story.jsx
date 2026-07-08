@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { ProgressIndicatorSkeleton, Tooltip } from '@carbon/react';
 // import { settings } from 'carbon-components';
 
+import { Bee, Archive, Ai, Devops } from '@carbon/pictograms-react';
+
 import ProgressIndicator from './ProgressIndicator';
 
 import { CarbonProgressIndicator, CarbonProgressStep } from '.';
@@ -211,7 +213,7 @@ const itemsWithPictograms = [
     label: 'First step is very, very long',
     secondaryLabel: 'Optional label is very, very long',
     description: 'This is displayed when step icon is hovered',
-    pictogram: 'Bee',
+    pictogram: Bee,
   },
   {
     id: 'step2',
@@ -223,7 +225,7 @@ const itemsWithPictograms = [
         id: 'step2_substep2',
         label: 'Sub Step 2',
         secondaryLabel: 'Optional label',
-        pictogram: 'Bee',
+        pictogram: Bee,
       },
       { id: 'step2_substep3', label: 'Sub Step 3', invalid: true },
       {
@@ -233,16 +235,16 @@ const itemsWithPictograms = [
         disabled: true,
       },
     ],
-    pictogram: 'Archive',
+    pictogram: Archive,
   },
   {
     id: 'step3',
     label: 'Third Step',
     secondaryLabel: 'Optional label',
     disabled: true,
-    pictogram: 'Ai',
+    pictogram: Ai,
   },
-  { id: 'step4', label: 'Fourth Step', invalid: true, pictogram: 'Devops' },
+  { id: 'step4', label: 'Fourth Step', invalid: true, pictogram: Devops },
   { id: 'step5', label: 'Fifth Step' },
 ];
 

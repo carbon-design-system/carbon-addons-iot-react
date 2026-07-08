@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { Button, Form, FormGroup, FormItem, Link, TextInput } from '@carbon/react';
 import { InformationFilled } from '@carbon/react/icons';
+import { Bee, Archive, Ai } from '@carbon/pictograms-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
@@ -602,7 +603,7 @@ export const StatefulWithPictograms = () => (
     setStep={action('step clicked', () => {})}
     isClickable
   >
-    {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'])}
+    {content([Bee, Archive, null, null, Ai, Bee])}
   </StatefulPageWizard>
 );
 
@@ -620,7 +621,7 @@ export const WithHorizontalProgressIndicatorWithPictograms = () => (
     isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
     isClickable
   >
-    {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'])}
+    {content([Bee, Archive, null, null, Ai, Bee])}
   </StatefulPageWizard>
 );
 
@@ -655,7 +656,7 @@ const StatefulWithSkippableStepsComp = () => {
           true
         )}
       >
-        {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'], isComplete)}
+        {content([Bee, Archive, null, null, Ai, Bee], isComplete)}
       </StatefulPageWizard>
     </>
   );

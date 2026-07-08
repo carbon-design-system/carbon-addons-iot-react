@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
@@ -149,7 +149,7 @@ const ProgressStep = ({
     const type = mainStep ? 'main' : 'sub';
 
     // get pictogram component from name passed in items array via pictogramName property
-    const PictogramComponent = pictogram?.length ? Pictograms[pictogram] : null;
+    const PictogramComponent = pictogram || null;
     return (
       <>
         {
@@ -218,7 +218,7 @@ ProgressStep.propTypes = {
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
   spaceEqually: PropTypes.bool,
-  pictogram: PropTypes.string,
+  pictogram: PropTypes.node,
   hasPictogram: PropTypes.bool,
   /** When true, all connector lines are highlighted blue to show progress */
   highlightConnectorLinesToShowProgress: PropTypes.bool,
@@ -321,7 +321,7 @@ const ProgressIndicator = ({
 
   // check if any pictogram is to be shown, this will modify styling of all the steps
   const hasPictogram = newItems.some(
-    ({ pictogram }) => pictogram?.length && typeof Pictograms[pictogram] !== 'undefined'
+    ({ pictogram }) => pictogram && (typeof pictogram === 'function' || isValidElement(pictogram))
   );
 
   return newItems.length > 1 ? (
@@ -384,7 +384,7 @@ ProgressIndicator.propTypes = {
       description: PropTypes.string,
       disabled: PropTypes.bool,
       invalid: PropTypes.bool,
-      pictogram: PropTypes.string,
+      pictogram: PropTypes.node,
     })
   ),
   currentItemId: IDPropTypes,
