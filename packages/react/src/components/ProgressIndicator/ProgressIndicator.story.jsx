@@ -3,9 +3,9 @@ import React from 'react';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { ProgressIndicatorSkeleton, Tooltip } from '@carbon/react';
+import { Bee, Archive, Ai, Devops } from '@carbon/pictograms-react';
 // import { settings } from 'carbon-components';
 
-import { Bee, Archive, Ai, Devops } from '@carbon/pictograms-react';
 
 import ProgressIndicator from './ProgressIndicator';
 

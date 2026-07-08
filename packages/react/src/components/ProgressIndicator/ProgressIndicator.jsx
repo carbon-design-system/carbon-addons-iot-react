@@ -148,7 +148,6 @@ const ProgressStep = ({
     const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
     const type = mainStep ? 'main' : 'sub';
 
-
     return (
       <>
         {
