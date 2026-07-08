@@ -211,7 +211,7 @@ const itemsWithPictograms = [
     label: 'First step is very, very long',
     secondaryLabel: 'Optional label is very, very long',
     description: 'This is displayed when step icon is hovered',
-    pictogramName: 'Bee',
+    pictogram: 'Bee',
   },
   {
     id: 'step2',
@@ -223,7 +223,7 @@ const itemsWithPictograms = [
         id: 'step2_substep2',
         label: 'Sub Step 2',
         secondaryLabel: 'Optional label',
-        pictogramName: 'Bee',
+        pictogram: 'Bee',
       },
       { id: 'step2_substep3', label: 'Sub Step 3', invalid: true },
       {
@@ -233,16 +233,16 @@ const itemsWithPictograms = [
         disabled: true,
       },
     ],
-    pictogramName: 'Archive',
+    pictogram: 'Archive',
   },
   {
     id: 'step3',
     label: 'Third Step',
     secondaryLabel: 'Optional label',
     disabled: true,
-    pictogramName: 'Ai',
+    pictogram: 'Ai',
   },
-  { id: 'step4', label: 'Fourth Step', invalid: true, pictogramName: 'Devops' },
+  { id: 'step4', label: 'Fourth Step', invalid: true, pictogram: 'Devops' },
   { id: 'step5', label: 'Fifth Step' },
 ];
 

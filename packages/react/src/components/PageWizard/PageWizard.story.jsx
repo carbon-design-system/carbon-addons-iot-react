@@ -26,7 +26,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
     isComplete={isComplete}
   >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
@@ -60,7 +60,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -102,7 +102,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -125,7 +125,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -148,7 +148,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -172,7 +172,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -195,7 +195,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -217,7 +217,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -238,7 +238,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
     <PageWizardStepDescription>

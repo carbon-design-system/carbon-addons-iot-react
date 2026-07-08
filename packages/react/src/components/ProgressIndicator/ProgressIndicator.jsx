@@ -31,7 +31,7 @@ const ProgressStep = ({
   mainStep,
   subStep,
   spaceEqually,
-  pictogramName,
+  pictogram,
   hasPictogram,
   highlightConnectorLinesToShowProgress,
 }) => {
@@ -149,7 +149,7 @@ const ProgressStep = ({
     const type = mainStep ? 'main' : 'sub';
 
     // get pictogram component from name passed in items array via pictogramName property
-    const PictogramComponent = pictogramName?.length ? Pictograms[pictogramName] : null;
+    const PictogramComponent = pictogram?.length ? Pictograms[pictogram] : null;
     return (
       <>
         {
@@ -218,7 +218,7 @@ ProgressStep.propTypes = {
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
   spaceEqually: PropTypes.bool,
-  pictogramName: PropTypes.string,
+  pictogram: PropTypes.string,
   hasPictogram: PropTypes.bool,
   /** When true, all connector lines are highlighted blue to show progress */
   highlightConnectorLinesToShowProgress: PropTypes.bool,
@@ -243,7 +243,7 @@ ProgressStep.defaultProps = {
   subStep: false,
   onClick: null,
   spaceEqually: false,
-  pictogramName: null,
+  pictogram: null,
   hasPictogram: false,
   /** default false, all connector lines are highlighted grey to show progress */
   highlightConnectorLinesToShowProgress: true,
@@ -321,7 +321,7 @@ const ProgressIndicator = ({
 
   // check if any pictogram is to be shown, this will modify styling of all the steps
   const hasPictogram = newItems.some(
-    ({ pictogramName }) => pictogramName?.length && typeof Pictograms[pictogramName] !== 'undefined'
+    ({ pictogram }) => pictogram?.length && typeof Pictograms[pictogram] !== 'undefined'
   );
 
   return newItems.length > 1 ? (
@@ -337,7 +337,7 @@ const ProgressIndicator = ({
             invalid,
             stepNumber,
             level,
-            pictogramName,
+            pictogram,
             isComplete,
           },
           index
@@ -364,7 +364,7 @@ const ProgressIndicator = ({
             invalid={invalid}
             isClickable={isClickable}
             spaceEqually={spaceEqually}
-            pictogramName={pictogramName}
+            pictogram={pictogram}
             hasPictogram={hasPictogram}
             highlightConnectorLinesToShowProgress={highlightConnectorLinesToShowProgress}
           />
@@ -384,7 +384,7 @@ ProgressIndicator.propTypes = {
       description: PropTypes.string,
       disabled: PropTypes.bool,
       invalid: PropTypes.bool,
-      pictogramName: PropTypes.string,
+      pictogram: PropTypes.string,
     })
   ),
   currentItemId: IDPropTypes,
