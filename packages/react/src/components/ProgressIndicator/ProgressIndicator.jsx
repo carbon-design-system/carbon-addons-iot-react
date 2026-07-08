@@ -31,7 +31,7 @@ const ProgressStep = ({
   mainStep,
   subStep,
   spaceEqually,
-  pictogram,
+  PictogramComponent,
   hasPictogram,
   highlightConnectorLinesToShowProgress,
 }) => {
@@ -242,7 +242,7 @@ ProgressStep.defaultProps = {
   subStep: false,
   onClick: null,
   spaceEqually: false,
-  pictogram: null,
+  PictogramComponent: null,
   hasPictogram: false,
   /** default false, all connector lines are highlighted grey to show progress */
   highlightConnectorLinesToShowProgress: true,
