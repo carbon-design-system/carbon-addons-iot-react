@@ -1,4 +1,4 @@
-import React, { useState, useEffect, isValidElement } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
@@ -148,8 +148,7 @@ const ProgressStep = ({
     const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
     const type = mainStep ? 'main' : 'sub';
 
-    // get pictogram component from name passed in items array via pictogramName property
-    const PictogramComponent = pictogram || null;
+
     return (
       <>
         {
@@ -218,7 +217,7 @@ ProgressStep.propTypes = {
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
   spaceEqually: PropTypes.bool,
-  pictogram: PropTypes.node,
+  PictogramComponent: PropTypes.node,
   hasPictogram: PropTypes.bool,
   /** When true, all connector lines are highlighted blue to show progress */
   highlightConnectorLinesToShowProgress: PropTypes.bool,
@@ -362,7 +361,7 @@ const ProgressIndicator = ({
             invalid={invalid}
             isClickable={isClickable}
             spaceEqually={spaceEqually}
-            pictogram={pictogram}
+            PictogramComponent={pictogram}
             hasPictogram={hasPictogram}
             highlightConnectorLinesToShowProgress={highlightConnectorLinesToShowProgress}
           />
