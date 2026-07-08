@@ -320,9 +320,7 @@ const ProgressIndicator = ({
   });
 
   // check if any pictogram is to be shown, this will modify styling of all the steps
-  const hasPictogram = newItems.some(
-    ({ pictogram }) => pictogram && (typeof pictogram === 'function' || isValidElement(pictogram))
-  );
+  const hasPictogram = newItems.some(({ pictogram }) => !!pictogram);
 
   return newItems.length > 1 ? (
     <ul className={classes} data-testid={testId}>
