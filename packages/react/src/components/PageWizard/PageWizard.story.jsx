@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { Button, Form, FormGroup, FormItem, Link, TextInput } from '@carbon/react';
 import { InformationFilled } from '@carbon/react/icons';
+import { Bee, Archive, Ai } from '@carbon/pictograms-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
@@ -26,7 +27,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
     isComplete={isComplete}
   >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
@@ -60,7 +61,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -102,7 +103,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -125,7 +126,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -148,7 +149,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -172,7 +173,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -195,7 +196,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -217,7 +218,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -238,7 +239,7 @@ export const content = (pictograms = [], isComplete) => [
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
     onBack={action('back', () => {})}
-    pictogramName={pictograms.shift()}
+    pictogram={pictograms.shift()}
   >
     <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -602,7 +603,7 @@ export const StatefulWithPictograms = () => (
     setStep={action('step clicked', () => {})}
     isClickable
   >
-    {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'])}
+    {content([Bee, Archive, null, null, Ai, Bee])}
   </StatefulPageWizard>
 );
 
@@ -620,7 +621,7 @@ export const WithHorizontalProgressIndicatorWithPictograms = () => (
     isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
     isClickable
   >
-    {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'])}
+    {content([Bee, Archive, null, null, Ai, Bee])}
   </StatefulPageWizard>
 );
 
@@ -655,7 +656,7 @@ const StatefulWithSkippableStepsComp = () => {
           true
         )}
       >
-        {content(['Bee', 'Archive', null, null, 'Ai', 'Bee'], isComplete)}
+        {content([Bee, Archive, null, null, Ai, Bee], isComplete)}
       </StatefulPageWizard>
     </>
   );

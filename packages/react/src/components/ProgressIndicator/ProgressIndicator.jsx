@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
 import { matches } from '@carbon/react/es/internal/keyboard/match';
 import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
-import * as Pictograms from '@carbon/pictograms-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -31,7 +30,7 @@ const ProgressStep = ({
   mainStep,
   subStep,
   spaceEqually,
-  pictogramName,
+  PictogramComponent,
   hasPictogram,
   highlightConnectorLinesToShowProgress,
 }) => {
@@ -148,8 +147,6 @@ const ProgressStep = ({
     const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
     const type = mainStep ? 'main' : 'sub';
 
-    // get pictogram component from name passed in items array via pictogramName property
-    const PictogramComponent = pictogramName?.length ? Pictograms[pictogramName] : null;
     return (
       <>
         {
@@ -218,7 +215,7 @@ ProgressStep.propTypes = {
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
   spaceEqually: PropTypes.bool,
-  pictogramName: PropTypes.string,
+  PictogramComponent: PropTypes.node,
   hasPictogram: PropTypes.bool,
   /** When true, all connector lines are highlighted blue to show progress */
   highlightConnectorLinesToShowProgress: PropTypes.bool,
@@ -243,7 +240,7 @@ ProgressStep.defaultProps = {
   subStep: false,
   onClick: null,
   spaceEqually: false,
-  pictogramName: null,
+  PictogramComponent: null,
   hasPictogram: false,
   /** default false, all connector lines are highlighted grey to show progress */
   highlightConnectorLinesToShowProgress: true,
@@ -320,9 +317,7 @@ const ProgressIndicator = ({
   });
 
   // check if any pictogram is to be shown, this will modify styling of all the steps
-  const hasPictogram = newItems.some(
-    ({ pictogramName }) => pictogramName?.length && typeof Pictograms[pictogramName] !== 'undefined'
-  );
+  const hasPictogram = newItems.some(({ pictogram }) => !!pictogram);
 
   return newItems.length > 1 ? (
     <ul className={classes} data-testid={testId}>
@@ -337,7 +332,7 @@ const ProgressIndicator = ({
             invalid,
             stepNumber,
             level,
-            pictogramName,
+            pictogram,
             isComplete,
           },
           index
@@ -364,7 +359,7 @@ const ProgressIndicator = ({
             invalid={invalid}
             isClickable={isClickable}
             spaceEqually={spaceEqually}
-            pictogramName={pictogramName}
+            PictogramComponent={pictogram}
             hasPictogram={hasPictogram}
             highlightConnectorLinesToShowProgress={highlightConnectorLinesToShowProgress}
           />
@@ -384,7 +379,7 @@ ProgressIndicator.propTypes = {
       description: PropTypes.string,
       disabled: PropTypes.bool,
       invalid: PropTypes.bool,
-      pictogramName: PropTypes.string,
+      pictogram: PropTypes.node,
     })
   ),
   currentItemId: IDPropTypes,

@@ -159,7 +159,7 @@ const PageWizard = ({
         subStep,
         disabled,
         invalid,
-        pictogramName,
+        pictogram,
         isComplete,
       }) => {
         if (!subStep) {
@@ -170,7 +170,7 @@ const PageWizard = ({
             ...(description && { description }),
             ...(disabled && { disabled }),
             ...(invalid && { invalid }),
-            ...(pictogramName && { pictogramName }),
+            ...(pictogram && { pictogram }),
             isComplete,
           });
         } else {
@@ -185,7 +185,7 @@ const PageWizard = ({
             ...(description && { description }),
             ...(disabled && { disabled }),
             ...(invalid && { invalid }),
-            ...(pictogramName && { pictogramName }),
+            ...(pictogram && { pictogram }),
             isComplete,
           });
         }
