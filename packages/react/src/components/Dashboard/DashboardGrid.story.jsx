@@ -289,6 +289,28 @@ export const DashboardAllCardSizes = () => {
     />,
     <Card
       titleTextTooltip={titleTextTooltip}
+      title="Large Wide Tall"
+      id="Large Wide Tall"
+      key="Large Wide Tall"
+      size={CARD_SIZES.LARGE_WIDE_TALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+    />,
+    <Card
+      titleTextTooltip={titleTextTooltip}
+      title="Large Wide Extra Tall"
+      id="Large Wide Extra Tall"
+      key="Large Wide Extra Tall"
+      size={CARD_SIZES.LARGE_WIDE_XTALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+    />,
+    <Card
+      titleTextTooltip={titleTextTooltip}
       title="Full"
       id="Full"
       key="Full"

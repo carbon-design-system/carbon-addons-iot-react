@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.16.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.16.0...v5.16.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** add card sizes, large wide tall, extra tall ([#4117](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4117)) ([cb40db8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cb40db89784a8a64fdc969f87d3e0013e1437b07))
+
+
+
+
+
 # [5.16.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.15.2...v5.16.0) (2026-06-22)
 
 
