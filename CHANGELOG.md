@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.17.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.16.1...v5.17.0) (2026-07-09)
+
+
+### Features
+
+* **progress-indicator:** support passing pictogram as a component ([#4116](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4116)) ([27d91c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/27d91c5a165143bf3d24ac64898bbaf6e733214a))
+
+
+
+
+
 ## [5.16.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.16.0...v5.16.1) (2026-07-09)
 
 
