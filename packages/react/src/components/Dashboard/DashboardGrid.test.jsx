@@ -229,6 +229,20 @@ describe('DashboardGrid', () => {
         }}
         values={[]}
       />,
+      <Card
+        testId="test-card-tall"
+        title="Large Wide Tall"
+        id="Large Wide Tall"
+        key="Large Wide Tall"
+        size={CARD_SIZES.LARGE_WIDE_TALL}
+      />,
+      <Card
+        testId="test-card-xtall"
+        title="Large Wide Extra Tall"
+        id="Large Wide Extra Tall"
+        key="Large Wide Extra Tall"
+        size={CARD_SIZES.LARGE_WIDE_XTALL}
+      />,
     ];
 
     it('adds resize handles for all cards with isResizable: true', () => {
