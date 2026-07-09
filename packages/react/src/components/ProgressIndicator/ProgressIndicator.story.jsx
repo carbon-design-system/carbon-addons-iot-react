@@ -6,7 +6,6 @@ import { ProgressIndicatorSkeleton, Tooltip } from '@carbon/react';
 import { Bee, Archive, Ai, Devops } from '@carbon/pictograms-react';
 // import { settings } from 'carbon-components';
 
-
 import ProgressIndicator from './ProgressIndicator';
 
 import { CarbonProgressIndicator, CarbonProgressStep } from '.';

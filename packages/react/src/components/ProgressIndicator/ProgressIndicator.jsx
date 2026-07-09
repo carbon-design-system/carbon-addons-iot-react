@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { Enter, Space } from '@carbon/react/es/internal/keyboard/keys';
 import { matches } from '@carbon/react/es/internal/keyboard/match';
 import { CheckmarkOutline, Warning, RadioButton, CircleFilled } from '@carbon/react/icons';
-import * as Pictograms from '@carbon/pictograms-react';
 
 import { settings } from '../../constants/Settings';
 
