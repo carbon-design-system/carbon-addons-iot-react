@@ -74,7 +74,7 @@ const ProgressStep = ({
 
     if (mainStep) {
       if (completed && current) {
-        value = <CheckmarkFilled size={24} />;
+        value = <CheckmarkFilled size={20} />;
       } else if (completed) {
         value = <CheckmarkOutline size={24} />;
       } else if (invalid) {
