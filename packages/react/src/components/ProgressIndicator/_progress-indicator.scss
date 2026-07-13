@@ -188,7 +188,10 @@
       .#{$iot-prefix}--progress-step-icon {
         display: inline-flex;
         border-radius: 50%;
-        box-shadow: 0 0 0 2px $background, 0 0 0 4px $button-primary;
+        border: 1.5px solid var(--cds-button-primary, #0f62fe);
+        svg {
+          transform: scale(0.95);
+        }
       }
     }
 
