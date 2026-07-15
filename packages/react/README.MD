@@ -2,7 +2,7 @@
 > This library no longer has a dedicated development resource maintaining it. When you are able to [migrate to Carbon v11](https://carbondesignsystem.com/migrating/guide/overview/) we recommend you reference the [related component guide](../../.github/migration.md) and use components from [Carbon for IBM Products](https://carbon-for-ibm-products.netlify.app/?path=/story/overview-welcome--overview) and core [Carbon](https://react.carbondesignsystem.com/).
 
 > [!IMPORTANT]
-> The `next` branch is no longer supported. These components are now being maintained in the [Graphite legacy-pal project](https://github.ibm.com/maximo-graphite/legacy-pal).
+> The `next` branch is no longer supported. These components are now being maintained in the [Graphite legacy-pal project](https://github.ibm.com/maximo-app-framework/graphite/tree/MAS-9.3/packages/legacy-pal).
 
 <p align="center">
   <a href="https://pages.github.ibm.com/ai-applications/design/">

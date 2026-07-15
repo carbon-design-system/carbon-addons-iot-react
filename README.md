@@ -1,5 +1,5 @@
 > [!WARNING]
-> The `next` branch is no longer supported. These components are now being maintained in the [Graphite legacy-pal project](https://github.ibm.com/maximo-graphite/legacy-pal).
+> The `next` branch is no longer supported. These components are now being maintained in the [Graphite legacy-pal project](https://github.ibm.com/maximo-app-framework/graphite/tree/MAS-9.3/packages/legacy-pal).
 
 # Key information for carbon-addons-iot-react v5.x.x
 
