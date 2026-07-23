@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.18.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.17.1...v5.18.0) (2026-07-23)
+
+
+### Features
+
+* provide title to be in node ([#4119](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4119)) ([8a1bb2c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8a1bb2c30ff7f57b7a9ca9213b0604fd7e125288))
+
+
+
+
+
 ## [5.17.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.17.0...v5.17.1) (2026-07-15)
 
 **Note:** Version bump only for package ibm-ai-applications
