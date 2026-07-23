@@ -8,7 +8,7 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** optional icon to visually describe catalog item */
   icon: PropTypes.node,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   description: PropTypes.node,
 };
 
@@ -22,7 +22,7 @@ const CatalogContent = ({ icon, title, description }) => (
     {icon ? <div className={`${iotPrefix}--sample-tile-icon`}>{icon}</div> : null}
     <div className={`${iotPrefix}--sample-tile-contents`}>
       <div className={`${iotPrefix}--sample-tile-title`}>
-        <span title={title}>{title}</span>
+        <span title={typeof title === 'string' ? title : null}>{title}</span>
       </div>
       <div className={`${iotPrefix}--sample-tile-description`}>{description}</div>
     </div>
