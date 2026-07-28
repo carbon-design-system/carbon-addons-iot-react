@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
-import { ToastNotification, BreadcrumbItem } from '@carbon/react';
+import { ToastNotification, BreadcrumbItem, Modal } from '@carbon/react';
 import { SettingsAdjust } from '@carbon/react/icons';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -1962,3 +1962,68 @@ WithAsynchronousDataSource.parameters = {
   //   page: TableREADME,
   // },
 };
+
+const initialNestedData = storyTableData
+  .slice(0, 10)
+  .map((row, index) => addChildRows(row, index, /* demoDeepNesting */ true))
+  .map((row) => ({ ...row, hasLoadMore: true }));
+
+const TableInModal = () => {
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState(initialNestedData);
+  const [expandedIds, setExpandedIds] = useState([]);
+  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+
+  const columns = getTableColumns();
+  const tableActions = getTableActions();
+
+  const onRowExpanded = (rowId, expanded) => {
+    action('onRowExpanded')(rowId, expanded);
+    setExpandedIds((prev) => (expanded ? [...prev, rowId] : prev.filter((id) => id !== rowId)));
+  };
+
+  const onRowLoadMore = (parentId) => {
+    action('onRowLoadMore')(parentId);
+    setLoadingMoreIds((prev) => [...prev, parentId]);
+    setTimeout(() => {
+      setData((prevData) => addMoreChildRowsToParent(prevData, parentId));
+      setLoadingMoreIds((prev) => prev.filter((id) => id !== parentId));
+    }, 2000);
+  };
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Table</Button>
+      <Modal
+        open={open}
+        size="lg"
+        modalHeading="Table with Row Nesting"
+        secondaryButtonText="Close"
+        onSecondarySubmit={() => setOpen(false)}
+        onRequestClose={() => setOpen(false)}
+      >
+        <Table
+          columns={columns}
+          data={data}
+          options={{ hasRowNesting: true }}
+          view={{
+            table: { expandedIds, loadingMoreIds },
+          }}
+          actions={{
+            ...tableActions,
+            table: {
+              ...tableActions.table,
+              onRowExpanded,
+              onRowLoadMore,
+            },
+          }}
+        />
+      </Modal>
+    </>
+  );
+};
+
+export const WithRowNestingInModal = () => <TableInModal />;
+
+WithRowNestingInModal.storyName = 'With row nesting in modal';
+WithRowNestingInModal.parameters = { component: Table };
