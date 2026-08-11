@@ -317,9 +317,9 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       left: calc(-1 * var(--row-nesting-offset));
       height: calc(100% + 1px);
       width: var(--row-nesting-offset);
-      background-color: $layer-01;
-      border-right: solid 1px $layer-01;
-      border-bottom: solid 1px $layer-01;
+      background-color: $layer;
+      border-right: solid 1px $layer;
+      border-bottom: solid 1px $layer;
 
       [dir='rtl'] & {
         left: unset;
