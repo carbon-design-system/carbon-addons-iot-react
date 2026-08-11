@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.18.0...v5.18.1) (2026-08-11)
+
+
+### Bug Fixes
+
+* white space in nestedDataTable in Modal ([#4120](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4120)) ([69f4d29](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69f4d299f41be964696f5caad02c8e524bd4ffc5))
+
+
+
+
+
 # [5.18.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.17.1...v5.18.0) (2026-07-23)
 
 
