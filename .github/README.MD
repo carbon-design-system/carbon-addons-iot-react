@@ -7,6 +7,11 @@
   Carbon add-ons for IBM Maximo Application Suite - Monitor (IBM Watson IoT)
 </h1>
 
+<h1 align="center">
+  This project is no longer supported for new features.
+</h1>
+
+
 > Carbon add-ons for IBM Maximo Application Suite - Monitor (Watson IoT) is an open-source react component library built
 > by IBM Maximo Application Suite - Monitor (IBM Watson Internet Of Things). With the Carbon Design System and IBM Design
 > Language as its foundation, the library consists of working code, resources,
