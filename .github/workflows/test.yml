@@ -63,7 +63,7 @@ jobs:
     name: React Cypress test
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node22.12.0-chrome130-ff131
+      image: cypress/browsers:node-24.19.0-chrome-151.0.7922.137-1-ff-154.0-edge-151.0.4129.93-1
       options: --privileged
 
     steps:
