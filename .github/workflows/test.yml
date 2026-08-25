@@ -86,13 +86,15 @@ jobs:
       - name: Cache Cypress binary
         uses: actions/cache@v4
         with:
-          path: ~/.cache/Cypress
+          path: /root/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
+        env:
+          CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
 
       - name: Run Cypress tests, collect coverage
         run: |
@@ -100,6 +102,7 @@ jobs:
           yarn test:e2e:ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
           HEIGHT: 900
           WIDTH: 1680
 
