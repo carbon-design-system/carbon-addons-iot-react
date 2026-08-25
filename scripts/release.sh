@@ -45,28 +45,28 @@ fi
 npm config set registry https://registry.npmjs.org/
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the release with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # graduate the release with --graduate-prereleases
+  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
 
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
     echo "New version detected, publishing..."
-    # publish the carbon-addons-iot-react package using npm directly with provenance
-    (cd packages/react && npm publish --tag stable --provenance --access public --registry https://registry.npmjs.org/)
+    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
+    (cd packages/react && npm publish --tag stable --access public --registry https://registry.npmjs.org/)
   else
     echo "No new version created, skipping publish"
   fi
 fi
 
 if [[ $GITHUB_REF =~ "4.x.x" ]]; then
-  # graduate the release with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # graduate the release with --graduate-prereleases
+  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
 
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
     echo "New version detected, publishing..."
-    # publish the carbon-addons-iot-react package using npm directly with provenance
-    (cd packages/react && npm publish --tag latest --provenance --access public --registry https://registry.npmjs.org/)
+    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
+    (cd packages/react && npm publish --tag latest --access public --registry https://registry.npmjs.org/)
   else
     echo "No new version created, skipping publish"
   fi
