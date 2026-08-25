@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -45,7 +45,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Run Jest tests, collect coverage
         if: steps.changes.outputs.react == 'true'
@@ -64,16 +63,10 @@ jobs:
     name: React Cypress test
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node16.14.0-slim-chrome99-ff97
+      image: cypress/browsers:node22.12.0-chrome130-ff131
       options: --privileged
 
     steps:
-      - name: Upgrade git
-        run: |
-          echo deb "http://archive.debian.org/debian buster-backports main" >> /etc/apt/sources.list
-          apt-get update
-          apt-get install -y git/buster-backports
-
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -88,14 +81,13 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Install dependencies
         if: steps.changes.outputs.react == 'true'
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -159,7 +151,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4
@@ -231,7 +223,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Run tests, collect coverage
         if: steps.changes.outputs.angular == 'true'
