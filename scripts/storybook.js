@@ -70,7 +70,6 @@ const main = async () => {
   try {
     if (process.env.CI) {
       await runCmd('yarn', ['lerna', 'run', '--stream', 'postinstall']);
-      await runCmd('yarn', ['lerna', 'link']);
     }
     if (args['--build']) {
       await runYarn('build:storybook', packageToRun);
