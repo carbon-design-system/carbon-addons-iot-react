@@ -1,0 +1,4 @@
+{
+  "failureThreshold": 1,
+  "failureThresholdType": "percent"
+}

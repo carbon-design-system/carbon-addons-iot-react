@@ -71,6 +71,8 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(200); // allow the scroll event handler to close the flyout
     cy.get('#flyout-tooltip').should('not.exist');
   });
 
@@ -127,6 +129,8 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(200); // allow the scroll event handler to close the flyout
     cy.get('#flyout-tooltip').should('not.exist');
   });
 
@@ -184,6 +188,8 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(200); // allow the scroll event handler to close the flyout
     cy.get('#flyout-tooltip').should('not.exist');
   });
 
@@ -241,6 +247,8 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(200); // allow the scroll event handler to close the flyout
     cy.get('#flyout-tooltip').should('not.exist');
   });
 

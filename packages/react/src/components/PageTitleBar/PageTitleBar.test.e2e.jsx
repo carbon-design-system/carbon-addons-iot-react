@@ -99,6 +99,8 @@ describe('PageTitleBar', () => {
       );
 
     cy.scrollTo(0, 118);
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
@@ -112,6 +114,8 @@ describe('PageTitleBar', () => {
       });
 
     cy.scrollTo(0, 200);
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('have.class', 'page-title-bar--dynamic--after')
@@ -154,7 +158,8 @@ describe('PageTitleBar', () => {
     );
 
     cy.scrollTo(0, 0);
-
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic')
       .should('have.class', 'page-title-bar--dynamic--before')
@@ -168,7 +173,8 @@ describe('PageTitleBar', () => {
       );
 
     cy.scrollTo(0, 100);
-
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--after')
       .should(
@@ -220,7 +226,8 @@ describe('PageTitleBar', () => {
       );
 
     cy.scrollTo(0, 50);
-
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--condensed-static')
       .should(
@@ -274,7 +281,8 @@ describe('PageTitleBar', () => {
       );
 
     cy.scrollTo(0, 250);
-
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--after')
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-hide`)
@@ -287,7 +295,8 @@ describe('PageTitleBar', () => {
     tabsAreStickyAndBreadcrumbsAreHidden();
 
     cy.scrollTo(0, 220);
-
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(100); // allow the 50ms throttled scroll handler to fire
     cy.findByTestId('page-title-bar')
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-show`);
