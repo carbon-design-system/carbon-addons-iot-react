@@ -96,7 +96,6 @@ jobs:
         if: steps.changes.outputs.react == 'true'
         run: |
           cd dist
-          yarn install --frozen-lockfile --production
           yarn link
           cd ../test-app
           yarn link carbon-addons-iot-react
