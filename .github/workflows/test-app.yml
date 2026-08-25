@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -45,7 +45,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Run build
         if: steps.changes.outputs.react == 'true'
@@ -82,7 +81,7 @@ jobs:
         uses: actions/setup-node@v4
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '16.x'
+          node-version: '22.x'
 
       - name: Run cli command to create test app
         if: steps.changes.outputs.react == 'true'

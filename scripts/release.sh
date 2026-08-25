@@ -42,21 +42,35 @@ if [[ $GITHUB_REF =~ "2.x.x" ]]; then
   fi
 fi
 
-# authenticate with the npm registry
-npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+# Set npm registry (authentication will be handled via OIDC)
+npm config set registry https://registry.npmjs.org/
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the relase with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag latest --yes
+  # graduate the release with --graduate-prereleases
+  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
+
+  # Only publish if lerna created a new version (check if there's a new git tag)
+  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
+    echo "New version detected, publishing..."
+    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
+    (cd packages/react && npm publish --tag latest --access public --registry https://registry.npmjs.org/)
+  else
+    echo "No new version created, skipping publish"
+  fi
 fi
 
 if [[ $GITHUB_REF =~ "2.x.x" ]]; then
-  # graduate the relase with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag 2.x.x --yes
+  # graduate the release with --graduate-prereleases
+  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
+
+  # Only publish if lerna created a new version (check if there's a new git tag)
+  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
+    echo "New version detected, publishing..."
+    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
+    (cd packages/react && npm publish --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+  else
+    echo "No new version created, skipping publish"
+  fi
 fi
 
 # just to be sure we exit cleanly

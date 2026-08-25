@@ -7,6 +7,10 @@ on:
       - next
       - '2.x.x'
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,7 +25,9 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -35,7 +41,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Build
         run: yarn build
@@ -43,5 +48,4 @@ jobs:
       - name: Publish
         env:
           GH_TOKEN: ${{ secrets.CARBON_BOT_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn publish-npm
