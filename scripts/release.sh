@@ -41,9 +41,6 @@ if [[ $GITHUB_REF =~ "4.x.x" ]]; then
   fi
 fi
 
-# Set npm registry (authentication will be handled via OIDC/provenance)
-npm config set registry https://registry.npmjs.org/
-
 # If triggered manually (workflow_dispatch), skip lerna version and publish whatever
 # version is currently in packages/react/package.json directly.
 if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
