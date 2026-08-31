@@ -62,6 +62,10 @@
     "reports:combine": "mkdir .nyc_output || true && npx nyc merge reports && mv coverage.json .nyc_output/out.json && npx nyc report --check-coverage --per-file --report-dir coverage",
     "reports": "yarn reports:copy && yarn reports:combine"
   },
+  "engines": {
+    "node": ">=22.0.0",
+    "yarn": "^1.22.0"
+  },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
     "plugins": [
