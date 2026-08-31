@@ -57,8 +57,9 @@ if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
 fi
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the release with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # graduate the release with --conventional-graduate, force-publish so CI-only
+  # commits (e.g. workflow/script fixes) still result in a version bump
+  lerna version --conventional-commits --conventional-graduate --force-publish --create-release github --yes
 
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
@@ -71,17 +72,11 @@ if [[ $GITHUB_REF =~ "master" ]]; then
 fi
 
 if [[ $GITHUB_REF =~ "next" ]]; then
-  # graduate the release with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # always bump patch on every merge to next (same strategy as 4.x.x)
+  lerna version patch --yes
 
-  # Only publish if lerna created a new version (check if there's a new git tag)
-  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
-    echo "New version detected, publishing..."
-    # publish the carbon-addons-iot-react package using npm with OIDC provenance
-    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
-  else
-    echo "No new version created, skipping publish"
-  fi
+  # publish the new version
+  (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
 fi
 
 # just to be sure we exit cleanly
