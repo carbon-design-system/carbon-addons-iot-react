@@ -45,8 +45,8 @@ fi
 npm config set registry https://registry.npmjs.org/
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the release with --graduate-prereleases
-  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
+  # graduate the release with --conventional-graduate
+  lerna version --conventional-commits --conventional-graduate --create-release github --yes
 
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
@@ -59,8 +59,8 @@ if [[ $GITHUB_REF =~ "master" ]]; then
 fi
 
 if [[ $GITHUB_REF =~ "next" ]]; then
-  # graduate the release with --graduate-prereleases
-  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
+  # graduate the release with --conventional-graduate
+  lerna version --conventional-commits --conventional-graduate --create-release github --yes
 
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
