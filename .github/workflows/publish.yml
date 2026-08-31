@@ -29,16 +29,10 @@ jobs:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Verify npm version (>= 11.5.1 required for OIDC)
+      - name: Upgrade npm (>= 11.5.1 required for OIDC Trusted Publishing)
         run: |
-          NPM_VER=$(npm --version)
-          echo "npm version: $NPM_VER"
-          node -e "
-            const [a,b,c] = '$NPM_VER'.split('.').map(Number);
-            const [ra,rb,rc] = [11,5,1];
-            const ok = a>ra || (a===ra && b>rb) || (a===ra && b===rb && c>=rc);
-            if (!ok) { console.error('npm ' + '$NPM_VER' + ' is too old; need >= 11.5.1'); process.exit(1); }
-          "
+          npm install -g npm@latest
+          npm --version
 
       - name: Cache dependencies
         uses: actions/cache@v4
