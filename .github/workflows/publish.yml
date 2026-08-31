@@ -6,6 +6,7 @@ on:
       - master
       - next
       - '4.x.x'
+  workflow_dispatch:
 
 permissions:
   id-token: write

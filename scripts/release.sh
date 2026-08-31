@@ -44,6 +44,18 @@ fi
 # Set npm registry (authentication will be handled via OIDC/provenance)
 npm config set registry https://registry.npmjs.org/
 
+# If triggered manually (workflow_dispatch), skip lerna version and publish whatever
+# version is currently in packages/react/package.json directly.
+if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
+  echo "Manual dispatch detected — skipping lerna version, publishing current package version..."
+  if [[ $GITHUB_REF =~ "master" ]]; then
+    (cd packages/react && npm publish --provenance --tag stable --access public --registry https://registry.npmjs.org/)
+  elif [[ $GITHUB_REF =~ "4.x.x" ]]; then
+    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
+  fi
+  exit 0
+fi
+
 if [[ $GITHUB_REF =~ "master" ]]; then
   # graduate the release with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
