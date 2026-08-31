@@ -71,17 +71,11 @@ if [[ $GITHUB_REF =~ "master" ]]; then
 fi
 
 if [[ $GITHUB_REF =~ "4.x.x" ]]; then
-  # graduate the release with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # always bump patch on every merge to 4.x.x
+  lerna version patch --create-release github --yes
 
-  # Only publish if lerna created a new version (check if there's a new git tag)
-  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
-    echo "New version detected, publishing..."
-    # publish via OIDC provenance (no token needed — uses GitHub's OIDC identity)
-    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
-  else
-    echo "No new version created, skipping publish"
-  fi
+  # publish the new version
+  (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
 fi
 
 # just to be sure we exit cleanly
