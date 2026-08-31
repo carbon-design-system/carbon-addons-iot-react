@@ -72,7 +72,7 @@ fi
 
 if [[ $GITHUB_REF =~ "4.x.x" ]]; then
   # always bump patch on every merge to 4.x.x
-  lerna version patch --create-release github --yes
+  lerna version patch --yes
 
   # publish the new version
   (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
