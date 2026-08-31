@@ -51,8 +51,8 @@ if [[ $GITHUB_REF =~ "master" ]]; then
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
     echo "New version detected, publishing..."
-    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
-    (cd packages/react && npm publish --tag stable --access public --registry https://registry.npmjs.org/)
+    # publish via OIDC provenance (no token needed — uses GitHub's OIDC identity)
+    (cd packages/react && npm publish --provenance --tag stable --access public --registry https://registry.npmjs.org/)
   else
     echo "No new version created, skipping publish"
   fi
@@ -65,8 +65,8 @@ if [[ $GITHUB_REF =~ "next" ]]; then
   # Only publish if lerna created a new version (check if there's a new git tag)
   if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
     echo "New version detected, publishing..."
-    # publish the carbon-addons-iot-react package using npm (provenance is generated automatically via OIDC)
-    (cd packages/react && npm publish --tag latest --access public --registry https://registry.npmjs.org/)
+    # publish via OIDC provenance (no token needed — uses GitHub's OIDC identity)
+    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
   else
     echo "No new version created, skipping publish"
   fi
