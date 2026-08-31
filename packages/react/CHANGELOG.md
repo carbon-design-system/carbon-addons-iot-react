@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.18.1...v5.18.2) (2026-08-31)
+
+
+### Bug Fixes
+
+* trigger release after lerna v9 migration ([#4126](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/4126)) ([ed420b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed420b883b7f144b48f1f7e83305ae1bb2816f3a))
+
+
+
+
+
 ## [5.18.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v5.18.0...v5.18.1) (2026-08-11)
 
 
