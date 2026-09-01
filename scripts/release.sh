@@ -30,7 +30,6 @@ if [[ $GITHUB_REF =~ "master" ]]; then
   fi
 fi
 
-# if we're on the next branch, check if we're up to date, otherwise kill the build
 if [[ $GITHUB_REF =~ "2.x.x" ]]; then
   currentRef=$(git rev-parse 2.x.x) # sha of the local branch
   headRef=$(git rev-parse origin/2.x.x) # sha of the remote branch
@@ -42,21 +41,40 @@ if [[ $GITHUB_REF =~ "2.x.x" ]]; then
   fi
 fi
 
-# authenticate with the npm registry
-npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+# Set npm registry (authentication will be handled via OIDC)
+npm config set registry https://registry.npmjs.org/
+
+# If triggered manually (workflow_dispatch), skip lerna version and publish whatever
+# version is currently in packages/react/package.json directly.
+if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
+  echo "Manual dispatch detected — skipping lerna version, publishing current package version..."
+  if [[ $GITHUB_REF =~ "master" ]]; then
+    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
+  elif [[ $GITHUB_REF =~ "2.x.x" ]]; then
+    (cd packages/react && npm publish --provenance --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+  fi
+  exit 0;
+fi
 
 if [[ $GITHUB_REF =~ "master" ]]; then
-  # graduate the relase with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag latest --yes
+  # graduate the release with --graduate-prereleases
+  lerna version --conventional-commits --graduate-prereleases --create-release github --yes
+
+  # Only publish if lerna created a new version (check if there's a new git tag)
+  if git describe --exact-match --tags HEAD >/dev/null 2>&1; then
+    echo "New version detected, publishing..."
+    (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
+  else
+    echo "No new version created, skipping publish"
+  fi
 fi
 
 if [[ $GITHUB_REF =~ "2.x.x" ]]; then
-  # graduate the relase with --conventional-graduate
-  lerna version --conventional-commits --conventional-graduate --create-release github --yes
-  # publish the packages that were just versioned
-  lerna publish from-git --dist-tag 2.x.x --yes
+  # always bump patch on every merge to 2.x.x (mirrors 4.x.x strategy)
+  lerna version patch --yes
+
+  # publish the new version
+  (cd packages/react && npm publish --provenance --tag 2.x.x --access public --registry https://registry.npmjs.org/)
 fi
 
 # just to be sure we exit cleanly
