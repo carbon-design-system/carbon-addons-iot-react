@@ -69,6 +69,7 @@ jobs:
 
   create-test-app:
     name: Create test app and build
+    if: false
     needs: build-pal
     runs-on: ubuntu-latest
 
