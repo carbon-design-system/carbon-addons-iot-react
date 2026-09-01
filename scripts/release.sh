@@ -2,11 +2,6 @@
 
 set -e # exit with nonzero exit code if anything fails
 
-if [[ $GITHUB_ACTOR == "carbon-bot" ]]; then
-  # exit early, since we don't want to try publishing _again_
-  exit 0;
-fi
-
 # set username and email so git knows who we are
 git config user.name "carbon-bot"
 git config user.email "carbon@us.ibm.com"
@@ -72,7 +67,7 @@ fi
 if [[ $GITHUB_REF =~ "2.x.x" ]]; then
   # always bump patch on every merge to 2.x.x
   # --force-publish bypasses lerna's CI change detection
-  lerna version patch --force-publish --yes
+  lerna version patch --force-publish --yes --message "chore: release %s [ci skip]"
 
   # publish the new version (tag must not be a semver range, use v2)
   (cd packages/react && npm publish --tag v2 --access public --registry https://registry.npmjs.org/)
