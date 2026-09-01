@@ -51,7 +51,7 @@ if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
   if [[ $GITHUB_REF =~ "master" ]]; then
     (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
   elif [[ $GITHUB_REF =~ "2.x.x" ]]; then
-    (cd packages/react && npm publish --provenance --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+    (cd packages/react && npm publish --tag 2.x.x --access public --registry https://registry.npmjs.org/)
   fi
   exit 0;
 fi
@@ -74,7 +74,7 @@ if [[ $GITHUB_REF =~ "2.x.x" ]]; then
   lerna version patch --yes
 
   # publish the new version
-  (cd packages/react && npm publish --provenance --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+  (cd packages/react && npm publish --tag 2.x.x --access public --registry https://registry.npmjs.org/)
 fi
 
 # just to be sure we exit cleanly
