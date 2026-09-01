@@ -51,7 +51,7 @@ if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
   if [[ $GITHUB_REF =~ "master" ]]; then
     (cd packages/react && npm publish --provenance --tag latest --access public --registry https://registry.npmjs.org/)
   elif [[ $GITHUB_REF =~ "2.x.x" ]]; then
-    (cd packages/react && npm publish --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+    (cd packages/react && npm publish --tag v2 --access public --registry https://registry.npmjs.org/)
   fi
   exit 0;
 fi
@@ -70,11 +70,12 @@ if [[ $GITHUB_REF =~ "master" ]]; then
 fi
 
 if [[ $GITHUB_REF =~ "2.x.x" ]]; then
-  # always bump patch on every merge to 2.x.x (mirrors 4.x.x strategy)
-  lerna version patch --yes
+  # always bump patch on every merge to 2.x.x
+  # --force-publish bypasses lerna's CI change detection
+  lerna version patch --force-publish --yes
 
-  # publish the new version
-  (cd packages/react && npm publish --tag 2.x.x --access public --registry https://registry.npmjs.org/)
+  # publish the new version (tag must not be a semver range, use v2)
+  (cd packages/react && npm publish --tag v2 --access public --registry https://registry.npmjs.org/)
 fi
 
 # just to be sure we exit cleanly
