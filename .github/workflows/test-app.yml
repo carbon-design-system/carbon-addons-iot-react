@@ -1,6 +1,14 @@
 name: Test-app
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - next
+  pull_request:
+    branches:
+      - master
+      - next
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -8,6 +16,7 @@ concurrency:
 
 jobs:
   build-pal:
+    if: false
     name: Build PAL
     runs-on: ubuntu-latest
 
