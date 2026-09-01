@@ -1,6 +1,6 @@
 {
   "name": "ai-apps-monorepo-utils",
-  "version": "2.156.3",
+  "version": "2.156.4",
   "description": "Internal monorepo tools",
   "main": "index.js",
   "private": true,
